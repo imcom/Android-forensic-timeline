@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Forensics</string>
+    <string name="hello_world">Timeline extraction</string>
+    <string name="menu_settings">Settings</string>
+    <string name="external_storage_is_unavailable">External storage is unavailable</string>
+    <string name="unable_to_create_directories">Unable to create directories</string>
+    <string name="failed_to_get_storage_directory">Failed to get storage directory</string>
+
+</resources>
