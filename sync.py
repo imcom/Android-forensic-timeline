@@ -5,6 +5,7 @@ import sys
 import glob
 import subprocess
 import shutil
+import time
 
 def syncFile(src, dst):
     try:
@@ -54,7 +55,21 @@ for program in programs:
     else:
         print "Failed to sync %s" % program
 
+print "Start syncing [%s] project... " % eclipse_workspace,
+src = eclipse_workspace + path.sep
+rtn = subprocess.call(["cp", "-r", src + "AndroidManifest.xml", src + "res", src + "src", git_dir + "java/"])
+if rtn is not 0:
+    print "Failed to sync [%s] project" % eclipse_workspace
+else:
+    print "ok"
 
+print 'Start backing up Git repo...'
+archive = shutil.make_archive(bak_dir + "/bak_" + time.strftime("%Y%m%d%H%M"), "gztar", git_dir)
+if archive is not None:
+    print 'Git repo has backed up to [%s]' % archive
+    print 'Sync has completed'
+else:
+    print 'Failed to back up Git repo.\nQuitting...'
 
 
 
