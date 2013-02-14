@@ -6,4 +6,5 @@ echo 'ok'
 
 echo 'python timestamp_dmesg.py '$BTIME $2 $3
 echo -ne 'formatting timestamps in dmesg...\t'
-python timestamp_dmesg.py $BTIME $2 $3
+#./timestamp_dmesg.py $BTIME $2 $3
+./timestamp_dmesg_4+.py $BTIME $2 $3

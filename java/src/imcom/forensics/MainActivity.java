@@ -75,8 +75,8 @@ public class MainActivity extends Activity {
 			SystemInfoGatherer gatherer = new SystemInfoGatherer("system.config");
 			gatherer.gather(dst_dir);
 			
-			//extract();
-			//terminate();
+			extract();
+			terminate();
 		} catch (TimelineException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
