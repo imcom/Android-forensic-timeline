@@ -1,14 +1,71 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Base"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
     tools:context=".MainActivity" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+        android:layout_gravity="center_horizontal|fill_horizontal"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:gravity="center_horizontal"
+        android:text="Extraction Control Panel"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-</RelativeLayout>
+    <EditText
+        android:id="@+id/CaseInput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Case"
+        android:inputType="text"
+        android:longClickable="false"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/TagInput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Tag"
+        android:inputType="text"
+        android:longClickable="false"
+        android:singleLine="true" >
+    </EditText>
+
+    <Button
+        android:id="@+id/Launch"
+        android:layout_width="172dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:text="Start" 
+        android:onClick="launch"/>
+
+    <EditText
+        android:id="@+id/Console"
+        android:layout_width="fill_parent"
+        android:layout_height="320dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:ems="10"
+        android:gravity="top|center_vertical"
+        android:hint="waiting for execution..."
+        android:inputType="textMultiLine"
+        android:longClickable="false" >
+
+    </EditText>
+
+</LinearLayout>

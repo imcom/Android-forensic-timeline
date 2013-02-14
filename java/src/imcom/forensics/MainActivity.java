@@ -35,8 +35,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
 	
@@ -54,10 +57,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		/* Initialize extractors */
-		executor = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
-		initExtractors();
-		
+		/*
 		ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
 		
 		List<RunningAppProcessInfo> runningAppProcesses = am.getRunningAppProcesses();
@@ -66,11 +66,33 @@ public class MainActivity extends Activity {
 			RunningAppProcessInfo appp = (RunningAppProcessInfo) it.next();
 			Log.d("app process", appp.processName);
 		}
+		*/
+		
+	}
+	
+	public void launch(View view) {
+		Log.d("GUI", "captured button click event, proceeding...");
+		
+		/* Initialize extractors */
+		executor = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
+		initExtractors();
+		
+		EditText case_input = (EditText) findViewById(R.id.CaseInput);
+		EditText tag_input = (EditText) findViewById(R.id.TagInput);
+		
+		String case_name = case_input.getText().toString();
+		String tag_name = tag_input.getText().toString();
+		
+		Log.d("GUI", "Case: " + case_name + "," + "Tag: " + tag_name);
+		EditText console = (EditText) findViewById(R.id.Console);
+		console.setText(""); // clear the previous text
+		console.append("Started extracting evidence...");
+		//TODO pump up a warning when the input is empty
 		
 		/* Proceeding with extraction */
 		try {
 			SDWriter sd_writer = new SDWriter(this);
-			dst_dir = sd_writer.getStorageDirectory("android_timeline", "gama");
+			dst_dir = sd_writer.getStorageDirectory(case_name, tag_name);
 			
 			SystemInfoGatherer gatherer = new SystemInfoGatherer("system.config");
 			gatherer.gather(dst_dir);
@@ -132,7 +154,6 @@ public class MainActivity extends Activity {
 	private void extract() {
 		for (final Extractor extractor : extractors) {
 			executor.submit(new Runnable(){
-
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
@@ -145,8 +166,9 @@ public class MainActivity extends Activity {
 							getApplicationContext(), 
 							dst_dir);
 					Log.d("main::extract", "Extracted " + res_number + " " + extractor.getExtractorName());
+					EditText console = (EditText) findViewById(R.id.Console);
+					console.append("Extracted " + res_number + " " + extractor.getExtractorName() + "\n");				
 				}
-				
 			});
 		}
 	}
