@@ -42,5 +42,19 @@ echo 'converting timestamps in dmesg log...'
 
 echo "extracting dmesg log... [Succeeded]"
 
-echo 'Succeeded!'
+echo "extracting logcat logs..."
+
+LOGCATS="main radio events system"
+
+for log in $LOGCATS
+do
+    echo -ne "extracting /dev/log/"$log" ..."
+    adb logcat -d -v time -b $log > $EVI_PATH"/"$log".log"
+    echo "ok"
+done
+
+echo 'start converting timestamps in logcat logs...'
+./timestamp_logcat.py $EVI_PATH $OUTPUT_PATH
+
+echo 'Done!'
 
