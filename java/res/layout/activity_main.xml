@@ -15,7 +15,7 @@
         android:layout_weight="1"
         android:clickable="false"
         android:gravity="center_horizontal"
-        android:text="Extraction Control Panel"
+        android:text="Android Forensics"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText

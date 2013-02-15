@@ -14,7 +14,8 @@ lines = ifile.readlines()
 if lines is not None:
     for line in lines:
         try:
-            json_data = dict(map(lambda x: x.split(":", 1), line.split(" ")))
+            # strip off the last newline char
+            json_data = dict(map(lambda x: x.split(":", 1), line.strip().split(" ")))
         except:
             #TODO out put to log file
             # invalid format occured

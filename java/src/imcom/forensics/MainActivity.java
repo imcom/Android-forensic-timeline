@@ -3,7 +3,6 @@ package imcom.forensics;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,10 +16,9 @@ import imcom.forensics.extractors.ContactsExtractor;
 import imcom.forensics.extractors.MMSExtractor;
 import imcom.forensics.extractors.PhoneInfoExtractor;
 import imcom.forensics.extractors.SMSExtractor;
+import imcom.forensics.extractors.ServiceInfoExtractor;
 import imcom.forensics.formats.JsonFormatHelper;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
@@ -28,14 +26,12 @@ import android.os.Bundle;
 import android.provider.Browser;
 import android.provider.CallLog;
 import android.provider.ContactsContract;
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -57,17 +53,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		/*
-		ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
-		
-		List<RunningAppProcessInfo> runningAppProcesses = am.getRunningAppProcesses();
-		Iterator<RunningAppProcessInfo> it = runningAppProcesses.iterator();
-		while(it.hasNext()) {
-			RunningAppProcessInfo appp = (RunningAppProcessInfo) it.next();
-			Log.d("app process", appp.processName);
-		}
-		*/
-		
 	}
 	
 	public void launch(View view) {
@@ -86,9 +71,37 @@ public class MainActivity extends Activity {
 		Log.d("GUI", "Case: " + case_name + "," + "Tag: " + tag_name);
 		EditText console = (EditText) findViewById(R.id.Console);
 		console.setText(""); // clear the previous text
-		console.append("Started extracting evidence...");
+		console.append("Started extracting evidence...\n");
 		//TODO pump up a warning when the input is empty
 		
+		AccountManager accounts_manager = (AccountManager) getSystemService(
+				Context.ACCOUNT_SERVICE
+				);
+		Account[] accounts = accounts_manager.getAccounts();
+		console.append("----Accounts----\n");
+		for (Account account : accounts) {
+			console.append(account.name + "@" + account.type + "\n");
+		}
+		
+		ActivityManager activity_manager = (ActivityManager) getSystemService(
+				Context.ACTIVITY_SERVICE
+				);
+		List<RunningAppProcessInfo> runningAppProcesses = activity_manager.getRunningAppProcesses();		
+		
+		console.append("----Running processes----\n");
+		for (RunningAppProcessInfo process_info : runningAppProcesses) {
+			console.append(process_info.processName);
+			console.append("\n");
+		}
+		
+		console.append("----Saved Wifi Networks----\n");
+		WifiManager wifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+		List<WifiConfiguration> configuredNetworks = wifi.getConfiguredNetworks();
+		for (WifiConfiguration configured_network : configuredNetworks) {
+			console.append(configured_network.SSID + "\n");
+		}
+		
+		console.append("----Extraction Result----\n");
 		/* Proceeding with extraction */
 		try {
 			SDWriter sd_writer = new SDWriter(this);
@@ -139,6 +152,9 @@ public class MainActivity extends Activity {
 		
 		Extractor phone_info_extractor = new PhoneInfoExtractor("PhoneInfo");
 		extractors.add(phone_info_extractor);
+		
+		Extractor service_info_extractor = new ServiceInfoExtractor("ServiceInfo");
+		extractors.add(service_info_extractor);
 	}
 	
 	private void terminate() {
