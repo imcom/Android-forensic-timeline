@@ -181,12 +181,17 @@ public class MainActivity extends Activity {
 							getContentResolver(), 
 							getApplicationContext(), 
 							dst_dir);
-					Log.d("main::extract", "Extracted " + res_number + " " + extractor.getExtractorName());
-					EditText console = (EditText) findViewById(R.id.Console);
-					console.append("Extracted " + res_number + " " + extractor.getExtractorName() + "\n");				
+					String res_message = "Extracted " + res_number + " " + extractor.getExtractorName() + "\n";
+					Log.d("Main:extract", res_message);
+					updateConsoleText(res_message);		
 				}
 			});
 		}
+	}
+	
+	private synchronized void updateConsoleText(String text) {
+		EditText console = (EditText) findViewById(R.id.Console);
+		console.append(text);
 	}
 
 	@Override
