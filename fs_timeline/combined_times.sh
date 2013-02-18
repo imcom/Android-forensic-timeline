@@ -1,77 +1,61 @@
 #!/bin/bash
 
-TMP_PATH=$PWD"/timeline.tmp"
-
-if [ $# -lt 2 ]
+if [ $# -lt 4 ]
 then
-    echo 'Usage: '$0' body_file disk_image'
+    echo 'Usage: '$0' body_file disk_image output_dir start_time(yyyy-mm-dd)'
     exit -1
 fi
 
-if [ ! -d $TMP_PATH ]
+BODY_FILE=$1
+DD_IMAGE=$2
+OUTPUT=$3
+START_TIME=$4
+
+INODE_TIMELINE=$OUTPUT"/inode.timeline"
+FS_TIMELINE=$OUTPUT"/fs.timeline"
+
+# wait until the device is connected
+echo -ne 'waiting for device connecting...\t'
+adb wait-for-device
+echo 'ok'
+
+if [ ! -d $OUTPUT ]
 then
-    echo "Creating temporary directory... "$TMP_PATH 1>&2
-    mkdir $TMP_PATH
+    echo "Creating directory... "$PWD"/"$OUTPUT
+    mkdir -p $PWD"/"$OUTPUT
 else
-    echo $TMP_PATH" exists!" 1>&2
+    echo $OUTPUT" exists!"
 fi
 
-./get_inode_num.sh $1 > $TMP_PATH"/inode_list"
+# get timezone from the device
+TIME_ZONE=`adb shell date +%Z`
+echo 'Device Timezone: '$TIME_ZONE
 
-while read number
+echo -ne 'Start processing inode times...\t'
+# remove the description on first line
+mactime -b $BODY_FILE -d -y -z $TIME_ZONE $START_TIME | sed '1 d' > $FS_TIMELINE
+
+inodes=`cat $BODY_FILE | grep -v 'Orphan' | awk -F '|' '{print $3}' | sort -n | uniq | awk '{printf "%s ", $0}'`
+
+# create a clean inode timeline file
+> $INODE_TIMELINE
+
+for inode in $inodes
 do
-    echo 'Inode number: '$number
-    istat $2 $number | grep Time -A3 | tail -3
-    #echo ''
-    ./fs_times.sh $1 $number > $TMP_PATH"/inode_spec_files"
-    LINE_NUM=`cat $TMP_PATH"/inode_spec_files" | wc -l`
-    COUNTER=1
-    while read line
-    do
-        echo "File info:"`echo $line | awk -F '|' '{print $2,$4,$5,$6}'`
-        #echo ''
-        CRTIME=`echo $line | awk -F '|' '{print $NF}'`
-        ATIME=`echo $line | awk -F '|' '{print $8}'`
-        MTIME=`echo $line | awk -F '|' '{print $9}'`
-        CTIME=`echo $line | awk -F '|' '{print $10}'`
-        cat $1 | grep -v "$line" | grep -v "Orphan" > $TMP_PATH"/time_related_files"
-
-        echo "created: "$CRTIME
-        while read line
-        do
-            if [ $CRTIME -gt 0 ]
-            then
-                echo $line | awk -F '|' '{if($NF == '$CRTIME') print "+"$2,$4,$5,$6}'
-            fi
-        done < $TMP_PATH"/time_related_files"
-
-        echo "accessed: "$ATIME
-        while read line
-        do
-            echo $line | awk -F '|' '{if($8 == '$ATIME'){print "+"$2,$4,$5,$6}}'
-        done < $TMP_PATH"/time_related_files"
-
-        echo "modified: "$MTIME
-        while read line
-        do
-            echo $line | awk -F '|' '{if($9 == '$MTIME'){print "+"$2,$4,$5,$6}}'
-        done < $TMP_PATH"/time_related_files"
-
-        echo "changed: "$CTIME
-        while read line
-        do
-            echo $line | awk -F '|' '{if($10 == '$CTIME'){print "+"$2,$4,$5,$6}}'
-        done < $TMP_PATH"/time_related_files"
-
-        if [ $COUNTER -lt $LINE_NUM ] 
+    # when set timezone, all time is set to UTC
+    istat=`istat -z $TIME_ZONE -f ext $DD_IMAGE $inode`
+    if [ $? -eq 0 ]
+    then
+        inode_time=`echo $istat | sed 's/ (UTC)//g' | awk '{printf "%s,", $0}' | sed 's/Direct.*$//' | sed 's/Group.*uid/uid/' | sed 's/num.*Accessed/Accessed/'`
+        echo $inode_time | grep 'Not' 1>/dev/null 2>&1
+        if [ ! $? -eq 0 ]
         then
-            let COUNTER+=1
-            echo "============================================"
+            echo $inode_time | sed 's/Allocated/Allocated: 1/' >> $INODE_TIMELINE
+        else
+            echo $inode_time | sed 's/Not Allocated/Allocated: 0/' >> $INODE_TIMELINE
         fi
-    done < $TMP_PATH"/inode_spec_files"
-    echo '-------------------------------------------'
-done < $TMP_PATH"/inode_list"
+    fi
+done
 
-
-
+echo 'done!'
 
