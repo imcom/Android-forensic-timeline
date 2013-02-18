@@ -6,13 +6,20 @@ then
     exit -1
 fi
 
+echo $4 | egrep "\d{4}-\d{2}-\d{2}" 1>/dev/null 2>&1
+if [ ! $? -eq 0 ]
+then
+    echo 'Invalid start time, date should be like `yyyy-mm-dd`'
+    exit -1
+fi
+
 BODY_FILE=$1
 DD_IMAGE=$2
 OUTPUT=$3
 START_TIME=$4
 
-INODE_TIMELINE=$OUTPUT"/inode.timeline"
-FS_TIMELINE=$OUTPUT"/fs.timeline"
+INODE_TIMELINE=$OUTPUT"/inode.tmp"
+FS_TIMELINE=$OUTPUT"/fs.tmp"
 
 # wait until the device is connected
 echo -ne 'waiting for device connecting...\t'
@@ -21,7 +28,7 @@ echo 'ok'
 
 if [ ! -d $OUTPUT ]
 then
-    echo "Creating directory... "$PWD"/"$OUTPUT
+    echo "creating directory... "$PWD"/"$OUTPUT
     mkdir -p $PWD"/"$OUTPUT
 else
     echo $OUTPUT" exists!"
@@ -29,9 +36,9 @@ fi
 
 # get timezone from the device
 TIME_ZONE=`adb shell date +%Z`
-echo 'Device Timezone: '$TIME_ZONE
+echo 'device Timezone: '$TIME_ZONE
 
-echo -ne 'Start processing inode times...\t'
+echo -ne 'start processing inode times...\t'
 # remove the description on first line
 mactime -b $BODY_FILE -d -y -z $TIME_ZONE $START_TIME | sed '1 d' > $FS_TIMELINE
 
@@ -50,12 +57,31 @@ do
         echo $inode_time | grep 'Not' 1>/dev/null 2>&1
         if [ ! $? -eq 0 ]
         then
-            echo $inode_time | sed 's/Allocated/Allocated: 1/' >> $INODE_TIMELINE
+            line=`echo $inode_time | sed 's/Allocated/Allocated: 1/'`
         else
-            echo $inode_time | sed 's/Not Allocated/Allocated: 0/' >> $INODE_TIMELINE
+            line=`echo $inode_time | sed 's/Not Allocated/Allocated: 0/'`
         fi
+        echo $line | 
+            awk '{$6 = ":"$8",";$8 = "";$9 = ""; print $0}' | 
+            sed 's/Allocated/,allocated/' | 
+            sed 's/uid/,uid/' | 
+            sed 's/mode/,mode/' | 
+            sed 's/size/,size/' | 
+            sed 's/Accessed/,accessed/' |
+            sed 's/File Modified/,file_modified/' |
+            sed 's/Inode Modified/,inode_modified/' |
+            sed 's/Deleted/,deleted/' |
+            grep -v '0000-00-00' >> $INODE_TIMELINE # filter out meaningless records
     fi
 done
+echo 'ok'
+
+echo -ne 'parsing and formatting timestamps...\t'
+
+python fs_times.py $FS_TIMELINE $OUTPUT"/fs_macs" 1>&2
+
+python inode_times.py $INODE_TIMELINE $OUTPUT"/inode_macs" 1>&2
 
 echo 'done!'
+
 
