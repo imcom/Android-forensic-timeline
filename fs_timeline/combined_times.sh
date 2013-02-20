@@ -6,7 +6,8 @@ then
     exit -1
 fi
 
-echo $4 | egrep "\d{4}-\d{2}-\d{2}" 1>/dev/null 2>&1
+# using [0-9] is more generic
+echo $4 | egrep "[0-9]{4}-[0-9]{2}-[0-9]{2}" 1>/dev/null 2>&1
 if [ ! $? -eq 0 ]
 then
     echo 'Invalid start time, date should be like `yyyy-mm-dd`'
@@ -35,7 +36,7 @@ else
 fi
 
 # get timezone from the device
-TIME_ZONE=`adb shell date +%Z`
+TIME_ZONE=`adb shell date +%Z | awk '{sub("\r$", ""); printf "%s", $0}'`
 echo 'device Timezone: '$TIME_ZONE
 
 echo -ne 'start processing inode times...\t'
@@ -53,7 +54,7 @@ do
     istat=`istat -z $TIME_ZONE -f ext $DD_IMAGE $inode`
     if [ $? -eq 0 ]
     then
-        inode_time=`echo $istat | sed 's/ (UTC)//g' | awk '{printf "%s,", $0}' | sed 's/Direct.*$//' | sed 's/Group.*uid/uid/' | sed 's/num.*Accessed/Accessed/'`
+        inode_time=`echo $istat | sed 's/ ('$TIME_ZONE')//g' | awk '{printf "%s,", $0}' | sed 's/Direct.*$//' | sed 's/Group.*uid/uid/' | sed 's/num.*Accessed/Accessed/'`
         echo $inode_time | grep 'Not' 1>/dev/null 2>&1
         if [ ! $? -eq 0 ]
         then
