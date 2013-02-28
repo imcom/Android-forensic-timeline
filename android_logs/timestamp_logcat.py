@@ -25,7 +25,7 @@ for log_file in log_files:
                 etime = str(cur_year) + '-' + match.groupdict()["etime"]
                 event = match.groupdict()["event"]
                 timestamp = time.mktime(datetime.strptime(etime, "%Y-%m-%d %H:%M:%S").timetuple())
-                buf = {'date':timestamp, 'event':event.strip()}
+                buf = {'date':int(timestamp), 'event':event.strip()}
                 json.dump(buf, new_log_file)
                 new_log_file.write('\n')
             else:
