@@ -1,0 +1,12 @@
+!!! 5
+html
+    head
+        title #{title}
+        link(rel='stylesheet', href='/css/style.css')
+        -each script in globalScripts
+            script(type = 'text/javascript', src = script)
+    body
+        h1 #{name}
+        block header
+        #timeline
+        script(type = 'text/javascript', src = '/js/circle.js')

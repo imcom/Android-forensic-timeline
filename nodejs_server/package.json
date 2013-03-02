@@ -7,7 +7,10 @@
 
     "dependencies": {
         "express": ">=3.1.0",
-        "mongodb": "*"
+        "mongodb": "*",
+        "jade": ">=0.28",
+        "stylus": ">=0.31",
+        "nib": "*"
     },
 
     "engine": {

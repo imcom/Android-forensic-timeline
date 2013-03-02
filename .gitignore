@@ -2,3 +2,4 @@ evi
 out
 *.pyc
 node_modules
+*~
