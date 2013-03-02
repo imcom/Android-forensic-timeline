@@ -33,7 +33,7 @@ app.configure(function(){
         )
     );
     app.use(express.static(path.join(__dirname, 'public')));
-    app.locals.globalScripts = ['/js/d3.js']
+    app.locals.globalScripts = ['/js/d3.js', '/js/zepto.min.js', '/js/bootstrap.min.js']
 });
 
 app.get('/', routes.imcom);

@@ -7,7 +7,8 @@
 exports.imcom = function(req, res){
     res.render("imcom",
                 {
-                    title: "Forensic"
+                    title: "Forensic",
+                    name: "IMCOM"
                 }
             );
 };
