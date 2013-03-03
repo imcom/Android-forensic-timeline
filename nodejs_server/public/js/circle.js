@@ -26,14 +26,14 @@ var xScale = d3.scale.linear()
                         d3.min(dataset, function(data) { return data[0]; }),
                         d3.max(dataset, function(data) { return data[0]; })
                     ])
-             .range([30, 300]);
+             .range([50, 200]);
 
 var yScale = d3.scale.linear()
              .domain([
                         d3.min(dataset, function(data) { return data[1]; }),
                         d3.max(dataset, function(data) { return data[1]; })
                     ])
-             .range([30, 300]);
+             .range([50, 200]);
 
 svg.selectAll("circle")
     .data(dataset)
