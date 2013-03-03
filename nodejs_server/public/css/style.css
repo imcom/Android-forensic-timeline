@@ -1,4 +1,9 @@
+#logo h1{color:#777;margin-top:10px}
+#logo p{color:#222;font-size:16px;font-family:Consolas}
 #content{position:relative;}
 #content fieldset{position:absolute}
-#content #col_left{border:1px solid #9acd05;width:50%;left:-5px}
-#content #col_right{border:1px solid #808080;width:50%;right:-5px}
+#content #col_left{width:50%;left:-5px}
+#content #col_right{width:50%;right:-5px}
+.time-axis path,.time-axis line{fill:none;stroke:#000;shape-rendering:crispEdges}
+.time-axis text{font-family:Consolas;font-size:11px}
+.rule line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000}

@@ -2,22 +2,24 @@
 /*
 global-reset()
 
-body
-    font: 12px/1.2 Consolas, Arial
-
 #logo
     position: absolute
     right: 0
     height: 100%
     width: 20%
     text-align: left
+
+*/
+
+#logo    
     h1
-        color: #222
+        color: #777
         margin-top: 10px
     p
-        color: #777
-        margin-right: 5px
-*/
+        color: #222
+        font-size: 16px
+        font-family: Consolas
+    
 #content
     /*
     border: 1px solid grey
@@ -28,11 +30,28 @@ body
     fieldset
         position: absolute
     #col_left
-        border: 1px solid yellowgreen
+        //border: 1px solid yellowgreen
         width: 50%
         left: -5px
     #col_right
-        border: 1px solid grey
+        //border: 1px solid grey
         width: 50%
         right: -5px
 
+.time-axis
+    path, line
+        fill: none
+        stroke: black
+        shape-rendering: crispEdges
+        
+    text
+        font-family: Consolas
+        font-size: 11px
+
+.rule
+    line
+        opacity: 0.3
+        stroke: black
+        
+        
+        
