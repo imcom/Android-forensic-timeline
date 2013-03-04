@@ -8,7 +8,9 @@ var express = require('express');
 var stylus = require('stylus');
 var nib = require('nib');
 var path = require('path');
-var routes = require('./routes');
+var index_handler = require('./routes');
+var db_handler = require('./routes/database');
+//var mongo = require('./libs/mongo_helper.js');
 
 var app = express();
 
@@ -33,9 +35,30 @@ app.configure(function(){
         )
     );
     app.use(express.static(path.join(__dirname, 'public')));
-    app.locals.globalScripts = ['/js/d3.js', '/js/zepto.min.js', '/js/bootstrap.min.js']
+    app.locals.globalScripts = [
+        '/js/d3.js',
+        '/js/zepto.min.js',
+        '/js/bootstrap.min.js',
+    ]
 });
 
-app.get('/', routes.imcom);
+app.get('/', index_handler.imcom);
+
+//TODO using `post` instead for complex query options
+app.get('/query', db_handler.db_helper);
 
 app.listen(app.get('port'));
+console.log("server started on port 2222...");
+
+/*
+mongo.read("imcom", "radio", function(result){
+    console.log("radio records #:" + result[result.length-1]);
+});
+*/
+
+
+
+
+
+
+
