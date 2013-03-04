@@ -10,7 +10,8 @@
         "mongodb": "*",
         "jade": ">=0.28",
         "stylus": ">=0.31",
-        "nib": "*"
+        "nib": "*",
+        "mongoose": "*"
     },
 
     "engine": {
