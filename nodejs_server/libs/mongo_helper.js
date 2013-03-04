@@ -1,5 +1,8 @@
-exports.read = function mongo_helper(database, collection, onCompletion) {
 
+
+//TODO implement selection and options for query
+exports.read = function mongo_helper(collection, selection, options, onCompletion) {
+/*
     var mongoose = require('mongoose');
 
     mongoose.connect('mongodb://localhost/' + database);
@@ -13,15 +16,26 @@ exports.read = function mongo_helper(database, collection, onCompletion) {
             level: String
         }
     );
-    
-    var model = mongoose.model(collection, LOG_SCHEMA, collection);
-    model.find(null, function(err, res) {
-        if (err == null) {
-            onCompletion(res);
-        } else {
-            //TODO deal with query failures
-        }
-    });
+*/
+    var mongoose = require('mongoose');
+    var model = mongoose.model(collection);
+
+    if (model) {
+        model.find(selection, function(err, res) {
+            if (err == null) {
+                onCompletion(res);
+            } else {
+                console.log(err.message);
+                //TODO deal with query failures
+            }
+        });
+    } else {
+        console.log("model is not set");
+        //TODO deal with if model is not set yet
+    }
+}
+
+
 /*
     var log_collections = ['dmesg', 'radio', 'events', 'main', 'system'];
 
@@ -40,7 +54,7 @@ exports.read = function mongo_helper(database, collection, onCompletion) {
         });
     });
 */
-}
+
 
 
 

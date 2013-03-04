@@ -107,7 +107,18 @@ svg_1.append("circle")
     .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
     .on("mouseout", function(){d3.select(this).style("fill", "white");});
 
-
+$.ajax({
+    type: 'GET',
+    url: '/query',
+    dataType: 'json',
+    success: function(data, status, xhr){
+        console.log(status);
+        console.log(data.content[0].date);
+    },
+    error: function(xhr, type){
+        console.log("fuck...");
+    }
+});
 
 
 

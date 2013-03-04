@@ -7,11 +7,12 @@
 var mongo = require('../libs/mongo_helper.js');
  
 exports.db_helper = function(req, res) {
-    console.log(req.toString());
-    mongo.read("imcom", "radio", function(result){
-        console.log("radio records #:" + result[result.length-1]);
-        res.write(result[result.length-1].toString());
-        res.end();
+    //TODO collection, selection, options should be a parameter from request
+    mongo.read("radio", null, null, function(result){
+        if (!result) {
+            res.json({"error": 1, "content": "query returned null"});
+        } else {            
+            res.json({"error": 0, "content": result});
+        }
     });
-
 };
