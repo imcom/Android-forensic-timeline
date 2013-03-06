@@ -4,7 +4,8 @@ html
         title #{title}
         link(rel='stylesheet', href='/css/style.css')
         link(rel='stylesheet', href='/css/bootstrap.min.css')
-        link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+        meta(name='viewport', 'content'='user-scalable=yes, width=device-width, initial-scale=0.8, maximum-scale=1.2')
+        link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')        
         -each script in globalScripts
             script(type = 'text/javascript', src = script)
     body
@@ -15,8 +16,14 @@ html
                     block header
                 #content.span10
                     fieldset#col_left
+                        #ctl_panel_left
+                            button#down
+                            button#up
                         #timeline_0
                     #seperator
                     fieldset#col_right
+                        #ctl_panel_right
+                            button#down
+                            button#up
                         #timeline_1
                     block script

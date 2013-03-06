@@ -14,7 +14,7 @@ function Timeline(
         ) {
     // static constant values                    
     this.name = name;
-    this.y_range_padding = 50; // this number can be a constant, padding from the window top
+    this.y_range_padding = 80; // this number can be a constant, padding from the window top
     this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
     // [x, timestamp], x is used for distinguish very close events
     this.dataset = [];
@@ -48,6 +48,18 @@ Timeline.prototype.initTimeline = function() {
     this.x_default = (this.x_range[1] - this.x_range[0]) * 0.025; // interval * 1/40
     this.x_suspect = this.x_default * 3; //TODO need to verify the offset effect
     this.x_padding = this.x_default * 0.1;
+    
+    $(this.name).on("singleTap", function(){
+        console.log("single tap fires");
+    });
+    
+    $(this.name).on("doubleTap", function(){
+        console.log("double tap fires");
+    });
+    
+    $(this.name).on("click", function(){
+        console.log("click fires");
+    });
 } // init timeline SVG and properties
 
 Timeline.prototype.updateTimelineHeight = function(timeline_height) {
@@ -163,6 +175,11 @@ Timeline.prototype.onDataReady = function() {
         
         var text_field = $('#' + self.name.substr(1) + "-" + self.data_desc[index].pid.trim() + "-" + index);
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
+            base_y_offset = $('#' + event.target.id).height();
+            $('#popup_detail').css("position", "absolute")
+                .css("left", Math.ceil(document.width / 5)) //FIXME not a really good implementation here...
+                .css("top", event.pageY - Math.round(base_y_offset * 0.3) * 10) // round down to the nearest 2-digits number
+                .text(self.data_desc[index].msg.trim());
             this.setAttribute("fill", "red");
             this.textContent = self.data_desc[index].msg.trim();
         })
@@ -171,6 +188,7 @@ Timeline.prototype.onDataReady = function() {
             this.textContent = self.data_desc[index].object.trim() +
                                 "[" + self.data_desc[index].level + "]" +
                                 "/" + self.data_desc[index].pid.trim();
+            $('#popup_detail').text(null); // clear the popup div
         });
     });
 

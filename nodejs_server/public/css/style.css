@@ -7,3 +7,4 @@
 .time-axis path,.time-axis line{fill:none;stroke:#000;shape-rendering:crispEdges}
 .time-axis text{font-family:Consolas;font-size:11px}
 .rule line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000}
+#popup_detail{text-align:center;color:#fff;background:#111;position:absolute;z-index:100;padding-left:5px;padding-right:5px}
