@@ -13,7 +13,7 @@ exports.db_helper = function(req, res) {
         req.body.collection,
         JSON.parse(req.body.selection),
         req.body.fields,
-        null,
+        req.body.options,
         function(result){
             if (!result) {
                 res.json({"error": 1, "content": "query returned null"});

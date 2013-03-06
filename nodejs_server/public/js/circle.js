@@ -39,7 +39,8 @@ $.post(
                         }
                     }),
         fields: "date msg object pid level",
-        options: null
+        /*if options are set to null, then just do not add this parameter to the post*/
+        //options: null
     },
     function(data, status, xhr){
         /*init dataset here*/
