@@ -64,6 +64,7 @@ app.configure(function(){
         '/js/d3.js',
         '/js/zepto.min.js',
         '/js/bootstrap.min.js',
+        '/js/timeline.js',
     ]
 });
 

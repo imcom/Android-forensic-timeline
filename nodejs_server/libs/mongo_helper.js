@@ -1,6 +1,5 @@
 
 
-//TODO implement selection, fields, options for query
 exports.read = function(collection, selection, fields, options, onCompletion) {
 /*
     var mongoose = require('mongoose');

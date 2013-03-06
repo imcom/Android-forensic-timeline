@@ -8,7 +8,7 @@ var mongo = require('../libs/mongo_helper.js');
 
 exports.db_helper = function(req, res) {
     //TODO collection, selection, fields, options should be parameters from request
-    console.log(req.body.selection);
+    console.log("query selection: " + req.body.selection);
     mongo.read(
         req.body.collection,
         JSON.parse(req.body.selection),
