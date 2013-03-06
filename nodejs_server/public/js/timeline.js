@@ -131,10 +131,11 @@ Timeline.prototype.onDataReady = function() {
                         ])
                  .range(this.y_range);
 
-    this.timeline.selectAll("circle")
+    this.timeline.selectAll("circle[id=" + this.name.substr(1) + "]")
         .data(this.dataset)
         .enter()
         .append("circle")
+        .attr("id", this.name.substr(1))
         .attr("cx", function(data) {
             return x_scale(data[0]);
         })
@@ -143,21 +144,34 @@ Timeline.prototype.onDataReady = function() {
         })
         .attr("r", this.radius);
 
-    this.timeline.selectAll("text.desc")
+    this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
         .data(this.data_desc)
         .enter()
         .append("text")
         .attr("class", "desc")
+        .attr("id", this.name.substr(1))
         .text(function(data) {
             return data.object.trim() + "[" + data.level + "]" + "/" + data.pid.trim();
         })
         .attr("fill", "blue");
 
-    var text_fields = $("text");
+    var text_fields = $("text[id=" + this.name.substr(1) + "]");
     $.each(self.dataset, function(index) {
         text_fields[index].setAttribute("x", x_scale(self.dataset[index][0]));
         text_fields[index].setAttribute("y", y_scale(self.dataset[index][1]));
-        text_fields[index].setAttribute("id", self.data_desc[index][1]);
+        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.data_desc[index].pid.trim() + "-" + index);
+        
+        var text_field = $('#' + self.name.substr(1) + "-" + self.data_desc[index].pid.trim() + "-" + index);
+        text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
+            this.setAttribute("fill", "red");
+            this.textContent = self.data_desc[index].msg.trim();
+        })
+        .mouseout(function(event){
+            this.setAttribute("fill", "blue");
+            this.textContent = self.data_desc[index].object.trim() +
+                                "[" + self.data_desc[index].level + "]" +
+                                "/" + self.data_desc[index].pid.trim();
+        });
     });
 
     var y_axis = d3.svg.axis()
@@ -167,6 +181,7 @@ Timeline.prototype.onDataReady = function() {
 
     this.timeline.append("g")
         .attr("class", "time-axis")
+        .attr("id", this.name.substr(1))
         .call(y_axis);
 
     var labels = $("g.tick");
@@ -174,7 +189,7 @@ Timeline.prototype.onDataReady = function() {
         labels[index].childNodes[1].setAttribute("dy", "-0.5em");
     });
 
-    var rules = this.timeline.selectAll("g.rule")
+    var rules = this.timeline.selectAll("g[id=" + this.name.substr(1) + "].rule")
         .data(y_scale.ticks(this.tick_num))
         .enter()
         .append("g")
