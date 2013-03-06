@@ -1,96 +1,158 @@
+
+var timeline_height = 5000;
+var tick_num;
+var y_range_padding = 50;
+var x_range = [100, 300];
+var y_range = [
+                y_range_padding,
+                timeline_height - y_range_padding
+              ];
+
 var svg = d3.select("#timeline")
         .append("svg")
         .attr("width", "100%")
-        .attr("height", "1500"); // the height of the page should be a variable
+        .attr("height", timeline_height); // the height of the page should be a variable
 
-var dataset = [
-    [50, 1111130],
-    [300, 1111130.2],
-    [350, 1111130.4],
-    [50, 1111132],
-    [300, 1111133],
-    [50, 1111133.8],
-    [300, 1111136],
-];
+var x_suspect = 10;
+var y_padding = 0.2;
+var x_default = 5;
+var x_padding = 0.5;
 
-var data_desc = [
-    ["event", "1"],
-    ["event", "2"],
-    ["event", "3"],
-    ["event", "4"],
-    ["event", "5"],
-    ["event", "6"],
-    ["event", "7"],
-];
+var default_radius = 5; // suspect radius is larger
+// [x, timestamp], x is used for distinguish very close events
+var dataset = [];
+// [object, pid], onHover, show message
+var data_desc = [];
+    
+$.post(
+    '/query',
+    {
+        collection: "events",
+        selection: JSON.stringify({
+                        $or: [
+                            {object: "dvm_gc_madvise_info"},
+                            {object: "dvm_gc_info"}
+                        ],
+                        date: {
+                            $gte: 1362315421,
+                            $lte: 1362315481
+                        }
+                    }),
+        fields: "date msg object pid level",
+        options: null
+    },
+    function(data, status, xhr){
+        /*init dataset here*/
+        if (data.error != 0) {
+            //TODO error handling here
+            console.log("An error occured");
+        } else { // on query success
+            var y_starts_on = data.content[0].date;
+            var x_starts_on = x_default;
+            var previous_date = y_starts_on;
+            $.each(data.content, function(index){
+                if (index == 0) {
+                    dataset[index] = [x_starts_on, y_starts_on];
+                } else {
+                    if (data.content[index].date == previous_date) {
+                        if (y_padding + y_starts_on >= previous_date + 1) { // overlap with next timestamp, then roll back
+                            x_starts_on += x_padding; // set offset on x-axis for distinguish
+                            y_starts_on = previous_date + y_padding;
+                        }
+                        y_starts_on += y_padding;
+                        dataset[index] = [x_starts_on, y_starts_on];
+                    } else if (data.content[index].date < previous_date) { // wrong sequence detected, using a different class for display
+                        dataset[index] = [x_suspect, data.content[index].date]; // adding an offset for distinguish
+                        data.content[index].display = "suspect"; //TODO css class, set different color and change circle's radius attribute
+                    } else {
+                        previous_date = data.content[index].date;
+                        y_starts_on = previous_date;
+                        x_starts_on = x_default;
+                        dataset[index] = [x_default, y_starts_on];
+                    }
+                }
+                data_desc[index] = data.content[index];
+            });
+            tick_num = dataset[dataset.length-1][1] - dataset[0][1]; // calculate how many timestamps in the selected period
+        }
+        // on dataset ready, render the timeline        
+        onDataReady();
+    },
+    "json"
+); // dummy ajax call
 
-var xScale = d3.scale.linear()
-             .domain([
-                        d3.min(dataset, function(data) { return data[0]; }),
-                        d3.max(dataset, function(data) { return data[0]; })
-                    ])
-             .range([200, 400]);
+function onDataReady() {
 
-var yScale = d3.scale.linear()
-             .domain([
-                        d3.min(dataset, function(data) { return data[1]; }),
-                        d3.max(dataset, function(data) { return data[1]; })
-                    ])
-             .range([50, 1000]);
+    var x_scale = d3.scale.linear()
+                 .domain([
+                            d3.min(dataset, function(data) { return data[0]; }),
+                            d3.max(dataset, function(data) { return data[0]; })
+                        ])
+                 .range(x_range);
 
-svg.selectAll("circle")
-    .data(dataset)
-    .enter()
-    .append("circle")
-    .attr("cx", function(data) {
-        return xScale(data[0]);
-    })
-    .attr("cy", function(data) {
-        return yScale(data[1]);
-    })
-    .attr("r", 3);
+    var y_scale = d3.scale.linear()
+                 .domain([
+                            d3.min(dataset, function(data) { return data[1]; }),
+                            d3.max(dataset, function(data) { return data[1]; })
+                        ])
+                 .range(y_range);
 
-svg.selectAll("text.desc")
-    .data(data_desc)
-    .enter()
-    .append("text")
-    .attr("class", "desc")
-    .text(function(data) {
-        return data[0] + "," + data[1];
-    })
-    .attr("fill", "red");
+    svg.selectAll("circle")
+        .data(dataset)
+        .enter()
+        .append("circle")
+        .attr("cx", function(data) {
+            return x_scale(data[0]);
+        })
+        .attr("cy", function(data) {
+            return y_scale(data[1]);
+        })
+        .attr("r", default_radius);
 
-var text_fields = $("text");
-$.each(dataset, function(index) {
-    text_fields[index].setAttribute("x", xScale(dataset[index][0]));
-    text_fields[index].setAttribute("y", yScale(dataset[index][1]));
-    text_fields[index].setAttribute("id", data_desc[index][1]);
-});
+    svg.selectAll("text.desc")
+        .data(data_desc)
+        .enter()
+        .append("text")
+        .attr("class", "desc")
+        .text(function(data) {
+            return data.object.trim() + "[" + data.level + "]" + "/" + data.pid.trim();
+        })
+        .attr("fill", "blue");
 
-var yAxis = d3.svg.axis()
-    .scale(yScale)
-    .orient("right")
-    .ticks(5);
+    var text_fields = $("text");
+    $.each(dataset, function(index) {
+        text_fields[index].setAttribute("x", x_scale(dataset[index][0]));
+        text_fields[index].setAttribute("y", y_scale(dataset[index][1]));
+        text_fields[index].setAttribute("id", data_desc[index][1]);
+    });
 
-svg.append("g")
-    .attr("class", "time-axis")
-    .call(yAxis);
+    var y_axis = d3.svg.axis()
+        .scale(y_scale)
+        .orient("right")
+        .ticks(tick_num);
 
-var labels = $("g.tick");
-$.each(labels, function(index) {
-    labels[index].childNodes[1].setAttribute("dy", "-.5em");
-});
+    svg.append("g")
+        .attr("class", "time-axis")
+        .call(y_axis);
 
-var rules = svg.selectAll("g.rule")
-    .data(yScale.ticks(5))
-    .enter()
-    .append("g")
-    .attr("class", "rule");
+    var labels = $("g.tick");
+    $.each(labels, function(index) {
+        labels[index].childNodes[1].setAttribute("dy", "-.5em");
+    });
 
-rules.append("line")
-    .attr("y1", yScale)
-    .attr("y2", yScale)
-    .attr("x1", 0)
-    .attr("x2", "100%");
+    var rules = svg.selectAll("g.rule")
+        .data(y_scale.ticks(tick_num))
+        .enter()
+        .append("g")
+        .attr("class", "rule");
+
+    rules.append("line")
+        .attr("y1", y_scale)
+        .attr("y2", y_scale)
+        .attr("x1", 0)
+        .attr("x2", "100%");
+} // function onDataReady()
+
 
 /*The second timeline*/
 var svg_1 = d3.select("#events")
@@ -107,18 +169,6 @@ svg_1.append("circle")
     .on("mouseover", function(){d3.select(this).style("fill", "aliceblue");})
     .on("mouseout", function(){d3.select(this).style("fill", "white");});
 
-$.ajax({
-    type: 'GET',
-    url: '/query',
-    dataType: 'json',
-    success: function(data, status, xhr){
-        console.log(status);
-        console.log(data.content[0].date);
-    },
-    error: function(xhr, type){
-        console.log("fuck...");
-    }
-});
 
 
 

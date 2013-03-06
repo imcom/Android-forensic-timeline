@@ -1,7 +1,7 @@
 
 
-//TODO implement selection and options for query
-exports.read = function mongo_helper(collection, selection, options, onCompletion) {
+//TODO implement selection, fields, options for query
+exports.read = function(collection, selection, fields, options, onCompletion) {
 /*
     var mongoose = require('mongoose');
 
@@ -21,7 +21,7 @@ exports.read = function mongo_helper(collection, selection, options, onCompletio
     var model = mongoose.model(collection);
 
     if (model) {
-        model.find(selection, function(err, res) {
+        model.find(selection, fields, options, function(err, res) {
             if (err == null) {
                 onCompletion(res);
             } else {

@@ -71,7 +71,7 @@ app.configure(function(){
 app.get('/', index_handler.imcom);
 
 //TODO using `post` instead for complex query options
-app.get('/query', db_handler.db_helper);
+app.post('/query', db_handler.db_helper);
 
 app.listen(app.get('port'));
 console.log("server started on port 2222...");
