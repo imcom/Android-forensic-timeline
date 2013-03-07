@@ -21,7 +21,7 @@ var timeline_0 = new Timeline(
     "#timeline_0",
     5000,
     [100, 300],
-    5
+    4
 );
 timeline_0.initTimeline();
 
@@ -47,7 +47,7 @@ var timeline_1 = new Timeline(
     "#timeline_1",
     5000,
     [100, 300],
-    3
+    4
 );
 
 timeline_1.initTimeline();
