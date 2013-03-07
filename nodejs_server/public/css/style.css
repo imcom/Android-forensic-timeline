@@ -4,7 +4,10 @@
 #content fieldset{position:absolute}
 #content #col_left{width:50%;left:-5px}
 #content #col_right{width:50%;right:-5px}
+.timeline{margin-top:35px}
 .time-axis path,.time-axis line{fill:none;stroke:#000;shape-rendering:crispEdges}
 .time-axis text{font-family:Consolas;font-size:11px}
 .rule line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000}
-#popup_detail{text-align:center;color:#fff;background:#111;position:absolute;z-index:100;padding-left:5px;padding-right:5px}
+#popup_detail{text-align:center;color:#fff;background:#111;position:absolute;z-index:100;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
+.navbar{position:fixed;z-index:100}
+.btn{opacity:.5;filter:alpha(opacity=50);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"}

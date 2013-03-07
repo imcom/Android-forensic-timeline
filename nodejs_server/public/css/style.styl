@@ -1,17 +1,6 @@
 @import 'nib'
-/*
-global-reset()
 
 #logo
-    position: absolute
-    right: 0
-    height: 100%
-    width: 20%
-    text-align: left
-
-*/
-
-#logo    
     h1
         color: #777
         margin-top: 10px
@@ -21,11 +10,6 @@ global-reset()
         font-family: Consolas
     
 #content
-    /*
-    border: 1px solid grey
-    width: 79%
-    height: 100%
-    */
     position: relative
     fieldset
         position: absolute
@@ -37,6 +21,9 @@ global-reset()
         //border: 1px solid grey
         width: 50%
         right: -5px
+
+.timeline
+    margin-top: 35px
 
 .time-axis
     path, line
@@ -58,9 +45,15 @@ global-reset()
     color: #fff;
     background: #111;
     position: absolute;
-    z-index: 100;
-    padding-left: 5px;
-    padding-right: 5px;
+    z-index: 100; // always on top of others
+    opacity: 0;
+
+.navbar
+    position: fixed
+    z-index: 100
+
+.btn
+    opacity: 0.5
 
 
 
@@ -70,8 +63,3 @@ global-reset()
 
 
 
-
-
-
-        
-        

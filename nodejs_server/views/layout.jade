@@ -15,15 +15,18 @@ html
                     h1 #{name}
                     block header
                 #content.span10
+                    #navbar.navbar
+                        #ctl_panel_0.btn-group
+                            button#down.btn Down
+                            button#up.btn Up
+                            button#reset.btn Reset
+                        #ctl_panel_1.btn-group
+                            button#down.btn Down
+                            button#up.btn Up
+                            button#reset.btn Reset
                     fieldset#col_left
-                        #ctl_panel_left
-                            button#down
-                            button#up
-                        #timeline_0
-                    #seperator
+                        #timeline_0.timeline
                     fieldset#col_right
-                        #ctl_panel_right
-                            button#down
-                            button#up
-                        #timeline_1
+                        #timeline_1.timeline
+                    #popup_detail.well.well-small
                     block script
