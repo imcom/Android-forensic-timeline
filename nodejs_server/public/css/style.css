@@ -1,5 +1,5 @@
-#logo h1{color:#777}
-#logo p{color:#222;font-size:16px;font-family:Consolas}
+#logo h1{color:#777;margin-left:-12px}
+#logo p{color:#222;font-size:16px;font-family:Consolas;margin-left:-12px}
 #side-panel{position:fixed;top:5px}
 #content{position:relative;}
 #content fieldset{position:absolute}

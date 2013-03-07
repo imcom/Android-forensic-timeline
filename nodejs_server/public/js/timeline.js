@@ -20,11 +20,6 @@ function Timeline(
     this.dataset = [];
     // [object, pid, level, msg], TODO on hover show msg of the event
     this.data_desc = [];
-    // the height of the SVG should be a variable
-    this.timeline = d3.select(this.name)
-        .append("svg")
-        .attr("width", "100%")
-        .attr("height", timeline_height);       
 
     // dynamically configurable values
     this.timeline_height = timeline_height;
@@ -43,7 +38,17 @@ Timeline.prototype.getHeight = function() {
     return this.timeline_height;
 }
 
+Timeline.prototype.getName = function() {
+    return this.name;
+}
+
 Timeline.prototype.initTimeline = function() {
+
+    this.timeline = d3.select(this.name)
+        .append("svg")
+        .attr("width", "100%")
+        .attr("height", this.timeline_height);
+
     this.y_range = [
         this.y_range_padding,
         this.timeline_height - this.y_range_padding
@@ -166,8 +171,8 @@ Timeline.prototype.onDataReady = function() {
 
     var text_fields = $("text[id=" + this.name.substr(1) + "]");
     $.each(self.dataset, function(index) {
-        text_fields[index].setAttribute("x", x_scale(self.dataset[index][0]));
-        text_fields[index].setAttribute("y", y_scale(self.dataset[index][1]));
+        text_fields[index].setAttribute("x", x_scale(self.dataset[index][0]) - 5);
+        text_fields[index].setAttribute("y", y_scale(self.dataset[index][1]) - 6);
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.data_desc[index].pid.trim() + "-" + index);
         
         var text_field = $('#' + self.name.substr(1) + "-" + self.data_desc[index].pid.trim() + "-" + index);
@@ -178,7 +183,7 @@ Timeline.prototype.onDataReady = function() {
                 .css("top", event.pageY - Math.round(base_y_offset * 0.3) * 10) // round down to the nearest 2-digits number
                 .css("opacity", 0.6)
                 .text(self.data_desc[index].msg.trim());
-            this.setAttribute("fill", "red");
+            this.setAttribute("fill", "purple");
             this.setAttribute("cursor", "pointer");
         })
         .mouseout(function(event){

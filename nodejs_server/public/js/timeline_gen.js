@@ -21,7 +21,7 @@ var timeline_0 = new Timeline(
     "#timeline_0",
     5000,
     [100, 300],
-    3
+    5
 );
 timeline_0.initTimeline();
 

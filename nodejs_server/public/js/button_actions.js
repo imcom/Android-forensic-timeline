@@ -9,6 +9,15 @@ var offset_1 = offset_0;
 var timeline_0 = this.timeline_0;
 var timeline_1 = this.timeline_1;
 
+
+var zoom = function(target, scale) {
+    var cur_height = target.getHeight();
+    var cur_svg = $(target.getName()).children()[0];
+    cur_svg.remove(); // remove the old svg
+    target.updateHeight(cur_height + scale);
+    target.onDataReady();
+};
+
 // button down
 btn = $('#ctl_panel_0').children()[0];
 btn.onclick = function(){
@@ -32,22 +41,14 @@ btn.onclick = function(){
 
 // button in
 btn = $('#ctl_panel_0').children()[3];
-btn.onclick = function(){
-    var cur_height = timeline_0.getHeight();
-    timeline_0.updateHeight(cur_height + 1000);
-    timeline_0.onDataReady();
-};
+btn.onclick = function() {
+    zoom(timeline_0, 1000);
+}
 
 // button out
 btn = $('#ctl_panel_0').children()[4];
 btn.onclick = function(){
-
-};
-
-// button scale-reset
-btn = $('#ctl_panel_0').children()[5];
-btn.onclick = function(){
-
+    zoom(timeline_0, -1000);
 };
 
 // button down
@@ -71,6 +72,18 @@ btn.onclick = function(){
     $('#timeline_1').css("margin-top", offset_0 + "px");
 };
 
+// button in
+btn = $('#ctl_panel_1').children()[3];
+btn.onclick = function(){
+    zoom(timeline_1, 1000);
+};
+
+// button out
+btn = $('#ctl_panel_1').children()[4];
+btn.onclick = function(){
+    zoom(timeline_1, -1000);
+};
+
 window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
         $('.back-to-top').css('opacity', 0.8).css('z-index', 100);        
@@ -78,3 +91,10 @@ window.onscroll = function(event) {
         $('.back-to-top').css('opacity', 0).css('z-index', -1);
     }
 }
+
+
+
+
+
+
+
