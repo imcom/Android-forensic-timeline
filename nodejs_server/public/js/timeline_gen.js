@@ -17,17 +17,15 @@ fields: "date msg object pid level",
 //options: null
 },
 */
-var timeline = new Timeline(
+var timeline_0 = new Timeline(
     "#timeline_0",
     5000,
     [100, 300],
     3
 );
-timeline.initTimeline();
+timeline_0.initTimeline();
 
-//timeline.updateTimelineHeight(2000);
-
-timeline.query(
+timeline_0.query(
     "/query",
     "events",
     JSON.stringify({

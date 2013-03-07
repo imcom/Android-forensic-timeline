@@ -8,25 +8,34 @@ html
         link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')        
         -each script in globalScripts
             script(type = 'text/javascript', src = script)
-    body
+    body        
         #container.container-fluid
             .row-fluid
                 #logo.span2
-                    h1 #{name}
-                    block header
+                    #side-panel
+                        h1 #{name}
+                        block header
                 #content.span10
-                    #navbar.navbar
-                        #ctl_panel_0.btn-group
-                            button#down.btn Down
-                            button#up.btn Up
-                            button#reset.btn Reset
-                        #ctl_panel_1.btn-group
-                            button#down.btn Down
-                            button#up.btn Up
-                            button#reset.btn Reset
+                    a(id='top')
                     fieldset#col_left
+                        #ctlbar.ctlbar                            
+                            #ctl_panel_0.btn-group
+                                button#down.btn Down
+                                button#up.btn Up
+                                button#reset.btn Reset
+                                button#in.btn Zoom in
+                                button#up.btn Zoom out
+                                button#srest.btn Scale reset
                         #timeline_0.timeline
                     fieldset#col_right
+                        #ctlbar.ctlbar
+                            #ctl_panel_1.btn-group
+                                button#down.btn Down
+                                button#up.btn Up
+                                button#reset.btn Reset
+                                button#in.btn Zoom in
+                                button#up.btn Zoom out
+                                button#srest.btn Scale reset
                         #timeline_1.timeline
                     #popup_detail.well.well-small
                     block script

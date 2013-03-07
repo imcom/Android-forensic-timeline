@@ -3,27 +3,28 @@
 #logo
     h1
         color: #777
-        margin-top: 10px
     p
         color: #222
         font-size: 16px
         font-family: Consolas
+
+#side-panel
+    position: fixed
+    top: 5px
     
 #content
     position: relative
     fieldset
         position: absolute
     #col_left
-        //border: 1px solid yellowgreen
         width: 50%
         left: -5px
     #col_right
-        //border: 1px solid grey
         width: 50%
         right: -5px
 
 .timeline
-    margin-top: 35px
+    margin-top: 45px
 
 .time-axis
     path, line
@@ -48,15 +49,25 @@
     z-index: 100; // always on top of others
     opacity: 0;
 
-.navbar
+.ctlbar
     position: fixed
     z-index: 100
+    top: 10px
 
 .btn
     opacity: 0.5
 
+.back-to-top
+    position: fixed
+    right: 25px
+    bottom: 25px
+    z-index: -1
+    opacity: 0
+    height: 32px
+    width: 32px
+    background-image: url(../image/uparrow.png)
 
-
+    
 
 
 

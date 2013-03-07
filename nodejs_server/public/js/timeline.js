@@ -39,6 +39,10 @@ function Timeline(
     
 } // constructor of Timeline
 
+Timeline.prototype.getHeight = function() {
+    return this.timeline_height;
+}
+
 Timeline.prototype.initTimeline = function() {
     this.y_range = [
         this.y_range_padding,
@@ -55,7 +59,7 @@ Timeline.prototype.initTimeline = function() {
 
 } // init timeline SVG and properties
 
-Timeline.prototype.updateTimelineHeight = function(timeline_height) {
+Timeline.prototype.updateHeight = function(timeline_height) {
     this.timeline_height = timeline_height;
     $(this.name).children().attr("height", timeline_height);
     this.initTimeline();
