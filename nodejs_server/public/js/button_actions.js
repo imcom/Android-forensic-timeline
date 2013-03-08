@@ -3,8 +3,9 @@
 
 // skip the height of nav buttons
 var timeline_class = $(".timeline");
-var margin_top = timeline_class.css('margin-top').substr(0,2);
-var offset_0 = parseInt(margin_top);
+var margin_top = timeline_class.css('margin-top');
+margin_top = parseInt(margin_top.substr(0, margin_top.length - 2));
+var offset_0 = margin_top;
 var offset_1 = offset_0;
 var timeline_0 = this.timeline_0;
 var timeline_1 = this.timeline_1;

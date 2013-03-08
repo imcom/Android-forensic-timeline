@@ -165,26 +165,26 @@ Timeline.prototype.onDataReady = function() {
             console.log(index);
         });
     
-    var init_id;    
+    var target_id;
+    var origin_y;
     var drag_timeline = d3.behavior.drag()
+        .origin(Object)
         .on('dragstart', function() {
             d3.event.sourceEvent.stopPropagation();
             if (d3.event.sourceEvent.target.parentElement) {
                 var id = d3.event.sourceEvent.target.parentElement.getAttribute('id');
                 if (id) {
-                    console.log(id);
-                    init_id = id;
+                    target_id = id;
+                    origin_y = d3.event.sourceEvent.clientY;
                 }
             }
-        })
-        .on('drag', function() {
-            if (d3.event.sourceEvent.target.parentElement) {
-                var id =  d3.event.sourceEvent.target.parentElement.getAttribute('id');
-                if (id && id == init_id) {
-                    console.log(id);
-                }
-            }
-            
+        })        
+        .on('dragend', function() {
+            var timeline_div = $('div[id=' + target_id + ']');
+            var cur_margin = timeline_div.css("margin-top");
+            cur_margin = parseInt(cur_margin.substr(0, cur_margin.length - 2));
+            var step = d3.event.sourceEvent.clientY - origin_y;
+            timeline_div.animate({"margin-top": cur_margin + step}, 500, "ease");
         });
 
     this.timeline.selectAll("circle[id=" + this.name.substr(1) + "]")
