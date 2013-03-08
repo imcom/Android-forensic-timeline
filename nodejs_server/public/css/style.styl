@@ -4,11 +4,15 @@
     h1
         color: #777
         margin-left: -12px
+        -webkit-user-select: none;
+        -moz-user-select: none;
     p
         color: #222
         font-size: 16px
         font-family: Consolas
         margin-left: -12px
+        -webkit-user-select: none;
+        -moz-user-select: none;
 
 #side-panel
     position: fixed
@@ -27,6 +31,8 @@
 
 .timeline
     margin-top: 45px
+    -webkit-user-select: none;
+    -moz-user-select: none;
 
 .time-axis
     path, line
@@ -42,6 +48,7 @@
     line
         opacity: 0.3
         stroke: black
+        pointer-events: none
         
 #popup_detail
     text-align: center;
@@ -69,8 +76,9 @@
     width: 32px
     background-image: url(../image/uparrow.png)
 
-    
-
+.time-axis
+    cursor: move
+    pointer-events: all
 
 
 

@@ -157,12 +157,34 @@ Timeline.prototype.onDataReady = function() {
     var drag_event = d3.behavior.drag()
         .on('dragstart', function() {
             d3.event.sourceEvent.stopPropagation();
-            console.log('Start Dragging Circle');
+            console.log('Start dragging event');
         })
         .on('drag', function(object, index) {
             console.log(d3.event);
             console.log(object);
             console.log(index);
+        });
+    
+    var init_id;    
+    var drag_timeline = d3.behavior.drag()
+        .on('dragstart', function() {
+            d3.event.sourceEvent.stopPropagation();
+            if (d3.event.sourceEvent.target.parentElement) {
+                var id = d3.event.sourceEvent.target.parentElement.getAttribute('id');
+                if (id) {
+                    console.log(id);
+                    init_id = id;
+                }
+            }
+        })
+        .on('drag', function() {
+            if (d3.event.sourceEvent.target.parentElement) {
+                var id =  d3.event.sourceEvent.target.parentElement.getAttribute('id');
+                if (id && id == init_id) {
+                    console.log(id);
+                }
+            }
+            
         });
 
     this.timeline.selectAll("circle[id=" + this.name.substr(1) + "]")
@@ -244,11 +266,15 @@ Timeline.prototype.onDataReady = function() {
     this.timeline.append("g")
         .attr("class", "time-axis")
         .attr("id", this.name.substr(1))
-        .call(y_axis);
+        .call(y_axis)
+        .call(drag_timeline);
 
-    var labels = $("g.tick");
+    var labels = $("g[id=" + this.name.substr(1) + "]")[0].childNodes;
     $.each(labels, function(index) {
-        labels[index].childNodes[1].setAttribute("dy", "-0.5em");
+        if (labels[index].nodeName == "g") {
+            labels[index].childNodes[1].setAttribute("dy", "-0.5em");
+            labels[index].setAttribute("id", self.name.substr(1));
+        }
     });
 
     var rules = this.timeline.selectAll("g[id=" + this.name.substr(1) + "].rule")

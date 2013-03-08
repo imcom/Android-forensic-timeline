@@ -1,15 +1,16 @@
-#logo h1{color:#777;margin-left:-12px}
-#logo p{color:#222;font-size:16px;font-family:Consolas;margin-left:-12px}
+#logo h1{color:#777;margin-left:-12px;-webkit-user-select:none;-moz-user-select:none}
+#logo p{color:#222;font-size:16px;font-family:Consolas;margin-left:-12px;-webkit-user-select:none;-moz-user-select:none}
 #side-panel{position:fixed;top:5px}
 #content{position:relative;}
 #content fieldset{position:absolute}
 #content #col_left{width:50%;left:-5px}
 #content #col_right{width:50%;right:-5px}
-.timeline{margin-top:45px}
+.timeline{margin-top:45px;-webkit-user-select:none;-moz-user-select:none}
 .time-axis path,.time-axis line{fill:none;stroke:#000;shape-rendering:crispEdges}
 .time-axis text{font-family:Consolas;font-size:11px}
-.rule line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000}
+.rule line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none}
 #popup_detail{text-align:center;color:#fff;background:#111;position:absolute;z-index:100;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
 .ctlbar{position:fixed;z-index:100;top:10px}
 .btn{opacity:.8;filter:alpha(opacity=80);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"}
 .back-to-top{position:fixed;right:25px;bottom:25px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";height:32px;width:32px;background-image:url("../image/uparrow.png")}
+.time-axis{cursor:move;pointer-events:all}
