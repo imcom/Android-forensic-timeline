@@ -157,14 +157,18 @@ Timeline.prototype.onDataReady = function() {
     var drag_event = d3.behavior.drag()
         .on('dragstart', function() {
             d3.event.sourceEvent.stopPropagation();
-            console.log('Start dragging event');
         })
-        .on('drag', function(object, index) {
-            console.log(d3.event);
-            console.log(object);
-            console.log(index);
+        .on('drag', function(object) {
+            var event_id = this.getAttribute('id');
+            d3.select(this)
+                .attr("cx", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)))
+                .attr("cy", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
+            d3.select('text[id=' + event_id + ']')
+                .attr("x", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)) + 5)
+                .attr("y", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
         });
     
+    // drag handler for timeline position
     var target_id;
     var origin_y;
     var drag_timeline = d3.behavior.drag()
@@ -222,8 +226,8 @@ Timeline.prototype.onDataReady = function() {
     var text_fields = $("text[id=" + this.name.substr(1) + "]");
     $.each(self.dataset, function(index) {
     
-        text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) - 5);
-        text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]) - 6);
+        text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) + 5);
+        text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid.trim() + "-" + index);
         
         var text_field = $('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid.trim() + "-" + index + "]");
