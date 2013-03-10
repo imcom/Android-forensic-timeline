@@ -13,7 +13,7 @@ var timeline_1 = this.timeline_1;
 
 var zoom = function(target, scale) {
     var cur_height = target.getHeight();
-    var cur_svg = $(target.getName()).children()[0];
+    var cur_svg = $(target.getName()).children();
     cur_svg.remove(); // remove the old svg
     target.updateHeight(cur_height + scale);
     target.onDataReady();
