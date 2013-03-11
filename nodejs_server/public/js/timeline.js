@@ -266,6 +266,12 @@ Timeline.prototype.onDataReady = function() {
         .scale(y_scale)
         .orient("right")
         .ticks(this.tick_num);
+        
+    y_axis.tickFormat(function(date) {
+        date *= 1000; // convert to milliseconds
+        formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+        return formatter(new Date(date));
+    });
 
     this.timeline.append("g")
         .attr("class", "time-axis")
