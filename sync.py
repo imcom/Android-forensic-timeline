@@ -37,6 +37,7 @@ if not path.isdir(git_dir):
     sys.exit(-1)
 
 do_sync = False
+do_sync_adt = True
 do_backup = path.isdir(bak_dir)
 if not do_backup:
     print "Skipping backup process since backup directory is not found... "
@@ -58,6 +59,7 @@ def sync_source_code():
         else:
             print "Failed to sync %s" % program
     
+def sync_adt():
     print "Start syncing [%s] project... " % eclipse_workspace,
     src = eclipse_workspace + path.sep
     rtn = subprocess.call(["cp", "-r", src + "AndroidManifest.xml", src + "res", src + "src", git_dir + "java/"])
@@ -74,6 +76,9 @@ def backup():
         print 'Sync has completed'
     else:
         print 'Failed to back up Git repo.\nQuitting...'
+
+if do_sync_adt:
+    sync_adt()
 
 if do_backup:
     backup()
