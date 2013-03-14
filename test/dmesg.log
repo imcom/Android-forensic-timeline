@@ -1,0 +1,1240 @@
+{"date": "1363280370", "event": "mmc1: msmsdcc_suspend enter"}
+{"date": "1363280370", "event": "mmc1: msmsdcc_suspend leave"}
+{"date": "1363280370", "event": "mmc0: msmsdcc_suspend enter"}
+{"date": "1363280370", "event": "mmc0: msmsdcc_suspend leave"}
+{"date": "1363280370", "event": "PM: suspend of devices complete after 41.088 msecs"}
+{"date": "1363280370", "event": "PM: late suspend of devices complete after 0.305 msecs"}
+{"date": "1363280370", "event": "clks_allow_tcxo_locked_debug: 'uart_clk(32)' not off."}
+{"date": "1363280370", "event": "clks_allow_tcxo_locked_debug: 1 clks are on."}
+{"date": "1363280370", "event": "[R] suspend end"}
+{"date": "1363280370", "event": "[R] resume start"}
+{"date": "1363280370", "event": "SMEM_APPS_DEM_SLAVE_DATA: 222s 2010800 0 0 4 0 30000048 7 RPCCALL 93"}
+{"date": "1363280370", "event": "wakeup wake lock: wlan_wake"}
+{"date": "1363280370", "event": "PM: early resume of devices complete after 0.183 msecs"}
+{"date": "1363280370", "event": "mmc0: msmsdcc_resume enter"}
+{"date": "1363280370", "event": "mmc0: msmsdcc_resume leave"}
+{"date": "1363280370", "event": "mmc1: msmsdcc_resume enter"}
+{"date": "1363280370", "event": "mmc1: msmsdcc_resume leave"}
+{"date": "1363280370", "event": "mmc2: msmsdcc_resume enter"}
+{"date": "1363280370", "event": "mmc2: msmsdcc_resume leave"}
+{"date": "1363280370", "event": "[COMP][AKM8975] akm8975_resume: (m, a, t, mv) = (0x0, 0x0, 0x0, 0x0)"}
+{"date": "1363280370", "event": "[GSNR] Gsensor enable"}
+{"date": "1363280370", "event": "PM: resume of devices complete after 9.456 msecs"}
+{"date": "1363280370", "event": "Restarting tasks ..."}
+{"date": "1363280370", "event": "rmt_storage_ioctl: wait for request ioctl"}
+{"date": "1363280370", "event": "done."}
+{"date": "1363280370", "event": "sleep_stat.2: 918959949ms 1556677 915951657ms 1511404 - 0 0 0 - 0 0 - 14740 935162 0 0 0(2013-03-14 16:58:19.154886880 UTC)"}
+{"date": "1363280370", "event": "negate_client_stat: 91 5 24 - 0 0 0 0 0 - 2 0 0 0 0 - 0 0 0 0 0 - 0 0 0 0 0 - 0 0 0 0 0"}
+{"date": "1363280370", "event": "suspend: exit suspend, ret = 0 (2013-03-14 16:58:19.155649476 UTC)"}
+{"date": "1363280370", "event": "[R] resume end"}
+{"date": "1363280370", "event": "[R] suspend start"}
+{"date": "1363280370", "event": "[R] suspend: abort suspend"}
+{"date": "1363280370", "event": "[COMP][AKM8975] AKECS_GetOpenStatus:"}
+{"date": "1363280371", "event": "[R] suspend start"}
+{"date": "1363280371", "event": "mmc0: Starting deferred resume"}
+{"date": "1363280371", "event": "card->ext_csd.sectors =4407296"}
+{"date": "1363280371", "event": "mmc0: Deferred resume completed"}
+{"date": "1363280371", "event": "PM: Syncing filesystems ... done."}
+{"date": "1363280371", "event": "sleep_stat.1: 918959949ms 1556677 915951657ms 1511404 - 0 0 0 - 0 0 - 14740 935162 0 0 0(2013-03-14 16:58:19.758965233 UTC)"}
+{"date": "1363280371", "event": "Freezing user space processes ... (elapsed 0.03 seconds) done."}
+{"date": "1363280371", "event": "Freezing remaining freezable tasks ... (elapsed 0.01 seconds) done."}
+{"date": "1363280371", "event": "[GSNR] Gsensor disable"}
+{"date": "1363280371", "event": "mmc2: msmsdcc_suspend enter"}
+{"date": "1363280371", "event": "mmc2: msmsdcc_suspend leave"}
+{"date": "1363280371", "event": "mmc1: msmsdcc_suspend enter"}
+{"date": "1363280371", "event": "mmc1: msmsdcc_suspend leave"}
+{"date": "1363280371", "event": "mmc0: msmsdcc_suspend enter"}
+{"date": "1363280371", "event": "mmc0: msmsdcc_suspend leave"}
+{"date": "1363280371", "event": "PM: suspend of devices complete after 23.669 msecs"}
+{"date": "1363280371", "event": "PM: late suspend of devices complete after 0.945 msecs"}
+{"date": "1363280371", "event": "clks_allow_tcxo_locked_debug: 'uart_clk(32)' not off."}
+{"date": "1363280371", "event": "clks_allow_tcxo_locked_debug: 1 clks are on."}
+{"date": "1363280371", "event": "[R] suspend end"}
+{"date": "1363280371", "event": "[R] resume start"}
+{"date": "1363280371", "event": "SMEM_APPS_DEM_SLAVE_DATA: 215s 2010800 0 0 1 0 30100000 1 RPCCALL 93"}
+{"date": "1363280371", "event": "wakeup wake lock: rpcrotuer_smd_xprt"}
+{"date": "1363280371", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1409"}
+{"date": "1363280371", "event": "[BATT] M2A_RPC: set_charging: 0 at 236740243582840 (2013-03-14 16:58:19.850013952 UTC)"}
+{"date": "1363280371", "event": "[BATT][tps65200] Switch charger OFF"}
+{"date": "1363280371", "event": "PM: early resume of devices complete after 1.128 msecs"}
+{"date": "1363280371", "event": "mmc0: msmsdcc_resume enter"}
+{"date": "1363280371", "event": "mmc0: msmsdcc_resume leave"}
+{"date": "1363280371", "event": "mmc1: msmsdcc_resume enter"}
+{"date": "1363280371", "event": "mmc1: msmsdcc_resume leave"}
+{"date": "1363280371", "event": "mmc2: msmsdcc_resume enter"}
+{"date": "1363280371", "event": "mmc2: msmsdcc_resume leave"}
+{"date": "1363280371", "event": "[COMP][AKM8975] akm8975_resume: (m, a, t, mv) = (0x0, 0x0, 0x0, 0x0)"}
+{"date": "1363280371", "event": "[GSNR] Gsensor enable"}
+{"date": "1363280371", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280303282000000 (s 1363280303282000000)"}
+{"date": "1363280371", "event": "PM: resume of devices complete after 12.231 msecs"}
+{"date": "1363280371", "event": "Restarting tasks ..."}
+{"date": "1363280371", "event": "rmt_storage_ioctl: wait for request ioctl"}
+{"date": "1363280371", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1410"}
+{"date": "1363280371", "event": "[BATT] M2A_RPC: level_update: 67 at 236740297930850 (2013-03-14 16:59:27.180989059 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=0, charging_enabled=0, full_bat=1350000, over_vchg=0 at 236740302199931 (2013-03-14 16:59:27.184556775 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=0, charging_enabled=0, full_bat=1350000, over_vchg=0 at 236740304456464 (2013-03-14 16:59:27.186843801 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=0, charging_enabled=0, full_bat=1350000, over_vchg=0 at 236740309426934 (2013-03-14 16:59:27.191814271 UTC)"}
+{"date": "1363280371", "event": "[BATT] power_supply_changed: battery at 236740311470060 (2013-03-14 16:59:27.194802688 UTC)"}
+{"date": "1363280371", "event": "done."}
+{"date": "1363280371", "event": "sleep_stat.2: 919025433ms 1556785 916017141ms 1511512 - 0 0 0 - 0 0 - 14809 935230 0 0 0(2013-03-14 16:59:27.197699683 UTC)"}
+{"date": "1363280371", "event": "negate_client_stat: 1958 33 24 - 0 0 0 0 0 - 152 0 0 0 0 - 0 0 0 0 0 - 0 0 0 0 0 - 0 0 0 0 0"}
+{"date": "1363280371", "event": "suspend: exit suspend, ret = 0 (2013-03-14 16:59:27.199468375 UTC)"}
+{"date": "1363280371", "event": "[R] resume end"}
+{"date": "1363280371", "event": "[R] suspend start"}
+{"date": "1363280371", "event": "[R] suspend: abort suspend"}
+{"date": "1363280371", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1411"}
+{"date": "1363280371", "event": "[BATT] M2A_RPC: set_charging: 1"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=0, charging_enabled=0, full_bat=1350000, over_vchg=0 at 236740324095128 (2013-03-14 16:59:27.206421339 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=0, charging_enabled=0, full_bat=1350000, over_vchg=0 at 236740326138406 (2013-03-14 16:59:27.208800081 UTC)"}
+{"date": "1363280371", "event": "at 236740328883107 (2013-03-14 16:59:27.202090917 UTC)"}
+{"date": "1363280371", "event": "[BATT][tps65200] regh 0x00=28, regh 0x01=29, regh 0x02=23, regh 0x03=8b"}
+{"date": "1363280371", "event": "[BATT][tps65200] regh 0x06=22, 0x08=0, regh 0x09=0, regh 0x0A=0"}
+{"date": "1363280371", "event": "[BATT][tps65200] Switch charger ON (SLOW): regh 0x03=83, regh 0x02=63"}
+{"date": "1363280371", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1412"}
+{"date": "1363280371", "event": "[BATT] M2A_RPC: set_charging: 201 at 236740357887212 (2013-03-14 16:59:27.241494273 UTC)"}
+{"date": "1363280371", "event": "[BATT][tps65200] Switch charger NORMALTEMP_VREG_4200: regh 0x02=63"}
+{"date": "1363280371", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 2, type = 0, xid = 1413"}
+{"date": "1363280371", "event": "[BATT] M2A_RPC: cable_update: USB at 236740363163246 (2013-03-14 16:59:27.246739827 UTC)"}
+{"date": "1363280371", "event": "[BATT] htc_cable_status_update: 0 -> 1"}
+{"date": "1363280371", "event": "[USB] msm_hsusb_set_vbus_state: 1"}
+{"date": "1363280371", "event": "lexikonct_change_phy_voltage 1"}
+{"date": "1363280371", "event": "lexikonct_usb_uart_switch: 0"}
+{"date": "1363280371", "event": "[USB] hsusb: OFFLINE -> ONLINE"}
+{"date": "1363280371", "event": "[USB] lpm exit"}
+{"date": "1363280371", "event": "[USB] hsusb: reset controller"}
+{"date": "1363280371", "event": "msm_hsusb_phy_reset"}
+{"date": "1363280371", "event": "[COMP][AKM8975] AKECS_GetOpenStatus:"}
+{"date": "1363280371", "event": "[USB] ulpi: write 0x06 to 0x36"}
+{"date": "1363280371", "event": "[USB] ulpi: write 0x0c to 0x31"}
+{"date": "1363280371", "event": "[USB] ulpi: write 0x31 to 0x32"}
+{"date": "1363280371", "event": "[USB] ulpi: write 0x01 to 0x0d"}
+{"date": "1363280371", "event": "[USB] ulpi: write 0x01 to 0x10"}
+{"date": "1363280371", "event": "[USB] handle_notify_offline: notify offline"}
+{"date": "1363280371", "event": "[USB] msm_hsusb: enable pullup"}
+{"date": "1363280371", "event": "[USB] suspend"}
+{"date": "1363280371", "event": "[USB] not AC charger"}
+{"date": "1363280371", "event": "[USB] reset"}
+{"date": "1363280371", "event": "[USB] send connect type 1"}
+{"date": "1363280371", "event": "fsg_set_ums_state: 1"}
+{"date": "1363280371", "event": "ums: set state 1"}
+{"date": "1363280371", "event": "[USB] portchange USB_SPEED_HIGH"}
+{"date": "1363280371", "event": "mmc0: Starting deferred resume"}
+{"date": "1363280371", "event": "[BATT] online=1"}
+{"date": "1363280371", "event": "[BATT] Update SMEM: cable type 1 at 236740669957396 (2013-03-14 16:59:27.552710173 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236740676577910 (2013-03-14 16:59:27.558934050 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236740679140692 (2013-03-14 16:59:27.561496832 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236740685608738 (2013-03-14 16:59:27.563510446 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236740687378307 (2013-03-14 16:59:27.569734425 UTC)"}
+{"date": "1363280371", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236740689727562 (2013-03-14 16:59:27.572083680 UTC)"}
+{"date": "1363280371", "event": "card->ext_csd.sectors =4407296"}
+{"date": "1363280371", "event": "mmc0: Deferred resume completed"}
+{"date": "1363280371", "event": "set usb_connected = 1"}
+{"date": "1363280371", "event": "set usb_configuration = 0"}
+{"date": "1363280371", "event": "android_usb gadget: high speed config #1: android"}
+{"date": "1363280371", "event": "adb_function_set_alt: maxsize = 512"}
+{"date": "1363280371", "event": "set usb_configuration = 1"}
+{"date": "1363280371", "event": "set usb_connect2pc = 1"}
+{"date": "1363280372", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363280372", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363280372", "event": "request_suspend_state: wakeup (3->0) at 236740976054264 (2013-03-14 16:59:27.859783323 UTC)"}
+{"date": "1363280372", "event": "[R] late_resume start"}
+{"date": "1363280372", "event": "[LS][CM3602 SMD] lightsensor_ioctl set value = 1"}
+{"date": "1363280372", "event": "[LS][CM3602 SMD] lightsensor_enable"}
+{"date": "1363280372", "event": "[LS][CM3602 SMD] lightsensor_enable: System is suspended"}
+{"date": "1363280372", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 +"}
+{"date": "1363280372", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 -"}
+{"date": "1363280372", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363280372", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363280372", "event": "pm8058_pwm_led_brightness_set: bank 2 brightness 0 +"}
+{"date": "1363280372", "event": "pm8058_pwm_led_brightness_set: bank 2 brightness 0 -"}
+{"date": "1363280372", "event": "pm8058_led_blink_store: bank 0 blink 0 +"}
+{"date": "1363280372", "event": "pm8058_led_blink_store: bank 0 blink 0 -"}
+{"date": "1363280372", "event": "Setting green off_timer to 0 min 0 sec +"}
+{"date": "1363280372", "event": "Setting green off_timer to 0 min 0 sec -"}
+{"date": "1363280372", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 +"}
+{"date": "1363280372", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 -"}
+{"date": "1363280372", "event": "pm8058_led_blink_store: bank 1 blink 0 +"}
+{"date": "1363280372", "event": "pm8058_led_blink_store: bank 1 blink 0 -"}
+{"date": "1363280372", "event": "Setting amber off_timer to 0 min 0 sec +"}
+{"date": "1363280372", "event": "Setting amber off_timer to 0 min 0 sec -"}
+{"date": "1363280372", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236741034437468 (2013-03-14 16:59:27.917739472 UTC)"}
+{"date": "1363280372", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236741035322082 (2013-03-14 16:59:27.918685094 UTC)"}
+{"date": "1363280372", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236741036847279 (2013-03-14 16:59:27.919356181 UTC)"}
+{"date": "1363280372", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236741042551524 (2013-03-14 16:59:27.923657235 UTC)"}
+{"date": "1363280372", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236741043558158 (2013-03-14 16:59:27.926921168 UTC)"}
+{"date": "1363280372", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=3979, batt_temp=230, batt_current=0, eval_current=44, level=67, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236741044229247 (2013-03-14 16:59:27.927622762 UTC)"}
+{"date": "1363280372", "event": "[DISP]msmfb: ready, waiting for full update"}
+{"date": "1363280372", "event": "synaptics_ts_resume: enter"}
+{"date": "1363280372", "event": "lexikonct_syn_ts_power: power 1"}
+{"date": "1363280372", "event": "[DISP]msmfb: pan_update in state(1)"}
+{"date": "1363280372", "event": "[DISP]msmfb: full update starting"}
+{"date": "1363280372", "event": "[DISP]msmfb: full update completed"}
+{"date": "1363280372", "event": "[DISP]msmfb: turning on panel"}
+{"date": "1363280372", "event": "lexikonct_panel_unblank"}
+{"date": "1363280372", "event": "turn on backlight"}
+{"date": "1363280372", "event": "[WLAN] power active. usb_type:1"}
+{"date": "1363280372", "event": "[WLAN] update dtim listern interval: 0"}
+{"date": "1363280372", "event": "__capella_cm3602_power: Turn the capella_cm3602 power on"}
+{"date": "1363280372", "event": "pm8058_gpio_mux_cfg: ok writing config for gpio 21 (0)"}
+{"date": "1363280372", "event": "sleep_stat.3: 919025433ms 1556785 916017141ms 1511512 - 0 0 0 - 0 0 - 14809 935230 0 0 0(2013-03-14 16:59:28.377004530 UTC)"}
+{"date": "1363280372", "event": "[R] late_resume end"}
+{"date": "1363280373", "event": "[LS][CM3602 SMD] ALS value: 0x2B26, level: 5 #"}
+{"date": "1363280373", "event": "[LS][CM3602 SMD] ALS value: 0x23F, level: 3 #"}
+{"date": "1363280387", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363280387", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363280387", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363280387", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363280400", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280396231000000 (s 1363280396231000000)"}
+{"date": "1363280404", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280400000000000 (s 1363280400000000000)"}
+{"date": "1363280429", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280425246000000 (s 1363280425246000000)"}
+{"date": "1363280458", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280454261000000 (s 1363280454261000000)"}
+{"date": "1363280464", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280460000000000 (s 1363280460000000000)"}
+{"date": "1363280487", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280483274000000 (s 1363280483274000000)"}
+{"date": "1363280516", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280512289000000 (s 1363280512289000000)"}
+{"date": "1363280519", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1414"}
+{"date": "1363280519", "event": "[BATT] M2A_RPC: level_update: 68 at 236888003820645 (2013-03-14 17:01:54.886878317 UTC)"}
+{"date": "1363280519", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4066, batt_temp=240, batt_current=362, eval_current=0, level=68, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236888008978116 (2013-03-14 17:01:54.891333884 UTC)"}
+{"date": "1363280519", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4066, batt_temp=240, batt_current=362, eval_current=0, level=68, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236888012823331 (2013-03-14 17:01:54.895148582 UTC)"}
+{"date": "1363280519", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4066, batt_temp=240, batt_current=362, eval_current=0, level=68, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236888015112150 (2013-03-14 17:01:54.897467918 UTC)"}
+{"date": "1363280519", "event": "[BATT] power_supply_changed: battery at 236888018285978 (2013-03-14 17:01:54.901343650 UTC)"}
+{"date": "1363280519", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4066, batt_temp=240, batt_current=362, eval_current=0, level=68, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236888021459806 (2013-03-14 17:01:54.903205222 UTC)"}
+{"date": "1363280519", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4066, batt_temp=240, batt_current=362, eval_current=0, level=68, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 236888023565519 (2013-03-14 17:01:54.905921287 UTC)"}
+{"date": "1363280519", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280515376000000 (s 1363280515376000000)"}
+{"date": "1363280524", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280520000000000 (s 1363280520000000000)"}
+{"date": "1363280537", "event": "mmc2: Starting deferred resume"}
+{"date": "1363280537", "event": "lexikonct_sdslot_switchvdd: Setting level to 2850"}
+{"date": "1363280537", "event": "mmc2: high speed mode max_dtr = 50000000"}
+{"date": "1363280537", "event": "mmc2: Deferred resume completed"}
+{"date": "1363280545", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280541304000000 (s 1363280541304000000)"}
+{"date": "1363280558", "event": "call alarm, type 3, func alarm_triggered+0x0/0xe8, 1194704468000000 (s 1194704468000000)"}
+{"date": "1363280561", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280556763000000 (s 1363280556763000000)"}
+{"date": "1363280566", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280562265000000 (s 1363280562265000000)"}
+{"date": "1363280574", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280570319000000 (s 1363280570319000000)"}
+{"date": "1363280584", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280580000000000 (s 1363280580000000000)"}
+{"date": "1363280596", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280592281000000 (s 1363280592281000000)"}
+{"date": "1363280603", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280599334000000 (s 1363280599334000000)"}
+{"date": "1363280607", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280603282000000 (s 1363280603282000000)"}
+{"date": "1363280632", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280628349000000 (s 1363280628349000000)"}
+{"date": "1363280639", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1415"}
+{"date": "1363280639", "event": "[BATT] M2A_RPC: level_update: 69 at 237008013525241 (2013-03-14 17:03:54.896888089 UTC)"}
+{"date": "1363280639", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4071, batt_temp=245, batt_current=344, eval_current=0, level=69, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237008017095797 (2013-03-14 17:03:54.899726223 UTC)"}
+{"date": "1363280639", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4071, batt_temp=245, batt_current=344, eval_current=0, level=69, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237008019354098 (2013-03-14 17:03:54.902015042 UTC)"}
+{"date": "1363280639", "event": "[BATT] power_supply_changed: battery at 237008026952975 (2013-03-14 17:03:54.910285306 UTC)"}
+{"date": "1363280639", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4071, batt_temp=245, batt_current=344, eval_current=0, level=69, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237008029119723 (2013-03-14 17:03:54.911780667 UTC)"}
+{"date": "1363280639", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4071, batt_temp=245, batt_current=344, eval_current=0, level=69, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237008032659763 (2013-03-14 17:03:54.915595365 UTC)"}
+{"date": "1363280639", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4071, batt_temp=245, batt_current=344, eval_current=0, level=69, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237008034673923 (2013-03-14 17:03:54.917365384 UTC)"}
+{"date": "1363280644", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280640000000000 (s 1363280640000000000)"}
+{"date": "1363280661", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280657364000000 (s 1363280657364000000)"}
+{"date": "1363280690", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280686380000000 (s 1363280686380000000)"}
+{"date": "1363280704", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280700000000000 (s 1363280700000000000)"}
+{"date": "1363280719", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280715394000000 (s 1363280715394000000)"}
+{"date": "1363280739", "event": "S1@368, 1149"}
+{"date": "1363280739", "event": "E1@27, 1766"}
+{"date": "1363280739", "event": "Touch Calibration Confirmed"}
+{"date": "1363280739", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363280739", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363280739", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363280739", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363280740", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280740", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280740", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280740", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280741", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280743", "event": "[VIB] Binder Thread #(parent:zygote): vibrates 0 msec"}
+{"date": "1363280743", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 +"}
+{"date": "1363280743", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 -"}
+{"date": "1363280743", "event": "pm8058_led_blink_store: bank 0 blink 0 +"}
+{"date": "1363280743", "event": "pm8058_led_blink_store: bank 0 blink 0 -"}
+{"date": "1363280743", "event": "Setting green off_timer to 0 min 0 sec +"}
+{"date": "1363280743", "event": "Setting green off_timer to 0 min 0 sec -"}
+{"date": "1363280743", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 +"}
+{"date": "1363280743", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 -"}
+{"date": "1363280743", "event": "pm8058_led_blink_store: bank 1 blink 0 +"}
+{"date": "1363280743", "event": "pm8058_led_blink_store: bank 1 blink 0 -"}
+{"date": "1363280743", "event": "Setting amber off_timer to 0 min 0 sec +"}
+{"date": "1363280743", "event": "Setting amber off_timer to 0 min 0 sec -"}
+{"date": "1363280745", "event": "[VIB] Binder Thread #(parent:zygote): vibrates 0 msec"}
+{"date": "1363280745", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 +"}
+{"date": "1363280745", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 -"}
+{"date": "1363280745", "event": "pm8058_led_blink_store: bank 0 blink 0 +"}
+{"date": "1363280745", "event": "pm8058_led_blink_store: bank 0 blink 0 -"}
+{"date": "1363280745", "event": "Setting green off_timer to 0 min 0 sec +"}
+{"date": "1363280745", "event": "Setting green off_timer to 0 min 0 sec -"}
+{"date": "1363280745", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 +"}
+{"date": "1363280745", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 -"}
+{"date": "1363280745", "event": "pm8058_led_blink_store: bank 1 blink 0 +"}
+{"date": "1363280745", "event": "pm8058_led_blink_store: bank 1 blink 0 -"}
+{"date": "1363280745", "event": "Setting amber off_timer to 0 min 0 sec +"}
+{"date": "1363280745", "event": "Setting amber off_timer to 0 min 0 sec -"}
+{"date": "1363280747", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280747", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280747", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280747", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280747", "event": "lowmem: select 4394 (itotem.sina.nba), adj 15, size 5036, to kill"}
+{"date": "1363280747", "event": "lowmem: select 4452 (LocationService), adj 15, size 5297, to kill"}
+{"date": "1363280747", "event": "lowmem: select 5384 (.android.camera), adj 15, size 6877, to kill"}
+{"date": "1363280747", "event": "lowmem: send sigkill to 5384 (.android.camera), adj 15, size 6877"}
+{"date": "1363280747", "event": "lowmem: deathpending end 5384 (.android.camera)"}
+{"date": "1363280748", "event": "lowmem: select 4394 (itotem.sina.nba), adj 15, size 5036, to kill"}
+{"date": "1363280748", "event": "lowmem: select 4452 (LocationService), adj 15, size 5297, to kill"}
+{"date": "1363280748", "event": "lowmem: send sigkill to 4452 (LocationService), adj 15, size 5297"}
+{"date": "1363280748", "event": "lowmem: deathpending end 4452 (LocationService)"}
+{"date": "1363280748", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280744409000000 (s 1363280744409000000)"}
+{"date": "1363280759", "event": "[VIB] Binder Thread #(parent:zygote): vibrates 0 msec"}
+{"date": "1363280759", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 +"}
+{"date": "1363280759", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 -"}
+{"date": "1363280759", "event": "pm8058_led_blink_store: bank 0 blink 0 +"}
+{"date": "1363280759", "event": "pm8058_led_blink_store: bank 0 blink 0 -"}
+{"date": "1363280759", "event": "Setting green off_timer to 0 min 0 sec +"}
+{"date": "1363280759", "event": "Setting green off_timer to 0 min 0 sec -"}
+{"date": "1363280759", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 +"}
+{"date": "1363280759", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 -"}
+{"date": "1363280759", "event": "pm8058_led_blink_store: bank 1 blink 0 +"}
+{"date": "1363280759", "event": "pm8058_led_blink_store: bank 1 blink 0 -"}
+{"date": "1363280759", "event": "Setting amber off_timer to 0 min 0 sec +"}
+{"date": "1363280759", "event": "Setting amber off_timer to 0 min 0 sec -"}
+{"date": "1363280761", "event": "[VIB] Binder Thread #(parent:zygote): vibrates 0 msec"}
+{"date": "1363280761", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 +"}
+{"date": "1363280761", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 -"}
+{"date": "1363280761", "event": "pm8058_led_blink_store: bank 0 blink 0 +"}
+{"date": "1363280761", "event": "pm8058_led_blink_store: bank 0 blink 0 -"}
+{"date": "1363280761", "event": "Setting green off_timer to 0 min 0 sec +"}
+{"date": "1363280761", "event": "Setting green off_timer to 0 min 0 sec -"}
+{"date": "1363280761", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 +"}
+{"date": "1363280761", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 -"}
+{"date": "1363280761", "event": "pm8058_led_blink_store: bank 1 blink 0 +"}
+{"date": "1363280761", "event": "pm8058_led_blink_store: bank 1 blink 0 -"}
+{"date": "1363280761", "event": "Setting amber off_timer to 0 min 0 sec +"}
+{"date": "1363280761", "event": "Setting amber off_timer to 0 min 0 sec -"}
+{"date": "1363280764", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280760000000000 (s 1363280760000000000)"}
+{"date": "1363280771", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280766890000000 (s 1363280766890000000)"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280775", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280777", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280773416000000 (s 1363280773416000000)"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363280786", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363280788", "event": "lowmem: select 4394 (itotem.sina.nba), adj 15, size 5036, to kill"}
+{"date": "1363280788", "event": "lowmem: send sigkill to 4394 (itotem.sina.nba), adj 15, size 5036"}
+{"date": "1363280788", "event": "lowmem: deathpending end 4394 (itotem.sina.nba)"}
+{"date": "1363280788", "event": "lowmem: select 5421 (c.profilewidget), adj 15, size 4407, to kill"}
+{"date": "1363280788", "event": "lowmem: send sigkill to 5421 (c.profilewidget), adj 15, size 4407"}
+{"date": "1363280788", "event": "lowmem: deathpending end 5421 (c.profilewidget)"}
+{"date": "1363280792", "event": "lowmem: select 3692 (settings:remote), adj 12, size 4437, to kill"}
+{"date": "1363280792", "event": "lowmem: select 5472 (roid.worldclock), adj 13, size 5189, to kill"}
+{"date": "1363280792", "event": "lowmem: send sigkill to 5472 (roid.worldclock), adj 13, size 5189"}
+{"date": "1363280792", "event": "lowmem: deathpending end 5472 (roid.worldclock)"}
+{"date": "1363280793", "event": "lowmem: select 3692 (settings:remote), adj 13, size 4424, to kill"}
+{"date": "1363280793", "event": "lowmem: send sigkill to 3692 (settings:remote), adj 13, size 4424"}
+{"date": "1363280793", "event": "lowmem: deathpending end 3692 (settings:remote)"}
+{"date": "1363280793", "event": "lowmem: select 3713 (nt.mobileqq:MSF), adj 10, size 5539, to kill"}
+{"date": "1363280794", "event": "lowmem: select 5051 (ndroid.settings), adj 12, size 5241, to kill"}
+{"date": "1363280794", "event": "lowmem: send sigkill to 5051 (ndroid.settings), adj 12, size 5241"}
+{"date": "1363280794", "event": "lowmem: deathpending end 5051 (ndroid.settings)"}
+{"date": "1363280794", "event": "lowmem: select 3713 (nt.mobileqq:MSF), adj 10, size 5536, to kill"}
+{"date": "1363280794", "event": "lowmem: select 5705 (ufou.android.su), adj 11, size 5938, to kill"}
+{"date": "1363280794", "event": "lowmem: send sigkill to 5705 (ufou.android.su), adj 11, size 5938"}
+{"date": "1363280794", "event": "lowmem: deathpending end 5705 (ufou.android.su)"}
+{"date": "1363280795", "event": "lowmem: select 3713 (nt.mobileqq:MSF), adj 10, size 5536, to kill"}
+{"date": "1363280795", "event": "lowmem: send sigkill to 3713 (nt.mobileqq:MSF), adj 10, size 5536"}
+{"date": "1363280795", "event": "lowmem: deathpending end 3713 (nt.mobileqq:MSF)"}
+{"date": "1363280796", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6164, to kill"}
+{"date": "1363280796", "event": "lowmem: select 5075 (d.process.media), adj 8, size 6099, to kill"}
+{"date": "1363280796", "event": "lowmem: select 5318 (ina.weibo.image), adj 9, size 7128, to kill"}
+{"date": "1363280796", "event": "lowmem: send sigkill to 5318 (ina.weibo.image), adj 9, size 7128"}
+{"date": "1363280796", "event": "lowmem: deathpending end 5318 (ina.weibo.image)"}
+{"date": "1363280798", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6164, to kill"}
+{"date": "1363280798", "event": "lowmem: select 5075 (d.process.media), adj 10, size 6098, to kill"}
+{"date": "1363280798", "event": "lowmem: send sigkill to 5075 (d.process.media), adj 10, size 6098"}
+{"date": "1363280798", "event": "binder: 1502:1643 transaction failed 29189, size 0-0"}
+{"date": "1363280798", "event": "binder: 1502:1643 transaction failed 29189, size 0-0"}
+{"date": "1363280798", "event": "lowmem: deathpending end 5075 (d.process.media)"}
+{"date": "1363280799", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6162, to kill"}
+{"date": "1363280799", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 7772, to kill"}
+{"date": "1363280799", "event": "lowmem: select 5814 (tc.android.mail), adj 9, size 6897, to kill"}
+{"date": "1363280799", "event": "lowmem: send sigkill to 5814 (tc.android.mail), adj 9, size 6897"}
+{"date": "1363280799", "event": "lowmem: deathpending end 5814 (tc.android.mail)"}
+{"date": "1363280799", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280795612000000 (s 1363280795612000000)"}
+{"date": "1363280801", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6136, to kill"}
+{"date": "1363280801", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 7652, to kill"}
+{"date": "1363280801", "event": "lowmem: select 5834 (.htc.skinpicker), adj 9, size 5413, to kill"}
+{"date": "1363280801", "event": "lowmem: send sigkill to 5834 (.htc.skinpicker), adj 9, size 5413"}
+{"date": "1363280802", "event": "lowmem: deathpending end 5834 (.htc.skinpicker)"}
+{"date": "1363280806", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280802423000000 (s 1363280802423000000)"}
+{"date": "1363280811", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 5990, to kill"}
+{"date": "1363280811", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 7346, to kill"}
+{"date": "1363280811", "event": "lowmem: select 5842 (ndroid.settings), adj 8, size 5006, to kill"}
+{"date": "1363280811", "event": "lowmem: send sigkill to 5842 (ndroid.settings), adj 8, size 5006"}
+{"date": "1363280811", "event": "lowmem: deathpending end 5842 (ndroid.settings)"}
+{"date": "1363280819", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1416"}
+{"date": "1363280819", "event": "[BATT] M2A_RPC: level_update: 70 at 237188004034276 (2013-03-14 17:06:54.887427641 UTC)"}
+{"date": "1363280819", "event": "[BATT] power_supply_changed: battery at 237188006872410 (2013-03-14 17:06:54.889960600 UTC)"}
+{"date": "1363280819", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4072, batt_temp=258, batt_current=342, eval_current=0, level=70, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237188016790623 (2013-03-14 17:06:54.893073393 UTC)"}
+{"date": "1363280819", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4072, batt_temp=258, batt_current=342, eval_current=0, level=70, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237188023016210 (2013-03-14 17:06:54.904334380 UTC)"}
+{"date": "1363280819", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4072, batt_temp=258, batt_current=342, eval_current=0, level=70, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237188025396581 (2013-03-14 17:06:54.908027007 UTC)"}
+{"date": "1363280819", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4072, batt_temp=258, batt_current=342, eval_current=0, level=70, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237188028204198 (2013-03-14 17:06:54.910865142 UTC)"}
+{"date": "1363280819", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4072, batt_temp=258, batt_current=342, eval_current=0, level=70, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237188031835790 (2013-03-14 17:06:54.912879302 UTC)"}
+{"date": "1363280824", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280820000000000 (s 1363280820000000000)"}
+{"date": "1363280835", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280831468000000 (s 1363280831468000000)"}
+{"date": "1363280847", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280843316000000 (s 1363280843316000000)"}
+{"date": "1363280849", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363280849", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363280849", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363280849", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363280864", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280860500000000 (s 1363280860500000000)"}
+{"date": "1363280866", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363280862304000000 (s 1363280862304000000)"}
+{"date": "1363280884", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280880000000000 (s 1363280880000000000)"}
+{"date": "1363280893", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280889514000000 (s 1363280889514000000)"}
+{"date": "1363280907", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280903282000000 (s 1363280903282000000)"}
+{"date": "1363280922", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280918532000000 (s 1363280918532000000)"}
+{"date": "1363280939", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1417"}
+{"date": "1363280939", "event": "[BATT] M2A_RPC: level_update: 71 at 237308004247896 (2013-03-14 17:08:54.887305568 UTC)"}
+{"date": "1363280939", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4083, batt_temp=260, batt_current=358, eval_current=0, level=71, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237308008032075 (2013-03-14 17:08:54.890387843 UTC)"}
+{"date": "1363280939", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4083, batt_temp=260, batt_current=358, eval_current=0, level=71, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237308014379732 (2013-03-14 17:08:54.896766018 UTC)"}
+{"date": "1363280939", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4083, batt_temp=260, batt_current=358, eval_current=0, level=71, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237308017034761 (2013-03-14 17:08:54.899421047 UTC)"}
+{"date": "1363280939", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4083, batt_temp=260, batt_current=358, eval_current=0, level=71, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237308019048921 (2013-03-14 17:08:54.901465724 UTC)"}
+{"date": "1363280939", "event": "[BATT] power_supply_changed: battery at 237308021978609 (2013-03-14 17:08:54.905036282 UTC)"}
+{"date": "1363280939", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4083, batt_temp=260, batt_current=358, eval_current=0, level=71, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237308024603121 (2013-03-14 17:08:54.906958889 UTC)"}
+{"date": "1363280944", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280940000000000 (s 1363280940000000000)"}
+{"date": "1363280951", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280947547000000 (s 1363280947547000000)"}
+{"date": "1363280969", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1418"}
+{"date": "1363280969", "event": "[BATT] M2A_RPC: set_charging: 100 at 237338004156341 (2013-03-14 17:09:24.887214013 UTC)"}
+{"date": "1363280969", "event": "[BATT][tps65200] TPS65200 charger check, regh 0x06=27"}
+{"date": "1363280980", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363280976563000000 (s 1363280976563000000)"}
+{"date": "1363281004", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281000000000000 (s 1363281000000000000)"}
+{"date": "1363281009", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281004995000000 (s 1363281004995000000)"}
+{"date": "1363281009", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281005578000000 (s 1363281005578000000)"}
+{"date": "1363281011", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281006995000000 (s 1363281006995000000)"}
+{"date": "1363281016", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281012726000000 (s 1363281012726000000)"}
+{"date": "1363281038", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281034593000000 (s 1363281034593000000)"}
+{"date": "1363281064", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281060000000000 (s 1363281060000000000)"}
+{"date": "1363281067", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281063609000000 (s 1363281063609000000)"}
+{"date": "1363281089", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1419"}
+{"date": "1363281089", "event": "[BATT] M2A_RPC: level_update: 72 at 237458003942715 (2013-03-14 17:11:24.887000388 UTC)"}
+{"date": "1363281089", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4089, batt_temp=262, batt_current=356, eval_current=0, level=72, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237458007147061 (2013-03-14 17:11:24.889502829 UTC)"}
+{"date": "1363281089", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4089, batt_temp=262, batt_current=356, eval_current=0, level=72, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237458009435879 (2013-03-14 17:11:24.891791647 UTC)"}
+{"date": "1363281089", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4089, batt_temp=262, batt_current=356, eval_current=0, level=72, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237458016424405 (2013-03-14 17:11:24.898780173 UTC)"}
+{"date": "1363281089", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4089, batt_temp=262, batt_current=356, eval_current=0, level=72, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237458018957364 (2013-03-14 17:11:24.901343650 UTC)"}
+{"date": "1363281089", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4089, batt_temp=262, batt_current=356, eval_current=0, level=72, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0"}
+{"date": "1363281089", "event": "[BATT] power_supply_changed: battery at 237458023016202 (2013-03-14 17:11:24.906043357 UTC)"}
+{"date": "1363281089", "event": "at 237458024389493 (2013-03-14 17:11:24.903357810 UTC)"}
+{"date": "1363281096", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281092624000000 (s 1363281092624000000)"}
+{"date": "1363281113", "event": "call alarm, type 2, func alarm_triggered+0x0/0xe8, 1195259018000000 (s 1195259018000000)"}
+{"date": "1363281113", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281108908000000 (s 1363281108908000000)"}
+{"date": "1363281124", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281120000000000 (s 1363281120000000000)"}
+{"date": "1363281125", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281121639000000 (s 1363281121639000000)"}
+{"date": "1363281154", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281150654000000 (s 1363281150654000000)"}
+{"date": "1363281158", "event": "call alarm, type 3, func alarm_triggered+0x0/0xe8, 1195304477000000 (s 1195304477000000)"}
+{"date": "1363281183", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281179670000000 (s 1363281179670000000)"}
+{"date": "1363281184", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281180000000000 (s 1363281180000000000)"}
+{"date": "1363281207", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281203282000000 (s 1363281203282000000)"}
+{"date": "1363281209", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1420"}
+{"date": "1363281209", "event": "[BATT] M2A_RPC: level_update: 73 at 237578004797217 (2013-03-14 17:13:24.887854889 UTC)"}
+{"date": "1363281209", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4095, batt_temp=267, batt_current=352, eval_current=0, level=73, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0"}
+{"date": "1363281209", "event": "[BATT] power_supply_changed: battery at 237578015173194 (2013-03-14 17:13:24.898200348 UTC)"}
+{"date": "1363281209", "event": "at 237578015936133 (2013-03-14 17:13:24.893348053 UTC)"}
+{"date": "1363281209", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4095, batt_temp=267, batt_current=352, eval_current=0, level=73, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237578018041846 (2013-03-14 17:13:24.900428131 UTC)"}
+{"date": "1363281209", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4095, batt_temp=267, batt_current=352, eval_current=0, level=73, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237578022802589 (2013-03-14 17:13:24.902808502 UTC)"}
+{"date": "1363281209", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4095, batt_temp=267, batt_current=352, eval_current=0, level=73, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237578024542090 (2013-03-14 17:13:24.906958894 UTC)"}
+{"date": "1363281209", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4095, batt_temp=267, batt_current=352, eval_current=0, level=73, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237578026586768 (2013-03-14 17:13:24.908942536 UTC)"}
+{"date": "1363281212", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281208686000000 (s 1363281208686000000)"}
+{"date": "1363281241", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281237704000000 (s 1363281237704000000)"}
+{"date": "1363281244", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281240000000000 (s 1363281240000000000)"}
+{"date": "1363281270", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281266719000000 (s 1363281266719000000)"}
+{"date": "1363281287", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281282768000000 (s 1363281282768000000)"}
+{"date": "1363281300", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281295734000000 (s 1363281295734000000)"}
+{"date": "1363281304", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281300000000000 (s 1363281300000000000)"}
+{"date": "1363281329", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281324754000000 (s 1363281324754000000)"}
+{"date": "1363281358", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281353771000000 (s 1363281353771000000)"}
+{"date": "1363281359", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1421"}
+{"date": "1363281359", "event": "[BATT] M2A_RPC: level_update: 74 at 237728016485449 (2013-03-14 17:15:54.899848297 UTC)"}
+{"date": "1363281359", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4101, batt_temp=269, batt_current=338, eval_current=0, level=74, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237728019689795 (2013-03-14 17:15:54.902320221 UTC)"}
+{"date": "1363281359", "event": "[BATT] power_supply_changed: battery at 237728028021094 (2013-03-14 17:15:54.911353425 UTC)"}
+{"date": "1363281359", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4101, batt_temp=269, batt_current=338, eval_current=0, level=74, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237728031500099 (2013-03-14 17:15:54.912909821 UTC)"}
+{"date": "1363281359", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4101, batt_temp=269, batt_current=338, eval_current=0, level=74, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237728033239601 (2013-03-14 17:15:54.915625886 UTC)"}
+{"date": "1363281359", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4101, batt_temp=269, batt_current=338, eval_current=0, level=74, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237728035894630 (2013-03-14 17:15:54.918250398 UTC)"}
+{"date": "1363281359", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4101, batt_temp=269, batt_current=338, eval_current=0, level=74, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237728037603614 (2013-03-14 17:15:54.920264558 UTC)"}
+{"date": "1363281364", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281360000000000 (s 1363281360000000000)"}
+{"date": "1363281387", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281382790000000 (s 1363281382790000000)"}
+{"date": "1363281413", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281409473000000 (s 1363281409473000000)"}
+{"date": "1363281416", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281411807000000 (s 1363281411807000000)"}
+{"date": "1363281419", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281415376000000 (s 1363281415376000000)"}
+{"date": "1363281424", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281420000000000 (s 1363281420000000000)"}
+{"date": "1363281445", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281440822000000 (s 1363281440822000000)"}
+{"date": "1363281474", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281469837000000 (s 1363281469837000000)"}
+{"date": "1363281484", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281480000000000 (s 1363281480000000000)"}
+{"date": "1363281503", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281498852000000 (s 1363281498852000000)"}
+{"date": "1363281507", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281503282000000 (s 1363281503282000000)"}
+{"date": "1363281509", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1422"}
+{"date": "1363281509", "event": "[BATT] M2A_RPC: level_update: 75 at 237878002477877 (2013-03-14 17:18:24.885840725 UTC)"}
+{"date": "1363281509", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4107, batt_temp=273, batt_current=344, eval_current=0, level=75, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237878006414645 (2013-03-14 17:18:24.889075588 UTC)"}
+{"date": "1363281509", "event": "[BATT] power_supply_changed: battery at 237878011511081 (2013-03-14 17:18:24.894843411 UTC)"}
+{"date": "1363281509", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4107, batt_temp=273, batt_current=344, eval_current=0, level=75, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237878013860934 (2013-03-14 17:18:24.896247220 UTC)"}
+{"date": "1363281509", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4107, batt_temp=273, batt_current=344, eval_current=0, level=75, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237878016393893 (2013-03-14 17:18:24.898780179 UTC)"}
+{"date": "1363281509", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4107, batt_temp=273, batt_current=344, eval_current=0, level=75, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237878018438571 (2013-03-14 17:18:24.900794339 UTC)"}
+{"date": "1363281509", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4107, batt_temp=273, batt_current=344, eval_current=0, level=75, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237878023473972 (2013-03-14 17:18:24.905860257 UTC)"}
+{"date": "1363281532", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281527868000000 (s 1363281527868000000)"}
+{"date": "1363281544", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281540000000000 (s 1363281540000000000)"}
+{"date": "1363281557", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281552790000000 (s 1363281552790000000)"}
+{"date": "1363281561", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281556883000000 (s 1363281556883000000)"}
+{"date": "1363281569", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1423"}
+{"date": "1363281569", "event": "[BATT] M2A_RPC: set_charging: 100 at 237938002447359 (2013-03-14 17:19:24.885810207 UTC)"}
+{"date": "1363281569", "event": "[BATT][tps65200] TPS65200 charger check, regh 0x06=27"}
+{"date": "1363281590", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281585898000000 (s 1363281585898000000)"}
+{"date": "1363281604", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281600000000000 (s 1363281600000000000)"}
+{"date": "1363281619", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281614915000000 (s 1363281614915000000)"}
+{"date": "1363281629", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1424"}
+{"date": "1363281629", "event": "[BATT] M2A_RPC: level_update: 76 at 237998003820650 (2013-03-14 17:20:24.886878322 UTC)"}
+{"date": "1363281629", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4114, batt_temp=276, batt_current=348, eval_current=0, level=76, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0"}
+{"date": "1363281629", "event": "[BATT] power_supply_changed: battery at 237998013189547 (2013-03-14 17:20:24.896216701 UTC)"}
+{"date": "1363281629", "event": "at 237998013891451 (2013-03-14 17:20:24.889808010 UTC)"}
+{"date": "1363281629", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4114, batt_temp=276, batt_current=348, eval_current=0, level=76, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237998016332857 (2013-03-14 17:20:24.898688625 UTC)"}
+{"date": "1363281629", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4114, batt_temp=276, batt_current=348, eval_current=0, level=76, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237998018133394 (2013-03-14 17:20:24.900489162 UTC)"}
+{"date": "1363281629", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4114, batt_temp=276, batt_current=348, eval_current=0, level=76, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237998022680514 (2013-03-14 17:20:24.903083156 UTC)"}
+{"date": "1363281629", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4114, batt_temp=276, batt_current=348, eval_current=0, level=76, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 237998024816744 (2013-03-14 17:20:24.907172512 UTC)"}
+{"date": "1363281648", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281643930000000 (s 1363281643930000000)"}
+{"date": "1363281664", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281660000000000 (s 1363281660000000000)"}
+{"date": "1363281677", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281672946000000 (s 1363281672946000000)"}
+{"date": "1363281706", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281701961000000 (s 1363281701961000000)"}
+{"date": "1363281714", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281710070000000 (s 1363281710070000000)"}
+{"date": "1363281724", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281720000000000 (s 1363281720000000000)"}
+{"date": "1363281735", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281730978000000 (s 1363281730978000000)"}
+{"date": "1363281745", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281741497000000 (s 1363281741497000000)"}
+{"date": "1363281758", "event": "call alarm, type 3, func alarm_triggered+0x0/0xe8, 1195904490000000 (s 1195904490000000)"}
+{"date": "1363281764", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281759994000000 (s 1363281759994000000)"}
+{"date": "1363281779", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1425"}
+{"date": "1363281779", "event": "[BATT] M2A_RPC: level_update: 77 at 238148003912199 (2013-03-14 17:22:54.886969871 UTC)"}
+{"date": "1363281779", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=278, batt_current=344, eval_current=0, level=77, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238148007238615 (2013-03-14 17:22:54.889594383 UTC)"}
+{"date": "1363281779", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=278, batt_current=344, eval_current=0, level=77, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238148014471281 (2013-03-14 17:22:54.896827049 UTC)"}
+{"date": "1363281779", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=278, batt_current=344, eval_current=0, level=77, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238148017004240 (2013-03-14 17:22:54.899360008 UTC)"}
+{"date": "1363281779", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=278, batt_current=344, eval_current=0, level=77, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238148019018400 (2013-03-14 17:22:54.901374168 UTC)"}
+{"date": "1363281779", "event": "[BATT] power_supply_changed: battery at 238148023199309 (2013-03-14 17:22:54.906256981 UTC)"}
+{"date": "1363281779", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=278, batt_current=344, eval_current=0, level=77, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238148026373137 (2013-03-14 17:22:54.908728905 UTC)"}
+{"date": "1363281784", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281780000000000 (s 1363281780000000000)"}
+{"date": "1363281793", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281789011000000 (s 1363281789011000000)"}
+{"date": "1363281807", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281803282000000 (s 1363281803282000000)"}
+{"date": "1363281822", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281818027000000 (s 1363281818027000000)"}
+{"date": "1363281827", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281822811000000 (s 1363281822811000000)"}
+{"date": "1363281844", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281840000000000 (s 1363281840000000000)"}
+{"date": "1363281851", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281847042000000 (s 1363281847042000000)"}
+{"date": "1363281866", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363281862433000000 (s 1363281862433000000)"}
+{"date": "1363281880", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281876056000000 (s 1363281876056000000)"}
+{"date": "1363281904", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281900000000000 (s 1363281900000000000)"}
+{"date": "1363281909", "event": "lowmem: select 3510 (com.tencent.mm), adj 8, size 9472, to kill"}
+{"date": "1363281909", "event": "lowmem: select 5441 (om.servo.search), adj 9, size 5678, to kill"}
+{"date": "1363281909", "event": "lowmem: send sigkill to 5441 (om.servo.search), adj 9, size 5678"}
+{"date": "1363281909", "event": "lowmem: deathpending end 5441 (om.servo.search)"}
+{"date": "1363281909", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281905071000000 (s 1363281905071000000)"}
+{"date": "1363281910", "event": "lowmem: select 3510 (com.tencent.mm), adj 9, size 9443, to kill"}
+{"date": "1363281910", "event": "lowmem: send sigkill to 3510 (com.tencent.mm), adj 9, size 9443"}
+{"date": "1363281910", "event": "lowmem: deathpending end 3510 (com.tencent.mm)"}
+{"date": "1363281914", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6127, to kill"}
+{"date": "1363281914", "event": "lowmem: select 5775 (om.htc.launcher), adj 9, size 14123, to kill"}
+{"date": "1363281914", "event": "lowmem: select 5908 (id.defcontainer), adj 11, size 5622, to kill"}
+{"date": "1363281914", "event": "lowmem: send sigkill to 5908 (id.defcontainer), adj 11, size 5622"}
+{"date": "1363281914", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363281914", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363281914", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363281914", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363281914", "event": "lowmem: deathpending end 5908 (id.defcontainer)"}
+{"date": "1363281914", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6122, to kill"}
+{"date": "1363281914", "event": "lowmem: select 5775 (om.htc.launcher), adj 12, size 14108, to kill"}
+{"date": "1363281914", "event": "lowmem: send sigkill to 5775 (om.htc.launcher), adj 12, size 14108"}
+{"date": "1363281915", "event": "lowmem: deathpending end 5775 (om.htc.launcher)"}
+{"date": "1363281919", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363281919", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363281919", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363281919", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363281927", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363281927", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363281927", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363281927", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363281929", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1426"}
+{"date": "1363281929", "event": "[BATT] M2A_RPC: level_update: 78 at 238298004186878 (2013-03-14 17:25:24.887549726 UTC)"}
+{"date": "1363281929", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4123, batt_temp=281, batt_current=328, eval_current=0, level=78, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0"}
+{"date": "1363281929", "event": "[BATT] power_supply_changed: battery at 238298013189564 (2013-03-14 17:25:24.893470136 UTC)"}
+{"date": "1363281929", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4123, batt_temp=281, batt_current=328, eval_current=0, level=78, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238298018621692 (2013-03-14 17:25:24.895972578 UTC)"}
+{"date": "1363281929", "event": "at 238298021429310 (2013-03-14 17:25:24.898352949 UTC)"}
+{"date": "1363281929", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4123, batt_temp=281, batt_current=328, eval_current=0, level=78, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238298023565541 (2013-03-14 17:25:24.905585615 UTC)"}
+{"date": "1363281929", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4123, batt_temp=281, batt_current=328, eval_current=0, level=78, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238298027746449 (2013-03-14 17:25:24.909522383 UTC)"}
+{"date": "1363281929", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4123, batt_temp=281, batt_current=328, eval_current=0, level=78, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238298031530629 (2013-03-14 17:25:24.912207930 UTC)"}
+{"date": "1363281934", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 +"}
+{"date": "1363281934", "event": "pm8058_pwm_led_brightness_set: bank 0 brightness 0 -"}
+{"date": "1363281934", "event": "pm8058_led_blink_store: bank 0 blink 0 +"}
+{"date": "1363281934", "event": "pm8058_led_blink_store: bank 0 blink 0 -"}
+{"date": "1363281934", "event": "Setting green off_timer to 0 min 0 sec +"}
+{"date": "1363281934", "event": "Setting green off_timer to 0 min 0 sec -"}
+{"date": "1363281934", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 +"}
+{"date": "1363281934", "event": "pm8058_pwm_led_brightness_set: bank 1 brightness 1 -"}
+{"date": "1363281934", "event": "pm8058_led_blink_store: bank 1 blink 0 +"}
+{"date": "1363281934", "event": "pm8058_led_blink_store: bank 1 blink 0 -"}
+{"date": "1363281934", "event": "Setting amber off_timer to 0 min 0 sec +"}
+{"date": "1363281934", "event": "Setting amber off_timer to 0 min 0 sec -"}
+{"date": "1363281938", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281934079000000 (s 1363281934079000000)"}
+{"date": "1363281938", "event": "binder: 1502:1645 transaction failed 29189, size 392-4"}
+{"date": "1363281944", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6047, to kill"}
+{"date": "1363281944", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 6696, to kill"}
+{"date": "1363281944", "event": "lowmem: select 5918 (com.htc.cs), adj 13, size 5374, to kill"}
+{"date": "1363281944", "event": "lowmem: send sigkill to 5918 (com.htc.cs), adj 13, size 5374"}
+{"date": "1363281945", "event": "lowmem: deathpending end 5918 (com.htc.cs)"}
+{"date": "1363281945", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6047, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 6696, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5930 (m.htc.opensense), adj 10, size 5427, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5940 (tc.RosieUtility), adj 11, size 5446, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5955 (ufou.android.su), adj 12, size 5552, to kill"}
+{"date": "1363281945", "event": "lowmem: send sigkill to 5955 (ufou.android.su), adj 12, size 5552"}
+{"date": "1363281945", "event": "lowmem: deathpending end 5955 (ufou.android.su)"}
+{"date": "1363281945", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6065, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 6691, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5930 (m.htc.opensense), adj 10, size 5413, to kill"}
+{"date": "1363281945", "event": "lowmem: select 5940 (tc.RosieUtility), adj 11, size 5429, to kill"}
+{"date": "1363281945", "event": "lowmem: send sigkill to 5940 (tc.RosieUtility), adj 11, size 5429"}
+{"date": "1363281946", "event": "lowmem: deathpending end 5940 (tc.RosieUtility)"}
+{"date": "1363281946", "event": "lowmem: select 5059 (oid.htccontacts), adj 7, size 6108, to kill"}
+{"date": "1363281946", "event": "lowmem: select 5799 (com.android.mms), adj 7, size 6691, to kill"}
+{"date": "1363281946", "event": "lowmem: select 5930 (m.htc.opensense), adj 10, size 5413, to kill"}
+{"date": "1363281946", "event": "lowmem: send sigkill to 5930 (m.htc.opensense), adj 10, size 5413"}
+{"date": "1363281946", "event": "lowmem: deathpending end 5930 (m.htc.opensense)"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363281955", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363281964", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281960000000000 (s 1363281960000000000)"}
+{"date": "1363281967", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281963102000000 (s 1363281963102000000)"}
+{"date": "1363281968", "event": "init: untracked pid 5895 exited"}
+{"date": "1363281996", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363281992118000000 (s 1363281992118000000)"}
+{"date": "1363282002", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6413312, size 256, time=698883"}
+{"date": "1363282002", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6413312, size 256, total time=699127 microseconds"}
+{"date": "1363282004", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6430800, size 64, time=584503"}
+{"date": "1363282004", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6430800, size 64, total time=591033 microseconds"}
+{"date": "1363282007", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6447216, size 256, time=680419"}
+{"date": "1363282007", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6447216, size 256, total time=686950 microseconds"}
+{"date": "1363282008", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6455160, size 256, time=318267"}
+{"date": "1363282008", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6455160, size 256, total time=324798 microseconds"}
+{"date": "1363282013", "event": "call alarm, type 2, func alarm_triggered+0x0/0xe8, 1196159018000000 (s 1196159018000000)"}
+{"date": "1363282014", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282010621000000 (s 1363282010621000000)"}
+{"date": "1363282018", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6504421, size 3, time=197753"}
+{"date": "1363282018", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6504421, size 3, total time=338043 microseconds"}
+{"date": "1363282019", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6505104, size 256, time=375091"}
+{"date": "1363282019", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6505104, size 256, total time=383056 microseconds"}
+{"date": "1363282021", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6512496, size 256, time=627105"}
+{"date": "1363282021", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6512496, size 256, total time=633666 microseconds"}
+{"date": "1363282022", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6517856, size 150, time=658905"}
+{"date": "1363282022", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6517856, size 150, total time=673950 microseconds"}
+{"date": "1363282024", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6524128, size 256, time=698333"}
+{"date": "1363282024", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6524128, size 256, total time=698577 microseconds"}
+{"date": "1363282024", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282020000000000 (s 1363282020000000000)"}
+{"date": "1363282024", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6530600, size 256, time=173370"}
+{"date": "1363282025", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282021133000000 (s 1363282021133000000)"}
+{"date": "1363282025", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6533368, size 256, time=692321"}
+{"date": "1363282025", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6533368, size 256, total time=698699 microseconds"}
+{"date": "1363282026", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6537664, size 256, time=313507"}
+{"date": "1363282026", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6537664, size 256, total time=313659 microseconds"}
+{"date": "1363282027", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6541624, size 256, time=676269"}
+{"date": "1363282027", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6541624, size 256, total time=682434 microseconds"}
+{"date": "1363282028", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6559024, size 256, time=575592"}
+{"date": "1363282028", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6559024, size 256, total time=581970 microseconds"}
+{"date": "1363282029", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6561744, size 88, time=685089"}
+{"date": "1363282029", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6561744, size 88, total time=700958 microseconds"}
+{"date": "1363282030", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6569848, size 256, time=606353"}
+{"date": "1363282030", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6569848, size 256, total time=619232 microseconds"}
+{"date": "1363282031", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6578144, size 256, time=355804"}
+{"date": "1363282031", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6578144, size 256, total time=356079 microseconds"}
+{"date": "1363282033", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6588016, size 176, time=522033"}
+{"date": "1363282033", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6588016, size 176, total time=522308 microseconds"}
+{"date": "1363282034", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6594440, size 256, time=625732"}
+{"date": "1363282034", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6594440, size 256, total time=631927 microseconds"}
+{"date": "1363282035", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6600144, size 120, time=652160"}
+{"date": "1363282035", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6600144, size 120, total time=658721 microseconds"}
+{"date": "1363282036", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6604680, size 71, time=390625"}
+{"date": "1363282036", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6604680, size 71, total time=396911 microseconds"}
+{"date": "1363282036", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363282036", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363282036", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363282036", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363282037", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6611056, size 8, time=498657"}
+{"date": "1363282037", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6611056, size 8, total time=505676 microseconds"}
+{"date": "1363282039", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6619120, size 111, time=723480"}
+{"date": "1363282039", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6619120, size 111, total time=729949 microseconds"}
+{"date": "1363282040", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6625520, size 256, time=706848"}
+{"date": "1363282040", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6625520, size 256, total time=713287 microseconds"}
+{"date": "1363282041", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6627144, size 256, time=403533"}
+{"date": "1363282041", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6627144, size 256, total time=410247 microseconds"}
+{"date": "1363282041", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6633480, size 40, time=163055"}
+{"date": "1363282042", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6635464, size 136, time=474121"}
+{"date": "1363282042", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6635464, size 136, total time=480407 microseconds"}
+{"date": "1363282043", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6643528, size 256, time=308258"}
+{"date": "1363282043", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6643528, size 256, total time=314880 microseconds"}
+{"date": "1363282044", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6651696, size 239, time=376831"}
+{"date": "1363282044", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6651696, size 239, total time=383575 microseconds"}
+{"date": "1363282045", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6658280, size 256, time=157348"}
+{"date": "1363282045", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6660072, size 167, time=349792"}
+{"date": "1363282045", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6660072, size 167, total time=356384 microseconds"}
+{"date": "1363282046", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6666952, size 256, time=706939"}
+{"date": "1363282046", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6666952, size 256, total time=713165 microseconds"}
+{"date": "1363282047", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6668040, size 256, time=313964"}
+{"date": "1363282047", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6668040, size 256, total time=320953 microseconds"}
+{"date": "1363282048", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6676272, size 256, time=596130"}
+{"date": "1363282048", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6676272, size 256, total time=611663 microseconds"}
+{"date": "1363282049", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6682768, size 256, time=150329"}
+{"date": "1363282049", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6684560, size 256, time=315002"}
+{"date": "1363282049", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6684560, size 256, total time=321533 microseconds"}
+{"date": "1363282050", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6691392, size 256, time=158630"}
+{"date": "1363282050", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6692672, size 256, time=349243"}
+{"date": "1363282051", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6692672, size 256, total time=355224 microseconds"}
+{"date": "1363282052", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6701984, size 256, time=623199"}
+{"date": "1363282052", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6701984, size 256, total time=623474 microseconds"}
+{"date": "1363282053", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6711608, size 256, time=695312"}
+{"date": "1363282053", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6711608, size 256, total time=701812 microseconds"}
+{"date": "1363282054", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282050139000000 (s 1363282050139000000)"}
+{"date": "1363282055", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6719024, size 256, time=447937"}
+{"date": "1363282055", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6719024, size 256, total time=454467 microseconds"}
+{"date": "1363282056", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6727272, size 256, time=414489"}
+{"date": "1363282056", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6727272, size 256, total time=420715 microseconds"}
+{"date": "1363282058", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6733816, size 160, time=472778"}
+{"date": "1363282058", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6733816, size 160, total time=479309 microseconds"}
+{"date": "1363282058", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6740720, size 256, time=241790"}
+{"date": "1363282059", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6741840, size 256, time=467437"}
+{"date": "1363282059", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6741840, size 256, total time=473999 microseconds"}
+{"date": "1363282060", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6750152, size 256, time=247711"}
+{"date": "1363282060", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6755368, size 256, time=161529"}
+{"date": "1363282061", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6758400, size 256, time=345458"}
+{"date": "1363282061", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6758400, size 256, total time=345642 microseconds"}
+{"date": "1363282062", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6764176, size 256, time=165039"}
+{"date": "1363282062", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6766456, size 256, time=352233"}
+{"date": "1363282062", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6766456, size 256, total time=359008 microseconds"}
+{"date": "1363282063", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6773824, size 256, time=178955"}
+{"date": "1363282064", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6774560, size 256, time=367156"}
+{"date": "1363282064", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6774560, size 256, total time=376495 microseconds"}
+{"date": "1363282064", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6782080, size 256, time=155242"}
+{"date": "1363282065", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6782808, size 256, time=366943"}
+{"date": "1363282065", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6782808, size 256, total time=373016 microseconds"}
+{"date": "1363282066", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6791072, size 256, time=277740"}
+{"date": "1363282067", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6799264, size 232, time=338409"}
+{"date": "1363282067", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6799264, size 232, total time=345062 microseconds"}
+{"date": "1363282069", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6807488, size 104, time=265686"}
+{"date": "1363282069", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6812096, size 256, time=167022"}
+{"date": "1363282070", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6815576, size 256, time=342041"}
+{"date": "1363282070", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6815576, size 256, total time=348571 microseconds"}
+{"date": "1363282070", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6819936, size 256, time=153594"}
+{"date": "1363282071", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6823728, size 256, time=314605"}
+{"date": "1363282071", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6823728, size 256, total time=330383 microseconds"}
+{"date": "1363282071", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6829008, size 256, time=168121"}
+{"date": "1363282073", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6832048, size 256, time=350067"}
+{"date": "1363282073", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6832048, size 256, total time=356903 microseconds"}
+{"date": "1363282074", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6840272, size 256, time=313537"}
+{"date": "1363282074", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6840272, size 256, total time=320159 microseconds"}
+{"date": "1363282074", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6844744, size 256, time=156311"}
+{"date": "1363282075", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6848464, size 224, time=408813"}
+{"date": "1363282075", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6848464, size 224, total time=415649 microseconds"}
+{"date": "1363282076", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6859992, size 256, time=208465"}
+{"date": "1363282077", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6867648, size 256, time=618865"}
+{"date": "1363282077", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6867648, size 256, total time=619140 microseconds"}
+{"date": "1363282078", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6874656, size 256, time=352233"}
+{"date": "1363282078", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6874656, size 256, total time=352478 microseconds"}
+{"date": "1363282079", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1427"}
+{"date": "1363282079", "event": "[BATT] M2A_RPC: level_update: 79 at 238448001806514 (2013-03-14 17:27:54.885291432 UTC)"}
+{"date": "1363282079", "event": "[BATT] power_supply_changed: battery at 238448002691524 (2013-03-14 17:27:54.886267995 UTC)"}
+{"date": "1363282079", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=283, batt_current=290, eval_current=0, level=79, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238448007482783 (2013-03-14 17:27:54.890723561 UTC)"}
+{"date": "1363282079", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=283, batt_current=290, eval_current=0, level=79, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238448008337275 (2013-03-14 17:27:54.891608571 UTC)"}
+{"date": "1363282079", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=283, batt_current=290, eval_current=0, level=79, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238448020361200 (2013-03-14 17:27:54.903388355 UTC)"}
+{"date": "1363282079", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=283, batt_current=290, eval_current=0, level=79, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238448022466913 (2013-03-14 17:27:54.904670093 UTC)"}
+{"date": "1363282079", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4121, batt_temp=283, batt_current=290, eval_current=0, level=79, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238448023260370 (2013-03-14 17:27:54.906501148 UTC)"}
+{"date": "1363282080", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6883632, size 256, time=444030"}
+{"date": "1363282080", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6883632, size 256, total time=450592 microseconds"}
+{"date": "1363282081", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6891952, size 256, time=470825"}
+{"date": "1363282081", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6891952, size 256, total time=477416 microseconds"}
+{"date": "1363282082", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6898288, size 256, time=396270"}
+{"date": "1363282082", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6898288, size 256, total time=402893 microseconds"}
+{"date": "1363282083", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282079169000000 (s 1363282079169000000)"}
+{"date": "1363282083", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6906720, size 256, time=410156"}
+{"date": "1363282083", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6906720, size 256, total time=410430 microseconds"}
+{"date": "1363282084", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282080000000000 (s 1363282080000000000)"}
+{"date": "1363282084", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6916448, size 256, time=504699"}
+{"date": "1363282084", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6916448, size 256, total time=504943 microseconds"}
+{"date": "1363282085", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6923536, size 67, time=430633"}
+{"date": "1363282085", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6923536, size 67, total time=437164 microseconds"}
+{"date": "1363282086", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6930456, size 256, time=363983"}
+{"date": "1363282086", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6930456, size 256, total time=370300 microseconds"}
+{"date": "1363282088", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6939344, size 256, time=480133"}
+{"date": "1363282088", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6939344, size 256, total time=486663 microseconds"}
+{"date": "1363282089", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6949248, size 256, time=467376"}
+{"date": "1363282089", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6949248, size 256, total time=467651 microseconds"}
+{"date": "1363282090", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6957416, size 256, time=384674"}
+{"date": "1363282090", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6957416, size 256, total time=391387 microseconds"}
+{"date": "1363282091", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 16397, size 3, time=220886"}
+{"date": "1363282091", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=16397, size 3, total time=356903 microseconds"}
+{"date": "1363282092", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 6979504, size 184, time=384613"}
+{"date": "1363282092", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=6979504, size 184, total time=391693 microseconds"}
+{"date": "1363282093", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 16399, size 3, time=250427"}
+{"date": "1363282093", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=16399, size 3, total time=369964 microseconds"}
+{"date": "1363282096", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7004096, size 256, time=158691"}
+{"date": "1363282097", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282092832000000 (s 1363282092832000000)"}
+{"date": "1363282097", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7012288, size 256, time=160339"}
+{"date": "1363282107", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282103282000000 (s 1363282103282000000)"}
+{"date": "1363282112", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282108234000000 (s 1363282108234000000)"}
+{"date": "1363282113", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7129808, size 256, time=710052"}
+{"date": "1363282113", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7129808, size 256, total time=716583 microseconds"}
+{"date": "1363282114", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7135160, size 256, time=558410"}
+{"date": "1363282114", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7135160, size 256, total time=566741 microseconds"}
+{"date": "1363282114", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7134644, size 4, time=294158"}
+{"date": "1363282116", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7147956, size 4, time=181945"}
+{"date": "1363282123", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7200640, size 256, time=570892"}
+{"date": "1363282123", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7200640, size 256, total time=571624 microseconds"}
+{"date": "1363282128", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363282128", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363282128", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363282128", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363282130", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7241496, size 256, time=744903"}
+{"date": "1363282130", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7241496, size 256, total time=751586 microseconds"}
+{"date": "1363282130", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 16656, size 3, time=246490"}
+{"date": "1363282130", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=16656, size 3, total time=380218 microseconds"}
+{"date": "1363282135", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7270820, size 4, time=187469"}
+{"date": "1363282136", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7274264, size 256, time=631469"}
+{"date": "1363282136", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7274264, size 256, total time=638397 microseconds"}
+{"date": "1363282137", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363282137", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363282137", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363282137", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363282138", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7288136, size 139, time=664611"}
+{"date": "1363282138", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7288136, size 139, total time=671142 microseconds"}
+{"date": "1363282139", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7290840, size 256, time=621124"}
+{"date": "1363282139", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7290840, size 256, total time=629241 microseconds"}
+{"date": "1363282141", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282137258000000 (s 1363282137258000000)"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 +"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 4 brightness 0 -"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 +"}
+{"date": "1363282141", "event": "pm8058_drvx_led_brightness_set: bank 5 brightness 0 -"}
+{"date": "1363282144", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7314825, size 7, time=719360"}
+{"date": "1363282144", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7314825, size 7, total time=727081 microseconds"}
+{"date": "1363282144", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282140000000000 (s 1363282140000000000)"}
+{"date": "1363282144", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 16729, size 4, time=272308"}
+{"date": "1363282144", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=16729, size 4, total time=419952 microseconds"}
+{"date": "1363282150", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7356368, size 256, time=547576"}
+{"date": "1363282150", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7356368, size 256, total time=554138 microseconds"}
+{"date": "1363282162", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7444980, size 4, time=351074"}
+{"date": "1363282162", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7444980, size 4, total time=479980 microseconds"}
+{"date": "1363282162", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 16856, size 4, time=234863"}
+{"date": "1363282165", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7469665, size 7, time=164428"}
+{"date": "1363282169", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1428"}
+{"date": "1363282169", "event": "[BATT] M2A_RPC: set_charging: 100 at 238538001837033 (2013-03-14 17:29:24.885444022 UTC)"}
+{"date": "1363282169", "event": "[BATT][tps65200] TPS65200 charger check, regh 0x06=27"}
+{"date": "1363282170", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282166290000000 (s 1363282166290000000)"}
+{"date": "1363282189", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7653745, size 7, time=349853"}
+{"date": "1363282189", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7653745, size 7, total time=357208 microseconds"}
+{"date": "1363282190", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7659384, size 256, time=731292"}
+{"date": "1363282190", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7659384, size 256, total time=738067 microseconds"}
+{"date": "1363282191", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 7660913, size 7, time=355834"}
+{"date": "1363282191", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=7660913, size 7, total time=358215 microseconds"}
+{"date": "1363282195", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 +"}
+{"date": "1363282195", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 83 -"}
+{"date": "1363282195", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 +"}
+{"date": "1363282195", "event": "pm8058_drvx_led_brightness_set: bank 6 brightness 255 -"}
+{"date": "1363282199", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282195363000000 (s 1363282195363000000)"}
+{"date": "1363282200", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 68184, size 8, time=424713"}
+{"date": "1363282200", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=68184, size 8, total time=436737 microseconds"}
+{"date": "1363282200", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 77760, size 40, time=505310"}
+{"date": "1363282200", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=77760, size 40, total time=521240 microseconds"}
+{"date": "1363282202", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 81784, size 256, time=690338"}
+{"date": "1363282202", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=81784, size 256, total time=697113 microseconds"}
+{"date": "1363282202", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 89976, size 56, time=170379"}
+{"date": "1363282203", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 90224, size 40, time=647521"}
+{"date": "1363282203", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=90224, size 40, total time=663848 microseconds"}
+{"date": "1363282203", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 106432, size 24, time=392517"}
+{"date": "1363282203", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=106432, size 24, total time=399322 microseconds"}
+{"date": "1363282204", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 106464, size 152, time=481262"}
+{"date": "1363282204", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282200000000000 (s 1363282200000000000)"}
+{"date": "1363282204", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=106464, size 152, total time=490600 microseconds"}
+{"date": "1363282205", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 115312, size 24, time=710845"}
+{"date": "1363282205", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=115312, size 24, total time=749206 microseconds"}
+{"date": "1363282205", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 123024, size 8, time=729583"}
+{"date": "1363282205", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=123024, size 8, total time=737030 microseconds"}
+{"date": "1363282206", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 128616, size 48, time=150207"}
+{"date": "1363282207", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 131408, size 32, time=714752"}
+{"date": "1363282207", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=131408, size 32, total time=745605 microseconds"}
+{"date": "1363282208", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 139680, size 172, time=604339"}
+{"date": "1363282208", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=139680, size 172, total time=611267 microseconds"}
+{"date": "1363282209", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 153016, size 48, time=493835"}
+{"date": "1363282209", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=153016, size 48, total time=500488 microseconds"}
+{"date": "1363282209", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 164904, size 32, time=517852"}
+{"date": "1363282209", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=164904, size 32, total time=533905 microseconds"}
+{"date": "1363282210", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 174800, size 48, time=714813"}
+{"date": "1363282210", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=174800, size 48, total time=724548 microseconds"}
+{"date": "1363282211", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 180456, size 56, time=667694"}
+{"date": "1363282211", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=180456, size 56, total time=678863 microseconds"}
+{"date": "1363282212", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 188608, size 32, time=706848"}
+{"date": "1363282212", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=188608, size 32, total time=716278 microseconds"}
+{"date": "1363282212", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 202656, size 32, time=542755"}
+{"date": "1363282212", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=202656, size 32, total time=552001 microseconds"}
+{"date": "1363282213", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 222912, size 144, time=558197"}
+{"date": "1363282213", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=222912, size 144, total time=564788 microseconds"}
+{"date": "1363282213", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 235576, size 4, time=346160"}
+{"date": "1363282214", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=235576, size 4, total time=475311 microseconds"}
+{"date": "1363282214", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 235580, size 4, time=241577"}
+{"date": "1363282215", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 245800, size 8, time=711883"}
+{"date": "1363282215", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=245800, size 8, total time=719329 microseconds"}
+{"date": "1363282216", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 253960, size 32, time=622772"}
+{"date": "1363282216", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=253960, size 32, total time=641235 microseconds"}
+{"date": "1363282217", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 271792, size 8, time=576049"}
+{"date": "1363282217", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=271792, size 8, total time=583496 microseconds"}
+{"date": "1363282218", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 279792, size 24, time=482543"}
+{"date": "1363282218", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=279792, size 24, total time=513061 microseconds"}
+{"date": "1363282219", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 286720, size 96, time=619873"}
+{"date": "1363282219", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=286720, size 96, total time=620880 microseconds"}
+{"date": "1363282220", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 300672, size 48, time=720214"}
+{"date": "1363282220", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=300672, size 48, total time=735992 microseconds"}
+{"date": "1363282221", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 303072, size 56, time=696838"}
+{"date": "1363282221", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=303072, size 56, total time=703613 microseconds"}
+{"date": "1363282222", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 311832, size 16, time=539611"}
+{"date": "1363282222", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=311832, size 16, total time=546539 microseconds"}
+{"date": "1363282222", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 319920, size 40, time=649414"}
+{"date": "1363282222", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=319920, size 40, total time=665863 microseconds"}
+{"date": "1363282223", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 326640, size 40, time=233795"}
+{"date": "1363282224", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 327728, size 56, time=526092"}
+{"date": "1363282224", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=327728, size 56, total time=532775 microseconds"}
+{"date": "1363282224", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 335824, size 80, time=543304"}
+{"date": "1363282224", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=335824, size 80, total time=552703 microseconds"}
+{"date": "1363282225", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 344560, size 8, time=493377"}
+{"date": "1363282225", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=344560, size 8, total time=500885 microseconds"}
+{"date": "1363282226", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 352208, size 104, time=479309"}
+{"date": "1363282226", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=352208, size 104, total time=494842 microseconds"}
+{"date": "1363282227", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 360816, size 24, time=604675"}
+{"date": "1363282227", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=360816, size 24, total time=621398 microseconds"}
+{"date": "1363282228", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 377344, size 72, time=494842"}
+{"date": "1363282228", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=377344, size 72, total time=501220 microseconds"}
+{"date": "1363282228", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282224447000000 (s 1363282224447000000)"}
+{"date": "1363282229", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 385272, size 96, time=474945"}
+{"date": "1363282229", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=385272, size 96, total time=481719 microseconds"}
+{"date": "1363282230", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 404064, size 8, time=687072"}
+{"date": "1363282230", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=404064, size 8, total time=694030 microseconds"}
+{"date": "1363282230", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 412416, size 16, time=502807"}
+{"date": "1363282230", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=412416, size 16, total time=509704 microseconds"}
+{"date": "1363282231", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 425528, size 8, time=600952"}
+{"date": "1363282231", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=425528, size 8, total time=618041 microseconds"}
+{"date": "1363282232", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 426704, size 8, time=724426"}
+{"date": "1363282232", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=426704, size 8, total time=731994 microseconds"}
+{"date": "1363282233", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 435312, size 8, time=645996"}
+{"date": "1363282233", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=435312, size 8, total time=653564 microseconds"}
+{"date": "1363282234", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 442296, size 128, time=735290"}
+{"date": "1363282234", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=442296, size 128, total time=750915 microseconds"}
+{"date": "1363282235", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 454160, size 8, time=695068"}
+{"date": "1363282235", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=454160, size 8, total time=702545 microseconds"}
+{"date": "1363282236", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 458808, size 16, time=532562"}
+{"date": "1363282236", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=458808, size 16, total time=547424 microseconds"}
+{"date": "1363282237", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 472232, size 32, time=514404"}
+{"date": "1363282237", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=472232, size 32, total time=530944 microseconds"}
+{"date": "1363282238", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 475984, size 8, time=549804"}
+{"date": "1363282238", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=475984, size 8, total time=557281 microseconds"}
+{"date": "1363282238", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 481456, size 96, time=186981"}
+{"date": "1363282238", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 488656, size 16, time=446868"}
+{"date": "1363282238", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=488656, size 16, total time=457061 microseconds"}
+{"date": "1363282239", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 492096, size 16, time=651306"}
+{"date": "1363282239", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=492096, size 16, total time=658203 microseconds"}
+{"date": "1363282240", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 523024, size 200, time=571716"}
+{"date": "1363282240", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=523024, size 200, total time=578247 microseconds"}
+{"date": "1363282241", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 525136, size 16, time=633300"}
+{"date": "1363282241", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=525136, size 16, total time=643432 microseconds"}
+{"date": "1363282242", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 535696, size 8, time=713287"}
+{"date": "1363282242", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=535696, size 8, total time=720825 microseconds"}
+{"date": "1363282243", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 544664, size 88, time=699981"}
+{"date": "1363282243", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=544664, size 88, total time=706878 microseconds"}
+{"date": "1363282243", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 552728, size 40, time=576660"}
+{"date": "1363282243", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=552728, size 40, total time=577178 microseconds"}
+{"date": "1363282244", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 560552, size 32, time=687438"}
+{"date": "1363282244", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=560552, size 32, total time=703857 microseconds"}
+{"date": "1363282245", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 565456, size 24, time=605560"}
+{"date": "1363282245", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=565456, size 24, total time=635284 microseconds"}
+{"date": "1363282246", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 574216, size 16, time=655578"}
+{"date": "1363282246", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=574216, size 16, total time=662994 microseconds"}
+{"date": "1363282247", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 585296, size 24, time=595153"}
+{"date": "1363282247", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=585296, size 24, total time=624908 microseconds"}
+{"date": "1363282248", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 591784, size 72, time=505065"}
+{"date": "1363282248", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=591784, size 72, total time=511657 microseconds"}
+{"date": "1363282249", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 679968, size 24, time=651916"}
+{"date": "1363282249", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=679968, size 24, total time=658752 microseconds"}
+{"date": "1363282250", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 697456, size 32, time=612762"}
+{"date": "1363282250", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=697456, size 32, total time=629119 microseconds"}
+{"date": "1363282251", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 705704, size 80, time=579284"}
+{"date": "1363282251", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=705704, size 80, total time=587341 microseconds"}
+{"date": "1363282252", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 714368, size 8, time=530090"}
+{"date": "1363282252", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=714368, size 8, total time=537017 microseconds"}
+{"date": "1363282253", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 724280, size 24, time=540283"}
+{"date": "1363282253", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=724280, size 24, total time=547119 microseconds"}
+{"date": "1363282254", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 729056, size 136, time=571960"}
+{"date": "1363282254", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=729056, size 136, total time=579162 microseconds"}
+{"date": "1363282255", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 737680, size 8, time=548675"}
+{"date": "1363282255", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=737680, size 8, total time=556091 microseconds"}
+{"date": "1363282257", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 792024, size 64, time=559722"}
+{"date": "1363282257", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=792024, size 64, total time=566253 microseconds"}
+{"date": "1363282257", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282253464000000 (s 1363282253464000000)"}
+{"date": "1363282258", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 830200, size 72, time=478729"}
+{"date": "1363282258", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=830200, size 72, total time=479461 microseconds"}
+{"date": "1363282258", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 925816, size 24, time=678527"}
+{"date": "1363282258", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=925816, size 24, total time=686492 microseconds"}
+{"date": "1363282259", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1429"}
+{"date": "1363282259", "event": "[BATT] M2A_RPC: level_update: 80 at 238628001989619 (2013-03-14 17:30:54.885474538 UTC)"}
+{"date": "1363282259", "event": "[BATT] power_supply_changed: battery at 238628004766719 (2013-03-14 17:30:54.888343190 UTC)"}
+{"date": "1363282259", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4126, batt_temp=288, batt_current=266, eval_current=0, level=80, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238628007421748 (2013-03-14 17:30:54.890754078 UTC)"}
+{"date": "1363282259", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4126, batt_temp=288, batt_current=266, eval_current=0, level=80, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238628008215205 (2013-03-14 17:30:54.891578053 UTC)"}
+{"date": "1363282259", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4126, batt_temp=288, batt_current=266, eval_current=0, level=80, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238628011144892 (2013-03-14 17:30:54.893592213 UTC)"}
+{"date": "1363282259", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4126, batt_temp=288, batt_current=266, eval_current=0, level=80, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238628018255487 (2013-03-14 17:30:54.898505543 UTC)"}
+{"date": "1363282259", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4126, batt_temp=288, batt_current=266, eval_current=0, level=80, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238628023535028 (2013-03-14 17:30:54.905158374 UTC)"}
+{"date": "1363282259", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 1416184, size 72, time=664215"}
+{"date": "1363282259", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=1416184, size 72, total time=664733 microseconds"}
+{"date": "1363282260", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 2608544, size 256, time=724945"}
+{"date": "1363282260", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=2608544, size 256, total time=725219 microseconds"}
+{"date": "1363282261", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 2623072, size 8, time=701629"}
+{"date": "1363282261", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=2623072, size 8, total time=708831 microseconds"}
+{"date": "1363282263", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 2629648, size 16, time=716827"}
+{"date": "1363282263", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=2629648, size 16, total time=727111 microseconds"}
+{"date": "1363282264", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282260000000000 (s 1363282260000000000)"}
+{"date": "1363282264", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 2637768, size 256, time=408020"}
+{"date": "1363282264", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=2637768, size 256, total time=414733 microseconds"}
+{"date": "1363282286", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282282469000000 (s 1363282282469000000)"}
+{"date": "1363282315", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282311476000000 (s 1363282311476000000)"}
+{"date": "1363282319", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282315376000000 (s 1363282315376000000)"}
+{"date": "1363282321", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 2940928, size 256, time=166564"}
+{"date": "1363282324", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282320000000000 (s 1363282320000000000)"}
+{"date": "1363282324", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282320684000000 (s 1363282320684000000)"}
+{"date": "1363282334", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3006464, size 256, time=159210"}
+{"date": "1363282335", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3014656, size 88, time=151855"}
+{"date": "1363282341", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3047424, size 256, time=154449"}
+{"date": "1363282343", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3055616, size 256, time=156707"}
+{"date": "1363282344", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282340556000000 (s 1363282340556000000)"}
+{"date": "1363282344", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3063808, size 256, time=154602"}
+{"date": "1363282346", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3070258, size 6, time=219879"}
+{"date": "1363282346", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3071800, size 256, time=516143"}
+{"date": "1363282346", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3071800, size 256, total time=531768 microseconds"}
+{"date": "1363282348", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3075648, size 256, time=684844"}
+{"date": "1363282348", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3075648, size 256, total time=685577 microseconds"}
+{"date": "1363282349", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3080000, size 256, time=622589"}
+{"date": "1363282349", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3080000, size 256, total time=628662 microseconds"}
+{"date": "1363282350", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3084600, size 256, time=676940"}
+{"date": "1363282350", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3084600, size 256, total time=683410 microseconds"}
+{"date": "1363282352", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3088376, size 256, time=598510"}
+{"date": "1363282352", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3088376, size 256, total time=605072 microseconds"}
+{"date": "1363282355", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3104568, size 256, time=388641"}
+{"date": "1363282355", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3104568, size 256, total time=404022 microseconds"}
+{"date": "1363282358", "event": "call alarm, type 3, func alarm_triggered+0x0/0xe8, 1196504498000000 (s 1196504498000000)"}
+{"date": "1363282362", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3137368, size 256, time=449523"}
+{"date": "1363282362", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3137368, size 256, total time=456054 microseconds"}
+{"date": "1363282367", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3180592, size 224, time=596252"}
+{"date": "1363282367", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3180592, size 224, total time=603118 microseconds"}
+{"date": "1363282367", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282363127000000 (s 1363282363127000000)"}
+{"date": "1363282368", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3188536, size 104, time=658020"}
+{"date": "1363282368", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3188536, size 104, total time=658203 microseconds"}
+{"date": "1363282369", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3194856, size 88, time=460266"}
+{"date": "1363282369", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3194856, size 88, total time=466339 microseconds"}
+{"date": "1363282370", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3200608, size 24, time=644744"}
+{"date": "1363282370", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3200608, size 24, total time=651367 microseconds"}
+{"date": "1363282371", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3202952, size 256, time=599121"}
+{"date": "1363282371", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3202952, size 256, total time=605804 microseconds"}
+{"date": "1363282373", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282369615000000 (s 1363282369615000000)"}
+{"date": "1363282374", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3219600, size 256, time=330474"}
+{"date": "1363282374", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3219600, size 256, total time=336853 microseconds"}
+{"date": "1363282375", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3231488, size 72, time=535980"}
+{"date": "1363282375", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3231488, size 72, total time=542663 microseconds"}
+{"date": "1363282376", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3235608, size 250, time=468414"}
+{"date": "1363282376", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3235608, size 250, total time=475280 microseconds"}
+{"date": "1363282378", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3245264, size 64, time=450836"}
+{"date": "1363282378", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3245264, size 64, total time=457397 microseconds"}
+{"date": "1363282379", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3252088, size 256, time=423400"}
+{"date": "1363282379", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3252088, size 256, total time=430145 microseconds"}
+{"date": "1363282379", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3265288, size 8, time=224700"}
+{"date": "1363282381", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3268600, size 72, time=410644"}
+{"date": "1363282381", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3268600, size 72, total time=416625 microseconds"}
+{"date": "1363282382", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3277032, size 8, time=672698"}
+{"date": "1363282382", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3277032, size 8, total time=680175 microseconds"}
+{"date": "1363282382", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3904400, size 16, time=617004"}
+{"date": "1363282382", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3904400, size 16, total time=627105 microseconds"}
+{"date": "1363282383", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3908008, size 16, time=416381"}
+{"date": "1363282383", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3908008, size 16, total time=424224 microseconds"}
+{"date": "1363282384", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282380000000000 (s 1363282380000000000)"}
+{"date": "1363282384", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3916088, size 8, time=616149"}
+{"date": "1363282384", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3916088, size 8, total time=626373 microseconds"}
+{"date": "1363282385", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3924000, size 8, time=704132"}
+{"date": "1363282385", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3924000, size 8, total time=711090 microseconds"}
+{"date": "1363282386", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3931664, size 256, time=209442"}
+{"date": "1363282387", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3932456, size 56, time=444396"}
+{"date": "1363282387", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3932456, size 56, total time=454101 microseconds"}
+{"date": "1363282387", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3941240, size 16, time=507781"}
+{"date": "1363282387", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3941240, size 16, total time=514678 microseconds"}
+{"date": "1363282389", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3948368, size 192, time=440551"}
+{"date": "1363282389", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3948368, size 192, total time=447387 microseconds"}
+{"date": "1363282390", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 3956496, size 256, time=536560"}
+{"date": "1363282390", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=3956496, size 256, total time=543487 microseconds"}
+{"date": "1363282402", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282398635000000 (s 1363282398635000000)"}
+{"date": "1363282405", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4030344, size 256, time=405059"}
+{"date": "1363282405", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=4030344, size 256, total time=411712 microseconds"}
+{"date": "1363282407", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282403282000000 (s 1363282403282000000)"}
+{"date": "1363282428", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4149765, size 3, time=225585"}
+{"date": "1363282428", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=4149765, size 3, total time=351898 microseconds"}
+{"date": "1363282429", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4153096, size 256, time=292877"}
+{"date": "1363282429", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=4153096, size 256, total time=300567 microseconds"}
+{"date": "1363282431", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282427661000000 (s 1363282427661000000)"}
+{"date": "1363282439", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1430"}
+{"date": "1363282439", "event": "[BATT] M2A_RPC: level_update: 81 at 238808002264277 (2013-03-14 17:33:54.885779713 UTC)"}
+{"date": "1363282439", "event": "[BATT] power_supply_changed: battery at 238808003240840 (2013-03-14 17:33:54.886847829 UTC)"}
+{"date": "1363282439", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4134, batt_temp=293, batt_current=278, eval_current=0, level=81, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238808007238642 (2013-03-14 17:33:54.890570973 UTC)"}
+{"date": "1363282439", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4134, batt_temp=293, batt_current=278, eval_current=0, level=81, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238808008062617 (2013-03-14 17:33:54.891425465 UTC)"}
+{"date": "1363282439", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4134, batt_temp=293, batt_current=278, eval_current=0, level=81, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238808014715450 (2013-03-14 17:33:54.898047780 UTC)"}
+{"date": "1363282439", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4134, batt_temp=293, batt_current=278, eval_current=0, level=81, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238808015661494 (2013-03-14 17:33:54.898993825 UTC)"}
+{"date": "1363282439", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4134, batt_temp=293, batt_current=278, eval_current=0, level=81, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238808018682735 (2013-03-14 17:33:54.899695729 UTC)"}
+{"date": "1363282444", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282440000000000 (s 1363282440000000000)"}
+{"date": "1363282460", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282456704000000 (s 1363282456704000000)"}
+{"date": "1363282490", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282485783000000 (s 1363282485783000000)"}
+{"date": "1363282498", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4505576, size 256, time=557281"}
+{"date": "1363282498", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=4505576, size 256, total time=578399 microseconds"}
+{"date": "1363282504", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282500000000000 (s 1363282500000000000)"}
+{"date": "1363282508", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4553188, size 4, time=167358"}
+{"date": "1363282508", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4554704, size 256, time=462738"}
+{"date": "1363282508", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=4554704, size 256, total time=469299 microseconds"}
+{"date": "1363282519", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282514817000000 (s 1363282514817000000)"}
+{"date": "1363282544", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4732372, size 4, time=256195"}
+{"date": "1363282544", "event": "sd_blk_issue_rq:(sd-qd)finish cmd(25) start 4734824, size 256, time=471435"}
+{"date": "1363282544", "event": "sd_blk_issue_rq: ---(sd-qd) start sector=4734824, size 256, total time=478454 microseconds"}
+{"date": "1363282548", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282543888000000 (s 1363282543888000000)"}
+{"date": "1363282564", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282560000000000 (s 1363282560000000000)"}
+{"date": "1363282577", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282572973000000 (s 1363282572973000000)"}
+{"date": "1363282606", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282601989000000 (s 1363282601989000000)"}
+{"date": "1363282619", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1431"}
+{"date": "1363282619", "event": "[BATT] M2A_RPC: level_update: 82 at 238988006170526 (2013-03-14 17:36:54.889228199 UTC)"}
+{"date": "1363282619", "event": "[BATT] power_supply_changed: battery at 238988009069696 (2013-03-14 17:36:54.891822193 UTC)"}
+{"date": "1363282619", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4153, batt_temp=296, batt_current=328, eval_current=0, level=82, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238988015051142 (2013-03-14 17:36:54.897406910 UTC)"}
+{"date": "1363282619", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4153, batt_temp=296, batt_current=328, eval_current=0, level=82, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238988017431513 (2013-03-14 17:36:54.899756763 UTC)"}
+{"date": "1363282619", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4153, batt_temp=296, batt_current=328, eval_current=0, level=82, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238988033300654 (2013-03-14 17:36:54.915229176 UTC)"}
+{"date": "1363282619", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4153, batt_temp=296, batt_current=328, eval_current=0, level=82, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238988036962764 (2013-03-14 17:36:54.919318532 UTC)"}
+{"date": "1363282619", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4153, batt_temp=296, batt_current=328, eval_current=0, level=82, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 238988041601436 (2013-03-14 17:36:54.922156666 UTC)"}
+{"date": "1363282624", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282620000000000 (s 1363282620000000000)"}
+{"date": "1363282625", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282621360000000 (s 1363282621360000000)"}
+{"date": "1363282635", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282631004000000 (s 1363282631004000000)"}
+{"date": "1363282637", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282633367000000 (s 1363282633367000000)"}
+{"date": "1363282664", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282660020000000 (s 1363282660020000000)"}
+{"date": "1363282668", "event": "lowmem: select 5986 (s:FriendService), adj 15, size 4601, to kill"}
+{"date": "1363282668", "event": "lowmem: select 5998 (onFriendService), adj 15, size 4852, to kill"}
+{"date": "1363282668", "event": "lowmem: send sigkill to 5998 (onFriendService), adj 15, size 4852"}
+{"date": "1363282668", "event": "lowmem: deathpending end 5998 (onFriendService)"}
+{"date": "1363282684", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282680000000000 (s 1363282680000000000)"}
+{"date": "1363282693", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282689052000000 (s 1363282689052000000)"}
+{"date": "1363282707", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282702956000000 (s 1363282702956000000)"}
+{"date": "1363282707", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282703282000000 (s 1363282703282000000)"}
+{"date": "1363282722", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282718061000000 (s 1363282718061000000)"}
+{"date": "1363282744", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282740000000000 (s 1363282740000000000)"}
+{"date": "1363282751", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282747076000000 (s 1363282747076000000)"}
+{"date": "1363282769", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1432"}
+{"date": "1363282769", "event": "[BATT] M2A_RPC: level_update: 83 at 239138001684444 (2013-03-14 17:39:24.885291432 UTC)"}
+{"date": "1363282769", "event": "[BATT] power_supply_changed: battery at 239138002752559 (2013-03-14 17:39:24.886359548 UTC)"}
+{"date": "1363282769", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1433"}
+{"date": "1363282769", "event": "[BATT] M2A_RPC: set_charging: 100 at 239138003942744 (2013-03-14 17:39:24.887549733 UTC)"}
+{"date": "1363282769", "event": "[BATT][tps65200] TPS65200 charger check, regh 0x06=27"}
+{"date": "1363282769", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4156, batt_temp=298, batt_current=300, eval_current=0, level=83, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239138006902949 (2013-03-14 17:39:24.890143727 UTC)"}
+{"date": "1363282769", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4156, batt_temp=298, batt_current=300, eval_current=0, level=83, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239138007665889 (2013-03-14 17:39:24.890937184 UTC)"}
+{"date": "1363282769", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4156, batt_temp=298, batt_current=300, eval_current=0, level=83, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239138019811885 (2013-03-14 17:39:24.903052663 UTC)"}
+{"date": "1363282769", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4156, batt_temp=298, batt_current=300, eval_current=0, level=83, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239138021826046 (2013-03-14 17:39:24.904639578 UTC)"}
+{"date": "1363282769", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4156, batt_temp=298, batt_current=300, eval_current=0, level=83, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239138022772091 (2013-03-14 17:39:24.905860281 UTC)"}
+{"date": "1363282780", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282776087000000 (s 1363282776087000000)"}
+{"date": "1363282804", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282800000000000 (s 1363282800000000000)"}
+{"date": "1363282809", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282805092000000 (s 1363282805092000000)"}
+{"date": "1363282838", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282834101000000 (s 1363282834101000000)"}
+{"date": "1363282864", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282860000000000 (s 1363282860000000000)"}
+{"date": "1363282867", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282863107000000 (s 1363282863107000000)"}
+{"date": "1363282896", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282892115000000 (s 1363282892115000000)"}
+{"date": "1363282907", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282903490000000 (s 1363282903490000000)"}
+{"date": "1363282913", "event": "call alarm, type 2, func alarm_triggered+0x0/0xe8, 1197059018000000 (s 1197059018000000)"}
+{"date": "1363282924", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282920000000000 (s 1363282920000000000)"}
+{"date": "1363282925", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282921132000000 (s 1363282921132000000)"}
+{"date": "1363282925", "event": "call alarm, type 3, func alarm_triggered+0x0/0xe8, 1197071701000000 (s 1197071701000000)"}
+{"date": "1363282926", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363282922044000000 (s 1363282922044000000)"}
+{"date": "1363282949", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1434"}
+{"date": "1363282949", "event": "[BATT] M2A_RPC: level_update: 84 at 239318001898068 (2013-03-14 17:42:24.885382986 UTC)"}
+{"date": "1363282949", "event": "[BATT] power_supply_changed: battery at 239318003057736 (2013-03-14 17:42:24.886542654 UTC)"}
+{"date": "1363282949", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4163, batt_temp=298, batt_current=298, eval_current=0, level=84, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239318008001583 (2013-03-14 17:42:24.891242361 UTC)"}
+{"date": "1363282949", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4163, batt_temp=298, batt_current=298, eval_current=0, level=84, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239318009069698 (2013-03-14 17:42:24.892340993 UTC)"}
+{"date": "1363282949", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4163, batt_temp=298, batt_current=298, eval_current=0, level=84, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239318017187374 (2013-03-14 17:42:24.900428152 UTC)"}
+{"date": "1363282949", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4163, batt_temp=298, batt_current=298, eval_current=0, level=84, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239318018072384 (2013-03-14 17:42:24.901343679 UTC)"}
+{"date": "1363282949", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4163, batt_temp=298, batt_current=298, eval_current=0, level=84, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239318018743771 (2013-03-14 17:42:24.902015066 UTC)"}
+{"date": "1363282954", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282950142000000 (s 1363282950142000000)"}
+{"date": "1363282958", "event": "call alarm, type 3, func alarm_triggered+0x0/0xe8, 1197104518000000 (s 1197104518000000)"}
+{"date": "1363282983", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282979151000000 (s 1363282979151000000)"}
+{"date": "1363282984", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363282980000000000 (s 1363282980000000000)"}
+{"date": "1363283007", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283003282000000 (s 1363283003282000000)"}
+{"date": "1363283012", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283008159000000 (s 1363283008159000000)"}
+{"date": "1363283041", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283037174000000 (s 1363283037174000000)"}
+{"date": "1363283044", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283040000000000 (s 1363283040000000000)"}
+{"date": "1363283070", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283066185000000 (s 1363283066185000000)"}
+{"date": "1363283099", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1435"}
+{"date": "1363283099", "event": "[BATT] M2A_RPC: level_update: 85 at 239468002416866 (2013-03-14 17:44:54.885779714 UTC)"}
+{"date": "1363283099", "event": "[BATT] power_supply_changed: battery at 239468005651729 (2013-03-14 17:44:54.888678883 UTC)"}
+{"date": "1363283099", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4170, batt_temp=301, batt_current=296, eval_current=0, level=85, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239468017370479 (2013-03-14 17:44:54.893073414 UTC)"}
+{"date": "1363283099", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4170, batt_temp=301, batt_current=296, eval_current=0, level=85, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239468026495235 (2013-03-14 17:44:54.902655934 UTC)"}
+{"date": "1363283099", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4170, batt_temp=301, batt_current=296, eval_current=0, level=85, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239468029455440 (2013-03-14 17:44:54.911200857 UTC)"}
+{"date": "1363283099", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4170, batt_temp=301, batt_current=296, eval_current=0, level=85, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239468036382931 (2013-03-14 17:44:54.918097830 UTC)"}
+{"date": "1363283099", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4170, batt_temp=301, batt_current=296, eval_current=0, level=85, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239468039526241 (2013-03-14 17:44:54.921302175 UTC)"}
+{"date": "1363283099", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283095191000000 (s 1363283095191000000)"}
+{"date": "1363283104", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283100000000000 (s 1363283100000000000)"}
+{"date": "1363283128", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283124202000000 (s 1363283124202000000)"}
+{"date": "1363283144", "event": "lowmem: select 5986 (s:FriendService), adj 15, size 4601, to kill"}
+{"date": "1363283144", "event": "lowmem: send sigkill to 5986 (s:FriendService), adj 15, size 4601"}
+{"date": "1363283144", "event": "lowmem: deathpending end 5986 (s:FriendService)"}
+{"date": "1363283145", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363215600699000000 (s 1363215600699000000)"}
+{"date": "1363283145", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363215600699000000 (s 1363215600699000000)"}
+{"date": "1363283145", "event": "lowmem: select 6031 (android.browser), adj 15, size 4910, to kill"}
+{"date": "1363283145", "event": "lowmem: send sigkill to 6031 (android.browser), adj 15, size 4910"}
+{"date": "1363283145", "event": "binder: 1502:1978 transaction failed 29189, size 0-0"}
+{"date": "1363283145", "event": "lowmem: deathpending end 6031 (android.browser)"}
+{"date": "1363283157", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283153209000000 (s 1363283153209000000)"}
+{"date": "1363283164", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283160000000000 (s 1363283160000000000)"}
+{"date": "1363283178", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363283173697000000 (s 1363283173697000000)"}
+{"date": "1363283186", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283182216000000 (s 1363283182216000000)"}
+{"date": "1363283215", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283211223000000 (s 1363283211223000000)"}
+{"date": "1363283219", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363283215376000000 (s 1363283215376000000)"}
+{"date": "1363283224", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283220000000000 (s 1363283220000000000)"}
+{"date": "1363283227", "event": "call alarm, type 0, func alarm_triggered+0x0/0xe8, 1363283222691000000 (s 1363283222691000000)"}
+{"date": "1363283244", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283240239000000 (s 1363283240239000000)"}
+{"date": "1363283251", "event": "lowmem: select 6055 (ufou.android.su), adj 15, size 4640, to kill"}
+{"date": "1363283251", "event": "lowmem: send sigkill to 6055 (ufou.android.su), adj 15, size 4640"}
+{"date": "1363283252", "event": "lowmem: deathpending end 6055 (ufou.android.su)"}
+{"date": "1363283273", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283269246000000 (s 1363283269246000000)"}
+{"date": "1363283279", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 3, type = 0, xid = 1436"}
+{"date": "1363283279", "event": "[BATT] M2A_RPC: level_update: 86 at 239648009705723 (2013-03-14 17:47:54.540958291 UTC)"}
+{"date": "1363283279", "event": "[BATT] power_supply_changed: battery at 239648014039219 (2013-03-14 17:47:54.545261270 UTC)"}
+{"date": "1363283279", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4174, batt_temp=301, batt_current=276, eval_current=0, level=86, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239648029633702 (2013-03-14 17:47:54.559879190 UTC)"}
+{"date": "1363283279", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4174, batt_temp=301, batt_current=276, eval_current=0, level=86, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239648035554112 (2013-03-14 17:47:54.564975625 UTC)"}
+{"date": "1363283279", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4174, batt_temp=301, batt_current=276, eval_current=0, level=86, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239648051911532 (2013-03-14 17:47:54.581272011 UTC)"}
+{"date": "1363283279", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4174, batt_temp=301, batt_current=276, eval_current=0, level=86, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239648056885897 (2013-03-14 17:47:54.586368446 UTC)"}
+{"date": "1363283279", "event": "[BATT] SMEM_BATT: get_batt_info: batt_id=1, batt_vol=4174, batt_temp=301, batt_current=276, eval_current=0, level=86, charging_source=1, charging_enabled=1, full_bat=1350000, over_vchg=0 at 239648059846102 (2013-03-14 17:47:54.590122108 UTC)"}
+{"date": "1363283284", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283280000000000 (s 1363283280000000000)"}
+{"date": "1363283302", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283298273000000 (s 1363283298273000000)"}
+{"date": "1363283307", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283303282000000 (s 1363283303282000000)"}
+{"date": "1363283331", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283327279000000 (s 1363283327279000000)"}
+{"date": "1363283344", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283340000000000 (s 1363283340000000000)"}
+{"date": "1363283360", "event": "call alarm, type 1, func alarm_triggered+0x0/0xe8, 1363283356297000000 (s 1363283356297000000)"}
+{"date": "1363283369", "event": "__msm_rpc_read: prog = 0x30100000, procedure = 1, type = 0, xid = 1437"}
+{"date": "1363283369", "event": "[BATT] M2A_RPC: set_charging: 100 at 239738001893222 (2013-03-14 17:49:24.532840614 UTC)"}
+{"date": "1363283369", "event": "[BATT][tps65200] TPS65200 charger check, regh 0x06=27"}
