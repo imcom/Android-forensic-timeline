@@ -42,6 +42,8 @@ public class ServiceInfoExtractor extends GenericExtractor {
 			for (RunningServiceInfo service_info : runningServices) {
 				writer.write(helper.formatString("name", service_info.process));
 				writer.write(" ");
+				writer.write("pid:" + service_info.pid);
+				writer.write(" ");
 				writer.write("start_time:" + service_info.activeSince);
 				writer.write(" ");
 				writer.write("last_activity:" + service_info.lastActivityTime);
