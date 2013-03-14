@@ -29,7 +29,7 @@ for log_file in log_files:
                 #buf = {'date':int(timestamp), 'event':event.strip()}
                 try:
                     details = pid_msg_mask.match(event).groupdict()
-                except(ex):
+                except:
                     #TODO move this output to error log
                     print "failed to parse input message"
                     print event
