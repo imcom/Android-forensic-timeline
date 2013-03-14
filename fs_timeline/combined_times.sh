@@ -79,9 +79,9 @@ echo 'ok'
 
 echo -ne 'parsing and formatting timestamps...\t'
 
-python fs_times.py $FS_TIMELINE $OUTPUT"/fs_macs" 1>&2
+python fs_times.py $FS_TIMELINE $OUTPUT"/fs_time.json" 1>&2
 
-python inode_times.py $INODE_TIMELINE $OUTPUT"/inode_macs" 1>&2
+python inode_times.py $INODE_TIMELINE $OUTPUT"/inode_time.json" 1>&2
 
 echo 'done!'
 
