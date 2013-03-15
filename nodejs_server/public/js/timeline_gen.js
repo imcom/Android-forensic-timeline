@@ -36,10 +36,7 @@ var query_1 = [
     }
 ];
 
-
-
 timeline_0.fetchData(query_1);
-
 
 /*
 timeline_0.query(

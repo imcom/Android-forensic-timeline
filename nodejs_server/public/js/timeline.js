@@ -5,14 +5,14 @@
  * Date: 2013-03-06
  *
  */
- 
+
 function Timeline(
             name,
             timeline_height,
             x_range,
             radius
         ) {
-    // static constant values                    
+    // static constant values
     this.name = name;
     this.y_range_padding = 25; // this number can be a constant, padding from the window top
     this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
@@ -35,7 +35,7 @@ function Timeline(
     this.x_domain_max = 0;
     this.y_domain_min = 0;
     this.y_domain_max = 0;
-    
+
     /* dragging events handler */
     var self = this;
     this.drag_event = d3.behavior.drag()
@@ -51,7 +51,7 @@ function Timeline(
                 .attr("x", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)) + 5)
                 .attr("y", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
         });
-    
+
     // dragging timeline position handler
     var target_id;
     var origin_y;
@@ -66,7 +66,7 @@ function Timeline(
                     origin_y = d3.event.sourceEvent.clientY;
                 }
             }
-        })        
+        })
         .on('dragend', function() {
             var timeline_div = $('div[id=' + target_id + ']');
             var cur_margin = timeline_div.css("margin-top");
@@ -74,7 +74,7 @@ function Timeline(
             var step = d3.event.sourceEvent.clientY - origin_y;
             timeline_div.animate({"margin-top": cur_margin + step}, 500, "ease");
         });
-    
+
 } // constructor of Timeline
 
 Timeline.prototype.update_x_domain = function(x) {
@@ -132,11 +132,11 @@ Timeline.prototype.initTimeline = function() {
         this.y_range_padding,
         this.timeline_height - this.y_range_padding
     ];
-    
+
     this.x_default = (this.x_range[1] - this.x_range[0]) * 0.025; // interval * 1/40
     this.x_suspect = this.x_default * 3; //TODO need to verify the offset effect
     this.x_padding = this.x_default * 0.1;
-    
+
     $(this.name).on("doubleTap", function(){
         console.log("double tap fires");
     });
@@ -188,7 +188,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
     if (options) {
         query_content.options = options;
     }
-    
+
     $.post(
         uri,
         query_content,
@@ -214,7 +214,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                                 y_starts_on += self.y_padding;
                             }
                             event_data.coords = [x_starts_on, y_starts_on];
-                        } else if (data.content[index].date < previous_date) { // wrong sequence detected                       
+                        } else if (data.content[index].date < previous_date) { // wrong sequence detected
                             event_data.coords = [self.x_suspect, data.content[index].date]; // adding an offset for distinguish
                             data.content[index].display = "suspect"; //TODO css class, set a different color for suspect events
                         } else {
@@ -243,7 +243,7 @@ Timeline.prototype.onDataReady = function() {
     var self = this;
     // calculate how many timestamps in the selected period
     this.tick_num = this.y_domain_max - this.y_domain_min;
-    
+
     var x_scale = d3.scale.linear()
                  .domain([
                             this.x_domain_min,
@@ -257,8 +257,6 @@ Timeline.prototype.onDataReady = function() {
                             this.y_domain_max
                         ])
                  .range(this.y_range);
-                 
-    console.log(this.y_domain_max + "," + this.y_domain_min + "," + this.tick_num);
 
     this.timeline.selectAll("circle[id=" + this.name.substr(1) + "]")
         .data(this.dataset)
@@ -297,7 +295,7 @@ Timeline.prototype.onDataReady = function() {
         text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) + 5);
         text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
-        
+
         var text_field = $('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
             base_y_offset = $('text#' + event.target.id).height();
@@ -314,13 +312,13 @@ Timeline.prototype.onDataReady = function() {
             this.setAttribute("cursor", null);
             $('#popup_detail').css("opacity", 0).text(null); // clear the popup div
         });
-        
+
         text_field.on("click", function(event){
             console.log(event.target.id);
         });
-        
+
         var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
-        circle.mouseover(function(event){         
+        circle.mouseover(function(event){
             this.setAttribute("fill", "brown");
             this.setAttribute("cursor", "move");
         })
@@ -334,7 +332,7 @@ Timeline.prototype.onDataReady = function() {
         .scale(y_scale)
         .orient("right")
         .ticks(this.tick_num);
-        
+
     y_axis.tickFormat(function(date) {
         date *= 1000; // convert to milliseconds
         formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");

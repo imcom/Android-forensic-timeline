@@ -87,34 +87,39 @@ btn.onclick = function(){
 
 window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
-        $('.back-to-top').css('opacity', 0.8).css('z-index', 100);        
+        $('.back-to-top').css('opacity', 0.8).css('z-index', 100);
     } else {
         $('.back-to-top').css('opacity', 0).css('z-index', -1);
     }
 }
 
-// button dummy
+// button of POC
 btn = $('#go');
 btn.click(function(){
     var query_2 = [
         {
             uri: "/syslogs",
-            collection: "system",
+            collection: "main",
             selection: JSON.stringify({
-                pid: "1372",
+                pid: "1502",
                 date: {
-                    $gte: 1363279140,
-                    $lte: 1363281140
+                    $gte: 1363283140
                 }
             }),
             fields: ["date", "msg", "object", "pid", "level"],
             options: null
         }
     ];
+
+    timeline_1.initTimeline();
+    timeline_1.fetchData(query_2);
+
+/*  adding new events on the same timeline
     var cur_svg = $(timeline_0.getName()).children();
-    cur_svg.remove(); // remove the old svg
+    cur_svg.remove();
     timeline_0.initTimeline();
-    timeline_0.fetchData(query_2);  
+    timeline_0.fetchData(query_2);
+*/
 });
 
 
