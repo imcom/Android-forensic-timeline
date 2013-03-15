@@ -4,11 +4,12 @@ html
         title #{title}
         link(rel='stylesheet', href='/css/style.css')
         link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/opentip.css')
         meta(name='viewport', 'content'='user-scalable=yes, width=device-width, initial-scale=0.8, maximum-scale=1.2')
         link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
         -each script in globalScripts
             script(type = 'text/javascript', src = script)
-    body        
+    body
         #container.container-fluid
             .row-fluid
                 #logo.span2
@@ -18,7 +19,7 @@ html
                 #content.span10
                     a(id='top')
                     fieldset#col_left
-                        #ctlbar.ctlbar                            
+                        #ctlbar.ctlbar
                             #ctl_panel_0.btn-group
                                 button#down.btn Down
                                 button#up.btn Up
@@ -35,5 +36,4 @@ html
                                 button#in.btn Zoom in
                                 button#up.btn Zoom out
                         #timeline_1.timeline
-                    #popup_detail.well.well-small
                     block script

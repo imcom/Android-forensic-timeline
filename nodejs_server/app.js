@@ -61,10 +61,12 @@ app.configure(function(){
     );
     app.use(express.static(path.join(__dirname, 'public')));
     app.locals.globalScripts = [
+        '/js/jquery-1.9.1.min.js',
         '/js/d3.js',
         '/js/zepto.min.js',
         '/js/bootstrap.min.js',
         '/js/timeline.js',
+        '/js/opentip-jquery.min.js'
     ]
 });
 

@@ -36,6 +36,8 @@ function Timeline(
     this.y_domain_min = 0;
     this.y_domain_max = 0;
 
+    jQuery.noConflict();
+    $ = Zepto;
     /* dragging events handler */
     var self = this;
     this.drag_event = d3.behavior.drag()
@@ -136,10 +138,6 @@ Timeline.prototype.initTimeline = function() {
     this.x_default = (this.x_range[1] - this.x_range[0]) * 0.025; // interval * 1/40
     this.x_suspect = this.x_default * 3; //TODO need to verify the offset effect
     this.x_padding = this.x_default * 0.1;
-
-    $(this.name).on("doubleTap", function(){
-        console.log("double tap fires");
-    });
 
 } // init timeline SVG and properties
 
@@ -296,21 +294,17 @@ Timeline.prototype.onDataReady = function() {
         text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
 
-        var text_field = $('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+        var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+        //TODO add style and adjust the tooltip
+        text_field.opentip(self.dataset[index].detail.msg, {delay: 0.5});
+
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
-            base_y_offset = $('text#' + event.target.id).height();
-            $('#popup_detail').css("position", "absolute")
-                .css("left", Math.ceil(document.width / 6)) //FIXME not a really good implementation here... magic number...
-                .css("top", event.pageY - Math.round(base_y_offset * 0.3) * 10) // round down to the nearest 2-digits number
-                .css("opacity", 0.8)
-                .text(self.dataset[index].detail.msg);
-            this.setAttribute("fill", "purple");
+            this.setAttribute("fill", "grey");
             this.setAttribute("cursor", "pointer");
         })
         .mouseout(function(event){
             this.setAttribute("fill", "blue");
             this.setAttribute("cursor", null);
-            $('#popup_detail').css("opacity", 0).text(null); // clear the popup div
         });
 
         text_field.on("click", function(event){
@@ -319,7 +313,7 @@ Timeline.prototype.onDataReady = function() {
 
         var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
         circle.mouseover(function(event){
-            this.setAttribute("fill", "brown");
+            this.setAttribute("fill", "grey");
             this.setAttribute("cursor", "move");
         })
         .mouseout(function(event){
