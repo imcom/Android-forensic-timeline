@@ -71,7 +71,6 @@ app.configure(function(){
 // default index route
 app.get('/', index_handler.imcom);
 
-//TODO using `post` instead for complex query options
 app.post('/query', db_handler.db_helper);
 
 app.listen(app.get('port'));

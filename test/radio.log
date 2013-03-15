@@ -1,588 +1,588 @@
-{"date": 1363282248, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282254, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282254, "msg": "(t=1363282254)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282254, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282254, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282312, "msg": "[28948]> GET_NEIGHBORING_CELL_IDS\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282312, "msg": "[28948]> GET_NEIGHBORING_CELL_IDS \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "ril_func_get_neighbor_cell():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "(t=1363282312)>> AT+Q3GNCELL\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "TX::> AT+Q3GNCELL\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "RX::> +Q3GNCELL: \"00434DA3\",30,3,120,30,257,28,347,26\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "(t=1363282312)<< +Q3GNCELL: \"00434DA3\",30,3,120,30,257,28,347,26\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "[28948]< GET_NEIGHBORING_CELL_IDS {[cid=78,rssi=30],[cid=101,rssi=28],[cid=15B,rssi=26]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282312, "msg": "[28948]< GET_NEIGHBORING_CELL_IDS  [78@30] [101@28] [15b@26] \r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282347, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282347, "msg": "(t=1363282347)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282347, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282347, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282350, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282350, "msg": "(t=1363282350)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282350, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282350, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282383, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282383, "msg": "(t=1363282383)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282383, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282383, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282386, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282386, "msg": "(t=1363282386)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282386, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282386, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282425, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282425, "msg": "(t=1363282425)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282425, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282425, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282428, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282428, "msg": "(t=1363282428)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282428, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282428, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282455, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282455, "msg": "(t=1363282455)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282455, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282455, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282458, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282458, "msg": "(t=1363282458)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282458, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282458, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282485, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282485, "msg": "(t=1363282485)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282485, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282485, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282488, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282488, "msg": "(t=1363282488)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282488, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282488, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282497, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282497, "msg": "(t=1363282497)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282497, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282497, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282512, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282512, "msg": "(t=1363282512)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282512, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282512, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282515, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282515, "msg": "(t=1363282515)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282515, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282515, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282521, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282521, "msg": "(t=1363282521)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282521, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282521, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282524, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282524, "msg": "(t=1363282524)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282524, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282524, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282527, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282527, "msg": "(t=1363282527)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282527, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282527, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282536, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282536, "msg": "(t=1363282536)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282536, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282536, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282542, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282542, "msg": "(t=1363282542)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282542, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282542, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282545, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282545, "msg": "(t=1363282545)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282545, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282545, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282554, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282554, "msg": "(t=1363282554)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282554, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282554, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282560, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282560, "msg": "(t=1363282560)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282560, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282560, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282566, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282566, "msg": "(t=1363282566)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282566, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282566, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282569, "msg": "RX::> +HTCUCSQ: 14\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282569, "msg": "(t=1363282569)%% +HTCUCSQ: 14\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282569, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282569, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282572, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282572, "msg": "(t=1363282572)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282572, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282572, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282578, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282578, "msg": "(t=1363282578)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282578, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282578, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +CREG: 1,\"005E\",\"00430778\"\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "check_phone_mode_change():last_scan_network_type:0\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "check_phone_mode_change():last_register_network:0\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "check_phone_mode_change():init network_mode:0\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "check_phone_mode_change():set the modem type to UMTS\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)%% +CREG: 1,\"005E\",\"00430778\"\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28949]> OPERATOR\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28950]> REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28949]> OPERATOR \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28951]> GPRS_REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28952]> QUERY_NETWORK_SELECTION_MODE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "rilCregState: 1\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "rilCgregState: 1\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "oldRilCREGState: 0  newRilCREGState: 0\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "oldRilCGREGState: 0  newRilCGREGState: 0\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "mCregChange: false  mCgregChange: false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28953]> OPERATOR\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28954]> REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "[28955]> GPRS_REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_curr_operator_name():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28950]> REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28956]> QUERY_NETWORK_SELECTION_MODE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_gsm_cdma_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28951]> GPRS_REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_gprs_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28952]> QUERY_NETWORK_SELECTION_MODE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_network_select_mode():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28953]> OPERATOR \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_curr_operator_name():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28954]> REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_gsm_cdma_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28955]> GPRS_REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_gprs_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28956]> QUERY_NETWORK_SELECTION_MODE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "ril_func_get_network_select_mode():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]rule: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]numeric: 23802\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]priority: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28949]< OPERATOR {Telenor DK,(N/A),23802,5}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28949]< OPERATOR {Telenor DK, (N/A), 23802, 5}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+CREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+CREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +CREG: 2,1,\"005E\",\"00430778\"\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +CREG: 2,1,\"005E\",\"00430778\"\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+CGREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+CGREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +CGREG: 1,1\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +CGREG: 1,1\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28952]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28952]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]rule: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]numeric: 23802\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "operator_name_get_by_plmn_num():[ccl]priority: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28953]< OPERATOR {Telenor DK,(N/A),23802,5}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28953]< OPERATOR {Telenor DK, (N/A), 23802, 5}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+CREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+CREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +CREG: 2,1,\"005E\",\"00430778\"\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +CREG: 2,1,\"005E\",\"00430778\"\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+CGREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+CGREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +CGREG: 1,1\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +CGREG: 1,1\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28956]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28956]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28950]< REGISTRATION_STATE {1,005E,00430778,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28950]< REGISTRATION_STATE {1, 005E, 00430778, 3, null, null, null, null, null, null, null, null, null, null}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28951]< GPRS_REGISTRATION_STATE {1,(null),(null),3}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28951]< GPRS_REGISTRATION_STATE {1, null, null, 3}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28954]< REGISTRATION_STATE {1,005E,00430778,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28954]< REGISTRATION_STATE {1, 005E, 00430778, 3, null, null, null, null, null, null, null, null, null, null}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28955]< GPRS_REGISTRATION_STATE {1,(null),(null),3}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[28955]< GPRS_REGISTRATION_STATE {1, null, null, 3}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "reset the mCregChange =false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "reset the mCgregChange =false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282581, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "(t=1363282581)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282581, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282584, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282584, "msg": "(t=1363282584)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282584, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282584, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +CREG: 1,\"005E\",\"00434DA3\"\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "check_phone_mode_change():last_scan_network_type:0\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "check_phone_mode_change():last_register_network:0\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "check_phone_mode_change():init network_mode:0\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "check_phone_mode_change():set the modem type to UMTS\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28957]> OPERATOR\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28957]> OPERATOR \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_curr_operator_name():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28958]> REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)%% +CREG: 1,\"005E\",\"00434DA3\"\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28958]> REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_gsm_cdma_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28959]> GPRS_REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]rule: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]numeric: 23802\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]priority: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28957]< OPERATOR {Telenor DK,(N/A),23802,5}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28957]< OPERATOR {Telenor DK, (N/A), 23802, 5}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+CREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+CREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +CREG: 2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +CREG: 2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28959]> GPRS_REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_gprs_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28960]> QUERY_NETWORK_SELECTION_MODE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+CGREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+CGREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +CGREG: 1,1\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +CGREG: 1,1\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28960]> QUERY_NETWORK_SELECTION_MODE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_network_select_mode():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "rilCregState: 1\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "rilCgregState: 1\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "oldRilCREGState: 0  newRilCREGState: 0\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "oldRilCGREGState: 0  newRilCGREGState: 0\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "mCregChange: false  mCgregChange: false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28961]> OPERATOR\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28960]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28960]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28961]> OPERATOR \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_curr_operator_name():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28962]> REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28958]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28958]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28962]> REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_gsm_cdma_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28963]> GPRS_REGISTRATION_STATE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]rule: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]numeric: 23802\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "operator_name_get_by_plmn_num():[ccl]priority: 5\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28961]< OPERATOR {Telenor DK,(N/A),23802,5}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+CREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+CREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28961]< OPERATOR {Telenor DK, (N/A), 23802, 5}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +CREG: 2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +CREG: 2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28963]> GPRS_REGISTRATION_STATE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_gprs_reg_state():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28964]> QUERY_NETWORK_SELECTION_MODE\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+CGREG?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+CGREG?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +CGREG: 1,1\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +CGREG: 1,1\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28964]> QUERY_NETWORK_SELECTION_MODE \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "ril_func_get_network_select_mode():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28964]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28964]< QUERY_NETWORK_SELECTION_MODE {0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28959]< GPRS_REGISTRATION_STATE {1,(null),(null),3}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28959]< GPRS_REGISTRATION_STATE {1, null, null, 3}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28962]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)>> AT+COPS=3,2;+COPS?\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "TX::> AT+COPS=3,2;+COPS?\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "RX::> +COPS: 0,2,\"23802\",2\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "(t=1363282585)<< +COPS: 0,2,\"23802\",2\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28962]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "[28963]< GPRS_REGISTRATION_STATE {1,(null),(null),3}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282585, "msg": "[28963]< GPRS_REGISTRATION_STATE {1, null, null, 3}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "reset the mCregChange =false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282585, "msg": "reset the mCgregChange =false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363282587, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282587, "msg": "(t=1363282587)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282587, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282587, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282605, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282605, "msg": "(t=1363282605)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282605, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282605, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282612, "msg": "[28965]> GET_NEIGHBORING_CELL_IDS\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282612, "msg": "[28965]> GET_NEIGHBORING_CELL_IDS \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "ril_func_get_neighbor_cell():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "(t=1363282612)>> AT+Q3GNCELL\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "TX::> AT+Q3GNCELL\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "RX::> +Q3GNCELL: \"00434DA3\",33,3,120,28,257,27,347,23\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "(t=1363282612)<< +Q3GNCELL: \"00434DA3\",33,3,120,28,257,27,347,23\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "[28965]< GET_NEIGHBORING_CELL_IDS {[cid=78,rssi=28],[cid=101,rssi=27],[cid=15B,rssi=23]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282612, "msg": "[28965]< GET_NEIGHBORING_CELL_IDS  [78@28] [101@27] [15b@23] \r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282626, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282626, "msg": "(t=1363282626)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282626, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282626, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282632, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282632, "msg": "(t=1363282632)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282632, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282632, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282638, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282638, "msg": "(t=1363282638)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282638, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282638, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282641, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282641, "msg": "(t=1363282641)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282641, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282641, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282668, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282668, "msg": "(t=1363282668)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282668, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282668, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282671, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282671, "msg": "(t=1363282671)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282671, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282671, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282689, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282689, "msg": "(t=1363282689)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282689, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282689, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282692, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282692, "msg": "(t=1363282692)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282692, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282692, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282698, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282698, "msg": "(t=1363282698)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282698, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282698, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282701, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282701, "msg": "(t=1363282701)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282701, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282701, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282716, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282716, "msg": "(t=1363282716)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282716, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282716, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282746, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282746, "msg": "(t=1363282746)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282746, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282746, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282764, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282764, "msg": "(t=1363282764)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282764, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282764, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282773, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282773, "msg": "(t=1363282773)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282773, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282773, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282776, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282776, "msg": "(t=1363282776)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282776, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282776, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282779, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282779, "msg": "(t=1363282779)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282779, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282779, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282785, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282785, "msg": "(t=1363282785)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282785, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282785, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282788, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282788, "msg": "(t=1363282788)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282788, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282788, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282912, "msg": "[28966]> GET_NEIGHBORING_CELL_IDS\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282912, "msg": "[28966]> GET_NEIGHBORING_CELL_IDS \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282912, "msg": "ril_func_get_neighbor_cell():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282913, "msg": "(t=1363282913)>> AT+Q3GNCELL\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282913, "msg": "TX::> AT+Q3GNCELL\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282913, "msg": "RX::> +Q3GNCELL: \"00434DA3\",34,4,120,27,257,27,347,22,115,21\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282913, "msg": "(t=1363282913)<< +Q3GNCELL: \"00434DA3\",34,4,120,27,257,27,347,22,115,21\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282913, "msg": "[28966]< GET_NEIGHBORING_CELL_IDS {[cid=78,rssi=27],[cid=101,rssi=27],[cid=15B,rssi=22],[cid=73,rssi=21]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282913, "msg": "[28966]< GET_NEIGHBORING_CELL_IDS  [78@27] [101@27] [15b@22] [73@21] \r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282939, "msg": "[28967]> GET_NEIGHBORING_CELL_IDS\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282939, "msg": "[28967]> GET_NEIGHBORING_CELL_IDS \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "ril_func_get_neighbor_cell():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "(t=1363282939)>> AT+Q3GNCELL\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "TX::> AT+Q3GNCELL\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "RX::> +Q3GNCELL: \"00434DA3\",33,4,120,28,257,26,347,21,115,20\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "(t=1363282939)<< +Q3GNCELL: \"00434DA3\",33,4,120,28,257,26,347,21,115,20\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "[28967]< GET_NEIGHBORING_CELL_IDS {[cid=78,rssi=28],[cid=101,rssi=26],[cid=15B,rssi=21],[cid=73,rssi=20]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282939, "msg": "[28967]< GET_NEIGHBORING_CELL_IDS  [78@28] [101@26] [15b@21] [73@20] \r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282947, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282947, "msg": "(t=1363282947)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282947, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282947, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363282950, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282950, "msg": "(t=1363282950)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363282950, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363282950, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283034, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283034, "msg": "(t=1363283034)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283034, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283034, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283040, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283040, "msg": "(t=1363283040)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283040, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283040, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283049, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283049, "msg": "(t=1363283049)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283049, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283049, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283058, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283058, "msg": "(t=1363283058)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283058, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283058, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283064, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283064, "msg": "(t=1363283064)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283064, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283064, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283088, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283088, "msg": "(t=1363283088)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283088, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283088, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283091, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283091, "msg": "(t=1363283091)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283091, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283091, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283094, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283094, "msg": "(t=1363283094)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283094, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283094, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283097, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283097, "msg": "(t=1363283097)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283097, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283097, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283103, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283103, "msg": "(t=1363283103)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283103, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283103, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283106, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283106, "msg": "(t=1363283106)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283106, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283106, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283127, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283127, "msg": "(t=1363283127)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283127, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283127, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283138, "msg": "RX::> +HTCCTZV: \"13/03/14,17:45:38+04,0\"\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283138, "msg": "(t=1363283138)%% +HTCCTZV: \"13/03/14,17:45:38+04,0\"\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283138, "msg": "[UNSL]< UNSOL_NITZ_TIME_RECEIVED {13/03/14,17:45:38+04,0}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283138, "msg": "[UNSL]< UNSOL_NITZ_TIME_RECEIVED 13/03/14,17:45:38+04,0\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283138, "msg": "NITZ: 13/03/14,17:45:38+04,0,1197288578 start=1197288579 delay=1\r", "object": "GSM", "pid": " 1625", "level": "I"}
-{"date": 1363283138, "msg": "get ISO: dk mGotCountryCode: true mOPERATOR_ISO_COUNTRY: dk\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363283138, "msg": "[checkTestIcc] mTestIcc = false\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363283138, "msg": "setTimeFromNITZString AUTO_TIME update time zone: Europe/Copenhagen\r", "object": "GSM", "pid": " 1625", "level": "D"}
-{"date": 1363283138, "msg": "NITZ: after Setting time of day\r", "object": "GSM", "pid": " 1625", "level": "I"}
-{"date": 1363283138, "msg": "NITZ: Setting time of day to Thu Mar 14 18:45:38 GMT+01:00 2013 NITZ receive delay(ms): 85 gained(ms): -350 from 13/03/14,17:45:38+04,0\r", "object": "GSM", "pid": " 1625", "level": "I"}
-{"date": 1363283148, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283148, "msg": "(t=1363283148)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283148, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283148, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283151, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283151, "msg": "(t=1363283151)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283151, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283151, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283205, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283205, "msg": "(t=1363283205)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283205, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283205, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283212, "msg": "[28968]> GET_NEIGHBORING_CELL_IDS\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283212, "msg": "[28968]> GET_NEIGHBORING_CELL_IDS \r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "ril_func_get_neighbor_cell():called\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "(t=1363283212)>> AT+Q3GNCELL\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "TX::> AT+Q3GNCELL\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "RX::> +Q3GNCELL: \"00434DA3\",32,3,120,25,257,24,347,21\\r\\n0\\r\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "(t=1363283212)<< +Q3GNCELL: \"00434DA3\",32,3,120,25,257,24,347,21\\r\\n0\\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "[28968]< GET_NEIGHBORING_CELL_IDS {[cid=78,rssi=25],[cid=101,rssi=24],[cid=15B,rssi=21]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283212, "msg": "[28968]< GET_NEIGHBORING_CELL_IDS  [78@25] [101@24] [15b@21] \r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283289, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283289, "msg": "(t=1363283289)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283289, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283289, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283292, "msg": "RX::> +HTCUCSQ: 15\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283292, "msg": "(t=1363283292)%% +HTCUCSQ: 15\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283292, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283292, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283301, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283301, "msg": "(t=1363283301)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283301, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283301, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283310, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283310, "msg": "(t=1363283310)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283310, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283310, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283343, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283343, "msg": "(t=1363283343)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283343, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283343, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283349, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283349, "msg": "(t=1363283349)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283349, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283349, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283364, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283364, "msg": "(t=1363283364)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283364, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283364, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283367, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283367, "msg": "(t=1363283367)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283367, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283367, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283370, "msg": "RX::> +HTCUCSQ: 16\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283370, "msg": "(t=1363283370)%% +HTCUCSQ: 16\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283370, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283370, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}\r", "object": "RILJ", "pid": " 1625", "level": "D"}
-{"date": 1363283373, "msg": "RX::> +HTCUCSQ: 17\\r\\n\r\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283373, "msg": "(t=1363283373)%% +HTCUCSQ: 17\\r\\n\r", "object": "HTC_RIL", "pid": " 1375", "level": "D"}
-{"date": 1363283373, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=17,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}\r", "object": "RILC", "pid": " 1375", "level": "D"}
-{"date": 1363283373, "msg": "[UNSL]< UNSOL_SIGNAL_STRENGTH {17, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}", "object": "RILJ", "pid": " 1625", "level": "D"}
+{"date":1363282248,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282254,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282254,"msg":"(t=1363282254)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282254,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282254,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282312,"msg":"[28948]>GET_NEIGHBORING_CELL_IDS\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282312,"msg":"[28948]>GET_NEIGHBORING_CELL_IDS\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"ril_func_get_neighbor_cell():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"(t=1363282312)>>AT+Q3GNCELL\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"TX::>AT+Q3GNCELL\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"RX::>+Q3GNCELL:\"00434DA3\",30,3,120,30,257,28,347,26\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"(t=1363282312)<<+Q3GNCELL:\"00434DA3\",30,3,120,30,257,28,347,26\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"[28948]<GET_NEIGHBORING_CELL_IDS{[cid=78,rssi=30],[cid=101,rssi=28],[cid=15B,rssi=26]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282312,"msg":"[28948]<GET_NEIGHBORING_CELL_IDS[78@30][101@28][15b@26]\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282347,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282347,"msg":"(t=1363282347)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282347,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282347,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282350,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282350,"msg":"(t=1363282350)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282350,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282350,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282383,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282383,"msg":"(t=1363282383)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282383,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282383,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282386,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282386,"msg":"(t=1363282386)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282386,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282386,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282425,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282425,"msg":"(t=1363282425)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282425,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282425,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282428,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282428,"msg":"(t=1363282428)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282428,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282428,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282455,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282455,"msg":"(t=1363282455)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282455,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282455,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282458,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282458,"msg":"(t=1363282458)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282458,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282458,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282485,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282485,"msg":"(t=1363282485)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282485,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282485,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282488,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282488,"msg":"(t=1363282488)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282488,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282488,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282497,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282497,"msg":"(t=1363282497)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282497,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282497,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282512,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282512,"msg":"(t=1363282512)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282512,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282512,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282515,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282515,"msg":"(t=1363282515)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282515,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282515,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282521,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282521,"msg":"(t=1363282521)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282521,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282521,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282524,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282524,"msg":"(t=1363282524)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282524,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282524,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282527,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282527,"msg":"(t=1363282527)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282527,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282527,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282536,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282536,"msg":"(t=1363282536)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282536,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282536,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282542,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282542,"msg":"(t=1363282542)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282542,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282542,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282545,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282545,"msg":"(t=1363282545)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282545,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282545,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282554,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282554,"msg":"(t=1363282554)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282554,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282554,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282560,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282560,"msg":"(t=1363282560)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282560,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282560,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282566,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282566,"msg":"(t=1363282566)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282566,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282566,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282569,"msg":"RX::>+HTCUCSQ:14\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282569,"msg":"(t=1363282569)%%+HTCUCSQ:14\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282569,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=14,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282569,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{14,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282572,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282572,"msg":"(t=1363282572)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282572,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282572,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282578,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282578,"msg":"(t=1363282578)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282578,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282578,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"RX::>+CREG:1,\"005E\",\"00430778\"\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"check_phone_mode_change():last_scan_network_type:0\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"check_phone_mode_change():last_register_network:0\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"check_phone_mode_change():initnetwork_mode:0\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"check_phone_mode_change():setthemodemtypetoUMTS\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)%%+CREG:1,\"005E\",\"00430778\"\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[UNSL]<UNSOL_DATA_NETWORK_STATE_CHANGED\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[UNSL]<UNSOL_DATA_NETWORK_STATE_CHANGED\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[UNSL]<UNSOL_RESPONSE_NETWORK_STATE_CHANGED\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[UNSL]<UNSOL_RESPONSE_NETWORK_STATE_CHANGED\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28949]>OPERATOR\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28950]>REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28949]>OPERATOR\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28951]>GPRS_REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28952]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"rilCregState:1\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"rilCgregState:1\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"oldRilCREGState:0newRilCREGState:0\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"oldRilCGREGState:0newRilCGREGState:0\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"mCregChange:falsemCgregChange:false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28953]>OPERATOR\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28954]>REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"[28955]>GPRS_REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_curr_operator_name():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28950]>REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28956]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_gsm_cdma_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28951]>GPRS_REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_gprs_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28952]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_network_select_mode():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28953]>OPERATOR\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_curr_operator_name():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28954]>REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_gsm_cdma_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28955]>GPRS_REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_gprs_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28956]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"ril_func_get_network_select_mode():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]rule:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]long_alpha:TelenorDK\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]short_alpha:(N/A)\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]numeric:23802\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]priority:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28949]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28949]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+CREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+CREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+CREG:2,1,\"005E\",\"00430778\"\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+CREG:2,1,\"005E\",\"00430778\"\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+CGREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+CGREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+CGREG:1,1\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+CGREG:1,1\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28952]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28952]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]rule:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]long_alpha:TelenorDK\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]short_alpha:(N/A)\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]numeric:23802\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"operator_name_get_by_plmn_num():[ccl]priority:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28953]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28953]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+CREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+CREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+CREG:2,1,\"005E\",\"00430778\"\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+CREG:2,1,\"005E\",\"00430778\"\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+CGREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+CGREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+CGREG:1,1\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+CGREG:1,1\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28956]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28956]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28950]<REGISTRATION_STATE{1,005E,00430778,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28950]<REGISTRATION_STATE{1,005E,00430778,3,null,null,null,null,null,null,null,null,null,null}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28951]<GPRS_REGISTRATION_STATE{1,(null),(null),3}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28951]<GPRS_REGISTRATION_STATE{1,null,null,3}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28954]<REGISTRATION_STATE{1,005E,00430778,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28954]<REGISTRATION_STATE{1,005E,00430778,3,null,null,null,null,null,null,null,null,null,null}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28955]<GPRS_REGISTRATION_STATE{1,(null),(null),3}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[28955]<GPRS_REGISTRATION_STATE{1,null,null,3}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"PollServiceStatedone:oldSS=[0homeTelenorDK(N/A)238020UMTSCSSnotsupported-1-1RoamInd:-1DefRoamInd:-1EriInd:-1EriMode:-1RadioPowerSv:falseEmergOnly:false]newSS=[0homeTelenorDK(N/A)238020UMTSCSSnotsupported-1-1RoamInd:-1DefRoamInd:-1EriInd:-1EriMode:-1RadioPowerSv:falseEmergOnly:false]oldGprs=0newGprs=0oldType=UMTSnewType=UMTS\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"resetthemCregChange=false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"resetthemCgregChange=false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282581,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"(t=1363282581)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282581,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282584,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282584,"msg":"(t=1363282584)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282584,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282584,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"RX::>+CREG:1,\"005E\",\"00434DA3\"\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"check_phone_mode_change():last_scan_network_type:0\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"check_phone_mode_change():last_register_network:0\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"check_phone_mode_change():initnetwork_mode:0\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"check_phone_mode_change():setthemodemtypetoUMTS\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[UNSL]<UNSOL_DATA_NETWORK_STATE_CHANGED\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[UNSL]<UNSOL_DATA_NETWORK_STATE_CHANGED\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28957]>OPERATOR\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28957]>OPERATOR\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_curr_operator_name():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28958]>REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)%%+CREG:1,\"005E\",\"00434DA3\"\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[UNSL]<UNSOL_RESPONSE_NETWORK_STATE_CHANGED\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[UNSL]<UNSOL_RESPONSE_NETWORK_STATE_CHANGED\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28958]>REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_gsm_cdma_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28959]>GPRS_REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]rule:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]long_alpha:TelenorDK\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]short_alpha:(N/A)\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]numeric:23802\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]priority:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28957]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28957]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+CREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+CREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+CREG:2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+CREG:2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28959]>GPRS_REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_gprs_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28960]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+CGREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+CGREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+CGREG:1,1\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+CGREG:1,1\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28960]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_network_select_mode():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"rilCregState:1\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"rilCgregState:1\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"oldRilCREGState:0newRilCREGState:0\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"oldRilCGREGState:0newRilCGREGState:0\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"mCregChange:falsemCgregChange:false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28961]>OPERATOR\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28960]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28960]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28961]>OPERATOR\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_curr_operator_name():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28962]>REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28958]<REGISTRATION_STATE{1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28958]<REGISTRATION_STATE{1,005E,00434DA3,3,null,null,null,null,null,null,null,null,null,null}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28962]>REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_gsm_cdma_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28963]>GPRS_REGISTRATION_STATE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]rule:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]long_alpha:TelenorDK\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]short_alpha:(N/A)\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]numeric:23802\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"operator_name_get_by_plmn_num():[ccl]priority:5\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28961]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+CREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+CREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28961]<OPERATOR{TelenorDK,(N/A),23802,5}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"RX::>+CREG:2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+CREG:2,1,\"005E\",\"00434DA3\"\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28963]>GPRS_REGISTRATION_STATE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_gprs_reg_state():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28964]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+CGREG?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+CGREG?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+CGREG:1,1\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+CGREG:1,1\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28964]>QUERY_NETWORK_SELECTION_MODE\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"ril_func_get_network_select_mode():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28964]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28964]<QUERY_NETWORK_SELECTION_MODE{0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28959]<GPRS_REGISTRATION_STATE{1,(null),(null),3}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28959]<GPRS_REGISTRATION_STATE{1,null,null,3}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28962]<REGISTRATION_STATE{1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)>>AT+COPS=3,2;+COPS?\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"TX::>AT+COPS=3,2;+COPS?\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"RX::>+COPS:0,2,\"23802\",2\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"(t=1363282585)<<+COPS:0,2,\"23802\",2\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28962]<REGISTRATION_STATE{1,005E,00434DA3,3,null,null,null,null,null,null,null,null,null,null}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"[28963]<GPRS_REGISTRATION_STATE{1,(null),(null),3}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282585,"msg":"[28963]<GPRS_REGISTRATION_STATE{1,null,null,3}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"PollServiceStatedone:oldSS=[0homeTelenorDK(N/A)238020UMTSCSSnotsupported-1-1RoamInd:-1DefRoamInd:-1EriInd:-1EriMode:-1RadioPowerSv:falseEmergOnly:false]newSS=[0homeTelenorDK(N/A)238020UMTSCSSnotsupported-1-1RoamInd:-1DefRoamInd:-1EriInd:-1EriMode:-1RadioPowerSv:falseEmergOnly:false]oldGprs=0newGprs=0oldType=UMTSnewType=UMTS\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"resetthemCregChange=false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282585,"msg":"resetthemCgregChange=false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363282587,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282587,"msg":"(t=1363282587)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282587,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282587,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282605,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282605,"msg":"(t=1363282605)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282605,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282605,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282612,"msg":"[28965]>GET_NEIGHBORING_CELL_IDS\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282612,"msg":"[28965]>GET_NEIGHBORING_CELL_IDS\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"ril_func_get_neighbor_cell():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"(t=1363282612)>>AT+Q3GNCELL\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"TX::>AT+Q3GNCELL\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"RX::>+Q3GNCELL:\"00434DA3\",33,3,120,28,257,27,347,23\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"(t=1363282612)<<+Q3GNCELL:\"00434DA3\",33,3,120,28,257,27,347,23\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"[28965]<GET_NEIGHBORING_CELL_IDS{[cid=78,rssi=28],[cid=101,rssi=27],[cid=15B,rssi=23]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282612,"msg":"[28965]<GET_NEIGHBORING_CELL_IDS[78@28][101@27][15b@23]\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282626,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282626,"msg":"(t=1363282626)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282626,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282626,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282632,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282632,"msg":"(t=1363282632)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282632,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282632,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282638,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282638,"msg":"(t=1363282638)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282638,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282638,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282641,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282641,"msg":"(t=1363282641)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282641,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282641,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282668,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282668,"msg":"(t=1363282668)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282668,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282668,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282671,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282671,"msg":"(t=1363282671)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282671,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282671,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282689,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282689,"msg":"(t=1363282689)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282689,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282689,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282692,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282692,"msg":"(t=1363282692)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282692,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282692,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282698,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282698,"msg":"(t=1363282698)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282698,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282698,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282701,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282701,"msg":"(t=1363282701)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282701,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282701,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282716,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282716,"msg":"(t=1363282716)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282716,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282716,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282746,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282746,"msg":"(t=1363282746)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282746,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282746,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282764,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282764,"msg":"(t=1363282764)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282764,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282764,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282773,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282773,"msg":"(t=1363282773)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282773,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282773,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282776,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282776,"msg":"(t=1363282776)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282776,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282776,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282779,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282779,"msg":"(t=1363282779)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282779,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282779,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282785,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282785,"msg":"(t=1363282785)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282785,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282785,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282788,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282788,"msg":"(t=1363282788)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282788,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282788,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282912,"msg":"[28966]>GET_NEIGHBORING_CELL_IDS\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282912,"msg":"[28966]>GET_NEIGHBORING_CELL_IDS\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282912,"msg":"ril_func_get_neighbor_cell():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282913,"msg":"(t=1363282913)>>AT+Q3GNCELL\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282913,"msg":"TX::>AT+Q3GNCELL\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282913,"msg":"RX::>+Q3GNCELL:\"00434DA3\",34,4,120,27,257,27,347,22,115,21\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282913,"msg":"(t=1363282913)<<+Q3GNCELL:\"00434DA3\",34,4,120,27,257,27,347,22,115,21\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282913,"msg":"[28966]<GET_NEIGHBORING_CELL_IDS{[cid=78,rssi=27],[cid=101,rssi=27],[cid=15B,rssi=22],[cid=73,rssi=21]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282913,"msg":"[28966]<GET_NEIGHBORING_CELL_IDS[78@27][101@27][15b@22][73@21]\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282939,"msg":"[28967]>GET_NEIGHBORING_CELL_IDS\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282939,"msg":"[28967]>GET_NEIGHBORING_CELL_IDS\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"ril_func_get_neighbor_cell():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"(t=1363282939)>>AT+Q3GNCELL\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"TX::>AT+Q3GNCELL\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"RX::>+Q3GNCELL:\"00434DA3\",33,4,120,28,257,26,347,21,115,20\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"(t=1363282939)<<+Q3GNCELL:\"00434DA3\",33,4,120,28,257,26,347,21,115,20\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"[28967]<GET_NEIGHBORING_CELL_IDS{[cid=78,rssi=28],[cid=101,rssi=26],[cid=15B,rssi=21],[cid=73,rssi=20]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282939,"msg":"[28967]<GET_NEIGHBORING_CELL_IDS[78@28][101@26][15b@21][73@20]\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282947,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282947,"msg":"(t=1363282947)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282947,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282947,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363282950,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282950,"msg":"(t=1363282950)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363282950,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363282950,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283034,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283034,"msg":"(t=1363283034)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283034,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283034,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283040,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283040,"msg":"(t=1363283040)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283040,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283040,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283049,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283049,"msg":"(t=1363283049)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283049,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283049,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283058,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283058,"msg":"(t=1363283058)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283058,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283058,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283064,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283064,"msg":"(t=1363283064)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283064,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283064,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283088,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283088,"msg":"(t=1363283088)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283088,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283088,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283091,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283091,"msg":"(t=1363283091)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283091,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283091,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283094,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283094,"msg":"(t=1363283094)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283094,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283094,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283097,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283097,"msg":"(t=1363283097)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283097,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283097,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283103,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283103,"msg":"(t=1363283103)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283103,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283103,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283106,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283106,"msg":"(t=1363283106)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283106,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283106,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283127,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283127,"msg":"(t=1363283127)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283127,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283127,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283138,"msg":"RX::>+HTCCTZV:\"13/03/14,17:45:38+04,0\"\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283138,"msg":"(t=1363283138)%%+HTCCTZV:\"13/03/14,17:45:38+04,0\"\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283138,"msg":"[UNSL]<UNSOL_NITZ_TIME_RECEIVED{13/03/14,17:45:38+04,0}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283138,"msg":"[UNSL]<UNSOL_NITZ_TIME_RECEIVED13/03/14,17:45:38+04,0\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283138,"msg":"NITZ:13/03/14,17:45:38+04,0,1197288578start=1197288579delay=1\r","object":"GSM","pid":"1625","level":"I"}
+{"date":1363283138,"msg":"getISO:dkmGotCountryCode:truemOPERATOR_ISO_COUNTRY:dk\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363283138,"msg":"[checkTestIcc]mTestIcc=false\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363283138,"msg":"setTimeFromNITZStringAUTO_TIMEupdatetimezone:Europe/Copenhagen\r","object":"GSM","pid":"1625","level":"D"}
+{"date":1363283138,"msg":"NITZ:afterSettingtimeofday\r","object":"GSM","pid":"1625","level":"I"}
+{"date":1363283138,"msg":"NITZ:SettingtimeofdaytoThuMar1418:45:38GMT+01:002013NITZreceivedelay(ms):85gained(ms):-350from13/03/14,17:45:38+04,0\r","object":"GSM","pid":"1625","level":"I"}
+{"date":1363283148,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283148,"msg":"(t=1363283148)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283148,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283148,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283151,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283151,"msg":"(t=1363283151)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283151,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283151,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283205,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283205,"msg":"(t=1363283205)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283205,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283205,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283212,"msg":"[28968]>GET_NEIGHBORING_CELL_IDS\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283212,"msg":"[28968]>GET_NEIGHBORING_CELL_IDS\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"ril_func_get_neighbor_cell():called\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"(t=1363283212)>>AT+Q3GNCELL\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"TX::>AT+Q3GNCELL\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"RX::>+Q3GNCELL:\"00434DA3\",32,3,120,25,257,24,347,21\\r\\n0\\r\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"(t=1363283212)<<+Q3GNCELL:\"00434DA3\",32,3,120,25,257,24,347,21\\r\\n0\\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"[28968]<GET_NEIGHBORING_CELL_IDS{[cid=78,rssi=25],[cid=101,rssi=24],[cid=15B,rssi=21]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283212,"msg":"[28968]<GET_NEIGHBORING_CELL_IDS[78@25][101@24][15b@21]\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283289,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283289,"msg":"(t=1363283289)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283289,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283289,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283292,"msg":"RX::>+HTCUCSQ:15\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283292,"msg":"(t=1363283292)%%+HTCUCSQ:15\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283292,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=15,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283292,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{15,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283301,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283301,"msg":"(t=1363283301)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283301,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283301,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283310,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283310,"msg":"(t=1363283310)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283310,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283310,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283343,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283343,"msg":"(t=1363283343)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283343,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283343,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283349,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283349,"msg":"(t=1363283349)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283349,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283349,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283364,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283364,"msg":"(t=1363283364)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283364,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283364,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283367,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283367,"msg":"(t=1363283367)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283367,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283367,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283370,"msg":"RX::>+HTCUCSQ:16\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283370,"msg":"(t=1363283370)%%+HTCUCSQ:16\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283370,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=16,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283370,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{16,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}\r","object":"RILJ","pid":"1625","level":"D"}
+{"date":1363283373,"msg":"RX::>+HTCUCSQ:17\\r\\n\r\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283373,"msg":"(t=1363283373)%%+HTCUCSQ:17\\r\\n\r","object":"HTC_RIL","pid":"1375","level":"D"}
+{"date":1363283373,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{[signalStrength=17,bitErrorRate=99,CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,EVDO_SignalStrength.dbm=-1,EVDO_SignalStrength.ecio=-1,EVDO_SignalStrength.signalNoiseRatio=0,ATT_SignalStrength.dbm=-1,ATT_SignalStrength.ecno=-1]}\r","object":"RILC","pid":"1375","level":"D"}
+{"date":1363283373,"msg":"[UNSL]<UNSOL_SIGNAL_STRENGTH{17,99,-1,-1,-1,-1,0,-1,-1,0,0,0,0,0}","object":"RILJ","pid":"1625","level":"D"}

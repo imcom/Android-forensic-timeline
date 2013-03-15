@@ -27,15 +27,11 @@ timeline_0.initTimeline();
 
 timeline_0.query(
     "/query",
-    "events",
+    "main",
     JSON.stringify({
-        $or: [
-            {object: "dvm_gc_madvise_info"},
-            {object: "dvm_gc_info"}
-        ],
+        pid: "1502",
         date: {
-            $gte: 1362315421,
-            $lte: 1362315481
+            $gte: 1363283140
         }
     }),
     "date msg object pid level",
@@ -49,7 +45,7 @@ var timeline_1 = new Timeline(
     [100, 300],
     4
 );
-
+/*
 timeline_1.initTimeline();
 
 timeline_1.query(
@@ -67,7 +63,7 @@ timeline_1.query(
     }),
     "date msg object pid level",
     null // null options
-);
+);*/
 
 
 

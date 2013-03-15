@@ -1,721 +1,721 @@
-{"date": 1363281909, "msg": "(launch app, package): (Android Timeline Forensic, imcom.forensics)\r", "object": "HtcAppUsageStats", "pid": " 1502", "level": "V"}
-{"date": 1363281909, "msg": "Shutting down VM\r", "object": "AndroidRuntime", "pid": " 5933", "level": "D"}
-{"date": 1363281909, "msg": "NOTE: attach of thread 'Binder Thread #3' failed\r", "object": "AndroidRuntime", "pid": " 5933", "level": "I"}
-{"date": 1363281909, "msg": "GC_CONCURRENT freed 104K, 66% free 355K/1024K, external 0K/0K, paused 0ms+1ms\r", "object": "dalvikvm", "pid": " 5933", "level": "D"}
-{"date": 1363281909, "msg": "Got wake-up signal, bailing out of select\r", "object": "jdwp", "pid": " 5933", "level": "D"}
-{"date": 1363281909, "msg": "Debugger has detached; object registry had 1 entries\r", "object": "dalvikvm", "pid": " 5933", "level": "D"}
-{"date": 1363281909, "msg": "Pub com.noshufou.android.su.provider: com.noshufou.android.su.provider.PermissionsProvider\r", "object": "ActivityThread", "pid": " 5955", "level": "I"}
-{"date": 1363281909, "msg": "[DISP] attachLayer 0x4ce680 766 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281909, "msg": "couldn't save which view has focus because the focused view com.android.internal.policy.impl.PhoneWindow$DecorView@405b6248 has no id.\r", "object": "PhoneWindow", "pid": " 5775", "level": "D"}
-{"date": 1363281909, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40516118\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281909, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40516118\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281909, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40516578\r", "object": "dalvikvm", "pid": " 5974", "level": "D"}
-{"date": 1363281909, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40516578\r", "object": "dalvikvm", "pid": " 5974", "level": "D"}
-{"date": 1363281909, "msg": "vicky received: android.intent.action.PACKAGE_ADDED\r", "object": "vicky", "pid": " 5918", "level": "D"}
-{"date": 1363281909, "msg": "disable self killer: mEnabled=1\r", "object": "RosieUtility", "pid": " 5940", "level": "I"}
-{"date": 1363281910, "msg": "enable self killer: mEnabled=0\r", "object": "RosieUtility", "pid": " 5940", "level": "I"}
-{"date": 1363281910, "msg": "enable self killer: mEnabled=0\r", "object": "RosieUtility", "pid": " 5940", "level": "I"}
-{"date": 1363281910, "msg": "action - android.intent.action.PACKAGE_ADDED\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "disable self killer: mEnabled=1\r", "object": "RosieUtility", "pid": " 5940", "level": "I"}
-{"date": 1363281910, "msg": "packageUid - 10081\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "packageUid - 10081\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "packageUid - 10081\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "packageUid - 10081\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "packageUid - 10081\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "packageUid - 10081\r", "object": "HtcWidgetScanner", "pid": " 5940", "level": "D"}
-{"date": 1363281910, "msg": "android.intent.action.PACKAGE_ADDED package:imcom.forensics\r", "object": "RegisterService", "pid": " 5930", "level": "I"}
-{"date": 1363281910, "msg": "android.intent.action.PACKAGE_ADDED package:imcom.forensics\r", "object": "RegisterService", "pid": " 5930", "level": "I"}
-{"date": 1363281910, "msg": "android.intent.action.PACKAGE_ADDED package:imcom.forensics\r", "object": "RegisterService", "pid": " 5930", "level": "I"}
-{"date": 1363281910, "msg": "enable self killer: mEnabled=0\r", "object": "RosieUtility", "pid": " 5940", "level": "I"}
-{"date": 1363281910, "msg": "enable self killer: mEnabled=0\r", "object": "RosieUtility", "pid": " 5940", "level": "I"}
-{"date": 1363281910, "msg": "com.htc.autotest.dlib.RecordEngine in loader dalvik.system.DexClassLoader@4056cb20\r", "object": "ATRecorder", "pid": " 5966", "level": "D"}
-{"date": 1363281910, "msg": "android.intent.action.PACKAGE_REPLACED package:imcom.forensics\r", "object": "RegisterService", "pid": " 5930", "level": "I"}
-{"date": 1363281910, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x405169d8\r", "object": "dalvikvm", "pid": " 5986", "level": "D"}
-{"date": 1363281910, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x405169d8\r", "object": "dalvikvm", "pid": " 5986", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] attachLayer 0x69ee40 1 0x8f84d8\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "disableGcForExternalAlloc: false\r", "object": "dalvikvm", "pid": " 5775", "level": "W"}
-{"date": 1363281910, "msg": "Pub com.servo.setting: com.servo.crawler.android.app.SettingProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "Displayed imcom.forensics/.MainActivity: +881ms\r", "object": "ActivityManager", "pid": " 1502", "level": "I"}
-{"date": 1363281910, "msg": "GC_CONCURRENT freed 267K, 46% free 3061K/5639K, external 0K/0K, paused 5ms+48ms\r", "object": "dalvikvm", "pid": " 5955", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] getLayerUser 0x4ce680 766\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] purgatorizeLayer_l 0x9d5e60 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] detachLayer 0x4ce680 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] remove 0x9d5e60 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP]~LayerBaseClient 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "Pub com.kii.search: com.kii.search.provider.KiiProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "Pub com.servo.weibo: com.servo.crawler.android.htc.WeiboProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "Pub com.servo.city: com.servo.search.ui.ServoProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "Pub com.servo.app: com.servo.crawler.android.app.AppProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "Pub com.servo.file: com.servo.crawler.android.file.FileProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "Pub com.servo.kaixin: com.servo.crawler.android.htc.KaixinProvider\r", "object": "ActivityThread", "pid": " 5974", "level": "I"}
-{"date": 1363281910, "msg": "binderDied() at ObserverNode name appWidgetReset\r", "object": "ContentService", "pid": " 1502", "level": "W"}
-{"date": 1363281910, "msg": "binderDied() at ObserverNode name favorites\r", "object": "ContentService", "pid": " 1502", "level": "W"}
-{"date": 1363281910, "msg": "binderDied() at ObserverNode name tasks\r", "object": "ContentService", "pid": " 1502", "level": "W"}
-{"date": 1363281910, "msg": "binderDied() at ObserverNode name system\r", "object": "ContentService", "pid": " 1502", "level": "W"}
-{"date": 1363281910, "msg": "binderDied() at ObserverNode name secure\r", "object": "ContentService", "pid": " 1502", "level": "W"}
-{"date": 1363281910, "msg": "[DISP] getLayerUser 0x886c48 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] purgatorizeLayer_l 0x8b6b68 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] detachLayer 0x886c48 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP] remove 0x8b6b68 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281910, "msg": "[DISP]~LayerBaseClient 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281911, "msg": "GC_CONCURRENT freed 152K, 44% free 3197K/5639K, external 0K/0K, paused 2ms+16ms\r", "object": "dalvikvm", "pid": " 5986", "level": "D"}
-{"date": 1363281911, "msg": "GC_CONCURRENT freed 208K, 45% free 3141K/5639K, external 0K/0K, paused 10ms+15ms\r", "object": "dalvikvm", "pid": " 5974", "level": "D"}
-{"date": 1363281911, "msg": "GC_CONCURRENT freed 145K, 42% free 3531K/6023K, external 0K/0K, paused 2ms+4ms\r", "object": "dalvikvm", "pid": " 5986", "level": "D"}
-{"date": 1363281911, "msg": "[AndroidGlobalSession]:SocialSearch: false , VersionCheck:false ,Search all filter uncheck all:false ,SQLiteHook:true ,SECONDARY SQLITE CONF:false ,SQLITE_COMMIT_INTERVAL:10 ,Device:HTC ,Index Internal Media:false ,Enable SDCard File Search:true ,Advance Search:true ,RESULT LONG PRESS:false ,AUDIO INDEX PLAYLIST:true ,AUDIO INDEX GENRES:true ,DEPLOY:true ,TRACES INFO ENABLE:true ,TRACES ERROR ENABLE:true ,TRACES_INFO_MORE_ENABLE:false ,RECENTLY_USED_LIMIT:15 ,ENABLE_GLOBAL_SEARCH:false ,ENABLE_CITY_SEARCH:false ,ENABLE_SOCIAL:true\r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281911, "msg": "[Logger]:class com.servo.core.android.AndroidGlobalSession init finished in : 0ms \r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281911, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40516e38\r", "object": "dalvikvm", "pid": " 5998", "level": "D"}
-{"date": 1363281911, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40516e38\r", "object": "dalvikvm", "pid": " 5998", "level": "D"}
-{"date": 1363281911, "msg": "GC_CONCURRENT freed 153K, 44% free 3196K/5639K, external 0K/0K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281912, "msg": "GC_CONCURRENT freed 147K, 42% free 3542K/6023K, external 0K/0K, paused 2ms+3ms\r", "object": "dalvikvm", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "dbopen(): path = /data/data/com.google.android.apps.maps/databases/webview.db, flag = 6, file size = 15360\r", "object": "Database", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "dbopen(): path = /data/data/com.google.android.apps.maps/databases/webview.db, mode: wal, disk free size: 742 M, handle: 0x34a520\r", "object": "Database", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "GC_CONCURRENT freed 263K, 42% free 3665K/6279K, external 0K/0K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 5986", "level": "D"}
-{"date": 1363281912, "msg": "dbopen(): path = /data/data/com.google.android.apps.maps/databases/webviewCache.db, flag = 6, file size = 6144\r", "object": "Database", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "sqlite returned: error code = 0, msg = Recovered 6 frames from WAL file /data/data/com.google.android.apps.maps/databases/webviewCache.db-wal\r", "object": "Database", "pid": " 5998", "level": "I"}
-{"date": 1363281912, "msg": "dbopen(): path = /data/data/com.google.android.apps.maps/databases/webviewCache.db, mode: wal, disk free size: 742 M, handle: 0x365428\r", "object": "Database", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "GC_CONCURRENT freed 305K, 42% free 3778K/6407K, external 0K/0K, paused 2ms+11ms\r", "object": "dalvikvm", "pid": " 5998", "level": "D"}
-{"date": 1363281912, "msg": "Initializing inflate state\r", "object": "szipinf", "pid": " 1627", "level": "D"}
-{"date": 1363281914, "msg": "Initializing inflate state\r", "object": "szipinf", "pid": " 1627", "level": "D"}
-{"date": 1363281914, "msg": "Initializing inflate state\r", "object": "szipinf", "pid": " 1627", "level": "D"}
-{"date": 1363281915, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281915, "msg": "set_light_buttons_func: on=5460819 brightness=83\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281915, "msg": "set_light_buttons_func: on=16777215 brightness=255\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281915, "msg": "[DISP] attachLayer 0x708ee8 1120 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281917, "msg": "[DISP] attachLayer 0x708ee8 1121 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281919, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40517328\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281919, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40517328\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "GC_CONCURRENT freed 155K, 44% free 3194K/5639K, external 0K/0K, paused 5ms+3ms\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "GC_CONCURRENT freed 149K, 41% free 3566K/6023K, external 0K/0K, paused 2ms+6ms\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Pub com.tencent.mm.sdk.contact.provider: com.tencent.mm.plugin.base.stub.RContactDBProvider\r", "object": "ActivityThread", "pid": " 6010", "level": "I"}
-{"date": 1363281920, "msg": "Pub com.tencent.mm.sdk.conversation.provider: com.tencent.mm.plugin.base.stub.RConversationDBProvider\r", "object": "ActivityThread", "pid": " 6010", "level": "I"}
-{"date": 1363281920, "msg": "Pub com.tencent.mm.sdk.msginfo.provider: com.tencent.mm.plugin.base.stub.RMsgInfoDBProvider\r", "object": "ActivityThread", "pid": " 6010", "level": "I"}
-{"date": 1363281920, "msg": "Pub com.tencent.mm.sdk.plugin.provider: com.tencent.mm.plugin.base.stub.MMPluginProvider\r", "object": "ActivityThread", "pid": " 6010", "level": "I"}
-{"date": 1363281920, "msg": "Initializing inflate state\r", "object": "szipinf", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Initializing zlib to inflate\r", "object": "szipinf", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libmmdb.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Initializing inflate state\r", "object": "szipinf", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libmmdb.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "JNI_OnLoad called\r", "object": "Database", "pid": " 6010", "level": "I"}
-{"date": 1363281920, "msg": "JNI_OnLoad register methods \r", "object": "Database", "pid": " 6010", "level": "I"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libQrcodeDecoder.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libQrcodeDecoder.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libQrcodeDecoder.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libMMProtocalJni.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libMMProtocalJni.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libMMProtocalJni.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libvprotocal.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libvprotocal.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libvprotocal.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libvoice.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libvoice.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libImgTools.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libImgTools.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libImgTools.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libvoipMain.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libvoipMain.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libvoipMain.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libAmmCommon.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libAmmCommon.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libAmmCommon.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Trying to load lib /data/data/com.tencent.mm/lib/libcdntran.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "Added shared lib /data/data/com.tencent.mm/lib/libcdntran.so 0x40532300\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281920, "msg": "No JNI_OnLoad found in /data/data/com.tencent.mm/lib/libcdntran.so 0x40532300, skipping init\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281921, "msg": "GetFieldID: unable to find field Ljava/util/HashMap;.loadFactor:F\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281921, "msg": "GetFieldID: unable to find field Ljava/util/HashMap;.loadFactor:F\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281921, "msg": "GC_CONCURRENT freed 332K, 42% free 3774K/6407K, external 0K/0K, paused 7ms+5ms\r", "object": "dalvikvm", "pid": " 6010", "level": "D"}
-{"date": 1363281923, "msg": "[DISP] getLayerUser 0x708ee8 1121\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281923, "msg": "[DISP] purgatorizeLayer_l 0x9d5e60 5\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281923, "msg": "[DISP] detachLayer 0x708ee8 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281923, "msg": "[DISP] remove 0x9d5e60 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281923, "msg": "[DISP]~LayerBaseClient 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281924, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363281924, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363281924, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 78 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363281930, "msg": "[LedInfo] write attr ok name=/sys/class/leds/green/brightness string=0,len=1\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281930, "msg": "[LedInfo] write attr ok name=/sys/class/leds/green/blink string=0,len=1\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281930, "msg": "[LedInfo] write attr ok name=/sys/class/leds/green/off_timer string=0 0,len=3\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281930, "msg": "[LedInfo] write attr ok name=/sys/class/leds/amber/brightness string=1,len=1\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281930, "msg": "[LedInfo] write attr ok name=/sys/class/leds/amber/blink string=0,len=1\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281930, "msg": "[LedInfo] write attr ok name=/sys/class/leds/amber/off_timer string=0 0,len=3\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363281932, "msg": "[DiskSpaceHandler]:Current used RAM space:  3.726 M \r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281932, "msg": "[CrawlerScheduler]:[0] start round - total:17\r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281932, "msg": "GC_CONCURRENT freed 340K, 46% free 3200K/5895K, external 0K/0K, paused 2ms+3ms\r", "object": "dalvikvm", "pid": " 5974", "level": "D"}
-{"date": 1363281932, "msg": "dbopen(): path = /data/data/com.servo.search/ram/databases/crawlerstatus.db, flag = 6, file size = 5120\r", "object": "Database", "pid": " 5974", "level": "D"}
-{"date": 1363281932, "msg": "sqlite returned: error code = 0, msg = Recovered 5 frames from WAL file /data/data/com.servo.search/ram/databases/crawlerstatus.db-wal\r", "object": "Database", "pid": " 5974", "level": "I"}
-{"date": 1363281932, "msg": "dbopen(): path = /data/data/com.servo.search/ram/databases/crawlerstatus.db, mode: wal, disk free size: 742 M, handle: 0x34a170\r", "object": "Database", "pid": " 5974", "level": "D"}
-{"date": 1363281932, "msg": "[Logger]:Schedule next SDCARD crawling:604800000\r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281932, "msg": "[Logger]:Schedule next SDCARD crawling:604800000\r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281932, "msg": "[CrawlerScheduler]:[0]finish this round\r", "object": "servo", "pid": " 5974", "level": "I"}
-{"date": 1363281932, "msg": "[DISP] attachLayer 0x708ee8 1122 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281939, "msg": "captured button click event, proceeding...\r", "object": "GUI", "pid": " 5966", "level": "D"}
-{"date": 1363281939, "msg": "GC_CONCURRENT freed 269K, 46% free 3062K/5639K, external 0K/0K, paused 3ms+10ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281939, "msg": "Case: milestone,Tag: march\r", "object": "GUI", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "Created directory: /mnt/sdcard/milestone/march_201303141825\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "SystemInfo launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "SystemInfo's done gathering timezone settings\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "SystemInfo's done gathering environment variables\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "SystemInfo's done gathering system properties\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "Applications launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "Contacts launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "CallLog launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "SMS launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "MMS launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "BrowserHistory launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "BrowserSearches launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "PhoneInfo launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "MMS's done query, 1 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x405177b0\r", "object": "dalvikvm", "pid": " 6031", "level": "D"}
-{"date": 1363281940, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x405177b0\r", "object": "dalvikvm", "pid": " 6031", "level": "D"}
-{"date": 1363281940, "msg": "MMS - fetches 1 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "238022811045013\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "238022811045013\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "ServiceInfo launches\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "CallLog's done query, 344 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "Contacts's done query, 68 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "Contacts's done query, 68 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "GC_CONCURRENT freed 295K, 45% free 3301K/5895K, external 0K/0K, paused 9ms+6ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "GC_CONCURRENT freed 295K, 45% free 3301K/5895K, external 0K/0K, paused 9ms+6ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "SMS's done query, 513 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281940, "msg": "GC_CONCURRENT freed 533K, 47% free 3317K/6151K, external 0K/0K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "Pub htcbrowser.currenturlprovider: com.android.browser.CurrentUrlProvider\r", "object": "ActivityThread", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "Pub htcbrowser: com.android.browser.htc.util.HTCBrowserProvider\r", "object": "ActivityThread", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "Pub browser: com.android.browser.BrowserProvider\r", "object": "ActivityThread", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "Pub com.android.browser.htc.util.BrowserPrintProvider: com.android.browser.htc.util.BrowserPrintProvider\r", "object": "ActivityThread", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "Pub com.android.browser.htc.bookmarks.BookmarkCarouselProvider: com.android.browser.htc.bookmarks.BookmarkCarouselProvider\r", "object": "ActivityThread", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "GC_CONCURRENT freed 502K, 46% free 3326K/6151K, external 0K/0K, paused 2ms+4ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "dbopen(): path = /data/data/com.android.browser/databases/browser.db, flag = 6, file size = 102400\r", "object": "Database", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "dbopen(): path = /data/data/com.android.browser/databases/webview.db, flag = 6, file size = 26624\r", "object": "Database", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "sqlite returned: error code = 0, msg = Recovered 26 frames from WAL file /data/data/com.android.browser/databases/webview.db-wal\r", "object": "Database", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "dbopen(): path = /data/data/com.android.browser/databases/webview.db, mode: wal, disk free size: 742 M, handle: 0x3661f0\r", "object": "Database", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "sqlite returned: error code = 0, msg = Recovered 112 frames from WAL file /data/data/com.android.browser/databases/browser.db-wal\r", "object": "Database", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "dbopen(): path = /data/data/com.android.browser/databases/browser.db, mode: wal, disk free size: 742 M, handle: 0x3575c0\r", "object": "Database", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "dbopen(): path = /data/data/com.android.browser/databases/webviewCache.db, flag = 6, file size = 304128\r", "object": "Database", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "sqlite returned: error code = 0, msg = Recovered 243 frames from WAL file /data/data/com.android.browser/databases/webviewCache.db-wal\r", "object": "Database", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "dbopen(): path = /data/data/com.android.browser/databases/webviewCache.db, mode: wal, disk free size: 742 M, handle: 0x385cc0\r", "object": "Database", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "GC_CONCURRENT freed 527K, 47% free 3311K/6151K, external 0K/0K, paused 4ms+47ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "BrowserSearches's done query, 3 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "BrowserHistory's done query, 112 items\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "getAlwaysShowStatusbar=false\r", "object": "BrowserSettings", "pid": " 6031", "level": "V"}
-{"date": 1363281941, "msg": "PluginManager add: /system/lib/plugins/com.adobe.flashplayer\r", "object": "PluginManager", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "PluginManager add: /system/lib/plugins/com.htc.flashliteplugin\r", "object": "PluginManager", "pid": " 6031", "level": "I"}
-{"date": 1363281941, "msg": "GC_CONCURRENT freed 510K, 47% free 3312K/6151K, external 0K/0K, paused 5ms+7ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "BrowserSearches - fetches 3 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "BrowserSearches - fetches 3 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "CallLog - fetches 344 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "CallLog - fetches 344 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281941, "msg": "GC_CONCURRENT freed 280K, 46% free 3069K/5639K, external 0K/0K, paused 4ms+3ms\r", "object": "dalvikvm", "pid": " 6031", "level": "D"}
-{"date": 1363281941, "msg": "GC_CONCURRENT freed 508K, 47% free 3315K/6151K, external 0K/0K, paused 2ms+4ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281942, "msg": "GC_CONCURRENT freed 516K, 47% free 3311K/6151K, external 0K/0K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "BrowserHistory - fetches 112 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "BrowserHistory - fetches 112 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "GC_CONCURRENT freed 498K, 46% free 3324K/6151K, external 0K/0K, paused 3ms+3ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "SMS - fetches 513 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "SMS - fetches 513 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "SMS - fetches 513 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "GC_EXPLICIT freed 868K, 40% free 5859K/9607K, external 2737K/3418K, paused 121ms\r", "object": "dalvikvm", "pid": " 1627", "level": "D"}
-{"date": 1363281942, "msg": "GC_CONCURRENT freed 621K, 50% free 3093K/6151K, external 0K/0K, paused 9ms+12ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281942, "msg": "GC_EXPLICIT freed 40K, 47% free 3022K/5639K, external 20K/532K, paused 1470ms\r", "object": "dalvikvm", "pid": " 5059", "level": "D"}
-{"date": 1363281943, "msg": "GC_EXPLICIT freed 808K, 44% free 8892K/15623K, external 4065K/5077K, paused 140ms\r", "object": "dalvikvm", "pid": " 1502", "level": "D"}
-{"date": 1363281943, "msg": "GC_EXPLICIT freed 1131K, 37% free 6109K/9607K, external 2737K/3418K, paused 59ms\r", "object": "dalvikvm", "pid": " 1627", "level": "D"}
-{"date": 1363281944, "msg": "GC_EXPLICIT freed 124K, 47% free 3285K/6151K, external 0K/0K, paused 31ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281944, "msg": "GC_EXPLICIT freed 874K, 33% free 6483K/9671K, external 2737K/3418K, paused 59ms\r", "object": "dalvikvm", "pid": " 1627", "level": "D"}
-{"date": 1363281944, "msg": "Contacts - fetches 68 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281944, "msg": "Contacts - fetches 68 records\r", "object": "timeline_forensic", "pid": " 5966", "level": "D"}
-{"date": 1363281945, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] getLayerUser 0x708ee8 1120\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] purgatorizeLayer_l 0x8b6b68 5\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] getLayerUser 0x708ee8 1122\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] purgatorizeLayer_l 0x9d5e60 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] detachLayer 0x708ee8 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] remove 0x8b6b68 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP]~LayerBaseClient 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] detachLayer 0x708ee8 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP] remove 0x9d5e60 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "[DISP]~LayerBaseClient 0x9d5e60\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281951, "msg": "Can't open keycharmap file\r", "object": "KeyCharacterMap", "pid": " 5966", "level": "W"}
-{"date": 1363281951, "msg": "Error loading keycharmap file '/system/usr/keychars/synaptics-rmi-touchscreen.kcm.bin'. hw.keyboards.131074.devname='synaptics-rmi-touchscreen'\r", "object": "KeyCharacterMap", "pid": " 5966", "level": "W"}
-{"date": 1363281951, "msg": "Using default keymap: /system/usr/keychars/qwerty.kcm.bin\r", "object": "KeyCharacterMap", "pid": " 5966", "level": "I"}
-{"date": 1363281963, "msg": "GC_EXPLICIT freed 266K, 44% free 8814K/15623K, external 4065K/5077K, paused 115ms\r", "object": "dalvikvm", "pid": " 1502", "level": "D"}
-{"date": 1363281964, "msg": "Debugger has detached; object registry had 1 entries\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363281967, "msg": "GC_EXPLICIT freed 502K, 76% free 3595K/14855K, external 0K/512K, paused 69ms\r", "object": "dalvikvm", "pid": " 1621", "level": "D"}
-{"date": 1363281968, "msg": "GC_EXPLICIT freed 26K, 45% free 3695K/6599K, external 0K/512K, paused 113ms\r", "object": "dalvikvm", "pid": " 1732", "level": "D"}
-{"date": 1363281972, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281974, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281975, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281976, "msg": "\r", "object": "AndroidRuntime", "pid": " 6047", "level": "D"}
-{"date": 1363281976, "msg": ">>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<\r", "object": "AndroidRuntime", "pid": " 6047", "level": "D"}
-{"date": 1363281976, "msg": "CheckJNI is OFF\r", "object": "AndroidRuntime", "pid": " 6047", "level": "D"}
-{"date": 1363281976, "msg": "creating instr width table\r", "object": "dalvikvm", "pid": " 6047", "level": "D"}
-{"date": 1363281976, "msg": "Calling main entry com.android.commands.am.Am\r", "object": "AndroidRuntime", "pid": " 6047", "level": "D"}
-{"date": 1363281976, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40517c70\r", "object": "dalvikvm", "pid": " 6055", "level": "D"}
-{"date": 1363281976, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40517c70\r", "object": "dalvikvm", "pid": " 6055", "level": "D"}
-{"date": 1363281976, "msg": "GC_EXPLICIT freed 12K, 48% free 2844K/5379K, external 0K/0K, paused 62ms\r", "object": "dalvikvm", "pid": " 1376", "level": "D"}
-{"date": 1363281976, "msg": "GC_EXPLICIT freed <1K, 48% free 2844K/5379K, external 0K/0K, paused 49ms\r", "object": "dalvikvm", "pid": " 1376", "level": "D"}
-{"date": 1363281976, "msg": "GC_EXPLICIT freed <1K, 48% free 2844K/5379K, external 0K/0K, paused 54ms\r", "object": "dalvikvm", "pid": " 1376", "level": "D"}
-{"date": 1363281976, "msg": "Pub com.noshufou.android.su.provider: com.noshufou.android.su.provider.PermissionsProvider\r", "object": "ActivityThread", "pid": " 6055", "level": "I"}
-{"date": 1363281977, "msg": "Shutting down VM\r", "object": "AndroidRuntime", "pid": " 6047", "level": "D"}
-{"date": 1363281977, "msg": "GC_CONCURRENT freed 103K, 66% free 358K/1024K, external 0K/0K, paused 1ms+1ms\r", "object": "dalvikvm", "pid": " 6047", "level": "D"}
-{"date": 1363281977, "msg": "NOTE: attach of thread 'Binder Thread #3' failed\r", "object": "AndroidRuntime", "pid": " 6047", "level": "I"}
-{"date": 1363281977, "msg": "adbd disconnected\r", "object": "jdwp", "pid": " 6047", "level": "D"}
-{"date": 1363281977, "msg": "2000 /system/bin/sh executing 0 /system/bin/sh using shell /system/bin/sh : sh\r", "object": "su", "pid": " 6045", "level": "D"}
-{"date": 1363281977, "msg": "GC_CONCURRENT freed 269K, 46% free 3088K/5639K, external 0K/0K, paused 3ms+3ms\r", "object": "dalvikvm", "pid": " 6055", "level": "D"}
-{"date": 1363281977, "msg": "dbopen(): path = /data/data/com.noshufou.android.su/databases/su.db, flag = 6, file size = 12288\r", "object": "Database", "pid": " 6055", "level": "D"}
-{"date": 1363281977, "msg": "sqlite returned: error code = 0, msg = Recovered 12 frames from WAL file /data/data/com.noshufou.android.su/databases/su.db-wal\r", "object": "Database", "pid": " 6055", "level": "I"}
-{"date": 1363281977, "msg": "dbopen(): path = /data/data/com.noshufou.android.su/databases/su.db, mode: wal, disk free size: 742 M, handle: 0x35f3f0\r", "object": "Database", "pid": " 6055", "level": "D"}
-{"date": 1363281977, "msg": "[DISP] attachLayer 0x5f6798 1 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281979, "msg": "[DISP] getLayerUser 0x5f6798 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281979, "msg": "[DISP] purgatorizeLayer_l 0x8b6b68 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281979, "msg": "[DISP] detachLayer 0x5f6798 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281979, "msg": "[DISP] remove 0x8b6b68 3\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281979, "msg": "[DISP]~LayerBaseClient 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363281982, "msg": "GC_EXPLICIT freed 27K, 41% free 4932K/8263K, external 0K/0K, paused 122ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282002, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282005, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282006, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, flag = 6, file size = 9216\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363282006, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, mode: wal, disk free size: 742 M, handle: 0x386e30\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363282006, "msg": "dbclose(): path = /data/data/com.tencent.mobileqq/databases/eup_db, handle = 0x386e30\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363282008, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40514e88\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282008, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40514e88\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282009, "msg": "GC_CONCURRENT freed 145K, 44% free 3204K/5639K, external 0K/0K, paused 12ms+6ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282009, "msg": "Pub qq.message: com.tencent.mobileqq.content.MessageProvider\r", "object": "ActivityThread", "pid": " 6067", "level": "I"}
-{"date": 1363282009, "msg": "Pub qq.friendlist: com.tencent.mobileqq.content.FriendListProvider\r", "object": "ActivityThread", "pid": " 6067", "level": "I"}
-{"date": 1363282009, "msg": "GC_CONCURRENT freed 210K, 43% free 3490K/6023K, external 0K/0K, paused 2ms+4ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282009, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/245593980.db, flag = 6, file size = 1725440\r", "object": "Database", "pid": " 6067", "level": "D"}
-{"date": 1363282009, "msg": "sqlite returned: error code = 0, msg = Recovered 1693 frames from WAL file /data/data/com.tencent.mobileqq/databases/245593980.db-wal\r", "object": "Database", "pid": " 6067", "level": "I"}
-{"date": 1363282009, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/245593980.db, mode: wal, disk free size: 742 M, handle: 0x3548f8\r", "object": "Database", "pid": " 6067", "level": "D"}
-{"date": 1363282010, "msg": "Bad request for field slot 0,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 1,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 2,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 3,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 4,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 5,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 6,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 7,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 8,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 9,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 10,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 11,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 12,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 13,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 14,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 15,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 16,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 17,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 18,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 19,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 20,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 21,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 22,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 23,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 24,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 25,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 26,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 27,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 28,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "Bad request for field slot 29,-1. numRows = 30, numColumns = 1\r", "object": "CursorWindow", "pid": " 6067", "level": "E"}
-{"date": 1363282010, "msg": "GC_CONCURRENT freed 233K, 41% free 3736K/6279K, external 0K/0K, paused 3ms+8ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282010, "msg": "GC_EXTERNAL_ALLOC freed 59K, 42% free 3677K/6279K, external 0K/0K, paused 43ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282010, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, flag = 6, file size = 9216\r", "object": "Database", "pid": " 6067", "level": "D"}
-{"date": 1363282010, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, mode: wal, disk free size: 742 M, handle: 0x489570\r", "object": "Database", "pid": " 6067", "level": "D"}
-{"date": 1363282010, "msg": "dbclose(): path = /data/data/com.tencent.mobileqq/databases/eup_db, handle = 0x489570\r", "object": "Database", "pid": " 6067", "level": "D"}
-{"date": 1363282011, "msg": "GC_CONCURRENT freed 402K, 41% free 3897K/6599K, external 12K/518K, paused 3ms+5ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282011, "msg": "[E]currentAPN:. received networkInfo: CONNECTED :NetworkInfo: type: WIFI[], state: CONNECTED/CONNECTED, reason: (unspecified), extra: (none), roaming: false, failover: false, isAvailable: true, isIpv4Connected: false, isIpv6Connected: false, if: eth0\r", "object": "MSF.D.AppNetInfoImpl", "pid": " 6067", "level": "D"}
-{"date": 1363282011, "msg": "[E]netchange NONE to WIFI\r", "object": "MSF.D.AppNetInfoImpl", "pid": " 6067", "level": "D"}
-{"date": 1363282012, "msg": "[E]FMT SERVER LIST CLEARED!!!\r", "object": "FMT_ADDR", "pid": " 6067", "level": "D"}
-{"date": 1363282012, "msg": "GC_CONCURRENT freed 491K, 42% free 3911K/6727K, external 51K/518K, paused 4ms+4ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282014, "msg": "GC_CONCURRENT freed 451K, 42% free 3957K/6727K, external 63K/518K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282015, "msg": "GC_CONCURRENT freed 362K, 44% free 3642K/6471K, external 0K/0K, paused 4ms+23ms\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363282015, "msg": "GC_CONCURRENT freed 339K, 40% free 4090K/6791K, external 106K/518K, paused 3ms+3ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282016, "msg": "GC_CONCURRENT freed 305K, 39% free 4249K/6855K, external 230K/518K, paused 3ms+3ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282017, "msg": "GC_CONCURRENT freed 270K, 38% free 4434K/7047K, external 194K/518K, paused 8ms+26ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282019, "msg": "GC_CONCURRENT freed 470K, 39% free 4521K/7303K, external 267K/518K, paused 41ms+12ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282019, "msg": "java.io.FileNotFoundException: /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq (Permission denied)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat org.apache.harmony.luni.platform.OSFileSystem.open(Native Method)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat dalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat java.io.FileInputStream.<init>(FileInputStream.java:80)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat java.io.FileInputStream.<init>(FileInputStream.java:132)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat java.io.FileReader.<init>(FileReader.java:66)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.qq.video.VcSystemInfo.getCurrentCpuFreq(VcSystemInfo.java:180)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.qq.video.VcSystemInfo.getCpuInfo(VcSystemInfo.java:128)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.qq.config.ConfigSystemImpl.<init>(ConfigSystemImpl.java:172)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.qq.config.ConfigSystemImpl.getConfigRequestPackage(ConfigSystemImpl.java:43)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.mobileqq.servlet.VideoConfigServlet.onSend(ProGuard:56)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat mqq.app.MSFServlet.service(MSFServlet.java:61)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat mqq.app.ServletContainer$2.run(ServletContainer.java:78)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat mqq.app.ServletContainer.forward(ServletContainer.java:92)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat mqq.app.AppRuntime.startServlet(AppRuntime.java:211)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.mobileqq.app.QQAppInterface.j(ProGuard:2252)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat com.tencent.mobileqq.app.QQInitHandler.run(ProGuard:919)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282019, "msg": "\tat java.lang.Thread.run(Thread.java:1027)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "java.io.FileNotFoundException: /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq (Permission denied)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat org.apache.harmony.luni.platform.OSFileSystem.open(Native Method)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat dalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat java.io.FileInputStream.<init>(FileInputStream.java:80)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat java.io.FileInputStream.<init>(FileInputStream.java:132)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat java.io.FileReader.<init>(FileReader.java:66)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat com.tencent.qq.video.VcSystemInfo.getCurrentCpuFreq(VcSystemInfo.java:180)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat com.tencent.qq.video.VcSystemInfo.getCpuInfo(VcSystemInfo.java:128)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat com.tencent.qq.config.ConfigSystemImpl.<init>(ConfigSystemImpl.java:172)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat com.tencent.qq.config.ConfigSystemImpl.isNeedStartVideoProcess(ConfigSystemImpl.java:57)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat com.tencent.mobileqq.servlet.VideoConfigServlet.onReceive(ProGuard:30)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.MSFServlet.onReceive(MSFServlet.java:41)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.ServletContainer.notifyMSFServlet(ServletContainer.java:137)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.MainService.receiveMessageFromMSF(MainService.java:114)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.MainService.access$2(MainService.java:91)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.MainService$3.onRecvResp(MainService.java:269)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat com.tencent.mobileqq.msf.sdk.MsfRespHandleUtil.handleRespMsg(Unknown Source)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.MainService$1.handleResp(MainService.java:172)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat mqq.app.MainService$1.run(MainService.java:153)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282020, "msg": "\tat java.lang.Thread.run(Thread.java:1027)\r", "object": "System.err", "pid": " 6067", "level": "W"}
-{"date": 1363282021, "msg": "GetFieldID: unable to find field Ljava/util/HashMap;.loadFactor:F\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363282021, "msg": "GC_CONCURRENT freed 422K, 44% free 3667K/6471K, external 0K/0K, paused 3ms+3ms\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363282022, "msg": "GetFieldID: unable to find field Ljava/util/HashMap;.loadFactor:F\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282022, "msg": "GC_CONCURRENT freed 578K, 40% free 4531K/7431K, external 231K/518K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282031, "msg": "GC_CONCURRENT freed 498K, 39% free 4594K/7431K, external 222K/518K, paused 3ms+3ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363282032, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282032, "msg": "set_light_buttons_func: on=5460819 brightness=83\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363282032, "msg": "set_light_buttons_func: on=16777215 brightness=255\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363282035, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282055, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 79ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282062, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282065, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282074, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282074, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 79 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363282075, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282092, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282095, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282098, "msg": "GC_EXPLICIT freed 19K, 44% free 3747K/6599K, external 0K/0K, paused 159ms\r", "object": "dalvikvm", "pid": "25423", "level": "D"}
-{"date": 1363282108, "msg": "GC_EXPLICIT freed 19K, 44% free 3747K/6599K, external 0K/0K, paused 159ms\r", "object": "dalvikvm", "pid": "25423", "level": "D"}
-{"date": 1363282122, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282124, "msg": "set_light_buttons_func: on=5460819 brightness=83\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363282124, "msg": "set_light_buttons_func: on=16777215 brightness=255\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363282125, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282131, "msg": "Total arena pages for JIT: 11\r", "object": "dalvikvm", "pid": " 6067", "level": "I"}
-{"date": 1363282133, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40515290\r", "object": "dalvikvm", "pid": " 6111", "level": "D"}
-{"date": 1363282133, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40515290\r", "object": "dalvikvm", "pid": " 6111", "level": "D"}
-{"date": 1363282133, "msg": "Pub htc_cime: com.htc.android.htcime.provider.HTCCIMEProvider\r", "object": "ActivityThread", "pid": " 6111", "level": "I"}
-{"date": 1363282134, "msg": "GC_CONCURRENT freed 212K, 45% free 3137K/5639K, external 0K/0K, paused 2ms+5ms\r", "object": "dalvikvm", "pid": " 6111", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] attachLayer 0x69ee40 2 0x7aa760\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] attachLayer 0x69ee40 3 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] attachLayer 0x69ee40 4 0x718750\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] getLayerUser 0x69ee40 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] purgatorizeLayer_l 0x7aa760 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] detachLayer 0x69ee40 0x7aa760\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] remove 0x7aa760 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP]~LayerBaseClient 0x7aa760\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] getLayerUser 0x69ee40 3\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] purgatorizeLayer_l 0x8b6b68 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] detachLayer 0x69ee40 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP] remove 0x8b6b68 3\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282134, "msg": "[DISP]~LayerBaseClient 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] attachLayer 0x708ee8 1123 0x7aa760\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] getLayerUser 0x69ee40 4\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] purgatorizeLayer_l 0x718750 5\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] attachLayer 0x69ee40 5 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] detachLayer 0x69ee40 0x718750\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] remove 0x718750 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP]~LayerBaseClient 0x718750\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "GC_CONCURRENT freed 422K, 48% free 3253K/6151K, external 0K/0K, paused 7ms+6ms\r", "object": "dalvikvm", "pid": " 5966", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] getLayerUser 0x69ee40 5\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] purgatorizeLayer_l 0x8b6b68 5\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] detachLayer 0x69ee40 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP] remove 0x8b6b68 2\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282135, "msg": "[DISP]~LayerBaseClient 0x8b6b68\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282137, "msg": "[DISP] getLayerUser 0x708ee8 1123\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282137, "msg": "[DISP] purgatorizeLayer_l 0x7aa760 5\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282137, "msg": "Can't open keycharmap file\r", "object": "KeyCharacterMap", "pid": " 5966", "level": "W"}
-{"date": 1363282137, "msg": "Error loading keycharmap file '/system/usr/keychars/synaptics-rmi-touchscreen.kcm.bin'. hw.keyboards.131074.devname='synaptics-rmi-touchscreen'\r", "object": "KeyCharacterMap", "pid": " 5966", "level": "W"}
-{"date": 1363282137, "msg": "Using default keymap: /system/usr/keychars/qwerty.kcm.bin\r", "object": "KeyCharacterMap", "pid": " 5966", "level": "I"}
-{"date": 1363282137, "msg": "[DISP] detachLayer 0x708ee8 0x7aa760\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282137, "msg": "[DISP] remove 0x7aa760 3\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282137, "msg": "[DISP]~LayerBaseClient 0x7aa760\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282152, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282155, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282176, "msg": "GC_EXPLICIT freed 23K, 41% free 4935K/8263K, external 0K/0K, paused 134ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282182, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282185, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282191, "msg": "set_light_buttons_func: on=5460819 brightness=83\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363282191, "msg": "set_light_buttons_func: on=16777215 brightness=255\r", "object": "lights", "pid": " 1502", "level": "D"}
-{"date": 1363282212, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282215, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282229, "msg": "GC_CONCURRENT freed 382K, 76% free 3597K/14855K, external 0K/512K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 1621", "level": "D"}
-{"date": 1363282242, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282245, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282254, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282254, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 80 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363282255, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282260, "msg": "GC_EXPLICIT freed 23K, 41% free 4932K/8263K, external 0K/0K, paused 118ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282272, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282275, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282301, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282302, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282305, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282325, "msg": "GC_EXPLICIT freed 375K, 44% free 3663K/6471K, external 0K/0K, paused 101ms\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363282330, "msg": "GC_EXPLICIT freed 4K, 44% free 3747K/6599K, external 0K/0K, paused 88ms\r", "object": "dalvikvm", "pid": "25423", "level": "D"}
-{"date": 1363282332, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282335, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282345, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 56ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282362, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282365, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282392, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282395, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282408, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282422, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282425, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282433, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 126ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282434, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282435, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 81 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363282435, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282452, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282455, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282482, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282485, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282508, "msg": "GC_CONCURRENT freed 386K, 76% free 3595K/14855K, external 0K/512K, paused 9ms+3ms\r", "object": "dalvikvm", "pid": " 1621", "level": "D"}
-{"date": 1363282512, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282515, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282533, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 205ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282542, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282545, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282572, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282576, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282577, "msg": "GC_EXPLICIT freed 212K, 42% free 3616K/6151K, external 0K/0K, paused 75ms\r", "object": "dalvikvm", "pid": " 5744", "level": "D"}
-{"date": 1363282592, "msg": "GC_EXPLICIT freed 1K, 45% free 3694K/6599K, external 0K/512K, paused 137ms\r", "object": "dalvikvm", "pid": " 1732", "level": "D"}
-{"date": 1363282602, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282606, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282606, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, flag = 6, file size = 9216\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363282606, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, mode: wal, disk free size: 742 M, handle: 0x3682b8\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363282606, "msg": "dbclose(): path = /data/data/com.tencent.mobileqq/databases/eup_db, handle = 0x3682b8\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363282610, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 82ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282614, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282614, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 82 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363282615, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282631, "msg": "GC_EXPLICIT freed 78K, 47% free 3032K/5639K, external 0K/0K, paused 84ms\r", "object": "dalvikvm", "pid": " 5792", "level": "D"}
-{"date": 1363282632, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282636, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282646, "msg": "GC_EXPLICIT freed 90K, 45% free 2990K/5379K, external 0K/0K, paused 73ms\r", "object": "dalvikvm", "pid": " 5850", "level": "D"}
-{"date": 1363282651, "msg": "GC_EXPLICIT freed 147K, 44% free 3643K/6471K, external 0K/0K, paused 96ms\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363282656, "msg": "GC_EXPLICIT freed 38K, 44% free 3748K/6599K, external 0K/0K, paused 71ms\r", "object": "dalvikvm", "pid": "25423", "level": "D"}
-{"date": 1363282662, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282666, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282692, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282696, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282697, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 76ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282708, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 76ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282722, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282726, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282752, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282756, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282764, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282764, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 83 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363282765, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282775, "msg": "GC_CONCURRENT freed 391K, 76% free 3596K/14855K, external 0K/512K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 1621", "level": "D"}
-{"date": 1363282782, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282784, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 64ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282786, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282812, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282816, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282842, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282846, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282868, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 91ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282872, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282876, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282901, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282902, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282906, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282908, "msg": "GC_EXPLICIT freed 19K, 44% free 3748K/6599K, external 0K/0K, paused 52ms\r", "object": "dalvikvm", "pid": "25423", "level": "D"}
-{"date": 1363282927, "msg": "GC_EXPLICIT freed 109K, 44% free 3635K/6471K, external 0K/0K, paused 70ms\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363282932, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282936, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282944, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282944, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 84 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363282945, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363282959, "msg": "GC_EXPLICIT freed 20K, 41% free 4932K/8263K, external 0K/0K, paused 65ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363282962, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282966, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282992, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363282996, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283008, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283022, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283026, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283045, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 65ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363283052, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283056, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283075, "msg": "GC_CONCURRENT freed 435K, 76% free 3598K/14855K, external 0K/512K, paused 3ms+4ms\r", "object": "dalvikvm", "pid": " 1621", "level": "D"}
-{"date": 1363283082, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283086, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283094, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363283094, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 85 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363283095, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363283112, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283116, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283132, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 138ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363283138, "msg": "Kernel timezone updated to -60 minutes west of GMT\r", "object": "AlarmManagerService", "pid": " 1502", "level": "D"}
-{"date": 1363283138, "msg": "Setting time of day to sec=1363283138\r", "object": "SystemClock", "pid": " 1625", "level": "D"}
-{"date": 1363283138, "msg": "Trying to load lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40515718\r", "object": "dalvikvm", "pid": " 6149", "level": "D"}
-{"date": 1363283138, "msg": "Added shared lib /data/data/com.lbe.security/app_lib/libfwclient.so 0x40515718\r", "object": "dalvikvm", "pid": " 6149", "level": "D"}
-{"date": 1363283138, "msg": "Pub downloads: com.android.providers.downloads.DownloadProvider\r", "object": "ActivityThread", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "Pub drm: com.android.providers.drm.DrmProvider\r", "object": "ActivityThread", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "Pub media: com.android.providers.media.MediaProvider\r", "object": "ActivityThread", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "GC_EXTERNAL_ALLOC freed 117K, 46% free 2947K/5379K, external 0K/0K, paused 36ms\r", "object": "dalvikvm", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "[MediaProvider][onCreate]+\r", "object": "MediaProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "Attached volume: internal\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[MediaProvider][onCreate]+state=mounted\r", "object": "MediaProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "/mnt/sdcard volume ID: -361293040\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "dbopen(): path = /data/data/com.android.providers.media/databases/external-ea771b10.db, flag = 6, file size = 128000\r", "object": "Database", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "sqlite returned: error code = 0, msg = Recovered 128 frames from WAL file /data/data/com.android.providers.media/databases/external-ea771b10.db-wal\r", "object": "Database", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "dbopen(): path = /data/data/com.android.providers.media/databases/external-ea771b10.db, mode: wal, disk free size: 742 M, handle: 0x3739d8\r", "object": "Database", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "[onOpen] newdatapath=/data/data/com.android.providers.media/databases/external-ea771b10.db\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] dbname=internal.db-wal,0,6,6,3\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] wal.endsWith=null,5\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] dbname=external-ea771b10.db,1,6,5,3\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] dbname=internal.db-shm,2,6,4,2\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] shm.endsWith=null,3\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] dbname=external-ea771b10.db-wal,3,6,3,2\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] wal.endsWith=null,2\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] dbname=external-ea771b10.db-shm,4,6,2,2\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] shm.endsWith=null,1\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[onOpen][2m] dbname=internal.db,5,6,1,2\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "Attached volume: external\r", "object": "MediaProvider", "pid": " 6149", "level": "V"}
-{"date": 1363283139, "msg": "[MediaProvider][onCreate]-\r", "object": "MediaProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "android.intent.action.NETWORK_SET_TIMEZONE\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "time-zone =  Europe/Copenhagen\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "receiver - intent: android.intent.action.NETWORK_SET_TIMEZONE\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "PoweronReceiver.onReceive(): intent=android.intent.action.TIME_SET\r", "object": "MyHTC", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "SYNC_CLOCK\r", "object": "DrmIntentService", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "android.intent.action.TIME_SET\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": " @@@@@ TIME_CHANGED\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "service - onStartCommand() action: com.htc.app.autosetting.requestlocationupdate\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": " @@@@@ no magic number.\r", "object": "DrmIntentService", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": " @@@@@ TIME_CHANGED :  magic number\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "dbopen(): path = /data/data/com.android.providers.drm/databases/drm.db, flag = 6, file size = 14336\r", "object": "Database", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "service - mHandler: request location update\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "service - mHandler: update time\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "service - processTime() start time thread\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "receiver - intent: android.intent.action.TIME_SET\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "service - onStartCommand() action: null\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283139, "msg": "GC_CONCURRENT freed 1715K, 43% free 9046K/15623K, external 4182K/5077K, paused 4ms+18ms\r", "object": "dalvikvm", "pid": " 1502", "level": "D"}
-{"date": 1363283139, "msg": "sqlite returned: error code = 0, msg = Recovered 14 frames from WAL file /data/data/com.android.providers.drm/databases/drm.db-wal\r", "object": "Database", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "dbopen(): path = /data/data/com.android.providers.drm/databases/drm.db, mode: wal, disk free size: 742 M, handle: 0x3ad2d8\r", "object": "Database", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "syncDrmClock: Update Stamp.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "update(): old content id = null\r", "object": "DrmProvider", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "Pub com.htc.android.alarmclock: com.htc.android.worldclock.AlarmProvider\r", "object": "ActivityThread", "pid": " 6163", "level": "I"}
-{"date": 1363283139, "msg": "update notifyChange. count = 1\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "Pub com.htc.android.worldclock.TabCarouselProvider: com.htc.android.worldclock.TabCarouselProvider\r", "object": "ActivityThread", "pid": " 6163", "level": "I"}
-{"date": 1363283139, "msg": " @@@@@ Backup DRM database. - Enter.\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "Pub com.htc.android.worldclock.TimerProvider: com.htc.android.worldclock.TimerProvider\r", "object": "ActivityThread", "pid": " 6163", "level": "I"}
-{"date": 1363283139, "msg": " @@@@@ Backup DRM database. - Leave.\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283139, "msg": "syncDrmClock: Update Stamp Complete.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283139, "msg": "syncDrmClock: Close cursor.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "SYNC_CLOCK\r", "object": "DrmIntentService", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": " @@@@@ when it is magic number, we get (1)\r", "object": "DrmIntentService", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "syncDrmClock: Update Stamp.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "update(): old content id = null\r", "object": "DrmProvider", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "update notifyChange. count = 1\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": " @@@@@ Backup DRM database. - Enter.\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "dbopen(): path = /data/data/com.htc.android.worldclock/databases/alarms.db, flag = 6, file size = 4096\r", "object": "Database", "pid": " 6163", "level": "D"}
-{"date": 1363283140, "msg": " @@@@@ Backup DRM database. - Leave.\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "syncDrmClock: Update Stamp Complete.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "syncDrmClock: Close cursor.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "sqlite returned: error code = 0, msg = Recovered 4 frames from WAL file /data/data/com.htc.android.worldclock/databases/alarms.db-wal\r", "object": "Database", "pid": " 6163", "level": "I"}
-{"date": 1363283140, "msg": "dbopen(): path = /data/data/com.htc.android.worldclock/databases/alarms.db, mode: wal, disk free size: 742 M, handle: 0x34bc48\r", "object": "Database", "pid": " 6163", "level": "D"}
-{"date": 1363283140, "msg": "TimeThread get time from server(nist1-la.ustiming.org): Thu Jan 01 01:00:00 GMT+01:00 1970 (0)\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "TimeThread convert time is incorrect\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "Pub com.android.settings.provider.suggestion: com.android.settings.globalsearch.SuggestionProvider\r", "object": "ActivityThread", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": " AudioFocus  abandonAudioFocus() from android.media.AudioManager@40530a08\r", "object": "AudioService", "pid": " 1502", "level": "I"}
-{"date": 1363283140, "msg": "Accept connection from 127.0.0.1\r", "object": "Clockd", "pid": " 1389", "level": "D"}
-{"date": 1363283140, "msg": "update repeat alarm: 5, 1363324215\r", "object": "Clockd", "pid": " 1389", "level": "D"}
-{"date": 1363283140, "msg": "update repeat alarm: 5, 1363324500\r", "object": "Clockd", "pid": " 1389", "level": "D"}
-{"date": 1363283140, "msg": "update repeat alarm: 6, 1363420219\r", "object": "Clockd", "pid": " 1389", "level": "D"}
-{"date": 1363283140, "msg": "TimeThread get time from server(time-b.nist.gov): Thu Jan 01 01:00:00 GMT+01:00 1970 (0)\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "TimeThread convert time is incorrect\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "Pub framework.activity.powersaver.smartsync: com.android.settings.framework.activity.powersaver.SmartSyncProvider\r", "object": "ActivityThread", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "dbopen(): path = /data/data/com.android.settings/databases/SmartSync.db, flag = 6, file size = 36864\r", "object": "Database", "pid": " 6171", "level": "D"}
-{"date": 1363283140, "msg": "sqlite returned: error code = 0, msg = Recovered 34 frames from WAL file /data/data/com.android.settings/databases/SmartSync.db-wal\r", "object": "Database", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "dbopen(): path = /data/data/com.android.settings/databases/SmartSync.db, mode: wal, disk free size: 742 M, handle: 0x3487c8\r", "object": "Database", "pid": " 6171", "level": "D"}
-{"date": 1363283140, "msg": "[PSaver] onReceiveandroid.intent.action.TIME_SET\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepModeEnabled:true\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepStartTimeSecond:0\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepEndTimeSecond:0\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "iCurrentSecond:67500\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "SleepMode start at: 1363215600699\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "SleepMode end at: 1363215600699\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "android.intent.action.NETWORK_SET_TIME\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "Start to get TimeZone\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "Start to get TimeZone Offset\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "Start to get Current\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "Start to get elapsedRealtime\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "End of ACTION_NETWORK_SET_TIME\r", "object": "DrmScannerReceiver", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "[PSaver] onReceivecom.android.systemui.statusbar.action.sleep_mode_start\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepModeEnabled:true\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepStartTimeSecond:0\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepEndTimeSecond:0\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "iCurrentSecond:67500\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "[PSaver] onReceivecom.android.systemui.statusbar.action.sleep_mode_end\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepModeEnabled:true\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepStartTimeSecond:0\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "mHTCWirelessSleepEndTimeSecond:0\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "iCurrentSecond:67500\r", "object": "SleepModeTimeOrTimeZoneChangedReciever", "pid": " 6171", "level": "I"}
-{"date": 1363283140, "msg": "SYNC_CLOCK\r", "object": "DrmIntentService", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "receiver - intent: android.intent.action.NETWORK_SET_TIME\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": " @@@@@ no magic number.\r", "object": "DrmIntentService", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "syncDrmClock: Update Stamp.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "service - onStartCommand() action: com.htc.app.autosetting.requestlocationupdate\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "service - mHandler: update time\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "service - processTime() time thread is running\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "update(): old content id = null\r", "object": "DrmProvider", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "update notifyChange. count = 1\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": " @@@@@ Backup DRM database. - Enter.\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "GC_CONCURRENT freed 225K, 46% free 3057K/5639K, external 712K/1024K, paused 6ms+4ms\r", "object": "dalvikvm", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "TimeThread get time from server(nist1-pa.ustiming.org): Thu Jan 01 01:00:00 GMT+01:00 1970 (0)\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": "TimeThread convert time is incorrect\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283140, "msg": " @@@@@ Backup DRM database. - Leave.\r", "object": "DrmProvider", "pid": " 6149", "level": "D"}
-{"date": 1363283140, "msg": "syncDrmClock: Update Stamp Complete.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283140, "msg": "syncDrmClock: Close cursor.\r", "object": "DrmIntentService", "pid": " 6149", "level": "I"}
-{"date": 1363283141, "msg": "Uncaught exception from death notification\r", "object": "BinderNative", "pid": " 5966", "level": "W"}
-{"date": 1363283141, "msg": "java.lang.NullPointerException\r", "object": "BinderNative", "pid": " 5966", "level": "W"}
-{"date": 1363283141, "msg": "\tat android.app.ActivityThread.removeDeadProvider(ActivityThread.java:4104)\r", "object": "BinderNative", "pid": " 5966", "level": "W"}
-{"date": 1363283141, "msg": "\tat android.app.ActivityThread$ProviderClientRecord.binderDied(ActivityThread.java:294)\r", "object": "BinderNative", "pid": " 5966", "level": "W"}
-{"date": 1363283141, "msg": "\tat android.os.BinderProxy.sendDeathNotice(Binder.java:381)\r", "object": "BinderNative", "pid": " 5966", "level": "W"}
-{"date": 1363283141, "msg": "\tat dalvik.system.NativeStart.run(Native Method)\r", "object": "BinderNative", "pid": " 5966", "level": "W"}
-{"date": 1363283141, "msg": "TimeThread get time from server(nist1-sj.ustiming.org): Thu Mar 14 18:45:43 GMT+01:00 2013 (1363283143000)\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283141, "msg": "TimeThread remote time is in tolerance, diff=1\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283141, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283143, "msg": "There are 1 request for no remove reschedule!\r", "object": "CalendarProvider2", "pid": " 1732", "level": "I"}
-{"date": 1363283143, "msg": "set Alarm # 2013/3/15 16:47:43\r", "object": "CalendarProvider2", "pid": " 1732", "level": "V"}
-{"date": 1363283143, "msg": "thread : 616, runScheduleNextAlarm() take ms:92\r", "object": "CalendarProvider2", "pid": " 1732", "level": "I"}
-{"date": 1363283145, "msg": "GC_EXPLICIT freed 90K, 44% free 3705K/6599K, external 0K/512K, paused 100ms\r", "object": "dalvikvm", "pid": " 1732", "level": "D"}
-{"date": 1363283146, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283151, "msg": "GC_CONCURRENT freed 580K, 40% free 4552K/7495K, external 222K/518K, paused 10ms+3ms\r", "object": "dalvikvm", "pid": " 6067", "level": "D"}
-{"date": 1363283171, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283176, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283178, "msg": "GC_EXPLICIT freed 19K, 44% free 3748K/6599K, external 0K/0K, paused 109ms\r", "object": "dalvikvm", "pid": "25423", "level": "D"}
-{"date": 1363283199, "msg": "service - mHandler: cancel location update\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283199, "msg": "service -           changes count: 0\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283199, "msg": "service - notifyErrorMessage() send out error:2\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283199, "msg": "service -           no change received, request a single update\r", "object": "AutoSetting", "pid": " 1732", "level": "D"}
-{"date": 1363283201, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283206, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, flag = 6, file size = 9216\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363283206, "msg": "dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, mode: wal, disk free size: 742 M, handle: 0x3682b8\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363283206, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283206, "msg": "dbclose(): path = /data/data/com.tencent.mobileqq/databases/eup_db, handle = 0x3682b8\r", "object": "Database", "pid": " 5864", "level": "D"}
-{"date": 1363283227, "msg": "GC_EXPLICIT freed 121K, 44% free 3634K/6471K, external 0K/0K, paused 112ms\r", "object": "dalvikvm", "pid": " 5864", "level": "D"}
-{"date": 1363283231, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283232, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 70ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363283236, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283247, "msg": "binderDied() at ObserverNode name logs\r", "object": "ContentService", "pid": " 1502", "level": "W"}
-{"date": 1363283261, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283266, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283274, "msg": "SendIntentforPowersaver\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363283274, "msg": "[smart wifi] mSmartWiFiStatus: 0 mBatteryLevel: 86 mWifiConnected: true\r", "object": "WifiService", "pid": " 1502", "level": "D"}
-{"date": 1363283274, "msg": "Current powersaver status == NORMAL_STATUS\r", "object": "BatteryService", "pid": " 1502", "level": "D"}
-{"date": 1363283291, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283296, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283308, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283315, "msg": "GC_EXPLICIT freed 19K, 41% free 4932K/8263K, external 0K/0K, paused 126ms\r", "object": "dalvikvm", "pid": " 2413", "level": "D"}
-{"date": 1363283321, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283326, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283351, "msg": "iFBthreadLoopChkPoint = 1\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283356, "msg": "[DISP] removeAbnormalLayer\r", "object": "SurfaceFlinger", "pid": " 1502", "level": "D"}
-{"date": 1363283375, "msg": "GC_CONCURRENT freed 396K, 76% free 3597K/14855K, external 0K/512K, paused 8ms+3ms", "object": "dalvikvm", "pid": " 1621", "level": "D"}
+{"date":1363281909,"msg":"(launchapp,package):(AndroidTimelineForensic,imcom.forensics)\r","object":"HtcAppUsageStats","pid":"1502","level":"V"}
+{"date":1363281909,"msg":"ShuttingdownVM\r","object":"AndroidRuntime","pid":"5933","level":"D"}
+{"date":1363281909,"msg":"NOTE:attachofthread'BinderThread#3'failed\r","object":"AndroidRuntime","pid":"5933","level":"I"}
+{"date":1363281909,"msg":"GC_CONCURRENTfreed104K,66%free355K/1024K,external0K/0K,paused0ms+1ms\r","object":"dalvikvm","pid":"5933","level":"D"}
+{"date":1363281909,"msg":"Gotwake-upsignal,bailingoutofselect\r","object":"jdwp","pid":"5933","level":"D"}
+{"date":1363281909,"msg":"Debuggerhasdetached;objectregistryhad1entries\r","object":"dalvikvm","pid":"5933","level":"D"}
+{"date":1363281909,"msg":"Pubcom.noshufou.android.su.provider:com.noshufou.android.su.provider.PermissionsProvider\r","object":"ActivityThread","pid":"5955","level":"I"}
+{"date":1363281909,"msg":"[DISP]attachLayer0x4ce6807660x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281909,"msg":"couldn'tsavewhichviewhasfocusbecausethefocusedviewcom.android.internal.policy.impl.PhoneWindow$DecorView@405b6248hasnoid.\r","object":"PhoneWindow","pid":"5775","level":"D"}
+{"date":1363281909,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40516118\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281909,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40516118\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281909,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40516578\r","object":"dalvikvm","pid":"5974","level":"D"}
+{"date":1363281909,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40516578\r","object":"dalvikvm","pid":"5974","level":"D"}
+{"date":1363281909,"msg":"vickyreceived:android.intent.action.PACKAGE_ADDED\r","object":"vicky","pid":"5918","level":"D"}
+{"date":1363281909,"msg":"disableselfkiller:mEnabled=1\r","object":"RosieUtility","pid":"5940","level":"I"}
+{"date":1363281910,"msg":"enableselfkiller:mEnabled=0\r","object":"RosieUtility","pid":"5940","level":"I"}
+{"date":1363281910,"msg":"enableselfkiller:mEnabled=0\r","object":"RosieUtility","pid":"5940","level":"I"}
+{"date":1363281910,"msg":"action-android.intent.action.PACKAGE_ADDED\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"disableselfkiller:mEnabled=1\r","object":"RosieUtility","pid":"5940","level":"I"}
+{"date":1363281910,"msg":"packageUid-10081\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"packageUid-10081\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"packageUid-10081\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"packageUid-10081\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"packageUid-10081\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"packageUid-10081\r","object":"HtcWidgetScanner","pid":"5940","level":"D"}
+{"date":1363281910,"msg":"android.intent.action.PACKAGE_ADDEDpackage:imcom.forensics\r","object":"RegisterService","pid":"5930","level":"I"}
+{"date":1363281910,"msg":"android.intent.action.PACKAGE_ADDEDpackage:imcom.forensics\r","object":"RegisterService","pid":"5930","level":"I"}
+{"date":1363281910,"msg":"android.intent.action.PACKAGE_ADDEDpackage:imcom.forensics\r","object":"RegisterService","pid":"5930","level":"I"}
+{"date":1363281910,"msg":"enableselfkiller:mEnabled=0\r","object":"RosieUtility","pid":"5940","level":"I"}
+{"date":1363281910,"msg":"enableselfkiller:mEnabled=0\r","object":"RosieUtility","pid":"5940","level":"I"}
+{"date":1363281910,"msg":"com.htc.autotest.dlib.RecordEngineinloaderdalvik.system.DexClassLoader@4056cb20\r","object":"ATRecorder","pid":"5966","level":"D"}
+{"date":1363281910,"msg":"android.intent.action.PACKAGE_REPLACEDpackage:imcom.forensics\r","object":"RegisterService","pid":"5930","level":"I"}
+{"date":1363281910,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x405169d8\r","object":"dalvikvm","pid":"5986","level":"D"}
+{"date":1363281910,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x405169d8\r","object":"dalvikvm","pid":"5986","level":"D"}
+{"date":1363281910,"msg":"[DISP]attachLayer0x69ee4010x8f84d8\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"disableGcForExternalAlloc:false\r","object":"dalvikvm","pid":"5775","level":"W"}
+{"date":1363281910,"msg":"Pubcom.servo.setting:com.servo.crawler.android.app.SettingProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"Displayedimcom.forensics/.MainActivity:+881ms\r","object":"ActivityManager","pid":"1502","level":"I"}
+{"date":1363281910,"msg":"GC_CONCURRENTfreed267K,46%free3061K/5639K,external0K/0K,paused5ms+48ms\r","object":"dalvikvm","pid":"5955","level":"D"}
+{"date":1363281910,"msg":"[DISP]getLayerUser0x4ce680766\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]purgatorizeLayer_l0x9d5e604\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]detachLayer0x4ce6800x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]remove0x9d5e602\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]~LayerBaseClient0x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"Pubcom.kii.search:com.kii.search.provider.KiiProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"Pubcom.servo.weibo:com.servo.crawler.android.htc.WeiboProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"Pubcom.servo.city:com.servo.search.ui.ServoProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"Pubcom.servo.app:com.servo.crawler.android.app.AppProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"Pubcom.servo.file:com.servo.crawler.android.file.FileProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"Pubcom.servo.kaixin:com.servo.crawler.android.htc.KaixinProvider\r","object":"ActivityThread","pid":"5974","level":"I"}
+{"date":1363281910,"msg":"binderDied()atObserverNodenameappWidgetReset\r","object":"ContentService","pid":"1502","level":"W"}
+{"date":1363281910,"msg":"binderDied()atObserverNodenamefavorites\r","object":"ContentService","pid":"1502","level":"W"}
+{"date":1363281910,"msg":"binderDied()atObserverNodenametasks\r","object":"ContentService","pid":"1502","level":"W"}
+{"date":1363281910,"msg":"binderDied()atObserverNodenamesystem\r","object":"ContentService","pid":"1502","level":"W"}
+{"date":1363281910,"msg":"binderDied()atObserverNodenamesecure\r","object":"ContentService","pid":"1502","level":"W"}
+{"date":1363281910,"msg":"[DISP]getLayerUser0x886c482\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]purgatorizeLayer_l0x8b6b684\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]detachLayer0x886c480x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]remove0x8b6b682\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281910,"msg":"[DISP]~LayerBaseClient0x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281911,"msg":"GC_CONCURRENTfreed152K,44%free3197K/5639K,external0K/0K,paused2ms+16ms\r","object":"dalvikvm","pid":"5986","level":"D"}
+{"date":1363281911,"msg":"GC_CONCURRENTfreed208K,45%free3141K/5639K,external0K/0K,paused10ms+15ms\r","object":"dalvikvm","pid":"5974","level":"D"}
+{"date":1363281911,"msg":"GC_CONCURRENTfreed145K,42%free3531K/6023K,external0K/0K,paused2ms+4ms\r","object":"dalvikvm","pid":"5986","level":"D"}
+{"date":1363281911,"msg":"[AndroidGlobalSession]:SocialSearch:false,VersionCheck:false,Searchallfilteruncheckall:false,SQLiteHook:true,SECONDARYSQLITECONF:false,SQLITE_COMMIT_INTERVAL:10,Device:HTC,IndexInternalMedia:false,EnableSDCardFileSearch:true,AdvanceSearch:true,RESULTLONGPRESS:false,AUDIOINDEXPLAYLIST:true,AUDIOINDEXGENRES:true,DEPLOY:true,TRACESINFOENABLE:true,TRACESERRORENABLE:true,TRACES_INFO_MORE_ENABLE:false,RECENTLY_USED_LIMIT:15,ENABLE_GLOBAL_SEARCH:false,ENABLE_CITY_SEARCH:false,ENABLE_SOCIAL:true\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281911,"msg":"[Logger]:classcom.servo.core.android.AndroidGlobalSessioninitfinishedin:0ms\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281911,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40516e38\r","object":"dalvikvm","pid":"5998","level":"D"}
+{"date":1363281911,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40516e38\r","object":"dalvikvm","pid":"5998","level":"D"}
+{"date":1363281911,"msg":"GC_CONCURRENTfreed153K,44%free3196K/5639K,external0K/0K,paused3ms+4ms\r","object":"dalvikvm","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281912,"msg":"GC_CONCURRENTfreed147K,42%free3542K/6023K,external0K/0K,paused2ms+3ms\r","object":"dalvikvm","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"dbopen():path=/data/data/com.google.android.apps.maps/databases/webview.db,flag=6,filesize=15360\r","object":"Database","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"dbopen():path=/data/data/com.google.android.apps.maps/databases/webview.db,mode:wal,diskfreesize:742M,handle:0x34a520\r","object":"Database","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"GC_CONCURRENTfreed263K,42%free3665K/6279K,external0K/0K,paused3ms+4ms\r","object":"dalvikvm","pid":"5986","level":"D"}
+{"date":1363281912,"msg":"dbopen():path=/data/data/com.google.android.apps.maps/databases/webviewCache.db,flag=6,filesize=6144\r","object":"Database","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"sqlitereturned:errorcode=0,msg=Recovered6framesfromWALfile/data/data/com.google.android.apps.maps/databases/webviewCache.db-wal\r","object":"Database","pid":"5998","level":"I"}
+{"date":1363281912,"msg":"dbopen():path=/data/data/com.google.android.apps.maps/databases/webviewCache.db,mode:wal,diskfreesize:742M,handle:0x365428\r","object":"Database","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"GC_CONCURRENTfreed305K,42%free3778K/6407K,external0K/0K,paused2ms+11ms\r","object":"dalvikvm","pid":"5998","level":"D"}
+{"date":1363281912,"msg":"Initializinginflatestate\r","object":"szipinf","pid":"1627","level":"D"}
+{"date":1363281914,"msg":"Initializinginflatestate\r","object":"szipinf","pid":"1627","level":"D"}
+{"date":1363281914,"msg":"Initializinginflatestate\r","object":"szipinf","pid":"1627","level":"D"}
+{"date":1363281915,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281915,"msg":"set_light_buttons_func:on=5460819brightness=83\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281915,"msg":"set_light_buttons_func:on=16777215brightness=255\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281915,"msg":"[DISP]attachLayer0x708ee811200x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281917,"msg":"[DISP]attachLayer0x708ee811210x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281919,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40517328\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281919,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40517328\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"GC_CONCURRENTfreed155K,44%free3194K/5639K,external0K/0K,paused5ms+3ms\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"GC_CONCURRENTfreed149K,41%free3566K/6023K,external0K/0K,paused2ms+6ms\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Pubcom.tencent.mm.sdk.contact.provider:com.tencent.mm.plugin.base.stub.RContactDBProvider\r","object":"ActivityThread","pid":"6010","level":"I"}
+{"date":1363281920,"msg":"Pubcom.tencent.mm.sdk.conversation.provider:com.tencent.mm.plugin.base.stub.RConversationDBProvider\r","object":"ActivityThread","pid":"6010","level":"I"}
+{"date":1363281920,"msg":"Pubcom.tencent.mm.sdk.msginfo.provider:com.tencent.mm.plugin.base.stub.RMsgInfoDBProvider\r","object":"ActivityThread","pid":"6010","level":"I"}
+{"date":1363281920,"msg":"Pubcom.tencent.mm.sdk.plugin.provider:com.tencent.mm.plugin.base.stub.MMPluginProvider\r","object":"ActivityThread","pid":"6010","level":"I"}
+{"date":1363281920,"msg":"Initializinginflatestate\r","object":"szipinf","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Initializingzlibtoinflate\r","object":"szipinf","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libmmdb.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Initializinginflatestate\r","object":"szipinf","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libmmdb.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"JNI_OnLoadcalled\r","object":"Database","pid":"6010","level":"I"}
+{"date":1363281920,"msg":"JNI_OnLoadregistermethods\r","object":"Database","pid":"6010","level":"I"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libQrcodeDecoder.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libQrcodeDecoder.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libQrcodeDecoder.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libMMProtocalJni.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libMMProtocalJni.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libMMProtocalJni.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libvprotocal.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libvprotocal.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libvprotocal.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libvoice.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libvoice.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libImgTools.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libImgTools.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libImgTools.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libvoipMain.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libvoipMain.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libvoipMain.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libAmmCommon.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libAmmCommon.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libAmmCommon.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Tryingtoloadlib/data/data/com.tencent.mm/lib/libcdntran.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"Addedsharedlib/data/data/com.tencent.mm/lib/libcdntran.so0x40532300\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281920,"msg":"NoJNI_OnLoadfoundin/data/data/com.tencent.mm/lib/libcdntran.so0x40532300,skippinginit\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281921,"msg":"GetFieldID:unabletofindfieldLjava/util/HashMap;.loadFactor:F\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281921,"msg":"GetFieldID:unabletofindfieldLjava/util/HashMap;.loadFactor:F\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281921,"msg":"GC_CONCURRENTfreed332K,42%free3774K/6407K,external0K/0K,paused7ms+5ms\r","object":"dalvikvm","pid":"6010","level":"D"}
+{"date":1363281923,"msg":"[DISP]getLayerUser0x708ee81121\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281923,"msg":"[DISP]purgatorizeLayer_l0x9d5e605\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281923,"msg":"[DISP]detachLayer0x708ee80x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281923,"msg":"[DISP]remove0x9d5e602\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281923,"msg":"[DISP]~LayerBaseClient0x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281924,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363281924,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363281924,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:78mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363281930,"msg":"[LedInfo]writeattrokname=/sys/class/leds/green/brightnessstring=0,len=1\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281930,"msg":"[LedInfo]writeattrokname=/sys/class/leds/green/blinkstring=0,len=1\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281930,"msg":"[LedInfo]writeattrokname=/sys/class/leds/green/off_timerstring=00,len=3\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281930,"msg":"[LedInfo]writeattrokname=/sys/class/leds/amber/brightnessstring=1,len=1\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281930,"msg":"[LedInfo]writeattrokname=/sys/class/leds/amber/blinkstring=0,len=1\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281930,"msg":"[LedInfo]writeattrokname=/sys/class/leds/amber/off_timerstring=00,len=3\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363281932,"msg":"[DiskSpaceHandler]:CurrentusedRAMspace:3.726M\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281932,"msg":"[CrawlerScheduler]:[0]startround-total:17\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281932,"msg":"GC_CONCURRENTfreed340K,46%free3200K/5895K,external0K/0K,paused2ms+3ms\r","object":"dalvikvm","pid":"5974","level":"D"}
+{"date":1363281932,"msg":"dbopen():path=/data/data/com.servo.search/ram/databases/crawlerstatus.db,flag=6,filesize=5120\r","object":"Database","pid":"5974","level":"D"}
+{"date":1363281932,"msg":"sqlitereturned:errorcode=0,msg=Recovered5framesfromWALfile/data/data/com.servo.search/ram/databases/crawlerstatus.db-wal\r","object":"Database","pid":"5974","level":"I"}
+{"date":1363281932,"msg":"dbopen():path=/data/data/com.servo.search/ram/databases/crawlerstatus.db,mode:wal,diskfreesize:742M,handle:0x34a170\r","object":"Database","pid":"5974","level":"D"}
+{"date":1363281932,"msg":"[Logger]:SchedulenextSDCARDcrawling:604800000\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281932,"msg":"[Logger]:SchedulenextSDCARDcrawling:604800000\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281932,"msg":"[CrawlerScheduler]:[0]finishthisround\r","object":"servo","pid":"5974","level":"I"}
+{"date":1363281932,"msg":"[DISP]attachLayer0x708ee811220x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281939,"msg":"capturedbuttonclickevent,proceeding...\r","object":"GUI","pid":"5966","level":"D"}
+{"date":1363281939,"msg":"GC_CONCURRENTfreed269K,46%free3062K/5639K,external0K/0K,paused3ms+10ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281939,"msg":"Case:milestone,Tag:march\r","object":"GUI","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"Createddirectory:/mnt/sdcard/milestone/march_201303141825\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"SystemInfolaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"SystemInfo'sdonegatheringtimezonesettings\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"SystemInfo'sdonegatheringenvironmentvariables\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"SystemInfo'sdonegatheringsystemproperties\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"Applicationslaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"Contactslaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"CallLoglaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"SMSlaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"MMSlaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"BrowserHistorylaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"BrowserSearcheslaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"PhoneInfolaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"MMS'sdonequery,1items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x405177b0\r","object":"dalvikvm","pid":"6031","level":"D"}
+{"date":1363281940,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x405177b0\r","object":"dalvikvm","pid":"6031","level":"D"}
+{"date":1363281940,"msg":"MMS-fetches1records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"238022811045013\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"238022811045013\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"ServiceInfolaunches\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"CallLog'sdonequery,344items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"Contacts'sdonequery,68items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"Contacts'sdonequery,68items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"GC_CONCURRENTfreed295K,45%free3301K/5895K,external0K/0K,paused9ms+6ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"GC_CONCURRENTfreed295K,45%free3301K/5895K,external0K/0K,paused9ms+6ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"SMS'sdonequery,513items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281940,"msg":"GC_CONCURRENTfreed533K,47%free3317K/6151K,external0K/0K,paused3ms+4ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"Pubhtcbrowser.currenturlprovider:com.android.browser.CurrentUrlProvider\r","object":"ActivityThread","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"Pubhtcbrowser:com.android.browser.htc.util.HTCBrowserProvider\r","object":"ActivityThread","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"Pubbrowser:com.android.browser.BrowserProvider\r","object":"ActivityThread","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"Pubcom.android.browser.htc.util.BrowserPrintProvider:com.android.browser.htc.util.BrowserPrintProvider\r","object":"ActivityThread","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"Pubcom.android.browser.htc.bookmarks.BookmarkCarouselProvider:com.android.browser.htc.bookmarks.BookmarkCarouselProvider\r","object":"ActivityThread","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"GC_CONCURRENTfreed502K,46%free3326K/6151K,external0K/0K,paused2ms+4ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"dbopen():path=/data/data/com.android.browser/databases/browser.db,flag=6,filesize=102400\r","object":"Database","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"dbopen():path=/data/data/com.android.browser/databases/webview.db,flag=6,filesize=26624\r","object":"Database","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"sqlitereturned:errorcode=0,msg=Recovered26framesfromWALfile/data/data/com.android.browser/databases/webview.db-wal\r","object":"Database","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"dbopen():path=/data/data/com.android.browser/databases/webview.db,mode:wal,diskfreesize:742M,handle:0x3661f0\r","object":"Database","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"sqlitereturned:errorcode=0,msg=Recovered112framesfromWALfile/data/data/com.android.browser/databases/browser.db-wal\r","object":"Database","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"dbopen():path=/data/data/com.android.browser/databases/browser.db,mode:wal,diskfreesize:742M,handle:0x3575c0\r","object":"Database","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"dbopen():path=/data/data/com.android.browser/databases/webviewCache.db,flag=6,filesize=304128\r","object":"Database","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"sqlitereturned:errorcode=0,msg=Recovered243framesfromWALfile/data/data/com.android.browser/databases/webviewCache.db-wal\r","object":"Database","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"dbopen():path=/data/data/com.android.browser/databases/webviewCache.db,mode:wal,diskfreesize:742M,handle:0x385cc0\r","object":"Database","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"GC_CONCURRENTfreed527K,47%free3311K/6151K,external0K/0K,paused4ms+47ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"BrowserSearches'sdonequery,3items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"BrowserHistory'sdonequery,112items\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"getAlwaysShowStatusbar=false\r","object":"BrowserSettings","pid":"6031","level":"V"}
+{"date":1363281941,"msg":"PluginManageradd:/system/lib/plugins/com.adobe.flashplayer\r","object":"PluginManager","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"PluginManageradd:/system/lib/plugins/com.htc.flashliteplugin\r","object":"PluginManager","pid":"6031","level":"I"}
+{"date":1363281941,"msg":"GC_CONCURRENTfreed510K,47%free3312K/6151K,external0K/0K,paused5ms+7ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"BrowserSearches-fetches3records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"BrowserSearches-fetches3records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"CallLog-fetches344records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"CallLog-fetches344records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281941,"msg":"GC_CONCURRENTfreed280K,46%free3069K/5639K,external0K/0K,paused4ms+3ms\r","object":"dalvikvm","pid":"6031","level":"D"}
+{"date":1363281941,"msg":"GC_CONCURRENTfreed508K,47%free3315K/6151K,external0K/0K,paused2ms+4ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281942,"msg":"GC_CONCURRENTfreed516K,47%free3311K/6151K,external0K/0K,paused3ms+4ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"BrowserHistory-fetches112records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"BrowserHistory-fetches112records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"GC_CONCURRENTfreed498K,46%free3324K/6151K,external0K/0K,paused3ms+3ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"SMS-fetches513records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"SMS-fetches513records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"SMS-fetches513records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"GC_EXPLICITfreed868K,40%free5859K/9607K,external2737K/3418K,paused121ms\r","object":"dalvikvm","pid":"1627","level":"D"}
+{"date":1363281942,"msg":"GC_CONCURRENTfreed621K,50%free3093K/6151K,external0K/0K,paused9ms+12ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281942,"msg":"GC_EXPLICITfreed40K,47%free3022K/5639K,external20K/532K,paused1470ms\r","object":"dalvikvm","pid":"5059","level":"D"}
+{"date":1363281943,"msg":"GC_EXPLICITfreed808K,44%free8892K/15623K,external4065K/5077K,paused140ms\r","object":"dalvikvm","pid":"1502","level":"D"}
+{"date":1363281943,"msg":"GC_EXPLICITfreed1131K,37%free6109K/9607K,external2737K/3418K,paused59ms\r","object":"dalvikvm","pid":"1627","level":"D"}
+{"date":1363281944,"msg":"GC_EXPLICITfreed124K,47%free3285K/6151K,external0K/0K,paused31ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281944,"msg":"GC_EXPLICITfreed874K,33%free6483K/9671K,external2737K/3418K,paused59ms\r","object":"dalvikvm","pid":"1627","level":"D"}
+{"date":1363281944,"msg":"Contacts-fetches68records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281944,"msg":"Contacts-fetches68records\r","object":"timeline_forensic","pid":"5966","level":"D"}
+{"date":1363281945,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]getLayerUser0x708ee81120\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]purgatorizeLayer_l0x8b6b685\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]getLayerUser0x708ee81122\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]purgatorizeLayer_l0x9d5e604\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]detachLayer0x708ee80x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]remove0x8b6b682\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]~LayerBaseClient0x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]detachLayer0x708ee80x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]remove0x9d5e602\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"[DISP]~LayerBaseClient0x9d5e60\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281951,"msg":"Can'topenkeycharmapfile\r","object":"KeyCharacterMap","pid":"5966","level":"W"}
+{"date":1363281951,"msg":"Errorloadingkeycharmapfile'/system/usr/keychars/synaptics-rmi-touchscreen.kcm.bin'.hw.keyboards.131074.devname='synaptics-rmi-touchscreen'\r","object":"KeyCharacterMap","pid":"5966","level":"W"}
+{"date":1363281951,"msg":"Usingdefaultkeymap:/system/usr/keychars/qwerty.kcm.bin\r","object":"KeyCharacterMap","pid":"5966","level":"I"}
+{"date":1363281963,"msg":"GC_EXPLICITfreed266K,44%free8814K/15623K,external4065K/5077K,paused115ms\r","object":"dalvikvm","pid":"1502","level":"D"}
+{"date":1363281964,"msg":"Debuggerhasdetached;objectregistryhad1entries\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363281967,"msg":"GC_EXPLICITfreed502K,76%free3595K/14855K,external0K/512K,paused69ms\r","object":"dalvikvm","pid":"1621","level":"D"}
+{"date":1363281968,"msg":"GC_EXPLICITfreed26K,45%free3695K/6599K,external0K/512K,paused113ms\r","object":"dalvikvm","pid":"1732","level":"D"}
+{"date":1363281972,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281974,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281975,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281976,"msg":"\r","object":"AndroidRuntime","pid":"6047","level":"D"}
+{"date":1363281976,"msg":">>>>>>AndroidRuntimeSTARTcom.android.internal.os.RuntimeInit<<<<<<\r","object":"AndroidRuntime","pid":"6047","level":"D"}
+{"date":1363281976,"msg":"CheckJNIisOFF\r","object":"AndroidRuntime","pid":"6047","level":"D"}
+{"date":1363281976,"msg":"creatinginstrwidthtable\r","object":"dalvikvm","pid":"6047","level":"D"}
+{"date":1363281976,"msg":"Callingmainentrycom.android.commands.am.Am\r","object":"AndroidRuntime","pid":"6047","level":"D"}
+{"date":1363281976,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40517c70\r","object":"dalvikvm","pid":"6055","level":"D"}
+{"date":1363281976,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40517c70\r","object":"dalvikvm","pid":"6055","level":"D"}
+{"date":1363281976,"msg":"GC_EXPLICITfreed12K,48%free2844K/5379K,external0K/0K,paused62ms\r","object":"dalvikvm","pid":"1376","level":"D"}
+{"date":1363281976,"msg":"GC_EXPLICITfreed<1K,48%free2844K/5379K,external0K/0K,paused49ms\r","object":"dalvikvm","pid":"1376","level":"D"}
+{"date":1363281976,"msg":"GC_EXPLICITfreed<1K,48%free2844K/5379K,external0K/0K,paused54ms\r","object":"dalvikvm","pid":"1376","level":"D"}
+{"date":1363281976,"msg":"Pubcom.noshufou.android.su.provider:com.noshufou.android.su.provider.PermissionsProvider\r","object":"ActivityThread","pid":"6055","level":"I"}
+{"date":1363281977,"msg":"ShuttingdownVM\r","object":"AndroidRuntime","pid":"6047","level":"D"}
+{"date":1363281977,"msg":"GC_CONCURRENTfreed103K,66%free358K/1024K,external0K/0K,paused1ms+1ms\r","object":"dalvikvm","pid":"6047","level":"D"}
+{"date":1363281977,"msg":"NOTE:attachofthread'BinderThread#3'failed\r","object":"AndroidRuntime","pid":"6047","level":"I"}
+{"date":1363281977,"msg":"adbddisconnected\r","object":"jdwp","pid":"6047","level":"D"}
+{"date":1363281977,"msg":"2000/system/bin/shexecuting0/system/bin/shusingshell/system/bin/sh:sh\r","object":"su","pid":"6045","level":"D"}
+{"date":1363281977,"msg":"GC_CONCURRENTfreed269K,46%free3088K/5639K,external0K/0K,paused3ms+3ms\r","object":"dalvikvm","pid":"6055","level":"D"}
+{"date":1363281977,"msg":"dbopen():path=/data/data/com.noshufou.android.su/databases/su.db,flag=6,filesize=12288\r","object":"Database","pid":"6055","level":"D"}
+{"date":1363281977,"msg":"sqlitereturned:errorcode=0,msg=Recovered12framesfromWALfile/data/data/com.noshufou.android.su/databases/su.db-wal\r","object":"Database","pid":"6055","level":"I"}
+{"date":1363281977,"msg":"dbopen():path=/data/data/com.noshufou.android.su/databases/su.db,mode:wal,diskfreesize:742M,handle:0x35f3f0\r","object":"Database","pid":"6055","level":"D"}
+{"date":1363281977,"msg":"[DISP]attachLayer0x5f679810x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281979,"msg":"[DISP]getLayerUser0x5f67981\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281979,"msg":"[DISP]purgatorizeLayer_l0x8b6b684\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281979,"msg":"[DISP]detachLayer0x5f67980x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281979,"msg":"[DISP]remove0x8b6b683\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281979,"msg":"[DISP]~LayerBaseClient0x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363281982,"msg":"GC_EXPLICITfreed27K,41%free4932K/8263K,external0K/0K,paused122ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282002,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282005,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282006,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,flag=6,filesize=9216\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363282006,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,mode:wal,diskfreesize:742M,handle:0x386e30\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363282006,"msg":"dbclose():path=/data/data/com.tencent.mobileqq/databases/eup_db,handle=0x386e30\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363282008,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40514e88\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282008,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40514e88\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282009,"msg":"GC_CONCURRENTfreed145K,44%free3204K/5639K,external0K/0K,paused12ms+6ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282009,"msg":"Pubqq.message:com.tencent.mobileqq.content.MessageProvider\r","object":"ActivityThread","pid":"6067","level":"I"}
+{"date":1363282009,"msg":"Pubqq.friendlist:com.tencent.mobileqq.content.FriendListProvider\r","object":"ActivityThread","pid":"6067","level":"I"}
+{"date":1363282009,"msg":"GC_CONCURRENTfreed210K,43%free3490K/6023K,external0K/0K,paused2ms+4ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282009,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/245593980.db,flag=6,filesize=1725440\r","object":"Database","pid":"6067","level":"D"}
+{"date":1363282009,"msg":"sqlitereturned:errorcode=0,msg=Recovered1693framesfromWALfile/data/data/com.tencent.mobileqq/databases/245593980.db-wal\r","object":"Database","pid":"6067","level":"I"}
+{"date":1363282009,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/245593980.db,mode:wal,diskfreesize:742M,handle:0x3548f8\r","object":"Database","pid":"6067","level":"D"}
+{"date":1363282010,"msg":"Badrequestforfieldslot0,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot1,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot2,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot3,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot4,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot5,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot6,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot7,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot8,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot9,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot10,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot11,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot12,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot13,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot14,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot15,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot16,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot17,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot18,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot19,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot20,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot21,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot22,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot23,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot24,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot25,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot26,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot27,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot28,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"Badrequestforfieldslot29,-1.numRows=30,numColumns=1\r","object":"CursorWindow","pid":"6067","level":"E"}
+{"date":1363282010,"msg":"GC_CONCURRENTfreed233K,41%free3736K/6279K,external0K/0K,paused3ms+8ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282010,"msg":"GC_EXTERNAL_ALLOCfreed59K,42%free3677K/6279K,external0K/0K,paused43ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282010,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,flag=6,filesize=9216\r","object":"Database","pid":"6067","level":"D"}
+{"date":1363282010,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,mode:wal,diskfreesize:742M,handle:0x489570\r","object":"Database","pid":"6067","level":"D"}
+{"date":1363282010,"msg":"dbclose():path=/data/data/com.tencent.mobileqq/databases/eup_db,handle=0x489570\r","object":"Database","pid":"6067","level":"D"}
+{"date":1363282011,"msg":"GC_CONCURRENTfreed402K,41%free3897K/6599K,external12K/518K,paused3ms+5ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282011,"msg":"[E]currentAPN:.receivednetworkInfo:CONNECTED:NetworkInfo:type:WIFI[],state:CONNECTED/CONNECTED,reason:(unspecified),extra:(none),roaming:false,failover:false,isAvailable:true,isIpv4Connected:false,isIpv6Connected:false,if:eth0\r","object":"MSF.D.AppNetInfoImpl","pid":"6067","level":"D"}
+{"date":1363282011,"msg":"[E]netchangeNONEtoWIFI\r","object":"MSF.D.AppNetInfoImpl","pid":"6067","level":"D"}
+{"date":1363282012,"msg":"[E]FMTSERVERLISTCLEARED!!!\r","object":"FMT_ADDR","pid":"6067","level":"D"}
+{"date":1363282012,"msg":"GC_CONCURRENTfreed491K,42%free3911K/6727K,external51K/518K,paused4ms+4ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282014,"msg":"GC_CONCURRENTfreed451K,42%free3957K/6727K,external63K/518K,paused3ms+4ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282015,"msg":"GC_CONCURRENTfreed362K,44%free3642K/6471K,external0K/0K,paused4ms+23ms\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363282015,"msg":"GC_CONCURRENTfreed339K,40%free4090K/6791K,external106K/518K,paused3ms+3ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282016,"msg":"GC_CONCURRENTfreed305K,39%free4249K/6855K,external230K/518K,paused3ms+3ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282017,"msg":"GC_CONCURRENTfreed270K,38%free4434K/7047K,external194K/518K,paused8ms+26ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282019,"msg":"GC_CONCURRENTfreed470K,39%free4521K/7303K,external267K/518K,paused41ms+12ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282019,"msg":"java.io.FileNotFoundException:/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq(Permissiondenied)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatorg.apache.harmony.luni.platform.OSFileSystem.open(NativeMethod)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatdalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatjava.io.FileInputStream.<init>(FileInputStream.java:80)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatjava.io.FileInputStream.<init>(FileInputStream.java:132)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatjava.io.FileReader.<init>(FileReader.java:66)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.qq.video.VcSystemInfo.getCurrentCpuFreq(VcSystemInfo.java:180)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.qq.video.VcSystemInfo.getCpuInfo(VcSystemInfo.java:128)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.qq.config.ConfigSystemImpl.<init>(ConfigSystemImpl.java:172)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.qq.config.ConfigSystemImpl.getConfigRequestPackage(ConfigSystemImpl.java:43)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.mobileqq.servlet.VideoConfigServlet.onSend(ProGuard:56)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatmqq.app.MSFServlet.service(MSFServlet.java:61)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatmqq.app.ServletContainer$2.run(ServletContainer.java:78)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatmqq.app.ServletContainer.forward(ServletContainer.java:92)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatmqq.app.AppRuntime.startServlet(AppRuntime.java:211)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.mobileqq.app.QQAppInterface.j(ProGuard:2252)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatcom.tencent.mobileqq.app.QQInitHandler.run(ProGuard:919)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282019,"msg":"\tatjava.lang.Thread.run(Thread.java:1027)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"java.io.FileNotFoundException:/sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq(Permissiondenied)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatorg.apache.harmony.luni.platform.OSFileSystem.open(NativeMethod)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatdalvik.system.BlockGuard$WrappedFileSystem.open(BlockGuard.java:232)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatjava.io.FileInputStream.<init>(FileInputStream.java:80)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatjava.io.FileInputStream.<init>(FileInputStream.java:132)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatjava.io.FileReader.<init>(FileReader.java:66)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatcom.tencent.qq.video.VcSystemInfo.getCurrentCpuFreq(VcSystemInfo.java:180)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatcom.tencent.qq.video.VcSystemInfo.getCpuInfo(VcSystemInfo.java:128)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatcom.tencent.qq.config.ConfigSystemImpl.<init>(ConfigSystemImpl.java:172)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatcom.tencent.qq.config.ConfigSystemImpl.isNeedStartVideoProcess(ConfigSystemImpl.java:57)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatcom.tencent.mobileqq.servlet.VideoConfigServlet.onReceive(ProGuard:30)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.MSFServlet.onReceive(MSFServlet.java:41)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.ServletContainer.notifyMSFServlet(ServletContainer.java:137)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.MainService.receiveMessageFromMSF(MainService.java:114)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.MainService.access$2(MainService.java:91)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.MainService$3.onRecvResp(MainService.java:269)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatcom.tencent.mobileqq.msf.sdk.MsfRespHandleUtil.handleRespMsg(UnknownSource)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.MainService$1.handleResp(MainService.java:172)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatmqq.app.MainService$1.run(MainService.java:153)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282020,"msg":"\tatjava.lang.Thread.run(Thread.java:1027)\r","object":"System.err","pid":"6067","level":"W"}
+{"date":1363282021,"msg":"GetFieldID:unabletofindfieldLjava/util/HashMap;.loadFactor:F\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363282021,"msg":"GC_CONCURRENTfreed422K,44%free3667K/6471K,external0K/0K,paused3ms+3ms\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363282022,"msg":"GetFieldID:unabletofindfieldLjava/util/HashMap;.loadFactor:F\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282022,"msg":"GC_CONCURRENTfreed578K,40%free4531K/7431K,external231K/518K,paused3ms+4ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282031,"msg":"GC_CONCURRENTfreed498K,39%free4594K/7431K,external222K/518K,paused3ms+3ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363282032,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282032,"msg":"set_light_buttons_func:on=5460819brightness=83\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363282032,"msg":"set_light_buttons_func:on=16777215brightness=255\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363282035,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282055,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused79ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282062,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282065,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282074,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282074,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:79mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363282075,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282092,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282095,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282098,"msg":"GC_EXPLICITfreed19K,44%free3747K/6599K,external0K/0K,paused159ms\r","object":"dalvikvm","pid":"25423","level":"D"}
+{"date":1363282108,"msg":"GC_EXPLICITfreed19K,44%free3747K/6599K,external0K/0K,paused159ms\r","object":"dalvikvm","pid":"25423","level":"D"}
+{"date":1363282122,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282124,"msg":"set_light_buttons_func:on=5460819brightness=83\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363282124,"msg":"set_light_buttons_func:on=16777215brightness=255\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363282125,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282131,"msg":"TotalarenapagesforJIT:11\r","object":"dalvikvm","pid":"6067","level":"I"}
+{"date":1363282133,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40515290\r","object":"dalvikvm","pid":"6111","level":"D"}
+{"date":1363282133,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40515290\r","object":"dalvikvm","pid":"6111","level":"D"}
+{"date":1363282133,"msg":"Pubhtc_cime:com.htc.android.htcime.provider.HTCCIMEProvider\r","object":"ActivityThread","pid":"6111","level":"I"}
+{"date":1363282134,"msg":"GC_CONCURRENTfreed212K,45%free3137K/5639K,external0K/0K,paused2ms+5ms\r","object":"dalvikvm","pid":"6111","level":"D"}
+{"date":1363282134,"msg":"[DISP]attachLayer0x69ee4020x7aa760\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]attachLayer0x69ee4030x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]attachLayer0x69ee4040x718750\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]getLayerUser0x69ee402\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]purgatorizeLayer_l0x7aa7604\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]detachLayer0x69ee400x7aa760\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]remove0x7aa7602\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]~LayerBaseClient0x7aa760\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]getLayerUser0x69ee403\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]purgatorizeLayer_l0x8b6b684\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]detachLayer0x69ee400x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]remove0x8b6b683\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282134,"msg":"[DISP]~LayerBaseClient0x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]attachLayer0x708ee811230x7aa760\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]getLayerUser0x69ee404\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]purgatorizeLayer_l0x7187505\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]attachLayer0x69ee4050x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]detachLayer0x69ee400x718750\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]remove0x7187502\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]~LayerBaseClient0x718750\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"GC_CONCURRENTfreed422K,48%free3253K/6151K,external0K/0K,paused7ms+6ms\r","object":"dalvikvm","pid":"5966","level":"D"}
+{"date":1363282135,"msg":"[DISP]getLayerUser0x69ee405\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]purgatorizeLayer_l0x8b6b685\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]detachLayer0x69ee400x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]remove0x8b6b682\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282135,"msg":"[DISP]~LayerBaseClient0x8b6b68\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282137,"msg":"[DISP]getLayerUser0x708ee81123\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282137,"msg":"[DISP]purgatorizeLayer_l0x7aa7605\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282137,"msg":"Can'topenkeycharmapfile\r","object":"KeyCharacterMap","pid":"5966","level":"W"}
+{"date":1363282137,"msg":"Errorloadingkeycharmapfile'/system/usr/keychars/synaptics-rmi-touchscreen.kcm.bin'.hw.keyboards.131074.devname='synaptics-rmi-touchscreen'\r","object":"KeyCharacterMap","pid":"5966","level":"W"}
+{"date":1363282137,"msg":"Usingdefaultkeymap:/system/usr/keychars/qwerty.kcm.bin\r","object":"KeyCharacterMap","pid":"5966","level":"I"}
+{"date":1363282137,"msg":"[DISP]detachLayer0x708ee80x7aa760\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282137,"msg":"[DISP]remove0x7aa7603\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282137,"msg":"[DISP]~LayerBaseClient0x7aa760\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282152,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282155,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282176,"msg":"GC_EXPLICITfreed23K,41%free4935K/8263K,external0K/0K,paused134ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282182,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282185,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282191,"msg":"set_light_buttons_func:on=5460819brightness=83\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363282191,"msg":"set_light_buttons_func:on=16777215brightness=255\r","object":"lights","pid":"1502","level":"D"}
+{"date":1363282212,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282215,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282229,"msg":"GC_CONCURRENTfreed382K,76%free3597K/14855K,external0K/512K,paused3ms+4ms\r","object":"dalvikvm","pid":"1621","level":"D"}
+{"date":1363282242,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282245,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282254,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282254,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:80mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363282255,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282260,"msg":"GC_EXPLICITfreed23K,41%free4932K/8263K,external0K/0K,paused118ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282272,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282275,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282301,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282302,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282305,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282325,"msg":"GC_EXPLICITfreed375K,44%free3663K/6471K,external0K/0K,paused101ms\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363282330,"msg":"GC_EXPLICITfreed4K,44%free3747K/6599K,external0K/0K,paused88ms\r","object":"dalvikvm","pid":"25423","level":"D"}
+{"date":1363282332,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282335,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282345,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused56ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282362,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282365,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282392,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282395,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282408,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282422,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282425,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282433,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused126ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282434,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282435,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:81mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363282435,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282452,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282455,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282482,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282485,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282508,"msg":"GC_CONCURRENTfreed386K,76%free3595K/14855K,external0K/512K,paused9ms+3ms\r","object":"dalvikvm","pid":"1621","level":"D"}
+{"date":1363282512,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282515,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282533,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused205ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282542,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282545,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282572,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282576,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282577,"msg":"GC_EXPLICITfreed212K,42%free3616K/6151K,external0K/0K,paused75ms\r","object":"dalvikvm","pid":"5744","level":"D"}
+{"date":1363282592,"msg":"GC_EXPLICITfreed1K,45%free3694K/6599K,external0K/512K,paused137ms\r","object":"dalvikvm","pid":"1732","level":"D"}
+{"date":1363282602,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282606,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282606,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,flag=6,filesize=9216\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363282606,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,mode:wal,diskfreesize:742M,handle:0x3682b8\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363282606,"msg":"dbclose():path=/data/data/com.tencent.mobileqq/databases/eup_db,handle=0x3682b8\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363282610,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused82ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282614,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282614,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:82mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363282615,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282631,"msg":"GC_EXPLICITfreed78K,47%free3032K/5639K,external0K/0K,paused84ms\r","object":"dalvikvm","pid":"5792","level":"D"}
+{"date":1363282632,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282636,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282646,"msg":"GC_EXPLICITfreed90K,45%free2990K/5379K,external0K/0K,paused73ms\r","object":"dalvikvm","pid":"5850","level":"D"}
+{"date":1363282651,"msg":"GC_EXPLICITfreed147K,44%free3643K/6471K,external0K/0K,paused96ms\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363282656,"msg":"GC_EXPLICITfreed38K,44%free3748K/6599K,external0K/0K,paused71ms\r","object":"dalvikvm","pid":"25423","level":"D"}
+{"date":1363282662,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282666,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282692,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282696,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282697,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused76ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282708,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused76ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282722,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282726,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282752,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282756,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282764,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282764,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:83mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363282765,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282775,"msg":"GC_CONCURRENTfreed391K,76%free3596K/14855K,external0K/512K,paused3ms+4ms\r","object":"dalvikvm","pid":"1621","level":"D"}
+{"date":1363282782,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282784,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused64ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282786,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282812,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282816,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282842,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282846,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282868,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused91ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282872,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282876,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282901,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282902,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282906,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282908,"msg":"GC_EXPLICITfreed19K,44%free3748K/6599K,external0K/0K,paused52ms\r","object":"dalvikvm","pid":"25423","level":"D"}
+{"date":1363282927,"msg":"GC_EXPLICITfreed109K,44%free3635K/6471K,external0K/0K,paused70ms\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363282932,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282936,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282944,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282944,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:84mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363282945,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363282959,"msg":"GC_EXPLICITfreed20K,41%free4932K/8263K,external0K/0K,paused65ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363282962,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282966,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282992,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363282996,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283008,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283022,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283026,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283045,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused65ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363283052,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283056,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283075,"msg":"GC_CONCURRENTfreed435K,76%free3598K/14855K,external0K/512K,paused3ms+4ms\r","object":"dalvikvm","pid":"1621","level":"D"}
+{"date":1363283082,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283086,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283094,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363283094,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:85mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363283095,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363283112,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283116,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283132,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused138ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363283138,"msg":"Kerneltimezoneupdatedto-60minuteswestofGMT\r","object":"AlarmManagerService","pid":"1502","level":"D"}
+{"date":1363283138,"msg":"Settingtimeofdaytosec=1363283138\r","object":"SystemClock","pid":"1625","level":"D"}
+{"date":1363283138,"msg":"Tryingtoloadlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40515718\r","object":"dalvikvm","pid":"6149","level":"D"}
+{"date":1363283138,"msg":"Addedsharedlib/data/data/com.lbe.security/app_lib/libfwclient.so0x40515718\r","object":"dalvikvm","pid":"6149","level":"D"}
+{"date":1363283138,"msg":"Pubdownloads:com.android.providers.downloads.DownloadProvider\r","object":"ActivityThread","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"Pubdrm:com.android.providers.drm.DrmProvider\r","object":"ActivityThread","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"Pubmedia:com.android.providers.media.MediaProvider\r","object":"ActivityThread","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"GC_EXTERNAL_ALLOCfreed117K,46%free2947K/5379K,external0K/0K,paused36ms\r","object":"dalvikvm","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"[MediaProvider][onCreate]+\r","object":"MediaProvider","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"Attachedvolume:internal\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[MediaProvider][onCreate]+state=mounted\r","object":"MediaProvider","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"/mnt/sdcardvolumeID:-361293040\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"dbopen():path=/data/data/com.android.providers.media/databases/external-ea771b10.db,flag=6,filesize=128000\r","object":"Database","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"sqlitereturned:errorcode=0,msg=Recovered128framesfromWALfile/data/data/com.android.providers.media/databases/external-ea771b10.db-wal\r","object":"Database","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"dbopen():path=/data/data/com.android.providers.media/databases/external-ea771b10.db,mode:wal,diskfreesize:742M,handle:0x3739d8\r","object":"Database","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"[onOpen]newdatapath=/data/data/com.android.providers.media/databases/external-ea771b10.db\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]dbname=internal.db-wal,0,6,6,3\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]wal.endsWith=null,5\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]dbname=external-ea771b10.db,1,6,5,3\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]dbname=internal.db-shm,2,6,4,2\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]shm.endsWith=null,3\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]dbname=external-ea771b10.db-wal,3,6,3,2\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]wal.endsWith=null,2\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]dbname=external-ea771b10.db-shm,4,6,2,2\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]shm.endsWith=null,1\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[onOpen][2m]dbname=internal.db,5,6,1,2\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"Attachedvolume:external\r","object":"MediaProvider","pid":"6149","level":"V"}
+{"date":1363283139,"msg":"[MediaProvider][onCreate]-\r","object":"MediaProvider","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"android.intent.action.NETWORK_SET_TIMEZONE\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"time-zone=Europe/Copenhagen\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"receiver-intent:android.intent.action.NETWORK_SET_TIMEZONE\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"PoweronReceiver.onReceive():intent=android.intent.action.TIME_SET\r","object":"MyHTC","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"SYNC_CLOCK\r","object":"DrmIntentService","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"android.intent.action.TIME_SET\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"@@@@@TIME_CHANGED\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"service-onStartCommand()action:com.htc.app.autosetting.requestlocationupdate\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"@@@@@nomagicnumber.\r","object":"DrmIntentService","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"@@@@@TIME_CHANGED:magicnumber\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"dbopen():path=/data/data/com.android.providers.drm/databases/drm.db,flag=6,filesize=14336\r","object":"Database","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"service-mHandler:requestlocationupdate\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"service-mHandler:updatetime\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"service-processTime()starttimethread\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"receiver-intent:android.intent.action.TIME_SET\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"service-onStartCommand()action:null\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283139,"msg":"GC_CONCURRENTfreed1715K,43%free9046K/15623K,external4182K/5077K,paused4ms+18ms\r","object":"dalvikvm","pid":"1502","level":"D"}
+{"date":1363283139,"msg":"sqlitereturned:errorcode=0,msg=Recovered14framesfromWALfile/data/data/com.android.providers.drm/databases/drm.db-wal\r","object":"Database","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"dbopen():path=/data/data/com.android.providers.drm/databases/drm.db,mode:wal,diskfreesize:742M,handle:0x3ad2d8\r","object":"Database","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"syncDrmClock:UpdateStamp.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"update():oldcontentid=null\r","object":"DrmProvider","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"Pubcom.htc.android.alarmclock:com.htc.android.worldclock.AlarmProvider\r","object":"ActivityThread","pid":"6163","level":"I"}
+{"date":1363283139,"msg":"updatenotifyChange.count=1\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"Pubcom.htc.android.worldclock.TabCarouselProvider:com.htc.android.worldclock.TabCarouselProvider\r","object":"ActivityThread","pid":"6163","level":"I"}
+{"date":1363283139,"msg":"@@@@@BackupDRMdatabase.-Enter.\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"Pubcom.htc.android.worldclock.TimerProvider:com.htc.android.worldclock.TimerProvider\r","object":"ActivityThread","pid":"6163","level":"I"}
+{"date":1363283139,"msg":"@@@@@BackupDRMdatabase.-Leave.\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283139,"msg":"syncDrmClock:UpdateStampComplete.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283139,"msg":"syncDrmClock:Closecursor.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"SYNC_CLOCK\r","object":"DrmIntentService","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"@@@@@whenitismagicnumber,weget(1)\r","object":"DrmIntentService","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"syncDrmClock:UpdateStamp.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"update():oldcontentid=null\r","object":"DrmProvider","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"updatenotifyChange.count=1\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"@@@@@BackupDRMdatabase.-Enter.\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"dbopen():path=/data/data/com.htc.android.worldclock/databases/alarms.db,flag=6,filesize=4096\r","object":"Database","pid":"6163","level":"D"}
+{"date":1363283140,"msg":"@@@@@BackupDRMdatabase.-Leave.\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"syncDrmClock:UpdateStampComplete.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"syncDrmClock:Closecursor.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"sqlitereturned:errorcode=0,msg=Recovered4framesfromWALfile/data/data/com.htc.android.worldclock/databases/alarms.db-wal\r","object":"Database","pid":"6163","level":"I"}
+{"date":1363283140,"msg":"dbopen():path=/data/data/com.htc.android.worldclock/databases/alarms.db,mode:wal,diskfreesize:742M,handle:0x34bc48\r","object":"Database","pid":"6163","level":"D"}
+{"date":1363283140,"msg":"TimeThreadgettimefromserver(nist1-la.ustiming.org):ThuJan0101:00:00GMT+01:001970(0)\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"TimeThreadconverttimeisincorrect\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"Pubcom.android.settings.provider.suggestion:com.android.settings.globalsearch.SuggestionProvider\r","object":"ActivityThread","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"AudioFocusabandonAudioFocus()fromandroid.media.AudioManager@40530a08\r","object":"AudioService","pid":"1502","level":"I"}
+{"date":1363283140,"msg":"Acceptconnectionfrom127.0.0.1\r","object":"Clockd","pid":"1389","level":"D"}
+{"date":1363283140,"msg":"updaterepeatalarm:5,1363324215\r","object":"Clockd","pid":"1389","level":"D"}
+{"date":1363283140,"msg":"updaterepeatalarm:5,1363324500\r","object":"Clockd","pid":"1389","level":"D"}
+{"date":1363283140,"msg":"updaterepeatalarm:6,1363420219\r","object":"Clockd","pid":"1389","level":"D"}
+{"date":1363283140,"msg":"TimeThreadgettimefromserver(time-b.nist.gov):ThuJan0101:00:00GMT+01:001970(0)\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"TimeThreadconverttimeisincorrect\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"Pubframework.activity.powersaver.smartsync:com.android.settings.framework.activity.powersaver.SmartSyncProvider\r","object":"ActivityThread","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"dbopen():path=/data/data/com.android.settings/databases/SmartSync.db,flag=6,filesize=36864\r","object":"Database","pid":"6171","level":"D"}
+{"date":1363283140,"msg":"sqlitereturned:errorcode=0,msg=Recovered34framesfromWALfile/data/data/com.android.settings/databases/SmartSync.db-wal\r","object":"Database","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"dbopen():path=/data/data/com.android.settings/databases/SmartSync.db,mode:wal,diskfreesize:742M,handle:0x3487c8\r","object":"Database","pid":"6171","level":"D"}
+{"date":1363283140,"msg":"[PSaver]onReceiveandroid.intent.action.TIME_SET\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepModeEnabled:true\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepStartTimeSecond:0\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepEndTimeSecond:0\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"iCurrentSecond:67500\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"SleepModestartat:1363215600699\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"SleepModeendat:1363215600699\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"android.intent.action.NETWORK_SET_TIME\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"StarttogetTimeZone\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"StarttogetTimeZoneOffset\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"StarttogetCurrent\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"StarttogetelapsedRealtime\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"EndofACTION_NETWORK_SET_TIME\r","object":"DrmScannerReceiver","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"[PSaver]onReceivecom.android.systemui.statusbar.action.sleep_mode_start\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepModeEnabled:true\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepStartTimeSecond:0\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepEndTimeSecond:0\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"iCurrentSecond:67500\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"[PSaver]onReceivecom.android.systemui.statusbar.action.sleep_mode_end\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepModeEnabled:true\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepStartTimeSecond:0\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"mHTCWirelessSleepEndTimeSecond:0\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"iCurrentSecond:67500\r","object":"SleepModeTimeOrTimeZoneChangedReciever","pid":"6171","level":"I"}
+{"date":1363283140,"msg":"SYNC_CLOCK\r","object":"DrmIntentService","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"receiver-intent:android.intent.action.NETWORK_SET_TIME\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"@@@@@nomagicnumber.\r","object":"DrmIntentService","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"syncDrmClock:UpdateStamp.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"service-onStartCommand()action:com.htc.app.autosetting.requestlocationupdate\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"service-mHandler:updatetime\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"service-processTime()timethreadisrunning\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"update():oldcontentid=null\r","object":"DrmProvider","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"updatenotifyChange.count=1\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"@@@@@BackupDRMdatabase.-Enter.\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"GC_CONCURRENTfreed225K,46%free3057K/5639K,external712K/1024K,paused6ms+4ms\r","object":"dalvikvm","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"TimeThreadgettimefromserver(nist1-pa.ustiming.org):ThuJan0101:00:00GMT+01:001970(0)\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"TimeThreadconverttimeisincorrect\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283140,"msg":"@@@@@BackupDRMdatabase.-Leave.\r","object":"DrmProvider","pid":"6149","level":"D"}
+{"date":1363283140,"msg":"syncDrmClock:UpdateStampComplete.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283140,"msg":"syncDrmClock:Closecursor.\r","object":"DrmIntentService","pid":"6149","level":"I"}
+{"date":1363283141,"msg":"Uncaughtexceptionfromdeathnotification\r","object":"BinderNative","pid":"5966","level":"W"}
+{"date":1363283141,"msg":"java.lang.NullPointerException\r","object":"BinderNative","pid":"5966","level":"W"}
+{"date":1363283141,"msg":"\tatandroid.app.ActivityThread.removeDeadProvider(ActivityThread.java:4104)\r","object":"BinderNative","pid":"5966","level":"W"}
+{"date":1363283141,"msg":"\tatandroid.app.ActivityThread$ProviderClientRecord.binderDied(ActivityThread.java:294)\r","object":"BinderNative","pid":"5966","level":"W"}
+{"date":1363283141,"msg":"\tatandroid.os.BinderProxy.sendDeathNotice(Binder.java:381)\r","object":"BinderNative","pid":"5966","level":"W"}
+{"date":1363283141,"msg":"\tatdalvik.system.NativeStart.run(NativeMethod)\r","object":"BinderNative","pid":"5966","level":"W"}
+{"date":1363283141,"msg":"TimeThreadgettimefromserver(nist1-sj.ustiming.org):ThuMar1418:45:43GMT+01:002013(1363283143000)\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283141,"msg":"TimeThreadremotetimeisintolerance,diff=1\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283141,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283143,"msg":"Thereare1requestfornoremovereschedule!\r","object":"CalendarProvider2","pid":"1732","level":"I"}
+{"date":1363283143,"msg":"setAlarm#2013/3/1516:47:43\r","object":"CalendarProvider2","pid":"1732","level":"V"}
+{"date":1363283143,"msg":"thread:616,runScheduleNextAlarm()takems:92\r","object":"CalendarProvider2","pid":"1732","level":"I"}
+{"date":1363283145,"msg":"GC_EXPLICITfreed90K,44%free3705K/6599K,external0K/512K,paused100ms\r","object":"dalvikvm","pid":"1732","level":"D"}
+{"date":1363283146,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283151,"msg":"GC_CONCURRENTfreed580K,40%free4552K/7495K,external222K/518K,paused10ms+3ms\r","object":"dalvikvm","pid":"6067","level":"D"}
+{"date":1363283171,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283176,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283178,"msg":"GC_EXPLICITfreed19K,44%free3748K/6599K,external0K/0K,paused109ms\r","object":"dalvikvm","pid":"25423","level":"D"}
+{"date":1363283199,"msg":"service-mHandler:cancellocationupdate\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283199,"msg":"service-changescount:0\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283199,"msg":"service-notifyErrorMessage()sendouterror:2\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283199,"msg":"service-nochangereceived,requestasingleupdate\r","object":"AutoSetting","pid":"1732","level":"D"}
+{"date":1363283201,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283206,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,flag=6,filesize=9216\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363283206,"msg":"dbopen():path=/data/data/com.tencent.mobileqq/databases/eup_db,mode:wal,diskfreesize:742M,handle:0x3682b8\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363283206,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283206,"msg":"dbclose():path=/data/data/com.tencent.mobileqq/databases/eup_db,handle=0x3682b8\r","object":"Database","pid":"5864","level":"D"}
+{"date":1363283227,"msg":"GC_EXPLICITfreed121K,44%free3634K/6471K,external0K/0K,paused112ms\r","object":"dalvikvm","pid":"5864","level":"D"}
+{"date":1363283231,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283232,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused70ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363283236,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283247,"msg":"binderDied()atObserverNodenamelogs\r","object":"ContentService","pid":"1502","level":"W"}
+{"date":1363283261,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283266,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283274,"msg":"SendIntentforPowersaver\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363283274,"msg":"[smartwifi]mSmartWiFiStatus:0mBatteryLevel:86mWifiConnected:true\r","object":"WifiService","pid":"1502","level":"D"}
+{"date":1363283274,"msg":"Currentpowersaverstatus==NORMAL_STATUS\r","object":"BatteryService","pid":"1502","level":"D"}
+{"date":1363283291,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283296,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283308,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283315,"msg":"GC_EXPLICITfreed19K,41%free4932K/8263K,external0K/0K,paused126ms\r","object":"dalvikvm","pid":"2413","level":"D"}
+{"date":1363283321,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283326,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283351,"msg":"iFBthreadLoopChkPoint=1\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283356,"msg":"[DISP]removeAbnormalLayer\r","object":"SurfaceFlinger","pid":"1502","level":"D"}
+{"date":1363283375,"msg":"GC_CONCURRENTfreed396K,76%free3597K/14855K,external0K/512K,paused8ms+3ms","object":"dalvikvm","pid":"1621","level":"D"}

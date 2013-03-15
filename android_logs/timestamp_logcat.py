@@ -36,9 +36,9 @@ for log_file in log_files:
                 buf = {
                     'date':int(timestamp),
                     'level':details['level'],
-                    'object':details['object'],
-                    'pid':details['pid'],
-                    'msg':details['msg'],
+                    'object':details['object'].strip(),
+                    'pid':details['pid'].strip(),
+                    'msg':details['msg'].strip(),
                 }
                 json.dump(buf, new_log_file)
                 new_log_file.write('\n')
