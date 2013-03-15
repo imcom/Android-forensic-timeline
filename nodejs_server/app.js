@@ -71,7 +71,7 @@ app.configure(function(){
 // default index route
 app.get('/', index_handler.imcom);
 
-app.post('/query', db_handler.db_helper);
+app.post('/syslogs', db_handler.syslogs);
 
 app.listen(app.get('port'));
 console.log("server started on port 2222...");

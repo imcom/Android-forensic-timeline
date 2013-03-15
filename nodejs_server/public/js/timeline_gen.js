@@ -1,32 +1,49 @@
-/*
-'/query',
-{
-collection: "events",
-selection: JSON.stringify({
-$or: [
-    {object: "dvm_gc_madvise_info"},
-    {object: "dvm_gc_info"}
-],
-date: {
-    $gte: 1362315421,
-    $lte: 1362315481
-}
-}),
-fields: "date msg object pid level",
-//if options are set to null, then just do NOT add this parameter to the post
-//options: null
-},
-*/
+
 var timeline_0 = new Timeline(
     "#timeline_0",
-    5000,
+    10000,
     [100, 300],
     5
 );
 timeline_0.initTimeline();
 
+var query_1 = [
+    /*{
+        uri: "/syslogs",
+        collection: "main",
+        selection: JSON.stringify({
+            pid: "1502",
+            date: {
+                $gte: 1363283140
+            }
+        }),
+        fields: ["date", "msg", "object", "pid", "level"],
+        options: null
+    },*/
+    {
+        uri: "/syslogs",
+        collection: "main",
+        selection: JSON.stringify({
+            pid: "1502",
+            date: {
+                $gte: 1363281140,
+                $lte: 1363282140
+            },
+            level: 'D'
+        }),
+        fields: ["date", "msg", "object", "pid", "level"],
+        options: null
+    }
+];
+
+
+
+timeline_0.fetchData(query_1);
+
+
+/*
 timeline_0.query(
-    "/query",
+    "/syslogs",
     "main",
     JSON.stringify({
         pid: "1502",
@@ -34,9 +51,9 @@ timeline_0.query(
             $gte: 1363283140
         }
     }),
-    "date msg object pid level",
-    null // null options
-);
+    ["date", "msg", "object", "pid", "level"],
+    null // if options are set to null, then just do NOT add this parameter to the post (using null)
+);*/
 
 /*The second timeline*/
 var timeline_1 = new Timeline(

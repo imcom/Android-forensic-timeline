@@ -43,13 +43,13 @@ btn.onclick = function(){
 // button in
 btn = $('#ctl_panel_0').children()[3];
 btn.onclick = function() {
-    zoom(timeline_0, 1000);
+    zoom(timeline_0, 3000);
 }
 
 // button out
 btn = $('#ctl_panel_0').children()[4];
 btn.onclick = function(){
-    zoom(timeline_0, -1000);
+    zoom(timeline_0, -3000);
 };
 
 // button down
@@ -76,13 +76,13 @@ btn.onclick = function(){
 // button in
 btn = $('#ctl_panel_1').children()[3];
 btn.onclick = function(){
-    zoom(timeline_1, 1000);
+    zoom(timeline_1, 3000);
 };
 
 // button out
 btn = $('#ctl_panel_1').children()[4];
 btn.onclick = function(){
-    zoom(timeline_1, -1000);
+    zoom(timeline_1, -3000);
 };
 
 window.onscroll = function(event) {
@@ -93,7 +93,29 @@ window.onscroll = function(event) {
     }
 }
 
-
+// button dummy
+btn = $('#go');
+btn.click(function(){
+    var query_2 = [
+        {
+            uri: "/syslogs",
+            collection: "system",
+            selection: JSON.stringify({
+                pid: "1372",
+                date: {
+                    $gte: 1363279140,
+                    $lte: 1363281140
+                }
+            }),
+            fields: ["date", "msg", "object", "pid", "level"],
+            options: null
+        }
+    ];
+    var cur_svg = $(timeline_0.getName()).children();
+    cur_svg.remove(); // remove the old svg
+    timeline_0.initTimeline();
+    timeline_0.fetchData(query_2);  
+});
 
 
 

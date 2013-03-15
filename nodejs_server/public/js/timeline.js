@@ -30,9 +30,88 @@ function Timeline(
     this.x_default;
     this.x_suspect;
     this.x_padding;
-    this.tick_num;
+    this.tick_num = 0;
+    this.x_domain_min = 0;
+    this.x_domain_max = 0;
+    this.y_domain_min = 0;
+    this.y_domain_max = 0;
+    
+    /* dragging events handler */
+    var self = this;
+    this.drag_event = d3.behavior.drag()
+        .on('dragstart', function() {
+            d3.event.sourceEvent.stopPropagation();
+        })
+        .on('drag', function(object) {
+            var event_id = this.getAttribute('id');
+            d3.select(this)
+                .attr("cx", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)))
+                .attr("cy", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
+            d3.select('text[id=' + event_id + ']')
+                .attr("x", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)) + 5)
+                .attr("y", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
+        });
+    
+    // dragging timeline position handler
+    var target_id;
+    var origin_y;
+    this.drag_timeline = d3.behavior.drag()
+        .origin(Object)
+        .on('dragstart', function() {
+            d3.event.sourceEvent.stopPropagation();
+            if (d3.event.sourceEvent.target.parentElement) {
+                var id = d3.event.sourceEvent.target.parentElement.getAttribute('id');
+                if (id) {
+                    target_id = id;
+                    origin_y = d3.event.sourceEvent.clientY;
+                }
+            }
+        })        
+        .on('dragend', function() {
+            var timeline_div = $('div[id=' + target_id + ']');
+            var cur_margin = timeline_div.css("margin-top");
+            cur_margin = parseInt(cur_margin.substr(0, cur_margin.length - 2));
+            var step = d3.event.sourceEvent.clientY - origin_y;
+            timeline_div.animate({"margin-top": cur_margin + step}, 500, "ease");
+        });
     
 } // constructor of Timeline
+
+Timeline.prototype.update_x_domain = function(x) {
+    if (
+        this.x_domain_min == 0 &&
+        this.x_domain_max == 0
+    ) {
+        this.x_domain_min = x;
+        this.x_domain_max = x;
+    } else {
+        if (x < this.x_domain_min) {
+            this.x_domain_min = x;
+        } else if (x > this.x_domain_max) {
+            this.x_domain_max = x;
+        }
+    }
+}
+
+Timeline.prototype.update_y_domain = function(y) {
+    if (
+        this.y_domain_min == 0 &&
+        this.y_domain_max == 0
+    ) {
+        this.y_domain_min = y;
+        this.y_domain_max = y;
+    } else {
+        if (y < this.y_domain_min) {
+            this.y_domain_min = y;
+        } else if (y > this.y_domain_max) {
+            this.y_domain_max = y;
+        }
+    }
+}
+
+Timeline.prototype.getEvent = function(index) {
+    return this.dataset[index];
+}
 
 Timeline.prototype.getHeight = function() {
     return this.timeline_height;
@@ -70,10 +149,37 @@ Timeline.prototype.updateHeight = function(timeline_height) {
     this.initTimeline();
 } // update timeline height on air, call onDataReady after this
 
-Timeline.prototype.query = function(uri, collection, selection, fields, options) {
+Timeline.prototype.clearData = function() {
+    this.dataset = [];
+    this.tick_num = 0;
+    this.x_domain_min = 0;
+    this.x_domain_max = 0;
+    this.y_domain_min = 0;
+    this.y_domain_max = 0;
+}
 
+Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, collection, selection, fields, options
+    var total = queries.length;
+    var excuted = 0;
     var self = this;
+    queries.forEach(function(query, index){
+        self.query( // invoke class method `query` for Ajax
+            query.uri,
+            query.collection,
+            query.selection,
+            query.fields,
+            query.options,
+            function(self){ // this self is passed from Ajax callback, which refers to Timeline class instance
+                excuted += 1;
+                if (excuted == total) {
+                    self.onDataReady();
+                }
+            });
+    });
+}
 
+Timeline.prototype.query = function(uri, collection, selection, fields, options, onQueryComplete) {
+    var self = this;
     var query_content = {
             collection: collection,
             selection: selection,
@@ -96,40 +202,36 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options)
                 var x_starts_on = self.x_default;
                 var previous_date = y_starts_on;
                 $.each(data.content, function(index) {
-                    var event_data = [];
+                    var event_data = {};
                     if (index == 0) {
-                        //self.dataset[index] = [x_starts_on, y_starts_on];
                         event_data.coords = [x_starts_on, y_starts_on];
                     } else {
                         if (data.content[index].date == previous_date) {
                             if (self.y_padding + y_starts_on >= previous_date + 1) { // overlap with next timestamp, then roll back
                                 x_starts_on += self.x_padding; // set offset on x-axis for distinguish
-                                y_starts_on = previous_date + self.y_padding;
+                                y_starts_on = previous_date + self.y_padding / 2;
+                            } else {
+                                y_starts_on += self.y_padding;
                             }
-                            y_starts_on += self.y_padding;
-                            //self.dataset[index] = [x_starts_on, y_starts_on];
                             event_data.coords = [x_starts_on, y_starts_on];
-                        } else if (data.content[index].date < previous_date) { // wrong sequence detected, using a different class for display
-                            //self.dataset[index] = [self.x_suspect, data.content[index].date]; // adding an offset for distinguish
-                            event_data.coords = [self.x_suspect, data.content[index].date];
+                        } else if (data.content[index].date < previous_date) { // wrong sequence detected                       
+                            event_data.coords = [self.x_suspect, data.content[index].date]; // adding an offset for distinguish
                             data.content[index].display = "suspect"; //TODO css class, set a different color for suspect events
                         } else {
                             previous_date = data.content[index].date;
                             y_starts_on = previous_date;
                             x_starts_on = self.x_default;
-                            //self.dataset[index] = [self.x_default, y_starts_on];
                             event_data.coords = [self.x_default, y_starts_on];
+                            overlap_increment = self.y_padding / 2;
                         }
                     }
-                    //self.data_desc[index] = data.content[index];
+                    self.update_x_domain(event_data.coords[0]);
+                    self.update_y_domain(event_data.coords[1]);
                     event_data.detail = data.content[index];
-                    self.dataset[index] = event_data;
+                    self.dataset.push(event_data);
                 });
-
-                // calculate how many timestamps in the selected period
-                self.tick_num = self.dataset[self.dataset.length-1].coords[1] - self.dataset[0].coords[1];
-                // on dataset ready, render the timeline
-                self.onDataReady();
+                // on query done, callback to caller
+                onQueryComplete(self);
             }
         },
         "json" // expected response type
@@ -139,64 +241,31 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options)
 Timeline.prototype.onDataReady = function() {
 
     var self = this;
+    // calculate how many timestamps in the selected period
+    this.tick_num = this.y_domain_max - this.y_domain_min;
+    
     var x_scale = d3.scale.linear()
                  .domain([
-                            d3.min(this.dataset, function(data) { return data.coords[0]; }),
-                            d3.max(this.dataset, function(data) { return data.coords[0]; })
+                            this.x_domain_min,
+                            this.x_domain_max
                         ])
                  .range(this.x_range);
 
     var y_scale = d3.scale.linear()
                  .domain([
-                            d3.min(this.dataset, function(data) { return data.coords[1]; }),
-                            d3.max(this.dataset, function(data) { return data.coords[1]; })
+                            this.y_domain_min,
+                            this.y_domain_max
                         ])
                  .range(this.y_range);
                  
-    /* dragging events handler */
-    var drag_event = d3.behavior.drag()
-        .on('dragstart', function() {
-            d3.event.sourceEvent.stopPropagation();
-        })
-        .on('drag', function(object) {
-            var event_id = this.getAttribute('id');
-            d3.select(this)
-                .attr("cx", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)))
-                .attr("cy", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
-            d3.select('text[id=' + event_id + ']')
-                .attr("x", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)) + 5)
-                .attr("y", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
-        });
-    
-    // drag handler for timeline position
-    var target_id;
-    var origin_y;
-    var drag_timeline = d3.behavior.drag()
-        .origin(Object)
-        .on('dragstart', function() {
-            d3.event.sourceEvent.stopPropagation();
-            if (d3.event.sourceEvent.target.parentElement) {
-                var id = d3.event.sourceEvent.target.parentElement.getAttribute('id');
-                if (id) {
-                    target_id = id;
-                    origin_y = d3.event.sourceEvent.clientY;
-                }
-            }
-        })        
-        .on('dragend', function() {
-            var timeline_div = $('div[id=' + target_id + ']');
-            var cur_margin = timeline_div.css("margin-top");
-            cur_margin = parseInt(cur_margin.substr(0, cur_margin.length - 2));
-            var step = d3.event.sourceEvent.clientY - origin_y;
-            timeline_div.animate({"margin-top": cur_margin + step}, 500, "ease");
-        });
+    console.log(this.y_domain_max + "," + this.y_domain_min + "," + this.tick_num);
 
     this.timeline.selectAll("circle[id=" + this.name.substr(1) + "]")
         .data(this.dataset)
         .enter()
         .append("circle")
         .attr("id", function(data, index){
-            return self.name.substr(1) + "-" + data.detail.pid.trim() + "-" + index;
+            return self.name.substr(1) + "-" + data.detail.pid + "-" + index;
         })
         .attr("cx", function(data) {
             return x_scale(data.coords[0]);
@@ -205,7 +274,7 @@ Timeline.prototype.onDataReady = function() {
             return y_scale(data.coords[1]);
         })
         .attr("r", this.radius)
-        .call(drag_event);
+        .call(this.drag_event);
 
     this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
         .data(this.dataset)
@@ -219,25 +288,24 @@ Timeline.prototype.onDataReady = function() {
         })
         .attr("id", this.name.substr(1))
         .text(function(data) {
-            return data.detail.object.trim() + "[" + data.detail.level + "]" + "/" + data.detail.pid.trim();
+            return data.detail.object + "[" + data.detail.level + "]" + "/" + data.detail.pid;
         })
         .attr("fill", "blue");
 
     var text_fields = $("text[id=" + this.name.substr(1) + "]");
     $.each(self.dataset, function(index) {
-    
         text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) + 5);
         text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
-        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid.trim() + "-" + index);
+        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
         
-        var text_field = $('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid.trim() + "-" + index + "]");
+        var text_field = $('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
             base_y_offset = $('text#' + event.target.id).height();
             $('#popup_detail').css("position", "absolute")
                 .css("left", Math.ceil(document.width / 6)) //FIXME not a really good implementation here... magic number...
                 .css("top", event.pageY - Math.round(base_y_offset * 0.3) * 10) // round down to the nearest 2-digits number
                 .css("opacity", 0.8)
-                .text(self.dataset[index].detail.msg.trim());
+                .text(self.dataset[index].detail.msg);
             this.setAttribute("fill", "purple");
             this.setAttribute("cursor", "pointer");
         })
@@ -251,7 +319,7 @@ Timeline.prototype.onDataReady = function() {
             console.log(event.target.id);
         });
         
-        var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid.trim() + "-" + index + "]");
+        var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
         circle.mouseover(function(event){         
             this.setAttribute("fill", "brown");
             this.setAttribute("cursor", "move");
@@ -277,7 +345,7 @@ Timeline.prototype.onDataReady = function() {
         .attr("class", "time-axis")
         .attr("id", this.name.substr(1))
         .call(y_axis)
-        .call(drag_timeline);
+        .call(this.drag_timeline);
 
     var labels = $("g[id=" + this.name.substr(1) + "]")[0].childNodes;
     $.each(labels, function(index) {
