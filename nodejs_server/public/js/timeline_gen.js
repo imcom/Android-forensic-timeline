@@ -5,10 +5,11 @@ var timeline_0 = new Timeline(
     [100, 300],
     5
 );
+
 timeline_0.initTimeline();
 
 var query_1 = [
-    /*{
+    {
         uri: "/syslogs",
         collection: "main",
         selection: JSON.stringify({
@@ -19,8 +20,8 @@ var query_1 = [
         }),
         fields: ["date", "msg", "object", "pid", "level"],
         options: null
-    },*/
-    {
+    },
+    /*{
         uri: "/syslogs",
         collection: "main",
         selection: JSON.stringify({
@@ -33,7 +34,7 @@ var query_1 = [
         }),
         fields: ["date", "msg", "object", "pid", "level"],
         options: null
-    }
+    }*/
 ];
 
 timeline_0.fetchData(query_1);

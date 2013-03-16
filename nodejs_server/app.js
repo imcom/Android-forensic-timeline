@@ -12,26 +12,16 @@ var path = require('path');
 var index_handler = require('./routes');
 var db_handler = require('./routes/database');
 var mongoose = require('mongoose');
+var android_log = require('./libs/android_log_schema.js');
 
 /*
  *  Init MongoDB connection and models
  */
 mongoose.connect('mongodb://localhost/' + db_name);
 
-var LOG_SCHEMA = mongoose.Schema(
-    {
-        date: Number,
-        msg: String,
-        object: String,
-        pid: String,
-        level: String
-    }
-);
-
-var log_collections = ['dmesg', 'radio', 'events', 'main', 'system'];
-
-log_collections.forEach( function(collection) {
-    mongoose.model(collection, LOG_SCHEMA, collection);
+// init models for android logs
+android_log.log_collections.forEach(function(collection) {
+    mongoose.model(collection, android_log.LOG_SCHEMA, collection);
 });
 
 // obtain express instance

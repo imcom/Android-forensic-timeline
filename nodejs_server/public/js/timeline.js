@@ -36,8 +36,19 @@ function Timeline(
     this.y_domain_min = 0;
     this.y_domain_max = 0;
 
+    /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();
     $ = Zepto;
+
+    Opentip.styles.tooltip_style = {
+        stem: true,
+        hideDelay: 0.2,
+        delay: 0.3,
+        tipJoint: "top right",
+        target: true,
+        borderWidth: 0
+    };
+
     /* dragging events handler */
     var self = this;
     this.drag_event = d3.behavior.drag()
@@ -295,8 +306,9 @@ Timeline.prototype.onDataReady = function() {
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
 
         var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+
         //TODO add style and adjust the tooltip
-        text_field.opentip(self.dataset[index].detail.msg, {delay: 0.5});
+        text_field.opentip(self.dataset[index].detail.msg, {style: "tooltip_style"});
 
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
             this.setAttribute("fill", "grey");
@@ -308,7 +320,9 @@ Timeline.prototype.onDataReady = function() {
         });
 
         text_field.on("click", function(event){
-            console.log(event.target.id);
+            var target = event.target;
+            console.log(target.id.split("-"));
+            jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
         });
 
         var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
