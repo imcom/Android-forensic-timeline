@@ -1,0 +1,83 @@
+
+var mongoose = require('mongoose');
+exports.LOG_SCHEMA = mongoose.Schema(
+    {
+        m_id: String,
+        pri: String,
+        retr_txt: String,
+        thread_id: String,
+        seen: String,
+        sub_cs: String,
+        sub: String,
+        rr: String,
+        ct_t: String,
+        cs_id: String,
+        ct_l: String,
+        m_size: String,
+        resp_st: String,
+        msg_box: String,
+        htc_category: String,
+        rpt_a: String,
+        read: String,
+        retr_txt_cs: String,
+        cs_timestamp: String,
+        d_rpt: String,
+        cs_synced: String,
+        resp_txt: String,
+        date: String,
+        ct_cls: String,
+        tr_id: String,
+        locked: String,
+        m_type: String,
+        retr_st: String,
+        d_tm: String,
+        st: String,
+        m_cls: String,
+        exp: String,
+        v: String,
+        _id: String,
+        read_status: String
+    }
+);
+
+exports.log_collections = ['MMS'];
+
+exports.name = "CP_MMS";
+
+exports.fields = [
+    "m_id",
+	"pri",
+	"retr_txt",
+	"thread_id",
+	"seen",
+	"sub_cs",
+	"sub",
+	"rr",
+	"ct_t",
+	"cs_id",
+	"ct_l",
+	"m_size",
+	"resp_st",
+	"msg_box",
+	"htc_category",
+	"rpt_a",
+	"read",
+	"retr_txt_cs",
+	"cs_timestamp",
+	"d_rpt",
+	"cs_synced",
+	"resp_txt",
+	"date",
+	"ct_cls",
+	"tr_id",
+	"locked",
+	"m_type",
+	"retr_st",
+	"d_tm",
+	"st",
+	"m_cls",
+	"exp",
+	"v",
+	"_id",
+	"read_status"
+];
