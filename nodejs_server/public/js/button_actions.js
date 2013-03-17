@@ -95,18 +95,13 @@ window.onscroll = function(event) {
 
 // button of POC
 btn = $('#go');
-btn.click(function(){
+btn.click(function() {
     var query_2 = [
         {
-            uri: "/syslogs",
-            collection: "main",
-            selection: JSON.stringify({
-                pid: "1502",
-                date: {
-                    $gte: 1363283140
-                }
-            }),
-            fields: ["date", "msg", "object", "pid", "level"],
+            uri: "/cp_browsersearches",
+            collection: "BrowserSearches",
+            selection: null,
+            fields: null,
             options: null
         }
     ];

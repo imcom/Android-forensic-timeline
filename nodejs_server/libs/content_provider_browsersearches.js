@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 exports.LOG_SCHEMA = mongoose.Schema(
     {
-        date: String,
+        date: Number,
         search: String,
         _id: String
     }
