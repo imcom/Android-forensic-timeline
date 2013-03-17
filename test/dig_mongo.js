@@ -2,33 +2,27 @@
 var db_name = process.argv[2];
 var collection_name = process.argv[3];
 
-var fields = "pid object date";
+var fields = "";
 var selection = "";
 
 var mongoose = require('mongoose');
+var android_log = require("../nodejs_server/libs/android_log_schema.js");
+var cp_applications = require("../nodejs_server/libs/content_provider_apps.js");
 
 mongoose.connect('mongodb://localhost/' + db_name);
 
-var LOG_SCHEMA = mongoose.Schema(
-    {
-        date: Number,
-        msg: String,
-        object: String,
-        pid: String,
-        level: String
-    }
-);
+var schemas = [android_log, cp_applications];
 
-var log_collections = ['dmesg', 'radio', 'events', 'main', 'system'];
-
-log_collections.forEach( function(collection) {
-    mongoose.model(collection, LOG_SCHEMA, collection);
+schemas.forEach(function(schema){
+    schema.log_collections.forEach(function(collection) {
+        mongoose.model(collection, schema.LOG_SCHEMA, collection);
+    });
 });
 
 var model = mongoose.model(collection_name);
 
 if (model) {
-    model.find(selection, fields, null, function(err, res) {
+    model.findOne(selection, fields, null, function(err, res) {
         if (err == null) {
             console.log(res);
         } else {
