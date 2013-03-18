@@ -5,7 +5,7 @@ exports.LOG_SCHEMA = mongoose.Schema(
         btime: Number,
         uptime: Number,
         timezone: String,
-        tz_offset: Number,
+        tz_offset: String,
     }
 );
 

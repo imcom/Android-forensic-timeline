@@ -3,6 +3,9 @@
 import codecs
 import json
 import sys
+import re
+
+numeric_values = re.compile("date|time|size|duration")
 
 input_file = sys.argv[1]
 output_file = sys.argv[2]
@@ -16,10 +19,22 @@ if lines is not None:
         try:
             # strip off the last newline char
             json_data = dict(map(lambda x: x.split(":", 1), line.strip().split(" ")))
-        except:
+            for key in json_data:
+                if numeric_values.search(key):
+                    if len(json_data[key]) == 13: # change unit ms to s and convert string to int
+                        json_data[key] = int(json_data[key][0:10])
+                    else:
+                        if key == 'timezone': # timezone setting of the device, its a string
+                            continue
+                        if json_data[key] == '': # empty record goes to zero
+                            json_data[key] = 0
+                            continue
+                        json_data[key] = int(json_data[key])
+        except ValueError as ve:
             #TODO out put to log file
-            # invalid format occured
-            pass
+            print ve.message
+        except TypeError as te:
+            print te.message
         json.dump(json_data, ofile)
         ofile.write("\n")
 

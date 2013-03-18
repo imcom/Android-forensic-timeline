@@ -13,7 +13,7 @@ function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
     var selection = null;
 
-    if (req.body.fields == null) {
+    if (req.body.fields != null) {
         fields = req.body.fields.filter(function(item) {
             return (type.fields.indexOf(item) != -1);
         });

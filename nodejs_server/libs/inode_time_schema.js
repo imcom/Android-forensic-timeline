@@ -2,12 +2,12 @@
 var mongoose = require('mongoose');
 exports.LOG_SCHEMA = mongoose.Schema(
     {
-        uid: Number,
-        gid: Number,
+        uid: String,
+        gid: String,
         mode: String,
-        inode: Number,
+        inode: String,
         size: Number,
-        allocated: Number,
+        allocated: String,
         inode_modified: Number,
         file_modified: Number,
         accessed: Number

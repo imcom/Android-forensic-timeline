@@ -22,6 +22,8 @@ for record in records:
         date = date_mask.match(value) # get rid of tailing timezone e.g. (CEST)
         if date:
             value = int(time.mktime(datetime.strptime(date.groupdict()['date'], "%Y-%m-%d %H:%M:%S").timetuple()))
+        if key.find('size') is not -1:
+            value = int(value); # convert size from string to int
         json_dict[key.strip()] = value # remove extra spaces in the key string
     json.dump(json_dict, output_file)
     output_file.write("\n")

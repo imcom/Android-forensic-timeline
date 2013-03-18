@@ -4,7 +4,7 @@ exports.LOG_SCHEMA = mongoose.Schema(
     {
         date: Number,
         duration: Number,
-        type: Number,
+        type: String,
         number: String,
         name: String
     }

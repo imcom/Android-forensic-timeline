@@ -13,7 +13,7 @@ var query_1 = [
         uri: "/syslogs",
         collection: "main",
         selection: JSON.stringify({
-            pid: 1502,
+            pid: "1502",
             date: {
                 $gte: 1363283140
             }
@@ -25,7 +25,7 @@ var query_1 = [
         uri: "/syslogs",
         collection: "main",
         selection: JSON.stringify({
-            pid: 1502,
+            pid: "1502",
             date: {
                 $gte: 1363281140,
                 $lte: 1363282140

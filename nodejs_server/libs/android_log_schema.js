@@ -5,7 +5,7 @@ exports.LOG_SCHEMA = mongoose.Schema(
         date: Number,
         msg: String,
         object: String,
-        pid: Number,
+        pid: String,
         level: String
     }
 );

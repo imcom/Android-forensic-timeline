@@ -18,7 +18,7 @@ exports.LOG_SCHEMA = mongoose.Schema(
         msg_box: String,
         htc_category: String,
         rpt_a: String,
-        read: Number,
+        read: String,
         retr_txt_cs: String,
         cs_timestamp: Number,
         d_rpt: String,

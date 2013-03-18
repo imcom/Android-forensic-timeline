@@ -4,7 +4,7 @@ exports.LOG_SCHEMA = mongoose.Schema(
     {
         last_activity_date: Number,
         launch_date: Number,
-        pid: Number,
+        pid: String,
         name: String
     }
 );

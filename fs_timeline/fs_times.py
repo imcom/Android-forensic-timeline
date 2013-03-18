@@ -22,6 +22,8 @@ for record in records:
             date = iso8601.parse_datetime(value)
             timestamp = time.mktime(date.timetuple())
             json_dict[col_names[index]] = int(timestamp)
+        elif index == 1: # convert the size from string to int for query selection purpose
+            json_dict[col_names[index]] = int(value)
         else:
             json_dict[col_names[index]] = value
     json.dump(json_dict, output_file)
