@@ -190,12 +190,16 @@ Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, col
 Timeline.prototype.query = function(uri, collection, selection, fields, options, onQueryComplete) {
     var self = this;
     var query_content = {
-            collection: collection,
-            selection: selection,
-            fields: fields,
+            collection: collection
     };
     if (options) {
         query_content.options = options;
+    }
+    if (selection) {
+        query_content.selection = selection;
+    }
+    if (fields) {
+        query_content.fields = fields;
     }
 
     $.post(
