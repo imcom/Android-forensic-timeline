@@ -5,9 +5,9 @@ exports.LOG_SCHEMA = mongoose.Schema(
         body: String,
         service_center: String,
         address: String,
-        report_date: String,
-        cs_timestamp: String,
-        date: String,
+        report_date: Number,
+        cs_timestamp: Number,
+        date: Number,
         type: String
     }
 );

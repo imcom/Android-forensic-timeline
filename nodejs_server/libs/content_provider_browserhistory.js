@@ -5,9 +5,9 @@ exports.LOG_SCHEMA = mongoose.Schema(
         title: String,
         url: String,
         user_entered: String,
-        visits: String,
-        bookmark: String,
-        date: String,
+        visits: Number,
+        bookmark: Number,
+        date: Number,
         _id: String
     }
 );

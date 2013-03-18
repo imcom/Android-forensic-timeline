@@ -2,9 +2,9 @@
 var mongoose = require('mongoose');
 exports.LOG_SCHEMA = mongoose.Schema(
     {
-        date: String,
-        duration: String,
-        type: String,
+        date: Number,
+        duration: Number,
+        type: Number,
         number: String,
         name: String
     }

@@ -5,9 +5,9 @@ exports.LOG_SCHEMA = mongoose.Schema(
         phone_number: String,
         display_name: String,
         contact_status: String,
-        last_time_contacted: String,
+        last_time_contacted: Number,
         email: String,
-        starred: String,
+        starred: Number,
         _id: String,
         contact_status_ts: String
     }

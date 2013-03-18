@@ -14,6 +14,7 @@ var cp_contacts = require("../nodejs_server/libs/content_provider_contacts.js");
 var cp_mms = require("../nodejs_server/libs/content_provider_mms.js");
 var cp_sms = require("../nodejs_server/libs/content_provider_sms.js");
 var cp_services = require("../nodejs_server/libs/content_provider_services.js");
+var temporal = require("../nodejs_server/libs/temporal_info_schema.js");
 
 mongoose.connect('mongodb://localhost/' + db_name);
 
@@ -28,7 +29,8 @@ var schemas = [
     cp_contacts,
     cp_mms,
     cp_sms,
-    cp_services
+    cp_services,
+    temporal
 ];
 
 schemas.forEach(function(schema){
