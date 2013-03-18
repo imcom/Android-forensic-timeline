@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import imcom.forensics.extractors.ApplicationExtractor;
+import imcom.forensics.extractors.ApplicationsExtractor;
 import imcom.forensics.extractors.BrowserHistoryExtractor;
 import imcom.forensics.extractors.BrowserSearchesExtractor;
 import imcom.forensics.extractors.CallLogExtractor;
@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 		Account[] accounts = accounts_manager.getAccounts();
 		console.append("----Accounts----\n");
 		for (Account account : accounts) {
-			console.append(account.name + "@" + account.type + "\n");
+			console.append(account.name + ":" + account.type + "\n");
 		}
 		
 		ActivityManager activity_manager = (ActivityManager) getSystemService(
@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
 			SDWriter sd_writer = new SDWriter(this);
 			dst_dir = sd_writer.getStorageDirectory(case_name, tag_name);
 			
-			SystemInfoGatherer gatherer = new SystemInfoGatherer("system.config");
+			SystemInfoGatherer gatherer = new SystemInfoGatherer("system.json");
 			gatherer.gather(dst_dir);
 			
 			extract();
@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
 	
 	private void initExtractors() {
 		
-		Extractor apps_extractor = new ApplicationExtractor("Applications");
+		Extractor apps_extractor = new ApplicationsExtractor("Applications");
 		extractors.add(apps_extractor);
 		
 		Extractor contacts_extractor = new ContactsExtractor("Contacts");

@@ -1,6 +1,7 @@
 package imcom.forensics.extractors;
 
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,6 +26,27 @@ public class ServiceInfoExtractor extends GenericExtractor {
 	
 	public int extract(ContentResolver resolver, Context context, File dst_dir) {
 		Log.d(LOG_TAG, extractor_name + " launches");
+		long btime = 0;
+		try {
+			Process cat_process = Runtime.getRuntime().exec("cat /proc/stat");
+			DataInputStream dis = new DataInputStream(cat_process.getInputStream());
+			cat_process.waitFor();
+			String line = null;
+			do {
+				line = dis.readLine();
+				if (line.startsWith("btime")) {
+					btime = Long.parseLong(line.split(" ")[1]);
+					break;
+				}
+			} while(line != null);
+			dis.close();
+		} catch (IOException ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		int service_num = 0;
 		try {
 			BufferedWriter writer = new BufferedWriter(
@@ -44,9 +66,9 @@ public class ServiceInfoExtractor extends GenericExtractor {
 				writer.write(" ");
 				writer.write("pid:" + service_info.pid);
 				writer.write(" ");
-				writer.write("start_time:" + service_info.activeSince);
+				writer.write("launch_date:" + (service_info.activeSince/1000 + btime));
 				writer.write(" ");
-				writer.write("last_activity:" + service_info.lastActivityTime);
+				writer.write("last_activity_date:" + (service_info.lastActivityTime/1000 + btime));
 				writer.write("\n");
 			}
 			

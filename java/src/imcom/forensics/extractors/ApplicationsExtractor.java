@@ -17,9 +17,9 @@ import android.content.pm.PermissionInfo;
 import android.net.Uri;
 import android.util.Log;
 
-public class ApplicationExtractor extends GenericExtractor {
+public class ApplicationsExtractor extends GenericExtractor {
 
-	public ApplicationExtractor(String extractor_name) {
+	public ApplicationsExtractor(String extractor_name) {
 		super(extractor_name);
 		// TODO Auto-generated constructor stub
 	}
@@ -51,9 +51,9 @@ public class ApplicationExtractor extends GenericExtractor {
 
 				writer.write(helper.formatString("name", package_name));
 				writer.write(" ");
-				writer.write("first_install_time" + ":" + app_info.firstInstallTime);
+				writer.write("first_install_date" + ":" + app_info.firstInstallTime);
 				writer.write(" ");
-				writer.write("last_update_time" + ":" + app_info.lastUpdateTime);
+				writer.write("last_update_date" + ":" + app_info.lastUpdateTime);
 				writer.write(" ");
 				writer.write(helper.formatString("class_name", app.className));
 				writer.write(" ");
