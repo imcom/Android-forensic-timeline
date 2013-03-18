@@ -5,7 +5,7 @@ import json
 import sys
 import re
 
-numeric_values = re.compile("date|time|size|duration")
+numeric_values = re.compile("date|time|duration")
 
 input_file = sys.argv[1]
 output_file = sys.argv[2]
