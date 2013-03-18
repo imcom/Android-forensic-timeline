@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
 			SDWriter sd_writer = new SDWriter(this);
 			dst_dir = sd_writer.getStorageDirectory(case_name, tag_name);
 			
-			SystemInfoGatherer gatherer = new SystemInfoGatherer("system.json");
+			TemporalInfoGatherer gatherer = new TemporalInfoGatherer("temporal.pjson");
 			gatherer.gather(dst_dir);
 			
 			extract();

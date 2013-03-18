@@ -9,15 +9,15 @@ import java.util.TimeZone;
 
 import android.util.Log;
 
-public class SystemInfoGatherer {
+public class TemporalInfoGatherer {
 	
 	private static final String LOG_TAG = "timeline_forensic";
 	private static final int MILLIS_TO_HOURS = 60 * 60 * 1000;
 	private String SYSTEM_INFO_FILENAME;
 	private static final String CONFIG_SEPARATOR = ":";
-	private static final String GATHERER_NAME = "SystemInfo";
+	private static final String GATHERER_NAME = "TemporalInfo";
 	
-	public SystemInfoGatherer(String info_filename) {
+	public TemporalInfoGatherer(String info_filename) {
 		this.SYSTEM_INFO_FILENAME = info_filename;
 		Log.d(LOG_TAG, GATHERER_NAME + " launches");
 	}
@@ -59,20 +59,17 @@ public class SystemInfoGatherer {
 						)
 				);
 		
-		sys_info_writer.write("{");
-		//sys_info_writer.newLine();
-		sys_info_writer.write("timezone" + CONFIG_SEPARATOR + 
-				TimeZone.getDefault().getDisplayName()
+		sys_info_writer.write("timezone" + CONFIG_SEPARATOR 
+				+ EscapeWrapper.nomarlize(TimeZone.getDefault().getDisplayName())
 				);
-		sys_info_writer.write(",");
+		sys_info_writer.write(" ");
 		sys_info_writer.write("tz_offset" + CONFIG_SEPARATOR +
 				(TimeZone.getDefault().getOffset(System.currentTimeMillis()) / MILLIS_TO_HOURS)
 				);
-		sys_info_writer.write(",");
+		sys_info_writer.write(" ");
 		sys_info_writer.write("btime" + CONFIG_SEPARATOR + btime);
-		sys_info_writer.write(",");
+		sys_info_writer.write(" ");
 		sys_info_writer.write("uptime" + CONFIG_SEPARATOR + uptime);
-		sys_info_writer.write("}");
 		sys_info_writer.newLine();
 		Log.d(LOG_TAG, GATHERER_NAME + "'s done gathering timezone settings");
 		
