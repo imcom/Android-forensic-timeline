@@ -42,7 +42,8 @@ public class SystemInfoGatherer {
 			DataInputStream dis_uptime = new DataInputStream(process_uptime.getInputStream());
 			process_uptime.waitFor();
 			line = dis_uptime.readLine();
-			uptime = Integer.parseInt(line.split(" ")[0].split(".")[0]);
+			String uptime_buf = line.split(" ")[0];
+			uptime = Integer.parseInt(uptime_buf.substring(0, uptime_buf.lastIndexOf(".")));
 			dis_uptime.close();
 		} catch (IOException ex) {
 			// TODO Auto-generated catch block
