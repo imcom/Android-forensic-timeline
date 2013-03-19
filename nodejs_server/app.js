@@ -33,22 +33,25 @@ mongoose.connect('mongodb://localhost/' + db_name);
 // init models for android logs
 var schemas = [
     android_log,
-    cp_applications,
-    fs_time,
-    inode_time,
-    cp_browserhistory,
     cp_browsersearches,
+    cp_browserhistory,
+    cp_applications,
     cp_calllogs,
     cp_contacts,
     cp_mms,
     cp_sms,
     cp_services,
+    fs_time,
+    inode_time,
     temporal_info
 ];
 
 schemas.forEach(function(schema){
     schema.log_collections.forEach(function(collection) {
-        mongoose.model(collection, schema.LOG_SCHEMA, collection);
+        mongoose.model(
+            collection,
+            mongoose.Schema(schema.LOG_SCHEMA),
+            collection);
     });
 });
 
@@ -84,7 +87,11 @@ app.configure(function(){
         '/js/zepto.min.js',
         '/js/bootstrap.min.js',
         '/js/timeline.js',
-        '/js/opentip-jquery.min.js'
+        '/js/opentip-jquery.min.js',
+        '/js/generic_data.js',
+        '/js/data_models/android_logs.js',
+        '/js/data_models/browsersearches.js',
+        '/js/data_models/browserhistory.js'
     ]
 });
 
@@ -97,11 +104,6 @@ app.post('/cp_browsersearches', db_handler.cp_browsersearches);
 app.listen(app.get('port'));
 console.log("server started on port 2222...");
 
-/*
-mongo.read("imcom", "radio", function(result){
-    console.log("radio records #:" + result[result.length-1]);
-});
-*/
 
 
 

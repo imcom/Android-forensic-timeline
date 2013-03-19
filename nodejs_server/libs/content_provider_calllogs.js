@@ -1,18 +1,17 @@
 
-var mongoose = require('mongoose');
-exports.LOG_SCHEMA = mongoose.Schema(
-    {
-        date: Number,
-        duration: Number,
-        type: String,
-        number: String,
-        name: String
-    }
-);
+
+exports.EVENT_SCHEMA =
+{
+    date: Number,
+    duration: Number,
+    type: String,
+    number: String,
+    name: String
+};
 
 exports.log_collections = ['CallLog'];
 
-exports.name = "CP_CallLog";
+exports.name = "content_provider_calllogs";
 
 exports.fields = [
     "date",

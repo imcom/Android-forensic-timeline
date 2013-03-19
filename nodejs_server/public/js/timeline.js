@@ -90,7 +90,7 @@ function Timeline(
 
 } // constructor of Timeline
 
-Timeline.prototype.update_x_domain = function(x) {
+Timeline.prototype.updateXDomain = function(x) {
     if (
         this.x_domain_min == 0 &&
         this.x_domain_max == 0
@@ -106,7 +106,7 @@ Timeline.prototype.update_x_domain = function(x) {
     }
 }
 
-Timeline.prototype.update_y_domain = function(y) {
+Timeline.prototype.updateYDomain = function(y) {
     if (
         this.y_domain_min == 0 &&
         this.y_domain_max == 0
@@ -209,9 +209,11 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
             /*init dataset here*/
             if (data.error != 0) {
                 //TODO error handling here
-                console.log("An error occured");
+                console.log("server error occured");
             } else { // on query success
-                var y_starts_on = data.content[0].date;
+                var generic_data = new GenericData(data.type, data.content);
+                //var y_starts_on = data.content[0].date;
+                var y_starts_on = generic_data.getDate(0);
                 var x_starts_on = self.x_default;
                 var previous_date = y_starts_on;
                 $.each(data.content, function(index) {
@@ -219,7 +221,8 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                     if (index == 0) {
                         event_data.coords = [x_starts_on, y_starts_on];
                     } else {
-                        if (data.content[index].date == previous_date) {
+                        //if (data.content[index].date == previous_date) {
+                        if (generic_data.getDate(index) == previous_date) {
                             if (self.y_padding + y_starts_on >= previous_date + 1) { // overlap with next timestamp, then roll back
                                 x_starts_on += self.x_padding; // set offset on x-axis for distinguish
                                 y_starts_on = previous_date + self.y_padding / 2;
@@ -227,19 +230,26 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                                 y_starts_on += self.y_padding;
                             }
                             event_data.coords = [x_starts_on, y_starts_on];
-                        } else if (data.content[index].date < previous_date) { // wrong sequence detected
-                            event_data.coords = [self.x_suspect, data.content[index].date]; // adding an offset for distinguish
-                            data.content[index].display = "suspect"; //TODO css class, set a different color for suspect events
+                        //} else if (data.content[index].date < previous_date) {
+                        // wrong sequence detected
+                        } else if (generic_data.getDate(index) < previous_date) {
+                            //event_data.coords = [self.x_suspect, data.content[index].date];
+                            // adding an offset for distinguish
+                            event_data.coords = [self.x_suspect, generic_data.getDate(index)];
+                            //TODO css class, set a different color for suspect events
+                            data.content[index].display = "suspect";
                         } else {
-                            previous_date = data.content[index].date;
+                            //previous_date = data.content[index].date;
+                            previous_date = generic_data.getDate(index);
                             y_starts_on = previous_date;
                             x_starts_on = self.x_default;
                             event_data.coords = [self.x_default, y_starts_on];
                             overlap_increment = self.y_padding / 2;
                         }
                     }
-                    self.update_x_domain(event_data.coords[0]);
-                    self.update_y_domain(event_data.coords[1]);
+                    self.updateXDomain(event_data.coords[0]);
+                    self.updateYDomain(event_data.coords[1]);
+                    data.content[index].type = data.type;
                     event_data.detail = data.content[index];
                     self.dataset.push(event_data);
                 });
@@ -256,6 +266,11 @@ Timeline.prototype.onDataReady = function() {
     var self = this;
     // calculate how many timestamps in the selected period
     this.tick_num = this.y_domain_max - this.y_domain_min;
+
+    // debugging info
+    console.log(this.tick_num);
+    console.log(this.y_domain_max);
+    console.log(this.y_domain_min);
 
     var x_scale = d3.scale.linear()
                  .domain([
@@ -299,7 +314,9 @@ Timeline.prototype.onDataReady = function() {
         })
         .attr("id", this.name.substr(1))
         .text(function(data) {
-            return data.detail.object + "[" + data.detail.level + "]" + "/" + data.detail.pid;
+            var generic_data = new GenericData(data.detail.type, data.detail);
+            //return data.detail.object + "[" + data.detail.level + "]" + "/" + data.detail.pid;
+            return generic_data.getDisplayName();
         })
         .attr("fill", "blue");
 
@@ -307,12 +324,19 @@ Timeline.prototype.onDataReady = function() {
     $.each(self.dataset, function(index) {
         text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) + 5);
         text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
-        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
+        //text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
+        var generic_data = new GenericData(
+            self.dataset[index].detail.type,
+            self.dataset[index].detail
+        );
+        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + generic_data.getId() + "-" + index);
 
-        var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+        //var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+        var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
 
         //TODO add style and adjust the tooltip
-        text_field.opentip(self.dataset[index].detail.msg, {style: "tooltip_style"});
+        //text_field.opentip(self.dataset[index].detail.msg, {style: "tooltip_style"});
+        text_field.opentip(generic_data.getMessage(), {style: "tooltip_style"});
 
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
             this.setAttribute("fill", "grey");
@@ -329,7 +353,8 @@ Timeline.prototype.onDataReady = function() {
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
         });
 
-        var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+        //var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
+        var circle = $('circle[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
         circle.mouseover(function(event){
             this.setAttribute("fill", "grey");
             this.setAttribute("cursor", "move");
@@ -338,7 +363,7 @@ Timeline.prototype.onDataReady = function() {
             this.setAttribute("fill", "black");
             this.setAttribute("cursor", null);
         });
-    });
+    }); // each self.dataset
 
     var y_axis = d3.svg.axis()
         .scale(y_scale)
@@ -350,6 +375,7 @@ Timeline.prototype.onDataReady = function() {
         formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
         return formatter(new Date(date));
     });
+
 
     this.timeline.append("g")
         .attr("class", "time-axis")

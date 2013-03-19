@@ -1,48 +1,47 @@
 
-var mongoose = require('mongoose');
-exports.LOG_SCHEMA = mongoose.Schema(
-    {
-        m_id: String,
-        pri: String,
-        retr_txt: String,
-        thread_id: String,
-        seen: String,
-        sub_cs: String,
-        sub: String,
-        rr: String,
-        ct_t: String,
-        cs_id: String,
-        ct_l: String,
-        m_size: String,
-        resp_st: String,
-        msg_box: String,
-        htc_category: String,
-        rpt_a: String,
-        read: String,
-        retr_txt_cs: String,
-        cs_timestamp: Number,
-        d_rpt: String,
-        cs_synced: String,
-        resp_txt: String,
-        date: Number,
-        ct_cls: String,
-        tr_id: String,
-        locked: String,
-        m_type: String,
-        retr_st: String,
-        d_tm: String,
-        st: String,
-        m_cls: String,
-        exp: String,
-        v: String,
-        _id: String,
-        read_status: String
-    }
-);
+
+exports.EVENT_SCHEMA =
+{
+    m_id: String,
+    pri: String,
+    retr_txt: String,
+    thread_id: String,
+    seen: String,
+    sub_cs: String,
+    sub: String,
+    rr: String,
+    ct_t: String,
+    cs_id: String,
+    ct_l: String,
+    m_size: String,
+    resp_st: String,
+    msg_box: String,
+    htc_category: String,
+    rpt_a: String,
+    read: String,
+    retr_txt_cs: String,
+    cs_timestamp: Number,
+    d_rpt: String,
+    cs_synced: String,
+    resp_txt: String,
+    date: Number,
+    ct_cls: String,
+    tr_id: String,
+    locked: String,
+    m_type: String,
+    retr_st: String,
+    d_tm: String,
+    st: String,
+    m_cls: String,
+    exp: String,
+    v: String,
+    _id: String,
+    read_status: String
+};
 
 exports.log_collections = ['MMS'];
 
-exports.name = "CP_MMS";
+exports.name = "content_provider_mms";
 
 exports.fields = [
     "m_id",

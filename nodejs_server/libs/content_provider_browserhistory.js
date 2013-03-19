@@ -1,20 +1,18 @@
 
-var mongoose = require('mongoose');
-exports.LOG_SCHEMA = mongoose.Schema(
-    {
-        title: String,
-        url: String,
-        user_entered: String,
-        visits: String,
-        bookmark: String,
-        date: Number,
-        _id: String
-    }
-);
+exports.EVENT_SCHEMA =
+{
+    title: String,
+    url: String,
+    user_entered: String,
+    visits: String,
+    bookmark: String,
+    date: Number,
+    _id: String
+};
 
 exports.log_collections = ['BrowserHistory'];
 
-exports.name = "CP_BrowserHistory";
+exports.name = "content_provider_browserhistory";
 
 exports.fields = [
     "title",

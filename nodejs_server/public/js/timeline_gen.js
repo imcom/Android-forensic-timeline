@@ -58,7 +58,7 @@ var timeline_1 = new Timeline(
     "#timeline_1",
     5000,
     [100, 300],
-    4
+    5
 );
 /*
 timeline_1.initTimeline();

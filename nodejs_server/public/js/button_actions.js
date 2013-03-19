@@ -94,13 +94,17 @@ window.onscroll = function(event) {
 }
 
 // button of POC
-btn = $('#go');
+btn = $('#test');
 btn.click(function() {
     var query_2 = [
         {
-            uri: "/cp_browsersearches",
-            collection: "BrowserSearches",
-            selection: null,
+            uri: "/cp_browserhistory",
+            collection: "BrowserHistory",
+            selection: JSON.stringify({
+                date: {
+                    $gte: 1363517123
+                }
+            }),
             fields: null,
             options: null
         }

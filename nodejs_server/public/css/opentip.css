@@ -6,7 +6,7 @@
 }
 .opentip-container {
   position: absolute;
-  max-width: 600px;
+  max-width: 1000px;
   opacity: 0.8;
   z-index: 100;
   -webkit-transition: -webkit-transform 1s ease-in-out;

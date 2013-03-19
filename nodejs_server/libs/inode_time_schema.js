@@ -1,22 +1,21 @@
 
-var mongoose = require('mongoose');
-exports.LOG_SCHEMA = mongoose.Schema(
-    {
-        uid: String,
-        gid: String,
-        mode: String,
-        inode: String,
-        size: Number,
-        allocated: String,
-        inode_modified: Number,
-        file_modified: Number,
-        accessed: Number
-    }
-);
+
+exports.EVENT_SCHEMA =
+{
+    uid: String,
+    gid: String,
+    mode: String,
+    inode: String,
+    size: Number,
+    allocated: String,
+    inode_modified: Number,
+    file_modified: Number,
+    accessed: Number
+};
 
 exports.log_collections = ['inode_time'];
 
-exports.name = "INODE_TIME";
+exports.name = "inode_time_schema";
 
 exports.fields = [
     "uid",
