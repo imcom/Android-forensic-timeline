@@ -103,7 +103,7 @@ btn.click(function() {
             selection: JSON.stringify({
                 date: {
                     $gte: 1362089603,
-                    $lte: 1362089703
+                    $lte: 1363099703
                 }
             }),
             fields: null,

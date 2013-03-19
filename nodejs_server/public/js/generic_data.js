@@ -46,7 +46,6 @@ function GenericData(type, dataset) {
         this.data_handler = new InodeTime(dataset);
     }
 
-
 }
 
 GenericData.prototype.getDate = function(index) {

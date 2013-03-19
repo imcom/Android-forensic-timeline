@@ -212,7 +212,6 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                 console.log("server error occured");
             } else { // on query success
                 var generic_data = new GenericData(data.type, data.content);
-                //var y_starts_on = data.content[0].date;
                 var y_starts_on = generic_data.getDate(0);
                 var x_starts_on = self.x_default;
                 var previous_date = y_starts_on;
@@ -223,30 +222,29 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                     } else {
                         //if (data.content[index].date == previous_date) {
                         if (generic_data.getDate(index) == previous_date) {
-                            if (self.y_padding + y_starts_on >= previous_date + 1) { // overlap with next timestamp, then roll back
-                                x_starts_on += self.x_padding; // set offset on x-axis for distinguish
+                            // overlap with next timestamp, then roll back
+                            if (self.y_padding + y_starts_on >= previous_date + 1) {
+                                // set offset on x-axis for distinguish
+                                x_starts_on += self.x_padding;
                                 y_starts_on = previous_date + self.y_padding / 2;
                             } else {
                                 y_starts_on += self.y_padding;
                             }
                             event_data.coords = [x_starts_on, y_starts_on];
-                        //} else if (data.content[index].date < previous_date) {
                         // wrong sequence detected
                         } else if (generic_data.getDate(index) < previous_date) {
-                            //event_data.coords = [self.x_suspect, data.content[index].date];
                             // adding an offset for distinguish
                             event_data.coords = [self.x_suspect, generic_data.getDate(index)];
                             //TODO css class, set a different color for suspect events
                             data.content[index].display = "suspect";
                         } else {
-                            //previous_date = data.content[index].date;
                             previous_date = generic_data.getDate(index);
                             y_starts_on = previous_date;
                             x_starts_on = self.x_default;
                             event_data.coords = [self.x_default, y_starts_on];
                             overlap_increment = self.y_padding / 2;
                         }
-                    }
+                    } // if index != 0
                     self.updateXDomain(event_data.coords[0]);
                     self.updateYDomain(event_data.coords[1]);
                     data.content[index].type = data.type;
@@ -265,7 +263,8 @@ Timeline.prototype.onDataReady = function() {
 
     var self = this;
     // calculate how many timestamps in the selected period
-    this.tick_num = this.y_domain_max - this.y_domain_min;
+    //FIXME need a more elegant solution to deal with huge tick number
+    this.tick_num = (this.y_domain_max - this.y_domain_min) % 300;
 
     // debugging info
     console.log(this.tick_num);
