@@ -35,7 +35,7 @@ var schemas = [
 
 schemas.forEach(function(schema){
     schema.log_collections.forEach(function(collection) {
-        mongoose.model(collection, schema.LOG_SCHEMA, collection);
+        mongoose.model(collection, mongoose.Schema(schema.LOG_SCHEMA), collection);
     });
 });
 
