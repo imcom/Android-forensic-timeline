@@ -8,6 +8,7 @@ var mongo = require('../libs/mongo_helper.js');
 var android_log = require('../libs/android_log_schema.js');
 var cp_browserhistory = require('../libs/content_provider_browserhistory.js');
 var cp_browsersearches = require('../libs/content_provider_browsersearches.js');
+var fs_time = require('../libs/fs_time_schema.js');
 
 function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
@@ -53,4 +54,8 @@ exports.cp_browsersearches = function(req, res) {
     do_query(req, res, cp_browsersearches);
 }
 
+exports.fs_time = function(req, res) {
+    console.log("query selection[" + fs_time.name + "]: " + req.body.selection);
+    do_query(req, res, fs_time);
+}
 

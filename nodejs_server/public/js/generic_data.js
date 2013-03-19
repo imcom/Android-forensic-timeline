@@ -14,6 +14,39 @@ function GenericData(type, dataset) {
         this.data_handler = new BrowserHistory(dataset);
     }
 
+    if (type === 'content_provider_apps') {
+        this.data_handler = new Applications(dataset);
+    }
+
+    if (type === 'content_provider_calllogs') {
+        this.data_handler = new CallLogs(dataset);
+    }
+
+    if (type === 'content_provider_contacts') {
+        this.data_handler = new Contacts(dataset);
+    }
+
+    if (type === 'content_provider_mms') {
+        this.data_handler = new MMS(dataset);
+    }
+
+    if (type === 'content_provider_sms') {
+        this.data_handler = new SMS(dataset);
+    }
+
+    if (type === 'content_provider_services') {
+        this.data_handler = new Services(dataset);
+    }
+
+    if (type === 'fs_time_schema') {
+        this.data_handler = new FSTime(dataset);
+    }
+
+    if (type === 'inode_time_schema') {
+        this.data_handler = new InodeTime(dataset);
+    }
+
+
 }
 
 GenericData.prototype.getDate = function(index) {

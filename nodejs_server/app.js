@@ -91,7 +91,15 @@ app.configure(function(){
         '/js/generic_data.js',
         '/js/data_models/android_logs.js',
         '/js/data_models/browsersearches.js',
-        '/js/data_models/browserhistory.js'
+        '/js/data_models/browserhistory.js',
+        '/js/data_models/applications.js',
+        '/js/data_models/calllogs.js',
+        '/js/data_models/contacts.js',
+        '/js/data_models/fs_time.js',
+        '/js/data_models/mms.js',
+        '/js/data_models/services.js',
+        '/js/data_models/sms.js',
+        '/js/data_models/inode_time.js',
     ]
 });
 
@@ -100,6 +108,7 @@ app.get('/', index_handler.imcom);
 app.post('/syslogs', db_handler.syslogs);
 app.post('/cp_browserhistory', db_handler.cp_browserhistory);
 app.post('/cp_browsersearches', db_handler.cp_browsersearches);
+app.post('/fs_time', db_handler.fs_time);
 
 app.listen(app.get('port'));
 console.log("server started on port 2222...");

@@ -98,11 +98,12 @@ btn = $('#test');
 btn.click(function() {
     var query_2 = [
         {
-            uri: "/cp_browserhistory",
-            collection: "BrowserHistory",
+            uri: "/fs_time",
+            collection: "fs_time",
             selection: JSON.stringify({
                 date: {
-                    $gte: 1363517123
+                    $gte: 1362089603,
+                    $lte: 1362089703
                 }
             }),
             fields: null,
