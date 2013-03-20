@@ -73,13 +73,18 @@ app.get('/', function(req, res){
 // MongoDB snippet
 app.post('/test', function(req, res){
     var model = mongoose.model(req.body.collection);
-    model.findOne(null, null, null, function(err, rtn) {
-        if (err == null) {
-            res.json({"content": rtn});
-        } else {
-            res.json({"content": err.message});
+    model.find(
+        JSON.parse(req.body.selection), //selection
+        req.body.fields, //fields
+        null, //options
+        function(err, rtn) {
+            if (err == null) {
+                res.json({"content": rtn});
+            } else {
+                res.json({"content": err.message});
+            }
         }
-    });
+    );
 });
 
 app.listen(8080);

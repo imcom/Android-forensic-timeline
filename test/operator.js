@@ -2,28 +2,92 @@
 $.noConflict();
 $ = Zepto;
 
-var key_1 = $('input#first');
-var key_2 = $('input#second');
+var collection = $('#c');
+var selection = $('#s');
+var fields = $('#fs');
+var start_time = $('#st');
+var end_time = $('#et');
+var filter = $('#fr');
+var date_keyword = $('#dk');
 
-var btn_1 = $('button#first');
-var btn_2 = $('button#second');
+var search_btn = $('#search');
+var append_btn = $('#append');
+var filter_btn = $('#filter');
+var clear_btn = $('#clear');
 
-btn_1.click(function(){
-    var collection = key_1.val();
+function formSelection() {
+    var stime = start_time.val();
+    var etime = end_time.val();
+    var dkeyword = date_keyword.val();
+    var sel = {};
+    if (selection.val() != '') {
+        sel = JSON.parse(selection.val());
+    }
+    var date_sel = {};
+    if (dkeyword != '') {
+        if (stime != '' && etime != '') {
+            date_sel = {$gte: Number(stime), $lte: Number(etime)};
+        } else if (stime != '' && etime == '') {
+            date_sel = {$gte: stime.val()};
+        } else if (stime == '' && etime != '') {
+            date_sel = {$lte: etime.val()};
+        }
+        sel[dkeyword] = date_sel;
+    }
+    return JSON.stringify(sel);
+}
+
+search_btn.click(function(){
+    var sel = formSelection();
     $.ajax({
         type: "POST",
         url: "/test",
-        data: {collection: collection},
+        data: {
+            collection: collection.val(),
+            selection: sel,
+            fields: fields.val()
+        },
         dataType: 'json',
         success: function(data){
-            $('#arena').children().text(JSON.stringify(data, undefined, 4));
+            $('#arena').children().text(JSON.stringify(data.content, undefined, 4));
         },
         error: function(xhr, type){
-            alert('Ajax error!');
+            alert('search ajax error!');
         }
     });
 });
 
-btn_2.click(function(){
-    console.log(key_2.val());
+append_btn.click(function(){
+    var sel = formSelection();
+    $.ajax({
+        type: "POST",
+        url: "/test",
+        data: {
+            collection: collection.val(),
+            selection: sel,
+            fields: fields.val()
+        },
+        dataType: 'json',
+        success: function(data){
+            content = $('#arena').children().text();
+            content += "\n";
+            content += JSON.stringify(data.content, undefined, 4);
+            $('#arena').children().text(content);
+        },
+        error: function(xhr, type){
+            alert('append ajax error!');
+        }
+    });
 });
+
+clear_btn.click(function(){
+    $('#arena').children().text("Show results here...");
+});
+
+
+
+
+
+
+
+
