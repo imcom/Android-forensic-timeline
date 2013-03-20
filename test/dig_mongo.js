@@ -1,7 +1,8 @@
 
 var db_name = process.argv[2];
-var collection_names = process.argv[3].split(",");
-
+var stylus = require('stylus');
+var nib = require('nib');
+var path = require('path');
 var mongoose = require('mongoose');
 var android_log = require("../nodejs_server/libs/android_log_schema.js");
 var cp_applications = require("../nodejs_server/libs/content_provider_apps.js");
@@ -20,8 +21,8 @@ mongoose.connect('mongodb://localhost/' + db_name);
 
 var schemas = [
     android_log,
-    cp_applications, 
-    fs_time, 
+    cp_applications,
+    fs_time,
     inode_time,
     cp_browserhistory,
     cp_browsersearches,
@@ -39,9 +40,54 @@ schemas.forEach(function(schema){
     });
 });
 
+var express = require('express');
+var app = express();
+
+function compile(str, path) {
+    return stylus(str).set('filename', path).set('compress', true).use(nib());
+};
+
+// express server config
+app.configure(function(){
+    app.set('views', path.join(__dirname, './'));
+    app.set('view engine', 'jade');
+    app.use(express.favicon());
+    app.use(express.logger());
+    app.use(express.bodyParser());
+    app.use(express.methodOverride());
+    app.use(app.router);
+    app.use(require('stylus').middleware(
+            {
+                src: path.join(__dirname, ''),
+                compile: compile
+            }
+        )
+    );
+    app.use(express.static(path.join(__dirname, '')));
+});
+
+app.get('/', function(req, res){
+    res.render("index");
+});
+
+// MongoDB snippet
+app.post('/test', function(req, res){
+    var model = mongoose.model(req.body.collection);
+    model.findOne(null, null, null, function(err, rtn) {
+        if (err == null) {
+            res.json({"content": rtn});
+        } else {
+            res.json({"content": err.message});
+        }
+    });
+});
+
+app.listen(8080);
+console.log("server started on localhost:8080 ...");
+
+/*
 var total = collection_names.length;
 var counter = 0;
-
 results = [];
 collection_names.forEach(function(cname, index) {
     var model = mongoose.model(cname);
@@ -61,10 +107,9 @@ collection_names.forEach(function(cname, index) {
         counter += 1;
     }
 });
-
 function onCompletion() {
     console.log(results);
     mongoose.disconnect();
 }
-
+*/
 

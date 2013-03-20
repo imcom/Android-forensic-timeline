@@ -1,0 +1,28 @@
+!!! 5
+html
+    head
+        title Battle Field
+        link(rel='stylesheet', href='bootstrap.min.css')
+        link(rel='stylesheet', href='style.css')
+        meta(name='viewport', 'content'='user-scalable=yes, width=device-width, initial-scale=0.8, maximum-scale=1.2')
+        link(rel='stylesheet', href='bootstrap-responsive.min.css')
+        script(type = 'text/javascript', src = 'jquery-1.9.1.min.js')
+        script(type = 'text/javascript', src = 'zepto.min.js')
+    body
+        div.container-fluid
+            div.span3
+                h3.text-center control panel
+                ul.nav.nav-pills.nav-stacked
+                    li
+                        div.pull-left
+                            input(type="text", placeholder="keyword#1")#first.span2
+                            button#first.btn Go
+                    li
+                        div.pull-left
+                            input(type="text", placeholder="keyword#2")#second.span2
+                            button#second.btn Go
+            div.span9
+                h3.text-center display area
+                div#arena
+                    pre Show results here...
+        script(type = 'text/javascript', src = 'operator.js')
