@@ -1,2 +1,5 @@
 input{width:100%}
 select{width:100%}
+.ctrl-panel{position:fixed}
+ul{width:240px}
+label{display:inline-block}

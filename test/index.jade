@@ -11,28 +11,32 @@ html
     body
         div.container-fluid
             div.span3
-                h3.text-center control panel
-                ul.nav.nav-pills.nav-stacked
-                    li
-                        input(type="text", placeholder="collection")#c
-                        input(type="text", placeholder="selection")#s
-                        input(type="text", placeholder="fields")#fs
-                        input(type="text", placeholder="date keyword")#dk
-                        input(type="number", placeholder="start time")#st
-                        input(type="number", placeholder="end time")#et
-                        input(type="text", placeholder="filter")#fr
-                    li
-                        div.btn-group
-                            button#search.btn.btn-success Search
-                            button#append.btn.btn-info Append
-                            button#filter.btn.btn-warning Filter
-                            button#clear.btn.btn-danger Clear
-                    li.nav-header Objects
-                    li
-                        select(multiple="multiple")#objects
-                    li.nav-header PIDs
-                    li
-                        select(multiple="multiple")#pids
+                div.ctrl-panel
+                    h3.text-center control panel
+                    ul.nav.nav-pills.nav-stacked
+                        li
+                            input(type="text", placeholder="collection")#c
+                            input(type="text", placeholder="selection")#s
+                            input(type="text", placeholder="fields")#fs
+                            input(type="text", placeholder="date keyword")#dk
+                            input(type="number", placeholder="start time")#st
+                            input(type="number", placeholder="end time")#et
+                            input(type="text", placeholder="filter")#fr
+                        li
+                            div.btn-group
+                                button#search.btn.btn-success Search
+                                button#append.btn.btn-info Append
+                                button#filter.btn.btn-warning Filter
+                                button#clear.btn.btn-danger Clear
+                        li.nav-header Objects
+                        li
+                            select(multiple="multiple")#objects
+                        li.nav-header PIDs
+                        li
+                            select(multiple="multiple")#pids
+                        li.nav-header Responsive PIDs
+                        li
+                            div#responsive-pids
             div.span9
                 h3.text-center display area
                 div#arena

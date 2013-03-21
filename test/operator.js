@@ -16,13 +16,43 @@ var filter_btn = $('#filter');
 var clear_btn = $('#clear');
 var object_pane = $('#objects');
 var pid_pane = $('#pids');
+var responsive_pid_pane = $('#responsive-pids');
 
 var dataset = [];
 
-function fillPanes() {
+function onPidSelection() {
+    var pid_checkboxs = $('input[type="checkbox"]');
+    var display_dataset = dataset;
+    var display_pids = [];
+    pid_checkboxs.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            display_pids.push(checkbox.value);
+        }
+    });
+    display_dataset = dataset.filter(function(record) {
+        return $.inArray(record.pid, display_pids) != -1;
+    });
+    clearPanes(false);
+    fillPanes(display_dataset);
+    $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
+}
+
+function fillResponsivePane() {
+     var pids = [];
+     dataset.forEach(function(record) {
+        if ($.inArray(record.pid, pids) == -1) {
+            responsive_pid_pane.append(
+                "<label type='checkbox inline'><input type='checkbox' onChange='onPidSelection()' value='" + record.pid + "'>" + record.pid + "</label>"
+            );
+            pids.push(record.pid);
+        }
+    });
+}
+
+function fillPanes(src) {
     var objects = [];
     var pids = [];
-    dataset.forEach(function(record) {
+    src.forEach(function(record) {
         if ($.inArray(record.object, objects) == -1) {
             object_pane.append("<option>" + record.object + "</option>");
             objects.push(record.object);
@@ -34,9 +64,10 @@ function fillPanes() {
     });
 }
 
-function clearPanes() {
+function clearPanes(clear_all) {
     object_pane.children().remove();
     pid_pane.children().remove();
+    if (clear_all) responsive_pid_pane.children().remove();
 }
 
 function formSelection() {
@@ -77,7 +108,8 @@ search_btn.click(function(){
             data.content.forEach(function(record){
                 dataset.push(record);
             });
-            fillPanes();
+            fillPanes(dataset);
+            fillResponsivePane();
             $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
         },
         error: function(xhr, type){
@@ -101,8 +133,9 @@ append_btn.click(function(){
             data.content.forEach(function(record){
                 dataset.push(record);
             });
-            clearPanes();
-            fillPanes();
+            clearPanes(true);
+            fillPanes(dataset);
+            fillResponsivePane();
             $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
         },
         error: function(xhr, type){
@@ -146,8 +179,23 @@ filter_btn.click(function(){
             return (record.date <= date_filter.$lte && record.date >= date_filter.$gte);
         });
     }
-    clearPanes();
-    fillPanes();
+    var obj_filter = object_pane.val();
+    var pid_filter = pid_pane.val();
+    if (obj_filter != '') {
+        dataset_buf = dataset;
+        dataset = dataset_buf.filter(function(record) {
+            return (record.object == obj_filter);
+        });
+    }
+    if (pid_filter != '') {
+        dataset_buf = dataset;
+        dataset = dataset_buf.filter(function(record) {
+            return (record.pid == pid_filter);
+        });
+    }
+    clearPanes(true);
+    fillPanes(dataset);
+    fillResponsivePane();
     $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
 });
 
