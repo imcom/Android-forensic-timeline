@@ -3,3 +3,6 @@ select{width:100%}
 .ctrl-panel{position:fixed}
 ul{width:240px}
 label{display:inline-block}
+.span9{margin-left:20px;margin-right:10px;width:800px}
+.span3{margin-left:10px}
+#pids-pane{position:fixed}

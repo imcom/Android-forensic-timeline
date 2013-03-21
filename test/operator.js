@@ -38,14 +38,18 @@ function onPidSelection() {
 }
 
 function fillResponsivePane() {
-     var pids = [];
-     dataset.forEach(function(record) {
+    var pids = [];
+    dataset.forEach(function(record) {
         if ($.inArray(record.pid, pids) == -1) {
             responsive_pid_pane.append(
                 "<label type='checkbox inline'><input type='checkbox' onChange='onPidSelection()' value='" + record.pid + "'>" + record.pid + "</label>"
             );
             pids.push(record.pid);
         }
+    });
+    var checkboxes = $('input[type="checkbox"]');
+    checkboxes.forEach(function(box){
+        box.checked = true;
     });
 }
 
@@ -201,7 +205,7 @@ filter_btn.click(function(){
 
 clear_btn.click(function(){
     $('#arena').children().text("Show results here...");
-    clearPanes();
+    clearPanes(true);
 });
 
 
