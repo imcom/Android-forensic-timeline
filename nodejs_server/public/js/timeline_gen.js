@@ -2,7 +2,7 @@
 var timeline_0 = new Timeline(
     "#timeline_0",
     10000,
-    [100, 300],
+    [100, 400],
     5
 );
 

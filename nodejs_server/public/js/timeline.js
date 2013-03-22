@@ -49,6 +49,12 @@ function Timeline(
         borderWidth: 0
     };
 
+    this.path_data = [];
+    this.time_path = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("monotone");
+
     /* dragging events handler */
     var self = this;
     this.drag_event = d3.behavior.drag()
@@ -57,12 +63,20 @@ function Timeline(
         })
         .on('drag', function(object) {
             var event_id = this.getAttribute('id');
+            var data_index = Number(event_id.split('-')[2]);
+            var x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x));
+            var y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y))
             d3.select(this)
-                .attr("cx", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)))
-                .attr("cy", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
+                .attr("cx", object.x = x)
+                .attr("cy", object.y = y);
+
             d3.select('text[id=' + event_id + ']')
-                .attr("x", object.x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x)) + 5)
-                .attr("y", object.y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y)));
+                .attr("x", object.x = x + 5)
+                .attr("y", object.y = y);
+            self.clearPath();
+            self.path_data[data_index]['x'] = x;
+            self.path_data[data_index]['y'] = y;
+            self.drawPath();
         });
 
     // dragging timeline position handler
@@ -259,8 +273,31 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
     );
 } // function query(argv...)
 
-Timeline.prototype.onDataReady = function() {
+Timeline.prototype.fillPathData = function(x_scale, y_scale) {
+    var self = this;
+    self.path_data = []; // clear the old data everytime
+    $.each(self.dataset, function(index) {
+        var path_coords = {};
+        path_coords['x'] = x_scale(self.dataset[index].coords[0]);
+        path_coords['y'] = y_scale(self.dataset[index].coords[1]);
+        self.path_data.push(path_coords);
+    });
+}
 
+Timeline.prototype.clearPath = function() {
+    this.timeline.select('path#time_path').remove();
+}
+
+Timeline.prototype.drawPath = function() {
+    this.timeline.append('svg:path')
+        .attr("id", "time_path")
+        .attr("d", this.time_path(this.path_data))
+        .attr("stroke", "blue")
+        .attr("stroke-width", 1)
+        .attr("fill", "none");
+}
+
+Timeline.prototype.onDataReady = function() {
     var self = this;
     // calculate how many timestamps in the selected period
     //FIXME need a more elegant solution to deal with huge tick number
@@ -290,7 +327,8 @@ Timeline.prototype.onDataReady = function() {
         .enter()
         .append("circle")
         .attr("id", function(data, index){
-            return self.name.substr(1) + "-" + data.detail.pid + "-" + index;
+            var generic_data = new GenericData(data.detail.type, data.detail);
+            return self.name.substr(1) + "-" + generic_data.getId() + "-" + index;
         })
         .attr("cx", function(data) {
             return x_scale(data.coords[0]);
@@ -300,6 +338,9 @@ Timeline.prototype.onDataReady = function() {
         })
         .attr("r", this.radius)
         .call(this.drag_event);
+
+    this.fillPathData(x_scale, y_scale);
+    this.drawPath();
 
     this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
         .data(this.dataset)
@@ -323,18 +364,14 @@ Timeline.prototype.onDataReady = function() {
     $.each(self.dataset, function(index) {
         text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) + 5);
         text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
-        //text_fields[index].setAttribute("id", self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index);
         var generic_data = new GenericData(
             self.dataset[index].detail.type,
             self.dataset[index].detail
         );
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + generic_data.getId() + "-" + index);
 
-        //var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
         var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
 
-        //TODO add style and adjust the tooltip
-        //text_field.opentip(self.dataset[index].detail.msg, {style: "tooltip_style"});
         text_field.opentip(generic_data.getMessage(), {style: "tooltip_style"});
 
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
