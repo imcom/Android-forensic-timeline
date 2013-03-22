@@ -2,14 +2,14 @@
 var timeline_0 = new Timeline(
     "#timeline_0",
     10000,
-    [100, 400],
+    [120, 400],
     5
 );
 
 timeline_0.initTimeline();
 
 var query_1 = [
-    {
+    /*{
         uri: "/syslogs",
         collection: "main",
         selection: JSON.stringify({
@@ -20,8 +20,8 @@ var query_1 = [
         }),
         fields: ["date", "msg", "object", "pid", "level"],
         options: null
-    },
-    /*{
+    },*/
+    {
         uri: "/syslogs",
         collection: "main",
         selection: JSON.stringify({
@@ -34,7 +34,7 @@ var query_1 = [
         }),
         fields: ["date", "msg", "object", "pid", "level"],
         options: null
-    }*/
+    }
 ];
 
 timeline_0.fetchData(query_1);
@@ -56,8 +56,8 @@ timeline_0.query(
 /*The second timeline*/
 var timeline_1 = new Timeline(
     "#timeline_1",
-    5000,
-    [100, 300],
+    10000,
+    [120, 400],
     5
 );
 /*

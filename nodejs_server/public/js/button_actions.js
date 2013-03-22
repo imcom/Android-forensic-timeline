@@ -102,8 +102,8 @@ btn.click(function() {
             collection: "fs_time",
             selection: JSON.stringify({
                 date: {
-                    $gte: 1362089603,
-                    $lte: 1363099703
+                    $gte: 1362129603,
+                    $lte: 1362132603
                 }
             }),
             fields: null,

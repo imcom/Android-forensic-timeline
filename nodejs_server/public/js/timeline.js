@@ -18,8 +18,6 @@ function Timeline(
     this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
     // [[x, timestamp], detail], x is used for distinguish very close events
     this.dataset = [];
-    /* [object, pid, level, msg]
-    this.data_desc = [];*/
 
     // dynamically configurable values
     this.timeline_height = timeline_height;
@@ -27,9 +25,9 @@ function Timeline(
     this.x_range = x_range; // this should be a variable since width will be adjusted during investigation
     this.timeline;
     this.y_range;
-    this.x_default;
-    this.x_suspect;
-    this.x_padding;
+    this.x_default = 1;
+    this.x_suspect = 10; //TODO need to verify the offset effect
+    this.x_padding = 1;
     this.tick_num = 0;
     this.x_domain_min = 0;
     this.x_domain_max = 0;
@@ -160,10 +158,6 @@ Timeline.prototype.initTimeline = function() {
         this.timeline_height - this.y_range_padding
     ];
 
-    this.x_default = (this.x_range[1] - this.x_range[0]) * 0.025; // interval * 1/40
-    this.x_suspect = this.x_default * 3; //TODO need to verify the offset effect
-    this.x_padding = this.x_default * 0.1;
-
 } // init timeline SVG and properties
 
 Timeline.prototype.updateHeight = function(timeline_height) {
@@ -215,6 +209,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
     if (fields) {
         query_content.fields = fields;
     }
+    var overlap_increment = self.y_padding / 2;
 
     $.post(
         uri,
@@ -234,20 +229,20 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                     if (index == 0) {
                         event_data.coords = [x_starts_on, y_starts_on];
                     } else {
-                        //if (data.content[index].date == previous_date) {
                         if (generic_data.getDate(index) == previous_date) {
                             // overlap with next timestamp, then roll back
                             if (self.y_padding + y_starts_on >= previous_date + 1) {
                                 // set offset on x-axis for distinguish
                                 x_starts_on += self.x_padding;
-                                y_starts_on = previous_date + self.y_padding / 2;
+                                y_starts_on = previous_date + overlap_increment;
+                                overlap_increment += overlap_increment;
                             } else {
                                 y_starts_on += self.y_padding;
                             }
                             event_data.coords = [x_starts_on, y_starts_on];
                         // wrong sequence detected
                         } else if (generic_data.getDate(index) < previous_date) {
-                            // adding an offset for distinguish
+                            // using a different offset for distinguish
                             event_data.coords = [self.x_suspect, generic_data.getDate(index)];
                             //TODO css class, set a different color for suspect events
                             data.content[index].display = "suspect";
@@ -290,9 +285,9 @@ Timeline.prototype.clearPath = function() {
 
 Timeline.prototype.drawPath = function() {
     this.timeline.append('svg:path')
-        .attr("id", "time_path")
+        .attr("id", "time_path") // to be distinguished with Y-axis timeline
         .attr("d", this.time_path(this.path_data))
-        .attr("stroke", "blue")
+        .attr("stroke", "green")
         .attr("stroke-width", 1)
         .attr("fill", "none");
 }

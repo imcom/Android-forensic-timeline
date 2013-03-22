@@ -11,5 +11,5 @@
 .rule line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none}
 .ctlbar{position:fixed;z-index:100;top:10px}
 .btn{opacity:.8;filter:alpha(opacity=80);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"}
-.back-to-top{position:fixed;right:25px;bottom:25px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";height:32px;width:32px;background-image:url("../image/uparrow.png")}
+.back-to-top{position:fixed;right:25px;bottom:25px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"}
 .time-axis{cursor:move;pointer-events:all}
