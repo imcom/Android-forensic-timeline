@@ -18,9 +18,9 @@ echo "extracting dmesg log..."
 
 if [ ! -d $EVI_PATH ]
 then
-    echo 'create folder for original evidence...'
-    echo 'mkdir '$EVI_PATH
+    echo -ne 'create folder for original evidence... [mkdir '$EVI_PATH']\t'
     mkdir $EVI_PATH
+    echo 'ok'
 fi
 
 DMESG=$EVI_PATH"/dmesg.log"
