@@ -48,13 +48,21 @@ LOGCATS="main radio events system"
 
 for log in $LOGCATS
 do
-    echo -ne "extracting /dev/log/"$log" ..."
+    echo -ne 'extracting /dev/log/'$log' ...\t'
     adb logcat -d -v time -b $log > $EVI_PATH"/"$log".log"
     echo "ok"
 done
 
-echo 'start converting timestamps in logcat logs...'
+echo 'start converting timestamps in logcat logs ...'
 ./timestamp_logcat.py $EVI_PATH $OUTPUT_PATH
+
+PACKAGES_LIST="/data/system/packages.list"
+echo -ne 'extracting '$PACKAGES_LIST' ...\t'
+adb pull $PACKAGES_LIST $EVI_PATH 1>/dev/null 2>&1
+echo "ok"
+
+echo 'start parsing packages list ...'
+./packages_list.py $EVI_PATH $OUTPUT_PATH
 
 echo 'Done!'
 

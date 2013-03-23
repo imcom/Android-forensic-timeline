@@ -13,7 +13,7 @@ save_to = sys.argv[2]
 cur_year = datetime.utcnow().year
 log_files = ['main.log', 'system.log', 'events.log', 'radio.log']
 time_data_mask = re.compile("^(?P<etime>\d+-\d+\s[\d+:]+\d+)(.\d+)\s(?P<event>.*)$")
-pid_msg_mask = re.compile("^(?P<level>[A-Z])/(?P<object>[a-zA-Z0-9._\s]+[a-zA-Z0-9]+)\s*[(](?P<pid>\s?[0-9]+)[)]:\s(?P<msg>.*)$")
+pid_msg_mask = re.compile("^(?P<level>[A-Z])/(?P<object>[a-zA-Z0-9._\s]+[a-zA-Z0-9]+)[\s:]*[(](?P<pid>\s?[0-9]+)[)]:\s(?P<msg>.*)$")
 
 for log_file in log_files:
     print 'parsing log file [' + log_file + '] ...',
