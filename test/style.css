@@ -6,3 +6,5 @@ label{display:inline-block}
 .span9{margin-left:20px;margin-right:10px;width:800px}
 .span3{margin-left:10px}
 #pids-pane{position:fixed}
+#time-window-pane{position:fixed;top:350px}
+#apply-time-window{float:right}

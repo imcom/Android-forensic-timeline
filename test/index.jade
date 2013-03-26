@@ -8,6 +8,8 @@ html
         link(rel='stylesheet', href='style.css')
         script(type = 'text/javascript', src = 'jquery-1.9.1.min.js')
         script(type = 'text/javascript', src = 'zepto.min.js')
+        script(type = 'text/javascript', src = 'd3.js')
+
     body
         div.container-fluid
             div.span3
@@ -42,6 +44,15 @@ html
                 div#pids-pane
                     h4.text-center Responsive PIDs
                     div#responsive-pids
+                div#time-window-pane
+                    h4.text-center Timeline Window
+                    div.controls.controls-row
+                        label.span1 Start
+                        select.span2#time-window-start
+                    div.controls.controls-row
+                        label.span1 End
+                        select.span2#time-window-end
+                    button.btn.btn-success#apply-time-window Apply
         script(type = 'text/javascript', src = 'operator.js')
 
 

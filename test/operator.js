@@ -14,11 +14,44 @@ var search_btn = $('#search');
 var append_btn = $('#append');
 var filter_btn = $('#filter');
 var clear_btn = $('#clear');
+var time_btn = $('#apply-time-window');
 var object_pane = $('#objects');
 var pid_pane = $('#pids');
 var responsive_pid_pane = $('#responsive-pids');
 
 var dataset = [];
+var time_range = [];
+
+function initTimeRange(target_set) {
+    target_set.forEach(function(record) {
+        var timestamp = record.date;
+        if ($.inArray(timestamp, time_range) == -1) {
+            time_range.push(timestamp);
+        }
+    });
+    fillTimeWindow();
+}
+
+function resetTimeRange() {
+    time_range = [];
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    window_start.children().remove();
+    window_end.children().remove();
+}
+
+function fillTimeWindow() {
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    time_range.forEach(function(timestamp) {
+        var date = timestamp * 1000; // convert to milliseconds
+        var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+        var disp_date = formatter(new Date(date));
+        window_start.append("<option value=" + timestamp + ">" + disp_date + "</option>");
+        window_end.append("<option value=" + timestamp + ">" + disp_date + "</option>");
+    });
+    window_end.val("" + time_range[time_range.length - 1]);
+}
 
 function onPidSelection() {
     var pid_checkboxs = $('input[type="checkbox"]');
@@ -34,12 +67,14 @@ function onPidSelection() {
     });
     clearPanes(false);
     fillPanes(display_dataset);
+    resetTimeRange();
+    initTimeRange(display_dataset);
     $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
 }
 
-function fillResponsivePane() {
+function fillResponsivePane(target_set) {
     var pids = [];
-    dataset.forEach(function(record) {
+    target_set.forEach(function(record) {
         if ($.inArray(record.pid, pids) == -1) {
             responsive_pid_pane.append(
                 "<label type='checkbox inline'><input type='checkbox' onChange='onPidSelection()' value='" + record.pid + "'>" + record.pid + "</label>"
@@ -96,7 +131,7 @@ function formSelection() {
     return JSON.stringify(sel);
 }
 
-search_btn.click(function(){
+search_btn.click(function() {
     dataset = [];
     var sel = formSelection();
     $.ajax({
@@ -113,7 +148,8 @@ search_btn.click(function(){
                 dataset.push(record);
             });
             fillPanes(dataset);
-            fillResponsivePane();
+            fillResponsivePane(dataset);
+            initTimeRange(dataset);
             $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
         },
         error: function(xhr, type){
@@ -122,7 +158,7 @@ search_btn.click(function(){
     });
 });
 
-append_btn.click(function(){
+append_btn.click(function() {
     var sel = formSelection();
     $.ajax({
         type: "POST",
@@ -139,7 +175,9 @@ append_btn.click(function(){
             });
             clearPanes(true);
             fillPanes(dataset);
-            fillResponsivePane();
+            fillResponsivePane(dataset);
+            resetTimeRange();
+            initTimeRange(dataset);
             $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
         },
         error: function(xhr, type){
@@ -148,7 +186,7 @@ append_btn.click(function(){
     });
 });
 
-filter_btn.click(function(){
+filter_btn.click(function() {
     var dataset_buf = null;
     var date_filter = null;
 
@@ -199,16 +237,35 @@ filter_btn.click(function(){
     }
     clearPanes(true);
     fillPanes(dataset);
-    fillResponsivePane();
+    fillResponsivePane(dataset);
+    resetTimeRange();
+    initTimeRange(dataset);
     $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
 });
 
-clear_btn.click(function(){
+clear_btn.click(function() {
     $('#arena').children().text("Show results here...");
     clearPanes(true);
+    resetTimeRange();
 });
 
-
+time_btn.click(function() {
+    var start_time = Number($('#time-window-start').val());
+    var end_time = Number($('#time-window-end').val());
+    if (start_time > end_time) {
+        alert("Invalid time window");
+    } else {
+        var display_dataset = dataset;
+        var display_pids = [];
+        display_dataset = dataset.filter(function(record) {
+            return (record.date >= start_time && record.date <= end_time);
+        });
+        clearPanes(true);
+        fillPanes(display_dataset);
+        fillResponsivePane(display_dataset);
+        $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
+    }
+});
 
 
 
