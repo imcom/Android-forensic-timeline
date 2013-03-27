@@ -13,7 +13,6 @@ html
     body
         div#aggregation-pane.dropdown-div
             div#aggregation-arena
-                    pre Aggregation results here...
             div.text-center
                 button.btn.btn-small#dropdown-ctrl-btn show
 
@@ -43,6 +42,8 @@ html
                         li
                             select(multiple="multiple")#pids
                         li
+                            div.controls.controls-row
+                                select#map-reduce-fn
                             button#aggregate-btn.btn.btn-danger MapReduce
             div.span9
                 h3.text-center display area

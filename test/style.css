@@ -11,6 +11,5 @@ label{display:inline-block}
 #time-window-pane{position:fixed;top:350px}
 #apply-time-window{float:right}
 #objects-pane{position:fixed;top:500px}
-.dropdown-div{position:fixed;top:-470px;z-index:100;background:#808080;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";width:100%;height:500px}
-#dropdown-ctrl-btn{position:relative;bottom:-471px;margin-left:2px}
-#aggregation-arena pre{position:fixed;min-height:478px;max-height:478px;width:100%}
+.dropdown-div{position:fixed;top:-670px;z-index:100;background:#808080;opacity:.8;filter:alpha(opacity=80);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";width:100%;height:700px}
+#dropdown-ctrl-btn{position:relative;bottom:-652px}

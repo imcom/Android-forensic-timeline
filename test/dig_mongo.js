@@ -73,6 +73,7 @@ app.get('/', function(req, res){
 // MongoDB snippet
 app.post('/imcom', function(req, res) {
     var model = mongoose.model(req.body.collection);
+    var type = req.body.collection;
     if (req.body.type === 'query') {
         model.find(
             JSON.parse(req.body.selection), //selection
@@ -80,17 +81,22 @@ app.post('/imcom', function(req, res) {
             null, //options
             function(err, rtn) {
                 if (err == null) {
-                    res.json({"content": rtn});
+                    res.json({"type": type, "content": rtn});
                 } else {
                     res.json({"content": err.message});
                 }
             }
         );
     } else { // type should be mapreduce
-        var obj = android_log.aggregateDate;
-
+        var obj;
+        if (req.body.collection === 'main') {
+            if (req.body.aggregation === 'pid') {
+                obj = android_log.aggregateByPid;
+            } else if (req.body.aggregation === 'date') {
+                obj = android_log.aggregateByDate;
+            }
+        }
         obj.query = JSON.parse(req.body.selection);
-        obj.out = JSON.parse(req.body.output);
         model.mapReduce(obj, function(err, rtn_model, stats) {
             if (err == null) {
                 rtn_model.find().exec(function(err, rtn) {

@@ -21,6 +21,8 @@ var responsive_pid_pane = $('#responsive-pids');
 var responsive_object_pane = $('#responsive-objects');
 var dropdown_btn = $('#dropdown-ctrl-btn');
 var aggregate_btn = $('#aggregate-btn');
+var aggregation_options = $('#map-reduce-fn');
+var aggregation_arena = $('#aggregation-arena');
 
 var dataset = [];
 var time_range = [];
@@ -156,6 +158,11 @@ function fillPanes(src) {
 function clearPanes(clear_all) {
     object_pane.children().remove();
     pid_pane.children().remove();
+    aggregation_options.children().remove();
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    window_start.children().remove();
+    window_end.children().remove();
     if (clear_all) {
         responsive_pid_pane.children().remove();
         responsive_object_pane.children().remove();
@@ -184,8 +191,15 @@ function formSelection() {
     return JSON.stringify(sel);
 }
 
+function fillMapReduceOptions(data_type) {
+    if (data_type === 'main') {
+        aggregation_options.append("<option value='pid'>Aggregate by PID</option>");
+        aggregation_options.append("<option value='date'>Aggregate by Date</option>");
+    }
+}
+
 search_btn.click(function() {
-    dataset = [];
+    dataset = []; // clear dataset for new data
     var sel = formSelection();
     $.ajax({
         type: "POST",
@@ -197,17 +211,18 @@ search_btn.click(function() {
             type: "query"
         },
         dataType: 'json',
-        success: function(data){
-            data.content.forEach(function(record){
+        success: function(data) {
+            data.content.forEach(function(record) {
                 dataset.push(record);
             });
             clearPanes(true);
             fillPanes(dataset);
             fillResponsivePane(dataset);
             initTimeRange(dataset);
+            fillMapReduceOptions(data.type);
             $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
         },
-        error: function(xhr, type){
+        error: function(xhr, type) {
             alert('search ajax error!');
         }
     });
@@ -333,7 +348,7 @@ dropdown_btn.click(function() {
     } else { // hide the pane
         dropdown_btn.text('show');
         dropdown_pane_collapsed = 1;
-        aggregation_pane.animate({"top": -470}, 500, "ease");
+        aggregation_pane.animate({"top": -670}, 500, "ease");
     }
 });
 
@@ -357,20 +372,23 @@ aggregate_btn.click(function() {
 
     }
 
+    //TODO implement sophisticated selections
     $.ajax({
         type: "POST",
         url: "/imcom",
         data: {
             type: "mapreduce",
-            collection: "main",
+            collection: collection.val(),
             selection: JSON.stringify({'object':obj_filter}),
-            output: JSON.stringify({'replace':'MapReduceResults'})
+            aggregation: aggregation_options.val()
         },
         dataType: 'json',
         success: function(data) {
             var result = {};
             result.object = obj_filter;
             result.content = data.content;
+            clearPanes(true);
+            //TODO visualize the aggregation results
             $('#arena').children().text(JSON.stringify(result, undefined, 4));
         },
         error: function(xhr, type) {

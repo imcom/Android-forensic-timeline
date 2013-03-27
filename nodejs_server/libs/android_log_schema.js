@@ -17,8 +17,8 @@ exports.hello = function(msg) {
     console.log(msg);
 }
 
-var aggregateDate = {};
-aggregateDate.map = function() {
+var aggregateByDate = {};
+aggregateByDate.map = function() {
     var key = this.date;
     var value = {
         pid: this.pid,
@@ -26,7 +26,7 @@ aggregateDate.map = function() {
     };
     emit(key, value);
 }
-aggregateDate.reduce = function(key, values) {
+aggregateByDate.reduce = function(key, values) {
     var content = {};
     values.forEach(function(value) {
         if (content[value.pid] == null) {
@@ -36,9 +36,30 @@ aggregateDate.reduce = function(key, values) {
     });
     return content;
 }
-exports.aggregateDate = aggregateDate;
+aggregateByDate.out = {'replace':'LogsMapReduceResults'};
+exports.aggregateByDate = aggregateByDate;
 
-
+var aggregateByPid = {};
+aggregateByPid.map = function() {
+    var key = this.pid;
+    var value = {
+        date: this.date,
+        msg: this.msg
+    };
+    emit(key, value);
+}
+aggregateByPid.reduce = function(key, values) {
+    var content = {};
+    values.forEach(function(value) {
+        if (content[value.date] == null) {
+            content[value.date] = [];
+        }
+        content[value.date].push(value.msg);
+    });
+    return content;
+}
+aggregateByPid.out = {'replace':'LogsMapReduceResults'};
+exports.aggregateByPid = aggregateByPid;
 
 
 
