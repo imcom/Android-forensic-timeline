@@ -8,7 +8,7 @@ exports.EVENT_SCHEMA =
     name: String
 };
 
-exports.log_collections = ['ServiceInfo'];
+exports.collections = ['ServiceInfo'];
 
 exports.name = "content_provider_services";
 

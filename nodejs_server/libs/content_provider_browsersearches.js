@@ -6,7 +6,7 @@ exports.EVENT_SCHEMA =
     _id: String
 };
 
-exports.log_collections = ['BrowserSearches'];
+exports.collections = ['BrowserSearches'];
 
 exports.name = "content_provider_browsersearches";
 

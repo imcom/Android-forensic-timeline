@@ -9,7 +9,7 @@ exports.EVENT_SCHEMA =
     name: String
 };
 
-exports.log_collections = ['CallLog'];
+exports.collections = ['CallLog'];
 
 exports.name = "content_provider_calllogs";
 

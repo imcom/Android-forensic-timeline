@@ -13,7 +13,7 @@ exports.EVENT_SCHEMA =
     accessed: Number
 };
 
-exports.log_collections = ['inode_time'];
+exports.collections = ['inode_time'];
 
 exports.name = "inode_time_schema";
 

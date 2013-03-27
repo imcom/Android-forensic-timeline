@@ -10,7 +10,7 @@ exports.EVENT_SCHEMA =
     _id: String
 };
 
-exports.log_collections = ['BrowserHistory'];
+exports.collections = ['BrowserHistory'];
 
 exports.name = "content_provider_browserhistory";
 

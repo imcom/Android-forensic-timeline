@@ -8,7 +8,7 @@ exports.EVENT_SCHEMA =
     tz_offset: String,
 };
 
-exports.log_collections = ['temporal'];
+exports.collections = ['temporal'];
 
 exports.name = "temporal_info_schema";
 

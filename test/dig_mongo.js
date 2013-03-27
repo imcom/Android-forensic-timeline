@@ -35,7 +35,7 @@ var schemas = [
 ];
 
 schemas.forEach(function(schema){
-    schema.log_collections.forEach(function(collection) {
+    schema.collections.forEach(function(collection) {
         mongoose.model(collection, mongoose.Schema(schema.LOG_SCHEMA), collection);
     });
 });
@@ -71,20 +71,36 @@ app.get('/', function(req, res){
 });
 
 // MongoDB snippet
-app.post('/test', function(req, res){
+app.post('/imcom', function(req, res) {
     var model = mongoose.model(req.body.collection);
-    model.find(
-        JSON.parse(req.body.selection), //selection
-        req.body.fields, //fields
-        null, //options
-        function(err, rtn) {
+    if (req.body.type === 'query') {
+        model.find(
+            JSON.parse(req.body.selection), //selection
+            req.body.fields, //fields
+            null, //options
+            function(err, rtn) {
+                if (err == null) {
+                    res.json({"content": rtn});
+                } else {
+                    res.json({"content": err.message});
+                }
+            }
+        );
+    } else { // type should be mapreduce
+        var obj = android_log.aggregateDate;
+
+        obj.query = JSON.parse(req.body.selection);
+        obj.out = JSON.parse(req.body.output);
+        model.mapReduce(obj, function(err, rtn_model, stats) {
             if (err == null) {
-                res.json({"content": rtn});
+                rtn_model.find().exec(function(err, rtn) {
+                    res.json({"content": rtn});
+                });
             } else {
                 res.json({"content": err.message});
             }
-        }
-    );
+        });
+    }
 });
 
 app.listen(8080);

@@ -11,7 +11,7 @@ exports.EVENT_SCHEMA =
     type: String
 };
 
-exports.log_collections = ['SMS'];
+exports.collections = ['SMS'];
 
 exports.name = "content_provider_sms";
 

@@ -11,6 +11,12 @@ html
         script(type = 'text/javascript', src = 'd3.js')
 
     body
+        div#aggregation-pane.dropdown-div
+            div#aggregation-arena
+                    pre Aggregation results here...
+            div.text-center
+                button.btn.btn-small#dropdown-ctrl-btn show
+
         div.container-fluid
             div.span3
                 div.ctrl-panel
@@ -36,6 +42,8 @@ html
                         li.nav-header PIDs
                         li
                             select(multiple="multiple")#pids
+                        li
+                            button#aggregate-btn.btn.btn-danger MapReduce
             div.span9
                 h3.text-center display area
                 div#arena
@@ -53,6 +61,9 @@ html
                         label.span1 End
                         select.span2#time-window-end
                     button.btn.btn-success#apply-time-window Apply
+                div#objects-pane
+                    h4.text-center Responsive Objects
+                    div#responsive-objects
         script(type = 'text/javascript', src = 'operator.js')
 
 

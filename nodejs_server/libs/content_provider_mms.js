@@ -39,7 +39,7 @@ exports.EVENT_SCHEMA =
     read_status: String
 };
 
-exports.log_collections = ['MMS'];
+exports.collections = ['MMS'];
 
 exports.name = "content_provider_mms";
 

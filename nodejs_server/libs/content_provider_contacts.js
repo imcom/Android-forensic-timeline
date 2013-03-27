@@ -12,7 +12,7 @@ exports.EVENT_SCHEMA =
     contact_status_ts: String
 };
 
-exports.log_collections = ['Contacts'];
+exports.collections = ['Contacts'];
 
 exports.name = "content_provider_contacts";
 

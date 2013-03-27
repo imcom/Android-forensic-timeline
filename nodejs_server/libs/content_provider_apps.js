@@ -12,7 +12,7 @@ exports.EVENT_SCHEMA =
     permissions: String
 };
 
-exports.log_collections = ['Applications'];
+exports.collections = ['Applications'];
 
 exports.name = "content_provider_apps";
 

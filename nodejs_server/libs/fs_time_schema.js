@@ -12,7 +12,7 @@ exports.EVENT_SCHEMA =
     date: Number
 };
 
-exports.log_collections = ['fs_time'];
+exports.collections = ['fs_time'];
 
 exports.name = "fs_time_schema";
 
