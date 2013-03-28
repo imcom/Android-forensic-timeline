@@ -54,7 +54,12 @@ do
     istat=`istat -z $TIME_ZONE -f ext $DD_IMAGE $inode`
     if [ $? -eq 0 ]
     then
-        inode_time=`echo $istat | sed 's/ ('$TIME_ZONE')//g' | awk '{printf "%s,", $0}' | sed 's/Direct.*$//' | sed 's/Group.*uid/uid/' | sed 's/num.*Accessed/Accessed/'`
+        inode_time=`echo $istat |
+            sed 's/ ('$TIME_ZONE')//g' |
+            awk '{printf "%s,", $0}' |
+            sed 's/Direct.*$//' |
+            sed 's/Group.*uid/uid/' |
+            sed 's/num.*Accessed/Accessed/'`
         echo $inode_time | grep 'Not' 1>/dev/null 2>&1
         if [ ! $? -eq 0 ]
         then
