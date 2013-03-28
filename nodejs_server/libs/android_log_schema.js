@@ -21,18 +21,19 @@ var aggregateByDate = {};
 aggregateByDate.map = function() {
     var key = this.date;
     var value = {
-        pid: this.pid,
-        msg: this.msg
+        id: this.pid,
+        msg: this.msg,
+        is_single: 1
     };
     emit(key, value);
 }
 aggregateByDate.reduce = function(key, values) {
     var content = {};
     values.forEach(function(value) {
-        if (content[value.pid] == null) {
-            content[value.pid] = [];
+        if (content[value.id] == null) {
+            content[value.id] = [];
         }
-        content[value.pid].push(value.msg);
+        content[value.id].push(value.msg);
     });
     return content;
 }
@@ -44,7 +45,8 @@ aggregateByPid.map = function() {
     var key = this.pid;
     var value = {
         date: this.date,
-        msg: this.msg
+        msg: this.msg,
+        is_single: 1
     };
     emit(key, value);
 }

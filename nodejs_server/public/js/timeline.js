@@ -6,12 +6,11 @@
  *
  */
 
-function Timeline(
-            name,
-            timeline_height,
-            x_range,
-            radius
-        ) {
+/*
+ * name: div to draw, timeline_height: svg height, x_range: svg width, radius: circle size
+ *
+ */
+function Timeline(name, timeline_height, x_range, radius) {
     // static constant values
     this.name = name;
     this.y_range_padding = 25; // this number can be a constant, padding from the window top
@@ -350,7 +349,6 @@ Timeline.prototype.onDataReady = function() {
         .attr("id", this.name.substr(1))
         .text(function(data) {
             var generic_data = new GenericData(data.detail.type, data.detail);
-            //return data.detail.object + "[" + data.detail.level + "]" + "/" + data.detail.pid;
             return generic_data.getDisplayName();
         })
         .attr("fill", "blue");
@@ -384,7 +382,6 @@ Timeline.prototype.onDataReady = function() {
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
         });
 
-        //var circle = $('circle[id=' + self.name.substr(1) + "-" + self.dataset[index].detail.pid + "-" + index + "]");
         var circle = $('circle[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
         circle.mouseover(function(event){
             this.setAttribute("fill", "grey");
@@ -406,7 +403,6 @@ Timeline.prototype.onDataReady = function() {
         formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
         return formatter(new Date(date));
     });
-
 
     this.timeline.append("g")
         .attr("class", "time-axis")

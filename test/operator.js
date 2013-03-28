@@ -335,6 +335,8 @@ time_btn.click(function() {
         clearPanes(true);
         fillPanes(display_dataset);
         fillResponsivePane(display_dataset);
+        resetTimeRange();
+        initTimeRange(display_dataset);
         $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
     }
 });
@@ -385,10 +387,12 @@ aggregate_btn.click(function() {
         dataType: 'json',
         success: function(data) {
             var result = {};
+            result.type = aggregation_options.val();
             result.object = obj_filter;
             result.content = data.content;
             clearPanes(true);
             //TODO visualize the aggregation results
+            var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
             $('#arena').children().text(JSON.stringify(result, undefined, 4));
         },
         error: function(xhr, type) {
