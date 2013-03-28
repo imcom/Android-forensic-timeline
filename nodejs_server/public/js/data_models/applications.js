@@ -13,7 +13,7 @@ Applications.prototype.getId = function() {
 }
 
 Applications.prototype.getMessage = function() {
-    return this.dataset.first_install_date + "\r\n" + this.dataset.permissions;
+    return this.dataset.first_install_date + "</br>" + this.dataset.permissions;
 }
 
 Applications.prototype.getDisplayName = function() {

@@ -13,7 +13,7 @@ FSTime.prototype.getId = function() {
 }
 
 FSTime.prototype.getMessage = function() {
-    return "Activity: " + this.dataset.activity + "\r\nPermissions:" + this.dataset.perms + "\r\nSize:" + this.dataset.size + "\r\nInode:" + this.dataset.inode;
+    return "Activity:" + this.dataset.activity + "</br>Permissions:" + this.dataset.perms + "</br>Size:" + this.dataset.size + "</br>Inode:" + this.dataset.inode;
 }
 
 FSTime.prototype.getDisplayName = function() {

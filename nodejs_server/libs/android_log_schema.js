@@ -40,8 +40,8 @@ aggregateByDate.reduce = function(key, values) {
 aggregateByDate.out = {'replace':'LogsMapReduceResults'};
 exports.aggregateByDate = aggregateByDate;
 
-var aggregateByPid = {};
-aggregateByPid.map = function() {
+var aggregateByObject = {};
+aggregateByObject.map = function() {
     var key = this.pid;
     var value = {
         date: this.date,
@@ -50,7 +50,7 @@ aggregateByPid.map = function() {
     };
     emit(key, value);
 }
-aggregateByPid.reduce = function(key, values) {
+aggregateByObject.reduce = function(key, values) {
     var content = {};
     values.forEach(function(value) {
         if (content[value.date] == null) {
@@ -60,8 +60,8 @@ aggregateByPid.reduce = function(key, values) {
     });
     return content;
 }
-aggregateByPid.out = {'replace':'LogsMapReduceResults'};
-exports.aggregateByPid = aggregateByPid;
+aggregateByObject.out = {'replace':'LogsMapReduceResults'};
+exports.aggregateByObject = aggregateByObject;
 
-
+var aggregatedByPid = {}; //TODO implement this aggregation function
 

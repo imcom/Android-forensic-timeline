@@ -21,7 +21,7 @@ var responsive_pid_pane = $('#responsive-pids');
 var responsive_object_pane = $('#responsive-objects');
 var dropdown_btn = $('#dropdown-ctrl-btn');
 var aggregate_btn = $('#aggregate-btn');
-var aggregation_options = $('#map-reduce-fn');
+var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
 
 var dataset = [];
@@ -193,8 +193,8 @@ function formSelection() {
 
 function fillMapReduceOptions(data_type) {
     if (data_type === 'main') {
+        aggregation_options.append("<option value='object'>Aggregate by Object</option>");
         aggregation_options.append("<option value='pid'>Aggregate by PID</option>");
-        aggregation_options.append("<option value='date'>Aggregate by Date</option>");
     }
 }
 

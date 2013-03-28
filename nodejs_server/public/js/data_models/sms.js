@@ -13,7 +13,7 @@ SMS.prototype.getId = function() {
 }
 
 SMS.prototype.getMessage = function() {
-    return this.dataset.body + "\r\nReport date: " + this.dataset.report_date + "\r\nService center: " + this.dataset.service_center;
+    return this.dataset.body + "</br>Report date:" + this.dataset.report_date + "</br>Service center:" + this.dataset.service_center;
 }
 
 SMS.prototype.getDisplayName = function() {

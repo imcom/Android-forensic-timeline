@@ -13,7 +13,7 @@ InodeTime.prototype.getId = function() {
 }
 
 InodeTime.prototype.getMessage = function() {
-    return "Inode modified: " + this.dataset.inode_modified + "\r\nFile modified: " + this.dataset.file_modified + "\r\nSize: " + this.dataset.size + "\r\nMode: " + this.dataset.mode + "\r\nAllocated: " + this.dataset.allocated;
+    return "Inode modified:" + this.dataset.inode_modified + "</br>File modified:" + this.dataset.file_modified + "</br>Size:" + this.dataset.size + "</br>Mode:" + this.dataset.mode + "</br>Allocated:" + this.dataset.allocated;
 }
 
 InodeTime.prototype.getDisplayName = function() {

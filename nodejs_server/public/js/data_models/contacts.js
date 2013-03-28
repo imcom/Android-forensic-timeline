@@ -13,7 +13,7 @@ Contacts.prototype.getId = function() {
 }
 
 Contacts.prototype.getMessage = function() {
-    return this.dataset.phone_number + "\r\n" + this.dataset.email;
+    return this.dataset.phone_number + "</br>" + this.dataset.email;
 }
 
 Contacts.prototype.getDisplayName = function() {

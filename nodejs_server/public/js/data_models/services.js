@@ -13,7 +13,7 @@ Services.prototype.getId = function() {
 }
 
 Services.prototype.getMessage = function() {
-    return "Last activity date: " + this.dataset.last_activity_date;
+    return "Last activity date:" + this.dataset.last_activity_date;
 }
 
 Services.prototype.getDisplayName = function() {

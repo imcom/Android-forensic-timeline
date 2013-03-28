@@ -90,11 +90,11 @@ app.post('/imcom', function(req, res) {
     } else { // type should be mapreduce
         var obj;
         if (req.body.collection === 'main') {
-            if (req.body.aggregation === 'pid') {
+            if (req.body.aggregation === 'object') {
+                obj = android_log.aggregateByObject; //TODO change fn name in future
+            }/* else if (req.body.aggregation === 'pid') {
                 obj = android_log.aggregateByPid;
-            } else if (req.body.aggregation === 'date') {
-                obj = android_log.aggregateByDate;
-            }
+            }*/
         }
         obj.query = JSON.parse(req.body.selection);
         model.mapReduce(obj, function(err, rtn_model, stats) {

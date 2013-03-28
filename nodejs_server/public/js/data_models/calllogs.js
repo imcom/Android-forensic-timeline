@@ -13,7 +13,7 @@ CallLogs.prototype.getId = function() {
 }
 
 CallLogs.prototype.getMessage = function() {
-    return this.dataset.number + "\r\nDuration: " + this.dataset.duration;
+    return this.dataset.number + "</br>Duration: " + this.dataset.duration;
 }
 
 CallLogs.prototype.getDisplayName = function() {

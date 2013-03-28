@@ -418,13 +418,13 @@ Timeline.prototype.onDataReady = function() {
         }
     });
 
-    var rules = this.timeline.selectAll("g[id=" + this.name.substr(1) + "].rule")
+    var grid = this.timeline.selectAll("g[id=" + this.name.substr(1) + "].grid")
         .data(y_scale.ticks(this.tick_num))
         .enter()
         .append("g")
-        .attr("class", "rule");
+        .attr("class", "grid");
 
-    rules.append("line")
+    grid.append("line")
         .attr("y1", y_scale)
         .attr("y2", y_scale)
         .attr("x1", 0)

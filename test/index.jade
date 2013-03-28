@@ -6,6 +6,7 @@ html
         link(rel='stylesheet', href='bootstrap-responsive.min.css')
         meta(name='viewport', 'content'='user-scalable=yes, width=device-width, initial-scale=0.8, maximum-scale=1.2')
         link(rel='stylesheet', href='style.css')
+        link(rel='stylesheet', href='opentip.css')
         script(type = 'text/javascript', src = 'jquery-1.9.1.min.js')
         script(type = 'text/javascript', src = 'zepto.min.js')
         script(type = 'text/javascript', src = 'd3.js')
@@ -45,7 +46,7 @@ html
                             select(multiple="multiple")#pids
                         li
                             div.controls.controls-row
-                                select#map-reduce-fn
+                                select#map-reduce-type
                             button#aggregate-btn.btn.btn-danger MapReduce
             div.span9
                 h3.text-center display area
