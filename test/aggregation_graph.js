@@ -37,14 +37,21 @@ function AggregatedGraph(name, dataset) {
     this.x = function(d) { return d.timestamp; }
 
     // dimensions
+    var y_padding = 100;
+    var tick_padding = -20;
+    var radius_range = [10, 60];
+    var scale_extent = [1, 10]; // used for zoom function
     this.width = 1500;
     this.height = 620;
-    this.x_range = [100, 1200]; // x range should be dependent on dataset size
-    this.y_range = [this.height - 100, 100];
+    this.x_range = this.initXRange(); // x range should be dependent on dataset size
+    this.y_range = [this.height - y_padding, y_padding];
+    this.tick_unit;
+    this.tick_step;
 
     // init a broader bounds for the selected time window
-    var start_date = new Date((this.getOldestDate() - 30) * 1000);
-    var end_date = new Date((this.getLatestDate() + 30) * 1000);
+    var date_padding = 30; // unit: seconds
+    var start_date = new Date((this.getOldestDate() - date_padding) * 1000);
+    var end_date = new Date((this.getLatestDate() + date_padding) * 1000);
 
     // convert epoch timestamp to date for d3 time scale
     this.dataset.forEach(function(record) {
@@ -54,20 +61,24 @@ function AggregatedGraph(name, dataset) {
 
     // graph scales
     this.x_scale = d3.time.scale.utc().domain([start_date, end_date]).range(this.x_range);
-    this.y_scale = d3.scale.linear().domain(
-        [this.y_domain_min, this.y_domain_max]
-    ).range(this.y_range);
-    this.radius_scale = d3.scale.linear()
-        .domain([1, this.maxMessageNumber()])
-        .range([10,30]);
+    this.y_scale = d3.scale.linear()
+        .domain([this.y_domain_min, this.y_domain_max])
+        .range(this.y_range)
+        .clamp(true);
+    this.radius_scale = d3.scale.pow()
+        .exponent(2)
+        .domain(this.initRadiusDomain())
+        .range(radius_range)
+        .clamp(true);
     this.color_scale = d3.scale.category10();
+    this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
 
     // define x axis
     this.x_axis = d3.svg.axis()
         .orient("top")
         .scale(this.x_scale)
-        .ticks(d3.time.seconds.utc, 15)
-        .tickPadding(-20)
+        .ticks(this.tick_unit, this.tick_step) // make it a variable
+        .tickPadding(tick_padding)
         .tickSize(0);
 
     this.x_axis.tickFormat(function(date) {
@@ -96,12 +107,12 @@ function AggregatedGraph(name, dataset) {
     // draw x axis
     this.aggregated_graph.append('g')
         .attr("class", "aggregation-axis")
-        .attr("transform", "translate(0, " + (this.height - 50) + ")")
+        .attr("transform", "translate(0, " + (this.height - y_padding / 2) + ")")
         .call(this.x_axis);
 
     /* draw grid lines on the graph */
     this.grid = this.aggregated_graph.selectAll("line.grid")
-        .data(this.x_scale.ticks(d3.time.seconds.utc, 15)) //TODO define interval
+        .data(this.x_scale.ticks(this.tick_unit, this.tick_step)) //TODO define interval
         .enter()
         .append("g")
         .attr("clip-path", "url(#clip)")
@@ -110,7 +121,7 @@ function AggregatedGraph(name, dataset) {
     this.grid.append("line")
         .attr("y1", 0)
         .attr("class", "grid-line")
-        .attr("y2", this.height - 50)
+        .attr("y2", this.height - y_padding / 2)
         .attr("x1", this.x_scale)
         .attr("x2", this.x_scale);
 
@@ -118,10 +129,10 @@ function AggregatedGraph(name, dataset) {
     this.aggregated_graph.append("svg:rect")
         .attr("class", "ctrl-pane")
         .attr("width", this.width)
-        .attr("height", 50)
+        .attr("height", y_padding)
         .call(d3.behavior.zoom()
                 .x(this.x_scale)
-                .scaleExtent([1, 8])
+                .scaleExtent(scale_extent)
                 .on("zoom", zoom)
         );
 
@@ -231,16 +242,6 @@ AggregatedGraph.prototype.drawAggregatedByObject = function() {
         .text(function(d) { return d; });
 }
 
-AggregatedGraph.prototype.maxMessageNumber = function() {
-    var max = 0;
-    this.dataset.forEach(function(data) {
-        if (data.messages.length >= max) {
-            max = data.messages.length;
-        }
-    });
-    return max;
-}
-
 AggregatedGraph.prototype.getOldestDate = function() {
     var min = this.dataset[0].timestamp;
     this.dataset.forEach(function(data) {
@@ -300,6 +301,31 @@ AggregatedGraph.prototype.initObjectedDataset = function(dataset) {
     return dataset_buf;
 }
 
+AggregatedGraph.prototype.initXRange = function() {
+    // min: 100, max: 8000; upper bound min: 800
+    var data_length = this.dataset.length;
+    var upper_range = data_length * 500;
+    upper_range = upper_range > 8000 ? 8000 : (upper_range < 800 ? 800 : upper_range);
+    return [100, upper_range];
+}
+
+AggregatedGraph.prototype.initTickInterval = function() {
+    var unit_options = [
+        d3.time.seconds.utc,
+        d3.time.minutes.utc
+    ];
+    var step_options = [
+        15,
+        30
+    ];
+
+    var unit_index = this.dataset.length < 15 ? 0 : 0;
+    var step_index = this.dataset.length < 30 ? 0 : 1;
+
+    this.tick_unit = unit_options[unit_index];
+    this.tick_step = step_options[step_index];
+}
+
 AggregatedGraph.prototype.initXDomain = function() {
     var x_max = this.dataset[0].timestamp, x_min = this.dataset[0].timestamp;
     this.dataset.forEach(function(data) {
@@ -315,18 +341,33 @@ AggregatedGraph.prototype.initXDomain = function() {
 
 AggregatedGraph.prototype.initYDomain = function() {
     var y_max = this.dataset[0].object_id, y_min = this.dataset[0].object_id;
+    var id_array = [], median = 0;
     this.dataset.forEach(function(data) {
         if (data.object_id >= y_max) {
             y_max = data.object_id;
         } else if (data.object_id <= y_min) {
             y_min = data.object_id;
         }
+        id_array.push(data.object_id);
     });
+    median = d3.median(id_array);
     this.y_domain_min = y_min;
-    this.y_domain_max = y_max;
+    this.y_domain_max = y_max > median * 2 ? median + y_min : y_max;
 }
 
-
+AggregatedGraph.prototype.initRadiusDomain = function() {
+    // min radius domain: 1
+    var max_domain = 0, max_message_number = 0, msg_number_array = [], median = 0;
+    this.dataset.forEach(function(data) {
+        if (data.messages.length >= max_message_number) {
+            max_message_number = data.messages.length;
+        }
+        msg_number_array.push(data.messages.length);
+    });
+    median = d3.median(msg_number_array);
+    max_domain = max_message_number > median * 2 ? Math.sqrt(max_message_number) : max_message_number;
+    return [1, max_domain];
+}
 
 
 
