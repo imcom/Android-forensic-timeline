@@ -91,7 +91,7 @@ app.post('/imcom', function(req, res) {
         var obj;
         if (req.body.collection === 'main') {
             if (req.body.aggregation === 'object') {
-                obj = android_log.aggregateByObject; //TODO change fn name in future
+                obj = android_log.aggregateByObject;
             }/* else if (req.body.aggregation === 'pid') {
                 obj = android_log.aggregateByPid;
             }*/

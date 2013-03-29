@@ -316,7 +316,7 @@ filter_btn.click(function() {
 
 clear_btn.click(function() {
     $('#arena').children().text("Show results here...");
-    $('#aggregation-arena').children().text("Aggregation results here...");
+    $('#aggregation-arena').children().remove();
     clearPanes(true);
     resetTimeRange();
 });
@@ -355,6 +355,7 @@ dropdown_btn.click(function() {
 });
 
 aggregate_btn.click(function() {
+    $('#aggregation-arena').children().remove();
     var obj_filter = object_pane.val();
     var pid_filter = pid_pane.val();
     var stime = start_time.val();
@@ -390,10 +391,9 @@ aggregate_btn.click(function() {
             result.type = aggregation_options.val();
             result.object = obj_filter;
             result.content = data.content;
-            clearPanes(true);
             //TODO visualize the aggregation results
             var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
-            $('#arena').children().text(JSON.stringify(result, undefined, 4));
+            //$('#arena').children().text(JSON.stringify(result, undefined, 4));
         },
         error: function(xhr, type) {
             alert('aggregation ajax error!');

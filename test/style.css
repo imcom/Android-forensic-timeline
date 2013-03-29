@@ -21,4 +21,6 @@ label{display:inline-block}
 .aggregation-axis text{font-family:Consolas;font-size:11px}
 .grid line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none;stroke-dasharray:5,5}
 .time-label{font-family:Consolas;font-size:13px;fill:#00f}
-.time-indicator{opacity:.7;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";stroke:#f00;stroke-dasharray:8,8}
+.time-indicator{opacity:.7;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";stroke:#f00;stroke-dasharray:8,8;pointer-events:none}
+rect{fill:none}
+rect.ctrl-pane{cursor:move;fill:none;pointer-events:all}

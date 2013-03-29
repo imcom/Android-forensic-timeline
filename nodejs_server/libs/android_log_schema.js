@@ -13,10 +13,7 @@ exports.name = "android_log_schema";
 
 exports.fields = ["date", "pid", "object", "msg", "level"];
 
-exports.hello = function(msg) {
-    console.log(msg);
-}
-
+/*
 var aggregateByDate = {};
 aggregateByDate.map = function() {
     var key = this.date;
@@ -39,7 +36,7 @@ aggregateByDate.reduce = function(key, values) {
 }
 aggregateByDate.out = {'replace':'LogsMapReduceResults'};
 exports.aggregateByDate = aggregateByDate;
-
+*/
 var aggregateByObject = {};
 aggregateByObject.map = function() {
     var key = this.pid;
@@ -60,7 +57,7 @@ aggregateByObject.reduce = function(key, values) {
     });
     return content;
 }
-aggregateByObject.out = {'replace':'LogsMapReduceResults'};
+aggregateByObject.out = {'replace': 'LogsMapReduceResults'};
 exports.aggregateByObject = aggregateByObject;
 
 var aggregatedByPid = {}; //TODO implement this aggregation function
