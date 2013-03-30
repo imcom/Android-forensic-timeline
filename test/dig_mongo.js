@@ -18,6 +18,7 @@ var cp_services = require("../nodejs_server/libs/content_provider_services.js");
 var temporal = require("../nodejs_server/libs/temporal_info_schema.js");
 
 mongoose.connect('mongodb://localhost/' + db_name);
+mongoose.set("debug", true);
 
 var schemas = [
     android_log,

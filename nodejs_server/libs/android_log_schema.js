@@ -16,6 +16,8 @@ exports.fields = ["date", "pid", "object", "msg", "level"];
 var dateReduceFunction = function(key, values) {
     var content = {};
     values.forEach(function(value) {
+        print("reduce function:");
+        printjson(value);
         if (content[value.date] == null) {
             content[value.date] = [];
         }
@@ -57,6 +59,8 @@ aggregateByObject.map = function() {
         msg: this.msg,
         is_single: 1
     };
+    print("map function:");
+    printjson(value);
     emit(key, value);
 }
 aggregateByObject.reduce = dateReduceFunction;
