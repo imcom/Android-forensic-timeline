@@ -14,14 +14,11 @@ exports.name = "android_log_schema";
 exports.fields = ["date", "pid", "object", "msg", "level"];
 
 var dateReduceFunction = function(key, values) {
-    var content = {};
+    var content = {dates: [], msgs: [], count: 1};
     values.forEach(function(value) {
-        print("reduce function:");
-        printjson(value);
-        if (content[value.date] == null) {
-            content[value.date] = [];
-        }
-        content[value.date].push(value.msg);
+        content.dates = value.dates.concat(content.dates);
+        content.msgs = value.msgs.concat(content.msgs);
+        content.count += value.count;
     });
     return content;
 }
@@ -55,12 +52,10 @@ var aggregateByObject = {};
 aggregateByObject.map = function() {
     var key = this.pid;
     var value = {
-        date: this.date,
-        msg: this.msg,
-        is_single: 1
+        dates: [this.date],
+        msgs: [this.msg],
+        count: 1
     };
-    print("map function:");
-    printjson(value);
     emit(key, value);
 }
 aggregateByObject.reduce = dateReduceFunction;
@@ -71,9 +66,9 @@ var aggregateByPid = {}; //TODO implement this aggregation function
 aggregateByPid.map = function() {
     var key = this.object;
     var value = {
-        date: this.date,
-        msg: this.msg,
-        is_single: 1
+        dates: [this.date],
+        msgs: [this.msg],
+        count: 1
     };
     emit(key, value);
 }

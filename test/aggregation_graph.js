@@ -66,11 +66,13 @@ function AggregatedGraph(name, dataset) {
         .domain([this.y_domain_min, this.y_domain_max])
         .range(this.y_range)
         .clamp(true);
+
     this.radius_scale = d3.scale.pow()
         .exponent(2)
         .domain(this.initRadiusDomain())
         .range(radius_range)
         .clamp(true);
+
     this.color_scale = d3.scale.category10();
     this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
 
@@ -83,7 +85,7 @@ function AggregatedGraph(name, dataset) {
         .tickSize(0);
 
     this.x_axis.tickFormat(function(date) {
-        formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+        var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
         return formatter(date);
     });
 
@@ -262,42 +264,48 @@ AggregatedGraph.prototype.getOldestDate = function() {
             min = data.timestamp;
         }
     });
-    return min;
+    return Number(min);
 }
 
 AggregatedGraph.prototype.getLatestDate = function() {
-    var max = 0;
+    var max = this.dataset[0].timestamp;
     this.dataset.forEach(function(data) {
         if (data.timestamp >= max) {
             max = data.timestamp;
         }
     });
-    return max;
+    return Number(max);
 }
 
 AggregatedGraph.prototype.initDataset = function(dataset) {
-    dataset_buf = [];
+    var dataset_buf = [];
+    var grouped_dataset = [];
+
     dataset.content.forEach(function(data) {
-        if (data.value.is_single != null) {
-            var ts = data.value.date;
-            var msg = data.value.msg;
-            data.value = {};
-            data.value[ts] = [msg];
-        }
-        for (timestamp in data.value) {
-            if (timestamp != 'undefined') { //TODO the cause for this is unknown
-                data_buf = {};
-                if (dataset.type === 'object') { // aggregated by object, so an object can have multiple pids
-                    data_buf.object_id = Number(data._id);
-                } else { // dataset.type === 'pid'
-                    data_buf.object = data._id;
-                }
-                data_buf.timestamp = Number(timestamp);
-                data_buf.messages = data.value[timestamp];
-                dataset_buf.push(data_buf);
+        grouped_data = {};
+        data.value.dates.forEach(function(date, index) {
+            if (!grouped_data.hasOwnProperty(date)) {
+                grouped_data[date] = [];
             }
+            grouped_data[date].push(data.value.msgs[index]);
+        });
+        grouped_dataset.push({_id: data._id, content: grouped_data});
+    });
+
+    grouped_dataset.forEach(function(data) {
+        for (timestamp in data.content) {
+            data_buf = {};
+            if (dataset.type === 'object') { // aggregated by object, so an object can have multiple pids
+                data_buf.object_id = Number(data._id);
+            } else { // dataset.type === 'pid'
+                data_buf.object = data._id;
+            }
+            data_buf.timestamp = timestamp;
+            data_buf.messages = data.content[timestamp];
+            dataset_buf.push(data_buf);
         }
     });
+
     return dataset_buf;
 }
 

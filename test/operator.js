@@ -414,7 +414,7 @@ aggregate_btn.click(function() {
             result.content = data.content;
             //TODO visualize the aggregation results
             var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
-            console.log(JSON.stringify(result, undefined, 4));
+            //console.log(JSON.stringify(result, undefined, 4));
         },
         error: function(xhr, type) {
             alert('aggregation ajax error!');
