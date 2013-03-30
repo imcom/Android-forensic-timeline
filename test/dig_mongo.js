@@ -92,9 +92,9 @@ app.post('/imcom', function(req, res) {
         if (req.body.collection === 'main') {
             if (req.body.aggregation === 'object') {
                 obj = android_log.aggregateByObject;
-            }/* else if (req.body.aggregation === 'pid') {
+            } else if (req.body.aggregation === 'pid') {
                 obj = android_log.aggregateByPid;
-            }*/
+            }
         }
         obj.query = JSON.parse(req.body.selection);
         model.mapReduce(obj, function(err, rtn_model, stats) {

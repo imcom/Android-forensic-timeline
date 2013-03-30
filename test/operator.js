@@ -355,23 +355,40 @@ dropdown_btn.click(function() {
 });
 
 aggregate_btn.click(function() {
-    $('#aggregation-arena').children().remove();
+    $('#aggregation-arena').children().remove(); // clear previous graph
     var obj_filter = object_pane.val();
     var pid_filter = pid_pane.val();
     var stime = start_time.val();
     var etime = end_time.val();
+    var selection;
 
+    if (aggregation_options.val() === '') {
+        alert("no aggregation available");
+        return;
+    }
+
+    if (aggregation_options.val() === 'object') {
+        if (obj_filter === '') {
+            alert("no object selected");
+            return;
+        } else {
+            selection = JSON.stringify({'object':obj_filter});
+        }
+    } else if (aggregation_options.val() === 'pid') {
+        if (pid_filter === '') {
+            alert("no pid selected");
+            return;
+        } else {
+            selection = JSON.stringify({'pid':pid_filter});
+        }
+    }
+
+    // time period selection
     if (stime != '' && etime != '') {
 
     } else if (stime != '' && etime == '') {
 
     } else if (stime == '' && etime != '') {
-
-    }
-    if (obj_filter != '') {
-
-    }
-    if (pid_filter != '') {
 
     }
 
@@ -382,18 +399,22 @@ aggregate_btn.click(function() {
         data: {
             type: "mapreduce",
             collection: collection.val(),
-            selection: JSON.stringify({'object':obj_filter}),
+            selection: selection,
             aggregation: aggregation_options.val()
         },
         dataType: 'json',
         success: function(data) {
             var result = {};
             result.type = aggregation_options.val();
-            result.object = obj_filter;
+            if (result.type === 'object') {
+                result.object = obj_filter;
+            } else {
+                result.object_id = pid_filter; // pid_filter and corresponding input field should be revised
+            }
             result.content = data.content;
             //TODO visualize the aggregation results
             var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
-            //$('#arena').children().text(JSON.stringify(result, undefined, 4));
+            console.log(JSON.stringify(result, undefined, 4));
         },
         error: function(xhr, type) {
             alert('aggregation ajax error!');

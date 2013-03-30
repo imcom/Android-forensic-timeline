@@ -17,13 +17,14 @@ function AggregatedGraph(name, dataset) {
 
     // class variable
     this.name = name;
-    this.object = dataset.object;
     this.aggregation_type = dataset.type;
     if (this.aggregation_type === 'object') {
-        this.dataset = this.initObjectedDataset(dataset);
+        this.object = dataset.object; // aggregated by this object
     } else {
-
+        this.object_id = dataset.object_id; // aggregated by this id
     }
+    this.dataset = this.initDataset(dataset);
+    this.y_domain_map = {};
     this.x_domain_min;
     this.x_domain_max;
     this.y_domain_min;
@@ -41,7 +42,7 @@ function AggregatedGraph(name, dataset) {
     var tick_padding = -20;
     var radius_range = [10, 60];
     var scale_extent = [1, 10]; // used for zoom function
-    this.width = 1500;
+    this.width = 1400;
     this.height = 620;
     this.x_range = this.initXRange(); // x range should be dependent on dataset size
     this.y_range = [this.height - y_padding, y_padding];
@@ -145,12 +146,8 @@ function AggregatedGraph(name, dataset) {
             .attr("cx", function(d) { return self.x_scale(self.x(d)); });
     }
 
-    // call draw function depending on dataset type
-    if (this.aggregation_type === 'object') {
-        this.drawAggregatedByObject();
-    } else {
-
-    }
+    // draw events on the graph
+    this.drawAggregatedGraph();
 
 } // class construction function
 
@@ -166,10 +163,22 @@ AggregatedGraph.prototype.formatMessages = function(messages) {
     return formatted_msg;
 }
 
-AggregatedGraph.prototype.drawAggregatedByObject = function() {
+AggregatedGraph.prototype.drawAggregatedGraph = function() {
     var self = this;
-    var y = function(d) { return d.object_id; }
-    var color = function(d) { return d.object_id; }
+    var y = function(d) {
+        if (self.aggregation_type === 'object') {
+            return d.object_id;
+        } else {
+            return self.y_domain_map[d.object];
+        }
+    }
+    var color = function(d) {
+        if (self.aggregation_type === 'object') {
+            return d.object_id;
+        } else {
+            return d.object;
+        }
+    }
     var time_indicator;
     var time_label;
 
@@ -222,6 +231,10 @@ AggregatedGraph.prototype.drawAggregatedByObject = function() {
         );
     });
 
+    var text_padding = 70; // for aggregation by object
+    if (this.aggregation_type === 'pid') {
+        text_padding = 175;
+    }
     var legend = this.aggregated_graph.selectAll(".legend")
         .data(this.color_scale.domain().slice().reverse())
         .enter().append("g")
@@ -235,7 +248,7 @@ AggregatedGraph.prototype.drawAggregatedByObject = function() {
         .style("fill", this.color_scale);
 
     legend.append("text")
-        .attr("x", 70)
+        .attr("x", text_padding)
         .attr("y", 10)
         .attr("dy", ".35em")
         .style("text-anchor", "end")
@@ -262,42 +275,29 @@ AggregatedGraph.prototype.getLatestDate = function() {
     return max;
 }
 
-AggregatedGraph.prototype.initObjectedDataset = function(dataset) {
+AggregatedGraph.prototype.initDataset = function(dataset) {
     dataset_buf = [];
     dataset.content.forEach(function(data) {
-        //if (dataset.type === 'object') {
-            if (data.value.is_single != null) {
-                var ts = data.value.date;
-                var msg = data.value.msg;
-                data.value = {};
-                data.value[ts] = [msg];
-            }
-            for (timestamp in data.value) {
-                if (timestamp != 'undefined') { //TODO the cause for this is unknown
-                    data_buf = {};
-                    data_buf.object_id = Number(data._id);
-                    data_buf.timestamp = Number(timestamp);
-                    data_buf.messages = data.value[timestamp];
-                    dataset_buf.push(data_buf);
-                }
-            }
-        /*} else { // type is date
-            if (data.value.is_single != null) {
-                var id = data.value.id;
-                var msg = data.value.msg;
-                data.value = {};
-                data.value[id] = [msg];
-            }
-            for (id in data.value) {
+        if (data.value.is_single != null) {
+            var ts = data.value.date;
+            var msg = data.value.msg;
+            data.value = {};
+            data.value[ts] = [msg];
+        }
+        for (timestamp in data.value) {
+            if (timestamp != 'undefined') { //TODO the cause for this is unknown
                 data_buf = {};
-                data_buf.object_id = Number(id);
-                data_buf.timestamp = Number(data._id);
-                data_buf.messages = data.value[id];
+                if (dataset.type === 'object') { // aggregated by object, so an object can have multiple pids
+                    data_buf.object_id = Number(data._id);
+                } else { // dataset.type === 'pid'
+                    data_buf.object = data._id;
+                }
+                data_buf.timestamp = Number(timestamp);
+                data_buf.messages = data.value[timestamp];
                 dataset_buf.push(data_buf);
             }
-        }*/
+        }
     });
-
     return dataset_buf;
 }
 
@@ -340,19 +340,33 @@ AggregatedGraph.prototype.initXDomain = function() {
 }
 
 AggregatedGraph.prototype.initYDomain = function() {
-    var y_max = this.dataset[0].object_id, y_min = this.dataset[0].object_id;
-    var id_array = [], median = 0;
-    this.dataset.forEach(function(data) {
-        if (data.object_id >= y_max) {
-            y_max = data.object_id;
-        } else if (data.object_id <= y_min) {
-            y_min = data.object_id;
-        }
-        id_array.push(data.object_id);
-    });
-    median = d3.median(id_array);
-    this.y_domain_min = y_min;
-    this.y_domain_max = y_max > median * 2 ? median + y_min : y_max;
+    var self = this;
+    if (this.aggregation_type === 'object') {
+        var y_max = this.dataset[0].object_id, y_min = this.dataset[0].object_id;
+        var id_array = [], median = 0;
+        this.dataset.forEach(function(data) {
+            if (data.object_id >= y_max) {
+                y_max = data.object_id;
+            } else if (data.object_id <= y_min) {
+                y_min = data.object_id;
+            }
+            id_array.push(data.object_id);
+        });
+        median = d3.median(id_array);
+        this.y_domain_min = y_min;
+        this.y_domain_max = y_max > median * 2 ? median + y_min : y_max;
+    } else { // aggregation type is pid
+        var domain_index = 1;
+        var domain_increment = 5;
+        this.dataset.forEach(function(data) {
+            if (!self.y_domain_map.hasOwnProperty(data.object)) {
+                self.y_domain_map[data.object] = domain_index;
+                domain_index += domain_increment;
+            }
+        });
+        this.y_domain_min = 1; // initial value
+        this.y_domain_max = domain_index - domain_increment; // last domain index
+    }
 }
 
 AggregatedGraph.prototype.initRadiusDomain = function() {
