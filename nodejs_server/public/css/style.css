@@ -1,5 +1,6 @@
 .container-fluid{margin-top:25px}
 .alert{position:absolute;top:25px;width:200px;left:42%}
+#collection-input{font-family:Consolas}
 input{width:100%}
 select{width:100%}
 .ctrl-panel{position:fixed}

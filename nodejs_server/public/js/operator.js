@@ -214,11 +214,12 @@ function fillMapReduceOptions(data_type) {
 search_btn.click(function() {
     dataset = []; // clear dataset for new data
     var selection = formSelection();
+    var target = collection.val().split(':'); // target = [url, collection]
     $.ajax({
         type: "POST",
-        url: "/android_logs",
+        url: target[0],
         data: {
-            collection: collection.val(),
+            collection: target[1],
             selection: selection,
             fields: fields.val() ? fields.val().split(' ') : [],
             type: "query"
@@ -233,7 +234,15 @@ search_btn.click(function() {
             fillResponsivePane(dataset);
             initTimeRange(dataset);
             fillMapReduceOptions(data.type);
-            $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
+            //TODO make the arguments variable and timeline div should specified from UI
+            var timeline_0 = new Timeline(
+                "#timeline_0",
+                3000,
+                [120, 400],
+                5
+            );
+            timeline_0.initTimeline();
+            timeline_0.setDataset(data);
         },
         error: function(xhr, type) {
             showAlert("search query error!");

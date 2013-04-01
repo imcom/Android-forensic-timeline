@@ -8,12 +8,16 @@ AndroidLogs.prototype.getDate = function(index) {
     return this.dataset[index].date;
 }
 
-AndroidLogs.prototype.getId = function() {
-    return this.dataset.pid;
+AndroidLogs.prototype.getId = function(index) {
+    return this.dataset[index].pid;
 }
 
-AndroidLogs.prototype.getMessage = function() {
-    return this.dataset.msg;
+AndroidLogs.prototype.getObject = function(index) {
+    return this.dataset[index].object;
+}
+
+AndroidLogs.prototype.getMessage = function(index) {
+    return this.dataset[index].msg;
 }
 
 AndroidLogs.prototype.getDisplayName = function() {

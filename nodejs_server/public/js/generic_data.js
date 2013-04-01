@@ -52,12 +52,16 @@ GenericData.prototype.getDate = function(index) {
     return this.data_handler.getDate(index);
 }
 
-GenericData.prototype.getId = function() {
-    return this.data_handler.getId();
+GenericData.prototype.getId = function(index) {
+    return this.data_handler.getId(index);
 }
 
-GenericData.prototype.getMessage = function() {
-    return this.data_handler.getMessage();
+GenericData.prototype.getObject = function(index) {
+    return this.data_handler.getObject(index);
+}
+
+GenericData.prototype.getMessage = function(index) {
+    return this.data_handler.getMessage(index);
 }
 
 GenericData.prototype.getDisplayName = function() {

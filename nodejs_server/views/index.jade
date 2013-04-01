@@ -29,9 +29,26 @@ html
             div.span3
                 div.ctrl-panel
                     ul.nav.nav-pills.nav-stacked
-                        li.nav-header Query Pane
+                        li.nav-header Query Target
                         li
-                            input(type="text", placeholder="collection")#collection-input
+                            select#collection-input
+                                option(value='android_logs:main') main
+                                option(value='android_logs:system') system
+                                option(value='android_logs:events') events
+                                option(value='android_logs:radio') radio
+                                option(value='android_logs:dmesg') dmesg
+                                option(value='fs_time:fs_time') filesystem MAC
+                                option(value='inode_time:inode_time') inode MAC
+                                option(value='cp_browserhistory:cp_browserhistory') browser history
+                                option(value='cp_browsersearches:cp_browsersearches') browser searches
+                                option(value='cp_applications:cp_applications') applications
+                                option(value='cp_calllogs:cp_calllogs') call logs
+                                option(value='cp_services:cp_services') services
+                                option(value='cp_contacts:cp_contacts') contacts
+                                option(value='cp_mms:cp_mms') MMS
+                                option(value='cp_sms:cp_sms') SMS
+                        li.nav-header.cozy-list-header Query Specification
+                        li
                             input(type="text", placeholder="selection")#selection-input
                             input(type="text", placeholder="fields")#fields-input
                             input(type="text", placeholder="filter")#filter-input
@@ -53,7 +70,7 @@ html
                         li.nav-header.cozy-list-header PIDs Selection
                         li
                             select(multiple="multiple")#pids.selection-field
-                        li.nav-header.cozy-list-header Aggregation Pane
+                        li.nav-header.cozy-list-header Aggregation Type
                         li
                             select#map-reduce-type.selection-field
                                 option aggregate by ...
@@ -67,7 +84,6 @@ html
         script(type = 'text/javascript', src = '/js/operator.js')
         a(href="#", class="back-to-top")
         a.reset-scale
-        script(type = 'text/javascript', src = '/js/timeline_gen.js')
 
 
 

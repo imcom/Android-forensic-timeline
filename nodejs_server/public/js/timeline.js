@@ -14,23 +14,24 @@ function Timeline(name, timeline_height, x_range, radius) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
-    // [[x, timestamp], detail], x is used for distinguish very close events
-    this.dataset = [];
+    //this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
+    this.x_range = x_range;
+    this.timeline_height = timeline_height;
 
     // dynamically configurable values
-    this.timeline_height = timeline_height;
-    this.radius = radius;
-    this.x_range = x_range; // this should be a variable since width will be adjusted during investigation
+    this.dataset = [];
+    this.suspects = [];
+    //this.radius = radius;
     this.timeline;
     this.y_range;
-    this.x_default = 1;
-    this.x_suspect = 10; //TODO need to verify the offset effect
-    this.x_padding = 1;
+    //this.x_default = 1;
+    //this.x_suspect = 10; //TODO need to verify the offset effect
+    //this.x_padding = 1;
     this.tick_padding = 5;
     this.tick_unit;
     this.tick_step;
     this.color_scale;
+    this.x_domain_array = [];
     this.x_domain_min = 0;
     this.x_domain_max = 0;
     this.y_domain_min = 0;
@@ -119,6 +120,8 @@ Timeline.prototype.updateXDomain = function(x) {
             this.x_domain_max = x;
         }
     }
+    if (!$.inArray(x, this.x_domain_array))
+        this.x_domain_array.push(x);
 }
 
 Timeline.prototype.updateYDomain = function(y) {
@@ -141,9 +144,10 @@ Timeline.prototype.getEvent = function(index) {
     return this.dataset[index];
 }
 
+/*
 Timeline.prototype.getHeight = function() {
     return this.timeline_height;
-}
+}*/
 
 Timeline.prototype.getName = function() {
     return this.name;
@@ -176,6 +180,11 @@ Timeline.prototype.initYRange = function() {
     return [this.y_range_padding, upper_range];
 }
 
+Timeline.prototype.refineXDomainMax = function() {
+    var median = d3.median(this.x_domain_array);
+    this.x_domain_max = this.x_domain_max > median * 2 ? median + this.x_domain_min : this.x_domain_max;
+}
+
 Timeline.prototype.clearData = function() {
     this.dataset = [];
     this.x_domain_min = 0;
@@ -188,6 +197,8 @@ Timeline.prototype.removeTimeline = function() {
     $(this.getName()).children('.timeline-graph').remove();
 }
 
+// fetchData is deprecated since data is fed into Timeline directly
+/*
 Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, collection, selection, fields, options
     var total = queries.length;
     var excuted = 0;
@@ -206,8 +217,110 @@ Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, col
                 }
             });
     });
-}
+}*/
 
+Timeline.prototype.setDataset = function(data) {
+    var self = this;
+    var generic_data = new GenericData(data.type, data.content);
+
+    var normal_dataset = {};
+    // check and mark abnormal chronologically placed records and store them separately
+    // group data by 1st timestamp, 2nd record id, 3rd record object
+    var current_date = generic_data.getDate(0); // theoretically the first record should have the minimum date value
+    $.each(data.content, function(index) {
+        var suspect_data = {};
+        if (generic_data.getDate(index) < current_date) { // place abnormal events
+            suspect_data.timestamp = generic_data.getDate(index);
+            suspect_data._id = generic_data.getId(index);
+            var detail = {};
+            detail[generic_data.getObject(index)] = [generic_data.getMessage(index)];
+            suspect_data.content = [detail];
+            self.suspects.push(suspect_data);
+        } else { // group normal events by date
+            var _id = generic_data.getId(index);
+            var object = generic_data.getObject(index);
+            var message = generic_data.getMessage(index);
+            if (!normal_dataset.hasOwnProperty(current_date)) {
+                normal_dataset[current_date] = {};
+            }
+            var date_group = normal_dataset[current_date];
+            if (!date_group.hasOwnProperty(_id)) {
+                date_group[_id] = {};
+            }
+            var id_group = date_group[_id];
+            if (!id_group.hasOwnProperty(object)) {
+                id_group[object] = [];
+            }
+            id_group[object].push(message);
+            current_date = generic_data.getDate(index);
+        }
+    });
+
+    // output data sample:
+    // data {
+    //      timestamp: <timestamp>,
+    //      event_id: <id>,
+    //      content: {<object> : [messages,...], <object> : [messages,...], ...}
+    // }
+    for (timestamp in normal_dataset) {
+        this.updateYDomain(timestamp); // find out max and min date
+        if (timestamp != 'undefined') {
+            for (record_id in normal_dataset[timestamp]) {
+                if (record_id != 'undefined') {
+                    this.updateXDomain(record_id); // form an ID array for X-axis domain
+                    this.dataset.push({
+                        timestamp: timestamp,
+                        _id: record_id,
+                        content: normal_dataset[timestamp][record_id]
+                    });
+                }
+            }
+        }
+    }
+    this.refineXDomainMax();
+
+    /*$.each(data.content, function(index) {
+        var event_data = {};
+        data.content[index].display = "normal";
+        if (index == 0) {
+            event_data.coords = [x_starts_on, y_starts_on];
+        } else {
+            if (generic_data.getDate(index) == previous_date) {
+                // overlap with next timestamp, then roll back
+                if (self.y_padding + y_starts_on >= previous_date + 1) {
+                    // set offset on x-axis for distinguish
+                    x_starts_on += self.x_padding;
+                    y_starts_on = previous_date + overlap_increment;
+                    overlap_increment += overlap_increment;
+                } else {
+                    y_starts_on += self.y_padding;
+                }
+                event_data.coords = [x_starts_on, y_starts_on];
+            // wrong sequence detected
+            } else if (generic_data.getDate(index) < previous_date) {
+                // using a different offset for distinguish
+                event_data.coords = [self.x_suspect, generic_data.getDate(index)];
+                //TODO css class, set a different style for suspect events
+                data.content[index].display = "suspect";
+            } else {
+                previous_date = generic_data.getDate(index);
+                y_starts_on = previous_date;
+                x_starts_on = self.x_default;
+                event_data.coords = [self.x_default, y_starts_on];
+                overlap_increment = self.y_padding / 2;
+            }
+        } // if index != 0
+        self.updateXDomain(event_data.coords[0]);
+        self.updateYDomain(event_data.coords[1]);
+        data.content[index].type = data.type;
+        event_data.detail = data.content[index];
+        self.dataset.push(event_data);
+    });*/
+    // on dataset is set, draw timeline
+    this.onDataReady();
+}
+// query function is deprecated, data is fed into Timelien from other place
+/*
 Timeline.prototype.query = function(uri, collection, selection, fields, options, onQueryComplete) {
     var self = this;
     var query_content = {
@@ -228,7 +341,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
         uri,
         query_content,
         function(data, status, xhr){
-            /*init dataset here*/
+            //init dataset here
             if (data.error != 0) {
                 //TODO error handling here
                 console.log("server error occured");
@@ -280,7 +393,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
         },
         "json" // expected response type
     );
-} // function query(argv...)
+} */
 
 Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
     var self = this;
@@ -317,15 +430,17 @@ Timeline.prototype.onDataReady = function() {
     var display_dataset = [];
     this.dataset.forEach(function(data) {
         var display_data = {};
-        var date = new Date(data.coords[1] * 1000); // convert to milliseconds
-        display_data.coords = [data.coords[0], date];
-        display_data.detail = data.detail;
+        var date = new Date(data.timestamp * 1000); // convert to milliseconds
+        display_data.date = date;
+        display_data._id = Number(data._id);
+        display_data.content = data.content;
         display_dataset.push(display_data);
     });
 
     // debugging info
     console.log(start_date);
     console.log(end_date);
+    console.log(display_dataset.length);
 
     this.color_scale = d3.scale.category10();
     this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
@@ -429,7 +544,23 @@ Timeline.prototype.onDataReady = function() {
             }
         });
     }
+    //FIXME
+    return;
+    function x(d) {
 
+    }
+
+    function y(d) {
+
+    }
+
+    function color(d) {
+
+    }
+
+    function radius(d) {
+
+    }
     // draw events on timeline
     this.timeline.append('g')
         .attr("id", "events-arena")
@@ -439,6 +570,7 @@ Timeline.prototype.onDataReady = function() {
         .enter()
         .append("circle")
         .attr("class", "timeline-event")
+        //TODO change functions below for new data stracture
         .attr("id", function(data, index){
             var generic_data = new GenericData(data.detail.type, data.detail);
             return self.name.substr(1) + "-" + generic_data.getId() + "-" + index;
@@ -468,6 +600,7 @@ Timeline.prototype.onDataReady = function() {
             return generic_data.getDisplayName();
         })
         .attr("fill", function(d) {
+            //TODO modify the function below for new data structure
             var generic_data = new GenericData(d.detail.type, d.detail);
             return self.color_scale(Number(generic_data.getId()));
         });
@@ -564,10 +697,23 @@ Timeline.prototype.initTickInterval = function() {
     ];
 
     var unit_index = this.dataset.length < 100 ? 0 : 0;
-    var step_index = this.dataset.length < 300 ? 0 : 1;
+    var step_index = this.dataset.length < 222 ? 0 : 1;
 
     this.tick_unit = unit_options[unit_index];
     this.tick_step = step_options[step_index];
 }
 
+Timeline.prototype.initRadiusDomain = function() {
+    // min radius domain: 1
+    var max_domain = 0, max_message_number = 0, msg_number_array = [], median = 0;
+    this.dataset.forEach(function(data) {
+        if (data.messages.length >= max_message_number) {
+            max_message_number = data.messages.length;
+        }
+        msg_number_array.push(data.messages.length);
+    });
+    median = d3.median(msg_number_array);
+    max_domain = max_message_number > median * 2 ? Math.sqrt(max_message_number) : max_message_number;
+    return [1, max_domain];
+}
 
