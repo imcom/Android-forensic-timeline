@@ -1,0 +1,76 @@
+@import 'nib'
+
+#logo
+    h1
+        color: #777
+        margin-left: -12px
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    p
+        color: #222
+        font-size: 16px
+        font-family: Consolas
+        margin-left: -12px
+        -webkit-user-select: none;
+        -moz-user-select: none;
+
+#side-panel
+    position: fixed
+    top: 5px
+
+#content
+    position: relative
+    fieldset
+        position: absolute
+    #col_left
+        width: 50%
+        left: -5px
+    #col_right
+        width: 50%
+        right: -5px
+
+.timeline
+    margin-top: 45px
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+.time-axis
+    cursor: move
+    pointer-events: all
+
+    path, line
+        fill: none
+        stroke: black
+        shape-rendering: crispEdges
+
+    text
+        font-family: Consolas
+        font-size: 11px
+
+.grid
+    line
+        opacity: 0.3
+        stroke: black
+        pointer-events: none
+
+.ctlbar
+    position: fixed
+    z-index: 100
+    top: 10px
+
+.btn
+    opacity: 0.8
+
+.back-to-top
+    position: fixed
+    right: 25px
+    bottom: 25px
+    z-index: -1
+    opacity: 0
+
+
+
+
+
+
+

@@ -29,33 +29,41 @@ function do_query(req, res, type) {
         selection,
         fields.join(" "),
         req.body.options,
-        function(result) {
+        function(result) { // on success
             if (!result) {
-                res.json({"error": 1, "type": type.name, "content": "query returned null"});
+                res.json({"error": 0, "type": type.name, "content": "result is empty"});
             } else {
                 res.json({"error": 0, "type": type.name, "content": result});
             }
+        },
+        function(err) { // on failure
+            res.json({"error": 1, "type": type.name, "content": err});
         }
     );
 }
 
-exports.syslogs = function(req, res) {
-    console.log("query selection[" + android_log.name + "]: " + req.body.selection);
+exports.mapreduce = function(req, res) {
+    console.log("mapreduce on[" + req.body.collection + "] by {" + req.body.aggregation + "}:" + req.body.selection);
+    mongo.mapreduce(req, res);
+}
+
+exports.android_logs = function(req, res) {
+    console.log("query on[" + android_log.name + "]: " + req.body.selection);
     do_query(req, res, android_log);
 };
 
 exports.cp_browserhistory = function(req, res) {
-    console.log("query selection[" + cp_browserhistory.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_browserhistory.name + "]: " + req.body.selection);
     do_query(req, res, cp_browserhistory);
 }
 
 exports.cp_browsersearches = function(req, res) {
-    console.log("query selection[" + cp_browsersearches.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_browsersearches.name + "]: " + req.body.selection);
     do_query(req, res, cp_browsersearches);
 }
 
 exports.fs_time = function(req, res) {
-    console.log("query selection[" + fs_time.name + "]: " + req.body.selection);
+    console.log("query on[" + fs_time.name + "]: " + req.body.selection);
     do_query(req, res, fs_time);
 }
 

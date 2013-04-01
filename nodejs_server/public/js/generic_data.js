@@ -2,7 +2,7 @@
 function GenericData(type, dataset) {
 
     this.data_handler = null;
-    if (type === 'android_log_schema') {
+    if (type === 'android_logs') {
         this.data_handler = new AndroidLogs(dataset);
     }
 

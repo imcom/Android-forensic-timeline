@@ -1,7 +1,7 @@
 
 var timeline_0 = new Timeline(
     "#timeline_0",
-    10000,
+    3000,
     [120, 400],
     5
 );
@@ -9,20 +9,8 @@ var timeline_0 = new Timeline(
 timeline_0.initTimeline();
 
 var query_1 = [
-    /*{
-        uri: "/syslogs",
-        collection: "main",
-        selection: JSON.stringify({
-            pid: "1502",
-            date: {
-                $gte: 1363283140
-            }
-        }),
-        fields: ["date", "msg", "object", "pid", "level"],
-        options: null
-    },*/
     {
-        uri: "/syslogs",
+        uri: "/android_logs",
         collection: "main",
         selection: JSON.stringify({
             pid: "1502",
@@ -38,47 +26,51 @@ var query_1 = [
 ];
 
 timeline_0.fetchData(query_1);
-
 /*
-timeline_0.query(
-    "/syslogs",
-    "main",
-    JSON.stringify({
-        pid: 1502,
+var query_2 = [{
+    uri: "/android_logs",
+    collection: "main",
+    selection: JSON.stringify({
+        pid: "1502",
         date: {
             $gte: 1363283140
         }
     }),
-    ["date", "msg", "object", "pid", "level"],
-    null // if options are set to null, then just do NOT add this parameter to the post (using null)
-);*/
+    fields: ["date", "msg", "object", "pid", "level"],
+    options: null
+}];
+
+timeline_0.removeTimeline();
+timeline_0.initTimeline();
+timeline_0.fetchData(query_2);
+*/
 
 /*The second timeline*/
 var timeline_1 = new Timeline(
     "#timeline_1",
-    10000,
+    3000,
     [120, 400],
     5
 );
-/*
-timeline_1.initTimeline();
 
-timeline_1.query(
-    "/query",
-    "events",
-    JSON.stringify({
-        $or: [
-            {object: "am_proc_start"},
-            {object: "am_proc_bound"}
-        ],
-        date: {
-            $gte: 1362315421,
-            $lte: 1362315481
-        }
-    }),
-    "date msg object pid level",
-    null // null options
-);*/
+var query_2 = [
+    {
+        uri: "/fs_time",
+        collection: "fs_time",
+        selection: JSON.stringify({
+            date: {
+                $gte: 1362129603,
+                $lte: 1362132603
+            }
+        }),
+        fields: null,
+        options: null
+    }
+];
+
+timeline_1.initTimeline();
+timeline_1.fetchData(query_2);
+
 
 
 

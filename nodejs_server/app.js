@@ -12,7 +12,7 @@ var path = require('path');
 var index_handler = require('./routes');
 var db_handler = require('./routes/database');
 var mongoose = require('mongoose');
-var android_log = require('./libs/android_log_schema.js');
+var android_logs = require('./libs/android_log_schema.js');
 var fs_time = require("../nodejs_server/libs/fs_time_schema.js");
 var inode_time = require("../nodejs_server/libs/inode_time_schema.js");
 var cp_applications = require("../nodejs_server/libs/content_provider_apps.js");
@@ -29,10 +29,11 @@ var temporal_info = require("../nodejs_server/libs/temporal_info_schema.js");
  *  Init MongoDB connection and models
  */
 mongoose.connect('mongodb://localhost/' + db_name);
+mongoose.set("debug", true);
 
 // init models for android logs
 var schemas = [
-    android_log,
+    android_logs,
     cp_browsersearches,
     cp_browserhistory,
     cp_applications,
@@ -47,7 +48,7 @@ var schemas = [
 ];
 
 schemas.forEach(function(schema){
-    schema.log_collections.forEach(function(collection) {
+    schema.collections.forEach(function(collection) {
         mongoose.model(
             collection,
             mongoose.Schema(schema.LOG_SCHEMA),
@@ -82,12 +83,13 @@ app.configure(function(){
     );
     app.use(express.static(path.join(__dirname, 'public')));
     app.locals.globalScripts = [
-        '/js/jquery-1.9.1.min.js',
-        '/js/d3.js',
-        '/js/zepto.min.js',
-        '/js/bootstrap.min.js',
+        '/js/vendor/jquery-1.9.1.min.js',
+        '/js/vendor/d3.js',
+        '/js/vendor/zepto.min.js',
+        '/js/vendor/bootstrap.min.js',
+        '/js/vendor/opentip-jquery.min.js',
         '/js/timeline.js',
-        '/js/opentip-jquery.min.js',
+        '/js/aggregation_graph.js',
         '/js/generic_data.js',
         '/js/data_models/android_logs.js',
         '/js/data_models/browsersearches.js',
@@ -99,16 +101,17 @@ app.configure(function(){
         '/js/data_models/mms.js',
         '/js/data_models/services.js',
         '/js/data_models/sms.js',
-        '/js/data_models/inode_time.js',
+        '/js/data_models/inode_time.js'
     ]
 });
 
 // default index route
 app.get('/', index_handler.imcom);
-app.post('/syslogs', db_handler.syslogs);
+app.post('/android_logs', db_handler.android_logs);
 app.post('/cp_browserhistory', db_handler.cp_browserhistory);
 app.post('/cp_browsersearches', db_handler.cp_browsersearches);
 app.post('/fs_time', db_handler.fs_time);
+app.post('/mapreduce', db_handler.mapreduce);
 
 app.listen(app.get('port'));
 console.log("server started on port 2222...");

@@ -13,7 +13,7 @@
 function Timeline(name, timeline_height, x_range, radius) {
     // static constant values
     this.name = name;
-    this.y_range_padding = 25; // this number can be a constant, padding from the window top
+    this.y_range_padding = 20; // this number can be a constant, padding from the window top
     this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
     // [[x, timestamp], detail], x is used for distinguish very close events
     this.dataset = [];
@@ -27,7 +27,10 @@ function Timeline(name, timeline_height, x_range, radius) {
     this.x_default = 1;
     this.x_suspect = 10; //TODO need to verify the offset effect
     this.x_padding = 1;
-    this.tick_num = 0;
+    this.tick_padding = 5;
+    this.tick_unit;
+    this.tick_step;
+    this.color_scale;
     this.x_domain_min = 0;
     this.x_domain_max = 0;
     this.y_domain_min = 0;
@@ -75,8 +78,8 @@ function Timeline(name, timeline_height, x_range, radius) {
             self.path_data[data_index]['y'] = y;
             self.drawPath();
         });
-
-    // dragging timeline position handler
+    // dragging timeline position handler (deprecated)
+    /*
     var target_id;
     var origin_y;
     this.drag_timeline = d3.behavior.drag()
@@ -98,6 +101,7 @@ function Timeline(name, timeline_height, x_range, radius) {
             var step = d3.event.sourceEvent.clientY - origin_y;
             timeline_div.animate({"margin-top": cur_margin + step}, 500, "ease");
         });
+    */
 
 } // constructor of Timeline
 
@@ -150,42 +154,52 @@ Timeline.prototype.initTimeline = function() {
     this.timeline = d3.select(this.name)
         .append("svg")
         .attr("width", "100%")
-        .attr("height", this.timeline_height);
+        .attr("height", this.timeline_height)
+        .attr("class", "timeline-graph")
+        .append("g");
 
-    this.y_range = [
-        this.y_range_padding,
-        this.timeline_height - this.y_range_padding
-    ];
+    this.timeline.append("svg:clipPath")
+        .attr("id", "timeline-clip")
+        .append("svg:rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", "100%")
+        .attr("height", this.timeline_height);
 
 } // init timeline SVG and properties
 
-Timeline.prototype.updateHeight = function(timeline_height) {
-    this.timeline_height = timeline_height;
-    $(this.name).children().attr("height", timeline_height);
-    this.initTimeline();
-} // update timeline height on air, call onDataReady after this
+Timeline.prototype.initYRange = function() {
+    // min: 100, max: 8000; upper bound min: 800
+    var data_length = this.dataset.length;
+    var upper_range = data_length * 500;
+    upper_range = upper_range > 8000 ? 8000 : (upper_range < 800 ? 800 : upper_range);
+    return [this.y_range_padding, upper_range];
+}
 
 Timeline.prototype.clearData = function() {
     this.dataset = [];
-    this.tick_num = 0;
     this.x_domain_min = 0;
     this.x_domain_max = 0;
     this.y_domain_min = 0;
     this.y_domain_max = 0;
 }
 
+Timeline.prototype.removeTimeline = function() {
+    $(this.getName()).children('.timeline-graph').remove();
+}
+
 Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, collection, selection, fields, options
     var total = queries.length;
     var excuted = 0;
     var self = this;
-    queries.forEach(function(query, index){
+    queries.forEach(function(query, index) {
         self.query( // invoke class method `query` for Ajax
             query.uri,
             query.collection,
             query.selection,
             query.fields,
             query.options,
-            function(self){ // this self is passed from Ajax callback, which refers to Timeline class instance
+            function(self) { // this self is passed from Ajax callback, which refers to Timeline class instance
                 excuted += 1;
                 if (excuted == total) {
                     self.onDataReady();
@@ -225,6 +239,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                 var previous_date = y_starts_on;
                 $.each(data.content, function(index) {
                     var event_data = {};
+                    data.content[index].display = "normal";
                     if (index == 0) {
                         event_data.coords = [x_starts_on, y_starts_on];
                     } else {
@@ -243,7 +258,7 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
                         } else if (generic_data.getDate(index) < previous_date) {
                             // using a different offset for distinguish
                             event_data.coords = [self.x_suspect, generic_data.getDate(index)];
-                            //TODO css class, set a different color for suspect events
+                            //TODO css class, set a different style for suspect events
                             data.content[index].display = "suspect";
                         } else {
                             previous_date = generic_data.getDate(index);
@@ -267,13 +282,13 @@ Timeline.prototype.query = function(uri, collection, selection, fields, options,
     );
 } // function query(argv...)
 
-Timeline.prototype.fillPathData = function(x_scale, y_scale) {
+Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
     var self = this;
     self.path_data = []; // clear the old data everytime
-    $.each(self.dataset, function(index) {
+    $.each(dataset, function(index) {
         var path_coords = {};
-        path_coords['x'] = x_scale(self.dataset[index].coords[0]);
-        path_coords['y'] = y_scale(self.dataset[index].coords[1]);
+        path_coords['x'] = x_scale(dataset[index].coords[0]);
+        path_coords['y'] = y_scale(dataset[index].coords[1]);
         self.path_data.push(path_coords);
     });
 }
@@ -293,33 +308,137 @@ Timeline.prototype.drawPath = function() {
 
 Timeline.prototype.onDataReady = function() {
     var self = this;
-    // calculate how many timestamps in the selected period
-    //FIXME need a more elegant solution to deal with huge tick number
-    this.tick_num = (this.y_domain_max - this.y_domain_min) % 300;
+    // calculate the entire time period
+    var date_padding = 5; // unit: seconds
+    var start_date = new Date((Number(this.y_domain_min) - date_padding) * 1000);
+    var end_date = new Date((Number(this.y_domain_max) + date_padding) * 1000);
+
+    // convert epoch timestamp to date for d3 time scale and init display dataset
+    var display_dataset = [];
+    this.dataset.forEach(function(data) {
+        var display_data = {};
+        var date = new Date(data.coords[1] * 1000); // convert to milliseconds
+        display_data.coords = [data.coords[0], date];
+        display_data.detail = data.detail;
+        display_dataset.push(display_data);
+    });
 
     // debugging info
-    console.log(this.tick_num);
-    console.log(this.y_domain_max);
-    console.log(this.y_domain_min);
+    console.log(start_date);
+    console.log(end_date);
+
+    this.color_scale = d3.scale.category10();
+    this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
+    this.y_range = this.initYRange();
 
     var x_scale = d3.scale.linear()
                  .domain([
                             this.x_domain_min,
                             this.x_domain_max
                         ])
-                 .range(this.x_range);
+                 .range(this.x_range)
+                 .clamp(true);
 
-    var y_scale = d3.scale.linear()
+    var y_scale = d3.time.scale.utc()
                  .domain([
-                            this.y_domain_min,
-                            this.y_domain_max
+                            start_date,
+                            end_date
                         ])
                  .range(this.y_range);
 
-    this.timeline.selectAll("circle[id=" + this.name.substr(1) + "]")
-        .data(this.dataset)
+    // draw Y axis on timeline
+    var y_axis = d3.svg.axis()
+        .scale(y_scale)
+        .orient("right")
+        .ticks(this.tick_unit, this.tick_step) // make it a variable
+        .tickPadding(this.tick_padding)
+        .tickSize(0);
+
+    y_axis.tickFormat(function(date) {
+        formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+        return formatter(date);
+    });
+
+    this.timeline.append("g")
+        .attr("class", "time-axis")
+        .attr("id", this.name.substr(1))
+        .call(y_axis);
+    adjustDateLabel();
+
+    // draw gird lines on the timeline
+    var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid")
+        .data(y_scale.ticks(this.tick_unit, this.tick_step))
+        .enter()
+        .append("g")
+        .attr("clip-path", "url(#timeline-clip)")
+        .attr("class", "grid");
+
+    grid.append("line")
+        .attr("class", "grid-line")
+        .attr("y1", y_scale)
+        .attr("y2", y_scale)
+        .attr("x1", 0)
+        .attr("x2", "100%");
+
+    // append clipping components
+    var scale_extent = [1, 20]; // used for zoom function
+    var zoom_handle = d3.behavior.zoom()
+                .y(y_scale)
+                .scaleExtent(scale_extent)
+                .on("zoom", zoom);
+
+    this.timeline.append("svg:rect")
+        .attr("class", "timeline-ctrl-pane")
+        .attr("width", 100)
+        .attr("height", this.timeline_height)
+        .call(zoom_handle);
+
+    function zoom() {
+        if (zoom_handle.scale() >= 4 || Math.abs(zoom_handle.translate()[1]) >= 1500) {
+            $('.reset-scale').css('opacity', 0.8).css('z-index', 100);
+        } else {
+            $('.reset-scale').css('opacity', 0).css('z-index', -1);
+        }
+        self.clearPath();
+        self.timeline.select(".time-axis").call(y_axis);
+        self.timeline.selectAll(".grid-line")
+            .attr("y1", y_scale)
+            .attr("y2", y_scale);
+        self.timeline.selectAll(".timeline-event")
+            .attr("cy", function(d) { return y_scale(d.coords[1]); });
+        self.timeline.selectAll(".description")
+            .attr("y", function(d) { return y_scale(d.coords[1]); });
+        self.fillPathData(x_scale, y_scale, display_dataset);
+        self.drawPath();
+        adjustDateLabel();
+    }
+
+    $('.reset-scale').click(function() {
+        zoom_handle.scale(1);
+        zoom_handle.translate([0, 0]);
+        zoom();
+    });
+
+    /* adjust Y axis label position */
+    function adjustDateLabel() {
+        var date_labels = $("g.time-axis#" + self.name.substr(1))[0].childNodes;
+        $.each(date_labels, function(index) {
+            if (date_labels[index].nodeName == "g") { // filter out the path element
+                date_labels[index].childNodes[1].setAttribute("dy", "-0.5em");
+                date_labels[index].setAttribute("id", self.name.substr(1));
+            }
+        });
+    }
+
+    // draw events on timeline
+    this.timeline.append('g')
+        .attr("id", "events-arena")
+        .attr("clip-path", "url(#timeline-clip)")
+        .selectAll("circle[id=" + this.name.substr(1) + "]")
+        .data(display_dataset)
         .enter()
         .append("circle")
+        .attr("class", "timeline-event")
         .attr("id", function(data, index){
             var generic_data = new GenericData(data.detail.type, data.detail);
             return self.name.substr(1) + "-" + generic_data.getId() + "-" + index;
@@ -333,33 +452,33 @@ Timeline.prototype.onDataReady = function() {
         .attr("r", this.radius)
         .call(this.drag_event);
 
-    this.fillPathData(x_scale, y_scale);
+    this.fillPathData(x_scale, y_scale, display_dataset);
     this.drawPath();
 
     this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
-        .data(this.dataset)
+        .data(display_dataset)
         .enter()
         .append("text")
         .attr("class", function(data){
-            if (data.detail.display) {
-                return data.detail.display;
-            }
-            return "desc";
+            return "description" + " " + data.detail.display;
         })
         .attr("id", this.name.substr(1))
         .text(function(data) {
             var generic_data = new GenericData(data.detail.type, data.detail);
             return generic_data.getDisplayName();
         })
-        .attr("fill", "blue");
+        .attr("fill", function(d) {
+            var generic_data = new GenericData(d.detail.type, d.detail);
+            return self.color_scale(Number(generic_data.getId()));
+        });
 
     var text_fields = $("text[id=" + this.name.substr(1) + "]");
-    $.each(self.dataset, function(index) {
-        text_fields[index].setAttribute("x", x_scale(self.dataset[index].coords[0]) + 5);
-        text_fields[index].setAttribute("y", y_scale(self.dataset[index].coords[1]));
+    $.each(display_dataset, function(index) {
+        text_fields[index].setAttribute("x", x_scale(display_dataset[index].coords[0]) + 5);
+        text_fields[index].setAttribute("y", y_scale(display_dataset[index].coords[1]));
         var generic_data = new GenericData(
-            self.dataset[index].detail.type,
-            self.dataset[index].detail
+            display_dataset[index].detail.type,
+            display_dataset[index].detail
         );
         text_fields[index].setAttribute("id", self.name.substr(1) + "-" + generic_data.getId() + "-" + index);
 
@@ -368,70 +487,87 @@ Timeline.prototype.onDataReady = function() {
         text_field.opentip(generic_data.getMessage(), {style: "tooltip_style"});
 
         text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
-            this.setAttribute("fill", "grey");
             this.setAttribute("cursor", "pointer");
         })
-        .mouseout(function(event){
-            this.setAttribute("fill", "blue");
+        .mouseout(function(event) {
             this.setAttribute("cursor", null);
         });
 
-        text_field.on("click", function(event){
+        text_field.on("click", function(event) {
             var target = event.target;
             console.log(target.id.split("-"));
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
         });
 
+        var time_indicator;
+        var time_label;
         var circle = $('circle[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
-        circle.mouseover(function(event){
+        circle.mouseover(function(event) {
+            var event_self = this;
             this.setAttribute("fill", "grey");
-            this.setAttribute("cursor", "move");
+            this.setAttribute("cursor", "pointer");
+            time_indicator = self.timeline.append("line")
+                .attr("class", "time-indicator")
+                .attr("y1", this.getAttribute("cy"))
+                .attr("y2", this.getAttribute("cy"))
+                .attr("x1", 0)
+                .attr("x2", "100%");
+
+            time_label = self.timeline.append("text")
+                .attr("class", "time-label")
+                .attr("x", 5)
+                .attr("y", Number(this.getAttribute("cy")) - 15)
+                .text(function() {
+                    var local_date = y_scale.invert(event_self.getAttribute("cy"));
+                    var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
+                    return formatter(local_date);
+                });
         })
-        .mouseout(function(event){
+        .mouseout(function(event) {
             this.setAttribute("fill", "black");
             this.setAttribute("cursor", null);
+            time_indicator.remove();
+            time_label.remove();
         });
     }); // each self.dataset
 
-    var y_axis = d3.svg.axis()
-        .scale(y_scale)
-        .orient("right")
-        .ticks(this.tick_num);
-
-    y_axis.tickFormat(function(date) {
-        date *= 1000; // convert to milliseconds
-        formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
-        return formatter(new Date(date));
-    });
-
-    this.timeline.append("g")
-        .attr("class", "time-axis")
-        .attr("id", this.name.substr(1))
-        .call(y_axis)
-        .call(this.drag_timeline);
-
-    var labels = $("g[id=" + this.name.substr(1) + "]")[0].childNodes;
-    $.each(labels, function(index) {
-        if (labels[index].nodeName == "g") {
-            labels[index].childNodes[1].setAttribute("dy", "-0.5em");
-            labels[index].setAttribute("id", self.name.substr(1));
-        }
-    });
-
-    var grid = this.timeline.selectAll("g[id=" + this.name.substr(1) + "].grid")
-        .data(y_scale.ticks(this.tick_num))
-        .enter()
-        .append("g")
-        .attr("class", "grid");
-
-    grid.append("line")
-        .attr("y1", y_scale)
-        .attr("y2", y_scale)
-        .attr("x1", 0)
-        .attr("x2", "100%");
-
 } // function onDataReady()
 
+Timeline.prototype.getOldestDate = function() {
+    var min = this.dataset[0].coords[1];
+    this.dataset.forEach(function(data) {
+        if (data.coords[1] <= min) {
+            min = data.coords[1];
+        }
+    });
+    return Number(min);
+}
 
+Timeline.prototype.getLatestDate = function() {
+    var max = this.dataset[0].coords[1];
+    this.dataset.forEach(function(data) {
+        if (data.coords[1] >= max) {
+            max = data.coords[1];
+        }
+    });
+    return Number(max);
+}
+
+Timeline.prototype.initTickInterval = function() {
+    var unit_options = [
+        d3.time.seconds.utc,
+        d3.time.minutes.utc
+    ];
+    var step_options = [
+        5,
+        15
+    ];
+
+    var unit_index = this.dataset.length < 100 ? 0 : 0;
+    var step_index = this.dataset.length < 300 ? 0 : 1;
+
+    this.tick_unit = unit_options[unit_index];
+    this.tick_step = step_options[step_index];
+}
 
 

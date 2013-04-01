@@ -1,0 +1,76 @@
+!!! 5
+html
+    head
+        title Android Forensic Timeline
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/bootstrap-responsive.min.css')
+        meta(name='viewport', 'content'='user-scalable=yes, width=device-width, initial-scale=0.8, maximum-scale=1.2')
+        link(rel='stylesheet', href='/css/style.css')
+        link(rel='stylesheet', href='/css/opentip.css')
+        -each script in globalScripts
+            script(type = 'text/javascript', src = script)
+
+    body
+        div.progress.progress-striped.active#progress-bar
+            div.bar#progress-indicator
+        div#aggregation-pane.dropdown-div
+            div#aggregation-arena
+            div.dropdown-ctrl-bar
+                div(title="Expand aggregation pane").dropdown-ctrl
+        div#responsive-pane.slide-right-div
+            div.slide-right-ctrl-bar
+                div(title="Expand responsive pane").slide-right-ctrl
+            div.responsive-div
+                p.nav-header Responsive PIDs
+                div#responsive-pids
+                p.nav-header Responsive Objects
+                div#responsive-objects
+        div.container-fluid
+            div.span3
+                div.ctrl-panel
+                    ul.nav.nav-pills.nav-stacked
+                        li.nav-header Query Pane
+                        li
+                            input(type="text", placeholder="collection")#collection-input
+                            input(type="text", placeholder="selection")#selection-input
+                            input(type="text", placeholder="fields")#fields-input
+                            input(type="text", placeholder="filter")#filter-input
+                        li
+                            div.btn-group
+                                button#search.btn.btn-success.btn-small Search
+                                button#append.btn.btn-info.btn-small Append
+                                button#filter.btn.btn-warning.btn-small Filter
+                                button#clear.btn.btn-danger.btn-small Clear
+                        li.nav-header Timeline Window
+                        li
+                            select#time-window-start.selection-field
+                                option from...
+                            select#time-window-end.selection-field
+                                option to...
+                        li.nav-header.cozy-list-header Objects Selection
+                        li
+                            select(multiple="multiple")#objects.selection-field
+                        li.nav-header.cozy-list-header PIDs Selection
+                        li
+                            select(multiple="multiple")#pids.selection-field
+                        li.nav-header.cozy-list-header Aggregation Pane
+                        li
+                            select#map-reduce-type.selection-field
+                                option aggregate by ...
+                            button#aggregate-btn.btn.btn-success.btn-small Aggregate
+            div.span10#content
+                p.nav-header.text-center Timeline Pane
+                fieldset#col_left
+                    #timeline_0.timeline
+                fieldset#col_right
+                    #timeline_1.timeline
+        script(type = 'text/javascript', src = '/js/operator.js')
+        a(href="#", class="back-to-top")
+        a.reset-scale
+        script(type = 'text/javascript', src = '/js/timeline_gen.js')
+
+
+
+
+
+

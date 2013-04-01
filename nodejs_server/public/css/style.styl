@@ -1,25 +1,47 @@
 @import 'nib'
 
-#logo
-    h1
-        color: #777
-        margin-left: -12px
-        -webkit-user-select: none;
-        -moz-user-select: none;
-    p
-        color: #222
-        font-size: 16px
-        font-family: Consolas
-        margin-left: -12px
-        -webkit-user-select: none;
-        -moz-user-select: none;
+.container-fluid
+    margin-top: 25px
 
-#side-panel
+.alert
+    position: absolute
+    top: 25px
+    width: 200px
+    left: 42%
+
+input
+    width: 100%
+
+select
+    width: 100%
+
+.ctrl-panel
     position: fixed
-    top: 5px
+
+ul
+    width: 205px
+
+li.nav-header.cozy-list-header
+    margin-top: -5px
+
+.selection-field
+    font-family: Consolas
+
+#progress-bar
+    position: fixed
+    bottom: -20px
+    width: 100%
+    margin-bottom: 0px
+
+// display control on pids selection pane
+label
+    display: inline-block
 
 #content
-    position: relative
+    position: absolute
+    margin-left: 0px
+    left: 260px
+    width: 79%
     fieldset
         position: absolute
     #col_left
@@ -30,18 +52,123 @@
         right: -5px
 
 .timeline
-    margin-top: 45px
+    margin-top: 5px
     -webkit-user-select: none;
     -moz-user-select: none;
 
-.time-axis
-    cursor: move
-    pointer-events: all
+.span3
+    margin-left: 0px
 
-    path, line
-        fill: none
-        stroke: black
-        shape-rendering: crispEdges
+.responsive-div
+    margin-left: 50px
+
+.slide-right-div
+    position: fixed
+    right: -280px
+    z-index: 100
+    opacity: 0.9
+    background: white
+    width: 300px
+    height: 90%
+    margin-top: 20px
+
+#responsive-pids
+    label
+        margin-right: 5px
+        font-family: Consolas
+    overflow-x: hidden
+    overflow-y: auto
+    height: 220px
+    margin-top: -10px
+
+#responsive-objects
+    label
+        display: block
+        font-family: Consolas
+    overflow-x: hidden
+    overflow-y: auto
+    height: 500px
+    margin-top: -5px
+
+#pid-checkbox, #object-checkbox
+    margin-right: 5px
+
+.slide-right-ctrl-bar
+    position: absolute
+    width: 20px
+    height: 100%
+    left: 0px
+    cursor: pointer
+    z-index: 50
+
+    .slide-right-ctrl
+        position: absolute
+        width: 16px
+        height: 85px
+        bottom: 0px
+        z-index: 0
+        top: 45%
+        background: url('/images/sidebar_icon.png') top right
+        -webkit-transform: rotate(0deg)
+        -moz-transform: rotate(0deg)
+
+.slide-right-ctrl-bar:hover
+    .slide-right-ctrl
+        background: url('/images/sidebar_icon.png') bottom right
+
+.dropdown-div
+    position: fixed
+    top: -680px
+    z-index: 100
+    opacity: 0.9
+    background: white
+    width: 99%
+    height: 700px
+    margin-left: 5px
+
+.dropdown-ctrl-bar
+    position: absolute
+    width: 100%
+    height: 20px
+    bottom: 0px
+    cursor: pointer
+    z-index: 50
+
+    .dropdown-ctrl
+        position: absolute
+        width: 85px
+        height: 16px
+        bottom: 0px
+        z-index: 0
+        left: 47%
+        background: url('/images/dropdown_bar_icon.png') top right
+        -webkit-transform: rotate(180deg)
+        -moz-transform: rotate(180deg)
+
+.dropdown-ctrl-bar:hover
+    .dropdown-ctrl
+        background: url('/images/dropdown_bar_icon.png') top left
+
+#aggregation-pane, #responsive-pane
+    border: 2px solid
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
+    border-radius: 8px
+
+#aggregation-arena
+    margin-top: 20px
+    margin-left: 50px
+
+.aggregated-graph
+    position: fixed
+
+.cluster, timeline-event
+    stroke: #000
+
+.aggregation-axis, .time-axis
+    fill: none
+    stroke: #000
+    shape-rendering: crispEdges
 
     text
         font-family: Consolas
@@ -52,22 +179,57 @@
         opacity: 0.3
         stroke: black
         pointer-events: none
+        stroke-dasharray: 5,5
 
-.ctlbar
-    position: fixed
+.time-label
+    font-family: Consolas
+    font-size: 13px
+    fill: blue
+
+.time-indicator
+    opacity: 0.7
+    stroke: red
+    stroke-dasharray: 8,8
+    pointer-events: none
+
+rect
+    fill: none
+
+rect.ctrl-pane, rect.timeline-ctrl-pane
+    cursor: move
+    fill: none
+    pointer-events: all
+
+.graph-title
+    font-family: Consolas
+    font-size: 200%
     z-index: 100
-    top: 10px
-
-.btn
-    opacity: 0.8
+    font-style: oblique
+    font-variant: small-caps
 
 .back-to-top
     position: fixed
-    right: 25px
-    bottom: 25px
+    right: 40px
+    bottom: 20px
     z-index: -1
     opacity: 0
+    background: url("/images/back-to-top.png")
+    width: 64px
+    height: 64px
 
+.reset-scale
+    position: fixed
+    cursor: pointer
+    right: 110px
+    bottom: 20px
+    z-index: -1
+    opacity: 0
+    background: url("/images/reset-timeline.png")
+    width: 64px
+    height: 64px
+
+.description
+    font-family: Consolas
 
 
 

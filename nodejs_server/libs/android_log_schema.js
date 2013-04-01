@@ -9,7 +9,7 @@ exports.EVENT_SCHEMA = {
 
 exports.collections = ['dmesg', 'radio', 'events', 'main', 'system'];
 
-exports.name = "android_log_schema";
+exports.name = "android_logs";
 
 exports.fields = ["date", "pid", "object", "msg", "level"];
 
