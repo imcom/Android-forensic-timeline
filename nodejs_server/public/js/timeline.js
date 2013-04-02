@@ -10,12 +10,12 @@
  * name: div to draw, timeline_height: svg height, x_range: svg width, radius: circle size
  *
  */
-function Timeline(name, timeline_height, x_range, radius) {
+function Timeline(name) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    this.x_range = x_range;
-    this.timeline_height = timeline_height;
+    this.x_range = [120, 520];
+    this.timeline_height = 3000;
 
     // dynamically configurable values
     this.dataset = [];
@@ -115,8 +115,9 @@ Timeline.prototype.updateXDomain = function(x) {
             this.x_domain_max = x;
         }
     }
-    if (!$.inArray(x, this.x_domain_array))
+    if ($.inArray(x, this.x_domain_array) == -1) {
         this.x_domain_array.push(x);
+    }
 }
 
 Timeline.prototype.updateYDomain = function(y) {
@@ -134,15 +135,6 @@ Timeline.prototype.updateYDomain = function(y) {
         }
     }
 }
-
-Timeline.prototype.getEvent = function(index) {
-    return this.dataset[index];
-}
-
-/*
-Timeline.prototype.getHeight = function() {
-    return this.timeline_height;
-}*/
 
 Timeline.prototype.getName = function() {
     return this.name;
@@ -167,21 +159,26 @@ Timeline.prototype.initTimeline = function() {
 
 } // init timeline SVG and properties
 
-Timeline.prototype.initYRange = function() {
-    // min: 100, max: 8000; upper bound min: 800
+Timeline.prototype.initYRange = function() { //TODO need to refine this method for better display
+    // min: 100, max: 3000; upper bound min: 800
     var data_length = this.dataset.length;
     var upper_range = data_length * 500;
-    upper_range = upper_range > 8000 ? 8000 : (upper_range < 800 ? 800 : upper_range);
+    console.log(data_length);
+    console.log(this.y_domain_max - this.y_domain_min);
+    upper_range = upper_range > 8000 ? 8000 : (upper_range < 100 ? 50 : upper_range);
     return [this.y_range_padding, upper_range];
 }
 
-Timeline.prototype.refineXDomainMax = function() {
+//TODO refineXDomainMax function will be deprecated
+/*Timeline.prototype.refineXDomainMax = function() {
     var median = d3.median(this.x_domain_array);
     this.x_domain_max = this.x_domain_max > median * 2 ? median + this.x_domain_min : this.x_domain_max;
-}
+    this.x_domain_min = this.x_domain_min < median / 2 ? median - this.x_domain_min : this.x_domain_min;
+}*/
 
 Timeline.prototype.clearData = function() {
     this.dataset = [];
+    this.suspects = [];
     this.x_domain_min = 0;
     this.x_domain_max = 0;
     this.y_domain_min = 0;
@@ -191,28 +188,6 @@ Timeline.prototype.clearData = function() {
 Timeline.prototype.removeTimeline = function() {
     $(this.getName()).children('.timeline-graph').remove();
 }
-
-// fetchData is deprecated since data is fed into Timeline directly
-/*
-Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, collection, selection, fields, options
-    var total = queries.length;
-    var excuted = 0;
-    var self = this;
-    queries.forEach(function(query, index) {
-        self.query( // invoke class method `query` for Ajax
-            query.uri,
-            query.collection,
-            query.selection,
-            query.fields,
-            query.options,
-            function(self) { // this self is passed from Ajax callback, which refers to Timeline class instance
-                excuted += 1;
-                if (excuted == total) {
-                    self.onDataReady();
-                }
-            });
-    });
-}*/
 
 Timeline.prototype.setDataset = function(dataset) {
     var self = this;
@@ -271,85 +246,11 @@ Timeline.prototype.setDataset = function(dataset) {
             }
         }
     }
-    this.refineXDomainMax();
+    //FIXME use Ordinal scale for X-axis
+    //this.refineXDomainMax();
     // on dataset is set, draw timeline
     this.onDataReady();
 }
-// query function is deprecated, data is fed into Timelien from other place
-/*
-Timeline.prototype.query = function(uri, collection, selection, fields, options, onQueryComplete) {
-    var self = this;
-    var query_content = {
-            collection: collection
-    };
-    if (options) {
-        query_content.options = options;
-    }
-    if (selection) {
-        query_content.selection = selection;
-    }
-    if (fields) {
-        query_content.fields = fields;
-    }
-    var overlap_increment = self.y_padding / 2;
-
-    $.post(
-        uri,
-        query_content,
-        function(data, status, xhr){
-            //init dataset here
-            if (data.error != 0) {
-                //TODO error handling here
-                console.log("server error occured");
-            } else { // on query success
-                var generic_data = new GenericData(data.type, data.content);
-                var y_starts_on = generic_data.getDate(0);
-                var x_starts_on = self.x_default;
-                var previous_date = y_starts_on;
-                $.each(data.content, function(index) {
-                    var event_data = {};
-                    data.content[index].display = "normal";
-                    if (index == 0) {
-                        event_data.coords = [x_starts_on, y_starts_on];
-                    } else {
-                        if (generic_data.getDate(index) == previous_date) {
-                            // overlap with next timestamp, then roll back
-                            if (self.y_padding + y_starts_on >= previous_date + 1) {
-                                // set offset on x-axis for distinguish
-                                x_starts_on += self.x_padding;
-                                y_starts_on = previous_date + overlap_increment;
-                                overlap_increment += overlap_increment;
-                            } else {
-                                y_starts_on += self.y_padding;
-                            }
-                            event_data.coords = [x_starts_on, y_starts_on];
-                        // wrong sequence detected
-                        } else if (generic_data.getDate(index) < previous_date) {
-                            // using a different offset for distinguish
-                            event_data.coords = [self.x_suspect, generic_data.getDate(index)];
-                            //TODO css class, set a different style for suspect events
-                            data.content[index].display = "suspect";
-                        } else {
-                            previous_date = generic_data.getDate(index);
-                            y_starts_on = previous_date;
-                            x_starts_on = self.x_default;
-                            event_data.coords = [self.x_default, y_starts_on];
-                            overlap_increment = self.y_padding / 2;
-                        }
-                    } // if index != 0
-                    self.updateXDomain(event_data.coords[0]);
-                    self.updateYDomain(event_data.coords[1]);
-                    data.content[index].type = data.type;
-                    event_data.detail = data.content[index];
-                    self.dataset.push(event_data);
-                });
-                // on query done, callback to caller
-                onQueryComplete(self);
-            }
-        },
-        "json" // expected response type
-    );
-} */
 
 Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
     var self = this;
@@ -378,7 +279,7 @@ Timeline.prototype.drawPath = function() {
 Timeline.prototype.onDataReady = function() {
     var self = this;
     // calculate the entire time period
-    var date_padding = 5; // unit: seconds
+    var date_padding = 2; // unit: seconds
     var start_date = new Date((Number(this.y_domain_min) - date_padding) * 1000);
     var end_date = new Date((Number(this.y_domain_max) + date_padding) * 1000);
 
@@ -403,19 +304,19 @@ Timeline.prototype.onDataReady = function() {
     this.y_range = this.initYRange();
 
     var x_scale = d3.scale.linear()
-                 .domain([
-                            this.x_domain_min,
-                            this.x_domain_max
-                        ])
-                 .range(this.x_range)
-                 .clamp(true);
+                .domain([
+                        this.x_domain_min,
+                        this.x_domain_max
+                    ])
+                .range(this.x_range)
+                .clamp(true);
 
     var y_scale = d3.time.scale.utc()
-                 .domain([
-                            start_date,
-                            end_date
-                        ])
-                 .range(this.y_range);
+                .domain([
+                        start_date,
+                        end_date
+                    ])
+                .range(this.y_range);
 
     var radius_range = [5, 20];
     var radius_scale = d3.scale.pow()
@@ -459,8 +360,9 @@ Timeline.prototype.onDataReady = function() {
         .attr("x2", "100%");
 
     // append clipping components
-    var scale_extent = [1, 20]; // used for zoom function
+    var scale_extent = [-5, 20]; // used for zoom function
     var zoom_handle = d3.behavior.zoom()
+                .x(x_scale)
                 .y(y_scale)
                 .scaleExtent(scale_extent)
                 .on("zoom", zoom);
@@ -483,8 +385,10 @@ Timeline.prototype.onDataReady = function() {
             .attr("y1", y_scale)
             .attr("y2", y_scale);
         self.timeline.selectAll(".timeline-event")
+            .attr("cx", function(d) { return x_scale(d._id); })
             .attr("cy", function(d) { return y_scale(d.date); });
         self.timeline.selectAll(".description")
+            .attr("x", function(d) { return x_scale(d._id); })
             .attr("y", function(d) { return y_scale(d.date); });
         self.fillPathData(x_scale, y_scale, display_dataset);
         self.drawPath();
@@ -565,8 +469,6 @@ Timeline.prototype.onDataReady = function() {
         .attr("class", "description")
         .attr("id", this.name.substr(1))
         .text(function(data) {
-            //var generic_data = new GenericData(data.detail.type, data.detail);
-            //return generic_data.getDisplayName();
             return data._id;
         })
         .attr("fill", "black");
@@ -660,12 +562,14 @@ Timeline.prototype.initTickInterval = function() {
         d3.time.minutes.utc
     ];
     var step_options = [
+        1,
         5,
         15
     ];
 
-    var unit_index = this.dataset.length < 100 ? 0 : 0;
-    var step_index = this.dataset.length < 222 ? 0 : 1;
+    var time_gap = this.y_domain_max - this.y_domain_min;
+    var unit_index = time_gap < 1000 ? 0 : 0;
+    var step_index = time_gap < 200 ? 0 : (time_gap < 1000 ? 1 : 2);
 
     this.tick_unit = unit_options[unit_index];
     this.tick_step = step_options[step_index];

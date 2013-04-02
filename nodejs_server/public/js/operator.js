@@ -3,8 +3,15 @@
 jQuery.noConflict();
 $ = Zepto;
 
+// query or display area
 var collection = $('#collection-input');
 var selection = $('#selection-input');
+var object_pane = $('#objects');
+var id_pane = $('#ids');
+var responsive_id_pane = $('#responsive-ids');
+var responsive_object_pane = $('#responsive-objects');
+var aggregation_options = $('#map-reduce-type');
+var aggregation_arena = $('#aggregation-arena');
 
 window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
@@ -14,24 +21,22 @@ window.onscroll = function(event) {
     }
 }
 
+// control buttons
 var search_btn = $('#search');
 var append_btn = $('#append');
 var filter_btn = $('#filter');
 var clear_btn = $('#clear');
-var object_pane = $('#objects');
-var id_pane = $('#ids');
-var responsive_id_pane = $('#responsive-ids');
-var responsive_object_pane = $('#responsive-objects');
 var dropdown_btn = $('.dropdown-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
-var aggregation_options = $('#map-reduce-type');
-var aggregation_arena = $('#aggregation-arena');
 
 var dataset = [];
 var time_range = [];
 var dropdown_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
+
+var timeline_main = new Timeline("#timeline_main");
+var timeline_extend = new Timeline("#timeline_extend");
 
 function initTimeRange(target_set) {
     target_set.forEach(function(record) {
@@ -87,7 +92,7 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
 function onIdSelection() {
     var id_checkboxs = $('input[id="id-checkbox"]');
     var object_checkboxs = $('input[id="object-checkbox"]');
-    var display_dataset = dataset;
+    var display_dataset;
     var display_ids = [];
     id_checkboxs.forEach(function(checkbox) {
         if (checkbox.checked) {
@@ -97,12 +102,14 @@ function onIdSelection() {
     display_dataset = dataset.filter(function(record) {
         return $.inArray(record._id, display_ids) != -1;
     });
-    clearPanes(false);
+    clearPanes(false, false);
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
     updateResponsivePane(object_checkboxs, display_dataset, "object");
-    $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
+    timeline_main.clearData();
+    timeline_main.initTimeline();
+    timeline_main.setDataset(display_dataset);
 }
 
 function onObjectSelection() {
@@ -118,11 +125,14 @@ function onObjectSelection() {
     display_dataset = dataset.filter(function(record) {
         return $.inArray(record.object, display_objects) != -1;
     });
-    clearPanes(false);
+    clearPanes(false, false);
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
     updateResponsivePane(id_checkboxs, display_dataset, "_id");
+    timeline_main.clearData();
+    timeline_main.initTimeline();
+    timeline_main.setDataset(display_dataset);
 }
 
 function fillResponsivePane(target_set) {
@@ -161,29 +171,36 @@ function fillPanes(src) {
             ids.push(record._id);
         }
     });
+    $("#objects option").click(function() {
+        id_pane.val(null);
+    });
+    $("#ids option").click(function() {
+        object_pane.val(null);
+    });
 }
 
-function clearPanes(clear_all) {
+function clearPanes(clear_responsive, clear_aggregation) {
     object_pane.children().remove();
     id_pane.children().remove();
-    aggregation_options.children().remove();
-    aggregation_options.append("<option>aggregate by ...</option>");
     var window_start = $('#time-window-start');
     var window_end = $('#time-window-end');
     window_start.children().remove();
     window_end.children().remove();
-    if (clear_all) {
+    $('#timeline_main').children().remove();
+    $('#timeline_extend').children().remove();
+    if (clear_responsive) {
         responsive_id_pane.children().remove();
         responsive_object_pane.children().remove();
     }
-    $('#timeline_0').children().remove();
-    $('#timeline_1').children().remove();
+    if (clear_aggregation) {
+        aggregation_options.children().remove();
+        aggregation_options.append("<option>aggregate by ...</option>");
+    }
 }
 
 function formSelection() {
-    //var stime = start_time.val();
-    //var etime = end_time.val();
-    //var dkeyword = date_keyword.val();
+
+
     var sel = {};
     if (selection.val() != '') {
         sel = JSON.parse(selection.val());
@@ -228,20 +245,13 @@ search_btn.click(function() {
         success: function(data) {
             var generic_data = new GenericData(data.type, data.content);
             dataset = generic_data.unifyDataset();
-            clearPanes(true);
+            clearPanes(true, true);
             fillPanes(dataset);
             fillResponsivePane(dataset);
             initTimeRange(dataset);
             fillMapReduceOptions(data.type);
-            //TODO make the arguments variable and timeline div should specified from UI
-            var timeline = new Timeline(
-                "#timeline_0",
-                3000,
-                [120, 400],
-                5
-            );
-            timeline.initTimeline();
-            timeline.setDataset(dataset);
+            timeline_main.initTimeline();
+            timeline_main.setDataset(dataset);
         },
         error: function(xhr, type) {
             showAlert("search query error!");
@@ -265,7 +275,7 @@ append_btn.click(function() {
             data.content.forEach(function(record){
                 dataset.push(record);
             });
-            clearPanes(true);
+            clearPanes(true, false);
             fillPanes(dataset);
             fillResponsivePane(dataset);
             resetTimeRange();
@@ -279,25 +289,27 @@ append_btn.click(function() {
 });
 
 filter_btn.click(function() {
-    var dataset_buf = null;
-    var date_filter = null;
+    var filtered_dataset = dataset;
 
-    /*var stime = start_time.val();
-    var etime = end_time.val();
-    if (stime != '' && etime != '') {
-        date_filter = {$gte: Number(stime), $lte: Number(etime)};
-    } else if (stime != '' && etime == '') {
-        date_filter = {$gte: stime.val()};
-    } else if (stime == '' && etime != '') {
-        date_filter = {$lte: etime.val()};
-    }*/
+    // time window filter
+    var start_time = Number($('#time-window-start').val());
+    var end_time = Number($('#time-window-end').val());
+    if (start_time > end_time) {
+        showAlert("Invalid time window");
+        return;
+    } else {
+        filtered_dataset = dataset.filter(function(record) {
+            return (record.date >= start_time && record.date <= end_time);
+        });
+    }
+
+    // selection filter, picking up specified records from the original dataset
     var filter_selection = null;
     if (selection.val() != '') {
         var filter_selection = JSON.parse(selection.val());
     }
     if (filter_selection != null) {
-        dataset_buf = dataset;
-        dataset = dataset_buf.filter(function(record) {
+        filtered_dataset = filtered_dataset.filter(function(record) {
             var matched = true;
             for (var k in filter_selection) {
                 if (fil.hasOwnProperty(k)) {
@@ -307,60 +319,37 @@ filter_btn.click(function() {
             if (matched) return record;
         });
     }
-    if (date_filter != null) {
-        dataset_buf = dataset;
-        dataset = dataset_buf.filter(function(record) {
-            return (record.date <= date_filter.$lte && record.date >= date_filter.$gte);
-        });
-    }
+
+    // object or id specification filter, picking up on particular object or id
     var obj_filter = object_pane.val();
     var id_filter = id_pane.val();
-    if (obj_filter != '') {
-        dataset_buf = dataset;
-        dataset = dataset_buf.filter(function(record) {
+    if (obj_filter != '' && id_filter == '') {
+        filtered_dataset = filtered_dataset.filter(function(record) {
             return (record.object == obj_filter);
         });
-    }
-    if (id_filter != '') {
-        dataset_buf = dataset;
-        dataset = dataset_buf.filter(function(record) {
+    } else if (id_filter != '' && obj_filter == '') {
+        filtered_dataset = filtered_dataset.filter(function(record) {
             return (record._id == id_filter);
         });
+    } else if (id_filter != '' && obj_filter != '') {
+        showAlert('Invalid filter condition');
     }
-    clearPanes(true);
-    fillPanes(dataset);
-    fillResponsivePane(dataset);
+    clearPanes(true, false);
+    fillPanes(filtered_dataset);
+    fillResponsivePane(filtered_dataset);
     resetTimeRange();
-    initTimeRange(dataset);
-    $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
+    initTimeRange(filtered_dataset);
+    timeline_main.clearData();
+    timeline_main.initTimeline();
+    timeline_main.setDataset(filtered_dataset);
 });
 
 clear_btn.click(function() {
     $('#arena').children().text("Show results here...");
     $('#aggregation-arena').children().remove();
-    clearPanes(true);
+    clearPanes(true, true);
     resetTimeRange();
 });
-/*
-time_btn.click(function() {
-    var start_time = Number($('#time-window-start').val());
-    var end_time = Number($('#time-window-end').val());
-    if (start_time > end_time) {
-        alert("Invalid time window");
-    } else {
-        var display_dataset = dataset;
-        var display_pids = [];
-        display_dataset = dataset.filter(function(record) {
-            return (record.date >= start_time && record.date <= end_time);
-        });
-        clearPanes(true);
-        fillPanes(display_dataset);
-        fillResponsivePane(display_dataset);
-        resetTimeRange();
-        initTimeRange(display_dataset);
-        $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
-    }
-});*/
 
 dropdown_btn.click(function() {
     var aggregation_pane = $('#aggregation-pane');

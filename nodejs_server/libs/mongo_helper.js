@@ -51,7 +51,7 @@ exports.mapreduce = function(req, res) {
         if (req.body.collection === 'main') {
             if (req.body.aggregation === 'object') {
                 obj = android_logs.aggregateByObject;
-            } else if (req.body.aggregation === 'pid') {
+            } else if (req.body.aggregation === 'id') {
                 obj = android_logs.aggregateByPid;
             }
         }
