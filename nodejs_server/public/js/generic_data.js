@@ -14,7 +14,7 @@ function GenericData(type, dataset) {
         this.data_handler = new BrowserHistory(dataset);
     }
 
-    if (type === 'content_provider_apps') {
+    if (type === 'content_provider_applications') {
         this.data_handler = new Applications(dataset);
     }
 
@@ -38,14 +38,26 @@ function GenericData(type, dataset) {
         this.data_handler = new Services(dataset);
     }
 
-    if (type === 'fs_time_schema') {
+    if (type === 'fs_time') {
         this.data_handler = new FSTime(dataset);
     }
 
-    if (type === 'inode_time_schema') {
+    if (type === 'inode_time') {
         this.data_handler = new InodeTime(dataset);
     }
 
+}
+
+GenericData.prototype.unifyDataset = function() {
+    return this.data_handler.unifyDataset();
+}
+
+GenericData.prototype.getIdField = function() {
+    return this.data_handler.getIdField();
+}
+
+GenericData.prototype.getObjectField = function() {
+    return this.data_handler.getObjectField();
 }
 
 GenericData.prototype.getDate = function(index) {

@@ -5,8 +5,6 @@ $ = Zepto;
 
 var collection = $('#collection-input');
 var selection = $('#selection-input');
-var fields = $('#fields-input');
-var filter = $('#filter-input');
 
 window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
@@ -21,8 +19,8 @@ var append_btn = $('#append');
 var filter_btn = $('#filter');
 var clear_btn = $('#clear');
 var object_pane = $('#objects');
-var pid_pane = $('#pids');
-var responsive_pid_pane = $('#responsive-pids');
+var id_pane = $('#ids');
+var responsive_id_pane = $('#responsive-ids');
 var responsive_object_pane = $('#responsive-objects');
 var dropdown_btn = $('.dropdown-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
@@ -86,18 +84,18 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
     });
 }
 
-function onPidSelection() {
-    var pid_checkboxs = $('input[id="pid-checkbox"]');
+function onIdSelection() {
+    var id_checkboxs = $('input[id="id-checkbox"]');
     var object_checkboxs = $('input[id="object-checkbox"]');
     var display_dataset = dataset;
-    var display_pids = [];
-    pid_checkboxs.forEach(function(checkbox) {
+    var display_ids = [];
+    id_checkboxs.forEach(function(checkbox) {
         if (checkbox.checked) {
-            display_pids.push(checkbox.value);
+            display_ids.push(checkbox.value);
         }
     });
     display_dataset = dataset.filter(function(record) {
-        return $.inArray(record.pid, display_pids) != -1;
+        return $.inArray(record._id, display_ids) != -1;
     });
     clearPanes(false);
     fillPanes(display_dataset);
@@ -109,7 +107,7 @@ function onPidSelection() {
 
 function onObjectSelection() {
     var object_checkboxs = $('input[id="object-checkbox"]');
-    var pid_checkboxs = $('input[id="pid-checkbox"]');
+    var id_checkboxs = $('input[id="id-checkbox"]');
     var display_dataset = dataset;
     var display_objects = [];
     object_checkboxs.forEach(function(checkbox) {
@@ -124,19 +122,18 @@ function onObjectSelection() {
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
-    updateResponsivePane(pid_checkboxs, display_dataset, "pid");
-    $('#arena').children().text(JSON.stringify(display_dataset, undefined, 4));
+    updateResponsivePane(id_checkboxs, display_dataset, "_id");
 }
 
 function fillResponsivePane(target_set) {
-    var pids = [];
+    var ids = [];
     var objects = [];
     target_set.forEach(function(record) {
-        if ($.inArray(record.pid, pids) == -1) {
-            responsive_pid_pane.append(
-                "<label type='checkbox inline'><input id='pid-checkbox' type='checkbox' onChange='onPidSelection()' value='" + record.pid + "'>" + record.pid + "</label>"
+        if ($.inArray(record._id, ids) == -1) {
+            responsive_id_pane.append(
+                "<label type='checkbox inline'><input id='id-checkbox' type='checkbox' onChange='onIdSelection()' value='" + record._id + "'>" + record._id + "</label>"
             );
-            pids.push(record.pid);
+            ids.push(record._id);
         }
         if ($.inArray(record.object, objects) == -1) {
             responsive_object_pane.append(
@@ -153,22 +150,22 @@ function fillResponsivePane(target_set) {
 
 function fillPanes(src) {
     var objects = [];
-    var pids = [];
+    var ids = [];
     src.forEach(function(record) {
         if ($.inArray(record.object, objects) == -1) {
             object_pane.append("<option>" + record.object + "</option>");
             objects.push(record.object);
         }
-        if ($.inArray(record.pid, pids) == -1) {
-            pid_pane.append("<option>" + record.pid + "</option>");
-            pids.push(record.pid);
+        if ($.inArray(record._id, ids) == -1) {
+            id_pane.append("<option>" + record._id + "</option>");
+            ids.push(record._id);
         }
     });
 }
 
 function clearPanes(clear_all) {
     object_pane.children().remove();
-    pid_pane.children().remove();
+    id_pane.children().remove();
     aggregation_options.children().remove();
     aggregation_options.append("<option>aggregate by ...</option>");
     var window_start = $('#time-window-start');
@@ -176,9 +173,11 @@ function clearPanes(clear_all) {
     window_start.children().remove();
     window_end.children().remove();
     if (clear_all) {
-        responsive_pid_pane.children().remove();
+        responsive_id_pane.children().remove();
         responsive_object_pane.children().remove();
     }
+    $('#timeline_0').children().remove();
+    $('#timeline_1').children().remove();
 }
 
 function formSelection() {
@@ -207,42 +206,42 @@ function fillMapReduceOptions(data_type) {
     aggregation_options.children().remove();
     if (data_type === 'android_logs') {
         aggregation_options.append("<option value='object'>aggregate by Object</option>");
-        aggregation_options.append("<option value='pid'>aggregate by PID</option>");
+        aggregation_options.append("<option value='id'>aggregate by ID</option>");
     }
 }
 
 search_btn.click(function() {
     dataset = []; // clear dataset for new data
     var selection = formSelection();
-    var target = collection.val().split(':'); // target = [url, collection]
+    var target = collection.val().split(':'); // target = [url(type), collection]
     $.ajax({
         type: "POST",
         url: target[0],
         data: {
             collection: target[1],
             selection: selection,
-            fields: fields.val() ? fields.val().split(' ') : [],
+            //fields: fields.val() ? fields.val().split(' ') : [],
+            fields: [],
             type: "query"
         },
         dataType: 'json',
         success: function(data) {
-            data.content.forEach(function(record) {
-                dataset.push(record);
-            });
+            var generic_data = new GenericData(data.type, data.content);
+            dataset = generic_data.unifyDataset();
             clearPanes(true);
             fillPanes(dataset);
             fillResponsivePane(dataset);
             initTimeRange(dataset);
             fillMapReduceOptions(data.type);
             //TODO make the arguments variable and timeline div should specified from UI
-            var timeline_0 = new Timeline(
+            var timeline = new Timeline(
                 "#timeline_0",
                 3000,
                 [120, 400],
                 5
             );
-            timeline_0.initTimeline();
-            timeline_0.setDataset(data);
+            timeline.initTimeline();
+            timeline.setDataset(dataset);
         },
         error: function(xhr, type) {
             showAlert("search query error!");
@@ -258,7 +257,7 @@ append_btn.click(function() {
         data: {
             collection: collection.val(),
             selection: sel,
-            fields: fields.val(),
+            fields: [],
             type: "query"
         },
         dataType: 'json',
@@ -283,7 +282,7 @@ filter_btn.click(function() {
     var dataset_buf = null;
     var date_filter = null;
 
-    var stime = start_time.val();
+    /*var stime = start_time.val();
     var etime = end_time.val();
     if (stime != '' && etime != '') {
         date_filter = {$gte: Number(stime), $lte: Number(etime)};
@@ -291,16 +290,16 @@ filter_btn.click(function() {
         date_filter = {$gte: stime.val()};
     } else if (stime == '' && etime != '') {
         date_filter = {$lte: etime.val()};
+    }*/
+    var filter_selection = null;
+    if (selection.val() != '') {
+        var filter_selection = JSON.parse(selection.val());
     }
-    var fil = null;
-    if (filter.val() != '') {
-        var fil = JSON.parse(filter.val());
-    }
-    if (fil != null) {
+    if (filter_selection != null) {
         dataset_buf = dataset;
         dataset = dataset_buf.filter(function(record) {
             var matched = true;
-            for (var k in fil) {
+            for (var k in filter_selection) {
                 if (fil.hasOwnProperty(k)) {
                     matched &= (record[k] == fil[k]);
                 }
@@ -315,17 +314,17 @@ filter_btn.click(function() {
         });
     }
     var obj_filter = object_pane.val();
-    var pid_filter = pid_pane.val();
+    var id_filter = id_pane.val();
     if (obj_filter != '') {
         dataset_buf = dataset;
         dataset = dataset_buf.filter(function(record) {
             return (record.object == obj_filter);
         });
     }
-    if (pid_filter != '') {
+    if (id_filter != '') {
         dataset_buf = dataset;
         dataset = dataset_buf.filter(function(record) {
-            return (record.pid == pid_filter);
+            return (record._id == id_filter);
         });
     }
     clearPanes(true);
@@ -402,31 +401,34 @@ slide_right_btn.click(function() {
 aggregate_btn.click(function() {
     $('#aggregation-arena').children().remove(); // clear previous graph
     var obj_filter = object_pane.val();
-    var pid_filter = pid_pane.val();
-    var selection;
+    var id_filter = id_pane.val();
+    var aggr_selection = {};
+    var aggr_collection = collection.val().split(':')[1];
 
     if (aggregation_options.val() === 'aggregate by ...') {
         showAlert("No aggregation available");
         return;
     }
 
+    var generic_data = new GenericData(collection.val().split(':')[0], null); // no need for dataset
+    //TODO time period selection & other condition selections
     if (aggregation_options.val() === 'object') {
         if (obj_filter === '') {
             showAlert("No object selected");
             return;
         } else {
-            selection = JSON.stringify({'object':obj_filter});
+            var obj_field = generic_data.getObjectField();
+            aggr_selection[obj_field] = obj_filter;
         }
-    } else if (aggregation_options.val() === 'pid') {
-        if (pid_filter === '') {
-            showAlert("No pid selected");
+    } else if (aggregation_options.val() === 'id') {
+        if (id_filter === '') {
+            showAlert("No id selected");
             return;
         } else {
-            selection = JSON.stringify({'pid':pid_filter});
+            var id_field = generic_data.getIdField();
+            aggr_selection[id_field] = id_filter;
         }
     }
-
-    // time period selection
 
     //TODO implement sophisticated selections
     $.ajax({
@@ -434,19 +436,18 @@ aggregate_btn.click(function() {
         url: "/mapreduce",
         data: {
             type: "mapreduce",
-            collection: collection.val(),
-            selection: selection,
+            collection: aggr_collection,
+            selection: JSON.stringify(aggr_selection),
             aggregation: aggregation_options.val()
         },
         dataType: 'json',
         success: function(data) {
-
             var result = {};
             result.type = aggregation_options.val();
             if (result.type === 'object') {
                 result.object = obj_filter;
             } else {
-                result.object_id = pid_filter; // pid_filter and corresponding input field should be revised
+                result._id = id_filter; // id_filter and corresponding input field should be revised
             }
             result.content = data.content;
             //TODO visualize the aggregation results

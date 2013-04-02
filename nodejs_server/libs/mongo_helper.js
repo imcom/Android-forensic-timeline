@@ -22,13 +22,11 @@ exports.read = function(collection, selection, fields, options, onCompletion, on
             if (err == null) {
                 onCompletion(res);
             } else {
-                onFailure(err.message);
-                //TODO deal with query failures
+                onFailure(err.message); //TODO deal with query failures
             }
         });
     } else {
-        onFailure("model is not set");
-        //TODO deal with if model is not set yet
+        onFailure("model is not set"); //TODO deal with if model is not set yet
     }
 }
 

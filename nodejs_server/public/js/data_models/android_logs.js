@@ -12,6 +12,31 @@ AndroidLogs.prototype.getId = function(index) {
     return this.dataset[index].pid;
 }
 
+AndroidLogs.prototype.getIdField = function() {
+    return "pid";
+}
+
+AndroidLogs.prototype.getObjectField = function() {
+    return "object";
+}
+
+//exports.fields = ["date", "pid", "object", "msg", "level"];
+AndroidLogs.prototype.unifyDataset = function() {
+    var unified_dataset = [];
+    this.dataset.forEach(function(data) {
+        unified_dataset.push(
+            {
+                _id: data.pid,
+                object: data.object,
+                date: data.date,
+                msg: data.msg,
+                level: data.level
+            }
+        );
+    });
+    return unified_dataset;
+}
+
 AndroidLogs.prototype.getObject = function(index) {
     return this.dataset[index].object;
 }

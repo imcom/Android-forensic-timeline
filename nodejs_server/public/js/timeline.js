@@ -14,19 +14,14 @@ function Timeline(name, timeline_height, x_range, radius) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    //this.y_padding = 0.25; // this number can be a constant, since 1 sec is always the interval for Y-axis
     this.x_range = x_range;
     this.timeline_height = timeline_height;
 
     // dynamically configurable values
     this.dataset = [];
     this.suspects = [];
-    //this.radius = radius;
     this.timeline;
     this.y_range;
-    //this.x_default = 1;
-    //this.x_suspect = 10; //TODO need to verify the offset effect
-    //this.x_padding = 1;
     this.tick_padding = 5;
     this.tick_unit;
     this.tick_step;
@@ -45,19 +40,19 @@ function Timeline(name, timeline_height, x_range, radius) {
         stem: true,
         hideDelay: 0.2,
         delay: 0.3,
-        tipJoint: "top right",
+        tipJoint: "right", //Opentip can auto adjust left/right for display
         target: true,
         borderWidth: 0
     };
-
+    var self = this;
     this.path_data = [];
     this.time_path = d3.svg.line()
         .x(function(d) { return d.x; })
         .y(function(d) { return d.y; })
         .interpolate("monotone");
 
-    /* dragging events handler */
-    var self = this;
+    // dragging events handler (not working...)
+    /*
     this.drag_event = d3.behavior.drag()
         .on('dragstart', function() {
             d3.event.sourceEvent.stopPropagation();
@@ -65,8 +60,8 @@ function Timeline(name, timeline_height, x_range, radius) {
         .on('drag', function(object) {
             var event_id = this.getAttribute('id');
             var data_index = Number(event_id.split('-')[2]);
-            var x = Math.max(self.radius, Math.min(self.x_range[1] - self.radius, d3.event.x));
-            var y = Math.max(self.radius, Math.min(self.timeline_height - self.radius, d3.event.y))
+            var x = Math.max(object.radius, Math.min(self.x_range[1] - object.radius, d3.event.x));
+            var y = Math.max(object.radius, Math.min(self.timeline_height - object.radius, d3.event.y))
             d3.select(this)
                 .attr("cx", object.x = x)
                 .attr("cy", object.y = y);
@@ -78,7 +73,7 @@ function Timeline(name, timeline_height, x_range, radius) {
             self.path_data[data_index]['x'] = x;
             self.path_data[data_index]['y'] = y;
             self.drawPath();
-        });
+        });*/
     // dragging timeline position handler (deprecated)
     /*
     var target_id;
@@ -219,27 +214,26 @@ Timeline.prototype.fetchData = function(queries) { // array of query{}: uri, col
     });
 }*/
 
-Timeline.prototype.setDataset = function(data) {
+Timeline.prototype.setDataset = function(dataset) {
     var self = this;
-    var generic_data = new GenericData(data.type, data.content);
-
     var normal_dataset = {};
     // check and mark abnormal chronologically placed records and store them separately
     // group data by 1st timestamp, 2nd record id, 3rd record object
-    var current_date = generic_data.getDate(0); // theoretically the first record should have the minimum date value
-    $.each(data.content, function(index) {
+
+    var current_date = dataset[0].date; // theoretically the first record should have the minimum date value
+    dataset.forEach(function(data) {
         var suspect_data = {};
-        if (generic_data.getDate(index) < current_date) { // place abnormal events
-            suspect_data.timestamp = generic_data.getDate(index);
-            suspect_data._id = generic_data.getId(index);
+        if (data.date < current_date) { // place abnormal events
+            suspect_data.date = data.date;
+            suspect_data._id = data._id;
             var detail = {};
-            detail[generic_data.getObject(index)] = [generic_data.getMessage(index)];
+            detail[data.object] = [data.msg + "[" + data.level + "]"];
             suspect_data.content = [detail];
             self.suspects.push(suspect_data);
         } else { // group normal events by date
-            var _id = generic_data.getId(index);
-            var object = generic_data.getObject(index);
-            var message = generic_data.getMessage(index);
+            var _id = data._id;
+            var object = data.object;
+            var message = data.msg;
             if (!normal_dataset.hasOwnProperty(current_date)) {
                 normal_dataset[current_date] = {};
             }
@@ -252,13 +246,13 @@ Timeline.prototype.setDataset = function(data) {
                 id_group[object] = [];
             }
             id_group[object].push(message);
-            current_date = generic_data.getDate(index);
+            current_date = data.date;
         }
     });
 
     // output data sample:
     // data {
-    //      timestamp: <timestamp>,
+    //      date: <timestamp>,
     //      event_id: <id>,
     //      content: {<object> : [messages,...], <object> : [messages,...], ...}
     // }
@@ -269,7 +263,7 @@ Timeline.prototype.setDataset = function(data) {
                 if (record_id != 'undefined') {
                     this.updateXDomain(record_id); // form an ID array for X-axis domain
                     this.dataset.push({
-                        timestamp: timestamp,
+                        date: timestamp,
                         _id: record_id,
                         content: normal_dataset[timestamp][record_id]
                     });
@@ -278,44 +272,6 @@ Timeline.prototype.setDataset = function(data) {
         }
     }
     this.refineXDomainMax();
-
-    /*$.each(data.content, function(index) {
-        var event_data = {};
-        data.content[index].display = "normal";
-        if (index == 0) {
-            event_data.coords = [x_starts_on, y_starts_on];
-        } else {
-            if (generic_data.getDate(index) == previous_date) {
-                // overlap with next timestamp, then roll back
-                if (self.y_padding + y_starts_on >= previous_date + 1) {
-                    // set offset on x-axis for distinguish
-                    x_starts_on += self.x_padding;
-                    y_starts_on = previous_date + overlap_increment;
-                    overlap_increment += overlap_increment;
-                } else {
-                    y_starts_on += self.y_padding;
-                }
-                event_data.coords = [x_starts_on, y_starts_on];
-            // wrong sequence detected
-            } else if (generic_data.getDate(index) < previous_date) {
-                // using a different offset for distinguish
-                event_data.coords = [self.x_suspect, generic_data.getDate(index)];
-                //TODO css class, set a different style for suspect events
-                data.content[index].display = "suspect";
-            } else {
-                previous_date = generic_data.getDate(index);
-                y_starts_on = previous_date;
-                x_starts_on = self.x_default;
-                event_data.coords = [self.x_default, y_starts_on];
-                overlap_increment = self.y_padding / 2;
-            }
-        } // if index != 0
-        self.updateXDomain(event_data.coords[0]);
-        self.updateYDomain(event_data.coords[1]);
-        data.content[index].type = data.type;
-        event_data.detail = data.content[index];
-        self.dataset.push(event_data);
-    });*/
     // on dataset is set, draw timeline
     this.onDataReady();
 }
@@ -400,8 +356,8 @@ Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
     self.path_data = []; // clear the old data everytime
     $.each(dataset, function(index) {
         var path_coords = {};
-        path_coords['x'] = x_scale(dataset[index].coords[0]);
-        path_coords['y'] = y_scale(dataset[index].coords[1]);
+        path_coords['x'] = x_scale(dataset[index]._id);
+        path_coords['y'] = y_scale(dataset[index].date);
         self.path_data.push(path_coords);
     });
 }
@@ -430,7 +386,7 @@ Timeline.prototype.onDataReady = function() {
     var display_dataset = [];
     this.dataset.forEach(function(data) {
         var display_data = {};
-        var date = new Date(data.timestamp * 1000); // convert to milliseconds
+        var date = new Date(data.date * 1000); // convert to milliseconds
         display_data.date = date;
         display_data._id = Number(data._id);
         display_data.content = data.content;
@@ -440,9 +396,9 @@ Timeline.prototype.onDataReady = function() {
     // debugging info
     console.log(start_date);
     console.log(end_date);
-    console.log(display_dataset.length);
+    console.log(this.suspects);
 
-    this.color_scale = d3.scale.category10();
+    this.color_scale = d3.scale.category20();
     this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
     this.y_range = this.initYRange();
 
@@ -460,6 +416,13 @@ Timeline.prototype.onDataReady = function() {
                             end_date
                         ])
                  .range(this.y_range);
+
+    var radius_range = [5, 20];
+    var radius_scale = d3.scale.pow()
+        .exponent(2)
+        .domain(this.initRadiusDomain())
+        .range(radius_range)
+        .clamp(true);
 
     // draw Y axis on timeline
     var y_axis = d3.svg.axis()
@@ -520,9 +483,9 @@ Timeline.prototype.onDataReady = function() {
             .attr("y1", y_scale)
             .attr("y2", y_scale);
         self.timeline.selectAll(".timeline-event")
-            .attr("cy", function(d) { return y_scale(d.coords[1]); });
+            .attr("cy", function(d) { return y_scale(d.date); });
         self.timeline.selectAll(".description")
-            .attr("y", function(d) { return y_scale(d.coords[1]); });
+            .attr("y", function(d) { return y_scale(d.date); });
         self.fillPathData(x_scale, y_scale, display_dataset);
         self.drawPath();
         adjustDateLabel();
@@ -544,23 +507,25 @@ Timeline.prototype.onDataReady = function() {
             }
         });
     }
-    //FIXME
-    return;
-    function x(d) {
 
+    // coords, color and radius functions
+    function x(d) {
+        return Number(d._id);
     }
 
     function y(d) {
-
+        return d.date;
     }
 
     function color(d) {
-
+        var time_offset = d.date.getTime() / 10 ^ 6;
+        return Number(d._id) + time_offset;
     }
 
     function radius(d) {
-
+        return self.getMessageNumber(d);
     }
+
     // draw events on timeline
     this.timeline.append('g')
         .attr("id", "events-arena")
@@ -572,17 +537,23 @@ Timeline.prototype.onDataReady = function() {
         .attr("class", "timeline-event")
         //TODO change functions below for new data stracture
         .attr("id", function(data, index){
-            var generic_data = new GenericData(data.detail.type, data.detail);
-            return self.name.substr(1) + "-" + generic_data.getId() + "-" + index;
+            //var generic_data = new GenericData(data.detail.type, data.detail);
+            return self.name.substr(1) + "-" + data._id + "-" + index;
         })
         .attr("cx", function(data) {
-            return x_scale(data.coords[0]);
+            return x_scale(x(data));
         })
         .attr("cy", function(data) {
-            return y_scale(data.coords[1]);
+            return y_scale(y(data));
         })
-        .attr("r", this.radius)
-        .call(this.drag_event);
+        .attr("r", function(data) {
+            return radius_scale(radius(data));
+        })
+        .attr("fill", function(d) {
+            return self.color_scale(color(d));
+        })
+        .sort(function(x, y) {return radius(y) - radius(x)});
+        //.call(this.drag_event); // drag function is not working...
 
     this.fillPathData(x_scale, y_scale, display_dataset);
     this.drawPath();
@@ -591,53 +562,27 @@ Timeline.prototype.onDataReady = function() {
         .data(display_dataset)
         .enter()
         .append("text")
-        .attr("class", function(data){
-            return "description" + " " + data.detail.display;
-        })
+        .attr("class", "description")
         .attr("id", this.name.substr(1))
         .text(function(data) {
-            var generic_data = new GenericData(data.detail.type, data.detail);
-            return generic_data.getDisplayName();
+            //var generic_data = new GenericData(data.detail.type, data.detail);
+            //return generic_data.getDisplayName();
+            return data._id;
         })
-        .attr("fill", function(d) {
-            //TODO modify the function below for new data structure
-            var generic_data = new GenericData(d.detail.type, d.detail);
-            return self.color_scale(Number(generic_data.getId()));
-        });
+        .attr("fill", "black");
 
     var text_fields = $("text[id=" + this.name.substr(1) + "]");
     $.each(display_dataset, function(index) {
-        text_fields[index].setAttribute("x", x_scale(display_dataset[index].coords[0]) + 5);
-        text_fields[index].setAttribute("y", y_scale(display_dataset[index].coords[1]));
-        var generic_data = new GenericData(
-            display_dataset[index].detail.type,
-            display_dataset[index].detail
-        );
-        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + generic_data.getId() + "-" + index);
-
-        var text_field = jQuery('text[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
-
-        text_field.opentip(generic_data.getMessage(), {style: "tooltip_style"});
-
-        text_field.mouseover(function(event){ /*overwrite the default self object -- [mouse event]*/
-            this.setAttribute("cursor", "pointer");
-        })
-        .mouseout(function(event) {
-            this.setAttribute("cursor", null);
-        });
-
-        text_field.on("click", function(event) {
-            var target = event.target;
-            console.log(target.id.split("-"));
-            jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
-        });
+        text_fields[index].setAttribute("x", x_scale(display_dataset[index]._id) + 5);
+        text_fields[index].setAttribute("y", y_scale(display_dataset[index].date));
+        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + display_dataset[index]._id + "-" + index);
 
         var time_indicator;
         var time_label;
-        var circle = $('circle[id=' + self.name.substr(1) + "-" + generic_data.getId() + "-" + index + "]");
+        var circle = jQuery('circle[id=' + self.name.substr(1) + "-" + display_dataset[index]._id + "-" + index + "]");
+        circle.opentip(self.formatMessage(display_dataset[index]), {style: "tooltip_style"});
         circle.mouseover(function(event) {
             var event_self = this;
-            this.setAttribute("fill", "grey");
             this.setAttribute("cursor", "pointer");
             time_indicator = self.timeline.append("line")
                 .attr("class", "time-indicator")
@@ -657,14 +602,37 @@ Timeline.prototype.onDataReady = function() {
                 });
         })
         .mouseout(function(event) {
-            this.setAttribute("fill", "black");
             this.setAttribute("cursor", null);
             time_indicator.remove();
             time_label.remove();
         });
+        circle.on("click", function(event) {
+            var target = event.target;
+            console.log(target.id.split("-"));
+            jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
+        });
     }); // each self.dataset
 
 } // function onDataReady()
+
+Timeline.prototype.formatMessage = function(data) {
+    var formatted_msg = "";
+    for (object in data.content) {
+        if (object != "undefined") {
+            formatted_msg += object;
+            formatted_msg += ":{</br>";
+            data.content[object].forEach(function(msg, index) {
+                if (msg === "\r" || msg === "") {
+                    msg = "empty message";
+                }
+                formatted_msg += ("&nbsp&nbsp" + index + ":" + msg);
+                formatted_msg += "</br>";
+            });
+            formatted_msg += "}</br>";
+        }
+    }
+    return formatted_msg;
+}
 
 Timeline.prototype.getOldestDate = function() {
     var min = this.dataset[0].coords[1];
@@ -703,14 +671,26 @@ Timeline.prototype.initTickInterval = function() {
     this.tick_step = step_options[step_index];
 }
 
+Timeline.prototype.getMessageNumber = function(data) {
+    var message_number = 0;
+    for (object in data.content) {
+        if (object != 'undifined') {
+            message_number += data.content[object].length;
+        }
+    }
+    return message_number;
+}
+
 Timeline.prototype.initRadiusDomain = function() {
     // min radius domain: 1
+    var self = this;
     var max_domain = 0, max_message_number = 0, msg_number_array = [], median = 0;
     this.dataset.forEach(function(data) {
-        if (data.messages.length >= max_message_number) {
-            max_message_number = data.messages.length;
+        var message_number = self.getMessageNumber(data);
+        if (message_number >= max_message_number) {
+            max_message_number = message_number;
         }
-        msg_number_array.push(data.messages.length);
+        msg_number_array.push(message_number);
     });
     median = d3.median(msg_number_array);
     max_domain = max_message_number > median * 2 ? Math.sqrt(max_message_number) : max_message_number;
