@@ -14,7 +14,8 @@ function Timeline(name) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    this.x_range = [120, 520];
+    this.x_range = [160, 760];
+    this.x_range_padding = 160;
     this.timeline_height = 3000;
 
     // dynamically configurable values
@@ -27,8 +28,6 @@ function Timeline(name) {
     this.tick_step;
     this.color_scale;
     this.x_domain_array = [];
-    this.x_domain_min = 0;
-    this.x_domain_max = 0;
     this.y_domain_min = 0;
     this.y_domain_max = 0;
 
@@ -102,19 +101,6 @@ function Timeline(name) {
 } // constructor of Timeline
 
 Timeline.prototype.updateXDomain = function(x) {
-    if (
-        this.x_domain_min == 0 &&
-        this.x_domain_max == 0
-    ) {
-        this.x_domain_min = x;
-        this.x_domain_max = x;
-    } else {
-        if (x < this.x_domain_min) {
-            this.x_domain_min = x;
-        } else if (x > this.x_domain_max) {
-            this.x_domain_max = x;
-        }
-    }
     if ($.inArray(x, this.x_domain_array) == -1) {
         this.x_domain_array.push(x);
     }
@@ -160,27 +146,20 @@ Timeline.prototype.initTimeline = function() {
 } // init timeline SVG and properties
 
 Timeline.prototype.initYRange = function() { //TODO need to refine this method for better display
-    // min: 100, max: 3000; upper bound min: 800
-    var data_length = this.dataset.length;
-    var upper_range = data_length * 500;
-    console.log(data_length);
-    console.log(this.y_domain_max - this.y_domain_min);
-    upper_range = upper_range > 8000 ? 8000 : (upper_range < 100 ? 50 : upper_range);
+    // min: 20, max: 8000; upper bound min: 600
+    var upper_range = this.y_domain_max - this.y_domain_min;
+    //console.log("Y axis time difference: " + (this.y_domain_max - this.y_domain_min));
+    upper_range = upper_range > 1400 ? 8000 : (upper_range > 600 ? 4000 : 600);
     return [this.y_range_padding, upper_range];
 }
 
-//TODO refineXDomainMax function will be deprecated
-/*Timeline.prototype.refineXDomainMax = function() {
-    var median = d3.median(this.x_domain_array);
-    this.x_domain_max = this.x_domain_max > median * 2 ? median + this.x_domain_min : this.x_domain_max;
-    this.x_domain_min = this.x_domain_min < median / 2 ? median - this.x_domain_min : this.x_domain_min;
-}*/
-
-Timeline.prototype.clearData = function() {
-    this.dataset = [];
-    this.suspects = [];
-    this.x_domain_min = 0;
-    this.x_domain_max = 0;
+Timeline.prototype.clearData = function(clear_dataset, clear_suspects) {
+    if (clear_dataset) {
+        this.dataset = [];
+    }
+    if (clear_suspects) {
+        this.suspects = [];
+    }
     this.y_domain_min = 0;
     this.y_domain_max = 0;
 }
@@ -201,9 +180,10 @@ Timeline.prototype.setDataset = function(dataset) {
         if (data.date < current_date) { // place abnormal events
             suspect_data.date = data.date;
             suspect_data._id = data._id;
+            suspect_data.display = data.display;
             var detail = {};
             detail[data.object] = [data.msg + "[" + data.level + "]"];
-            suspect_data.content = [detail];
+            suspect_data.content = detail;
             self.suspects.push(suspect_data);
         } else { // group normal events by date
             var _id = data._id;
@@ -215,12 +195,14 @@ Timeline.prototype.setDataset = function(dataset) {
             var date_group = normal_dataset[current_date];
             if (!date_group.hasOwnProperty(_id)) {
                 date_group[_id] = {};
+                date_group[_id].display = data.display;
+                date_group[_id].content = {};
             }
             var id_group = date_group[_id];
-            if (!id_group.hasOwnProperty(object)) {
-                id_group[object] = [];
+            if (!id_group.content.hasOwnProperty(object)) {
+                id_group.content[object] = [];
             }
-            id_group[object].push(message);
+            id_group.content[object].push(message);
             current_date = data.date;
         }
     });
@@ -229,6 +211,7 @@ Timeline.prototype.setDataset = function(dataset) {
     // data {
     //      date: <timestamp>,
     //      event_id: <id>,
+    //      display: <display_name>,
     //      content: {<object> : [messages,...], <object> : [messages,...], ...}
     // }
     for (timestamp in normal_dataset) {
@@ -237,10 +220,12 @@ Timeline.prototype.setDataset = function(dataset) {
             for (record_id in normal_dataset[timestamp]) {
                 if (record_id != 'undefined') {
                     this.updateXDomain(record_id); // form an ID array for X-axis domain
+                    var display_name = normal_dataset[timestamp][record_id].display;
                     this.dataset.push({
                         date: timestamp,
                         _id: record_id,
-                        content: normal_dataset[timestamp][record_id]
+                        display: display_name,
+                        content: normal_dataset[timestamp][record_id].content
                     });
                 }
             }
@@ -289,27 +274,36 @@ Timeline.prototype.onDataReady = function() {
         var display_data = {};
         var date = new Date(data.date * 1000); // convert to milliseconds
         display_data.date = date;
-        display_data._id = Number(data._id);
+        display_data._id = data._id;
         display_data.content = data.content;
+        display_data.display = data.display;
         display_dataset.push(display_data);
     });
+
+    var suspect_display_dataset = [];
+    this.suspects.forEach(function(data) {
+        var suspect_display_data = {};
+        var date = new Date(data.date * 1000); // convert to milliseconds
+        suspect_display_data.date = date;
+        suspect_display_data._id = data._id;
+        suspect_display_data.content = data.content;
+        suspect_display_data.display = data.display;
+        suspect_display_dataset.push(suspect_display_data);
+    });
+
+    this.color_scale = d3.scale.category20();
+    this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (1, 5, 15, ...)
+    this.y_range = this.initYRange();
 
     // debugging info
     console.log(start_date);
     console.log(end_date);
+    console.log("Suspicious event(s):");
     console.log(this.suspects);
 
-    this.color_scale = d3.scale.category20();
-    this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
-    this.y_range = this.initYRange();
-
-    var x_scale = d3.scale.linear()
-                .domain([
-                        this.x_domain_min,
-                        this.x_domain_max
-                    ])
-                .range(this.x_range)
-                .clamp(true);
+    var x_scale = d3.scale.ordinal()
+                .domain(this.x_domain_array)
+                .rangePoints(this.x_range, 3.0);
 
     var y_scale = d3.time.scale.utc()
                 .domain([
@@ -318,7 +312,7 @@ Timeline.prototype.onDataReady = function() {
                     ])
                 .range(this.y_range);
 
-    var radius_range = [5, 20];
+    var radius_range = [10, 30];
     var radius_scale = d3.scale.pow()
         .exponent(2)
         .domain(this.initRadiusDomain())
@@ -362,7 +356,6 @@ Timeline.prototype.onDataReady = function() {
     // append clipping components
     var scale_extent = [-5, 20]; // used for zoom function
     var zoom_handle = d3.behavior.zoom()
-                .x(x_scale)
                 .y(y_scale)
                 .scaleExtent(scale_extent)
                 .on("zoom", zoom);
@@ -385,11 +378,16 @@ Timeline.prototype.onDataReady = function() {
             .attr("y1", y_scale)
             .attr("y2", y_scale);
         self.timeline.selectAll(".timeline-event")
-            .attr("cx", function(d) { return x_scale(d._id); })
             .attr("cy", function(d) { return y_scale(d.date); });
-        self.timeline.selectAll(".description")
-            .attr("x", function(d) { return x_scale(d._id); })
+        self.timeline.selectAll(".suspects")
             .attr("y", function(d) { return y_scale(d.date); });
+        self.timeline.selectAll(".description")
+            .attr("y", function(d) { return y_scale(d.date); });
+        self.timeline.selectAll("#suspect-description")
+            .attr("y", function(d) { return y_scale(d.date); });
+        self.timeline.selectAll("#suspect-time-indicator")
+            .attr("y1", function(d) { return y_scale(d.date); })
+            .attr("y2", function(d) { return y_scale(d.date); });
         self.fillPathData(x_scale, y_scale, display_dataset);
         self.drawPath();
         adjustDateLabel();
@@ -414,7 +412,7 @@ Timeline.prototype.onDataReady = function() {
 
     // coords, color and radius functions
     function x(d) {
-        return Number(d._id);
+        return d._id;
     }
 
     function y(d) {
@@ -439,10 +437,8 @@ Timeline.prototype.onDataReady = function() {
         .enter()
         .append("circle")
         .attr("class", "timeline-event")
-        //TODO change functions below for new data stracture
         .attr("id", function(data, index){
-            //var generic_data = new GenericData(data.detail.type, data.detail);
-            return self.name.substr(1) + "-" + data._id + "-" + index;
+            return self.name.substr(1) + "-dataset" + "-" + data._id + "-" + index;
         })
         .attr("cx", function(data) {
             return x_scale(x(data));
@@ -459,9 +455,35 @@ Timeline.prototype.onDataReady = function() {
         .sort(function(x, y) {return radius(y) - radius(x)});
         //.call(this.drag_event); // drag function is not working...
 
+    // draw abnormal events on timeline
+    this.timeline.append('g')
+        .attr("id", "suspect-events-arena")
+        .attr("clip-path", "url(#timeline-clip)")
+        .selectAll("rect")
+        .data(suspect_display_dataset)
+        .enter()
+        .append("rect")
+        .attr("id", function(data, index){
+            return self.name.substr(1) + "-suspects" + "-" + data._id + "-" + index;
+        })
+        .attr("class", "suspects")
+        .attr("x", function() {
+            return self.x_range[1] - self.x_range_padding;
+        })
+        .attr("y", function(data) {
+            return y_scale(y(data));
+        })
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("fill", function(d) {
+            return self.color_scale(color(d));
+        });
+
+    // draw chronological sequence path on timeline
     this.fillPathData(x_scale, y_scale, display_dataset);
     this.drawPath();
 
+    // append display name on normal events
     this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
         .data(display_dataset)
         .enter()
@@ -469,19 +491,65 @@ Timeline.prototype.onDataReady = function() {
         .attr("class", "description")
         .attr("id", this.name.substr(1))
         .text(function(data) {
-            return data._id;
+            return data.display;
         })
         .attr("fill", "black");
 
+    // set display name for suspect events
+    this.timeline.selectAll("text[id=suspect-description]")
+        .data(suspect_display_dataset)
+        .enter()
+        .append("text")
+        .attr("id", "suspect-description")
+        .attr("class", "description suspect-description")
+        .attr("x", this.x_range[1] - this.x_range_padding + 5)
+        .attr("y", function(d) {
+            return y_scale(y(d));
+        })
+        .text(function(d) {return d.display;} );
+    // draw time indicator on each suspect events
+    this.timeline.selectAll("line[id=suspect-time-indicator]")
+        .data(suspect_display_dataset)
+        .enter()
+        .append("line")
+        .attr("id", "suspect-time-indicator")
+        .attr("class", "time-indicator suspect-time-indicator")
+        .attr("y1", function(d) {
+            return y_scale(y(d));
+        })
+        .attr("y2", function(d) {
+            return y_scale(y(d));
+        })
+        .attr("x1", 0)
+        .attr("x2", "100%");
+    // add mouseover animation on suspect events
+    $.each(suspect_display_dataset, function(index) {
+        var rect = jQuery("rect[id=" + self.name.substr(1) + "-suspects" + "-" + suspect_display_dataset[index]._id + "-" + index + "]");
+        rect.opentip(self.formatMessage(suspect_display_dataset[index]), {style: "tooltip_style"});
+        rect.mouseover(function(event) {
+            this.setAttribute("cursor", "pointer");
+        })
+        .mouseout(function(event) {
+            this.setAttribute("cursor", null);
+        });
+        rect.on("click", function(event) {
+            var target = event.target;
+            console.log(target.id.split("-"));
+            jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
+        });
+    });
+
+    // set display elements ids
+    // add mouseover animation on events and set opentips
     var text_fields = $("text[id=" + this.name.substr(1) + "]");
     $.each(display_dataset, function(index) {
         text_fields[index].setAttribute("x", x_scale(display_dataset[index]._id) + 5);
         text_fields[index].setAttribute("y", y_scale(display_dataset[index].date));
-        text_fields[index].setAttribute("id", self.name.substr(1) + "-" + display_dataset[index]._id + "-" + index);
+        text_fields[index].setAttribute("id", self.name.substr(1) + "-dataset" + "-" + display_dataset[index]._id + "-" + index);
 
         var time_indicator;
         var time_label;
-        var circle = jQuery('circle[id=' + self.name.substr(1) + "-" + display_dataset[index]._id + "-" + index + "]");
+        var circle = jQuery("circle[id=" + self.name.substr(1) + "-dataset" + "-" + display_dataset[index]._id + "-" + index + "]");
         circle.opentip(self.formatMessage(display_dataset[index]), {style: "tooltip_style"});
         circle.mouseover(function(event) {
             var event_self = this;
@@ -518,7 +586,9 @@ Timeline.prototype.onDataReady = function() {
 } // function onDataReady()
 
 Timeline.prototype.formatMessage = function(data) {
-    var formatted_msg = "";
+    var formatted_msg = "ID:&nbsp";
+    formatted_msg += data._id;
+    formatted_msg += "</br>";
     for (object in data.content) {
         if (object != "undefined") {
             formatted_msg += object;

@@ -195,9 +195,6 @@ label
     stroke-dasharray: 8,8
     pointer-events: none
 
-rect
-    fill: none
-
 rect.ctrl-pane, rect.timeline-ctrl-pane
     cursor: move
     fill: none
@@ -233,8 +230,20 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
 
 .description
     font-family: Consolas
+    z-index: -1
+    pointer-events: none
 
+.suspect-description
+    fill: red
 
+.suspect-time-indicator
+    stroke: brown
+    stroke-dasharray: 8,8,2
+    opacity: 0.9
+
+rect.suspects
+    stroke: black
+    stroke-width: 2
 
 
 

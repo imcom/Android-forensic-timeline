@@ -30,7 +30,8 @@ AndroidLogs.prototype.unifyDataset = function() {
                 object: data.object,
                 date: data.date,
                 msg: data.msg,
-                level: data.level
+                level: data.level,
+                display: data.pid
             }
         );
     });

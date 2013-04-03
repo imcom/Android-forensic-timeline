@@ -334,14 +334,19 @@ filter_btn.click(function() {
     } else if (id_filter != '' && obj_filter != '') {
         showAlert('Invalid filter condition');
     }
+    // reset display in all panes
     clearPanes(true, false);
     fillPanes(filtered_dataset);
     fillResponsivePane(filtered_dataset);
+    // reset display of time window
     resetTimeRange();
     initTimeRange(filtered_dataset);
-    timeline_main.clearData();
+    // re-draw timeline graph
+    timeline_main.clearData(true, false);
     timeline_main.initTimeline();
     timeline_main.setDataset(filtered_dataset);
+    // make changes to the initial dataset
+    dataset = filtered_dataset;
 });
 
 clear_btn.click(function() {
@@ -349,6 +354,7 @@ clear_btn.click(function() {
     $('#aggregation-arena').children().remove();
     clearPanes(true, true);
     resetTimeRange();
+    timeline_main.clearData(true, true);
 });
 
 dropdown_btn.click(function() {
