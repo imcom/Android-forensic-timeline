@@ -12,23 +12,18 @@ var fs_time = require('../libs/fs_time_schema.js');
 
 function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
-    var selection = null;
+    var selection = JSON.parse(req.body.selection);
 
-    if (req.body.fields != null) {
-        fields = req.body.fields.filter(function(item) {
-            return (type.fields.indexOf(item) != -1);
-        });
-    }
-
-    if (req.body.selection != null) {
-        selection = JSON.parse(req.body.selection);
+    if (selection != null) {
+        selection['$or'][0].object = new RegExp(selection['$or'][0].object, 'i');
+        selection['$or'][1].msg = new RegExp(selection['$or'][1].msg, 'i');
     }
 
     mongo.read(
         req.body.collection,
         selection,
         fields.join(" "),
-        req.body.options,
+        req.body.options, // no options needed...
         function(result) { // on success
             if (!result) {
                 res.json({"error": 0, "type": type.name, "content": "result is empty"});

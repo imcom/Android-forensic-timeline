@@ -168,12 +168,12 @@ Timeline.prototype.removeTimeline = function() {
     $(this.getName()).children('.timeline-graph').remove();
 }
 
-Timeline.prototype.setDataset = function(dataset) {
+Timeline.prototype.setDataset = function(dataset, check_suspects) {
+    // only check for suspects during initiation
     var self = this;
     var normal_dataset = {};
     // check and mark abnormal chronologically placed records and store them separately
     // group data by 1st timestamp, 2nd record id, 3rd record object
-
     var current_date = dataset[0].date; // theoretically the first record should have the minimum date value
     dataset.forEach(function(data) {
         var suspect_data = {};
@@ -184,7 +184,8 @@ Timeline.prototype.setDataset = function(dataset) {
             var detail = {};
             detail[data.object] = [data.msg + "[" + data.level + "]"];
             suspect_data.content = detail;
-            self.suspects.push(suspect_data);
+            if (check_suspects)
+                self.suspects.push(suspect_data);
         } else { // group normal events by date
             var _id = data._id;
             var object = data.object;

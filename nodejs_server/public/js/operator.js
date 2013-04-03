@@ -107,9 +107,9 @@ function onIdSelection() {
     resetTimeRange();
     initTimeRange(display_dataset);
     updateResponsivePane(object_checkboxs, display_dataset, "object");
-    timeline_main.clearData();
+    timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset);
+    timeline_main.setDataset(display_dataset, false);
 }
 
 function onObjectSelection() {
@@ -130,9 +130,9 @@ function onObjectSelection() {
     resetTimeRange();
     initTimeRange(display_dataset);
     updateResponsivePane(id_checkboxs, display_dataset, "_id");
-    timeline_main.clearData();
+    timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset);
+    timeline_main.setDataset(display_dataset, false);
 }
 
 function fillResponsivePane(target_set) {
@@ -199,24 +199,20 @@ function clearPanes(clear_responsive, clear_aggregation) {
 }
 
 function formSelection() {
-
-
-    var sel = {};
-    if (selection.val() != '') {
-        sel = JSON.parse(selection.val());
-    }
-    /*var date_sel = {};
-    if (dkeyword != '') {
-        if (stime != '' && etime != '') {
-            date_sel = {$gte: Number(stime), $lte: Number(etime)};
-        } else if (stime != '' && etime == '') {
-            date_sel = {$gte: stime.val()};
-        } else if (stime == '' && etime != '') {
-            date_sel = {$lte: etime.val()};
+    if (collection.val().split(':')[0] === 'android_logs') {
+        if (selection.val() != '') { // always use OR logic in query
+            var regex_selection = {};
+            regex_selection['$or'] = [];
+            var keywords = selection.val().split(' ');
+            regex_selection['$or'].push({object : keywords.join('|')});
+            regex_selection['$or'].push({msg : keywords.join('|')});
+            return JSON.stringify(regex_selection);
+        } else {
+            return null;
         }
-        sel[dkeyword] = date_sel;
-    }*/
-    return JSON.stringify(sel);
+    } else {
+        return null; // null selection for any other collections
+    }
 }
 
 function fillMapReduceOptions(data_type) {
@@ -237,21 +233,23 @@ search_btn.click(function() {
         data: {
             collection: target[1],
             selection: selection,
-            //fields: fields.val() ? fields.val().split(' ') : [],
-            fields: [],
             type: "query"
         },
         dataType: 'json',
         success: function(data) {
-            var generic_data = new GenericData(data.type, data.content);
-            dataset = generic_data.unifyDataset();
-            clearPanes(true, true);
-            fillPanes(dataset);
-            fillResponsivePane(dataset);
-            initTimeRange(dataset);
-            fillMapReduceOptions(data.type);
-            timeline_main.initTimeline();
-            timeline_main.setDataset(dataset);
+            if (data.content.length > 0) {
+                var generic_data = new GenericData(data.type, data.content);
+                dataset = generic_data.unifyDataset();
+                clearPanes(true, true);
+                fillPanes(dataset);
+                fillResponsivePane(dataset);
+                initTimeRange(dataset);
+                fillMapReduceOptions(data.type);
+                timeline_main.initTimeline();
+                timeline_main.setDataset(dataset, true);
+            } else {
+                showAlert("no records found!");
+            }
         },
         error: function(xhr, type) {
             showAlert("search query error!");
@@ -259,6 +257,7 @@ search_btn.click(function() {
     });
 });
 
+//TODO implement append function to draw 2nd timeline on `timeline_extend`
 append_btn.click(function() {
     var sel = formSelection();
     $.ajax({
@@ -304,20 +303,20 @@ filter_btn.click(function() {
     }
 
     // selection filter, picking up specified records from the original dataset
-    var filter_selection = null;
+    var filtered_dataset_backup = filtered_dataset;
     if (selection.val() != '') {
-        var filter_selection = JSON.parse(selection.val());
-    }
-    if (filter_selection != null) {
+        var filter_conditions = selection.val().split(' ');
         filtered_dataset = filtered_dataset.filter(function(record) {
-            var matched = true;
-            for (var k in filter_selection) {
-                if (fil.hasOwnProperty(k)) {
-                    matched &= (record[k] == fil[k]);
-                }
-            }
-            if (matched) return record;
+            var matched = 0;
+            filter_conditions.forEach(function(condition) {
+                matched ^= (record.object.indexOf(condition) != -1 || record.msg.indexOf(condition) != -1);
+            });
+            if (matched === 1) return record;
         });
+    }
+    if (filtered_dataset.length == 0) {
+        showAlert("keywords did not exist!");
+        filtered_dataset = filtered_dataset_backup;
     }
 
     // object or id specification filter, picking up on particular object or id
@@ -334,7 +333,7 @@ filter_btn.click(function() {
     } else if (id_filter != '' && obj_filter != '') {
         showAlert('Invalid filter condition');
     }
-    // reset display in all panes
+    // reset display in all panes except for aggregation graph
     clearPanes(true, false);
     fillPanes(filtered_dataset);
     fillResponsivePane(filtered_dataset);
@@ -344,7 +343,7 @@ filter_btn.click(function() {
     // re-draw timeline graph
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(filtered_dataset);
+    timeline_main.setDataset(filtered_dataset, false);
     // make changes to the initial dataset
     dataset = filtered_dataset;
 });
