@@ -6,6 +6,10 @@ function GenericData(type, dataset) {
         this.data_handler = new AndroidLogs(dataset);
     }
 
+    if (type === 'dmesg_schema') {
+        this.data_handler = new Dmesg(dataset);
+    }
+
     if (type === 'content_provider_browsersearches') {
         this.data_handler = new BrowserSearches(dataset);
     }
@@ -38,11 +42,11 @@ function GenericData(type, dataset) {
         this.data_handler = new Services(dataset);
     }
 
-    if (type === 'fs_time') {
+    if (type === 'fs_time_schema') {
         this.data_handler = new FSTime(dataset);
     }
 
-    if (type === 'inode_time') {
+    if (type === 'inode_time_schema') {
         this.data_handler = new InodeTime(dataset);
     }
 

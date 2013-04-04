@@ -216,8 +216,8 @@ function formSelection() {
 }
 
 function fillMapReduceOptions(data_type) {
-    aggregation_options.children().remove();
     if (data_type === 'android_logs') {
+        aggregation_options.children().remove();
         aggregation_options.append("<option value='object'>aggregate by Object</option>");
         aggregation_options.append("<option value='id'>aggregate by ID</option>");
     }
@@ -247,6 +247,7 @@ search_btn.click(function() {
                 fillMapReduceOptions(data.type);
                 timeline_main.initTimeline();
                 timeline_main.setDataset(dataset, true);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
             }

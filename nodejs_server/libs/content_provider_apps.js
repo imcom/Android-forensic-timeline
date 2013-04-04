@@ -14,7 +14,7 @@ exports.EVENT_SCHEMA =
 
 exports.collections = ['Applications'];
 
-exports.name = "content_provider_apps";
+exports.name = "content_provider_applications";
 
 exports.fields = [
     "last_update_date",

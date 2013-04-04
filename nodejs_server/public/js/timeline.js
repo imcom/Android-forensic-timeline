@@ -162,6 +162,7 @@ Timeline.prototype.clearData = function(clear_dataset, clear_suspects) {
     }
     this.y_domain_min = 0;
     this.y_domain_max = 0;
+    this.x_domain_array = [];
 }
 
 Timeline.prototype.removeTimeline = function() {
@@ -187,6 +188,7 @@ Timeline.prototype.setDataset = function(dataset, check_suspects) {
             if (check_suspects)
                 self.suspects.push(suspect_data);
         } else { // group normal events by date
+            current_date = data.date;
             var _id = data._id;
             var object = data.object;
             var message = data.msg;
@@ -204,10 +206,9 @@ Timeline.prototype.setDataset = function(dataset, check_suspects) {
                 id_group.content[object] = [];
             }
             id_group.content[object].push(message);
-            current_date = data.date;
         }
     });
-
+    console.log(normal_dataset);
     // output data sample:
     // data {
     //      date: <timestamp>,

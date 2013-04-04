@@ -13,17 +13,18 @@ var index_handler = require('./routes');
 var db_handler = require('./routes/database');
 var mongoose = require('mongoose');
 var android_logs = require('./libs/android_log_schema.js');
-var fs_time = require("../nodejs_server/libs/fs_time_schema.js");
-var inode_time = require("../nodejs_server/libs/inode_time_schema.js");
-var cp_applications = require("../nodejs_server/libs/content_provider_apps.js");
-var cp_browserhistory = require("../nodejs_server/libs/content_provider_browserhistory.js");
-var cp_browsersearches = require("../nodejs_server/libs/content_provider_browsersearches.js");
-var cp_calllogs = require("../nodejs_server/libs/content_provider_calllogs.js");
-var cp_contacts = require("../nodejs_server/libs/content_provider_contacts.js");
-var cp_mms = require("../nodejs_server/libs/content_provider_mms.js");
-var cp_sms = require("../nodejs_server/libs/content_provider_sms.js");
-var cp_services = require("../nodejs_server/libs/content_provider_services.js");
-var temporal_info = require("../nodejs_server/libs/temporal_info_schema.js");
+var fs_time = require("./libs/fs_time_schema.js");
+var inode_time = require("./libs/inode_time_schema.js");
+var cp_applications = require("./libs/content_provider_apps.js");
+var cp_browserhistory = require("./libs/content_provider_browserhistory.js");
+var cp_browsersearches = require("./libs/content_provider_browsersearches.js");
+var cp_calllogs = require("./libs/content_provider_calllogs.js");
+var cp_contacts = require("./libs/content_provider_contacts.js");
+var cp_mms = require("./libs/content_provider_mms.js");
+var cp_sms = require("./libs/content_provider_sms.js");
+var cp_services = require("./libs/content_provider_services.js");
+var temporal_info = require("./libs/temporal_info_schema.js");
+var dmesg = require("./libs/dmesg_schema.js");
 
 /*
  *  Init MongoDB connection and models
@@ -44,7 +45,8 @@ var schemas = [
     cp_services,
     fs_time,
     inode_time,
-    temporal_info
+    temporal_info,
+    dmesg
 ];
 
 schemas.forEach(function(schema){
@@ -101,13 +103,15 @@ app.configure(function(){
         '/js/data_models/mms.js',
         '/js/data_models/services.js',
         '/js/data_models/sms.js',
-        '/js/data_models/inode_time.js'
+        '/js/data_models/inode_time.js',
+        '/js/data_models/dmesg.js'
     ]
 });
 
 // default index route
 app.get('/', index_handler.imcom);
 app.post('/android_logs', db_handler.android_logs);
+app.post('/dmesg', db_handler.dmesg);
 app.post('/cp_browserhistory', db_handler.cp_browserhistory);
 app.post('/cp_browsersearches', db_handler.cp_browsersearches);
 app.post('/fs_time', db_handler.fs_time);

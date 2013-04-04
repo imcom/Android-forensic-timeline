@@ -7,7 +7,7 @@ exports.EVENT_SCHEMA = {
     level: String
 };
 
-exports.collections = ['dmesg', 'radio', 'events', 'main', 'system'];
+exports.collections = ['radio', 'events', 'main', 'system'];
 
 exports.name = "android_logs";
 
@@ -23,6 +23,7 @@ var dateReduceFunction = function(key, values) {
     return content;
 }
 
+// aggregation by date, but result turns out the same with by object
 /*
 var aggregateByDate = {};
 aggregateByDate.map = function() {
@@ -62,7 +63,7 @@ aggregateByObject.reduce = dateReduceFunction;
 aggregateByObject.out = {'replace': 'LogsMapReduceResults'};
 exports.aggregateByObject = aggregateByObject;
 
-var aggregateByPid = {}; //TODO implement this aggregation function
+var aggregateByPid = {};
 aggregateByPid.map = function() {
     var key = this.object;
     var value = {

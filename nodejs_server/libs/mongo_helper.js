@@ -11,6 +11,7 @@ var cp_contacts = require("./content_provider_contacts.js");
 var cp_mms = require("./content_provider_mms.js");
 var cp_sms = require("./content_provider_sms.js");
 var cp_services = require("./content_provider_services.js");
+var dmesg = require("./dmesg_schema.js");
 var temporal = require("./temporal_info_schema.js");
 var mongoose = require('mongoose');
 

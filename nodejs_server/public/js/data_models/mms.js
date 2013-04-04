@@ -13,7 +13,7 @@ MMS.prototype.getId = function() {
 }
 
 MMS.prototype.getMessage = function() {
-    return this.dataset.retr_txt;
+    return "[" + this.dataset.read_status + "]" + this.dataset.retr_txt;
 }
 
 MMS.prototype.getDisplayName = function() {

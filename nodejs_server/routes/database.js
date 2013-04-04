@@ -5,10 +5,11 @@
  */
 
 var mongo = require('../libs/mongo_helper.js');
-var android_log = require('../libs/android_log_schema.js');
+var android_logs = require('../libs/android_log_schema.js');
 var cp_browserhistory = require('../libs/content_provider_browserhistory.js');
 var cp_browsersearches = require('../libs/content_provider_browsersearches.js');
 var fs_time = require('../libs/fs_time_schema.js');
+var dmesg = require('../libs/dmesg_schema.js');
 
 function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
@@ -19,9 +20,12 @@ function do_query(req, res, type) {
         selection['$or'][1].msg = new RegExp(selection['$or'][1].msg, 'i');
     }
 
+    var tmp = {};
+    tmp.date = {'$gt': 1363259999};
     mongo.read(
         req.body.collection,
-        selection,
+        //selection,
+        tmp,
         fields.join(" "),
         req.body.options, // no options needed...
         function(result) { // on success
@@ -42,9 +46,14 @@ exports.mapreduce = function(req, res) {
     mongo.mapreduce(req, res);
 }
 
+exports.dmesg = function(req, res) {
+    console.log("query on[" + dmesg.name + "]: " + req.body.selection);
+    do_query(req, res, dmesg);
+}
+
 exports.android_logs = function(req, res) {
-    console.log("query on[" + android_log.name + "]: " + req.body.selection);
-    do_query(req, res, android_log);
+    console.log("query on[" + android_logs.name + "]: " + req.body.selection);
+    do_query(req, res, android_logs);
 };
 
 exports.cp_browserhistory = function(req, res) {
