@@ -23,7 +23,7 @@ window.onscroll = function(event) {
 
 // control buttons
 var search_btn = $('#search');
-var append_btn = $('#append');
+var expand_btn = $('#expand');
 var filter_btn = $('#filter');
 var clear_btn = $('#clear');
 var dropdown_btn = $('.dropdown-ctrl-bar');
@@ -31,6 +31,7 @@ var slide_right_btn = $('.slide-right-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
 
 var dataset = [];
+var dataset_extend = [];
 var time_range = [];
 var dropdown_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
@@ -102,7 +103,7 @@ function onIdSelection() {
     display_dataset = dataset.filter(function(record) {
         return $.inArray(record._id, display_ids) != -1;
     });
-    clearPanes(false, false);
+    clearPanes(false, false, false);
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
@@ -125,7 +126,7 @@ function onObjectSelection() {
     display_dataset = dataset.filter(function(record) {
         return $.inArray(record.object, display_objects) != -1;
     });
-    clearPanes(false, false);
+    clearPanes(false, false, false);
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
@@ -179,7 +180,7 @@ function fillPanes(src) {
     });
 }
 
-function clearPanes(clear_responsive, clear_aggregation) {
+function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline) {
     object_pane.children().remove();
     id_pane.children().remove();
     var window_start = $('#time-window-start');
@@ -187,7 +188,9 @@ function clearPanes(clear_responsive, clear_aggregation) {
     window_start.children().remove();
     window_end.children().remove();
     $('#timeline_main').children().remove();
-    $('#timeline_extend').children().remove();
+    if (clear_extend_timeline) {
+        $('#timeline_extend').children().remove();
+    }
     if (clear_responsive) {
         responsive_id_pane.children().remove();
         responsive_object_pane.children().remove();
@@ -223,8 +226,7 @@ function fillMapReduceOptions(data_type) {
     }
 }
 
-search_btn.click(function() {
-    dataset = []; // clear dataset for new data
+function drawMainTimeline() {
     var selection = formSelection();
     var target = collection.val().split(':'); // target = [url(type), collection]
     $.ajax({
@@ -240,7 +242,7 @@ search_btn.click(function() {
             if (data.content.length > 0) {
                 var generic_data = new GenericData(data.type, data.content);
                 dataset = generic_data.unifyDataset();
-                clearPanes(true, true);
+                clearPanes(true, true, true);
                 fillPanes(dataset);
                 fillResponsivePane(dataset);
                 initTimeRange(dataset);
@@ -258,36 +260,62 @@ search_btn.click(function() {
             showAlert("search query error!");
         }
     });
-});
+}
 
-//TODO implement append function to draw 2nd timeline on `timeline_extend`
-append_btn.click(function() {
-    var sel = formSelection();
+function drawExtendTimeline() {
+    var selection = JSON.parse(formSelection());
+    if (selection == null) selection = {};
+    // set the time window
+    var start_time = Number($('#time-window-start').val());
+    var end_time = Number($('#time-window-end').val());
+    if (start_time > end_time) {
+        showAlert("Invalid time window");
+        return;
+    } else {
+        selection.date = {'$gt': start_time, '$lt': end_time};
+    }
+    selection = JSON.stringify(selection);
+
+    var target = collection.val().split(':'); // target = [url(type), collection]
     $.ajax({
         type: "POST",
-        url: "/imcom",
+        url: target[0],
         data: {
-            collection: collection.val(),
-            selection: sel,
-            fields: [],
+            collection: target[1],
+            selection: selection,
             type: "query"
         },
         dataType: 'json',
-        success: function(data){
-            data.content.forEach(function(record){
-                dataset.push(record);
-            });
-            clearPanes(true, false);
-            fillPanes(dataset);
-            fillResponsivePane(dataset);
-            resetTimeRange();
-            initTimeRange(dataset);
-            $('#arena').children().text(JSON.stringify(dataset, undefined, 4));
+        success: function(data) {
+            if (data.content.length > 0) {
+                var generic_data = new GenericData(data.type, data.content);
+                dataset_extend = generic_data.unifyDataset();
+                $('#timeline_extend').children().remove();
+                timeline_extend.initTimeline();
+                var check_suspects = false;
+                if (data.type === 'android_logs') check_suspects = true;
+                timeline_extend.setDataset(dataset_extend, check_suspects);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+            } else {
+                showAlert("no records found!");
+            }
         },
-        error: function(xhr, type){
-            alert('append ajax error!');
+        error: function(xhr, type) {
+            showAlert("search query error!");
         }
     });
+}
+
+search_btn.click(function() {
+    dataset = []; // clear dataset for new data
+    timeline_main.clearData(true, true);
+    drawMainTimeline();
+});
+
+expand_btn.click(function() {
+    dataset_extend = []; // clear old dataset
+    timeline_extend.clearData(true, true);
+    drawExtendTimeline();
 });
 
 filter_btn.click(function() {
@@ -342,8 +370,8 @@ filter_btn.click(function() {
         showAlert("Object/Id filtering returned empty!");
         filtered_dataset = filtered_dataset_backup;
     }
-    // reset display in all panes except for aggregation graph
-    clearPanes(true, false);
+    // reset display in all panes except for aggregation graph & extend timeline
+    clearPanes(true, false, false);
     fillPanes(filtered_dataset);
     fillResponsivePane(filtered_dataset);
     // reset display of time window
@@ -360,9 +388,10 @@ filter_btn.click(function() {
 clear_btn.click(function() {
     $('#arena').children().text("Show results here...");
     $('#aggregation-arena').children().remove();
-    clearPanes(true, true);
+    clearPanes(true, true, true);
     resetTimeRange();
     timeline_main.clearData(true, true);
+    timeline_extend.clearData(true, true);
 });
 
 dropdown_btn.click(function() {

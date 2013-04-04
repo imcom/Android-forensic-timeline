@@ -388,6 +388,8 @@ Timeline.prototype.onDataReady = function() {
         self.timeline.selectAll("#suspect-time-indicator")
             .attr("y1", function(d) { return y_scale(d.date); })
             .attr("y2", function(d) { return y_scale(d.date); });
+        self.timeline.selectAll("#suspect-time-label")
+            .attr("y", function(d) { return y_scale(d.date) - 5; });
         self.fillPathData(x_scale, y_scale, display_dataset);
         self.drawPath();
         adjustDateLabel();
@@ -522,6 +524,21 @@ Timeline.prototype.onDataReady = function() {
         })
         .attr("x1", 0)
         .attr("x2", "100%");
+    this.timeline.selectAll("text[id=suspect-time-label]")
+        .data(suspect_display_dataset)
+        .enter()
+        .append("text")
+        .attr('id', "suspect-time-label")
+        .attr("class", "time-label suspect-time-label")
+        .attr("x", 5)
+        .attr("y", function(d) {
+            return y_scale(y(d)) - 5;
+        })
+        .text(function(d) {
+            var date = new Date(y(d));
+            var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
+            return formatter(date);
+        });
     // add mouseover animation on suspect events
     $.each(suspect_display_dataset, function(index) {
         var rect = jQuery("rect[id=" + self.name.substr(1) + "-suspects" + "-" + suspect_display_dataset[index]._id + "-" + index + "]");

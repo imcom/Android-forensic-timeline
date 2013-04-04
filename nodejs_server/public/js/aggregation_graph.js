@@ -27,8 +27,9 @@ function AggregatedGraph(name, dataset) {
     this.y_domain_map = {};
     this.x_domain_min;
     this.x_domain_max;
-    this.y_domain_min;
-    this.y_domain_max;
+    //this.y_domain_min;
+    //this.y_domain_max;
+    this.y_domain_array = [];
     this.initXDomain();
     this.initYDomain();
     var self = this;
@@ -41,7 +42,7 @@ function AggregatedGraph(name, dataset) {
     var y_padding = 100;
     var tick_padding = -20;
     var radius_range = [10, 60];
-    var scale_extent = [1, 10]; // used for zoom function
+    var scale_extent = [-5, 10]; // used for zoom function
     this.width = 1400;
     this.height = 620;
     this.x_range = this.initXRange(); // x range should be dependent on dataset size
@@ -62,10 +63,12 @@ function AggregatedGraph(name, dataset) {
 
     // graph scales
     this.x_scale = d3.time.scale.utc().domain([start_date, end_date]).range(this.x_range);
-    this.y_scale = d3.scale.linear()
-        .domain([this.y_domain_min, this.y_domain_max])
-        .range(this.y_range)
-        .clamp(true);
+    this.y_scale = d3.scale.ordinal()
+        //.domain([this.y_domain_min, this.y_domain_max])
+        .domain(this.y_domain_array)
+        //.range(this.y_range);
+        .rangePoints(this.y_range, 3.0);
+        //.clamp(true);
 
     this.radius_scale = d3.scale.pow()
         .exponent(2)
@@ -362,32 +365,37 @@ AggregatedGraph.prototype.initXDomain = function() {
 
 AggregatedGraph.prototype.initYDomain = function() {
     var self = this;
+    var id_array = [];
     if (this.aggregation_type === 'object') {
-        var y_max = this.dataset[0]._id, y_min = this.dataset[0]._id;
-        var id_array = [], median = 0;
+        //var y_max = this.dataset[0]._id, y_min = this.dataset[0]._id;
+        //var id_array = [], median = 0;
+        //var median = 0;
         this.dataset.forEach(function(data) {
-            if (data._id >= y_max) {
+            /*if (data._id >= y_max) {
                 y_max = data._id;
             } else if (data._id <= y_min) {
                 y_min = data._id;
-            }
+            }*/
             id_array.push(data._id);
         });
-        median = d3.median(id_array);
-        this.y_domain_min = y_min;
-        this.y_domain_max = y_max > median * 2 ? median + y_min : y_max;
+        //median = d3.median(id_array);
+        //this.y_domain_min = y_min;
+        //this.y_domain_max = y_max > median * 2 ? median + y_min : y_max;
     } else { // aggregation type is pid
         var domain_index = 1;
         var domain_increment = 5;
         this.dataset.forEach(function(data) {
             if (!self.y_domain_map.hasOwnProperty(data.object)) {
                 self.y_domain_map[data.object] = domain_index;
+                if ($.inArray(domain_index, id_array) === -1)
+                    id_array.push(domain_index);
                 domain_index += domain_increment;
             }
         });
-        this.y_domain_min = 1; // initial value
-        this.y_domain_max = domain_index - domain_increment; // last domain index
+        //this.y_domain_min = 1; // initial value
+        //this.y_domain_max = domain_index - domain_increment; // last domain index
     }
+    this.y_domain_array = id_array;
 }
 
 AggregatedGraph.prototype.initRadiusDomain = function() {
