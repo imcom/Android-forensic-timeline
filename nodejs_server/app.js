@@ -115,6 +115,7 @@ app.post('/dmesg', db_handler.dmesg);
 app.post('/cp_browserhistory', db_handler.cp_browserhistory);
 app.post('/cp_browsersearches', db_handler.cp_browsersearches);
 app.post('/fs_time', db_handler.fs_time);
+app.post('/inode_time', db_handler.inode_time);
 app.post('/mapreduce', db_handler.mapreduce);
 
 app.listen(app.get('port'));

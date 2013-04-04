@@ -246,7 +246,9 @@ search_btn.click(function() {
                 initTimeRange(dataset);
                 fillMapReduceOptions(data.type);
                 timeline_main.initTimeline();
-                timeline_main.setDataset(dataset, true);
+                var check_suspects = false;
+                if (data.type === 'android_logs') check_suspects = true;
+                timeline_main.setDataset(dataset, check_suspects);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -303,8 +305,8 @@ filter_btn.click(function() {
         });
     }
 
-    // selection filter, picking up specified records from the original dataset
     var filtered_dataset_backup = filtered_dataset;
+    // selection filter, picking up specified records from the original dataset
     if (selection.val() != '') {
         var filter_conditions = selection.val().split(' ');
         filtered_dataset = filtered_dataset.filter(function(record) {
@@ -316,11 +318,12 @@ filter_btn.click(function() {
         });
     }
     if (filtered_dataset.length == 0) {
-        showAlert("keywords did not exist!");
+        showAlert("Keywords do not exist!");
         filtered_dataset = filtered_dataset_backup;
     }
 
-    // object or id specification filter, picking up on particular object or id
+    filtered_dataset_backup = filtered_dataset; // backup filtered dataset after time and keywords
+    // object or id specification filter, ticking out on particular object or id
     var obj_filter = object_pane.val();
     var id_filter = id_pane.val();
     if (obj_filter != '' && id_filter == '') {
@@ -333,6 +336,11 @@ filter_btn.click(function() {
         });
     } else if (id_filter != '' && obj_filter != '') {
         showAlert('Invalid filter condition');
+    }
+
+    if (filtered_dataset.length == 0) {
+        showAlert("Object/Id filtering returned empty!");
+        filtered_dataset = filtered_dataset_backup;
     }
     // reset display in all panes except for aggregation graph
     clearPanes(true, false);

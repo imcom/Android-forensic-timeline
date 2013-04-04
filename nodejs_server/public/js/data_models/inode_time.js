@@ -4,8 +4,44 @@ function InodeTime(dataset) {
     this.dataset = dataset;
 }
 
+/*exports.fields = [
+    "uid",
+	"gid",
+	"mode",
+	"inode",
+	"size",
+	"allocated",
+	"inode_modified",
+	"file_modified",
+	"accessed"
+];*/
+InodeTime.prototype.unifyDataset = function() {
+    var unified_dataset = [];
+    this.dataset.forEach(function(data, index) {
+        unified_dataset.push(
+            {
+                _id: data.inode,
+                object: data.inode,
+                date: data.file_modified,
+                msg: "[</br>&nbsp&nbsp" + data.accessed + "</br>&nbsp&nbsp" + data.inode_modified + "</br>&nbsp&nbsp" + data.mode + "</br>&nbsp&nbsp" + data.size + "</br>&nbsp&nbsp]",
+                display: data.uid + "/" + data.gid + "[" + data.allocated + "]"
+            }
+        );
+    });
+    this.dataset = unified_dataset;
+    return unified_dataset;
+}
+
+InodeTime.prototype.getIdField = function() {
+    return "_id";
+}
+
+InodeTime.prototype.getObjectField = function() {
+    return "object";
+}
+
 InodeTime.prototype.getDate = function(index) {
-    return this.dataset[index].accessed;
+    return this.dataset[index].file_modified;
 }
 
 InodeTime.prototype.getId = function() {

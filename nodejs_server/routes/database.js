@@ -9,6 +9,7 @@ var android_logs = require('../libs/android_log_schema.js');
 var cp_browserhistory = require('../libs/content_provider_browserhistory.js');
 var cp_browsersearches = require('../libs/content_provider_browsersearches.js');
 var fs_time = require('../libs/fs_time_schema.js');
+var inode_time = require('../libs/inode_time_schema.js');
 var dmesg = require('../libs/dmesg_schema.js');
 
 function do_query(req, res, type) {
@@ -20,12 +21,12 @@ function do_query(req, res, type) {
         selection['$or'][1].msg = new RegExp(selection['$or'][1].msg, 'i');
     }
 
-    var tmp = {};
-    tmp.date = {'$gt': 1363259999};
+    //var tmp = {};
+    //tmp.file_modified = {'$gt': 1363239999};
     mongo.read(
         req.body.collection,
-        //selection,
-        tmp,
+        selection,
+        //tmp,
         fields.join(" "),
         req.body.options, // no options needed...
         function(result) { // on success
@@ -69,5 +70,10 @@ exports.cp_browsersearches = function(req, res) {
 exports.fs_time = function(req, res) {
     console.log("query on[" + fs_time.name + "]: " + req.body.selection);
     do_query(req, res, fs_time);
+}
+
+exports.inode_time = function(req, res) {
+    console.log("query on[" + inode_time.name + "]: " + req.body.selection);
+    do_query(req, res, inode_time);
 }
 

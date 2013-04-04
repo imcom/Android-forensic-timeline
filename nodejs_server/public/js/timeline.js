@@ -170,7 +170,7 @@ Timeline.prototype.removeTimeline = function() {
 }
 
 Timeline.prototype.setDataset = function(dataset, check_suspects) {
-    // only check for suspects during initiation
+    // only check for suspects during initiation & do NOT check suspects upon MAC times
     var self = this;
     var normal_dataset = {};
     // check and mark abnormal chronologically placed records and store them separately
@@ -208,7 +208,7 @@ Timeline.prototype.setDataset = function(dataset, check_suspects) {
             id_group.content[object].push(message);
         }
     });
-    console.log(normal_dataset);
+
     // output data sample:
     // data {
     //      date: <timestamp>,
@@ -233,8 +233,6 @@ Timeline.prototype.setDataset = function(dataset, check_suspects) {
             }
         }
     }
-    //FIXME use Ordinal scale for X-axis
-    //this.refineXDomainMax();
     // on dataset is set, draw timeline
     this.onDataReady();
 }
