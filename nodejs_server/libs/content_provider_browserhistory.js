@@ -6,8 +6,7 @@ exports.EVENT_SCHEMA =
     user_entered: String,
     visits: String,
     bookmark: String,
-    date: Number,
-    _id: String
+    date: Number
 };
 
 exports.collections = ['BrowserHistory'];
@@ -20,6 +19,5 @@ exports.fields = [
     "user_entered",
     "visits",
     "bookmark",
-    "date",
-    "_id"
+    "date"
 ];

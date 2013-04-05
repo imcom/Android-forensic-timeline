@@ -337,7 +337,7 @@ Timeline.prototype.onDataReady = function() {
         .attr("id", this.name.substr(1))
         .call(y_axis);
     adjustDateLabel();
-
+    
     // draw gird lines on the timeline
     var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid")
         .data(y_scale.ticks(this.tick_unit, this.tick_step))

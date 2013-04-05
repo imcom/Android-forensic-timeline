@@ -8,7 +8,6 @@ exports.EVENT_SCHEMA =
     last_time_contacted: Number,
     email: String,
     starred: String,
-    _id: String,
     contact_status_ts: String
 };
 
@@ -23,6 +22,5 @@ exports.fields = [
     "last_time_contacted",
     "email",
     "starred",
-    "_id",
     "contact_status_ts"
 ];

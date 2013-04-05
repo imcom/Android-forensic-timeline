@@ -8,6 +8,12 @@ var mongo = require('../libs/mongo_helper.js');
 var android_logs = require('../libs/android_log_schema.js');
 var cp_browserhistory = require('../libs/content_provider_browserhistory.js');
 var cp_browsersearches = require('../libs/content_provider_browsersearches.js');
+var cp_applications = require('../libs/content_provider_applications.js');
+var cp_calllogs = require("../libs/content_provider_calllogs.js");
+var cp_contacts = require("../libs/content_provider_contacts.js");
+var cp_mms = require("../libs/content_provider_mms.js");
+var cp_sms = require("../libs/content_provider_sms.js");
+var cp_services = require("../libs/content_provider_services.js");
 var fs_time = require('../libs/fs_time_schema.js');
 var inode_time = require('../libs/inode_time_schema.js');
 var dmesg = require('../libs/dmesg_schema.js');
@@ -44,11 +50,6 @@ exports.mapreduce = function(req, res) {
     mongo.mapreduce(req, res);
 }
 
-exports.dmesg = function(req, res) {
-    console.log("query on[" + dmesg.name + "]: " + req.body.selection);
-    do_query(req, res, dmesg);
-}
-
 exports.android_logs = function(req, res) {
     console.log("query on[" + android_logs.name + "]: " + req.body.selection);
     do_query(req, res, android_logs);
@@ -64,6 +65,36 @@ exports.cp_browsersearches = function(req, res) {
     do_query(req, res, cp_browsersearches);
 }
 
+exports.cp_applications = function(req, res) {
+    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    do_query(req, res, cp_applications);
+}
+
+exports.cp_calllogs = function(req, res) {
+    console.log("query on[" + cp_browserhistory.name + "]: " + req.body.selection);
+    do_query(req, res, cp_calllogs);
+}
+
+exports.cp_contacts = function(req, res) {
+    console.log("query on[" + cp_browsersearches.name + "]: " + req.body.selection);
+    do_query(req, res, cp_contacts);
+}
+
+exports.cp_services = function(req, res) {
+    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    do_query(req, res, cp_services);
+}
+
+exports.cp_mms = function(req, res) {
+    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    do_query(req, res, cp_mms);
+}
+
+exports.cp_sms = function(req, res) {
+    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    do_query(req, res, cp_sms);
+}
+
 exports.fs_time = function(req, res) {
     console.log("query on[" + fs_time.name + "]: " + req.body.selection);
     do_query(req, res, fs_time);
@@ -73,4 +104,15 @@ exports.inode_time = function(req, res) {
     console.log("query on[" + inode_time.name + "]: " + req.body.selection);
     do_query(req, res, inode_time);
 }
+
+exports.dmesg = function(req, res) {
+    console.log("query on[" + dmesg.name + "]: " + req.body.selection);
+    do_query(req, res, dmesg);
+}
+
+
+
+
+
+
 

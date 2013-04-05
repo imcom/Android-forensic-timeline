@@ -1,7 +1,7 @@
 
 
 var android_logs = require("./android_log_schema.js");
-var cp_applications = require("./content_provider_apps.js");
+var cp_applications = require("./content_provider_applications.js");
 var fs_time = require("./fs_time_schema.js");
 var inode_time = require("./inode_time_schema.js");
 var cp_browserhistory = require("./content_provider_browserhistory.js");
@@ -33,39 +33,23 @@ exports.read = function(collection, selection, fields, options, onCompletion, on
 
 exports.mapreduce = function(req, res) {
     var model = mongoose.model(req.body.collection);
-    /*if (req.body.type === 'query') {
-        model.find(
-            JSON.parse(req.body.selection), //selection
-            req.body.fields, //fields
-            null, //options
-            function(err, rtn) {
-                if (err == null) {
-                    res.json({"type": type, "content": rtn});
-                } else {
-                    res.json({"content": err.message});
-                }
-            }
-        );
-    } else { // type should be mapreduce*/
-    if (req.body.type === 'mapreduce') { //FIXME if statement is not necessary
-        var obj;
-        if (req.body.collection === 'main') {
-            if (req.body.aggregation === 'object') {
-                obj = android_logs.aggregateByObject;
-            } else if (req.body.aggregation === 'id') {
-                obj = android_logs.aggregateByPid;
-            }
+    var obj;
+    if (req.body.collection === 'main') {
+        if (req.body.aggregation === 'object') {
+            obj = android_logs.aggregateByObject;
+        } else if (req.body.aggregation === 'id') {
+            obj = android_logs.aggregateByPid;
         }
-        obj.query = JSON.parse(req.body.selection);
-        model.mapReduce(obj, function(err, rtn_model, stats) {
-            if (err == null) {
-                rtn_model.find().exec(function(err, rtn) {
-                    res.json({"error": 0, "type": req.body.collection, "content": rtn});
-                });
-            } else {
-                res.json({"error": 1, "type": req.body.collection, "content": err.message});
-            }
-        });
-    } // if statement
+    }
+    obj.query = JSON.parse(req.body.selection);
+    model.mapReduce(obj, function(err, rtn_model, stats) {
+        if (err == null) {
+            rtn_model.find().exec(function(err, rtn) {
+                res.json({"error": 0, "type": req.body.collection, "content": rtn});
+            });
+        } else {
+            res.json({"error": 1, "type": req.body.collection, "content": err.message});
+        }
+    });
 }
 

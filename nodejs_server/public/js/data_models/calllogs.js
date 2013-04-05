@@ -4,6 +4,38 @@ function CallLogs(dataset) {
     this.dataset = dataset;
 }
 
+/*exports.fields = [
+    "date",
+    "duration",
+    "type",
+    "number",
+    "name"
+];*/
+CallLogs.prototype.unifyDataset = function() {
+    var unified_dataset = [];
+    this.dataset.forEach(function(data, index) {
+        unified_dataset.push(
+            {
+                _id: index.toString(),
+                object: data.name,
+                date: data.date,
+                msg: data.name + "</br>" + data.duration + "</br>" + data.type,
+                display: data.number
+            }
+        );
+    });
+    this.dataset = unified_dataset;
+    return unified_dataset;
+}
+
+CallLogs.prototype.getIdField = function() {
+    return "_id";
+}
+
+CallLogs.prototype.getObjectField = function() {
+    return "object";
+}
+
 CallLogs.prototype.getDate = function(index) {
     return this.dataset[index].date;
 }

@@ -6,7 +6,6 @@ exports.EVENT_SCHEMA =
     cs_timestamp: Number,
     sub: String,
     date: Number,
-    _id: String,
     read_status: String
 };
 
@@ -19,6 +18,5 @@ exports.fields = [
 	"cs_timestamp",
 	"sub",
 	"date",
-	"_id",
 	"read_status"
 ];
