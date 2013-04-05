@@ -23,8 +23,9 @@ var cp_contacts = require("./libs/content_provider_contacts.js");
 var cp_mms = require("./libs/content_provider_mms.js");
 var cp_sms = require("./libs/content_provider_sms.js");
 var cp_services = require("./libs/content_provider_services.js");
-var temporal_info = require("./libs/temporal_info_schema.js");
 var dmesg = require("./libs/dmesg_schema.js");
+var temporal_info = require("./libs/temporal_info_schema.js");
+var package_info = require("./libs/package_info_schema.js");
 
 /*
  *  Init MongoDB connection and models
@@ -46,6 +47,7 @@ var schemas = [
     fs_time,
     inode_time,
     temporal_info,
+    package_info,
     dmesg
 ];
 
@@ -122,7 +124,8 @@ app.post('/content_provider_sms', db_handler.cp_sms);
 app.post('/content_provider_mms', db_handler.cp_mms);
 app.post('/fs_time', db_handler.fs_time);
 app.post('/inode_time', db_handler.inode_time);
-app.post('/mapreduce', db_handler.mapreduce);
+app.post('/temporal_info', db_handler.temporal_info);
+app.post('/package_info', db_handler.package_info);
 
 app.listen(app.get('port'));
 console.log("server started on port 2222...");

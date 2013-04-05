@@ -17,6 +17,8 @@ var cp_services = require("../libs/content_provider_services.js");
 var fs_time = require('../libs/fs_time_schema.js');
 var inode_time = require('../libs/inode_time_schema.js');
 var dmesg = require('../libs/dmesg_schema.js');
+var temporal_info = require('../libs/temporal_info_schema.js');
+var package_info = require('../libs/package_info_schema.js');
 
 function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
@@ -71,27 +73,27 @@ exports.cp_applications = function(req, res) {
 }
 
 exports.cp_calllogs = function(req, res) {
-    console.log("query on[" + cp_browserhistory.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_calllogs.name + "]: " + req.body.selection);
     do_query(req, res, cp_calllogs);
 }
 
 exports.cp_contacts = function(req, res) {
-    console.log("query on[" + cp_browsersearches.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_contacts.name + "]: " + req.body.selection);
     do_query(req, res, cp_contacts);
 }
 
 exports.cp_services = function(req, res) {
-    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_services.name + "]: " + req.body.selection);
     do_query(req, res, cp_services);
 }
 
 exports.cp_mms = function(req, res) {
-    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_mms.name + "]: " + req.body.selection);
     do_query(req, res, cp_mms);
 }
 
 exports.cp_sms = function(req, res) {
-    console.log("query on[" + cp_applications.name + "]: " + req.body.selection);
+    console.log("query on[" + cp_sms.name + "]: " + req.body.selection);
     do_query(req, res, cp_sms);
 }
 
@@ -109,6 +111,21 @@ exports.dmesg = function(req, res) {
     console.log("query on[" + dmesg.name + "]: " + req.body.selection);
     do_query(req, res, dmesg);
 }
+
+exports.temporal_info = function(req, res) {
+    console.log("query on[" + temporal_info.name + "]: " + req.body.selection);
+    do_query(req, res, temporal_info);
+}
+
+exports.package_info = function(req, res) {
+    console.log("query on[" + package_info.name + "]: " + req.body.selection);
+    do_query(req, res, package_info);
+}
+
+
+
+
+
 
 
 

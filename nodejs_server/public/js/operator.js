@@ -262,6 +262,29 @@ function drawMainTimeline() {
     });
 }
 
+function referenceQuery(url, target, selection) {
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {
+            collection: target,
+            selection: selection,
+            type: "query"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content.length > 0) {
+                console.log(data);
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("search query error!");
+        }
+    });
+}
+
 function drawExtendTimeline() {
     var selection = JSON.parse(formSelection());
     if (selection == null) selection = {};
@@ -310,6 +333,8 @@ search_btn.click(function() {
     dataset = []; // clear dataset for new data
     timeline_main.clearData(true, true);
     drawMainTimeline();
+    referenceQuery("temporal_info", "temporal", null);
+    referenceQuery("package_info", "packages", null);
 });
 
 expand_btn.click(function() {
