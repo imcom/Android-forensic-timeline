@@ -48,3 +48,9 @@ rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 .suspect-time-indicator{stroke:#a52a2a;stroke-dasharray:8,8,2;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"}
 rect.suspects{stroke:#000;stroke-width:2}
 .suspect-time-label{fill:#f00}
+#time-brush rect.background{visibility:visible !important}
+.time-brush rect.background{fill:rgba(0,0,0,0.1)}
+.time-brush .extent{stroke:#f09f8c;fill-opacity:.125;shape-rendering:crispEdges}
+.time-brush-axis line,.time-brush-axis path{fill:none;stroke:#aaa;fill-opacity:.1;shape-rendering:crispEdges}
+.time-brush-axis path{stroke:rgba(0,0,0,0.1)}
+.time-brush-axis text{font-family:Consolas;font-size:12px}

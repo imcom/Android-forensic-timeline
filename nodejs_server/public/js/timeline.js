@@ -169,7 +169,7 @@ Timeline.prototype.removeTimeline = function() {
     $(this.getName()).children('.timeline-graph').remove();
 }
 
-Timeline.prototype.setDataset = function(dataset, check_suspects) {
+Timeline.prototype.setDataset = function(dataset, check_suspects, enable_time_brush) {
     // only check for suspects during initiation & do NOT check suspects upon MAC times
     var self = this;
     var normal_dataset = {};
@@ -234,7 +234,7 @@ Timeline.prototype.setDataset = function(dataset, check_suspects) {
         }
     }
     // on dataset is set, draw timeline
-    this.onDataReady();
+    this.onDataReady(enable_time_brush);
 }
 
 Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
@@ -261,7 +261,7 @@ Timeline.prototype.drawPath = function() {
         .attr("fill", "none");
 }
 
-Timeline.prototype.onDataReady = function() {
+Timeline.prototype.onDataReady = function(enable_time_brush) {
     var self = this;
     // calculate the entire time period
     var date_padding = 2; // unit: seconds
@@ -337,7 +337,7 @@ Timeline.prototype.onDataReady = function() {
         .attr("id", this.name.substr(1))
         .call(y_axis);
     adjustDateLabel();
-    
+
     // draw gird lines on the timeline
     var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid")
         .data(y_scale.ticks(this.tick_unit, this.tick_step))
@@ -599,6 +599,74 @@ Timeline.prototype.onDataReady = function() {
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
         });
     }); // each self.dataset
+
+    // draw time brush on control panel
+    if (enable_time_brush) {
+        // init the time brush on control pane
+        var time_brush = d3.select("#time-brush").append("svg")
+            .attr("width", 205)
+            .attr("height", 50);
+
+        var brush_scale = d3.time.scale()
+            .range([0, 205])
+            .domain(y_scale.domain());
+
+        var brush_axis = d3.svg.axis()
+            .scale(brush_scale)
+            .tickSize(30)
+            .tickPadding(0)
+            .orient("bottom");
+
+        brush_axis.tickFormat(function(date) {
+            formatter = d3.time.format.utc("%H:%M");
+            return formatter(date);
+        });
+
+        var brush = d3.svg.brush()
+            .x(brush_scale)
+            .on("brush", onBrush);
+
+        time_brush.append("g")
+            .attr("class", "time-brush-axis")
+            .call(brush_axis);
+
+        time_brush.append("g")
+            .attr("class", "time-brush")
+            .call(brush)
+            .selectAll("rect")
+            .attr("y", 0)
+            .attr("height", 30);
+
+        function onBrush() {
+            if (!brush.empty()) {
+                y_scale.domain(brush.extent());
+                self.clearPath();
+                self.timeline.select(".time-axis").call(y_axis);
+                self.timeline.selectAll(".grid-line")
+                    .attr("y1", y_scale)
+                    .attr("y2", y_scale);
+                self.timeline.selectAll(".timeline-event")
+                    .attr("cy", function(d) { return y_scale(d.date); });
+                self.timeline.selectAll(".suspects")
+                    .attr("y", function(d) { return y_scale(d.date); });
+                self.timeline.selectAll(".description")
+                    .attr("y", function(d) { return y_scale(d.date); });
+                self.timeline.selectAll("#suspect-description")
+                    .attr("y", function(d) { return y_scale(d.date); });
+                self.timeline.selectAll("#suspect-time-indicator")
+                    .attr("y1", function(d) { return y_scale(d.date); })
+                    .attr("y2", function(d) { return y_scale(d.date); });
+                self.timeline.selectAll("#suspect-time-label")
+                    .attr("y", function(d) { return y_scale(d.date) - 5; });
+                self.fillPathData(x_scale, y_scale, display_dataset);
+                self.drawPath();
+                adjustDateLabel();
+            }
+        }
+
+    } else { // if time brush is disabled, then remove it
+        $('#time-brush').children().remove();
+    }
 
 } // function onDataReady()
 

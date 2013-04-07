@@ -114,7 +114,7 @@ function onIdSelection() {
     updateResponsivePane(object_checkboxs, display_dataset, "object");
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, false);
+    timeline_main.setDataset(display_dataset, false, false);
 }
 
 function onObjectSelection() {
@@ -138,7 +138,7 @@ function onObjectSelection() {
     updateResponsivePane(id_checkboxs, display_dataset, "_id");
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, false);
+    timeline_main.setDataset(display_dataset, false, false);
 }
 
 function fillResponsivePane(target_set) {
@@ -182,7 +182,7 @@ function fillPanes(src) {
         id_selected = false;
         if (object_selected) {
             object_pane.val(null);
-            object_selected = false;
+            object_pane.val($(this).val());
         } else {
             object_selected = true;
         }
@@ -192,7 +192,7 @@ function fillPanes(src) {
         object_selected = false;
         if (id_selected) {
             id_pane.val(null);
-            id_selected = false;
+            id_pane.val($(this).val());
         } else {
             id_selected = true;
         }
@@ -272,7 +272,7 @@ function drawMainTimeline() {
                 timeline_main.initTimeline();
                 var check_suspects = false;
                 if (data.type === 'android_logs') check_suspects = true;
-                timeline_main.setDataset(dataset, check_suspects);
+                timeline_main.setDataset(dataset, check_suspects, true);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -339,7 +339,7 @@ function drawExtendTimeline() {
                 timeline_extend.initTimeline();
                 var check_suspects = false;
                 if (data.type === 'android_logs') check_suspects = true;
-                timeline_extend.setDataset(dataset_extend, check_suspects);
+                timeline_extend.setDataset(dataset_extend, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -448,7 +448,7 @@ filter_btn.click(function() {
     // re-draw timeline graph
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(filtered_dataset, false);
+    timeline_main.setDataset(filtered_dataset, false, false);
     // make changes to the current dataset (for responsive panes), keep initial dataset unchanged
     current_dataset = filtered_dataset;
     $('#undo').css('opacity', 0.8).css('z-index', 100);
@@ -574,7 +574,7 @@ $('#undo').click(function() {
     // re-draw timeline graph
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(current_dataset, false);
+    timeline_main.setDataset(current_dataset, false, true);
     $('#undo').css('opacity', 0).css('z-index', -1);
 });
 
