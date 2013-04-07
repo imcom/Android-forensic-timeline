@@ -31,7 +31,7 @@ with open(log_file) as dmesg:
             mseconds = int(round(nseconds / 1000))
             event = match.groupdict().get('event')
             timestamp = btime + timedelta(seconds=seconds, microseconds=mseconds)
-            buf = {'date':timestamp.strftime('%s'), 'event':event.strip()}
+            buf = {'date':int(timestamp.strftime('%s')), 'event':event.strip()}
             json.dump(buf, new_log_file)
             new_log_file.write('\n')
         else:
