@@ -41,6 +41,7 @@ label{display:inline-block}
 rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 .graph-title{font-family:Consolas;font-size:200%;z-index:100;font-style:oblique;font-variant:small-caps}
 .back-to-top{position:fixed;right:40px;bottom:20px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/back-to-top.png");width:64px;height:64px}
+#undo{position:fixed;cursor:pointer;right:180px;bottom:20px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/undo_icon.png");width:64px;height:64px}
 .reset-scale{position:fixed;cursor:pointer;right:110px;bottom:20px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/reset-timeline.png");width:64px;height:64px}
 .description{font-family:Consolas;z-index:-1;pointer-events:none}
 .suspect-description{fill:#f00}

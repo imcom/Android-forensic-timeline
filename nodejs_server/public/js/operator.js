@@ -32,9 +32,12 @@ var aggregate_btn = $('#aggregate-btn');
 
 var dataset = [];
 var dataset_extend = [];
+var current_dataset = [];
 var time_range = [];
 var dropdown_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
+var object_selected = false;
+var id_selected = false;
 
 var timeline_main = new Timeline("#timeline_main");
 var timeline_extend = new Timeline("#timeline_extend");
@@ -91,6 +94,7 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
 }
 
 function onIdSelection() {
+    if (current_dataset.length == 0) current_dataset = dataset;
     var id_checkboxs = $('input[id="id-checkbox"]');
     var object_checkboxs = $('input[id="object-checkbox"]');
     var display_dataset;
@@ -100,10 +104,10 @@ function onIdSelection() {
             display_ids.push(checkbox.value);
         }
     });
-    display_dataset = dataset.filter(function(record) {
+    display_dataset = current_dataset.filter(function(record) {
         return $.inArray(record._id, display_ids) != -1;
     });
-    clearPanes(false, false, false);
+    clearPanes(false, false, false, true);
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
@@ -114,19 +118,20 @@ function onIdSelection() {
 }
 
 function onObjectSelection() {
+    if (current_dataset.length == 0) current_dataset = dataset;
     var object_checkboxs = $('input[id="object-checkbox"]');
     var id_checkboxs = $('input[id="id-checkbox"]');
-    var display_dataset = dataset;
+    var display_dataset;
     var display_objects = [];
     object_checkboxs.forEach(function(checkbox) {
         if (checkbox.checked) {
             display_objects.push(checkbox.value);
         }
     });
-    display_dataset = dataset.filter(function(record) {
+    display_dataset = current_dataset.filter(function(record) {
         return $.inArray(record.object, display_objects) != -1;
     });
-    clearPanes(false, false, false);
+    clearPanes(false, false, false, true);
     fillPanes(display_dataset);
     resetTimeRange();
     initTimeRange(display_dataset);
@@ -174,19 +179,36 @@ function fillPanes(src) {
     });
     $("#objects option").click(function() {
         id_pane.val(null);
+        id_selected = false;
+        if (object_selected) {
+            object_pane.val(null);
+            object_selected = false;
+        } else {
+            object_selected = true;
+        }
     });
     $("#ids option").click(function() {
         object_pane.val(null);
+        object_selected = false;
+        if (id_selected) {
+            id_pane.val(null);
+            id_selected = false;
+        } else {
+            id_selected = true;
+        }
     });
 }
 
-function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline) {
+function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline, clear_time_window) {
     object_pane.children().remove();
     id_pane.children().remove();
+    selection.val("");
     var window_start = $('#time-window-start');
     var window_end = $('#time-window-end');
-    window_start.children().remove();
-    window_end.children().remove();
+    if (clear_time_window) {
+        window_start.children().remove();
+        window_end.children().remove();
+    }
     $('#timeline_main').children().remove();
     if (clear_extend_timeline) {
         $('#timeline_extend').children().remove();
@@ -202,20 +224,20 @@ function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline) 
 }
 
 function formSelection() {
-    if (collection.val().split(':')[0] === 'android_logs') {
-        if (selection.val() != '') { // always use OR logic in query
-            var regex_selection = {};
-            regex_selection['$or'] = [];
-            var keywords = selection.val().split(' ');
-            regex_selection['$or'].push({object : keywords.join('|')});
-            regex_selection['$or'].push({msg : keywords.join('|')});
-            return JSON.stringify(regex_selection);
-        } else {
-            return null;
-        }
+    //if (collection.val().split(':')[0] === 'android_logs') { // this is the only collection supported
+    if (selection.val() != '') { // always use OR logic in query
+        var regex_selection = {};
+        regex_selection['$or'] = [];
+        var keywords = selection.val().split(' ');
+        regex_selection['$or'].push({object : keywords.join('|')});
+        regex_selection['$or'].push({msg : keywords.join('|')});
+        return JSON.stringify(regex_selection);
     } else {
-        return null; // null selection for any other collections
+        return null;
     }
+    //} else {
+    //    return null; // null selection for any other collections
+    //}
 }
 
 function fillMapReduceOptions(data_type) {
@@ -242,7 +264,7 @@ function drawMainTimeline() {
             if (data.content.length > 0) {
                 var generic_data = new GenericData(data.type, data.content);
                 dataset = generic_data.unifyDataset();
-                clearPanes(true, true, true);
+                clearPanes(true, true, true, true);
                 fillPanes(dataset);
                 fillResponsivePane(dataset);
                 initTimeRange(dataset);
@@ -329,6 +351,22 @@ function drawExtendTimeline() {
     });
 }
 
+function resetProgressBar() {
+    $('#progress-indicator').css("width", 0);
+}
+
+function hideProgressBar() {
+    $('#progress-bar').animate({"bottom": -20}, 500, "ease", resetProgressBar);
+}
+
+function showProgressBar() {
+    $('#progress-indicator').animate({"width": "100%"}, 1000, "ease", hideProgressBar);
+}
+
+function showAlert(message) {
+    $('body').append("<div class='alert'><button type='button' data-dismiss='alert' class='close' >&times;</button>" + message + "</div>");
+}
+
 search_btn.click(function() {
     dataset = []; // clear dataset for new data
     timeline_main.clearData(true, true);
@@ -344,7 +382,8 @@ expand_btn.click(function() {
 });
 
 filter_btn.click(function() {
-    var filtered_dataset = dataset;
+    var filtered_dataset;
+    if (current_dataset.length == 0) current_dataset = dataset;
 
     // time window filter
     var start_time = Number($('#time-window-start').val());
@@ -396,27 +435,33 @@ filter_btn.click(function() {
         filtered_dataset = filtered_dataset_backup;
     }
     // reset display in all panes except for aggregation graph & extend timeline
-    clearPanes(true, false, false);
+    clearPanes(true, false, false, false);
     fillPanes(filtered_dataset);
+    object_pane.val(obj_filter);
+    id_pane.val(id_filter);
     fillResponsivePane(filtered_dataset);
-    // reset display of time window
-    resetTimeRange();
-    initTimeRange(filtered_dataset);
+    // adjust display of time window
+    //resetTimeRange();
+    //initTimeRange(filtered_dataset);
+    $('#time-window-start').val(start_time);
+    $('#time-window-end').val(end_time);
     // re-draw timeline graph
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
     timeline_main.setDataset(filtered_dataset, false);
-    // make changes to the initial dataset
-    dataset = filtered_dataset;
+    // make changes to the current dataset (for responsive panes), keep initial dataset unchanged
+    current_dataset = filtered_dataset;
+    $('#undo').css('opacity', 0.8).css('z-index', 100);
 });
 
 clear_btn.click(function() {
     $('#arena').children().text("Show results here...");
     $('#aggregation-arena').children().remove();
-    clearPanes(true, true, true);
+    clearPanes(true, true, true, true);
     resetTimeRange();
     timeline_main.clearData(true, true);
     timeline_extend.clearData(true, true);
+    $('#undo').css('opacity', 0).css('z-index', -1);
 });
 
 dropdown_btn.click(function() {
@@ -517,19 +562,21 @@ aggregate_btn.click(function() {
     });
 });
 
-function resetProgressBar() {
-    $('#progress-indicator').css("width", 0);
-}
+$('#undo').click(function() {
+    current_dataset = dataset;
+    // reset display in all panes except for aggregation graph & extend timeline
+    clearPanes(true, false, false, true);
+    fillPanes(current_dataset);
+    fillResponsivePane(current_dataset);
+    // adjust display of time window
+    resetTimeRange();
+    initTimeRange(current_dataset);
+    // re-draw timeline graph
+    timeline_main.clearData(true, false);
+    timeline_main.initTimeline();
+    timeline_main.setDataset(current_dataset, false);
+    $('#undo').css('opacity', 0).css('z-index', -1);
+});
 
-function hideProgressBar() {
-    $('#progress-bar').animate({"bottom": -20}, 500, "ease", resetProgressBar);
-}
 
-function showProgressBar() {
-    $('#progress-indicator').animate({"width": "100%"}, 1000, "ease", hideProgressBar);
-}
-
-function showAlert(message) {
-    $('body').append("<div class='alert'><button type='button' data-dismiss='alert' class='close' >&times;</button>" + message + "</div>");
-}
 
