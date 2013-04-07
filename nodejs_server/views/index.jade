@@ -49,7 +49,7 @@ html
                                 //option(value='content_provider_sms:SMS') SMS
                         li.nav-header.cozy-list-header Content Specification
                         li
-                            input(type="text", placeholder="keywords divided by space")#selection-input
+                            input(type="text", placeholder="keywords ...")#selection-input
                         li
                             div.btn-group
                                 button#search.btn.btn-success.btn-small Search
@@ -73,15 +73,19 @@ html
                             select#map-reduce-type.selection-field
                                 option aggregate by ...
                             button#aggregate-btn.btn.btn-success.btn-small Aggregate
+                        li.nav-header Time Brush
+                        li
+                            #time-brush
             div.span10#content
                 p.nav-header.text-center Timeline Pane
                 fieldset#col_left
                     #timeline_main.timeline
                 fieldset#col_right
                     #timeline_extend.timeline
-        script(type = 'text/javascript', src = '/js/operator.js')
         a(href="#", class="back-to-top")
         a.reset-scale
+        a#undo
+        script(type = 'text/javascript', src = '/js/operator.js')
 
 
 
