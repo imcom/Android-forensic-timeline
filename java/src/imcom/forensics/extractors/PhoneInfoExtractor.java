@@ -42,7 +42,7 @@ public class PhoneInfoExtractor implements Extractor {
 			if (telephony_manager != null) {
 				//writer.write(helper.formatString("investigation_date", date));
 				//writer.newLine();
-				Log.d(LOG_TAG, telephony_manager.getSubscriberId());
+				//Log.d(LOG_TAG, telephony_manager.getSubscriberId());
 				writer.write(helper.formatString("IMSI", telephony_manager.getSubscriberId()));
 				writer.write(" ");
 				writer.write(helper.formatString("IMEI", telephony_manager.getDeviceId()));

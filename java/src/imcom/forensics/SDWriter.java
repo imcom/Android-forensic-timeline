@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class SDWriter {
 	
-	private static final String LOG_TAG = "timeline_forensic";
+	private static final String LOG_TAG = "SD Writer";
 	private static Context context;
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddkkmm", Locale.US);
 

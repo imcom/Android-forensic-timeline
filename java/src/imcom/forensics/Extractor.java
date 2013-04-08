@@ -8,7 +8,7 @@ import android.net.Uri;
 
 public interface Extractor {
 	
-	static final String LOG_TAG = "timeline_forensic";
+	static final String LOG_TAG = "Extractor";
 	
 	public int extract(ContentResolver resolver, Context context, File dst_dir);
 	

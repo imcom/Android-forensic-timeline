@@ -6,13 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import android.app.DownloadManager;
-import android.app.DownloadManager.Query;
 import android.database.Cursor;
 import android.util.Log;
 
 public class DownloadHistoryGatherer {
 
-	private static final String LOG_TAG = "timeline_forensic";
+	private static final String LOG_TAG = "DownloadHistory";
 	private String DOWNLOAD_HISTORY_FILENAME;
 	private static final String GATHERER_NAME = "DownloadHistory";
 	protected FormatHelper helper;
@@ -25,15 +24,15 @@ public class DownloadHistoryGatherer {
 
 	public void gather(DownloadManager download_manager, File dst_dir) {
 
-		Query query = new DownloadManager.Query();
-		query.setFilterByStatus(
+		DownloadManager.Query query = new DownloadManager.Query();
+		query = query.setFilterByStatus(
 				DownloadManager.STATUS_FAILED |
 				DownloadManager.STATUS_PAUSED |
 				DownloadManager.STATUS_PENDING |
 				DownloadManager.STATUS_RUNNING |
 				DownloadManager.STATUS_SUCCESSFUL
 		);
-		Cursor cursor = download_manager.query(query);
+		Cursor cursor = download_manager.query(query); //FIXME the cursor is always empty
 		
 		if (cursor != null && cursor.moveToFirst()) {
 			try {
