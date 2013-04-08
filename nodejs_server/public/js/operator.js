@@ -317,7 +317,7 @@ function drawExtendTimeline() {
         showAlert("Invalid time window");
         return;
     } else {
-        selection.date = {'$gt': start_time, '$lt': end_time};
+        selection.date = {'$gte': start_time, '$lte': end_time};
     }
     selection = JSON.stringify(selection);
 

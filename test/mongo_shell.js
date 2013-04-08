@@ -1,7 +1,7 @@
 
 
 var selection = {};
-selection.date = {$gte:1365366000, $lte:1365366200};
+selection.date = {$gte:1363281909, $lte:1363281919};
 selection.msg = {$not: new RegExp('.*gc.*', 'i')}
 selection.object = {$not: new RegExp('.*(gc|SurfaceFlinger).*', 'i')}
 
@@ -37,3 +37,7 @@ while(cursor.hasNext()) {
     var record = cursor.next();
     printjson(record);
 }
+
+
+
+
