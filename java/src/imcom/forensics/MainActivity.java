@@ -31,6 +31,7 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.util.Log;
 import android.view.Menu;
@@ -107,8 +108,12 @@ public class MainActivity extends Activity {
 			SDWriter sd_writer = new SDWriter(this);
 			dst_dir = sd_writer.getStorageDirectory(case_name, tag_name);
 			
-			TemporalInfoGatherer gatherer = new TemporalInfoGatherer("temporal.pjson");
-			gatherer.gather(dst_dir);
+			TemporalInfoGatherer temporal_info_gatherer = new TemporalInfoGatherer("temporal.pjson");
+			temporal_info_gatherer.gather(dst_dir);
+			
+			DownloadManager download_manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+			DownloadHistoryGatherer download_history_gatherer = new DownloadHistoryGatherer("downloads.pjson");
+			download_history_gatherer.gather(download_manager, dst_dir);
 			
 			extract();
 			terminate();
