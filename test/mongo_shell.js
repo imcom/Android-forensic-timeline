@@ -1,42 +1,68 @@
 
 
-var selection = {};
-selection.date = {$gte:1363281909, $lte:1363281919};
-selection.msg = {$not: new RegExp('.*gc.*', 'i')}
-selection.object = {$not: new RegExp('.*(gc|SurfaceFlinger).*', 'i')}
-
-var projection = {_id:0, level:0};
 var cursor;
+var model;
+var selection;
 
-cursor = db.main.find(selection, projection);
-print("Main:");
+var selection = {event: new RegExp('.*usb.*', 'i')};
+
+var map = function() {
+    var key = this.event.split(":", 1)[0];
+    var value = {
+        date: [this.date],
+        count: [1],
+        msg: [this.event.substring(this.event.indexOf(":") + 1).trim()]
+    };
+    emit(key, value);
+};
+
+var reduce = function(key, values) {
+    var result = {date: [], count: [], msg: []};
+    values.forEach(function(value, index) {
+        if (result.date.indexOf(value.date) == -1) {
+            result.date.push(value.date[0]);
+            result.count.push(value.count[0]);
+        } else {
+            result.count[index] += value.count[0];
+        }
+        result.msg.push(value.msg[0]);
+    });
+    return result;
+};
+
+var finalize = function(key, value) {
+    var final_result = {};
+    for (var i = 0; i < value.date.length; ++i) {
+        if (!final_result.hasOwnProperty(value.date[i])) {
+            final_result[value.date[i]] = {};
+            final_result[value.date[i]].count = value.count[i];
+            final_result[value.date[i]].content = [];
+            final_result[value.date[i]].content.push(value.msg[i]);
+        } else {
+            final_result[value.date[i]].count += value.count[i];
+            final_result[value.date[i]].content.push(value.msg[i]);
+        }
+    }
+    return final_result;
+};
+
+model = db.dmesg.mapReduce(
+    map,
+    reduce,
+    {
+        out: "usb_connection",
+        query: selection,
+        finalize: finalize
+    }
+);
+
+cursor = model.find();
 while(cursor.hasNext()) {
     var record = cursor.next();
     printjson(record);
 }
 
-print("System:");
-cursor = db.system.find(selection, projection);
-while(cursor.hasNext()) {
-    var record = cursor.next();
-    printjson(record);
-}
 
-print("Events:");
-cursor = db.events.find(selection, projection);
-while(cursor.hasNext()) {
-    var record = cursor.next();
-    printjson(record);
-}
-
-print("Dmesg:");
-var dmesg_selection = {date: selection.date}
-dmesg_selection.event = {$not: new RegExp('.*(call alarm|BATT).*', 'i')}
-cursor = db.dmesg.find(dmesg_selection, {_id:0});
-while(cursor.hasNext()) {
-    var record = cursor.next();
-    printjson(record);
-}
 
 
 
