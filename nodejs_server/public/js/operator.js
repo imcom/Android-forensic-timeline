@@ -349,6 +349,7 @@ function drawExtendTimeline() {
             showAlert("search query error!");
         }
     });
+    $('#trash').css('opacity', 0.8).css('z-index', 100);
 }
 
 function resetProgressBar() {
@@ -457,6 +458,7 @@ filter_btn.click(function() {
 clear_btn.click(function() {
     $('#arena').children().text("Show results here...");
     $('#aggregation-arena').children().remove();
+    $('#time-brush').children().remove();
     clearPanes(true, true, true, true);
     resetTimeRange();
     timeline_main.clearData(true, true);
@@ -578,5 +580,10 @@ $('#undo').click(function() {
     $('#undo').css('opacity', 0).css('z-index', -1);
 });
 
+$('#trash').click(function() {
+    timeline_extend.clearData(true, true);
+    $('#timeline_extend').children().remove();
+    $('#trash').css('opacity', 0).css('z-index', -1);
+});
 
 
