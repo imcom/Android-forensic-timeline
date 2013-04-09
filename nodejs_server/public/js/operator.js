@@ -96,7 +96,7 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
 }
 
 function onIdSelection() {
-    if (current_dataset.length == 0) current_dataset = dataset;
+    if (current_dataset.length === 0) current_dataset = dataset;
     var id_checkboxs = $('input[id="id-checkbox"]');
     var object_checkboxs = $('input[id="object-checkbox"]');
     var display_dataset;
@@ -120,7 +120,7 @@ function onIdSelection() {
 }
 
 function onObjectSelection() {
-    if (current_dataset.length == 0) current_dataset = dataset;
+    if (current_dataset.length === 0) current_dataset = dataset;
     var object_checkboxs = $('input[id="object-checkbox"]');
     var id_checkboxs = $('input[id="id-checkbox"]');
     var display_dataset;
@@ -386,6 +386,7 @@ function showAlert(message) {
 
 search_btn.click(function() {
     dataset = []; // clear dataset for new data
+    current_dataset = [];
     timeline_main.clearData(true, true);
     drawMainTimeline();
     referenceQuery("temporal_info", "temporal", null);
@@ -400,7 +401,7 @@ expand_btn.click(function() {
 
 filter_btn.click(function() {
     var filtered_dataset;
-    if (current_dataset.length == 0) current_dataset = dataset;
+    if (current_dataset.length === 0) current_dataset = dataset;
 
     // time window filter
     var start_time = Number($('#time-window-start').val());
@@ -480,6 +481,8 @@ clear_btn.click(function() {
     timeline_main.clearData(true, true);
     timeline_extend.clearData(true, true);
     $('#undo').css('opacity', 0).css('z-index', -1);
+    dataset = [];
+    current_dataset = [];
 });
 
 dropdown_btn.click(function() {
