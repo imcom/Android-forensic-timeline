@@ -56,11 +56,14 @@ model = db.dmesg.mapReduce(
     }
 );
 
+function displayResult(cursor) {
 cursor = model.find();
 while(cursor.hasNext()) {
     var record = cursor.next();
     printjson(record);
 }
+}
+
 
 
 
