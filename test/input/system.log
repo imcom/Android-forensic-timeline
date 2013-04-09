@@ -1,757 +1,587 @@
-{"date":1363276672,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363276683,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363276683,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363276683,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363276685,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276698,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276705,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:0\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276722,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363276722,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363276722,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276722,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276723,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276723,"msg":"Dhcprenew-settingtimerfor40293832ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276723,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363276723,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363276723,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276723,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276724,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276724,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276724,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276724,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276724,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363276724,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363276724,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363276724,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363276724,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363276724,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363276725,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363276725,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@4095c2c0\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363276725,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276731,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276732,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363276732,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363276732,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363276734,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276735,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363276735,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363276735,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363276761,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276773,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363276792,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363276792,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363276792,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363276795,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363276795,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363276795,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363276801,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363276803,"msg":"Startingactivity:Intent{flg=0x34500000cmp=com.tencent.mm/.ui.LauncherUIbnds=[0,393][480,489](hasextras)}frompid1590\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363276803,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363276803,"msg":"ActivitypausetimeoutforHistoryRecord{40ae0cb8com.sina.weibo/.MainTabActivity}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363276804,"msg":"Startingactivity:Intent{flg=0x24000000cmp=com.tencent.mm/.ui.MainTabUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363276804,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276804,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276804,"msg":"Clientnotactive,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@409a9668\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363276813,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.ui.chatting.ChattingUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363276822,"msg":"Startingactivity:Intent{flg=0x4000000cmp=com.tencent.mm/.ui.MainTabUI}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363276822,"msg":"DuplicatefinishrequestforHistoryRecord{40d74378com.tencent.mm/.ui.chatting.ChattingUI}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363276823,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363276823,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363276823,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276823,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363276824,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276824,"msg":"Dhcprenew-settingtimerfor40192918ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276825,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:0\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363276946,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363277175,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363277175,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277175,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277175,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277175,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277175,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277190,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363277190,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277190,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277190,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277190,"msg":"Dhcprenew-settingtimerfor39826620ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277247,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277420,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363277420,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363277420,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363277548,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277685,"msg":"hookRadio-sign:trueoffset:3600\r","object":"AlarmManager","pid":"1502","level":"V"}
-{"date":1363277729,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363277729,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363277729,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277729,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277729,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277729,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277729,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277732,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363277732,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@40a646a0\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363277734,"msg":"Startingactivity:Intent{flg=0x4000000cmp=com.tencent.mm/.ui.LauncherUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363277734,"msg":"DuplicatefinishrequestforHistoryRecord{40b7a578com.tencent.mm/.ui.MainTabUI}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363277734,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277734,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277736,"msg":"Startingactivity:Intent{cmp=com.sina.weibo/.DetailWeiboActivity(hasextras)}frompid513\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363277742,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363277742,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363277742,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363277750,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363277752,"msg":"Startingactivity:Intent{act=com.sina.weibo.action.showimagevieweractivitycmp=com.sina.weibo/.ImageViewerActivity(hasextras)}frompid513\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363277752,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277752,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277753,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363277762,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363277765,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363277776,"msg":"DuplicatefinishrequestforHistoryRecord{4096d360com.sina.weibo/.ImageViewerActivity}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"DuplicatefinishrequestforHistoryRecord{4096d360com.sina.weibo/.ImageViewerActivity}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"DuplicatefinishrequestforHistoryRecord{4096d360com.sina.weibo/.ImageViewerActivity}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"DuplicatefinishrequestforHistoryRecord{4096d360com.sina.weibo/.ImageViewerActivity}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"DuplicatefinishrequestforHistoryRecord{4096d360com.sina.weibo/.ImageViewerActivity}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363277776,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363277777,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363277778,"msg":"freeMemory=716656640\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363277778,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363277778,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363277802,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363277802,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363277802,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363277838,"msg":"freeMemory=716656640\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363277838,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363277838,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363277844,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363277844,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277844,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363277844,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363277845,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277845,"msg":"Dhcprenew-settingtimerfor39171808ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363277849,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363277906,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:0\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278150,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278406,"msg":"dualLedfornotification\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278408,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363278408,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278408,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278408,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278409,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278409,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278409,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278409,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278409,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278409,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278409,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278409,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278409,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278412,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363278412,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@40ae29c8\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363278412,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278414,"msg":"Startingactivity:Intent{flg=0x24000000cmp=com.tencent.mm/.ui.LauncherUIbnds=[0,393][480,489](hasextras)}frompid-1\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278414,"msg":"startActivitycalledfromnon-Activitycontext;forcingIntent.FLAG_ACTIVITY_NEW_TASKfor:Intent{flg=0x24000000cmp=com.tencent.mm/.ui.LauncherUIbnds=[0,393][480,489](hasextras)}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363278414,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278414,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363278414,"msg":"Failedtofindproviderinfoforcom.tencent.mm.coolassist.debugprovider\r","object":"ActivityThread","pid":"3510","level":"E"}
-{"date":1363278414,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@40a59c98\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363278414,"msg":"Startingactivity:Intent{flg=0x24000000cmp=com.tencent.mm/.ui.MainTabUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278415,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278415,"msg":"cancelNotification,ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mm,id=0\r","object":"NotificationService","pid":"1502","level":"D"}
-{"date":1363278415,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.ui.chatting.ChattingUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278415,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278415,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278431,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363278432,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278432,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278432,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278432,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278432,"msg":"Dhcprenew-settingtimerfor38584825ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278449,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278449,"msg":"dualLedfornotification\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278450,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278465,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278465,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278465,"msg":"cancelNotification,ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mm,id=0\r","object":"NotificationService","pid":"1502","level":"D"}
-{"date":1363278466,"msg":"dualLedfornotification\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278470,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363278470,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363278470,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363278482,"msg":"dualLedfornotification\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278515,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363278515,"msg":"dualLedfornotification\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278515,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278515,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"cancelNotification,ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mm,id=0\r","object":"NotificationService","pid":"1502","level":"D"}
-{"date":1363278515,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278515,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278515,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278515,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278515,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278516,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363278516,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@408a1ae8\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363278563,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278566,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278569,"msg":"freeMemory=716607488\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363278569,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363278569,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363278580,"msg":"Startingactivity:Intent{flg=0x4000000cmp=com.tencent.mm/.ui.MainTabUI}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278580,"msg":"DuplicatefinishrequestforHistoryRecord{40cbcc78com.tencent.mm/.ui.chatting.ChattingUI}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363278583,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.plugin.sns.ui.SnsTimeLineUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278588,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278589,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.plugin.sns.ui.SnsBrowseUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278591,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278599,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278599,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278599,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278599,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363278600,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278600,"msg":"Dhcprenew-settingtimerfor38416907ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278600,"msg":"ActivitypausetimeoutforHistoryRecord{408a1c98com.tencent.mm/.plugin.sns.ui.SnsTimeLineUI}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363278617,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278617,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278617,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278617,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278617,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278617,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278618,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363278618,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@40893650\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363278626,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278629,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363278629,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363278629,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363278638,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278640,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.plugin.sns.ui.SnsTimeLineUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278649,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.plugin.sns.ui.SnsBrowseUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278654,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278660,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363278666,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.ui.chatting.ChattingUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278667,"msg":"Startingactivity:Intent{flg=0x4000000cmp=com.tencent.mm/.ui.MainTabUI}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278667,"msg":"DuplicatefinishrequestforHistoryRecord{40c62788com.tencent.mm/.ui.chatting.ChattingUI}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363278667,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278668,"msg":"Startingactivity:Intent{act=sina.weibo.action.UPDATEATflg=0x14000000cmp=com.sina.weibo/.MainTabActivitybnds=[0,393][480,489](hasextras)}frompid-1\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363278668,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278668,"msg":"cancelNotification,ACTION_NOTIFICATION_REMOVE,pkg=com.sina.weibo,id=10006\r","object":"NotificationService","pid":"1502","level":"D"}
-{"date":1363278669,"msg":"dualLedoff\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363278669,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278669,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278689,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363278689,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363278689,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363278728,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363278728,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278728,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278728,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278729,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278729,"msg":"Dhcprenew-settingtimerfor38287961ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278752,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363278821,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278821,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278821,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278821,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278821,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278821,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363278835,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363278835,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363278835,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363278836,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363278836,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278836,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363278836,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363278836,"msg":"Dhcprenew-settingtimerfor38180321ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363279053,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363279354,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363279655,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363280023,"msg":"RXTXtriggerAlarmsLocked\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363280095,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363280095,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363280095,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280095,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280095,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280095,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280095,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280095,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363280095,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363280099,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363280099,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@40c894c0\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363280102,"msg":"ACTION_SCREEN_OFF\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363280102,"msg":"Receive:Intent.ACTION_SCREEN_OFF\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280102,"msg":"Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280102,"msg":"disablewhat=1,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363280103,"msg":"ACTION_SCREEN_OFF\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280103,"msg":"Dhcprenew-settingtimerfor36913716ms\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:0\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"Ignoringunknownswitch'usb_mass_storage'\r","object":"Vold","pid":"1372","level":"W"}
-{"date":1363280367,"msg":"Ignoringunknownswitch'usb_connected'\r","object":"Vold","pid":"1372","level":"W"}
-{"date":1363280367,"msg":"Ignoringunknownswitch'msm72k_udc'\r","object":"Vold","pid":"1372","level":"W"}
-{"date":1363280367,"msg":"CannotopenCDROMISOfile\r","object":"Vold","pid":"1372","level":"W"}
-{"date":1363280367,"msg":"USBconnected\r","object":"Vold","pid":"1372","level":"D"}
-{"date":1363280367,"msg":"Sharemethodumsnowavailable\r","object":"Vold","pid":"1372","level":"D"}
-{"date":1363280367,"msg":"Ignoringunknownswitch'usb_connect2pc'\r","object":"Vold","pid":"1372","level":"W"}
-{"date":1363280367,"msg":"UMSconnectionchangedtotrue(mediastatemounted)\r","object":"StorageNotification","pid":"1590","level":"I"}
-{"date":1363280367,"msg":"Charging...\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363280367,"msg":"buttonlightsetOrientation:-1\r","object":"PowerManagerService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"duration:23580897discharge:19\r","object":"BatteryService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[USBNET]USBUEVENT:{SUBSYSTEM=switch,SWITCH_STATE=1,DEVPATH=/devices/virtual/switch/usb_connected,SEQNUM=3093,ACTION=change,SWITCH_NAME=usb_connected}\r","object":"UsbService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[USBNET]handleMessage:0;mConnected=1(0),mConfiguration=0(0)\r","object":"UsbService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[USBNET]USBUEVENT:{SUBSYSTEM=switch,SWITCH_STATE=1,DEVPATH=/devices/virtual/switch/usb_configuration,SEQNUM=3095,ACTION=change,SWITCH_NAME=usb_configuration}\r","object":"UsbService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[USBNET]USBUEVENT:{SUBSYSTEM=switch,SWITCH_STATE=1,DEVPATH=/devices/virtual/switch/usb_connect2pc,SEQNUM=3096,ACTION=change,SWITCH_NAME=usb_connect2pc}\r","object":"UsbService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[USBNET]handleMessage:0;mConnected=1(1),mConfiguration=1(0)\r","object":"UsbService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"[USBNET]handleMessage:3;mConnected=1(1),mConfiguration=1(1)\r","object":"UsbService","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"ACTION_SCREEN_ON\r","object":"AlarmManager","pid":"1502","level":"D"}
-{"date":1363280367,"msg":"Receive:Intent.ACTION_SCREEN_ON\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280368,"msg":"Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280368,"msg":"ACTION_SCREEN_ON\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280368,"msg":"Dhcprenew-cancellingtimer\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280368,"msg":"enableandstartwifiduetoupdateWifiState\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280368,"msg":"Startingactivity:Intent{flg=0x10000000cmp=com.htc.android.psclient/.UsbConnectionSettings}frompid1732\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280368,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363280368,"msg":"RemoveAPPAlarmPendingIntenthasnoPendingIntentoperation\r","object":"AlarmManager","pid":"1502","level":"W"}
-{"date":1363280378,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280378,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280378,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280438,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280438,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280438,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280498,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280498,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280498,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280514,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280528,"msg":"Startproccom.noshufou.android.suforbroadcastcom.noshufou.android.su/.SuResultReceiver:pid=5705uid=10075gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280558,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280558,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280558,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280618,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280618,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280618,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280634,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280678,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280678,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280678,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280737,"msg":"disablewhat=0,token=android.os.Binder@407bb248,pkg=android,mBar=com.android.internal.statusbar.IStatusBar$Stub$Proxy@40817db8\r","object":"StatusBarManagerService","pid":"1502","level":"D"}
-{"date":1363280737,"msg":"Windowalreadyfocused,ignoringfocusgainof:com.android.internal.view.IInputMethodClient$Stub$Proxy@40b98a58\r","object":"InputManagerService","pid":"1502","level":"D"}
-{"date":1363280738,"msg":"freeMemory=716652544\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280738,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280738,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280739,"msg":"Charging...\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363280740,"msg":"Startingactivity:Intent{flg=0x34100000cmp=com.tencent.mm/.ui.LauncherUIbnds=[0,393][480,489](hasextras)}frompid1590\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280741,"msg":"Charging...\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363280741,"msg":"Startingactivity:Intent{flg=0x24000000cmp=com.tencent.mm/.ui.MainTabUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280741,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280741,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280743,"msg":"Startingactivity:Intent{cmp=com.tencent.mm/.ui.chatting.ChattingUI(hasextras)}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280743,"msg":"Processcom.android.camera(pid5384)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280743,"msg":"Processcom.google.android.apps.maps:GoogleLocationService(pid4452)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280743,"msg":"Schedulingrestartofcrashedservicecom.google.android.apps.maps/com.google.android.location.internal.server.GoogleLocationServicein5000ms\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363280747,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363280747,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363280747,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363280748,"msg":"Startproccom.google.android.apps.maps:GoogleLocationServiceforservicecom.google.android.apps.maps/com.google.android.location.internal.server.GoogleLocationService:pid=5744uid=10077gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280750,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363280750,"msg":"Failedtofindproviderinfoforcom.google.settings\r","object":"ActivityThread","pid":"5744","level":"E"}
-{"date":1363280753,"msg":"Startingactivity:Intent{flg=0x4000000cmp=com.tencent.mm/.ui.MainTabUI}frompid3510\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280753,"msg":"DuplicatefinishrequestforHistoryRecord{40951e30com.tencent.mm/.ui.chatting.ChattingUI}\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363280754,"msg":"Charging...\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363280757,"msg":"Startingactivity:Intent{act=sina.weibo.action.UPDATEATflg=0x14500000cmp=com.sina.weibo/.MainTabActivitybnds=[0,393][480,489](hasextras)}frompid1590\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280757,"msg":"Charging...\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363280757,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280757,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280768,"msg":"Startingactivity:Intent{act=com.sina.weibo.action.showimagevieweractivitycmp=com.sina.weibo/.ImageViewerActivity(hasextras)}frompid513\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280768,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280768,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280771,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280771,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280782,"msg":"Startingactivity:Intent{act=android.intent.action.MAINcat=[android.intent.category.HOME]flg=0x10000000cmp=com.lbe.security/.HomeKeyEvent}frompid513\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280782,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280782,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280782,"msg":"Startingactivity:Intent{act=android.intent.action.MAINcat=[android.intent.category.HOME]flg=0x10c00000cmp=com.htc.launcher/.Launcher}frompid1621\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280782,"msg":"moveTaskToBack:91\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280782,"msg":"Startproccom.htc.launcherforactivitycom.htc.launcher/.Launcher:pid=5775uid=9999gids={3003,1015,3002,3001,2001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280783,"msg":"Processcom.itotem.sina.nba(pid4394)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280783,"msg":"Schedulingrestartofcrashedservicecom.itotem.sina.nba/.service.PushServicein5000ms\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363280784,"msg":"Processcom.htc.profilewidget(pid5421)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280786,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363280788,"msg":"Processcom.htc.android.worldclock(pid5472)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280788,"msg":"Startproccom.itotem.sina.nbaforservicecom.itotem.sina.nba/.service.PushService:pid=5792uid=10083gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280788,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"5775","level":"D"}
-{"date":1363280788,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"5775","level":"D"}
-{"date":1363280788,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"5775","level":"D"}
-{"date":1363280789,"msg":"Startproccom.android.mmsforbroadcastcom.android.mms/.ui.MessagingShortcutReceiver:pid=5799uid=10049gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280789,"msg":"Processcom.android.settings:remote(pid3692)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280789,"msg":"Schedulingrestartofcrashedservicecom.android.settings/.framework.activity.powersaver.SmartSynServicein5000ms\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363280789,"msg":"Processcom.android.settings(pid5051)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280790,"msg":"Processcom.noshufou.android.su(pid5705)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280791,"msg":"Processcom.tencent.mobileqq:MSF(pid3713)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280791,"msg":"Schedulingrestartofcrashedservicecom.tencent.mobileqq/.msf.service.MsfServicein13541ms\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363280791,"msg":"Startproccom.htc.android.mailforbroadcastcom.htc.android.mail/.AppMonitorReceiver:pid=5814uid=10020gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280792,"msg":"Processcom.sina.weibo.image(pid5318)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280793,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280793,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363280793,"msg":"Startproccom.htc.skinpickerforbroadcastcom.htc.skinpicker/.SkinPickerReceiver:pid=5834uid=10047gids={1015,3003,2001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280793,"msg":"Startproccom.android.settingsforbroadcastcom.android.settings/.framework.activity.powersaver.SleepModeTimeOrTimeZoneChangedReceiver:pid=5842uid=1000gids={3002,3001,3003,1015,2001,1007}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280794,"msg":"Processandroid.process.media(pid5075)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280794,"msg":"Startproccom.android.settings:remoteforservicecom.android.settings/.framework.activity.powersaver.SmartSynService:pid=5850uid=1000gids={3002,3001,3003,1015,2001,1007}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280795,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"5850","level":"D"}
-{"date":1363280795,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"5850","level":"D"}
-{"date":1363280795,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"5850","level":"D"}
-{"date":1363280795,"msg":"Processcom.htc.android.mail(pid5814)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280797,"msg":"Processcom.htc.skinpicker(pid5834)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280798,"msg":"freeMemory=716820480\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280798,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280798,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280804,"msg":"Startproccom.tencent.mobileqq:MSFforservicecom.tencent.mobileqq/.msf.service.MsfService:pid=5864uid=10073gids={3003,1006,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280806,"msg":"Processcom.android.settings(pid5842)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363280807,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363280807,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363280807,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363280807,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363280808,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"5864","level":"D"}
-{"date":1363280808,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"5864","level":"D"}
-{"date":1363280808,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"5864","level":"D"}
-{"date":1363280810,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363280814,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280858,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280858,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280858,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280918,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280918,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280918,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363280934,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363280978,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363280978,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363280978,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281038,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281038,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281038,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281084,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281098,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281098,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281098,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281143,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281146,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281158,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281158,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281158,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281189,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281204,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281207,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281210,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281216,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281218,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281218,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281218,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281237,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281240,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281255,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281258,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281278,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281278,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281278,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281309,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281312,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281336,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281338,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281338,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281338,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281339,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281354,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281354,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281357,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281366,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281369,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281378,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281381,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281393,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281396,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281398,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281398,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281398,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281399,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281402,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281408,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281411,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281417,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281426,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281429,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281441,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281444,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281450,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281453,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281458,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281458,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281458,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281462,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281465,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281477,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281480,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281486,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281501,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281504,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281518,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281518,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281518,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281528,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281531,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281553,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281559,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281574,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281578,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281578,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281578,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281624,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281638,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281638,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281638,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281698,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281698,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281698,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281758,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281758,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281758,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281774,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281817,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281818,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281818,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281818,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281820,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281853,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281856,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281859,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281865,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281878,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281878,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281878,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281886,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281892,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281901,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281904,"msg":"Startproccom.android.defcontainerforservicecom.android.defcontainer/.DefaultContainerService:pid=5908uid=10003gids={1015,2001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281904,"msg":"Processcom.servo.search(pid5441)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281904,"msg":"Schedulingrestartofcrashedservicecom.servo.search/com.servo.core.android.ServoIndexerServicein5000ms\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281905,"msg":"Nocontentproviderfoundfor:\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281905,"msg":"Nocontentproviderfoundfor:\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281905,"msg":"Forcestoppingpackageimcom.forensicsuid=10081\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281905,"msg":"Packageimcom.forensicscodePathchangedfrom/data/app/imcom.forensics-1.apkto/data/app/imcom.forensics-2.apk;Retainingdataandusingnew\r","object":"PackageManager","pid":"1502","level":"I"}
-{"date":1363281905,"msg":"Unpackingnativelibrariesfor/data/app/imcom.forensics-2.apk\r","object":"PackageManager","pid":"1502","level":"I"}
-{"date":1363281905,"msg":"Processcom.tencent.mm(pid3510)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281905,"msg":"WINDEATH:Window{40543450com.tencent.mm/com.tencent.mm.ui.MainTabUIpaused=false}\r","object":"WindowManager","pid":"1502","level":"I"}
-{"date":1363281905,"msg":"Schedulingrestartofcrashedservicecom.tencent.mm/.booter.NotifyReceiver$NotifyServicein13980ms\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281905,"msg":"WINDEATH:Window{40c7bb80com.tencent.mm/com.tencent.mm.ui.LauncherUIpaused=false}\r","object":"WindowManager","pid":"1502","level":"I"}
-{"date":1363281906,"msg":"Forcestoppingpackageimcom.forensicsuid=10081\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281906,"msg":"Codepathforpkg:imcom.forensicschangingfrom/data/app/imcom.forensics-1.apkto/data/app/imcom.forensics-2.apk\r","object":"PackageManager","pid":"1502","level":"W"}
-{"date":1363281906,"msg":"Resourcepathforpkg:imcom.forensicschangingfrom/data/app/imcom.forensics-1.apkto/data/app/imcom.forensics-2.apk\r","object":"PackageManager","pid":"1502","level":"W"}
-{"date":1363281906,"msg":"Forcestoppingpackageimcom.forensicsuid=10081\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281906,"msg":"Startproccom.htc.csforbroadcastcom.htc.cs/.plugin.PluginRegisterReceiver:pid=5918uid=10002gids={3003,1015,2001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281907,"msg":"Startproccom.htc.opensenseforbroadcastcom.htc.opensense/.pluginmanager.RegisterReceiver:pid=5930uid=10002gids={3003,1015,2001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281907,"msg":"noavailablevoicerecognitionservicesfound\r","object":"RecognitionManagerService","pid":"1502","level":"W"}
-{"date":1363281907,"msg":"Startproccom.htc.RosieUtilityforbroadcastcom.htc.AddProgramWidget/.HtcWidgetScanner:pid=5940uid=10021gids={3003,2001,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281909,"msg":"Startproccom.noshufou.android.suforbroadcastcom.noshufou.android.su/.UninstallReceiver:pid=5955uid=10075gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281909,"msg":"Startingactivity:Intent{act=android.intent.action.MAINcat=[android.intent.category.LAUNCHER]flg=0x10000000cmp=imcom.forensics/.MainActivity}frompid5933\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281909,"msg":"Startprocimcom.forensicsforactivityimcom.forensics/.MainActivity:pid=5966uid=10081gids={1015,1007}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281909,"msg":"Startproccom.servo.searchforservicecom.servo.search/com.servo.core.android.ServoIndexerService:pid=5974uid=10028gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281910,"msg":"Processcom.android.defcontainer(pid5908)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281910,"msg":"Startproccom.google.android.apps.maps:FriendServiceforbroadcastcom.google.android.apps.maps/com.google.googlenav.friend.android.ServiceReceiver:pid=5986uid=10077gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281910,"msg":"[unbindCurrentClientLocked]Disableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363281910,"msg":"[startInputLocked]Enableinputmethodclient.\r","object":"InputManagerService","pid":"1502","level":"W"}
-{"date":1363281910,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281910,"msg":"Failedtofindproviderinfoforcom.kaixin001.provider\r","object":"ActivityThread","pid":"5974","level":"E"}
-{"date":1363281910,"msg":"Processcom.htc.launcher(pid5775)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281910,"msg":"WINDEATH:Window{4090be70com.htc.launcher/com.htc.launcher.Launcherpaused=false}\r","object":"WindowManager","pid":"1502","level":"I"}
-{"date":1363281911,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281911,"msg":"Failedtofindproviderinfoforcom.google.settings\r","object":"ActivityThread","pid":"5986","level":"E"}
-{"date":1363281911,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"5986","level":"D"}
-{"date":1363281911,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"5986","level":"D"}
-{"date":1363281911,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"5986","level":"D"}
-{"date":1363281911,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281911,"msg":"Failedtofindproviderinfoforcom.google.settings\r","object":"ActivityThread","pid":"5986","level":"E"}
-{"date":1363281911,"msg":"setEnabledSetting(),pkgName=com.google.android.apps.maps,clsName=com.google.android.maps.driveabout.app.DestinationActivity,state=1,flag=1,pid=5986,uid=10077\r","object":"PackageManager","pid":"1502","level":"I"}
-{"date":1363281911,"msg":"Startproccom.google.android.apps.maps:LocationFriendServiceforbroadcastcom.google.android.apps.maps/com.google.googlenav.friend.reporting.LocationReportingIntentReceiver:pid=5998uid=10077gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281912,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281912,"msg":"Failedtofindproviderinfoforcom.google.settings\r","object":"ActivityThread","pid":"5998","level":"E"}
-{"date":1363281912,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281912,"msg":"Failedtofindproviderinfoforcom.google.settings\r","object":"ActivityThread","pid":"5998","level":"E"}
-{"date":1363281912,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281912,"msg":"Failedtofindproviderinfoforcom.google.settings\r","object":"ActivityThread","pid":"5998","level":"E"}
-{"date":1363281913,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281916,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363281919,"msg":"Startproccom.tencent.mmforservicecom.tencent.mm/.booter.NotifyReceiver$NotifyService:pid=6010uid=10069gids={1006,3003,1015,3002,3001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281921,"msg":"UnabletoresolvecontentproviderfromPackageManager\r","object":"ActivityManager","pid":"1502","level":"W"}
-{"date":1363281921,"msg":"Failedtofindproviderinfoforcom.tencent.mm.coolassist.debugprovider\r","object":"ActivityThread","pid":"6010","level":"E"}
-{"date":1363281924,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363281930,"msg":"Charging...\r","object":"NotificationService","pid":"1502","level":"V"}
-{"date":1363281930,"msg":"cancelNotification,ACTION_NOTIFICATION_REMOVE,pkg=com.lbe.security,id=6\r","object":"NotificationService","pid":"1502","level":"D"}
-{"date":1363281938,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281938,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281938,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363281940,"msg":"Startproccom.android.browserforcontentprovidercom.android.browser/.BrowserProvider:pid=6031uid=10001gids={3003,1015,2001}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281940,"msg":"Processcom.htc.cs(pid5918)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281941,"msg":"Processcom.noshufou.android.su(pid5955)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281942,"msg":"Processcom.htc.RosieUtility(pid5940)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281942,"msg":"Processcom.htc.opensense(pid5930)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281976,"msg":"Startproccom.noshufou.android.suforbroadcastcom.noshufou.android.su/.SuResultReceiver:pid=6055uid=10075gids={3003,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363281998,"msg":"freeMemory=716668928\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363281998,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363281998,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282008,"msg":"Startproccom.tencent.mobileqqforbroadcastcom.tencent.mobileqq/com.tencent.sc.appwidget.QCenterWidgetProvider:pid=6067uid=10073gids={3003,1006,1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363282021,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"6067","level":"D"}
-{"date":1363282021,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"6067","level":"D"}
-{"date":1363282021,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"6067","level":"D"}
-{"date":1363282058,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282058,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282058,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282074,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363282118,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282118,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282118,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282133,"msg":"Startproccom.htc.android.htcime:providerforcontentprovidercom.htc.android.htcime/.provider.HTCCIMEProvider:pid=6111uid=10037gids={1015}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363282141,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282153,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282162,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282171,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282177,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282178,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282178,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282178,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282180,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282227,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282238,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282238,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282238,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282254,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363282299,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282299,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282299,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282359,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282359,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282359,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282419,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282419,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282419,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282435,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363282479,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282479,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282479,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282494,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282518,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282527,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282533,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282539,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282539,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282539,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282539,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282545,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282551,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282557,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282560,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282564,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282567,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282599,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282599,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282599,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282614,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363282659,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282659,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282659,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282664,"msg":"Processcom.google.android.apps.maps:LocationFriendService(pid5998)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363282714,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282719,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282719,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282719,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282738,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282747,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282764,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363282777,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282779,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282779,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282779,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282786,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282792,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282795,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282839,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282839,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282839,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282879,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282882,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363282899,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282899,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282899,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363282944,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363282959,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363282959,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363282959,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283019,"msg":"freeMemory=716673024\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283019,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283019,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283032,"msg":"C+WRssi:4\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363283038,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363283047,"msg":"C+WRssi:2\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363283050,"msg":"C+WRssi:3\r","object":"StatusBarPolicy","pid":"1590","level":"D"}
-{"date":1363283079,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283079,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283079,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283094,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363283138,"msg":"Startprocandroid.process.mediaforbroadcastcom.android.providers.drm/.DrmScannerReceiver:pid=6149uid=10008gids={1015,2001,3003}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363283138,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283138,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283138,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283139,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363283139,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363283139,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363283139,"msg":"Startproccom.htc.android.worldclockforbroadcastcom.htc.android.worldclock/.AlarmInitReceiver:pid=6163uid=1000gids={3002,3001,3003,1015,2001,1007}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363283139,"msg":"Startproccom.android.settingsforbroadcastcom.android.settings/.framework.activity.powersaver.SleepModeTimeOrTimeZoneChangedReceiver:pid=6171uid=1000gids={3002,3001,3003,1015,2001,1007}\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363283140,"msg":"Processcom.google.android.apps.maps:FriendService(pid5986)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363283140,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"6163","level":"D"}
-{"date":1363283140,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"6163","level":"D"}
-{"date":1363283140,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"6163","level":"D"}
-{"date":1363283140,"msg":"registerHTCSocketMonitorCallBack\r","object":"Socket_Alarm","pid":"6171","level":"D"}
-{"date":1363283140,"msg":"setmSocketMonitor\r","object":"Socket_Alarm","pid":"6171","level":"D"}
-{"date":1363283140,"msg":"HTCSocketMonitorImpl::HTCSocketMonitorImpl\r","object":"Socket_Alarm","pid":"6171","level":"D"}
-{"date":1363283141,"msg":"Processcom.android.browser(pid6031)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363283198,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283198,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283198,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283199,"msg":"requestLocationUpdates\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363283199,"msg":"requestLocationUpdatesLocked:updateProvidersLocked\r","object":"LocationManagerService","pid":"1502","level":"V"}
-{"date":1363283199,"msg":"[updateProvidersLocked]\r","object":"LocationManagerService","pid":"1502","level":"D"}
-{"date":1363283247,"msg":"Processcom.noshufou.android.su(pid6055)hasdied.\r","object":"ActivityManager","pid":"1502","level":"I"}
-{"date":1363283258,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283258,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283258,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283274,"msg":"[smartwifi]ACTION_BATTERY_CHANGEDpluggedType:2\r","object":"WifiService","pid":"1502","level":"D"}
-{"date":1363283318,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283318,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283318,"msg":"PostingMessageagain\r","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
-{"date":1363283378,"msg":"freeMemory=716664832\r","object":"DeviceStorageMonitorService","pid":"1502","level":"V"}
-{"date":1363283378,"msg":"OoOSMSMemoryavailable.SMS_AVAILABLE_THRESHOLD==524288\r","object":"DeviceStorageMonitorService","pid":"1502","level":"D"}
-{"date":1363283378,"msg":"PostingMessageagain","object":"DeviceStorageMonitorService","pid":"1502","level":"I"}
+{"date": 1365510165, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510165, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510166, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=7 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510166, "msg": "disable what =1, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510166, "msg": "Starting activity: Intent { flg=0x10000000 cmp=com.tencent.mobileqq/.activity.NotificationActivity (has extras) } from pid 10832", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510167, "msg": "Starting activity: Intent { flg=0x10000000 cmp=com.tencent.mobileqq/.activity.NotificationActivity (has extras) } from pid 10832", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510167, "msg": "Activity pause timeout for HistoryRecord{40b312d0 com.sina.weibo/.MainTabActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510167, "msg": "Process com.tencent.mobileqq:video (pid 10832) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510167, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510167, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510168, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510171, "msg": "freeMemory=714444800", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510171, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510171, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510182, "msg": "Got RemoteException sending setActive(false) notification to pid 10832 uid 10073", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510182, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510182, "msg": "Process com.tencent.mobileqq (pid 10768) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510182, "msg": "WIN DEATH: Window{40961cd8 com.tencent.mobileqq/com.tencent.mobileqq.activity.NotificationActivity paused=false}", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510192, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510194, "msg": "Starting activity: Intent { flg=0x10100000 cmp=com.tencent.mobileqq/.activity.NotificationActivity (has extras) } from pid 1568", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510194, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510195, "msg": "Activity pause timeout for HistoryRecord{40b312d0 com.sina.weibo/.MainTabActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510195, "msg": "Start proc com.tencent.mobileqq for activity com.tencent.mobileqq/.activity.NotificationActivity: pid=10945 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510195, "msg": "Window already focused, ignoring focus gain of: com.android.internal.view.IInputMethodClient$Stub$Proxy@40a10c60", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510198, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510203, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510205, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 0", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510205, "msg": "SettingsObserver(update): updateProvidersLocked", "object": "LocationManagerService", "pid": "1487", "level": "V"}
+{"date": 1365510205, "msg": "[updateProvidersLocked]", "object": "LocationManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510206, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "10945", "level": "D"}
+{"date": 1365510206, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "10945", "level": "D"}
+{"date": 1365510206, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "10945", "level": "D"}
+{"date": 1365510206, "msg": "Dropping ConnectivityChange for WIFI: DISCONNECTED/SCANNING", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510206, "msg": "[embedded] ConnectivityChange for WIFI: CONNECTING/CONNECTING, default=0", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510206, "msg": "adding dns 212.242.40.51 for mobile", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510206, "msg": "adding dns 212.242.40.3 for mobile", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510208, "msg": "Dropping ConnectivityChange for WIFI: CONNECTING/AUTHENTICATING", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510208, "msg": "Dropping ConnectivityChange for WIFI: CONNECTING/OBTAINING_IPADDR", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510210, "msg": "C+W Rssi: 4", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510210, "msg": "(android.server.ServerThread) IMCOM (b2:b2:dc:f0:cd:f4) does not require the watchdog", "object": "WifiWatchdogService", "pid": "1487", "level": "D"}
+{"date": 1365510210, "msg": "[embedded] ConnectivityChange for WIFI: CONNECTED/CONNECTED, default=0", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510210, "msg": "Policy requires mobile teardown", "object": "ConnectivityService", "pid": "1487", "level": "V"}
+{"date": 1365510210, "msg": "Policy requires mobile_dun teardown quickly", "object": "ConnectivityService", "pid": "1487", "level": "V"}
+{"date": 1365510210, "msg": "Network declined teardown quickly request", "object": "ConnectivityService", "pid": "1487", "level": "W"}
+{"date": 1365510210, "msg": "Policy requires mobile teardown quickly", "object": "ConnectivityService", "pid": "1487", "level": "V"}
+{"date": 1365510210, "msg": "Network declined teardown quickly request", "object": "ConnectivityService", "pid": "1487", "level": "W"}
+{"date": 1365510210, "msg": "adding dns 89.150.129.22 for WIFI", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510210, "msg": "adding dns 89.150.129.10 for WIFI", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510210, "msg": "Start proc com.htc.reportagent for broadcast com.htc.reportagent/.receiver.ReportAgentReceiver: pid=11062 uid=10019 gids={3003, 1007}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510210, "msg": "Start proc com.htc.htcMessageUploader for broadcast com.htc.htcMessageUploader/.UploadMessageReceiver: pid=11078 uid=10054 gids={3003}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510211, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11078", "level": "D"}
+{"date": 1365510211, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11078", "level": "D"}
+{"date": 1365510211, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11078", "level": "D"}
+{"date": 1365510211, "msg": "Start proc android.process.media for broadcast com.android.providers.downloads/.DownloadReceiver: pid=11089 uid=10008 gids={1015, 2001, 3003}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510211, "msg": "notifyServiceState: 0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false", "object": "TelephonyRegistry", "pid": "1487", "level": "I"}
+{"date": 1365510211, "msg": "notifyDataConnection: state=2 isDataConnectivityPossible=true reason=null interfaceName=rmnet0 networkType=3", "object": "TelephonyRegistry", "pid": "1487", "level": "I"}
+{"date": 1365510211, "msg": "onDataConnectionStateChanged , state= 2, networkType= 3", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510211, "msg": "mPhoneState = 0", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510211, "msg": "onDataConnectionStateChanged , SystemProperties.get(\"net.gprs.data.connected\")= 1", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510211, "msg": "notifyDataConnection() state=2isDataConnectivityPossible()true, reason=null", "object": "TelephonyRegistry", "pid": "1487", "level": "D"}
+{"date": 1365510211, "msg": "broadcastDataConnectionStateChanged()  state=CONNECTEDtypes=default,hipri,dun,supl, interfaceName=rmnet0, apn=internet", "object": "TelephonyRegistry", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "notifyDataConnection: state=0 isDataConnectivityPossible=true reason=dataDisabled interfaceName=null networkType=3", "object": "TelephonyRegistry", "pid": "1487", "level": "I"}
+{"date": 1365510212, "msg": "onDataConnectionStateChanged , state= 0, networkType= 3", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510212, "msg": "mPhoneState = 0", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510212, "msg": "onDataConnectionStateChanged , SystemProperties.get(\"net.gprs.data.connected\")= 0", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510212, "msg": "notifyDataConnection() state=0isDataConnectivityPossible()true, reason=dataDisabled", "object": "TelephonyRegistry", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "broadcastDataConnectionStateChanged()  state=DISCONNECTEDtypes=default,hipri,dun,supl, interfaceName=null, apn=internet", "object": "TelephonyRegistry", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "notifyDataConnection: state=0 isDataConnectivityPossible=true reason=trySetupDataDenied interfaceName=null networkType=3", "object": "TelephonyRegistry", "pid": "1487", "level": "I"}
+{"date": 1365510212, "msg": "notifyDataConnection() state=0isDataConnectivityPossible()true, reason=trySetupDataDenied", "object": "TelephonyRegistry", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "broadcastDataConnectionStateChanged()  state=DISCONNECTEDtypes=null, interfaceName=null, apn=null", "object": "TelephonyRegistry", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510212, "msg": "onDataConnectionStateChanged , state= 0, networkType= 3", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510212, "msg": "mPhoneState = 0", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510212, "msg": "onDataConnectionStateChanged , SystemProperties.get(\"net.gprs.data.connected\")= 0", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510212, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.android.phone,id=12", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "Start proc com.htc.bg for broadcast com.htc.providers.uploads/.UploadReceiver: pid=11101 uid=10002 gids={3003, 1015, 2001}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510212, "msg": "[embedded] ConnectivityChange for mobile: DISCONNECTED/DISCONNECTED, default=1", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "adding dns 89.150.129.22 for WIFI", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510212, "msg": "adding dns 89.150.129.10 for WIFI", "object": "ConnectivityService", "pid": "1487", "level": "D"}
+{"date": 1365510213, "msg": "Process com.htc.wotaproviders (pid 10756) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510215, "msg": "Unable to start service Intent { act= }: not found", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510215, "msg": "Unable to start service Intent { act= }: not found", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510216, "msg": "Unable to start service Intent { act= }: not found", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510220, "msg": "Start proc com.tencent.mm for broadcast com.tencent.mm/.booter.NotifyReceiver: pid=11124 uid=10069 gids={1006, 3003, 1015, 3002, 3001}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510221, "msg": "Process com.servo.search (pid 9941) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510221, "msg": "Scheduling restart of crashed service com.servo.search/com.servo.core.android.ServoIndexerService in 5000ms", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510222, "msg": "Unable to resolve content provider from PackageManager", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510222, "msg": "Failed to find provider info for com.tencent.mm.coolassist.debugprovider", "object": "ActivityThread", "pid": "11124", "level": "E"}
+{"date": 1365510225, "msg": "Process com.android.settings:remote (pid 10335) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510225, "msg": "Scheduling restart of crashed service com.android.settings/.framework.activity.powersaver.SmartSynService in 10839ms", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510226, "msg": "Start proc com.servo.search for service com.servo.search/com.servo.core.android.ServoIndexerService: pid=11152 uid=10028 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510226, "msg": "Unable to resolve content provider from PackageManager", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510226, "msg": "Failed to find provider info for com.kaixin001.provider", "object": "ActivityThread", "pid": "11152", "level": "E"}
+{"date": 1365510227, "msg": "Process com.htc.profilewidget (pid 10888) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510231, "msg": "freeMemory=714461184", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510231, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510231, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510232, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510232, "msg": "Process com.android.settings (pid 7504) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510233, "msg": "Starting activity: Intent { flg=0x10100000 cmp=com.tencent.mobileqq/.activity.NotificationActivity (has extras) } from pid 1568", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510234, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510236, "msg": "Start proc com.android.settings:remote for service com.android.settings/.framework.activity.powersaver.SmartSynService: pid=11168 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510236, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11168", "level": "D"}
+{"date": 1365510236, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11168", "level": "D"}
+{"date": 1365510236, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11168", "level": "D"}
+{"date": 1365510236, "msg": "Start proc com.android.settings for broadcast com.android.settings/.framework.activity.powersaver.SmartSyncScreenOnOffTimeReceiver: pid=11175 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510236, "msg": "Process com.htc.htcMessageUploader (pid 11078) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510241, "msg": "Process android.process.media (pid 11089) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510246, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510246, "msg": "Window already focused, ignoring focus gain of: com.android.internal.view.IInputMethodClient$Stub$Proxy@40a1f7c0", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510247, "msg": "Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000000 cmp=com.lbe.security/.HomeKeyEvent } from pid 6710", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510247, "msg": "Activity pause timeout for HistoryRecord{40b312d0 com.sina.weibo/.MainTabActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510247, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510247, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510248, "msg": "Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10c00000 cmp=com.htc.launcher/.Launcher } from pid 1619", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510248, "msg": "moveTaskToBack: 2", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510248, "msg": "Start proc com.htc.launcher for activity com.htc.launcher/.Launcher: pid=11188 uid=9999 gids={3003, 1015, 3002, 3001, 2001}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510248, "msg": "Rebuild removed 6 windows but added 5", "object": "WindowManager", "pid": "1487", "level": "W"}
+{"date": 1365510248, "msg": "Detect win=Window{40abaac0 com.tencent.mobileqq/com.tencent.mobileqq.activity.NotificationActivity paused=false}", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510248, "msg": "WIN DEATH: Window{40abaac0 com.tencent.mobileqq/com.tencent.mobileqq.activity.NotificationActivity paused=false}", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510248, "msg": "Process com.tencent.mobileqq (pid 10945) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510249, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510250, "msg": "Starting activity: Intent { flg=0x10100000 cmp=com.tencent.mobileqq/.activity.NotificationActivity (has extras) } from pid 1568", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510250, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510250, "msg": "Start proc com.tencent.mobileqq for activity com.tencent.mobileqq/.activity.NotificationActivity: pid=11204 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510251, "msg": "Process com.htc.bg (pid 11101) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510252, "msg": "Process com.htc.reportagent (pid 11062) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510254, "msg": "Process com.android.settings (pid 11175) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510254, "msg": "Process com.android.mms (pid 4200) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510255, "msg": "Start proc android.process.media for content provider com.android.providers.media/.MediaProvider: pid=11223 uid=10008 gids={1015, 2001, 3003}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510255, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510255, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510256, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11188", "level": "D"}
+{"date": 1365510256, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11188", "level": "D"}
+{"date": 1365510256, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11188", "level": "D"}
+{"date": 1365510256, "msg": "Start proc com.android.mms for broadcast com.android.mms/.ui.MessagingShortcutReceiver: pid=11239 uid=10049 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510258, "msg": "Process android.process.media (pid 11223) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510259, "msg": "Process com.android.htccontacts (pid 2118) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510259, "msg": "Low Memory: No more background processes.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510259, "msg": "Start proc com.htc.android.mail for broadcast com.htc.android.mail/.AppMonitorReceiver: pid=11263 uid=10020 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510260, "msg": "Process com.android.mms (pid 11239) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510260, "msg": "Low Memory: No more background processes.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510260, "msg": "Start proc com.android.mms for broadcast com.android.mms/.ui.MessagingShortcutReceiver: pid=11272 uid=10049 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510261, "msg": "Process com.htc.android.mail (pid 11263) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510261, "msg": "Low Memory: No more background processes.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510262, "msg": "Start proc com.htc.android.mail for broadcast com.htc.android.mail/.AppMonitorReceiver: pid=11283 uid=10020 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510262, "msg": "Activity pause timeout for HistoryRecord{40a209b8 com.tencent.mobileqq/.activity.NotificationActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510262, "msg": "Process com.android.mms (pid 11272) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510262, "msg": "Low Memory: No more background processes.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510263, "msg": "Start proc com.android.mms for broadcast com.android.mms/.ui.MessagingShortcutReceiver: pid=11293 uid=10049 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510263, "msg": "Process com.htc.android.mail (pid 11283) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510263, "msg": "Low Memory: No more background processes.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510264, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11204", "level": "D"}
+{"date": 1365510264, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11204", "level": "D"}
+{"date": 1365510264, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11204", "level": "D"}
+{"date": 1365510265, "msg": "WIN DEATH: Window{40cc4100 com.facebook.katana/com.facebook.katana.activity.FbFragmentChromeActivity paused=false}", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510265, "msg": "Process com.facebook.katana (pid 10184) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510265, "msg": "Scheduling restart of crashed service com.facebook.katana/.service.BackgroundDetectionService in 5000ms", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510265, "msg": "Scheduling restart of crashed service com.facebook.katana/.service.MediaUploadService in 5000ms", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510265, "msg": "WIN DEATH: Window{4077c0b8 com.facebook.katana/com.facebook.orca.threadview.ThreadViewActivity paused=false}", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510265, "msg": "Low Memory: No more background processes.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510266, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510266, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510266, "msg": "Start proc com.htc.android.mail for broadcast com.htc.android.mail/.AppMonitorReceiver: pid=11308 uid=10020 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510267, "msg": "WIN DEATH: Window{40acd4c8 com.tencent.mobileqq/com.tencent.mobileqq.activity.NotificationActivity paused=false}", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510267, "msg": "Process com.tencent.mobileqq (pid 11204) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510267, "msg": "Start proc com.tencent.mobileqq for broadcast com.tencent.mobileqq/com.tencent.sc.appwidget.QCenterWidgetProvider: pid=11319 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510270, "msg": "Start proc com.htc.skinpicker for broadcast com.htc.skinpicker/.SkinPickerReceiver: pid=11340 uid=10047 gids={1015, 3003, 2001}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510270, "msg": "Start proc com.android.settings for broadcast com.android.settings/.framework.activity.powersaver.SleepModeTimeOrTimeZoneChangedReceiver: pid=11350 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510270, "msg": "Start proc com.facebook.katana for service com.facebook.katana/.service.MediaUploadService: pid=11358 uid=10035 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510277, "msg": "Process com.facebook.katana:providers (pid 10248) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510278, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11358", "level": "D"}
+{"date": 1365510278, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11358", "level": "D"}
+{"date": 1365510278, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11358", "level": "D"}
+{"date": 1365510284, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11319", "level": "D"}
+{"date": 1365510284, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11319", "level": "D"}
+{"date": 1365510284, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11319", "level": "D"}
+{"date": 1365510284, "msg": "Start proc com.facebook.katana:providers for content provider com.facebook.katana/.provider.GraphQLNotificationsContentProvider: pid=11404 uid=10035 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510285, "msg": "Unable to start service Intent { act=com.google.android.c2dm.intent.REGISTER (has extras) }: not found", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510286, "msg": "Process com.htc.android.mail (pid 11308) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510288, "msg": "Process com.htc.skinpicker (pid 11340) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510288, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11404", "level": "D"}
+{"date": 1365510288, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11404", "level": "D"}
+{"date": 1365510288, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11404", "level": "D"}
+{"date": 1365510289, "msg": "Process com.android.settings (pid 11350) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510291, "msg": "Process com.tencent.mobileqq (pid 11319) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510291, "msg": "freeMemory=714387456", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510291, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510291, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510295, "msg": "Start proc com.tencent.mobileqq for broadcast com.tencent.mobileqq/mqq.app.QQBroadcastReceiver: pid=11436 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510298, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510306, "msg": "registerHTCSocketMonitorCallBack", "object": "Socket_Alarm", "pid": "11436", "level": "D"}
+{"date": 1365510306, "msg": "set mSocketMonitor", "object": "Socket_Alarm", "pid": "11436", "level": "D"}
+{"date": 1365510306, "msg": "HTCSocketMonitorImpl::HTCSocketMonitorImpl", "object": "Socket_Alarm", "pid": "11436", "level": "D"}
+{"date": 1365510309, "msg": "Unable to start service Intent { flg=0x4 cmp=com.facebook.katana/com.facebook.orca.sms.MmsSmsLogExternalMessagesLogic$MmsSmsLogExternalMessagesService (has extras) }: not found", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510325, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510341, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510344, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510346, "msg": "Starting activity: Intent { cmp=com.tencent.mobileqq/.activity.ChatActivity bnds=[0,490][480,586] (has extras) } from pid -1", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510346, "msg": "startActivity called from non-Activity context; forcing Intent.FLAG_ACTIVITY_NEW_TASK for: Intent { cmp=com.tencent.mobileqq/.activity.ChatActivity bnds=[0,490][480,586] (has extras) }", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510346, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510346, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510347, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510347, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510347, "msg": "Start proc com.android.htccontacts for broadcast com.android.htccontacts/.HtcContactBroadcastReceiver: pid=11487 uid=10006 gids={3003, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510348, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510348, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510348, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40a70198 (uid=9999 pid=11188)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510350, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510350, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510350, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@4051e180 (uid=10073 pid=11436)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510351, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510351, "msg": "freeMemory=714465280", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510351, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510351, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510352, "msg": "Starting activity: Intent { flg=0x10100000 cmp=com.tencent.mobileqq/.activity.ChatActivity bnds=[0,490][480,586] (has extras) } from pid 1568", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510353, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510353, "msg": "Process com.facebook.katana:providers (pid 11404) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510353, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510353, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510353, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40a70198 (uid=9999 pid=11188)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510354, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510354, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510355, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@4051e180 (uid=10073 pid=11436)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510355, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510356, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510357, "msg": "Starting activity: Intent { flg=0x10100000 cmp=com.tencent.mobileqq/.activity.ChatActivity bnds=[0,490][480,586] (has extras) } from pid 1568", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510358, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510358, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510358, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510358, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510358, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510358, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40a70198 (uid=9999 pid=11188)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510360, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510360, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510360, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@4051e180 (uid=10073 pid=11436)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510361, "msg": "Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.tencent.mobileqq/.activity.SplashActivity bnds=[120,586][240,704] } from pid 11188", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510361, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510361, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510361, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40a70198 (uid=9999 pid=11188)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510363, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.MainActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510392, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510398, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510398, "msg": "Start proc com.tencent.mobileqq:video for activity com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity: pid=11507 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510398, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510398, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510398, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=8 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510401, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510401, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510401, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510402, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510402, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510411, "msg": "freeMemory=714465280", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510411, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510411, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510413, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510416, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510416, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510416, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=9 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510416, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510416, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510416, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510417, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510417, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510420, "msg": "Process com.tencent.mobileqq:video (pid 11507) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510421, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510421, "msg": "Start proc com.tencent.mobileqq:video for activity com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity: pid=11559 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510421, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510421, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510421, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=10 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510422, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510422, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510422, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510423, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510424, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510429, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510429, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510429, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=11 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510429, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510429, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510429, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510432, "msg": "Process com.tencent.mobileqq:video (pid 11559) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510434, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatOptionActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510435, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 0", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510436, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510438, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510452, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510455, "msg": "Start proc com.tencent.mobileqq:video for broadcast com.tencent.mobileqq/com.tencent.video.VideoMsgBroadcastReceiver: pid=11609 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510456, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.VideoRequestNotifyActivity (has extras) } from pid 11609", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510456, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510456, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510456, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510458, "msg": "acquireWifiLockLocked: WifiLock{video wifi lock type=1 binder=android.os.BinderProxy@40bd9f10} Mode: 1", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510458, "msg": "enable and start wifi due to updateWifiState", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510458, "msg": "Starting activity: Intent { cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11609", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510458, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510458, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510458, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=12 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510458, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510459, "msg": "Duplicate finish request for HistoryRecord{40bdf5d8 com.tencent.mobileqq/com.tencent.video.activity.VideoRequestNotifyActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510459, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510460, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510460, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510460, "msg": "releaseWifiLockLocked: WifiLock{video wifi lock type=1 binder=android.os.BinderProxy@40bd9f10} Mode: 1", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510460, "msg": "enable and start wifi due to updateWifiState", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510471, "msg": "freeMemory=714465280", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510471, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510471, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510473, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510489, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510495, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510507, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510525, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510531, "msg": "freeMemory=714461184", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510531, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510531, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510568, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510573, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510573, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510573, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=13 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510573, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510573, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510573, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510574, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510574, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510576, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510576, "msg": "Process com.tencent.mobileqq:video (pid 11609) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510578, "msg": "Start proc com.tencent.mobileqq:video for broadcast com.tencent.mobileqq/com.tencent.video.VideoMsgBroadcastReceiver: pid=11675 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510578, "msg": "Duplicate finish request for HistoryRecord{407bef30 com.tencent.mobileqq/.activity.ChatActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510578, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510579, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.VideoRequestNotifyActivity (has extras) } from pid 11675", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510580, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510580, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510580, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510582, "msg": "acquireWifiLockLocked: WifiLock{video wifi lock type=1 binder=android.os.BinderProxy@40800e30} Mode: 1", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510582, "msg": "enable and start wifi due to updateWifiState", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510582, "msg": "Starting activity: Intent { cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11675", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510582, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510582, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510582, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=14 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510582, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510582, "msg": "Duplicate finish request for HistoryRecord{408b9b70 com.tencent.mobileqq/com.tencent.video.activity.VideoRequestNotifyActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510582, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510584, "msg": "releaseWifiLockLocked: WifiLock{video wifi lock type=1 binder=android.os.BinderProxy@40800e30} Mode: 1", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510584, "msg": "enable and start wifi due to updateWifiState", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510584, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510584, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510591, "msg": "freeMemory=714461184", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510591, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510591, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510608, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510608, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510608, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=15 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510608, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510609, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510609, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510612, "msg": "C+W Rssi: 3", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510612, "msg": "Process com.tencent.mobileqq:video (pid 11675) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510615, "msg": "C+W Rssi: 4", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510618, "msg": "C+W Rssi: 3", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510621, "msg": "C+W Rssi: 4", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510644, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510644, "msg": "Start proc com.tencent.mobileqq:video for activity com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity: pid=11745 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510645, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510645, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510645, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=16 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510646, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510646, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510646, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510647, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510647, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510651, "msg": "freeMemory=714461184", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510651, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510651, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510658, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510658, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510658, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=17 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510658, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510658, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510658, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510662, "msg": "Process com.tencent.mobileqq:video (pid 11745) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510666, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510666, "msg": "Start proc com.tencent.mobileqq:video for activity com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity: pid=11792 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510666, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510666, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510666, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=18 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510667, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510667, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510667, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510668, "msg": "dual Led for notification", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510669, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510669, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510675, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 0", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510676, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510676, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510676, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=19 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510676, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510676, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510676, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510676, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510676, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510680, "msg": "Process com.tencent.mobileqq:video (pid 11792) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510699, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510699, "msg": "Start proc com.tencent.mobileqq:video for broadcast com.tencent.mobileqq/com.tencent.video.VideoMsgBroadcastReceiver: pid=11842 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510700, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.VideoRequestNotifyActivity (has extras) } from pid 11842", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510701, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510701, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510701, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510703, "msg": "acquireWifiLockLocked: WifiLock{video wifi lock type=1 binder=android.os.BinderProxy@408c0938} Mode: 1", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510703, "msg": "enable and start wifi due to updateWifiState", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510703, "msg": "Starting activity: Intent { cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11842", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510703, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510703, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510703, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=20 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510703, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510703, "msg": "Duplicate finish request for HistoryRecord{40b97050 com.tencent.mobileqq/com.tencent.video.activity.VideoRequestNotifyActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510703, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510705, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510705, "msg": "releaseWifiLockLocked: WifiLock{video wifi lock type=1 binder=android.os.BinderProxy@408c0938} Mode: 1", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510705, "msg": "enable and start wifi due to updateWifiState", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510705, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510711, "msg": "freeMemory=714461184", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510711, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510711, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510755, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 0", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510755, "msg": "Ignoring unknown switch 'usb_mass_storage'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510755, "msg": "Skipping unknown process pid 11891", "object": "ProcessStats", "pid": "1487", "level": "W"}
+{"date": 1365510755, "msg": "Skipping unknown process pid 11892", "object": "ProcessStats", "pid": "1487", "level": "W"}
+{"date": 1365510755, "msg": "Ignoring unknown switch 'usb_connected'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510756, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510756, "msg": "Starting activity: Intent { flg=0x14000000 cmp=com.lenovo.safe.powercenter/.ui.ScreenSaverActivity } from pid 1831", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510756, "msg": "duration: 626140 discharge: 2", "object": "BatteryService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 2", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=1, DEVPATH=/devices/virtual/switch/usb_connected, SEQNUM=1495, ACTION=change, SWITCH_NAME=usb_connected}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "[USBNET] handleMessage: 0; mConnected=1(0),mConfiguration=0(0)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "Ignoring unknown switch 'msm72k_udc'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510756, "msg": "Cannot open CDROM ISO file", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510756, "msg": "USB connected", "object": "Vold", "pid": "1364", "level": "D"}
+{"date": 1365510756, "msg": "Share method ums now available", "object": "Vold", "pid": "1364", "level": "D"}
+{"date": 1365510756, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=1, DEVPATH=/devices/virtual/switch/usb_configuration, SEQNUM=1497, ACTION=change, SWITCH_NAME=usb_configuration}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "[USBNET] handleMessage: 0; mConnected=1(1),mConfiguration=1(0)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "Ignoring unknown switch 'usb_connect2pc'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510756, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=1, DEVPATH=/devices/virtual/switch/usb_connect2pc, SEQNUM=1498, ACTION=change, SWITCH_NAME=usb_connect2pc}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "[USBNET] handleMessage: 3; mConnected=1(1),mConfiguration=1(1)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "UMS connection changed to true (media state mounted)", "object": "StorageNotification", "pid": "1568", "level": "I"}
+{"date": 1365510756, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510756, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510756, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=21 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510756, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510757, "msg": "Start proc com.android.settings for broadcast com.android.settings/.NSReceiver: pid=11901 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510757, "msg": "Starting activity: Intent { flg=0x10000000 cmp=com.htc.android.psclient/.UsbConnectionSettings } from pid 1665", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510757, "msg": "disableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510758, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510758, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510758, "msg": "Window freeze timeout expired.", "object": "WindowManager", "pid": "1487", "level": "W"}
+{"date": 1365510758, "msg": "Force clearing orientation change: Window{407e6488 StatusBarExpanded paused=false}", "object": "WindowManager", "pid": "1487", "level": "W"}
+{"date": 1365510758, "msg": "Force clearing orientation change: Window{40a5bd70 com.htc.android.psclient/com.htc.android.psclient.UsbConnectionSettings paused=false}", "object": "WindowManager", "pid": "1487", "level": "W"}
+{"date": 1365510758, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510758, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.lenovo.safe.powercenter,id=2003", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510758, "msg": "reenableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510762, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510767, "msg": "disableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510767, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510767, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510767, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@409fc4b0 (uid=10002 pid=1665)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510767, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510767, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510770, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510770, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510770, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=22 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510770, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510770, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510770, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510770, "msg": "reenableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510771, "msg": "freeMemory=714444800", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510771, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510771, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510777, "msg": "Window already focused, ignoring focus gain of: com.android.internal.view.IInputMethodClient$Stub$Proxy@40ab8170", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510787, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510787, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510787, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=23 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510787, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510787, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510787, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510787, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510787, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510788, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510791, "msg": "Process com.tencent.mobileqq:video (pid 11842) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510831, "msg": "freeMemory=714444800", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510831, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510831, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510835, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatOptionActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510837, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatBackgroundSettingActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510839, "msg": "Starting activity: Intent { flg=0x4040000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510839, "msg": "Duplicate finish request for HistoryRecord{40a3b7d8 com.tencent.mobileqq/.activity.ChatOptionActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510840, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatOptionActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510842, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatHistory (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510844, "msg": "Duplicate finish request for HistoryRecord{40c826c8 com.tencent.mobileqq/.activity.ChatHistory}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510844, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatBackgroundSettingActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510846, "msg": "Starting activity: Intent { flg=0x4040000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510846, "msg": "Duplicate finish request for HistoryRecord{40bdf5d8 com.tencent.mobileqq/.activity.ChatOptionActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510849, "msg": "Starting activity: Intent { flg=0x10040000 cmp=com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510849, "msg": "Start proc com.tencent.mobileqq:video for activity com.tencent.mobileqq/com.tencent.video.activity.ChatVideoActivity: pid=11954 uid=10073 gids={3003, 1006, 1015}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510849, "msg": "Setting rotation to 1, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510849, "msg": "button light setOrientation:1", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510849, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=2 layout=34 uiMode=17 seq=24 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510851, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510851, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510851, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510853, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510853, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510859, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510891, "msg": "freeMemory=714436608", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510891, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510891, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510912, "msg": "Setting rotation to 0, animFlags=1", "object": "WindowManager", "pid": "1487", "level": "I"}
+{"date": 1365510912, "msg": "button light setOrientation:0", "object": "PowerManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510912, "msg": "Config changed: { scale=1.0 imsi=238/2 loc=en_CN touch=3 keys=2/1/2 nav=1/1 orien=1 layout=34 uiMode=17 seq=25 skin=default fontsize=0}", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510912, "msg": "disable what =0, token = android.os.Binder@40768720, pkg = android, mBar = com.android.internal.statusbar.IStatusBar$Stub$Proxy@40940f38", "object": "StatusBarManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510912, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510912, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130837973", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510912, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510912, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510913, "msg": "Ignoring unknown switch 'usb_mass_storage'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510913, "msg": "Ignoring unknown switch 'usb_connected'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510913, "msg": "Cannot open CDROM ISO file", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510913, "msg": "USB disconnected", "object": "Vold", "pid": "1364", "level": "D"}
+{"date": 1365510913, "msg": "Share method ums now unavailable", "object": "Vold", "pid": "1364", "level": "D"}
+{"date": 1365510913, "msg": "Ignoring unknown switch 'msm72k_udc'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510913, "msg": "Ignoring unknown switch 'usb_connect2pc'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510913, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=0, DEVPATH=/devices/virtual/switch/usb_connected, SEQNUM=1500, ACTION=change, SWITCH_NAME=usb_connected}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510913, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=0, DEVPATH=/devices/virtual/switch/usb_configuration, SEQNUM=1501, ACTION=change, SWITCH_NAME=usb_configuration}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510913, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=0, DEVPATH=/devices/virtual/switch/usb_connect2pc, SEQNUM=1503, ACTION=change, SWITCH_NAME=usb_connect2pc}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510913, "msg": "[USBNET] handleMessage: 3; mConnected=0(1),mConfiguration=0(1)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510913, "msg": "UMS connection changed to false (media state mounted)", "object": "StorageNotification", "pid": "1568", "level": "I"}
+{"date": 1365510914, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510914, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 0", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510914, "msg": "[USBNET] handleMessage: 0; mConnected=0(1),mConfiguration=0(1)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510914, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510914, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=android,id=17040227", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510914, "msg": "stopIptDhcp", "object": "NetworkManagmentService", "pid": "1487", "level": "D"}
+{"date": 1365510915, "msg": "Process com.tencent.mobileqq:video (pid 11954) has died.", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510915, "msg": "Starting activity: Intent { flg=0x40000 cmp=com.tencent.mobileqq/.activity.ChatActivity (has extras) } from pid 11436", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510917, "msg": "dual Led off", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510917, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.htc.android.psclient,id=2130837513", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510922, "msg": "C+W Rssi: 3", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510925, "msg": "C+W Rssi: 4", "object": "StatusBarPolicy", "pid": "1568", "level": "D"}
+{"date": 1365510951, "msg": "freeMemory=714440704", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "V"}
+{"date": 1365510951, "msg": "OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "D"}
+{"date": 1365510951, "msg": "Posting Message again", "object": "DeviceStorageMonitorService", "pid": "1487", "level": "I"}
+{"date": 1365510957, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 0", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510957, "msg": "Ignoring unknown switch 'usb_mass_storage'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510957, "msg": "Ignoring unknown switch 'usb_connected'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510957, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510957, "msg": "Starting activity: Intent { flg=0x14000000 cmp=com.lenovo.safe.powercenter/.ui.ScreenSaverActivity } from pid 1831", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510957, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 2", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510957, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=1, DEVPATH=/devices/virtual/switch/usb_connected, SEQNUM=1512, ACTION=change, SWITCH_NAME=usb_connected}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510957, "msg": "[USBNET] handleMessage: 0; mConnected=1(0),mConfiguration=0(0)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510958, "msg": "Starting activity: Intent { flg=0x10000000 cmp=com.htc.android.psclient/.UsbConnectionSettings } from pid 1665", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510958, "msg": "Ignoring unknown switch 'msm72k_udc'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510958, "msg": "Cannot open CDROM ISO file", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510958, "msg": "USB connected", "object": "Vold", "pid": "1364", "level": "D"}
+{"date": 1365510958, "msg": "Share method ums now available", "object": "Vold", "pid": "1364", "level": "D"}
+{"date": 1365510958, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=1, DEVPATH=/devices/virtual/switch/usb_configuration, SEQNUM=1514, ACTION=change, SWITCH_NAME=usb_configuration}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510958, "msg": "[USBNET] handleMessage: 0; mConnected=1(1),mConfiguration=1(0)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510958, "msg": "Ignoring unknown switch 'usb_connect2pc'", "object": "Vold", "pid": "1364", "level": "W"}
+{"date": 1365510958, "msg": "[USBNET] USB UEVENT: {SUBSYSTEM=switch, SWITCH_STATE=1, DEVPATH=/devices/virtual/switch/usb_connect2pc, SEQNUM=1515, ACTION=change, SWITCH_NAME=usb_connect2pc}", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510958, "msg": "[USBNET] handleMessage: 3; mConnected=1(1),mConfiguration=1(1)", "object": "UsbService", "pid": "1487", "level": "D"}
+{"date": 1365510958, "msg": "disableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510958, "msg": "Starting activity: Intent { flg=0x10000000 cmp=com.htc.android.psclient/.UsbConnectionSettings } from pid 1665", "object": "ActivityManager", "pid": "1487", "level": "I"}
+{"date": 1365510958, "msg": "UMS connection changed to true (media state mounted)", "object": "StorageNotification", "pid": "1568", "level": "I"}
+{"date": 1365510959, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510959, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510959, "msg": "reenableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510960, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510960, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.lenovo.safe.powercenter,id=2003", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510962, "msg": "disableKeyguard - KeyguardLock", "object": "WindowManager", "pid": "1487", "level": "D"}
+{"date": 1365510962, "msg": "[unbindCurrentClientLocked] Disable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510962, "msg": "[startInputLocked] Enable input method client.", "object": "InputManagerService", "pid": "1487", "level": "W"}
+{"date": 1365510962, "msg": "Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@409fc4b0 (uid=10002 pid=1665)", "object": "InputManagerService", "pid": "1487", "level": "D"}
+{"date": 1365510964, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510964, "msg": "cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.tencent.mobileqq,id=2130838137", "object": "NotificationService", "pid": "1487", "level": "D"}
+{"date": 1365510964, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}
+{"date": 1365510972, "msg": "Launch timeout has expired, giving up wake lock!", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510972, "msg": "Activity idle timeout for HistoryRecord{40a8b568 com.lenovo.safe.powercenter/.ui.ScreenSaverActivity}", "object": "ActivityManager", "pid": "1487", "level": "W"}
+{"date": 1365510975, "msg": "[smart wifi] ACTION_BATTERY_CHANGED pluggedType: 2", "object": "WifiService", "pid": "1487", "level": "D"}
+{"date": 1365510994, "msg": "Charging...", "object": "NotificationService", "pid": "1487", "level": "V"}

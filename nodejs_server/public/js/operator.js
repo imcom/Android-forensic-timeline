@@ -38,6 +38,8 @@ var dropdown_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
 var object_selected = false;
 var id_selected = false;
+var selected_object;
+var selected_id;
 
 var timeline_main = new Timeline("#timeline_main");
 var timeline_extend = new Timeline("#timeline_extend");
@@ -181,20 +183,34 @@ function fillPanes(src) {
         id_pane.val(null);
         id_selected = false;
         if (object_selected) {
-            object_pane.val(null);
-            object_pane.val($(this).val());
+            if (selected_object != $(this).val()) {
+                object_pane.val($(this).val());
+                selected_object = object_pane.val();
+            } else {
+                object_pane.val(null);
+                object_selected = false;
+                selected_object = null;
+            }
         } else {
             object_selected = true;
+            selected_object = object_pane.val();
         }
     });
     $("#ids option").click(function() {
         object_pane.val(null);
         object_selected = false;
         if (id_selected) {
-            id_pane.val(null);
-            id_pane.val($(this).val());
+            if (selected_id != $(this).val()) {
+                id_pane.val($(this).val());
+                selected_id = id_pane.val();
+            } else {
+                id_pane.val(null);
+                id_selected = false;
+                selected_id = null;
+            }
         } else {
             id_selected = true;
+            selected_id = id_pane.val();
         }
     });
 }

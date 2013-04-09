@@ -34,7 +34,12 @@ exports.read = function(collection, selection, fields, options, onCompletion, on
 exports.mapreduce = function(req, res) {
     var model = mongoose.model(req.body.collection);
     var obj;
-    if (req.body.collection === 'main') {
+    if (
+        req.body.collection === 'main' ||
+        req.body.collection === 'system' ||
+        req.body.collection === 'events' ||
+        req.body.collection === 'radio'
+    ) {
         if (req.body.aggregation === 'object') {
             obj = android_logs.aggregateByObject;
         } else if (req.body.aggregation === 'id') {
