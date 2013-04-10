@@ -56,12 +56,14 @@ model = db.dmesg.mapReduce(
     }
 );
 
+print("Created `usb_connection` collection");
+
 function displayResult(cursor) {
-cursor = model.find();
-while(cursor.hasNext()) {
-    var record = cursor.next();
-    printjson(record);
-}
+    cursor = model.find();
+    while(cursor.hasNext()) {
+        var record = cursor.next();
+        printjson(record);
+    }
 }
 
 

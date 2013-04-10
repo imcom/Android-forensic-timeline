@@ -24,16 +24,25 @@ for (var i = 0; i < all_apps_uid.length; ++i) {
     cursor = db.fs_time.find(selection, {_id:0});
     while(cursor.hasNext()) {
         var record = cursor.next();
+        var content = {};
+        file_system_activity[target].id = record.uid;
         if (file_system_activity[target].hasOwnProperty(record.date) == false) {
-            file_system_activity[target][record.date] = {};
-            file_system_activity[target][record.date][record.file] = [record.activity];
-        } else {
-            if (file_system_activity[target][record.date].hasOwnProperty(record.file) == false) {
-                file_system_activity[target][record.date][record.file] = [record.activity];
-            } else {
-                file_system_activity[target][record.date][record.file].push(record.activity);
-            }
+            file_system_activity[target][record.date] = [];
         }
+        content.name = record.file;
+        content.file_activity = record.activity;
+        content.inode_activity = {inode: record.inode};
+
+        cursor = db.inode_time.find({inode:record.inode}, {_id:0});
+        if (cursor.hasNext()) {
+            var inode_record = cursor.next();
+            content.inode_activity.uid = inode_record.uid;
+            content.inode_activity.gid = inode_record.gid;
+            content.inode_activity.access = inode_record.accessed;
+            content.inode_activity.change = inode_record.inode_modified;
+            content.inode_activity.modifiy = inode_record.file_modified;
+        }
+        file_system_activity[target][record.date].push(content);
     }
 }
 
@@ -98,10 +107,22 @@ for (var object in system_objects) {
         save_buf.push(buf);
     }
 }
-
 db.app_related_system_calls.insert(save_buf);
 
-printjson(file_system_activity);
+save_buf = [];
+_id = 0;
+for (var object in file_system_activity) {
+    if (file_system_activity.hasOwnProperty(object)) {
+        var buf = {};
+        buf._id = _id;
+        buf.app = object;
+        buf.detail = file_system_activity[object];
+        _id += 1;
+        save_buf.push(buf);
+    }
+}
+db.app_related_filesystem_activity.insert(save_buf);
 
+print("Created `app_related_system_calls` and `app_related_filesystem_activity`");
 
 
