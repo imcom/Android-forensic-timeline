@@ -4,17 +4,24 @@ var selection = {msg: app_pattern};
 
 var cursor = db.events.find(selection, {_id: 0, level: 0});
 
-var timewindow = 10; // 5 seconds period for consecutive events in other logs
+var time_offset = 5; // 5 seconds period for consecutive events in other logs
 var map_reduce_selection = {};
 var object;
 var timestamp;
 
+//FIXME the following procedure has bugs
+var record;
+if (cursor.hasNext()) {
+    record = cursor.next();
+}
+
 while(cursor.hasNext()) {
-    var record = cursor.next();
     object = record.object;
     pid = record.pid;
     timestamp = record.date;
-    map_reduce_selection.date = {$gte: record.date, $lte: (record.date + timewindow)};
+    record = cursor.next();
+    var upper_timewindow = record.date - timestamp > time_offset ? record.date : timestamp + time_offset;
+    map_reduce_selection.date = {$gte: (timestamp - time_offset), $lt: upper_timewindow};
 }
 
 var map = function() {
@@ -29,7 +36,6 @@ var map = function() {
 
 var reduce = function(key, values) {
     var result = {object: [], msg: [], pid: [], score: []};
-    //TODO consider the time diff infulence
     values.forEach(function(value, index) {
         result.object.push(value.object);
         result.msg.push(value.msg);
