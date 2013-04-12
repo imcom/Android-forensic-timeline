@@ -50,15 +50,13 @@ model = db.dmesg.mapReduce(
     map,
     reduce,
     {
-        out: "usb_connection",
+        out: "dmesg_aggregation",
         query: selection,
         finalize: finalize
     }
 );
 
-print("Created `usb_connection` collection");
-
-function displayResult(cursor) {
+function displayResult() {
     cursor = model.find();
     while(cursor.hasNext()) {
         var record = cursor.next();
@@ -66,9 +64,7 @@ function displayResult(cursor) {
     }
 }
 
-
-
-
+displayResult();
 
 
 

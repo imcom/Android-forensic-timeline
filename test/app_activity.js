@@ -55,42 +55,51 @@ for (var i = 0; i < all_apps_name.length; ++i) {
     cursor = db.events.find(selection, projection);
     while(cursor.hasNext()) {
         var record = cursor.next();
+        var content = {};
+        content.date = record.date;
+        content.msg = record.msg;
         if (system_objects[target].hasOwnProperty(record.object) == false) {
             system_objects[target][record.object] = {};
-            system_objects[target][record.object][record.pid] = [record.msg];
+            system_objects[target][record.object][record.pid] = [content];
         } else {
             if (system_objects[target][record.object].hasOwnProperty(record.pid) == false)
-                system_objects[target][record.object][record.pid] = [record.msg];
+                system_objects[target][record.object][record.pid] = [content];
             else
-                system_objects[target][record.object][record.pid].push(record.msg);
+                system_objects[target][record.object][record.pid].push(content);
         }
     }
 
     cursor = db.main.find(selection, projection);
     while(cursor.hasNext()) {
         var record = cursor.next();
+        var content = {};
+        content.date = record.date;
+        content.msg = record.msg;
         if (system_objects[target].hasOwnProperty(record.object) == false) {
             system_objects[target][record.object] = {};
-            system_objects[target][record.object][record.pid] = [record.msg];
+            system_objects[target][record.object][record.pid] = [content];
         } else {
             if (system_objects[target][record.object].hasOwnProperty(record.pid) == false)
-                system_objects[target][record.object][record.pid] = [record.msg];
+                system_objects[target][record.object][record.pid] = [content];
             else
-                system_objects[target][record.object][record.pid].push(record.msg);
+                system_objects[target][record.object][record.pid].push(content);
         }
     }
 
     cursor = db.system.find(selection, projection);
     while(cursor.hasNext()) {
         var record = cursor.next();
+        var content = {};
+        content.date = record.date;
+        content.msg = record.msg;
         if (system_objects[target].hasOwnProperty(record.object) == false) {
             system_objects[target][record.object] = {};
-            system_objects[target][record.object][record.pid] = [record.msg];
+            system_objects[target][record.object][record.pid] = [content];
         } else {
             if (system_objects[target][record.object].hasOwnProperty(record.pid) == false)
-                system_objects[target][record.object][record.pid] = [record.msg];
+                system_objects[target][record.object][record.pid] = [content];
             else
-                system_objects[target][record.object][record.pid].push(record.msg);
+                system_objects[target][record.object][record.pid].push(content);
         }
     }
 }
