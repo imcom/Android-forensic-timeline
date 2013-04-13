@@ -116,7 +116,7 @@ function onIdSelection() {
     updateResponsivePane(object_checkboxs, display_dataset, "object");
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, false, false);
+    timeline_main.setDataset(display_dataset, false, true);
 }
 
 function onObjectSelection() {
@@ -140,7 +140,7 @@ function onObjectSelection() {
     updateResponsivePane(id_checkboxs, display_dataset, "_id");
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, false, false);
+    timeline_main.setDataset(display_dataset, false, true);
 }
 
 function fillResponsivePane(target_set) {
@@ -384,7 +384,7 @@ function showAlert(message) {
     $('body').append("<div class='alert'><button type='button' data-dismiss='alert' class='close' >&times;</button>" + message + "</div>");
 }
 
-search_btn.click(function() {
+search_btn.click(function() { //TODO remove search button, instead, showing Events timeline onLoad
     dataset = []; // clear dataset for new data
     current_dataset = [];
     timeline_main.clearData(true, true);

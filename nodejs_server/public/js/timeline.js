@@ -7,19 +7,22 @@
  */
 
 /*
- * name: div to draw, timeline_height: svg height, x_range: svg width, radius: circle size
+ * name: div to draw
  *
  */
 function Timeline(name) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    this.x_range = [160, 760];
+    this.x_range = [160, 660];
     this.x_range_padding = 160;
-    this.timeline_height = 3000;
+    this.timeline_height = 800;
+    this.display_step = 35;
 
     // dynamically configurable values
     this.dataset = [];
+    this.start_index = 0;
+    this.end_index = 0;
     this.suspects = [];
     this.timeline;
     this.y_range;
@@ -147,10 +150,11 @@ Timeline.prototype.initTimeline = function() {
 
 Timeline.prototype.initYRange = function() { //TODO need to refine this method for better display
     // min: 20, max: 8000; upper bound min: 600
-    var upper_range = this.y_domain_max - this.y_domain_min;
+    //var upper_range = this.y_domain_max - this.y_domain_min;
     //console.log("Y axis time difference: " + (this.y_domain_max - this.y_domain_min));
-    upper_range = upper_range > 1400 ? 8000 : (upper_range > 600 ? 4000 : 600);
-    return [this.y_range_padding, upper_range];
+    //upper_range = upper_range > 1400 ? 8000 : (upper_range > 600 ? 4000 : 600);
+    //return [this.y_range_padding, upper_range];
+    return [this.y_range_padding, this.timeline_height];
 }
 
 Timeline.prototype.clearData = function(clear_dataset, clear_suspects) {
@@ -163,6 +167,8 @@ Timeline.prototype.clearData = function(clear_dataset, clear_suspects) {
     this.y_domain_min = 0;
     this.y_domain_max = 0;
     this.x_domain_array = [];
+    this.start_index = 0;
+    this.end_index = 0;
 }
 
 Timeline.prototype.removeTimeline = function() {
@@ -233,6 +239,8 @@ Timeline.prototype.setDataset = function(dataset, check_suspects, enable_time_br
             }
         }
     }
+    // init first sub-array for display
+    this.end_index = this.dataset.length > this.display_step ? this.display_step : this.dataset.length - 1;
     // on dataset is set, draw timeline
     this.onDataReady(enable_time_brush);
 }
@@ -261,16 +269,35 @@ Timeline.prototype.drawPath = function() {
         .attr("fill", "none");
 }
 
+Timeline.prototype.nextWindow = function() {
+    this.start_index = this.end_index;
+    this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
+    if (this.start_index !== 0) {
+        //TODO show the previous button
+    }
+
+    if (this.end_index === this.dataset.length - 1) {
+        //TODO hide the next button
+    }
+}
+
+Timeline.prototype.previousWindow = function() {
+    this.start_index = this.start_index > this.display_step ? this.start_index - this.display_step : 0;
+    this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
+    if (this.start_index === 0) {
+        //TODO hide the previous button
+    }
+    if (this.end_index < this.dataset.length - 1) {
+        //TODO show the next button
+    }
+}
+
 Timeline.prototype.onDataReady = function(enable_time_brush) {
     var self = this;
-    // calculate the entire time period
-    var date_padding = 2; // unit: seconds
-    var start_date = new Date((Number(this.y_domain_min) - date_padding) * 1000);
-    var end_date = new Date((Number(this.y_domain_max) + date_padding) * 1000);
 
     // convert epoch timestamp to date for d3 time scale and init display dataset
     var display_dataset = [];
-    this.dataset.forEach(function(data) {
+    this.dataset.slice(this.start_index, this.end_index).forEach(function(data) {
         var display_data = {};
         var date = new Date(data.date * 1000); // convert to milliseconds
         display_data.date = date;
@@ -279,6 +306,13 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         display_data.display = data.display;
         display_dataset.push(display_data);
     });
+
+    // calculate the entire time period
+    var date_padding = 2; // unit: seconds
+    //var start_date = new Date((Number(this.y_domain_min) - date_padding) * 1000);
+    //var end_date = new Date((Number(this.y_domain_max) + date_padding) * 1000);
+    var start_date = new Date((Number(this.dataset[this.start_index].date) - date_padding) * 1000);
+    var end_date = new Date((Number(this.dataset[this.end_index].date) + date_padding) * 1000);
 
     var suspect_display_dataset = [];
     this.suspects.forEach(function(data) {
@@ -323,7 +357,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     var y_axis = d3.svg.axis()
         .scale(y_scale)
         .orient("right")
-        .ticks(this.tick_unit, this.tick_step) // make it a variable
+        //.ticks(this.tick_unit, this.tick_step)
+        .ticks(d3.time.seconds.utc, 5)
         .tickPadding(this.tick_padding)
         .tickSize(0);
 
@@ -340,7 +375,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
 
     // draw gird lines on the timeline
     var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid")
-        .data(y_scale.ticks(this.tick_unit, this.tick_step))
+        //.data(y_scale.ticks(this.tick_unit, this.tick_step))
+        .data(y_scale.ticks(d3.time.seconds.utc, 5))
         .enter()
         .append("g")
         .attr("clip-path", "url(#timeline-clip)")
@@ -391,7 +427,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         self.timeline.selectAll("#suspect-time-label")
             .attr("y", function(d) { return y_scale(d.date) - 5; });
         self.fillPathData(x_scale, y_scale, display_dataset);
-        self.drawPath();
+        //self.drawPath();
         adjustDateLabel();
     }
 
@@ -481,9 +517,9 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             return self.color_scale(color(d));
         });
 
-    // draw chronological sequence path on timeline
-    this.fillPathData(x_scale, y_scale, display_dataset);
-    this.drawPath();
+    // draw chronological sequence path on timeline (deprecated here...)
+    //this.fillPathData(x_scale, y_scale, display_dataset);
+    //this.drawPath();
 
     // append display name on normal events
     this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
@@ -602,6 +638,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
 
     // draw time brush on control panel
     if (enable_time_brush) {
+        $('#time-brush').children().remove(); // remove old brush if any
         // init the time brush on control pane
         var time_brush = d3.select("#time-brush").append("svg")
             .attr("width", 205)
@@ -615,6 +652,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .scale(brush_scale)
             .tickSize(30)
             .tickPadding(0)
+            .ticks(4)
             .orient("bottom");
 
         brush_axis.tickFormat(function(date) {
@@ -658,8 +696,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
                     .attr("y2", function(d) { return y_scale(d.date); });
                 self.timeline.selectAll("#suspect-time-label")
                     .attr("y", function(d) { return y_scale(d.date) - 5; });
-                self.fillPathData(x_scale, y_scale, display_dataset);
-                self.drawPath();
+                //self.fillPathData(x_scale, y_scale, display_dataset);
+                //self.drawPath();
                 adjustDateLabel();
             }
         }
