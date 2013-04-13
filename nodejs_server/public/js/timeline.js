@@ -17,7 +17,7 @@ function Timeline(name) {
     this.x_range = [160, 660];
     this.x_range_padding = 160;
     this.timeline_height = 800;
-    this.display_step = 35;
+    this.display_step = 20;
 
     // dynamically configurable values
     this.dataset = [];
@@ -240,9 +240,33 @@ Timeline.prototype.setDataset = function(dataset, check_suspects, enable_time_br
         }
     }
     // init first sub-array for display
-    this.end_index = this.dataset.length > this.display_step ? this.display_step : this.dataset.length - 1;
+    //this.end_index = this.dataset.length > this.display_step ? this.display_step : this.dataset.length - 1;
+    this.getEndIndex();
     // on dataset is set, draw timeline
     this.onDataReady(enable_time_brush);
+}
+
+Timeline.prototype.getEndIndex = function() {
+    var time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+    while(time_diff < this.display_step && this.end_index < this.dataset.length) {
+        this.end_index += 1;
+        if (this.end_index === this.dataset.length) {
+            break;
+        }
+        time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+    }
+}
+
+Timeline.prototype.getStartIndex = function() {
+    var time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+    while(time_diff < this.display_step && this.start_index > 0) {
+        this.start_index -= 1;
+        if (this.start_index <= 0) {
+            this.start_index = 0;
+            break;
+        }
+        time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+    }
 }
 
 Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
@@ -271,30 +295,40 @@ Timeline.prototype.drawPath = function() {
 
 Timeline.prototype.nextWindow = function() {
     this.start_index = this.end_index;
-    this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
+    this.getEndIndex();
+    //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
     if (this.start_index !== 0) {
         //TODO show the previous button
+        $('#previous').css('opacity', 1).css('z-index', 100);
     }
-
-    if (this.end_index === this.dataset.length - 1) {
+    if (this.end_index === this.dataset.length) {
         //TODO hide the next button
+        $('#next').css('opacity', 0).css('z-index', -1);
     }
+    this.onDataReady(true);
 }
 
 Timeline.prototype.previousWindow = function() {
-    this.start_index = this.start_index > this.display_step ? this.start_index - this.display_step : 0;
-    this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
+    //this.start_index = this.start_index > this.display_step ? this.start_index - this.display_step : 0;
+    this.end_index = this.start_index;
+    this.getStartIndex();
+    //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
     if (this.start_index === 0) {
         //TODO hide the previous button
+        $('#previous').css('opacity', 0).css('z-index', -1);
     }
-    if (this.end_index < this.dataset.length - 1) {
+    if (this.end_index < this.dataset.length) {
         //TODO show the next button
+        $('#next').css('opacity', 1).css('z-index', 100);
     }
+    this.onDataReady(true);
 }
 
 Timeline.prototype.onDataReady = function(enable_time_brush) {
     var self = this;
-
+    if (this.end_index !== this.dataset.length) {
+        $('#next').css('opacity', 1).css('z-index', 100);
+    }
     // convert epoch timestamp to date for d3 time scale and init display dataset
     var display_dataset = [];
     this.dataset.slice(this.start_index, this.end_index).forEach(function(data) {
@@ -312,7 +346,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     //var start_date = new Date((Number(this.y_domain_min) - date_padding) * 1000);
     //var end_date = new Date((Number(this.y_domain_max) + date_padding) * 1000);
     var start_date = new Date((Number(this.dataset[this.start_index].date) - date_padding) * 1000);
-    var end_date = new Date((Number(this.dataset[this.end_index].date) + date_padding) * 1000);
+    var end_date = new Date((Number(this.dataset[this.end_index - 1].date) + date_padding) * 1000);
 
     var suspect_display_dataset = [];
     this.suspects.forEach(function(data) {
@@ -326,7 +360,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     });
 
     this.color_scale = d3.scale.category20();
-    this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (1, 5, 15, ...)
+    this.initTickInterval(); // tick unit is 5 sec constant now
     this.y_range = this.initYRange();
 
     // debugging info
@@ -652,11 +686,11 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .scale(brush_scale)
             .tickSize(30)
             .tickPadding(0)
-            .ticks(4)
+            .ticks(d3.time.seconds.utc, 5)
             .orient("bottom");
 
         brush_axis.tickFormat(function(date) {
-            formatter = d3.time.format.utc("%H:%M");
+            formatter = d3.time.format.utc("%S");
             return formatter(date);
         });
 

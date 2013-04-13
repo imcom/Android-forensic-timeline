@@ -470,6 +470,8 @@ filter_btn.click(function() {
     // make changes to the current dataset (for responsive panes), keep initial dataset unchanged
     current_dataset = filtered_dataset;
     $('#undo').css('opacity', 0.8).css('z-index', 100);
+    $('#next').css('opacity', 0).css('z-index', -1);
+    $('#previous').css('opacity', 0).css('z-index', -1);
 });
 
 clear_btn.click(function() {
@@ -481,6 +483,8 @@ clear_btn.click(function() {
     timeline_main.clearData(true, true);
     timeline_extend.clearData(true, true);
     $('#undo').css('opacity', 0).css('z-index', -1);
+    $('#next').css('opacity', 0).css('z-index', -1);
+    $('#previous').css('opacity', 0).css('z-index', -1);
     dataset = [];
     current_dataset = [];
 });
@@ -605,4 +609,14 @@ $('#trash').click(function() {
     $('#trash').css('opacity', 0).css('z-index', -1);
 });
 
+$('#next').click(function() {
+    $('#timeline_main').children().remove();
+    timeline_main.initTimeline();
+    timeline_main.nextWindow();
+});
 
+$('#previous').click(function() {
+    $('#timeline_main').children().remove();
+    timeline_main.initTimeline();
+    timeline_main.previousWindow();
+});
