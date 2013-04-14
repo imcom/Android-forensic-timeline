@@ -19,7 +19,7 @@ window.onscroll = function(event) {
     } else {
         $('.back-to-top').css('opacity', 0).css('z-index', -1);
     }
-}
+};
 
 // control buttons
 var search_btn = $('#search');
@@ -264,9 +264,13 @@ function fillMapReduceOptions(data_type) {
     }
 }
 
-function drawMainTimeline() {
+function drawMainTimeline(on_startup) {
     var selection = formSelection();
-    var target = collection.val().split(':'); // target = [url(type), collection]
+    if (!on_startup) {
+        var target = collection.val().split(':'); // target = [url(type), collection]
+    } else {
+        target = ['android_logs', 'events']; // on startup default to events log
+    }
     $.ajax({
         type: "POST",
         url: target[0],
@@ -384,14 +388,15 @@ function showAlert(message) {
     $('body').append("<div class='alert'><button type='button' data-dismiss='alert' class='close' >&times;</button>" + message + "</div>");
 }
 
-search_btn.click(function() { //TODO remove search button, instead, showing Events timeline onLoad
+//TODO remove search button, instead, showing Events timeline onLoad
+/*search_btn.click(function() {
     dataset = []; // clear dataset for new data
     current_dataset = [];
     timeline_main.clearData(true, true);
     drawMainTimeline();
     referenceQuery("temporal_info", "temporal", null);
     referenceQuery("package_info", "packages", null);
-});
+});*/
 
 expand_btn.click(function() {
     dataset_extend = []; // clear old dataset
@@ -483,10 +488,13 @@ clear_btn.click(function() {
     timeline_main.clearData(true, true);
     timeline_extend.clearData(true, true);
     $('#undo').css('opacity', 0).css('z-index', -1);
+    $('#trash').css('opacity', 0).css('z-index', -1);
     $('#next').css('opacity', 0).css('z-index', -1);
     $('#previous').css('opacity', 0).css('z-index', -1);
     dataset = [];
     current_dataset = [];
+    timeline_main.clearData(true, true);
+    drawMainTimeline(true);
 });
 
 dropdown_btn.click(function() {
@@ -530,14 +538,16 @@ aggregate_btn.click(function() {
     var obj_filter = object_pane.val();
     var id_filter = id_pane.val();
     var aggr_selection = {};
-    var aggr_collection = collection.val().split(':')[1];
+    //var aggr_collection = collection.val().split(':')[1];
+    var aggr_collection = "events";
 
     if (aggregation_options.val() === 'aggregate by ...') {
         showAlert("No aggregation available");
         return;
     }
 
-    var generic_data = new GenericData(collection.val().split(':')[0], null); // no need for dataset
+    //var generic_data = new GenericData(collection.val().split(':')[0], null); // no need for dataset
+    var generic_data = new GenericData("android_logs", null); // no need for dataset
     //TODO time period selection & other condition selections
     if (aggregation_options.val() === 'object') {
         if (obj_filter === '') {
@@ -609,14 +619,38 @@ $('#trash').click(function() {
     $('#trash').css('opacity', 0).css('z-index', -1);
 });
 
-$('#next').click(function() {
+$('#next-main').click(function() {
     $('#timeline_main').children().remove();
     timeline_main.initTimeline();
     timeline_main.nextWindow();
 });
 
-$('#previous').click(function() {
+$('#previous-main').click(function() {
     $('#timeline_main').children().remove();
     timeline_main.initTimeline();
     timeline_main.previousWindow();
 });
+
+$('#next-extend').click(function() {
+    $('#timeline_extend').children().remove();
+    timeline_extend.initTimeline();
+    timeline_extend.nextWindow();
+});
+
+$('#previous-extend').click(function() {
+    $('#timeline_extend').children().remove();
+    timeline_extend.initTimeline();
+    timeline_extend.previousWindow();
+});
+
+window.onLoad = function() {
+    dataset = []; // clear dataset for new data
+    current_dataset = [];
+    timeline_main.clearData(true, true);
+    drawMainTimeline(true);
+    referenceQuery("temporal_info", "temporal", null);
+    referenceQuery("package_info", "packages", null);
+}();
+
+
+

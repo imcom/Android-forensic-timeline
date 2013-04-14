@@ -29,12 +29,12 @@ html
             div.span3
                 div.ctrl-panel
                     ul.nav.nav-pills.nav-stacked
-                        li.nav-header Query Target
+                        li.nav-header Extent Query Target
                         li
                             select#collection-input
                                 option(value='android_logs:main') main
                                 option(value='android_logs:system') system
-                                option(value='android_logs:events') events
+                                //option(value='android_logs:events') events
                                 option(value='android_logs:radio') radio
                                 //option(value='dmesg:dmesg') dmesg
                                 //option(value='fs_time:fs_time') filesystem MAC
@@ -50,13 +50,7 @@ html
                         li.nav-header.cozy-list-header Content Specification
                         li
                             input(type="text", placeholder="keywords ...")#selection-input
-                        li
-                            div.btn-group
-                                button#search.btn.btn-success.btn-small Search
-                                button#expand.btn.btn-info.btn-small Expand
-                                button#filter.btn.btn-warning.btn-small Filter
-                                button#clear.btn.btn-danger.btn-small Clear
-                        li.nav-header Timeline Window
+                        li.nav-header.cozy-list-header Timeline Window
                         li
                             select#time-window-start.selection-field
                                 option from...
@@ -72,7 +66,14 @@ html
                         li
                             select#map-reduce-type.selection-field
                                 option aggregate by ...
-                            button#aggregate-btn.btn.btn-success.btn-small Aggregate
+                            //button#aggregate-btn.btn.btn-success.btn-small Aggregate
+                        li
+                            div.btn-group
+                                //button#search.btn.btn-success.btn-small Search
+                                button#aggregate-btn.btn.btn-success.btn-small aggr.
+                                button#expand.btn.btn-warning.btn-small expand
+                                button#filter.btn.btn-info.btn-small filter
+                                button#clear.btn.btn-danger.btn-small clear
                         li.nav-header Time Brush [Seconds]
                         li
                             #time-brush
@@ -86,8 +87,10 @@ html
         a.reset-scale
         a#undo
         a#trash
-        a#next
-        a#previous
+        a#next-main
+        a#previous-main
+        a#next-extend
+        a#previous-extend
         script(type = 'text/javascript', src = '/js/operator.js')
 
 

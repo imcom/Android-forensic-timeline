@@ -299,11 +299,11 @@ Timeline.prototype.nextWindow = function() {
     //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
     if (this.start_index !== 0) {
         //TODO show the previous button
-        $('#previous').css('opacity', 1).css('z-index', 100);
+        $('#previous-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 100);
     }
     if (this.end_index === this.dataset.length) {
         //TODO hide the next button
-        $('#next').css('opacity', 0).css('z-index', -1);
+        $('#next-' + this.name.split('_')[1]).css('opacity', 0).css('z-index', -1);
     }
     this.onDataReady(true);
 }
@@ -315,11 +315,11 @@ Timeline.prototype.previousWindow = function() {
     //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
     if (this.start_index === 0) {
         //TODO hide the previous button
-        $('#previous').css('opacity', 0).css('z-index', -1);
+        $('#previous-' + this.name.split('_')[1]).css('opacity', 0).css('z-index', -1);
     }
     if (this.end_index < this.dataset.length) {
         //TODO show the next button
-        $('#next').css('opacity', 1).css('z-index', 100);
+        $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 100);
     }
     this.onDataReady(true);
 }
@@ -327,7 +327,7 @@ Timeline.prototype.previousWindow = function() {
 Timeline.prototype.onDataReady = function(enable_time_brush) {
     var self = this;
     if (this.end_index !== this.dataset.length) {
-        $('#next').css('opacity', 1).css('z-index', 100);
+        $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 100);
     }
     // convert epoch timestamp to date for d3 time scale and init display dataset
     var display_dataset = [];

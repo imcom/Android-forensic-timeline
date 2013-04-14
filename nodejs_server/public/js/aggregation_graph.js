@@ -43,7 +43,7 @@ function AggregatedGraph(name, dataset) {
     var tick_padding = -20;
     var radius_range = [10, 60];
     var scale_extent = [-5, 10]; // used for zoom function
-    this.width = 1400;
+    this.width = 1800;
     this.height = 620;
     this.x_range = this.initXRange(); // x range should be dependent on dataset size
     this.y_range = [this.height - y_padding, y_padding];
@@ -51,15 +51,9 @@ function AggregatedGraph(name, dataset) {
     this.tick_step;
 
     // init a broader bounds for the selected time window
-    var date_padding = 30; // unit: seconds
+    var date_padding = 10; // unit: seconds
     var start_date = new Date((this.getOldestDate() - date_padding) * 1000);
     var end_date = new Date((this.getLatestDate() + date_padding) * 1000);
-
-    // convert epoch timestamp to date for d3 time scale
-    this.dataset.forEach(function(record) {
-        var date = new Date(record.date * 1000); // convert to milliseconds
-        record.date = date;
-    });
 
     // graph scales
     this.x_scale = d3.time.scale.utc().domain([start_date, end_date]).range(this.x_range);
@@ -79,6 +73,12 @@ function AggregatedGraph(name, dataset) {
     this.color_scale = d3.scale.category10();
     this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
 
+    // convert epoch timestamp to date for d3 time scale
+    this.dataset.forEach(function(record) {
+        var date = new Date(record.date * 1000); // convert to milliseconds
+        record.date = date;
+    });
+
     // define x axis
     this.x_axis = d3.svg.axis()
         .orient("top")
@@ -88,7 +88,7 @@ function AggregatedGraph(name, dataset) {
         .tickSize(0);
 
     this.x_axis.tickFormat(function(date) {
-        var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+        var formatter = d3.time.format.utc("%H:%M:%S");
         return formatter(date);
     });
 
@@ -104,7 +104,7 @@ function AggregatedGraph(name, dataset) {
     // graph title, which object or pid is aggregated
     this.aggregated_graph.append("text")
         .attr("class", "graph-title")
-        .attr("x", this.width - 200)
+        .attr("x", this.width - 500)
         .attr("y", 0)
         .text(function(){
             if (self.aggregation_type === 'object') {
@@ -326,25 +326,28 @@ AggregatedGraph.prototype.initDataset = function(dataset) {
 }
 
 AggregatedGraph.prototype.initXRange = function() {
-    // min: 100, max: 8000; upper bound min: 800
-    var data_length = this.dataset.length;
-    var upper_range = data_length * 500;
-    upper_range = upper_range > 8000 ? 8000 : (upper_range < 800 ? 800 : upper_range);
+    var start_date = this.getOldestDate();
+    var end_date = this.getLatestDate();
+    var upper_range = end_date - start_date <= 3600 ? 3000 : end_date - start_date >= 18000 ? 15000 : 8000;
     return [100, upper_range];
 }
 
 AggregatedGraph.prototype.initTickInterval = function() {
+    var start_date = this.getOldestDate();
+    var end_date = this.getLatestDate();
+
     var unit_options = [
         d3.time.seconds.utc,
         d3.time.minutes.utc
     ];
     var step_options = [
+        5,
         15,
         30
     ];
 
-    var unit_index = this.dataset.length < 15 ? 0 : 0;
-    var step_index = this.dataset.length < 30 ? 0 : 1;
+    var unit_index = end_date - start_date <= 1800 ? 0 : 1;
+    var step_index = end_date - start_date <= 3600 ? 0 : end_date - start_date >= 36000 ? 2 : 1;
 
     this.tick_unit = unit_options[unit_index];
     this.tick_step = step_options[step_index];
