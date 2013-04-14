@@ -299,7 +299,7 @@ Timeline.prototype.nextWindow = function() {
     //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
     if (this.start_index !== 0) {
         //TODO show the previous button
-        $('#previous-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 100);
+        $('#previous-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 50);
     }
     if (this.end_index === this.dataset.length) {
         //TODO hide the next button
@@ -319,7 +319,7 @@ Timeline.prototype.previousWindow = function() {
     }
     if (this.end_index < this.dataset.length) {
         //TODO show the next button
-        $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 100);
+        $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 50);
     }
     this.onDataReady(true);
 }
@@ -327,7 +327,7 @@ Timeline.prototype.previousWindow = function() {
 Timeline.prototype.onDataReady = function(enable_time_brush) {
     var self = this;
     if (this.end_index !== this.dataset.length) {
-        $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 100);
+        $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 50);
     }
     // convert epoch timestamp to date for d3 time scale and init display dataset
     var display_dataset = [];
@@ -438,7 +438,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
 
     function zoom() {
         if (zoom_handle.scale() >= 4 || Math.abs(zoom_handle.translate()[1]) >= 1500) {
-            $('.reset-scale').css('opacity', 0.8).css('z-index', 100);
+            $('.reset-scale').css('opacity', 0.8).css('z-index', 50);
         } else {
             $('.reset-scale').css('opacity', 0).css('z-index', -1);
         }
@@ -621,8 +621,15 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         });
         rect.on("click", function(event) {
             var target = event.target;
-            console.log(target.id.split("-"));
+            //console.log(target.id.split("-")); // [timeline, suspects, pid, index=(start_index + index)]
+            var data_index = Number(target.id.split("-")[3]) + this.start_index;
+            var data = self.suspects[data_index];
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
+            window.popup_pane_collapsed = 0;
+            $('.popup-ctrl').css("-webkit-transform", "rotate(180deg)");
+            $('.popup-ctrl').css("-moz-transform", "rotate(180deg)");
+            $('.popup-ctrl')[0].setAttribute("title", "Collapse event pane");
+            $('#event-detail-pane').animate({"bottom": 0}, 500, "ease");
         });
     });
 
@@ -665,8 +672,31 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         });
         circle.on("click", function(event) {
             var target = event.target;
-            console.log(target.id.split("-"));
+            //console.log(target.id.split("-")); // [timeline, dataset, pid, index=(start_index + index)]
+            var data_index = Number(target.id.split("-")[3]) + self.start_index;
+            var data = self.dataset[data_index];
+            window.popup_pane_collapsed = 0;
+            $('.popup-ctrl').css("-webkit-transform", "rotate(180deg)");
+            $('.popup-ctrl').css("-moz-transform", "rotate(180deg)");
+            $('.popup-ctrl')[0].setAttribute("title", "Collapse event pane");
+            $('#event-detail-pane').animate({"bottom": 0}, 500, "ease");
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
+
+            var date = data.date * 1000; // convert to milliseconds
+            var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S");
+            var disp_date = formatter(new Date(date));
+            $('#date-display').text(disp_date);
+            $('#pid-display').text(data._id);
+            var table_prefix = "<tr><td>";
+            var table_suffix = "</tr></td>";
+            var messages = "";
+            for (var object in data.content) {
+                if (data.content.hasOwnProperty(object)) {
+                    $('#object-tbody').append(table_prefix + object + table_suffix);
+                    messages += "<" + object + ">: " + data.content[object] + "\n";
+                }
+            }
+            $('#message-display').text(messages);
         });
     }); // each self.dataset
 

@@ -250,8 +250,8 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
     });
 
     var text_padding = 70; // for aggregation by object
-    if (this.aggregation_type === 'pid') {
-        text_padding = 175;
+    if (this.aggregation_type === 'id') {
+        text_padding = 180;
     }
     var legend = this.aggregated_graph.selectAll(".legend")
         .data(this.color_scale.domain().slice().reverse())
@@ -346,7 +346,7 @@ AggregatedGraph.prototype.initTickInterval = function() {
         30
     ];
 
-    var unit_index = end_date - start_date <= 1800 ? 0 : 1;
+    var unit_index = end_date - start_date <= 1000 ? 0 : 1;
     var step_index = end_date - start_date <= 3600 ? 0 : end_date - start_date >= 36000 ? 2 : 1;
 
     this.tick_unit = unit_options[unit_index];

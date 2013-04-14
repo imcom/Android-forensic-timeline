@@ -113,6 +113,7 @@ app.configure(function(){
 // default index route
 app.get('/', index_handler.imcom);
 app.post('/mapreduce', db_handler.mapreduce);
+app.post('/dmesg_aggregation', db_handler.dmesg_aggregation);
 app.post('/android_logs', db_handler.android_logs);
 app.post('/dmesg', db_handler.dmesg);
 app.post('/content_provider_browserhistory', db_handler.cp_browserhistory);

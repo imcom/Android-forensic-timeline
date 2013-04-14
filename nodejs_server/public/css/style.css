@@ -7,7 +7,7 @@ select{width:100%}
 ul{width:205px}
 li.nav-header.cozy-list-header{margin-top:-5px}
 .selection-field{font-family:Consolas}
-#progress-bar{position:fixed;bottom:-20px;width:100%;margin-bottom:0}
+#progress-bar{position:fixed;bottom:-20px;width:100%;margin-bottom:0;z-index:110}
 label{display:inline-block}
 #content{position:absolute;margin-left:0;left:260px;width:79%;}
 #content fieldset{position:absolute}
@@ -26,10 +26,21 @@ label{display:inline-block}
 .slide-right-ctrl-bar .slide-right-ctrl{position:absolute;width:16px;height:85px;bottom:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(0);-moz-transform:rotate(0)}
 .slide-right-ctrl-bar:hover .slide-right-ctrl{background:url("/images/sidebar_icon.png") bottom right}
 .dropdown-div{position:fixed;top:-680px;z-index:100;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";background:#fff;width:99%;height:700px;margin-left:5px}
+.popup-div{position:fixed;bottom:-300px;z-index:100;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";background:#fff;width:59%;height:320px;margin-left:370px}
+#event-display-pane{margin-top:15px;}
+#event-display-pane p.nav-header.text-center{margin-right:22px}
+#event-display-pane .container-fluid{margin-top:-5px}
+#message-display{width:450px;resize:none}
+#event-metadata{overflow-x:hidden;overflow-y:auto}
+#date-display,#pid-display{font-family:Consolas;margin-left:5px;font-weight:bold}
+#object-tbody td{font-family:Consolas}
 .dropdown-ctrl-bar{position:absolute;width:100%;height:20px;bottom:0;cursor:pointer;z-index:50;}
 .dropdown-ctrl-bar .dropdown-ctrl{position:absolute;width:85px;height:16px;bottom:0;z-index:0;left:47%;background:url("/images/dropdown_bar_icon.png") top right;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg)}
 .dropdown-ctrl-bar:hover .dropdown-ctrl{background:url("/images/dropdown_bar_icon.png") top left}
-#aggregation-pane,#responsive-pane{border:2px solid;-webkit-border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.popup-ctrl-bar{position:absolute;width:100%;height:20px;top:0;cursor:pointer;z-index:50;}
+.popup-ctrl-bar .popup-ctrl{position:absolute;width:85px;height:16px;top:0;z-index:0;left:45%;background:url("/images/dropdown_bar_icon.png") top right}
+.popup-ctrl-bar:hover .popup-ctrl{background:url("/images/dropdown_bar_icon.png") top left}
+#aggregation-pane,#responsive-pane,#event-detail-pane{border:2px solid;-webkit-border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
 #aggregation-arena{margin-top:20px;margin-left:50px}
 .aggregated-graph{position:fixed}
 .cluster,timeline-event{stroke:#000}

@@ -27,6 +27,7 @@ var expand_btn = $('#expand');
 var filter_btn = $('#filter');
 var clear_btn = $('#clear');
 var dropdown_btn = $('.dropdown-ctrl-bar');
+var popup_btn = $('.popup-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
 
@@ -35,6 +36,7 @@ var dataset_extend = [];
 var current_dataset = [];
 var time_range = [];
 var dropdown_pane_collapsed = 1;
+var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
 var object_selected = false;
 var id_selected = false;
@@ -265,7 +267,7 @@ function fillMapReduceOptions(data_type) {
 }
 
 function drawMainTimeline(on_startup) {
-    var selection = formSelection();
+    var main_selection = formSelection();
     if (!on_startup) {
         var target = collection.val().split(':'); // target = [url(type), collection]
     } else {
@@ -276,7 +278,7 @@ function drawMainTimeline(on_startup) {
         url: target[0],
         data: {
             collection: target[1],
-            selection: selection,
+            selection: main_selection,
             type: "query"
         },
         dataType: 'json',
@@ -328,8 +330,8 @@ function referenceQuery(url, target, selection) {
 }
 
 function drawExtendTimeline() {
-    var selection = JSON.parse(formSelection());
-    if (selection == null) selection = {};
+    var extend_selection = JSON.parse(formSelection());
+    if (extend_selection == null) extend_selection = {};
     // set the time window
     var start_time = Number($('#time-window-start').val());
     var end_time = Number($('#time-window-end').val());
@@ -337,9 +339,9 @@ function drawExtendTimeline() {
         showAlert("Invalid time window");
         return;
     } else {
-        selection.date = {'$gte': start_time, '$lte': end_time};
+        extend_selection.date = {'$gte': start_time, '$lte': end_time};
     }
-    selection = JSON.stringify(selection);
+    extend_selection = JSON.stringify(extend_selection);
 
     var target = collection.val().split(':'); // target = [url(type), collection]
     $.ajax({
@@ -347,7 +349,7 @@ function drawExtendTimeline() {
         url: target[0],
         data: {
             collection: target[1],
-            selection: selection,
+            selection: extend_selection,
             type: "query"
         },
         dataType: 'json',
@@ -388,6 +390,65 @@ function showAlert(message) {
     $('body').append("<div class='alert'><button type='button' data-dismiss='alert' class='close' >&times;</button>" + message + "</div>");
 }
 
+function aggregateDmesg() {
+    var dmesg_selection = {};
+    if (selection.val() != '') {
+        var keywords = selection.val().split(' ');
+        dmesg_selection.event = keywords.join('|');
+    }
+
+    var start_time = Number($('#time-window-start').val());
+    var end_time = Number($('#time-window-end').val());
+    if (start_time > end_time) {
+        showAlert("Invalid time window");
+        return;
+    } else {
+        dmesg_selection.date = {'$gte': start_time, '$lte': end_time};
+    }
+    dmesg_selection = JSON.stringify(dmesg_selection);
+
+    $.ajax({
+        type: "POST",
+        url: "dmesg_aggregation",
+        data: {
+            selection: dmesg_selection,
+            type: "query"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content.length > 0) {
+                var dataset_extend = [];
+                data.content.forEach(function(record, index) {
+                    for (var timestamp in record.value) {
+                        if (record.value.hasOwnProperty(timestamp)) {
+                            record.value[timestamp].content.forEach(function(message) {
+                                var unified_record = {};
+                                unified_record._id = index;
+                                unified_record.object = record._id;
+                                unified_record.date = timestamp;
+                                unified_record.display = index;
+                                unified_record.level = "";
+                                unified_record.msg = message;
+                                dataset_extend.push(unified_record);
+                            });
+                        }
+                    }
+                });
+                $('#timeline_extend').children().remove();
+                timeline_extend.initTimeline();
+                var check_suspects = false;
+                timeline_extend.setDataset(dataset_extend, check_suspects, false);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("search query error!");
+        }
+    });
+}
+
 //TODO remove search button, instead, showing Events timeline onLoad
 /*search_btn.click(function() {
     dataset = []; // clear dataset for new data
@@ -402,6 +463,7 @@ expand_btn.click(function() {
     dataset_extend = []; // clear old dataset
     timeline_extend.clearData(true, true);
     drawExtendTimeline();
+    //aggregateDmesg();
 });
 
 filter_btn.click(function() {
@@ -489,8 +551,10 @@ clear_btn.click(function() {
     timeline_extend.clearData(true, true);
     $('#undo').css('opacity', 0).css('z-index', -1);
     $('#trash').css('opacity', 0).css('z-index', -1);
-    $('#next').css('opacity', 0).css('z-index', -1);
-    $('#previous').css('opacity', 0).css('z-index', -1);
+    $('#next-main').css('opacity', 0).css('z-index', -1);
+    $('#previous-main').css('opacity', 0).css('z-index', -1);
+    $('#next-extend').css('opacity', 0).css('z-index', -1);
+    $('#previous-extend').css('opacity', 0).css('z-index', -1);
     dataset = [];
     current_dataset = [];
     timeline_main.clearData(true, true);
@@ -512,6 +576,24 @@ dropdown_btn.click(function() {
         dropdown_ctrl.css("-moz-transform", "rotate(180deg)");
         dropdown_ctrl[0].setAttribute("title", "Expand aggregation pane");
         aggregation_pane.animate({"top": -680}, 500, "ease");
+    }
+});
+
+popup_btn.click(function() {
+    var event_pane = $('#event-detail-pane');
+    var popup_ctrl = $('.popup-ctrl');
+    if (popup_pane_collapsed == 1) { // show the pane
+        popup_pane_collapsed = 0;
+        popup_ctrl.css("-webkit-transform", "rotate(180deg)");
+        popup_ctrl.css("-moz-transform", "rotate(180deg)");
+        popup_ctrl[0].setAttribute("title", "Collapse event pane");
+        event_pane.animate({"bottom": 0}, 500, "ease");
+    } else { // hide the pane
+        popup_pane_collapsed = 1;
+        popup_ctrl.css("-webkit-transform", "rotate(0deg)");
+        popup_ctrl.css("-moz-transform", "rotate(0deg)");
+        popup_ctrl[0].setAttribute("title", "Expand event pane");
+        event_pane.animate({"bottom": -300}, 500, "ease");
     }
 });
 

@@ -15,6 +15,28 @@ var dmesg = require("./dmesg_schema.js");
 var temporal = require("./temporal_info_schema.js");
 var mongoose = require('mongoose');
 
+
+exports.aggregateDmesg = function(req, res) {
+    var model = mongoose.model("dmesg");
+    var obj = dmesg.aggregate;
+    var selection = JSON.parse(req.body.selection);
+
+    if (selection != null && selection.event != null) {
+        //selection.event = new RegExp(selection.event, 'i');
+    }
+    selection.event = new RegExp("usb", 'i');
+    obj.query = selection;
+    model.mapReduce(obj, function(err, rtn_model, stats) {
+        if (err == null) {
+            rtn_model.find().exec(function(err, rtn) {
+                res.json({"error": 0, "type": "dmesg aggregation", "content": rtn});
+            });
+        } else {
+            res.json({"error": 1, "type": "dmesg aggregation", "content": err.message});
+        }
+    });
+}
+
 exports.read = function(collection, selection, fields, options, onCompletion, onFailure) {
     var model = mongoose.model(collection);
 

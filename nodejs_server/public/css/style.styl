@@ -35,6 +35,7 @@ li.nav-header.cozy-list-header
     bottom: -20px
     width: 100%
     margin-bottom: 0px
+    z-index: 110
 
 // display control on pids selection pane
 label
@@ -129,6 +130,42 @@ label
     height: 700px
     margin-left: 5px
 
+.popup-div
+    position: fixed
+    bottom: -300px
+    z-index: 100
+    opacity: 0.9
+    background: white
+    width: 59%
+    height: 320px
+    margin-left: 370px
+
+#event-display-pane
+    margin-top: 15px
+
+    p.nav-header.text-center
+        margin-right: 22px
+
+    .container-fluid
+        margin-top: -5px
+
+#message-display
+    width: 450px
+    resize: none
+
+#event-metadata
+    overflow-x: hidden
+    overflow-y: auto
+
+#date-display, #pid-display
+    font-family: Consolas
+    margin-left: 5px
+    font-weight: bold
+
+#object-tbody
+    td
+        font-family: Consolas
+
 .dropdown-ctrl-bar
     position: absolute
     width: 100%
@@ -152,7 +189,28 @@ label
     .dropdown-ctrl
         background: url('/images/dropdown_bar_icon.png') top left
 
-#aggregation-pane, #responsive-pane
+.popup-ctrl-bar
+    position: absolute
+    width: 100%
+    height: 20px
+    top: 0px
+    cursor: pointer
+    z-index: 50
+
+    .popup-ctrl
+        position: absolute
+        width: 85px
+        height: 16px
+        top: 0px
+        z-index: 0
+        left: 45%
+        background: url('/images/dropdown_bar_icon.png') top right
+
+.popup-ctrl-bar:hover
+    .popup-ctrl
+        background: url('/images/dropdown_bar_icon.png') top left
+
+#aggregation-pane, #responsive-pane, #event-detail-pane
     border: 2px solid
     -webkit-border-radius: 8px
     -moz-border-radius: 8px

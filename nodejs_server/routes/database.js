@@ -47,6 +47,11 @@ function do_query(req, res, type) {
     );
 }
 
+exports.dmesg_aggregation = function(req, res) {
+    console.log("mapreduce on[dmesg]:" + req.body.selection);
+    mongo.aggregateDmesg(req, res);
+}
+
 exports.mapreduce = function(req, res) {
     console.log("mapreduce on[" + req.body.collection + "] by {" + req.body.aggregation + "}:" + req.body.selection);
     mongo.mapreduce(req, res);

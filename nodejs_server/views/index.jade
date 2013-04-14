@@ -13,6 +13,31 @@ html
     body
         div.progress.progress-striped.active#progress-bar
             div.bar#progress-indicator
+        div#event-detail-pane.popup-div
+            div#event-display-pane
+                p.nav-header.text-center Event Details
+                div.container-fluid
+                    div#event-metadata.span2
+                        ul.nav.nav-pills.nav-stacked
+                            li.nav-header Date
+                            li
+                                div#date-display
+                            li.nav-header.cozy-list-header Process ID
+                            li
+                                div#pid-display
+                            li.nav-header.cozy-list-header System Objects
+                            li
+                                div#object-display
+                                    table#object-table.table.table-condensed.table-hover
+                                        tbody#object-tbody
+                    div#event-message.span5
+                        p.nav-header Messages
+                        textarea(rows = "11", readonly)#message-display
+                    div.span3
+                        ul.nav.nav-pills.nav-stacked
+                            li.nav-header Control Pane
+            div.popup-ctrl-bar
+                div(title="Expand event pane").popup-ctrl
         div#aggregation-pane.dropdown-div
             div#aggregation-arena
             div.dropdown-ctrl-bar
