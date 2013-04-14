@@ -35,7 +35,26 @@ html
                         textarea(rows = "11", readonly)#message-display
                     div.span3
                         ul.nav.nav-pills.nav-stacked
-                            li.nav-header Control Pane
+                            li.nav-header Dmesg Query
+                            li
+                                div.input-append
+                                    input(type = "text", placeholder = "keywords ...").span3#dmesg-selection-input
+                                    button(type = "button").btn#dmesg-search Search
+                            li.nav-header.cozy-list-header App File Activity
+                            li
+                                div.input-append
+                                    input(type = "text", placeholder = "app names ...").span3#file-activity-selection-input
+                                    button(type = "button").btn#file-activity-search Search
+                            li.nav-header.cozy-list-header Relevance Query
+                            li
+                                div.input-append
+                                    input(type = "text", placeholder = "app names ...").span3#relevance-selection-input
+                                    button(type = "button").btn#relevance-search Search
+                            li.nav-header.cozy-list-header App Trace Query
+                            li
+                                div.input-append
+                                    input(type = "text", placeholder = "application name").span3#app-trace-selection-input
+                                    button(type = "button").btn#app-trace-search Search
             div.popup-ctrl-bar
                 div(title="Expand event pane").popup-ctrl
         div#aggregation-pane.dropdown-div

@@ -1,8 +1,7 @@
 
 var cursor;
-cursor = db.app_related_system_calls.find({app: app_name});
+cursor = db.app_related_system_calls.find({app:application_name});
 
-var related_tokens = [];
 var activities = {};
 var start_points = [];
 var end_points = [];
@@ -43,10 +42,6 @@ function sortByDate(x, y) {
     if (x.date <= y.date) return -1;
     if (x.date > y.date) return 1;
 }
-
-//start_points.sort(sortByDate);
-//duration_points.sort(sortByDate);
-//end_points.sort(sortByDate);
 
 var combined_activities = start_points.concat(duration_points).concat(end_points);
 var is_unknown = true;

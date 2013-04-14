@@ -6,6 +6,10 @@ $ = Zepto;
 // query or display area
 var collection = $('#collection-input');
 var selection = $('#selection-input');
+var dmesg_selection = $('#dmesg-selection-input');
+var file_activity_selection = $('#file-activity-selection-input');
+var relevance_selection = $('#relevance-selection-input');
+var app_trace_selection = $('#app-trace-selection-input');
 var object_pane = $('#objects');
 var id_pane = $('#ids');
 var responsive_id_pane = $('#responsive-ids');
@@ -22,7 +26,11 @@ window.onscroll = function(event) {
 };
 
 // control buttons
-var search_btn = $('#search');
+//var search_btn = $('#search');
+var dmesg_search_btn = $('#dmesg-search');
+var file_activity_search_btn = $('#file-activity-search');
+var relevance_search_btn = $('#relevance-search');
+var app_trace_search_btn = $('#app-trace-search');
 var expand_btn = $('#expand');
 var filter_btn = $('#filter');
 var clear_btn = $('#clear');
@@ -391,10 +399,13 @@ function showAlert(message) {
 }
 
 function aggregateDmesg() {
-    var dmesg_selection = {};
-    if (selection.val() != '') {
-        var keywords = selection.val().split(' ');
-        dmesg_selection.event = keywords.join('|');
+    var dmesg_query = {};
+    if (dmesg_selection.val() != '') {
+        var keywords = dmesg_selection.val().split(' ');
+        dmesg_query.event = keywords.join('|');
+    } else {
+        showAlert("No keywords specified");
+        return;
     }
 
     var start_time = Number($('#time-window-start').val());
@@ -403,15 +414,15 @@ function aggregateDmesg() {
         showAlert("Invalid time window");
         return;
     } else {
-        dmesg_selection.date = {'$gte': start_time, '$lte': end_time};
+        dmesg_query.date = {'$gte': start_time, '$lte': end_time};
     }
-    dmesg_selection = JSON.stringify(dmesg_selection);
+    dmesg_query = JSON.stringify(dmesg_query);
 
     $.ajax({
         type: "POST",
         url: "dmesg_aggregation",
         data: {
-            selection: dmesg_selection,
+            selection: dmesg_query,
             type: "query"
         },
         dataType: 'json',
@@ -449,6 +460,59 @@ function aggregateDmesg() {
     });
 }
 
+function traceApplication() {
+    var app_name;
+    if (app_trace_selection.val() != '') {
+        app_name = app_trace_selection.val();
+    } else {
+        showAlert("No application specified");
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "application_trace",
+        data: {
+            selection: app_name,
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== null) {
+                console.log(JSON.parse(data.content));
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("trace query error!");
+        }
+    });
+
+    /*data.content.forEach(function(record, index) {
+        for (var timestamp in record.value) {
+            if (record.value.hasOwnProperty(timestamp)) {
+                record.value[timestamp].content.forEach(function(message) {
+                    var unified_record = {};
+                    unified_record._id = index;
+                    unified_record.object = record._id;
+                    unified_record.date = timestamp;
+                    unified_record.display = index;
+                    unified_record.level = "";
+                    unified_record.msg = message;
+                    dataset_extend.push(unified_record);
+                });
+            }
+        }
+    });
+    $('#timeline_extend').children().remove();
+    timeline_extend.initTimeline();
+    var check_suspects = false;
+    timeline_extend.setDataset(dataset_extend, check_suspects, false);
+    $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+    */
+}
+
 //TODO remove search button, instead, showing Events timeline onLoad
 /*search_btn.click(function() {
     dataset = []; // clear dataset for new data
@@ -459,11 +523,20 @@ function aggregateDmesg() {
     referenceQuery("package_info", "packages", null);
 });*/
 
+app_trace_search_btn.click(function() {
+    timeline_extend.clearData(true, true);
+    traceApplication();
+});
+
+dmesg_search_btn.click(function() {
+    timeline_extend.clearData(true, true);
+    aggregateDmesg();
+});
+
 expand_btn.click(function() {
     dataset_extend = []; // clear old dataset
     timeline_extend.clearData(true, true);
     drawExtendTimeline();
-    //aggregateDmesg();
 });
 
 filter_btn.click(function() {
@@ -531,14 +604,14 @@ filter_btn.click(function() {
     $('#time-window-start').val(start_time);
     $('#time-window-end').val(end_time);
     // re-draw timeline graph
+    $('#next-main').css('opacity', 0).css('z-index', -1);
+    $('#previous-main').css('opacity', 0).css('z-index', -1);
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
     timeline_main.setDataset(filtered_dataset, false, false);
     // make changes to the current dataset (for responsive panes), keep initial dataset unchanged
     current_dataset = filtered_dataset;
     $('#undo').css('opacity', 0.8).css('z-index', 100);
-    $('#next').css('opacity', 0).css('z-index', -1);
-    $('#previous').css('opacity', 0).css('z-index', -1);
 });
 
 clear_btn.click(function() {

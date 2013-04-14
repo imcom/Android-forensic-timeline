@@ -26,6 +26,7 @@ var cp_services = require("./libs/content_provider_services.js");
 var dmesg = require("./libs/dmesg_schema.js");
 var temporal_info = require("./libs/temporal_info_schema.js");
 var package_info = require("./libs/package_info_schema.js");
+//var app_related_system_calls = require("./libs/app_related_system_calls.js");
 
 /*
  *  Init MongoDB connection and models
@@ -49,6 +50,7 @@ var schemas = [
     temporal_info,
     package_info,
     dmesg
+    //app_related_system_calls
 ];
 
 schemas.forEach(function(schema){
@@ -114,6 +116,7 @@ app.configure(function(){
 app.get('/', index_handler.imcom);
 app.post('/mapreduce', db_handler.mapreduce);
 app.post('/dmesg_aggregation', db_handler.dmesg_aggregation);
+app.post('/application_trace', db_handler.application_trace);
 app.post('/android_logs', db_handler.android_logs);
 app.post('/dmesg', db_handler.dmesg);
 app.post('/content_provider_browserhistory', db_handler.cp_browserhistory);

@@ -30,7 +30,7 @@ label{display:inline-block}
 #event-display-pane{margin-top:15px;}
 #event-display-pane p.nav-header.text-center{margin-right:22px}
 #event-display-pane .container-fluid{margin-top:-5px}
-#message-display{width:450px;resize:none}
+#message-display{width:450px;resize:none;margin-top:-10px}
 #event-metadata{overflow-x:hidden;overflow-y:auto}
 #date-display,#pid-display{font-family:Consolas;margin-left:5px;font-weight:bold}
 #object-tbody td{font-family:Consolas}

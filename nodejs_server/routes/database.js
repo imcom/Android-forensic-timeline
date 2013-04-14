@@ -20,6 +20,8 @@ var dmesg = require('../libs/dmesg_schema.js');
 var temporal_info = require('../libs/temporal_info_schema.js');
 var package_info = require('../libs/package_info_schema.js');
 
+var exec = require('child_process').exec;
+
 function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
     var selection = JSON.parse(req.body.selection);
@@ -45,6 +47,21 @@ function do_query(req, res, type) {
             res.json({"error": 1, "type": type.name, "content": err});
         }
     );
+}
+
+exports.application_trace = function(req, res) {
+    console.log("trace application:" + req.body.selection);
+    //mongo.traceApplication(req, res);
+    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/trace_app.js ";
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+        if (error === null) {
+            res.json({"error": 0, "type": "trace application", "content": stdout});
+        } else {
+            res.json({"error": 1, "type": "trace application", "content": error});
+        }
+    });
 }
 
 exports.dmesg_aggregation = function(req, res) {
