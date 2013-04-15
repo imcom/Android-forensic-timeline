@@ -326,7 +326,16 @@ function referenceQuery(url, target, selection) {
         dataType: 'json',
         success: function(data) {
             if (data.content.length > 0) {
-                console.log(data);
+                if (data.type === "temporal_info_schema") {
+                    var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S");
+                    $('#temporal-info').text(formatter(new Date(data.content[0].btime * 1000)));
+                    $('#timezone-info').text(data.content[0].timezone.replace(/_/g, ' '));
+                    $('#running-time').text(
+                        Math.round(data.content[0].uptime / 3600) + 'h ' +
+                        Math.round(data.content[0].uptime % 3600 / 60) + 'm ' +
+                        data.content[0].uptime % 3600 % 60 + 's'
+                    );
+                }
             } else {
                 showAlert("no records found!");
             }
@@ -506,7 +515,11 @@ function traceApplication() {
                 timeline_extend.clearData(true, true);
                 timeline_extend.initTimeline();
                 var check_suspects = false;
-                timeline_extend.setDataset(dataset_extend, path_groups, check_suspects, false);
+                console.log(path_groups);
+                var path_dataset = {};
+                path_dataset.name = app_name;
+                path_dataset.content = path_groups;
+                timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -917,7 +930,7 @@ window.onLoad = function() {
     timeline_main.clearData(true, true);
     drawMainTimeline(true);
     referenceQuery("temporal_info", "temporal", null);
-    referenceQuery("package_info", "packages", null);
+    //referenceQuery("package_info", "packages", null); // this collection is used for filesystem activity query
 }();
 
 

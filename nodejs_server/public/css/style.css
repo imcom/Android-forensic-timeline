@@ -27,6 +27,7 @@ label{display:inline-block}
 .slide-right-ctrl-bar:hover .slide-right-ctrl{background:url("/images/sidebar_icon.png") bottom right}
 .dropdown-div{position:fixed;top:-680px;z-index:100;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";background:#fff;width:99%;height:700px;margin-left:5px}
 .popup-div{position:fixed;bottom:-300px;z-index:100;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";background:#fff;width:59%;height:320px;margin-left:370px}
+#running-time,#timezone-info,#temporal-info{font-family:Consolas;margin-left:5px}
 #event-display-pane{margin-top:15px;}
 #event-display-pane p.nav-header.text-center{margin-right:22px}
 #event-display-pane .container-fluid{margin-top:-5px}
@@ -48,6 +49,8 @@ label{display:inline-block}
 .aggregation-axis text,.time-axis text{font-family:Consolas;font-size:11px}
 .grid-main line,.grid-extend line,.grid-aggr line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none;stroke-dasharray:5,5}
 .time-label{font-family:Consolas;font-size:13px;fill:#00f}
+.reference-time-label{font-family:Consolas;font-size:13px;fill:#808080}
+.reference-time-indicator{opacity:.7;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";stroke:#ffa500;pointer-events:none}
 .time-indicator{opacity:.7;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";stroke:#f00;stroke-dasharray:8,8;pointer-events:none}
 rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 .graph-title{font-family:Consolas;font-size:200%;z-index:100;font-style:oblique;font-variant:small-caps}

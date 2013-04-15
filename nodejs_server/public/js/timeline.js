@@ -34,6 +34,9 @@ function Timeline(name) {
     this.x_domain_array = [];
     this.y_domain_min = 0;
     this.y_domain_max = 0;
+    this.service_launch_date;
+    this.service_last_activity_date;
+    this.service_process_id;
 
     /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();
@@ -177,7 +180,7 @@ Timeline.prototype.removeTimeline = function() {
 }
 
 Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, enable_time_brush) {
-    // only check for suspects during initiation & do NOT check suspects upon MAC times
+    // only check for suspects for android logs
     var self = this;
     this.path_dataset = path_dataset;
     var normal_dataset = {};
@@ -315,6 +318,70 @@ Timeline.prototype.drawPath = function() {
         .attr("fill", "none");
 }
 
+Timeline.prototype.drawReferenceIndicator = function(y_scale) {
+    var self = this;
+    $('.reference-time-indicator').remove();
+    $('.reference-time-label').remove();
+    this.timeline.append("line")
+        .attr("class", "reference-time-indicator")
+        .attr("y1", y_scale(this.service_launch_date))
+        .attr("y2", y_scale(this.service_launch_date))
+        .attr("x1", 0)
+        .attr("x2", "100%");
+
+    this.timeline.append("line")
+        .attr("class", "reference-time-indicator")
+        .attr("y1", y_scale(this.service_last_activity_date))
+        .attr("y2", y_scale(this.service_last_activity_date))
+        .attr("x1", 0)
+        .attr("x2", "100%");
+
+    this.timeline.append("text")
+        .attr("class", "reference-time-label")
+        .attr("x", 5)
+        .attr("y", y_scale(this.service_launch_date) - 15)
+        .text(function() {
+            var formatter = d3.time.format.utc("%H:%M:%S [" + self.service_process_id+ "] Launch Date");
+            return formatter(self.service_launch_date);
+        });
+
+    this.timeline.append("text")
+        .attr("class", "reference-time-label")
+        .attr("x", 5)
+        .attr("y", y_scale(this.service_last_activity_date) - 15)
+        .text(function() {
+            var formatter = d3.time.format.utc("%H:%M:%S [" + self.service_process_id + "] Last Activity Date");
+            return formatter(self.service_last_activity_date);
+        });
+}
+
+Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
+    var self = this;
+    $.ajax({
+        type: "POST",
+        url: "service_info",
+        data: {
+            selection: app_name,
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== null) {
+                var result = JSON.parse(data.content);
+                self.service_launch_date = new Date(result['launch_date'] * 1000);
+                self.service_last_activity_date = new Date(result['last_activity_date'] * 1000);
+                self.service_process_id = result.pid;
+                self.drawReferenceIndicator(y_scale);
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("trace query error!");
+        }
+    });
+}
+
 Timeline.prototype.nextWindow = function() {
     var draw_brush = false;
     this.start_index = this.end_index;
@@ -394,10 +461,10 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     this.y_range = this.initYRange();
 
     // debugging info
-    console.log(start_date);
+    /*console.log(start_date);
     console.log(end_date);
     console.log("Suspicious event(s):");
-    console.log(this.suspects);
+    console.log(this.suspects);*/
 
     var x_scale = d3.scale.ordinal()
                 .domain(this.x_domain_array)
@@ -490,10 +557,9 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .attr("y2", function(d) { return y_scale(d.date); });
         self.timeline.selectAll("#suspect-time-label")
             .attr("y", function(d) { return y_scale(d.date) - 5; });
-        //self.fillPathData(x_scale, y_scale, display_dataset);
-        //self.drawPath();
+        self.drawReferenceIndicator(y_scale);
         if (self.path_dataset !== null) {
-            self.path_dataset.forEach(function(path_data) {
+            self.path_dataset.content.forEach(function(path_data) {
                 self.fillPathData(x_scale, y_scale, path_data);
                 self.drawPath();
             });
@@ -589,7 +655,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
 
     // draw chronological sequence path on timeline for application trace only
     if (this.path_dataset !== null) {
-        this.path_dataset.forEach(function(path_data) {
+        this.getServiceInfo(this.path_dataset.name, y_scale);
+        this.path_dataset.content.forEach(function(path_data) {
             self.fillPathData(x_scale, y_scale, path_data);
             self.drawPath();
         });

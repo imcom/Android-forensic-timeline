@@ -49,6 +49,20 @@ function do_query(req, res, type) {
     );
 }
 
+exports.service_info = function(req, res) {
+    console.log("fetch service info of the app:" + req.body.selection);
+    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/service_info.js ";
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+        if (error === null) {
+            res.json({"error": 0, "type": "service info", "content": stdout});
+        } else {
+            res.json({"error": 1, "type": "service info", "content": error});
+        }
+    });
+}
+
 exports.file_activity = function(req, res) {
     console.log("fetch file activity of the app:" + req.body.selection);
     var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/file_activity.js ";
