@@ -21,6 +21,7 @@ function Timeline(name) {
 
     // dynamically configurable values
     this.dataset = [];
+    this.path_dataset = [];
     this.start_index = 0;
     this.end_index = 0;
     this.suspects = [];
@@ -139,7 +140,7 @@ Timeline.prototype.initTimeline = function() {
         .append("g");
 
     this.timeline.append("svg:clipPath")
-        .attr("id", "timeline-clip")
+        .attr("id", "timeline-clip-" + this.name.split('_')[1])
         .append("svg:rect")
         .attr("x", 0)
         .attr("y", 0)
@@ -175,9 +176,10 @@ Timeline.prototype.removeTimeline = function() {
     $(this.getName()).children('.timeline-graph').remove();
 }
 
-Timeline.prototype.setDataset = function(dataset, check_suspects, enable_time_brush) {
+Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, enable_time_brush) {
     // only check for suspects during initiation & do NOT check suspects upon MAC times
     var self = this;
+    this.path_dataset = path_dataset;
     var normal_dataset = {};
     // check and mark abnormal chronologically placed records and store them separately
     // group data by 1st timestamp, 2nd record id, 3rd record object
@@ -197,7 +199,7 @@ Timeline.prototype.setDataset = function(dataset, check_suspects, enable_time_br
             current_date = data.date;
             var _id = data._id;
             var object = data.object;
-            var message = data.msg;
+            var message = data.msg + "[" + data.level + "]";
             if (!normal_dataset.hasOwnProperty(current_date)) {
                 normal_dataset[current_date] = {};
             }
@@ -271,7 +273,7 @@ Timeline.prototype.getStartIndex = function() {
 
 Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
     var self = this;
-    self.path_data = []; // clear the old data everytime
+    self.path_data = []; // clear the old data every time
     $.each(dataset, function(index) {
         var path_coords = {};
         path_coords['x'] = x_scale(dataset[index]._id);
@@ -281,7 +283,7 @@ Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
 }
 
 Timeline.prototype.clearPath = function() {
-    this.timeline.select('path#time_path').remove();
+    this.timeline.selectAll('path#time_path').remove();
 }
 
 Timeline.prototype.drawPath = function() {
@@ -294,6 +296,7 @@ Timeline.prototype.drawPath = function() {
 }
 
 Timeline.prototype.nextWindow = function() {
+    var draw_brush = false;
     this.start_index = this.end_index;
     this.getEndIndex();
     //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
@@ -305,11 +308,15 @@ Timeline.prototype.nextWindow = function() {
         //TODO hide the next button
         $('#next-' + this.name.split('_')[1]).css('opacity', 0).css('z-index', -1);
     }
-    this.onDataReady(true);
+    if (this.name.split('_')[1] === "main") {
+        draw_brush = true;
+    }
+    this.onDataReady(draw_brush);
 }
 
 Timeline.prototype.previousWindow = function() {
     //this.start_index = this.start_index > this.display_step ? this.start_index - this.display_step : 0;
+    var draw_brush = false;
     this.end_index = this.start_index;
     this.getStartIndex();
     //this.end_index = this.dataset.length > this.start_index + this.display_step ? this.start_index + this.display_step : this.dataset.length - 1;
@@ -321,7 +328,10 @@ Timeline.prototype.previousWindow = function() {
         //TODO show the next button
         $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 50);
     }
-    this.onDataReady(true);
+    if (this.name.split('_')[1] === "main") {
+        draw_brush = true;
+    }
+    this.onDataReady(draw_brush);
 }
 
 Timeline.prototype.onDataReady = function(enable_time_brush) {
@@ -408,16 +418,16 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     adjustDateLabel();
 
     // draw gird lines on the timeline
-    var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid")
+    var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid-" + this.name.split('_')[1])
         //.data(y_scale.ticks(this.tick_unit, this.tick_step))
         .data(y_scale.ticks(d3.time.seconds.utc, 5))
         .enter()
         .append("g")
-        .attr("clip-path", "url(#timeline-clip)")
-        .attr("class", "grid");
+        .attr("clip-path", "url(#timeline-clip" + this.name.split('_')[1] + ")")
+        .attr("class", "grid-" + this.name.split('_')[1]);
 
     grid.append("line")
-        .attr("class", "grid-line")
+        .attr("class", "grid-line-" + this.name.split('_')[1])
         .attr("y1", y_scale)
         .attr("y2", y_scale)
         .attr("x1", 0)
@@ -444,7 +454,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         }
         self.clearPath();
         self.timeline.select(".time-axis").call(y_axis);
-        self.timeline.selectAll(".grid-line")
+        self.timeline.selectAll(".grid-line-" + self.name.split('_')[1])
             .attr("y1", y_scale)
             .attr("y2", y_scale);
         self.timeline.selectAll(".timeline-event")
@@ -460,8 +470,14 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .attr("y2", function(d) { return y_scale(d.date); });
         self.timeline.selectAll("#suspect-time-label")
             .attr("y", function(d) { return y_scale(d.date) - 5; });
-        self.fillPathData(x_scale, y_scale, display_dataset);
+        //self.fillPathData(x_scale, y_scale, display_dataset);
         //self.drawPath();
+        if (self.path_dataset !== null) {
+            self.path_dataset.forEach(function(path_data) {
+                self.fillPathData(x_scale, y_scale, path_data);
+                self.drawPath();
+            });
+        }
         adjustDateLabel();
     }
 
@@ -503,7 +519,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     // draw events on timeline
     this.timeline.append('g')
         .attr("id", "events-arena")
-        .attr("clip-path", "url(#timeline-clip)")
+        .attr("clip-path", "url(#timeline-clip" + this.name.split('_')[1] + ")")
         .selectAll("circle[id=" + this.name.substr(1) + "]")
         .data(display_dataset)
         .enter()
@@ -530,7 +546,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     // draw abnormal events on timeline
     this.timeline.append('g')
         .attr("id", "suspect-events-arena")
-        .attr("clip-path", "url(#timeline-clip)")
+        .attr("clip-path", "url(#timeline-clip" + this.name.split('_')[1] + ")")
         .selectAll("rect")
         .data(suspect_display_dataset)
         .enter()
@@ -551,9 +567,13 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             return self.color_scale(color(d));
         });
 
-    // draw chronological sequence path on timeline (deprecated here...)
-    //this.fillPathData(x_scale, y_scale, display_dataset);
-    //this.drawPath();
+    // draw chronological sequence path on timeline for application trace only
+    if (this.path_dataset !== null) {
+        this.path_dataset.forEach(function(path_data) {
+            self.fillPathData(x_scale, y_scale, path_data);
+            self.drawPath();
+        });
+    }
 
     // append display name on normal events
     this.timeline.selectAll("text[id=" + this.name.substr(1) + "]")
@@ -742,7 +762,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         function onBrush() {
             if (!brush.empty()) {
                 y_scale.domain(brush.extent());
-                self.clearPath();
+                //self.clearPath();
                 self.timeline.select(".time-axis").call(y_axis);
                 self.timeline.selectAll(".grid-line")
                     .attr("y1", y_scale)
@@ -760,14 +780,11 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
                     .attr("y2", function(d) { return y_scale(d.date); });
                 self.timeline.selectAll("#suspect-time-label")
                     .attr("y", function(d) { return y_scale(d.date) - 5; });
-                //self.fillPathData(x_scale, y_scale, display_dataset);
-                //self.drawPath();
                 adjustDateLabel();
             }
         }
-
-    } else { // if time brush is disabled, then remove it
-        $('#time-brush').children().remove();
+    } else { // if time brush is disabled, time brush should be removed from caller
+        //$('#time-brush').children().remove();
     }
 
 } // function onDataReady()

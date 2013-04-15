@@ -57,9 +57,9 @@ exports.application_trace = function(req, res) {
         command,
         function(error, stdout, stderr) {
         if (error === null) {
-            res.json({"error": 0, "type": "trace application", "content": stdout});
+            res.json({"error": 0, "type": "android_logs", "content": stdout});
         } else {
-            res.json({"error": 1, "type": "trace application", "content": error});
+            res.json({"error": 1, "type": "android_logs", "content": error});
         }
     });
 }

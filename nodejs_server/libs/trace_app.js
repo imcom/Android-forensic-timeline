@@ -1,17 +1,18 @@
 
 var cursor;
+// application_name is passed from shell via mongo `--eval` option
 cursor = db.app_related_system_calls.find({app:application_name});
 
 var activities = {};
 var start_points = [];
 var end_points = [];
 var duration_points = [];
+var detected_pids = [];
 
 var process_start = "am_proc_start";
 var process_end = "am_proc_died";
 
-var detected_pids = [];
-
+// separate events into start, duration and end
 while (cursor.hasNext()) {
     var record = cursor.next();
     for (var object in record.detail) {
@@ -48,6 +49,7 @@ var is_unknown = true;
 activities.unknown = [];
 duration_points = {};
 
+// group events by its relevant process id (application)
 combined_activities.forEach(function(activity) {
     var message = activity.msg;
     var pid;
@@ -76,9 +78,9 @@ combined_activities.forEach(function(activity) {
             activities.unknown.push(activity);
         }
     }
-
 });
 
+// query for more events in duration
 for (var _pid in duration_points) {
     if (duration_points.hasOwnProperty(_pid)) {
         cursor = db.events.find({pid: _pid, object: {$not: new RegExp('.*gc.*', 'i')}}, {_id: 0, level: 0});
@@ -88,6 +90,7 @@ for (var _pid in duration_points) {
     }
 }
 
+// finalize the result, sort events within duration group by date
 for (var _pid in activities) {
     var index = 1;
     if (activities.hasOwnProperty(_pid) && _pid !== "unknown") {
@@ -106,6 +109,7 @@ for (var _pid in activities) {
     }
 }
 
+// output json string to shell which is then piped to Node.js
 printjson(activities);
 
 

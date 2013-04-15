@@ -126,7 +126,7 @@ function onIdSelection() {
     updateResponsivePane(object_checkboxs, display_dataset, "object");
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, false, true);
+    timeline_main.setDataset(display_dataset, null, false, true);
 }
 
 function onObjectSelection() {
@@ -150,7 +150,7 @@ function onObjectSelection() {
     updateResponsivePane(id_checkboxs, display_dataset, "_id");
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, false, true);
+    timeline_main.setDataset(display_dataset, null, false, true);
 }
 
 function fillResponsivePane(target_set) {
@@ -302,7 +302,7 @@ function drawMainTimeline(on_startup) {
                 timeline_main.initTimeline();
                 var check_suspects = false;
                 if (data.type === 'android_logs') check_suspects = true;
-                timeline_main.setDataset(dataset, check_suspects, true);
+                timeline_main.setDataset(dataset, null, check_suspects, true);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -369,7 +369,7 @@ function drawExtendTimeline() {
                 timeline_extend.initTimeline();
                 var check_suspects = false;
                 if (data.type === 'android_logs') check_suspects = true;
-                timeline_extend.setDataset(dataset_extend, check_suspects, false);
+                timeline_extend.setDataset(dataset_extend, null, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -448,7 +448,7 @@ function aggregateDmesg() {
                 $('#timeline_extend').children().remove();
                 timeline_extend.initTimeline();
                 var check_suspects = false;
-                timeline_extend.setDataset(dataset_extend, check_suspects, false);
+                timeline_extend.setDataset(dataset_extend, null, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -479,7 +479,34 @@ function traceApplication() {
         dataType: 'json',
         success: function(data) {
             if (data.content !== null) {
-                console.log(JSON.parse(data.content));
+                var path_groups = [];
+                var dataset = [];
+                var path_index = 0;
+                var application_trace = JSON.parse(data.content);
+                for (var process in application_trace) {
+                    path_group = [];
+                    if (application_trace.hasOwnProperty(process)) { // pid or unknown
+                        application_trace[process].forEach(function(record) {
+                            record.level = process;
+                            dataset.push(record);
+                            path_group.push(
+                                {
+                                    _id: record.pid,
+                                    date: new Date(record.date * 1000) // convert to date
+                                }
+                            );
+                        });
+                        path_groups[path_index] = path_group;
+                        path_index += 1;
+                    }
+                }
+                var generic_data = new GenericData(data.type, dataset);
+                dataset = generic_data.unifyDataset();
+                $('#timeline_extend').children().remove();
+                timeline_extend.initTimeline();
+                var check_suspects = false;
+                timeline_extend.setDataset(dataset, path_groups, check_suspects, false);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
             }
@@ -488,29 +515,6 @@ function traceApplication() {
             showAlert("trace query error!");
         }
     });
-
-    /*data.content.forEach(function(record, index) {
-        for (var timestamp in record.value) {
-            if (record.value.hasOwnProperty(timestamp)) {
-                record.value[timestamp].content.forEach(function(message) {
-                    var unified_record = {};
-                    unified_record._id = index;
-                    unified_record.object = record._id;
-                    unified_record.date = timestamp;
-                    unified_record.display = index;
-                    unified_record.level = "";
-                    unified_record.msg = message;
-                    dataset_extend.push(unified_record);
-                });
-            }
-        }
-    });
-    $('#timeline_extend').children().remove();
-    timeline_extend.initTimeline();
-    var check_suspects = false;
-    timeline_extend.setDataset(dataset_extend, check_suspects, false);
-    $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-    */
 }
 
 //TODO remove search button, instead, showing Events timeline onLoad
@@ -606,9 +610,11 @@ filter_btn.click(function() {
     // re-draw timeline graph
     $('#next-main').css('opacity', 0).css('z-index', -1);
     $('#previous-main').css('opacity', 0).css('z-index', -1);
+    // remove time brush on filter applied
+    $('#time-brush').children().remove();
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(filtered_dataset, false, false);
+    timeline_main.setDataset(filtered_dataset, null, false, false);
     // make changes to the current dataset (for responsive panes), keep initial dataset unchanged
     current_dataset = filtered_dataset;
     $('#undo').css('opacity', 0.8).css('z-index', 100);
@@ -764,7 +770,7 @@ $('#undo').click(function() {
     // re-draw timeline graph
     timeline_main.clearData(true, false);
     timeline_main.initTimeline();
-    timeline_main.setDataset(current_dataset, false, true);
+    timeline_main.setDataset(current_dataset, null, false, true);
     $('#undo').css('opacity', 0).css('z-index', -1);
 });
 
