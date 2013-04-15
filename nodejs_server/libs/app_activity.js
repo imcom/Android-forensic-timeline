@@ -47,7 +47,7 @@ for (var i = 0; i < all_apps_uid.length; ++i) {
             content.inode_activity.gid = inode_record.gid;
             content.inode_activity.access = inode_record.accessed;
             content.inode_activity.change = inode_record.inode_modified;
-            content.inode_activity.modifiy = inode_record.file_modified;
+            content.inode_activity.modify = inode_record.file_modified;
         }
         file_system_activity[target][record.date].push(content);
     }

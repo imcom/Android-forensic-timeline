@@ -135,7 +135,7 @@ function AggregatedGraph(name, dataset) {
         .enter()
         .append("g")
         .attr("clip-path", "url(#clip)")
-        .attr("class", "grid");
+        .attr("class", "grid-aggr");
 
     this.grid.append("line")
         .attr("y1", 0)

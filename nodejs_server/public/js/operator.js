@@ -379,7 +379,7 @@ function drawExtendTimeline() {
             showAlert("search query error!");
         }
     });
-    $('#trash').css('opacity', 0.8).css('z-index', 100);
+    $('#trash').css('opacity', 0.8).css('z-index', 50);
 }
 
 function resetProgressBar() {
@@ -480,7 +480,7 @@ function traceApplication() {
         success: function(data) {
             if (data.content !== null) {
                 var path_groups = [];
-                var dataset = [];
+                dataset_extend = [];
                 var path_index = 0;
                 var application_trace = JSON.parse(data.content);
                 for (var process in application_trace) {
@@ -488,7 +488,7 @@ function traceApplication() {
                     if (application_trace.hasOwnProperty(process)) { // pid or unknown
                         application_trace[process].forEach(function(record) {
                             record.level = process;
-                            dataset.push(record);
+                            dataset_extend.push(record);
                             path_group.push(
                                 {
                                     _id: record.pid,
@@ -500,12 +500,13 @@ function traceApplication() {
                         path_index += 1;
                     }
                 }
-                var generic_data = new GenericData(data.type, dataset);
-                dataset = generic_data.unifyDataset();
+                var generic_data = new GenericData(data.type, dataset_extend);
+                dataset_extend = generic_data.unifyDataset();
                 $('#timeline_extend').children().remove();
+                timeline_extend.clearData(true, true);
                 timeline_extend.initTimeline();
                 var check_suspects = false;
-                timeline_extend.setDataset(dataset, path_groups, check_suspects, false);
+                timeline_extend.setDataset(dataset_extend, path_groups, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {
                 showAlert("no records found!");
@@ -513,6 +514,91 @@ function traceApplication() {
         },
         error: function(xhr, type) {
             showAlert("trace query error!");
+        }
+    });
+}
+
+function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data, 2 - file content
+    inode_activity = event.inode_activity;
+    file_activity = {};
+    file_activity._id = inode_activity.uid;
+    file_activity.object = event.name;
+    file_activity.level = inode_activity.inode;
+    file_activity.display = inode_activity.uid + "[inode]";
+    switch(type) {
+        case 0:
+            file_activity.date = inode_activity.access;
+            file_activity.msg = ".a..";
+            break;
+        case 1:
+            file_activity.date = inode_activity.change;
+            file_activity.msg = "m...";
+            break;
+        case 2:
+            file_activity.date = inode_activity.modify;
+            file_activity.msg = "..c.";
+            break;
+    }
+    return file_activity;
+}
+
+function fileActivity() {
+    var app_name;
+    if (file_activity_selection.val() != '') {
+        app_name = file_activity_selection.val();
+    } else {
+        showAlert("No application specified");
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "file_activity",
+        data: {
+            selection: app_name,
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== null) {
+                var result = JSON.parse(data.content);
+                dataset_extend = [];
+                for (var timestamp in result.detail) {
+                    if (result.detail.hasOwnProperty(timestamp) && timestamp !== 'id') {
+                        result.detail[timestamp].forEach(function(event) {
+                            var file_activity = {};
+                            // filesystem record
+                            file_activity._id = result.detail.id;
+                            file_activity.object = event.name;
+                            file_activity.date = Number(timestamp);
+                            file_activity.msg = event.file_activity;
+                            file_activity.level = event.inode_activity.inode;
+                            file_activity.display = result.detail.id;
+                            dataset_extend.push(file_activity);
+                            // inode record
+                            for (var type = 0; type <= 2; ++type) { // 0: access, 1: change, 2: modify
+                                dataset_extend.push(generateInodeActivity(event, type));
+                            }
+                        });
+                    }
+                }
+                dataset_extend.sort(function(x, y) {
+                    if (x.date <= y.date) return -1;
+                    if (x.date > y.date) return 1;
+                });
+                $('#timeline_extend').children().remove();
+                timeline_extend.clearData(true, true);
+                timeline_extend.initTimeline();
+                var check_suspects = false;
+                timeline_extend.setDataset(dataset_extend, null, check_suspects, false);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+                $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("file activity query error!");
         }
     });
 }
@@ -526,6 +612,11 @@ function traceApplication() {
     referenceQuery("temporal_info", "temporal", null);
     referenceQuery("package_info", "packages", null);
 });*/
+
+file_activity_search_btn.click(function() {
+    timeline_extend.clearData(true, true);
+    fileActivity();
+});
 
 app_trace_search_btn.click(function() {
     timeline_extend.clearData(true, true);
@@ -802,6 +893,22 @@ $('#previous-extend').click(function() {
     $('#timeline_extend').children().remove();
     timeline_extend.initTimeline();
     timeline_extend.previousWindow();
+});
+
+$('#zoom-out').click(function() {
+    timeline_extend.increaseDisplayStep();
+    if (timeline_extend.display_step >= 7200) {
+        $('#zoom-out').css('opacity', 0).css('z-index', -1);
+    }
+    $('#zoom-in').css('opacity', 0.8).css('z-index', 50);
+});
+
+$('#zoom-in').click(function() {
+    timeline_extend.decreaseDisplayStep();
+    if (timeline_extend.display_step === 20) {
+        $('#zoom-in').css('opacity', 0).css('z-index', -1);
+        $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+    }
 });
 
 window.onLoad = function() {

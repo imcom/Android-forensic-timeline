@@ -236,7 +236,7 @@ label
         font-family: Consolas
         font-size: 11px
 
-.grid-main, .grid-extend
+.grid-main, .grid-extend, .grid-aggr
     line
         opacity: 0.3
         stroke: black
@@ -325,6 +325,28 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
 
 #previous-extend
     left: 1160px
+
+#zoom-out
+    position: fixed
+    cursor: pointer
+    left: 1230px
+    bottom: 20px
+    z-index: -1
+    opacity: 0
+    background: url("/images/zoom-out.png")
+    width: 64px
+    height: 64px
+
+#zoom-in
+    position: fixed
+    cursor: pointer
+    left: 1300px
+    bottom: 20px
+    z-index: -1
+    opacity: 0
+    background: url("/images/zoom-in.png")
+    width: 64px
+    height: 64px
 
 .reset-scale
     position: fixed

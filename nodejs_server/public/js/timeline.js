@@ -17,7 +17,7 @@ function Timeline(name) {
     this.x_range = [160, 660];
     this.x_range_padding = 160;
     this.timeline_height = 800;
-    this.display_step = 20;
+    this.display_step = 20; // default 20 seconds display interval
 
     // dynamically configurable values
     this.dataset = [];
@@ -173,7 +173,7 @@ Timeline.prototype.clearData = function(clear_dataset, clear_suspects) {
 }
 
 Timeline.prototype.removeTimeline = function() {
-    $(this.getName()).children('.timeline-graph').remove();
+    $(this.getName()).children().remove();
 }
 
 Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, enable_time_brush) {
@@ -232,7 +232,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
                     this.updateXDomain(record_id); // form an ID array for X-axis domain
                     var display_name = normal_dataset[timestamp][record_id].display;
                     this.dataset.push({
-                        date: timestamp,
+                        date: Number(timestamp),
                         _id: record_id,
                         display: display_name,
                         content: normal_dataset[timestamp][record_id].content
@@ -246,6 +246,26 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
     this.getEndIndex();
     // on dataset is set, draw timeline
     this.onDataReady(enable_time_brush);
+}
+
+Timeline.prototype.increaseDisplayStep = function() {
+    this.display_step += 1800; // unit: seconds
+    this.removeTimeline();
+    this.initTimeline();
+    this.start_index = 0;
+    this.end_index = 0;
+    this.getEndIndex();
+    this.onDataReady(false);
+}
+
+Timeline.prototype.decreaseDisplayStep = function() {
+    this.display_step -= 1800; // unit: seconds
+    this.removeTimeline();
+    this.initTimeline();
+    this.start_index = 0;
+    this.end_index = 0;
+    this.getEndIndex();
+    this.onDataReady(false);
 }
 
 Timeline.prototype.getEndIndex = function() {
@@ -370,7 +390,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     });
 
     this.color_scale = d3.scale.category20();
-    this.initTickInterval(); // tick unit is 5 sec constant now
+    this.initTickInterval();
     this.y_range = this.initYRange();
 
     // debugging info
@@ -401,8 +421,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     var y_axis = d3.svg.axis()
         .scale(y_scale)
         .orient("right")
-        //.ticks(this.tick_unit, this.tick_step)
-        .ticks(d3.time.seconds.utc, 5)
+        .ticks(this.tick_unit, this.tick_step)
+        //.ticks(d3.time.seconds.utc, 5)
         .tickPadding(this.tick_padding)
         .tickSize(0);
 
@@ -419,8 +439,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
 
     // draw gird lines on the timeline
     var grid = this.timeline.selectAll("line[id=" + this.name.substr(1) + "].grid-" + this.name.split('_')[1])
-        //.data(y_scale.ticks(this.tick_unit, this.tick_step))
-        .data(y_scale.ticks(d3.time.seconds.utc, 5))
+        .data(y_scale.ticks(this.tick_unit, this.tick_step))
+        //.data(y_scale.ticks(d3.time.seconds.utc, 5))
         .enter()
         .append("g")
         .attr("clip-path", "url(#timeline-clip" + this.name.split('_')[1] + ")")
@@ -736,7 +756,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .scale(brush_scale)
             .tickSize(30)
             .tickPadding(0)
-            .ticks(d3.time.seconds.utc, 5)
+            //.ticks(d3.time.seconds.utc, 5)
+            .ticks(this.tick_unit, this.tick_step)
             .orient("bottom");
 
         brush_axis.tickFormat(function(date) {
@@ -764,7 +785,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
                 y_scale.domain(brush.extent());
                 //self.clearPath();
                 self.timeline.select(".time-axis").call(y_axis);
-                self.timeline.selectAll(".grid-line")
+                self.timeline.selectAll(".grid-line-main")
                     .attr("y1", y_scale)
                     .attr("y2", y_scale);
                 self.timeline.selectAll(".timeline-event")
@@ -833,17 +854,16 @@ Timeline.prototype.getLatestDate = function() {
 Timeline.prototype.initTickInterval = function() {
     var unit_options = [
         d3.time.seconds.utc,
-        d3.time.minutes.utc
+        d3.time.minutes.utc,
+        d3.time.hours.utc
     ];
     var step_options = [
         1,
         5,
-        15
     ];
 
-    var time_gap = this.y_domain_max - this.y_domain_min;
-    var unit_index = time_gap < 1000 ? 0 : 0;
-    var step_index = time_gap < 200 ? 0 : (time_gap < 1000 ? 1 : 2);
+    var unit_index = this.display_step >= 3600 ? 2 : this.display_step >= 1800 ? 1 : 0;
+    var step_index = this.display_step >= 3600 ? 0 : this.display_step >= 1800 ? 1 : 1;
 
     this.tick_unit = unit_options[unit_index];
     this.tick_step = step_options[step_index];
