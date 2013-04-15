@@ -10,3 +10,5 @@ then
 fi
 
 mongo localhost:27017/imcom $@
+
+#mongo --quiet localhost:27017/imcom --eval "var keyword = 'android.mms'; var time_offset = 5;" activity_relevance.js

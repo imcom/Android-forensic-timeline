@@ -83,7 +83,7 @@ while(!is_finished && record != null) {
         is_finished = true;
     }
     map_reduce_options = {
-        out: {merge: "test_collection"},
+        out: {merge: "test_collection"}, //TODO output mode should change, save the result per App?
         query: map_reduce_selection,
         finalize: finalize,
         scope: {
