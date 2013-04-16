@@ -3,7 +3,7 @@ var cursor;
 // application_name is passed from shell via mongo `--eval` option
 cursor = db.app_related_system_calls.find({app:application_name});
 
-var activities = {};
+var activities = null;
 var start_points = [];
 var end_points = [];
 var duration_points = [];
@@ -45,8 +45,11 @@ function sortByDate(x, y) {
 }
 
 var combined_activities = start_points.concat(duration_points).concat(end_points);
+if (combined_activities.length > 0) {
+    activities = {};
+    activities.unknown = [];
+}
 var is_unknown = true;
-activities.unknown = [];
 duration_points = {};
 
 // group events by its relevant process id (application)
@@ -93,7 +96,7 @@ for (var _pid in duration_points) {
 // finalize the result, sort events within duration group by date
 for (var _pid in activities) {
     var index = 1;
-    if (activities.hasOwnProperty(_pid) && _pid !== "unknown") {
+    if (activities.hasOwnProperty(_pid) && _pid !== "unknown") { // can not query based on pid = `unknown`
         duration_points[_pid].sort(sortByDate);
         duration_points[_pid].forEach(function(record) {
             if (activities[_pid].length === 1) {
@@ -110,7 +113,8 @@ for (var _pid in activities) {
 }
 
 // output json string to shell which is then piped to Node.js
-printjson(activities);
+if (activities !== null)
+    printjson(activities);
 
 
 

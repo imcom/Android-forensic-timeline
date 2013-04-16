@@ -21,7 +21,7 @@ function Timeline(name) {
 
     // dynamically configurable values
     this.dataset = [];
-    this.path_dataset = [];
+    this.path_dataset = []; // for path groups and application name
     this.start_index = 0;
     this.end_index = 0;
     this.suspects = [];
@@ -37,6 +37,12 @@ function Timeline(name) {
     this.service_launch_date;
     this.service_last_activity_date;
     this.service_process_id;
+    var self = this;
+    this.path_data = []; // coordinates for paths
+    this.time_path = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("monotone");
 
     /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();
@@ -50,12 +56,6 @@ function Timeline(name) {
         target: true,
         borderWidth: 0
     };
-    var self = this;
-    this.path_data = [];
-    this.time_path = d3.svg.line()
-        .x(function(d) { return d.x; })
-        .y(function(d) { return d.y; })
-        .interpolate("monotone");
 
     // dragging events handler (not working...)
     /*
@@ -184,21 +184,57 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
     var self = this;
     this.path_dataset = path_dataset;
     var normal_dataset = {};
+    var suspicious_dataset = {};
     // check and mark abnormal chronologically placed records and store them separately
     // group data by 1st timestamp, 2nd record id, 3rd record object
     var current_date = dataset[0].date; // theoretically the first record should have the minimum date value
     dataset.forEach(function(data) {
-        var suspect_data = {};
-        if (data.date < current_date) { // place abnormal events
-            suspect_data.date = data.date;
-            suspect_data._id = data._id;
-            suspect_data.display = data.display;
-            var detail = {};
-            detail[data.object] = [data.msg + "[" + data.level + "]"];
-            suspect_data.content = detail;
-            if (check_suspects)
-                self.suspects.push(suspect_data);
-        } else { // group normal events by date
+        //if (check_suspects) {
+            //var suspect_data = {};
+            var is_suspicious = false;
+            if (data.date < current_date && check_suspects) { // mark abnormal events
+                is_suspicious = true;
+            } else {
+                /*suspect_data.date = data.date;
+                suspect_data._id = data._id;
+                suspect_data.display = data.display;
+                var detail = {};
+                detail[data.object] = [data.msg + "[" + data.level + "]"];
+                suspect_data.content = detail;
+                self.suspects.push(suspect_data);*/
+            //} else {
+                current_date = data.date; // only update current_date when 1) the date is valid, or 2) do NOT check suspects
+            }
+                // these properties has nothing to do with date
+                var _id = data._id;
+                var object = data.object;
+                var message = data.msg + "[" + data.level + "]";
+                // distinguish normal and suspicious events here, using different dataset, so the date_group is independent for following operations
+                if (!is_suspicious) { // is_suspicious can only be true when check_suspects is enabled
+                    if (!normal_dataset.hasOwnProperty(current_date)) {
+                        normal_dataset[current_date] = {};
+                    }
+                    var date_group = normal_dataset[current_date];
+                } else {
+                    if (!suspicious_dataset.hasOwnProperty(data.date)) {
+                        suspicious_dataset[data.date] = {};
+                    }
+                    var date_group = suspicious_dataset[data.date];
+                }
+                // below has nothing to do with date
+                if (!date_group.hasOwnProperty(_id)) {
+                    date_group[_id] = {};
+                    date_group[_id].display = data.display;
+                    //date_group[_id].level = data.level;
+                    date_group[_id].content = {};
+                }
+                var id_group = date_group[_id];
+                if (!id_group.content.hasOwnProperty(object)) {
+                    id_group.content[object] = [];
+                }
+                id_group.content[object].push(message);
+            //}
+        /*} else {
             current_date = data.date;
             var _id = data._id;
             var object = data.object;
@@ -217,7 +253,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
                 id_group.content[object] = [];
             }
             id_group.content[object].push(message);
-        }
+        }*/
     });
 
     // output data sample:
@@ -227,6 +263,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
     //      display: <display_name>,
     //      content: {<object> : [messages,...], <object> : [messages,...], ...}
     // }
+    // generate normal dataset
     for (timestamp in normal_dataset) {
         this.updateYDomain(timestamp); // find out max and min date
         if (timestamp != 'undefined') {
@@ -234,18 +271,40 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
                 if (record_id != 'undefined') {
                     this.updateXDomain(record_id); // form an ID array for X-axis domain
                     var display_name = normal_dataset[timestamp][record_id].display;
+                    //var level = normal_dataset[timestamp][record_id].level;
                     this.dataset.push({
                         date: Number(timestamp),
                         _id: record_id,
                         display: display_name,
+                        //level: level,
                         content: normal_dataset[timestamp][record_id].content
                     });
                 }
             }
         }
     }
+    if (check_suspects) { // generate suspects dataset if check suspects is enabled
+        for (timestamp in suspicious_dataset) {
+            this.updateYDomain(timestamp); // find out max and min date
+            if (timestamp != 'undefined') {
+                for (record_id in suspicious_dataset[timestamp]) {
+                    if (record_id != 'undefined') {
+                        this.updateXDomain(record_id); // form an ID array for X-axis domain
+                        var display_name = suspicious_dataset[timestamp][record_id].display;
+                        //var level = suspicious_dataset[timestamp][record_id].level;
+                        this.dataset.push({
+                            date: Number(timestamp),
+                            _id: record_id,
+                            display: display_name,
+                            //level: level,
+                            content: suspicious_dataset[timestamp][record_id].content
+                        });
+                    }
+                }
+            }
+        }
+    }
     // init first sub-array for display
-    //this.end_index = this.dataset.length > this.display_step ? this.display_step : this.dataset.length - 1;
     this.getEndIndex();
     // on dataset is set, draw timeline
     this.onDataReady(enable_time_brush);
@@ -294,13 +353,25 @@ Timeline.prototype.getStartIndex = function() {
     }
 }
 
-Timeline.prototype.fillPathData = function(x_scale, y_scale, dataset) {
+Timeline.prototype.fillPathData = function(x_scale, y_scale, path_group) {
     var self = this;
-    self.path_data = []; // clear the old data every time
-    $.each(dataset, function(index) {
+    this.path_data = []; // clear the old data every time
+    var path_buf = this.dataset.filter(function(data) {
+        var belongs_to_group = 0;
+        for (var object in data.content) {
+            if (data.content.hasOwnProperty(object)) {
+                data.content[object].forEach(function(msg) {
+                    if (msg.indexOf(path_group) !== -1)
+                        belongs_to_group += 1;
+                });
+            }
+        }
+        return belongs_to_group > 0;
+    });
+    path_buf.forEach(function(record) {
         var path_coords = {};
-        path_coords['x'] = x_scale(dataset[index]._id);
-        path_coords['y'] = y_scale(dataset[index].date);
+        path_coords['x'] = x_scale(record._id);
+        path_coords['y'] = y_scale(new Date(record.date * 1000));
         self.path_data.push(path_coords);
     });
 }
@@ -313,7 +384,7 @@ Timeline.prototype.drawPath = function() {
     this.timeline.append('svg:path')
         .attr("id", "time_path") // to be distinguished with Y-axis timeline
         .attr("d", this.time_path(this.path_data))
-        .attr("stroke", "green")
+        .attr("stroke", this.color_scale(this.path_data.length))
         .attr("stroke-width", 1)
         .attr("fill", "none");
 }
@@ -456,7 +527,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         suspect_display_dataset.push(suspect_display_data);
     });
 
-    this.color_scale = d3.scale.category20();
+    this.color_scale = d3.scale.category10();
     this.initTickInterval();
     this.y_range = this.initYRange();
 
@@ -559,8 +630,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .attr("y", function(d) { return y_scale(d.date) - 5; });
         self.drawReferenceIndicator(y_scale);
         if (self.path_dataset !== null) {
-            self.path_dataset.content.forEach(function(path_data) {
-                self.fillPathData(x_scale, y_scale, path_data);
+            self.path_dataset.content.forEach(function(path_group) {
+                self.fillPathData(x_scale, y_scale, path_group);
                 self.drawPath();
             });
         }
@@ -656,8 +727,8 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
     // draw chronological sequence path on timeline for application trace only
     if (this.path_dataset !== null) {
         this.getServiceInfo(this.path_dataset.name, y_scale);
-        this.path_dataset.content.forEach(function(path_data) {
-            self.fillPathData(x_scale, y_scale, path_data);
+        this.path_dataset.content.forEach(function(path_group) {
+            self.fillPathData(x_scale, y_scale, path_group);
             self.drawPath();
         });
     }
