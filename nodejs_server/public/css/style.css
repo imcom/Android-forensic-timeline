@@ -17,11 +17,12 @@ label{display:inline-block}
 .span3{margin-left:0}
 .responsive-div{margin-left:50px}
 .slide-right-div{position:fixed;right:-280px;z-index:100;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";background:#fff;width:300px;height:90%;margin-top:20px}
-#responsive-ids{overflow-x:hidden;overflow-y:auto;height:220px;margin-top:-10px}
-#responsive-ids label{margin-right:5px;font-family:Consolas}
+.btn{font-family:Consolas;font-size:13px;word-spacing:-3px;padding-right:7px;padding-left:7px}
+#responsive-ids. #responsive-ids-extend{overflow-x:hidden;overflow-y:auto;height:220px;margin-top:-10px}
+#responsive-ids. #responsive-ids-extend label{margin-right:5px;font-family:Consolas}
 #responsive-objects{overflow-x:hidden;overflow-y:auto;height:500px;margin-top:-5px}
 #responsive-objects label{display:block;font-family:Consolas}
-#pid-checkbox,#object-checkbox{margin-right:5px}
+#object-checkbox{margin-right:5px}
 .slide-right-ctrl-bar{position:absolute;width:20px;height:100%;left:0;cursor:pointer;z-index:50;}
 .slide-right-ctrl-bar .slide-right-ctrl{position:absolute;width:16px;height:85px;bottom:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(0);-moz-transform:rotate(0)}
 .slide-right-ctrl-bar:hover .slide-right-ctrl{background:url("/images/sidebar_icon.png") bottom right}

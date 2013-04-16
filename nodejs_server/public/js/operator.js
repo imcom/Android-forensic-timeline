@@ -14,6 +14,7 @@ var object_pane = $('#objects');
 var id_pane = $('#ids');
 var responsive_id_pane = $('#responsive-ids');
 var responsive_object_pane = $('#responsive-objects');
+var responsive_id_pane_extend = $('#responsive-ids-extend');
 var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
 
@@ -153,24 +154,59 @@ function onObjectSelection() {
     timeline_main.setDataset(display_dataset, null, false, true);
 }
 
+function onExtendIdSelection() {
+    var id_checkboxs = $('.extend-checkbox');
+    var display_dataset;
+    var display_ids = [];
+    id_checkboxs.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            display_ids.push(checkbox.value);
+        }
+    });
+    display_dataset = dataset_extend.filter(function(record) {
+        return $.inArray(record._id, display_ids) != -1;
+    });
+    timeline_extend.removeTimeline();
+    timeline_extend.clearData(true, true);
+    timeline_extend.initTimeline();
+    timeline_extend.setDataset(display_dataset, null, false, false);
+}
+
+function fillExtendResponsivePane(target_set) {
+    var ids = [];
+    var objects = [];
+    target_set.forEach(function(record) {
+        if ($.inArray(record._id, ids) == -1) {
+            responsive_id_pane_extend.append(
+                "<label type='checkbox inline'><input class='extend-checkbox' id='id-checkbox' type='checkbox' onChange='onExtendIdSelection()' value='" + record._id + "'>" + record._id + "</label>"
+            );
+            ids.push(record._id);
+        }
+    });
+    var checkboxes = $('.extend-checkbox');
+    checkboxes.forEach(function(box){
+        box.checked = true;
+    });
+}
+
 function fillResponsivePane(target_set) {
     var ids = [];
     var objects = [];
     target_set.forEach(function(record) {
         if ($.inArray(record._id, ids) == -1) {
             responsive_id_pane.append(
-                "<label type='checkbox inline'><input id='id-checkbox' type='checkbox' onChange='onIdSelection()' value='" + record._id + "'>" + record._id + "</label>"
+                "<label type='checkbox inline'><input class='main-checkbox' id='id-checkbox' type='checkbox' onChange='onIdSelection()' value='" + record._id + "'>" + record._id + "</label>"
             );
             ids.push(record._id);
         }
         if ($.inArray(record.object, objects) == -1) {
             responsive_object_pane.append(
-                "<label type='checkbox inline'><input id='object-checkbox' type='checkbox' onChange='onObjectSelection()' value='" + record.object + "'>" + record.object + "</label>"
+                "<label type='checkbox inline'><input class='main-checkbox' id='object-checkbox' type='checkbox' onChange='onObjectSelection()' value='" + record.object + "'>" + record.object + "</label>"
             );
             objects.push(record.object);
         }
     });
-    var checkboxes = $('input[type="checkbox"]');
+    var checkboxes = $('.main-checkbox');
     checkboxes.forEach(function(box){
         box.checked = true;
     });
@@ -242,6 +278,7 @@ function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline, 
     if (clear_responsive) {
         responsive_id_pane.children().remove();
         responsive_object_pane.children().remove();
+        responsive_id_pane_extend.children().remove();
     }
     if (clear_aggregation) {
         aggregation_options.children().remove();
@@ -437,7 +474,7 @@ function aggregateDmesg() {
         dataType: 'json',
         success: function(data) {
             if (data.content.length > 0) {
-                var dataset_extend = [];
+                dataset_extend = [];
                 data.content.forEach(function(record, index) {
                     for (var timestamp in record.value) {
                         if (record.value.hasOwnProperty(timestamp)) {
@@ -519,6 +556,7 @@ function traceApplication() {
                 var path_dataset = {};
                 path_dataset.name = app_name;
                 path_dataset.content = path_groups;
+                fillExtendResponsivePane(dataset_extend);
                 timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
             } else {

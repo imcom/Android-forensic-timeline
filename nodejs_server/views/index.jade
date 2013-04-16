@@ -35,26 +35,26 @@ html
                         textarea(rows = "11", readonly)#message-display
                     div.span3
                         ul.nav.nav-pills.nav-stacked
-                            li.nav-header Dmesg Query
+                            li.nav-header Relevance Query
                             li
                                 div.input-append
-                                    input(type = "text", placeholder = "keywords ...").span3#dmesg-selection-input
-                                    button(type = "button").btn#dmesg-search Search
-                            li.nav-header.cozy-list-header App File Activity
-                            li
-                                div.input-append
-                                    input(type = "text", placeholder = "application name").span3#file-activity-selection-input
-                                    button(type = "button").btn#file-activity-search Search
-                            li.nav-header.cozy-list-header Relevance Query
-                            li
-                                div.input-append
-                                    input(type = "text", placeholder = "app names ...").span3#relevance-selection-input
-                                    button(type = "button").btn#relevance-search Search
+                                    input(type = "text", placeholder = "keywords ...").span3#relevance-selection-input
+                                    button(type = "button").btn.btn-warning#relevance-search Feel lucky
                             li.nav-header.cozy-list-header App Trace Query
                             li
                                 div.input-append
                                     input(type = "text", placeholder = "application name").span3#app-trace-selection-input
-                                    button(type = "button").btn#app-trace-search Search
+                                    button(type = "button").btn.btn-success#app-trace-search Trace
+                            li.nav-header.cozy-list-header App File Activity
+                            li
+                                div.input-append
+                                    input(type = "text", placeholder = "application name").span3#file-activity-selection-input
+                                    button(type = "button").btn.btn-info#file-activity-search Search
+                            li.nav-header.cozy-list-header Dmesg Query
+                            li
+                                div.input-append
+                                    input(type = "text", placeholder = "keywords ...").span3#dmesg-selection-input
+                                    button(type = "button").btn#dmesg-search Query
             div.popup-ctrl-bar
                 div(title="Expand event pane").popup-ctrl
         div#aggregation-pane.dropdown-div
@@ -64,11 +64,21 @@ html
         div#responsive-pane.slide-right-div
             div.slide-right-ctrl-bar
                 div(title="Expand responsive pane").slide-right-ctrl
-            div.responsive-div
-                p.nav-header Responsive IDs
-                div#responsive-ids
-                p.nav-header Responsive Objects
-                div#responsive-objects
+            div.responsive-div.tabbable
+                ul.nav.nav-tabs
+                    li.active
+                        a(href = "#main-tab", data-toggle = "tab") Main
+                    li
+                        a(href = "#extend-tab", data-toggle = "tab") Extend
+                div.tab-content
+                    div(id = "main-tab").tab-pane.active
+                        p.nav-header Responsive IDs
+                        div#responsive-ids
+                        p.nav-header Responsive Objects
+                        div#responsive-objects
+                    div(id = "extend-tab").tab-pane
+                        p.nav-header Responsive IDs
+                        div#responsive-ids-extend
         div.container-fluid
             div.span3
                 div.ctrl-panel
@@ -114,10 +124,10 @@ html
                         li
                             div.btn-group
                                 //button#search.btn.btn-success.btn-small Search
-                                button#aggregate-btn.btn.btn-success.btn-small aggr.
-                                button#expand.btn.btn-warning.btn-small expand
-                                button#filter.btn.btn-info.btn-small filter
-                                button#clear.btn.btn-danger.btn-small clear
+                                button#aggregate-btn.btn.btn-success.btn-small Aggr.
+                                button#expand.btn.btn-warning.btn-small Expand
+                                button#filter.btn.btn-info.btn-small Filter
+                                button#clear.btn.btn-danger.btn-small Clear
                         li.nav-header Time Brush [Seconds]
                         li
                             #time-brush
