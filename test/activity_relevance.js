@@ -37,9 +37,9 @@ var reduce = function(key, values) {
 };
 
 var finalize = function(key, reduced_value) {
-    reduced_value.score.forEach(function(score, index) {
+    /*reduced_value.score.forEach(function(score, index) {
         reduced_value.score[index] = (score[0] + score[1] + score[2] + score[3]) / 4;
-    });
+    });*/
     return reduced_value;
 };
 
@@ -97,4 +97,8 @@ while(!is_finished && record != null) {
     doRelevanceQuery();
 }
 
+cursor = db.test_collection.find();
+while(cursor.hasNext()) {
+    printjson(cursor.next());
+}
 
