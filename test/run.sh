@@ -6,6 +6,6 @@ then
     exit -1
 fi
 
-mongo --quiet localhost:27017/imcom --eval "var keyword = '$1', time_offset = 5" underscore-min.js $2 | grep -v 'loading file:'
+mongo --quiet localhost:27017/imcom --eval "var application_name = '$1', keyword = '$1', time_offset = 5" underscore-min.js tokenizer.js $2 | grep -v 'loading file:'
 
 

@@ -27,10 +27,10 @@ var reduce = function(key, values) {
         result.object.push(value.object[0]);
         result.msg.push(value.msg[0]);
         result.pid.push(value.pid[0]);
-        value.score[0][0] = (Number(timestamp) - Number(key)) % time_offset;
-        value.score[0][1] = (value.object[0] == object ? 1 : -1);
-        value.score[0][2] = (value.pid[0] == pid ? 1 : -1);
-        value.score[0][3] = (app_pattern.test(value.msg[0]) ? time_offset : 0);
+        value.score[0][0] = (Number(timestamp) - Number(key)) % time_offset; // should calculate frequency of closely happened system events
+        value.score[0][1] = (value.object[0] == object ? 1 : -1); // check if the object is in app_category 
+        value.score[0][2] = (value.pid[0] == pid ? 1 : -1); // or value.pid is in app_category ids
+        value.score[0][3] = (app_pattern.test(value.msg[0]) ? time_offset : 0); // tokenize value.msg if object is in app_category, compare to the tokens from the category(significant difference in this case should be marked). If not, compare to id tokens and whole tokens from app_category
         result.score.push(value.score[0]);
     });
     return result;
