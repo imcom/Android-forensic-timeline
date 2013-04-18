@@ -158,7 +158,7 @@ var reduce = function(key, values) {
 
 var finalize = function(key, reduced_value) {
     reduced_value.score.forEach(function(score, index) {
-        //reduced_value.score[index] = ((-1 * score[0]) + score[1] + score[2] + score[3] + (-1 * score[4])) / 5;
+        reduced_value.score[index] = ((-1 * score[0]) + score[1] + score[2] + score[3] + (-1 * score[4])) / 5;
     });
     return reduced_value;
 };
