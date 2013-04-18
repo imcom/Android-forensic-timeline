@@ -2,7 +2,7 @@
 
 if [ $# -lt 2 ]
 then
-    echo 'usage:'$0' <keyword> <mongo-script>'
+    echo 'usage:'$0' <application> <mongo-script>'
     exit -1
 fi
 
