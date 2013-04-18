@@ -1,18 +1,18 @@
 
 
-var pid_re = new RegExp(/(?:pid=\d+)|(?:pid:\d+)|(?:pid\s\d+)/);
-var uid_re = new RegExp(/(?:uid=\d+)/);
-var gid_re = new RegExp(/(?:gids=\d+\s?\d+)/);
-var numeric_re = new RegExp(/^\d+$/);
-var re = new RegExp(/\{.*\}|\(.*\)/ig); // unified expression within brackets
 
 function tokenize(object, target) {
+    var pid_re = new RegExp(/(?:pid=\d+)|(?:pid:\d+)|(?:pid\s\d+)/);
+    var uid_re = new RegExp(/(?:uid=\d+)/);
+    var gid_re = new RegExp(/(?:gids=\d+\s?\d+)/);
+    var numeric_re = new RegExp(/^\d+$/);
+    var re = new RegExp(/\{.*\}|\(.*\)/ig); // unified expression within brackets
     var tokens = [];
     var unified_msg = target;
     var matches = re.exec(target);
     var detected_ids = [];
     if (object === "am_proc_start" || object === "am_proc_died") {
-        detected_ids.push(target.substr(1, target.indexOf(",")));
+        detected_ids.push(target.substr(1, target.indexOf(",") - 1));
     }
     if (matches !== null) {
         matches.forEach(function(matched_token) {
@@ -42,7 +42,9 @@ function tokenize(object, target) {
     if (matches !== null) {
         matches.forEach(function(matched_id) {
             var gids = matched_id.split(/=/)[1];
-            detected_ids = _.union(gids.split(' '), detected_ids);
+            gids.split(' ').forEach(function(gid) {
+                detected_ids.push(gid); 
+            });
         });
     }
     tokenize_buf = tokenize_buf.replace(/\.$/g, ''); // remove the `.` at the end of the message

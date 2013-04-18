@@ -52,15 +52,18 @@ while(cursor.hasNext()) {
 activity_groups = activity_groups.sort(sortByWeight);
 
 activity_groups.forEach(function(activity_group) {
-    activity_group.ids = ids;
     if (date_range[0] !== date_range[1])
-        activity_group.frequency = activity_group.weight / (date_range[1] - date_range[0]);
+        activity_group.frequency = activity_group.weight / (date_range[1] - date_range[0]) * 3600; // frequency per hour
     else
         activity_group.frequency = activity_group.weight;
     activity_group.distribute = activity_group.weight / total_events_number;
 });
 
-app_category.category = activity_groups;
+app_category.category = {};
+activity_groups.forEach(function(activity_group) {
+    app_category.category[activity_group.name] = activity_group;
+});
+app_category.ids = ids;
 
 var collection = db.getCollection(application_name);
 collection.drop();
