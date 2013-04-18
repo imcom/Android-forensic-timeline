@@ -35,8 +35,10 @@ var reduce = function(key, values) {
         result.msg.push(value.msg[0]);
         result.pid.push(value.pid[0]);
         var temporal_reference = 0, object_reference = 0, pid_reference = 0, msg_similarity = 0, msg_difference = 0;
+        //TODO when value.object[0] is of some certain types, amplify the temporal_reference
         temporal_reference = Math.abs(Number(timestamp) - Number(key)) / time_offset;
         temporal_reference = temporal_reference < 1 ? temporal_reference : 1;
+
         var target_tokens = tokenize(value.object[0], value.msg[0]);
         if (reference_data !== null) {
             if (reference_data.category[value.object[0]] !== undefined) {
