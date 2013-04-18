@@ -249,10 +249,10 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
         );
     });
 
-    var text_padding = 70; // for aggregation by object
-    if (this.aggregation_type === 'id') {
-        text_padding = 180;
-    }
+    var text_padding = 30;
+    /*if (this.aggregation_type === 'id') {
+        text_padding = 0;
+    }*/
     var legend = this.aggregated_graph.selectAll(".legend")
         .data(this.color_scale.domain().slice().reverse())
         .enter().append("g")
@@ -269,7 +269,7 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
         .attr("x", text_padding)
         .attr("y", 10)
         .attr("dy", ".35em")
-        .style("text-anchor", "end")
+        .style("text-anchor", "start")
         .text(function(d) { return d; });
 }
 
