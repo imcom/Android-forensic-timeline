@@ -502,6 +502,29 @@ function aggregateDmesg() {
     });
 }
 
+function drawDeltaTimeline() {
+    $.ajax({
+        type: "POST",
+        url: "delta_timeline",
+        data: {
+            selection: "am_",
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== "" && data.error === 0) {
+                var stack_dataset = JSON.parse(data.content);
+                new StackedGraph("#aggregation-arena", stack_dataset);
+            } else {
+                showAlert("error occurred or no records");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("delta query error!");
+        }
+    });
+}
+
 function traceApplication() {
     var app_name;
     if (app_trace_selection.val() != '') {
@@ -968,6 +991,7 @@ window.onLoad = function() {
     drawMainTimeline(true);
     referenceQuery("temporal_info", "temporal", null);
     //referenceQuery("package_info", "packages", null); // this collection is used for filesystem activity query
+    drawDeltaTimeline();
 }();
 
 

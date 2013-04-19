@@ -5,19 +5,24 @@ cursor = db.temporal.find();
 
 var boot_time = cursor.next().btime;
 
-cursor = db.events.find({object: new RegExp(application_name, 'i')}, {_id: 0, level: 0}); // am_.*
+cursor = db.events.find({object: new RegExp(keywords, 'i')}, {_id: 0, level: 0}); // am_.*
 
 // key: delta-time, value: {object: {pids: [pid,], messages: [msg,], count: number}}
 var delta_dataset = {};
 
-//
-// {
-//  delta: delta-time
-//  count: number
-//  object: system call
-//  content: {pids: [], messages: []}
-// }
-//
+/*
+[
+    {
+        key: delta-time
+        values: [
+            {object: object, count: number},
+            ...
+        ]
+        content: [{pids: [], messages: []}, ...]
+    }
+    value index goes into content
+]
+*/
 var rtn_dataset = [];
 
 while(cursor.hasNext()) {
@@ -42,22 +47,36 @@ while(cursor.hasNext()) {
     }
 }
 
+var rtn_dataset_buf = {};
 for (var delta_time in delta_dataset) {
     if (delta_time === undefined) {
         continue;
     }
     for (var object in delta_dataset[delta_time]) {
         if (object === undefined) continue;
-        var delta_event = {};
-        delta_event.delta_time = delta_time;
-        delta_event.object = object;
-        delta_event.count = delta_dataset[delta_time][object].count;
-        delta_event.content = {};
-        delta_event.content.pids = delta_dataset[delta_time][object].pids;
-        delta_event.content.messages = delta_dataset[delta_time][object].messages;
-        rtn_dataset.push(delta_event);
+        if (rtn_dataset_buf[delta_time] === undefined) {
+            rtn_dataset_buf[delta_time] = {delta_time: delta_time, values: [], content: []};
+        }
+        var value = {};
+        value.object = object;
+        value.count = delta_dataset[delta_time][object].count;
+        rtn_dataset_buf[delta_time].values.push(value);
+        var content = {};
+        content.pids = delta_dataset[delta_time][object].pids;
+        content.messages = delta_dataset[delta_time][object].messages;
+        rtn_dataset_buf[delta_time].content.push(content);
     }
+}
 
+for (var delta_time in rtn_dataset_buf) {
+    if (delta_time === undefined) continue;
+    rtn_dataset.push(rtn_dataset_buf[delta_time]);
 }
 
 printjson(rtn_dataset);
+
+
+
+
+
+

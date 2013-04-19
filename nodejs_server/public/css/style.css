@@ -45,10 +45,10 @@ label{display:inline-block}
 .popup-ctrl-bar:hover .popup-ctrl{background:url("/images/dropdown_bar_icon.png") top left}
 #aggregation-pane,#responsive-pane,#event-detail-pane{border:2px solid;-webkit-border-radius:8px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
 #aggregation-arena{margin-top:20px;margin-left:50px}
-.aggregated-graph{position:fixed}
+.aggregated-graph,.stacked-graph{position:fixed}
 .cluster,timeline-event{stroke:#000}
-.aggregation-axis,.time-axis{fill:none;stroke:#000;shape-rendering:crispEdges;}
-.aggregation-axis text,.time-axis text{font-family:Consolas;font-size:11px}
+.aggregation-axis,.time-axis,.stack-axis{fill:none;stroke:#000;shape-rendering:crispEdges;}
+.aggregation-axis text,.time-axis text,.stack-axis text{font-family:Consolas;font-size:11px}
 .grid-main line,.grid-extend line,.grid-aggr line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none;stroke-dasharray:5,5}
 .time-label{font-family:Consolas;font-size:13px;fill:#00f}
 .reference-time-label{font-family:Consolas;font-size:13px;fill:#808080}

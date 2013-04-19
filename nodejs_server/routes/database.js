@@ -49,18 +49,34 @@ function do_query(req, res, type) {
     );
 }
 
+exports.delta_timeline = function(req, res) {
+    console.log("query delta time timeline for events like:" + req.body.selection);
+    var command = "mongo localhost:27017/imcom --quiet --eval 'var keywords = \"" + req.body.selection + "\"'" + " ./libs/delta_timeline.js ";
+    var child_process = exec(
+        command,
+        {maxBuffer: 1000*1024},
+        function(error, stdout, stderr) {
+            if (error === null) {
+                res.json({"error": 0, "type": "delta time distribution", "content": stdout});
+            } else {
+                console.log(error);
+                res.json({"error": 1, "type": "delta time distribution", "content": error});
+            }
+        });
+}
+
 exports.service_info = function(req, res) {
     console.log("fetch service info of the app:" + req.body.selection);
     var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/service_info.js ";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
-        if (error === null) {
-            res.json({"error": 0, "type": "service info", "content": stdout});
-        } else {
-            res.json({"error": 1, "type": "service info", "content": error});
-        }
-    });
+            if (error === null) {
+                res.json({"error": 0, "type": "service info", "content": stdout});
+            } else {
+                res.json({"error": 1, "type": "service info", "content": error});
+            }
+        });
 }
 
 exports.file_activity = function(req, res) {
@@ -69,12 +85,12 @@ exports.file_activity = function(req, res) {
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
-        if (error === null) {
-            res.json({"error": 0, "type": "file activity", "content": stdout});
-        } else {
-            res.json({"error": 1, "type": "file activity", "content": error});
-        }
-    });
+            if (error === null) {
+                res.json({"error": 0, "type": "file activity", "content": stdout});
+            } else {
+                res.json({"error": 1, "type": "file activity", "content": error});
+            }
+        });
 }
 
 exports.application_trace = function(req, res) {
@@ -83,12 +99,12 @@ exports.application_trace = function(req, res) {
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
-        if (error === null) {
-            res.json({"error": 0, "type": "android_logs", "content": stdout});
-        } else {
-            res.json({"error": 1, "type": "android_logs", "content": error});
-        }
-    });
+            if (error === null) {
+                res.json({"error": 0, "type": "android_logs", "content": stdout});
+            } else {
+                res.json({"error": 1, "type": "android_logs", "content": error});
+            }
+        });
 }
 
 exports.dmesg_aggregation = function(req, res) {

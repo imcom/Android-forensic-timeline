@@ -96,6 +96,7 @@ app.configure(function(){
         '/js/vendor/opentip-jquery.min.js',
         '/js/timeline.js',
         '/js/aggregation_graph.js',
+        '/js/stacked_graph.js',
         '/js/generic_data.js',
         '/js/data_models/android_logs.js',
         '/js/data_models/browsersearches.js',
@@ -114,7 +115,8 @@ app.configure(function(){
 
 // default index route
 app.get('/', index_handler.imcom);
-app.post('/mapreduce', db_handler.mapreduce);
+app.post('/mapreduce', db_handler.mapreduce); //TODO this function needs to be refined
+app.post('/delta_timeline', db_handler.delta_timeline);
 app.post('/service_info', db_handler.service_info);
 app.post('/file_activity', db_handler.file_activity);
 app.post('/dmesg_aggregation', db_handler.dmesg_aggregation);
