@@ -73,7 +73,7 @@ for (var delta_time in rtn_dataset_buf) {
     rtn_dataset.push(rtn_dataset_buf[delta_time]);
 }
 
-printjson(rtn_dataset);
+printjson({anchor_time: boot_time, dataset: rtn_dataset});
 
 
 

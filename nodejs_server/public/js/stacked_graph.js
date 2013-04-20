@@ -1,7 +1,7 @@
 
 
 // name selects the div for bearing svg
-function StackedGraph(name, dataset) {
+function StackedGraph(name, dataset, anchor_time) {
     /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();
     $ = Zepto;
@@ -45,20 +45,16 @@ function StackedGraph(name, dataset) {
     var y_domain_max = d3.max(this.dataset, function(data) {
         return data.max_number;
     });
-    var x_domain = initXDomain();
 
-    function initXDomain() {
-        var delta_times = [];
+    function initDateDomain() {
         self.dataset.forEach(function(data) {
-            if (delta_times.indexOf(Number(data.delta_time)) === -1)
-                delta_times.push(Number(data.delta_time));
+            var date = new Date((Number(data.delta_time) + Number(anchor_time)) * 1000);
+            data.date = date;
         });
-        return delta_times;
+        return [self.dataset[0].date, self.dataset[self.dataset.length - 1].date];
     }
 
-    var x_scale = d3.scale.ordinal()
-        .domain(x_domain)
-        .rangePoints([0, 25000], 1.0); //FIXME range should depend on size of x_domain
+    var x_scale = d3.time.scale.utc().domain(initDateDomain()).range([0, 50000]); //FIXME make it variable
 
     var y_scale = d3.scale.linear()
         .domain([1, y_domain_max])
@@ -67,17 +63,54 @@ function StackedGraph(name, dataset) {
     var color_scale = d3.scale.category10();
 
     // define x axis
+    var tick_unit;
+    var tick_step;
+
+    // tick_index: {null} use calculated tick step; [{0, 1, 2, 3}, {0, 1, 2}] specify an unit and step
+    function initTickInterval(tick_index) {
+        var start_date = this.dataset[0].date;
+        var end_date = this.dataset[this.dataset.length - 1].date;
+
+        var unit_options = [
+            d3.time.seconds.utc,
+            d3.time.minutes.utc,
+            d3.time.hours.utc,
+            d3.time.days.uts
+        ];
+        var step_options = [
+            5,
+            15,
+            30
+        ];
+
+        if (tick_index === null) {
+            var unit_index = end_date - start_date <= 1000 ? 0 : 1;
+            var step_index = end_date - start_date <= 3600 ? 0 : 0;
+        } else {
+            var unit_index = tick_index[0];
+            var step_index = tick_index[1];
+        }
+
+        tick_unit = unit_options[unit_index];
+        tick_step = step_options[step_index];
+    }
+
+    initTickInterval(null); // do NOT set tick_step here
+
     var x_axis = d3.svg.axis()
         .orient("top")
         .scale(x_scale)
+        .ticks(tick_unit, tick_step) // make it a variable
         .tickPadding(tick_padding)
         .tickSize(-5);
 
-    x_axis.tickFormat(function(seconds) {
-        return seconds + "s"; //TODO convert the seconds in to more friendly expression
+    x_axis.tickFormat(function(date) {
+        var seconds = Number(date) / 1000 - anchor_time;
+        var delta_time = Math.round(seconds / 3600) + 'h ' +
+                        Math.round(seconds % 3600 / 60) + 'm ' +
+                        seconds % 3600 % 60 + 's';
+        return delta_time;
     });
-
-    // TBD y axis (number of events)
 
     // create svg for aggregated graph
     var stacked_graph = d3.select(this.name)
@@ -88,25 +121,61 @@ function StackedGraph(name, dataset) {
         .append("g")
         .attr("transform", "translate(20, 20)");
 
+    // append an overflow clip path
+    stacked_graph.append("svg:clipPath")
+        .attr("id", "clip")
+        .append("svg:rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", width)
+        .attr("height", height);
+
+    // X axis
     stacked_graph.append('g')
         .attr("class", "stack-axis")
         .attr("transform", "translate(0, " + (height - y_padding / 2) + ")")
         .call(x_axis);
 
+    // append clipping components
+    var scale_extent = [1, 12];
+    stacked_graph.append("svg:rect")
+        .attr("class", "ctrl-pane")
+        .attr("width", width)
+        .attr("height", y_padding)
+        .call(d3.behavior.zoom()
+                .x(x_scale)
+                .scaleExtent(scale_extent)
+                .on("zoom", zoom)
+        );
+
+    function zoom() {
+        if (d3.event.scale > 6) {
+            initTickInterval([0, 0]);
+            x_axis.ticks(tick_unit, tick_step);
+        } else {
+            initTickInterval(null);
+            x_axis.ticks(tick_unit, tick_step);
+        }
+        stacked_graph.select(".stack-axis").call(x_axis);
+        stacked_graph.selectAll(".stack-layer")
+            .attr("transform", function(d) { return "translate(" + (x_scale(d.date) - 15) + ",0)"; });
+    }
+
     // draw layers and rects on svg
-    var layer = stacked_graph.selectAll(".layer")
+    var layer = stacked_graph.selectAll(".stack-layer")
         .data(this.dataset)
         .enter()
         .append('g')
         .attr('class', 'stack-layer')
-        .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
+        .attr("transform", function(d) { return "translate(" + (x_scale(d.date) - 15) + ",0)"; });
 
-    var rect = layer.selectAll("rect")
+    var rect = layer.selectAll("rect.rect-layer")
         .data(function(d) {
             return d.objects;
         })
         .enter()
         .append("rect")
+        .attr("class", "rect-layer")
         .attr("y", function(d) {
             return y_scale(d.y);
         })

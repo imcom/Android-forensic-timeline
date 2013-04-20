@@ -514,7 +514,7 @@ function drawDeltaTimeline() {
         success: function(data) {
             if (data.content !== "" && data.error === 0) {
                 var stack_dataset = JSON.parse(data.content);
-                new StackedGraph("#aggregation-arena", stack_dataset);
+                new StackedGraph("#aggregation-arena", stack_dataset.dataset, stack_dataset.anchor_time);
             } else {
                 showAlert("error occurred or no records");
             }

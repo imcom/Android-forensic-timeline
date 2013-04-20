@@ -628,12 +628,18 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             .attr("y2", function(d) { return y_scale(d.date); });
         self.timeline.selectAll("#suspect-time-label")
             .attr("y", function(d) { return y_scale(d.date) - 5; });
-        self.drawReferenceIndicator(y_scale);
-        if (self.path_dataset !== null) {
-            self.path_dataset.content.forEach(function(path_group) {
-                self.fillPathData(x_scale, y_scale, path_group);
-                self.drawPath();
-            });
+        if (self.name === '#timeline_extend') {
+            if (self.service_launch_date !== null &&
+                self.service_last_activity_date !== null)
+            {
+                self.drawReferenceIndicator(y_scale);
+            }
+            if (self.path_dataset !== null) {
+                self.path_dataset.content.forEach(function(path_group) {
+                    self.fillPathData(x_scale, y_scale, path_group);
+                    self.drawPath();
+                });
+            }
         }
         adjustDateLabel();
     }
@@ -878,7 +884,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
         });
     }); // each self.dataset
 
-    // draw time brush on control panel
+    // draw time brush on control panel (should move this function to stacked graph)
     if (enable_time_brush) {
         $('#time-brush').children().remove(); // remove old brush if any
         // init the time brush on control pane

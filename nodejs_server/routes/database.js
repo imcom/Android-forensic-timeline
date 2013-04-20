@@ -54,7 +54,7 @@ exports.delta_timeline = function(req, res) {
     var command = "mongo localhost:27017/imcom --quiet --eval 'var keywords = \"" + req.body.selection + "\"'" + " ./libs/delta_timeline.js ";
     var child_process = exec(
         command,
-        {maxBuffer: 1000*1024},
+        { maxBuffer: 1000*1024 },
         function(error, stdout, stderr) {
             if (error === null) {
                 res.json({"error": 0, "type": "delta time distribution", "content": stdout});
