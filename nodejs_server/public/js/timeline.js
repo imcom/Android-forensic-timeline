@@ -492,7 +492,7 @@ Timeline.prototype.previousWindow = function() {
     this.onDataReady(draw_brush);
 }
 
-Timeline.prototype.onDataReady = function(enable_time_brush) {
+Timeline.prototype.onDataReady = function(enable_time_brush) { //FIXME parameter is no longer in use
     var self = this;
     if (this.end_index !== this.dataset.length) {
         $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 50);
@@ -883,74 +883,6 @@ Timeline.prototype.onDataReady = function(enable_time_brush) {
             $('#message-display').text(messages);
         });
     }); // each self.dataset
-
-    // draw time brush on control panel (should move this function to stacked graph)
-    if (enable_time_brush) {
-        $('#time-brush').children().remove(); // remove old brush if any
-        // init the time brush on control pane
-        var time_brush = d3.select("#time-brush").append("svg")
-            .attr("width", 205)
-            .attr("height", 50);
-
-        var brush_scale = d3.time.scale()
-            .range([0, 205])
-            .domain(y_scale.domain());
-
-        var brush_axis = d3.svg.axis()
-            .scale(brush_scale)
-            .tickSize(30)
-            .tickPadding(0)
-            //.ticks(d3.time.seconds.utc, 5)
-            .ticks(this.tick_unit, this.tick_step)
-            .orient("bottom");
-
-        brush_axis.tickFormat(function(date) {
-            formatter = d3.time.format.utc("%S");
-            return formatter(date);
-        });
-
-        var brush = d3.svg.brush()
-            .x(brush_scale)
-            .on("brush", onBrush);
-
-        time_brush.append("g")
-            .attr("class", "time-brush-axis")
-            .call(brush_axis);
-
-        time_brush.append("g")
-            .attr("class", "time-brush")
-            .call(brush)
-            .selectAll("rect")
-            .attr("y", 0)
-            .attr("height", 30);
-
-        function onBrush() {
-            if (!brush.empty()) {
-                y_scale.domain(brush.extent());
-                //self.clearPath();
-                self.timeline.select(".time-axis").call(y_axis);
-                self.timeline.selectAll(".grid-line-main")
-                    .attr("y1", y_scale)
-                    .attr("y2", y_scale);
-                self.timeline.selectAll(".timeline-event")
-                    .attr("cy", function(d) { return y_scale(d.date); });
-                self.timeline.selectAll(".suspects")
-                    .attr("y", function(d) { return y_scale(d.date); });
-                self.timeline.selectAll(".description")
-                    .attr("y", function(d) { return y_scale(d.date); });
-                self.timeline.selectAll("#suspect-description")
-                    .attr("y", function(d) { return y_scale(d.date); });
-                self.timeline.selectAll("#suspect-time-indicator")
-                    .attr("y1", function(d) { return y_scale(d.date); })
-                    .attr("y2", function(d) { return y_scale(d.date); });
-                self.timeline.selectAll("#suspect-time-label")
-                    .attr("y", function(d) { return y_scale(d.date) - 5; });
-                adjustDateLabel();
-            }
-        }
-    } else { // if time brush is disabled, time brush should be removed from caller
-        //$('#time-brush').children().remove();
-    }
 
 } // function onDataReady()
 

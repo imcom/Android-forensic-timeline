@@ -54,7 +54,10 @@ function StackedGraph(name, dataset, anchor_time) {
         return [self.dataset[0].date, self.dataset[self.dataset.length - 1].date];
     }
 
-    var x_scale = d3.time.scale.utc().domain(initDateDomain()).range([0, 50000]); //FIXME make it variable
+    var time_domain = initDateDomain();
+    var time_diff = (Number(this.dataset[this.dataset.length - 1].date) - Number(this.dataset[0].date)) / 1000;
+    var max_range = time_diff <= 1000 ? width : time_diff >= 20000 ? time_diff * 2 : time_diff;
+    var x_scale = d3.time.scale.utc().domain(time_domain).range([0, max_range]);
 
     var y_scale = d3.scale.linear()
         .domain([1, y_domain_max])
@@ -68,8 +71,8 @@ function StackedGraph(name, dataset, anchor_time) {
 
     // tick_index: {null} use calculated tick step; [{0, 1, 2, 3}, {0, 1, 2}] specify an unit and step
     function initTickInterval(tick_index) {
-        var start_date = this.dataset[0].date;
-        var end_date = this.dataset[this.dataset.length - 1].date;
+        var start_date = self.dataset[0].date;
+        var end_date = self.dataset[self.dataset.length - 1].date;
 
         var unit_options = [
             d3.time.seconds.utc,
@@ -121,6 +124,13 @@ function StackedGraph(name, dataset, anchor_time) {
         .append("g")
         .attr("transform", "translate(20, 20)");
 
+    // graph title, explaination of the graph
+    stacked_graph.append("text")
+        .attr("class", "stack-graph-title")
+        .attr("x", (width / 2) - 250)
+        .attr("y", 0)
+        .text("The Length of Rect Is Proportional To The Number Of Events");
+
     // append an overflow clip path
     stacked_graph.append("svg:clipPath")
         .attr("id", "clip")
@@ -167,6 +177,9 @@ function StackedGraph(name, dataset, anchor_time) {
         .enter()
         .append('g')
         .attr('class', 'stack-layer')
+        .attr('id', function(d, index) {
+            return "stack-" + index;
+        })
         .attr("transform", function(d) { return "translate(" + (x_scale(d.date) - 15) + ",0)"; });
 
     var rect = layer.selectAll("rect.rect-layer")
@@ -176,6 +189,9 @@ function StackedGraph(name, dataset, anchor_time) {
         .enter()
         .append("rect")
         .attr("class", "rect-layer")
+        .attr("id", function(d, index) {
+            return "event-" + index;
+        })
         .attr("y", function(d) {
             return y_scale(d.y);
         })
@@ -186,6 +202,33 @@ function StackedGraph(name, dataset, anchor_time) {
         .style("fill", function(d) {
             return color_scale(d.name);
         });
+        
+    var layers = $('.stack-layer');
+    layers.forEach(function(_layer, l_index) {
+        $.each(_layer.childNodes, function(e_index) {
+            jQuery(_layer.childNodes[e_index]).opentip(
+                formatMessages(self.dataset[l_index].content[e_index]),
+                {style: "tooltip_style"}
+            );
+            $(_layer.childNodes[e_index]).mouseover(function(mouse_event) {
+                this.setAttribute("cursor", "pointer");
+            })
+            .mouseout(function(mouse_event) {
+                this.setAttribute("cursor", "pointer");
+            });
+        });
+    });
+    
+    function formatMessages(content) {
+        var message = "";
+        content.pids.forEach(function(pid, index) {
+            message += pid;
+            message += ":";
+            message += content.messages[index];
+            message += "</br>";
+        });
+        return message;
+    }
 
     // append legend to the graph
     var legend = stacked_graph.selectAll(".legend")
@@ -206,6 +249,57 @@ function StackedGraph(name, dataset, anchor_time) {
         .attr("dy", ".35em")
         .style("text-anchor", "start")
         .text(function(d) { return d; });
+        
+    // draw time brush on control panel (should move this function to stacked graph)
+    $('#time-brush').children().remove(); // remove old brush if any
+    // init the time brush on extra control pane
+    var time_brush = d3.select("#time-brush").append("svg")
+        .attr("width", width)
+        .attr("height", 60);
+
+    var brush_scale = d3.time.scale()
+        .range([0, width])
+        .domain(x_scale.domain());
+
+    var brush_axis = d3.svg.axis()
+        .scale(brush_scale)
+        .tickSize(30)
+        .tickPadding(0)
+        .ticks(d3.time.minutes.utc, 15)
+        //.ticks(tick_unit, tick_step)
+        .orient("bottom");
+
+    brush_axis.tickFormat(function(date) {
+        var seconds = Number(date) / 1000 - anchor_time;
+        var delta_time = Math.round(seconds / 3600) + 'h ' +
+                        Math.round(seconds % 3600 / 60) + 'm ' +
+                        seconds % 3600 % 60 + 's';
+        return delta_time;
+    });
+
+    var brush = d3.svg.brush()
+        .x(brush_scale)
+        .on("brush", onBrush);
+
+    time_brush.append("g")
+        .attr("class", "time-brush-axis")
+        .call(brush_axis);
+
+    time_brush.append("g")
+        .attr("class", "time-brush")
+        .call(brush)
+        .selectAll("rect")
+        .attr("y", 0)
+        .attr("height", 30);
+
+    function onBrush() {
+        if (!brush.empty()) {
+            x_scale.domain(brush.extent());
+            stacked_graph.select(".stack-axis").call(x_axis);
+            stacked_graph.selectAll(".stack-layer")
+                .attr("transform", function(d) { return "translate(" + (x_scale(d.date) - 15) + ",0)"; });
+        }
+    }
 
 }
 

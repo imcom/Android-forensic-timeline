@@ -1,11 +1,12 @@
 
 var cursor;
 
-cursor = db.temporal.find();
+//cursor = db.temporal.find();
 
-var boot_time = cursor.next().btime;
+//var boot_time = cursor.next().btime;
+var anchor_time = 1365512764;
 
-cursor = db.events.find({object: new RegExp(keywords, 'i')}, {_id: 0, level: 0}); // am_.*
+cursor = db.events.find({object: new RegExp(keywords, 'i'), date: {$gt: anchor_time}}, {_id: 0, level: 0}); // am_.*
 
 // key: delta-time, value: {object: {pids: [pid,], messages: [msg,], count: number}}
 var delta_dataset = {};
@@ -27,7 +28,7 @@ var rtn_dataset = [];
 
 while(cursor.hasNext()) {
     var record = cursor.next();
-    var delta_time = record.date - boot_time;
+    var delta_time = record.date - anchor_time;
     var event_content = {};
     event_content[record.object] = {};
     event_content[record.object].pids = [record.pid];
@@ -73,7 +74,7 @@ for (var delta_time in rtn_dataset_buf) {
     rtn_dataset.push(rtn_dataset_buf[delta_time]);
 }
 
-printjson({anchor_time: boot_time, dataset: rtn_dataset});
+printjson({anchor_time: anchor_time, dataset: rtn_dataset});
 
 
 

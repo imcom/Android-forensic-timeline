@@ -61,6 +61,10 @@ html
             div#aggregation-arena
             div.dropdown-ctrl-bar
                 div(title="Expand aggregation pane").dropdown-ctrl
+        div#dropdown-ctrl-pane.popup-div
+            div#extra-ctrl-pane.text-center
+                p.nav-header Timeline Brush
+                #time-brush
         div#responsive-pane.slide-right-div
             div.slide-right-ctrl-bar
                 div(title="Expand responsive pane").slide-right-ctrl
@@ -128,16 +132,16 @@ html
                                 button#expand.btn.btn-warning.btn-small Expand
                                 button#filter.btn.btn-info.btn-small Filter
                                 button#clear.btn.btn-danger.btn-small Clear
-                        li.nav-header Time Brush [Seconds]
-                        li
-                            #time-brush
-                        li.nav-header.cozy-list-header Device Booted [UTC]
+                        //li.nav-header Time Brush [Seconds]
+                        //li
+                        //    #time-brush
+                        li.nav-header Device Booted [UTC]
                         li
                             #temporal-info
-                        li.nav-header.cozy-list-header Timezone Setting
+                        li.nav-header Timezone Setting
                         li
                             #timezone-info
-                        li.nav-header.cozy-list-header Running Time Til Invest.
+                        li.nav-header Running Time Til Invest.
                         li
                             #running-time
             div.span10#content

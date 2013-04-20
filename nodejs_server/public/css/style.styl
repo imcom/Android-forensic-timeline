@@ -150,6 +150,15 @@ label
     width: 59%
     height: 320px
     margin-left: 370px
+    
+#dropdown-ctrl-pane
+    bottom: -260px
+    height: 260px
+    width: 99%
+    margin-left: 5px
+
+#extra-ctrl-pane
+    min-height: 250px
 
 #running-time, #timezone-info, #temporal-info
     font-family: Consolas
@@ -226,7 +235,7 @@ label
     .popup-ctrl
         background: url('/images/dropdown_bar_icon.png') top left
 
-#aggregation-pane, #responsive-pane, #event-detail-pane
+#aggregation-pane, #responsive-pane, #event-detail-pane, #extra-ctrl-pane
     border: 2px solid
     -webkit-border-radius: 8px
     -moz-border-radius: 8px
@@ -284,12 +293,17 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     fill: none
     pointer-events: all
 
-.graph-title
+.graph-title, .stack-graph-title
     font-family: Consolas
     font-size: 200%
     z-index: 100
     font-style: oblique
     font-variant: small-caps
+
+.stack-graph-title
+    font-style: normal
+    font-size: 100%
+    fill: grey
 
 .back-to-top
     position: fixed

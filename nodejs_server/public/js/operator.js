@@ -806,6 +806,7 @@ clear_btn.click(function() {
 
 dropdown_btn.click(function() {
     var aggregation_pane = $('#aggregation-pane');
+    var dropdown_ctrl_pane = $('#dropdown-ctrl-pane');
     var dropdown_ctrl = $('.dropdown-ctrl');
     if (dropdown_pane_collapsed == 1) { // show the pane
         dropdown_pane_collapsed = 0;
@@ -813,12 +814,14 @@ dropdown_btn.click(function() {
         dropdown_ctrl.css("-moz-transform", "rotate(0deg)");
         dropdown_ctrl[0].setAttribute("title", "Collapse aggregation pane");
         aggregation_pane.animate({"top": 0}, 500, "ease");
+        dropdown_ctrl_pane.animate({"bottom": 0}, 500, "ease");
     } else { // hide the pane
         dropdown_pane_collapsed = 1;
         dropdown_ctrl.css("-webkit-transform", "rotate(180deg)");
         dropdown_ctrl.css("-moz-transform", "rotate(180deg)");
         dropdown_ctrl[0].setAttribute("title", "Expand aggregation pane");
         aggregation_pane.animate({"top": -680}, 500, "ease");
+        dropdown_ctrl_pane.animate({"bottom": -260}, 500, "ease");
     }
 });
 

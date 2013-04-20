@@ -271,6 +271,58 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
         .attr("dy", ".35em")
         .style("text-anchor", "start")
         .text(function(d) { return d; });
+        
+    // draw time brush on control panel (should move this function to stacked graph)
+    $('#time-brush').children().remove(); // remove old brush if any
+    // init the time brush on extra control pane
+    var time_brush = d3.select("#time-brush").append("svg")
+        .attr("width", self.width)
+        .attr("height", 60);
+
+    var brush_scale = d3.time.scale()
+        .range([0, self.width])
+        .domain(self.x_scale.domain());
+
+    var brush_axis = d3.svg.axis()
+        .scale(brush_scale)
+        .tickSize(30)
+        .tickPadding(0)
+        .ticks(d3.time.minutes.utc, 15)
+        //.ticks(tick_unit, tick_step)
+        .orient("bottom");
+
+    brush_axis.tickFormat(function(date) {
+        var formatter = d3.time.format.utc("%m-%d %H:%M:%S");
+        return formatter(date);
+    });
+
+    var brush = d3.svg.brush()
+        .x(brush_scale)
+        .on("brush", onBrush);
+
+    time_brush.append("g")
+        .attr("class", "time-brush-axis")
+        .call(brush_axis);
+
+    time_brush.append("g")
+        .attr("class", "time-brush")
+        .call(brush)
+        .selectAll("rect")
+        .attr("y", 0)
+        .attr("height", 30);
+
+    function onBrush() {
+        if (!brush.empty()) {
+            self.x_scale.domain(brush.extent());
+            self.aggregated_graph.select(".aggregation-axis").call(self.x_axis);
+            self.aggregated_graph.selectAll(".grid-line")
+                .attr("x1", self.x_scale)
+                .attr("x2", self.x_scale);
+            self.aggregated_graph.selectAll(".cluster")
+                .attr("cx", function(d) { return self.x_scale(self.x(d)); });
+
+        }
+    }
 }
 
 AggregatedGraph.prototype.getOldestDate = function() {
