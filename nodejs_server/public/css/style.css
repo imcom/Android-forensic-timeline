@@ -34,9 +34,10 @@ label{display:inline-block}
 #running-time,#timezone-info,#temporal-info{font-family:Consolas;margin-left:5px}
 #event-display-pane{margin-top:15px;}
 #event-display-pane p.nav-header.text-center{margin-right:22px}
-#event-display-pane .container-fluid{margin-top:-5px}
+#event-display-pane .container-fluid{margin-top:-15px}
 #message-display{width:450px;resize:none;margin-top:-10px}
-#event-metadata{overflow-x:hidden;overflow-y:auto}
+#event-metadata{max-height:280px;width:190px;overflow-x:hidden;overflow-y:auto}
+#event-message{margin-left:10px}
 #date-display,#pid-display{font-family:Consolas;margin-left:5px;font-weight:bold}
 #object-tbody td{font-family:Consolas}
 .dropdown-ctrl-bar{position:absolute;width:100%;height:20px;bottom:0;cursor:pointer;z-index:50;}

@@ -13,22 +13,7 @@ var cp_sms = require("./content_provider_sms.js");
 var cp_services = require("./content_provider_services.js");
 var dmesg = require("./dmesg_schema.js");
 var temporal = require("./temporal_info_schema.js");
-//var app_related_system_calls = require("./app_related_system_calls.js");
 var mongoose = require('mongoose');
-
-/*exports.traceApplication = function(req, res) {
-    var model = mongoose.model("app_related_system_calls");
-    var selection = JSON.parse(req.body.selection);
-
-    model.find(selection, null, null, function(err, rtn) {
-        if (err == null) {
-            res.json({"error": 0, "type": "application trace", "content": rtn});
-        } else {
-            res.json({"error": 1, "type": "application trace", "content": err.message});
-            return;
-        }
-    });
-}*/
 
 exports.aggregateDmesg = function(req, res) {
     var model = mongoose.model("dmesg");

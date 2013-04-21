@@ -26,9 +26,12 @@ function do_query(req, res, type) {
     var fields = type.fields; // default all fields of the model
     var selection = JSON.parse(req.body.selection);
 
-    if (selection != null && selection['$or'] != null) {
-        selection['$or'][0].object = new RegExp(selection['$or'][0].object, 'i');
-        selection['$or'][1].msg = new RegExp(selection['$or'][1].msg, 'i');
+    if (selection !== null) {
+        selection['object'] = {$not: new RegExp(selection['object'], 'i')};
+        if (selection['$or'] !== undefined) {
+            selection['$or'][0].object = new RegExp(selection['$or'][0].object, 'i');
+            selection['$or'][1].msg = new RegExp(selection['$or'][1].msg, 'i');
+        }
     }
 
     mongo.read(

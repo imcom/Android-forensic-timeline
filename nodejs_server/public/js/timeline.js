@@ -14,7 +14,7 @@ function Timeline(name) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    this.x_range = [160, 660];
+    this.x_range = [120, 760];
     this.x_range_padding = 160;
     this.timeline_height = 800;
     this.display_step = 20; // default 20 seconds display interval
@@ -539,7 +539,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) { //FIXME parameter
 
     var x_scale = d3.scale.ordinal()
                 .domain(this.x_domain_array)
-                .rangePoints(this.x_range, 3.0);
+                .rangePoints(this.x_range, 0.8);
 
     var y_scale = d3.time.scale.utc()
                 .domain([
@@ -629,9 +629,10 @@ Timeline.prototype.onDataReady = function(enable_time_brush) { //FIXME parameter
         self.timeline.selectAll("#suspect-time-label")
             .attr("y", function(d) { return y_scale(d.date) - 5; });
         if (self.name === '#timeline_extend') {
-            if (self.service_launch_date !== null &&
-                self.service_last_activity_date !== null)
+            if (self.service_launch_date !== undefined &&
+                self.service_last_activity_date !== undefined)
             {
+                console.log(self.service_launch_date);
                 self.drawReferenceIndicator(y_scale);
             }
             if (self.path_dataset !== null) {
@@ -869,7 +870,7 @@ Timeline.prototype.onDataReady = function(enable_time_brush) { //FIXME parameter
             var date = data.date * 1000; // convert to milliseconds
             var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S");
             var disp_date = formatter(new Date(date));
-            $('#date-display').text(disp_date);
+            $('#date-display').text(disp_date + "\r\nEpoch: " + data.date);
             $('#pid-display').text(data._id);
             var table_prefix = "<tr><td>";
             var table_suffix = "</tr></td>";

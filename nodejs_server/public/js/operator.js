@@ -283,20 +283,17 @@ function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline, 
 }
 
 function formSelection() {
-    //if (collection.val().split(':')[0] === 'android_logs') { // this is the only collection supported
     if (selection.val() != '') { // always use OR logic in query
         var regex_selection = {};
         regex_selection['$or'] = [];
         var keywords = selection.val().split(' ');
         regex_selection['$or'].push({object : keywords.join('|')});
         regex_selection['$or'].push({msg : keywords.join('|')});
-        return JSON.stringify(regex_selection);
+        regex_selection['object'] = ".*_?gc_?.*";
     } else {
-        return null;
+        var regex_selection = {object: ".*_?gc_?.*"};
     }
-    //} else {
-    //    return null; // null selection for any other collections
-    //}
+    return JSON.stringify(regex_selection);
 }
 
 function fillMapReduceOptions(data_type) {

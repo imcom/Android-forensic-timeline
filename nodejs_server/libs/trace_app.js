@@ -86,7 +86,7 @@ combined_activities.forEach(function(activity) {
 // query for more events in duration
 for (var _pid in duration_points) {
     if (duration_points.hasOwnProperty(_pid)) {
-        cursor = db.events.find({pid: _pid, object: {$not: new RegExp('.*gc.*', 'i')}}, {_id: 0, level: 0});
+        cursor = db.events.find({pid: _pid, object: {$not: new RegExp('.*_?gc_?.*', 'i')}}, {_id: 0, level: 0});
         while (cursor.hasNext()) {
             duration_points[_pid].push(cursor.next());
         }

@@ -26,7 +26,6 @@ var cp_services = require("./libs/content_provider_services.js");
 var dmesg = require("./libs/dmesg_schema.js");
 var temporal_info = require("./libs/temporal_info_schema.js");
 var package_info = require("./libs/package_info_schema.js");
-//var app_related_system_calls = require("./libs/app_related_system_calls.js");
 
 /*
  *  Init MongoDB connection and models
@@ -50,7 +49,6 @@ var schemas = [
     temporal_info,
     package_info,
     dmesg
-    //app_related_system_calls
 ];
 
 schemas.forEach(function(schema){
