@@ -1,4 +1,10 @@
 
+
+// clear old data
+db.app_related_system_calls.drop();
+db.app_related_filesystem_activity.drop();
+
+
 var cursor;
 var model;
 var selection;
@@ -51,6 +57,7 @@ for (var i = 0; i < all_apps_name.length; ++i) {
     var target = all_apps_name[i];
     system_objects[target] = {};
     selection = {msg: new RegExp('.*(' + target + "|" + target.substr(target.indexOf(".") + 1) + ").*", 'i')};
+    var detected_ids = [];
 
     cursor = db.events.find(selection, projection);
     while(cursor.hasNext()) {
@@ -58,6 +65,12 @@ for (var i = 0; i < all_apps_name.length; ++i) {
         var content = {};
         content.date = record.date;
         content.msg = record.msg;
+        if (record.object === "am_proc_start" || record.object === "am_proc_died") {
+            var pid = record.msg.substr(1, record.msg.length - 1).split(',', 1)[0];
+            if (detected_ids.indexOf(pid) === -1) {
+                detected_ids.push(pid);
+            }
+        }
         if (system_objects[target].hasOwnProperty(record.object) == false) {
             system_objects[target][record.object] = {};
             system_objects[target][record.object][record.pid] = [content];
@@ -68,8 +81,39 @@ for (var i = 0; i < all_apps_name.length; ++i) {
                 system_objects[target][record.object][record.pid].push(content);
         }
     }
+    var refined_selection = {};
+    refined_selection['object'] = {$not: new RegExp('.*_?gc_?.*', 'i')};
+    refined_selection['pid'] = {$in: detected_ids};
+    refined_selection['msg'] = {$not: selection.msg};
 
-    cursor = db.main.find(selection, projection);
+    cursor = db.events.find(refined_selection, projection);
+    while(cursor.hasNext()) {
+        var record = cursor.next();
+        var content = {};
+        content.date = record.date;
+        content.msg = record.msg;
+        if (system_objects[target].hasOwnProperty(record.object) == false) {
+            system_objects[target][record.object] = {};
+            system_objects[target][record.object][record.pid] = [content];
+        } else {
+            if (system_objects[target][record.object].hasOwnProperty(record.pid) == false) {
+                system_objects[target][record.object][record.pid] = [content];
+            } else {
+                system_objects[target][record.object][record.pid].push(content);
+            }
+        }
+    }
+
+    refined_selection = {};
+    refined_selection['$or'] = [];
+    refined_selection['$or'].push(selection); // msg reg selection as one statement in OR query
+    var pid_selection = {};
+    pid_selection['pid'] = {};
+    pid_selection['pid']['$in'] = detected_ids;
+    refined_selection['$or'].push(pid_selection); // array of related pids for query
+    refined_selection['object'] = {$not: new RegExp('.*_?gc_?.*', 'i')};
+
+    cursor = db.main.find(refined_selection, projection);
     while(cursor.hasNext()) {
         var record = cursor.next();
         var content = {};
@@ -86,7 +130,7 @@ for (var i = 0; i < all_apps_name.length; ++i) {
         }
     }
 
-    cursor = db.system.find(selection, projection);
+    cursor = db.system.find(refined_selection, projection);
     while(cursor.hasNext()) {
         var record = cursor.next();
         var content = {};
@@ -132,6 +176,5 @@ for (var object in file_system_activity) {
 }
 db.app_related_filesystem_activity.insert(save_buf);
 
-print("Created `app_related_system_calls` and `app_related_filesystem_activity`");
 
 

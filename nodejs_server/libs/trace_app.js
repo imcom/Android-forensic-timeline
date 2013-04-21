@@ -7,7 +7,7 @@ var activities = null;
 var start_points = [];
 var end_points = [];
 var duration_points = [];
-var detected_pids = [];
+var processes_life = {};
 
 var process_start = "am_proc_start";
 var process_end = "am_proc_died";
@@ -44,10 +44,10 @@ function sortByDate(x, y) {
     if (x.date > y.date) return 1;
 }
 
-var combined_activities = start_points.concat(duration_points).concat(end_points);
+var combined_activities = start_points.concat(end_points).concat(duration_points); // can detect pids from start/end points
 if (combined_activities.length > 0) {
     activities = {};
-    activities.unknown = [];
+    activities.unknown = []; // actually the suspicious records
 }
 var is_unknown = true;
 duration_points = {};
@@ -57,33 +57,39 @@ combined_activities.forEach(function(activity) {
     var message = activity.msg;
     var pid;
     if (activity.object === process_start) {
-        pid = message.substr(1, message.length - 1).split(',', 1);
+        pid = message.substr(1, message.length - 1).split(',', 1)[0];
         activities[pid] = [activity];
         duration_points[pid] = [];
-        detected_pids.push(pid);
+        processes_life[pid] = {};
+        processes_life[pid].start = activity.date;
+        processes_life[pid].end = 9999999999; // infinite of date...
     } else if (activity.object === process_end) {
-        pid = message.substr(1, message.length - 1).split(',', 1);
-        if (!activities[pid]) {
+        pid = message.substr(1, message.length - 1).split(',', 1)[0];
+        if (activities[pid] === undefined) {
             activities[pid] = [];
             duration_points[pid] = [];
+            processes_life[pid] = {};
+            processes_life[pid].start = 0; // very beginning
         }
+        processes_life[pid].end = activity.date;
         activities[pid].push(activity);
     } else {
-        detected_pids.forEach(function(_pid) {
-            if (message.indexOf(_pid) !== -1) {
+        for (var _pid in processes_life) {
+            is_unknown = true;
+            if (_pid === undefined) continue;
+            if (activity.date >= processes_life[_pid].start && activity.date <= processes_life[_pid].end) {
                 duration_points[_pid].push(activity);
                 is_unknown = false;
-            } else {
-                is_unknown = true;
+                break;
             }
-        });
+        }
         if (is_unknown) {
             activities.unknown.push(activity);
         }
     }
 });
 
-// query for more events in duration
+/* query for more events in duration (already done in previous query)
 for (var _pid in duration_points) {
     if (duration_points.hasOwnProperty(_pid)) {
         cursor = db.events.find({pid: _pid, object: {$not: new RegExp('.*_?gc_?.*', 'i')}}, {_id: 0, level: 0});
@@ -93,10 +99,19 @@ for (var _pid in duration_points) {
     }
 }
 
+/* check unknown activities again based on new retrieved log messages
+activities.unknown.forEach(function(unknown_activity, index) {
+    if (detected_pids.indexOf(unknown_activity.pid) !== -1) {
+        if (duration_points[_pid] === undefined) duration_points[_pid] = [];
+        duration_points[_pid].push(unknown_activity);
+        activities.unknown.splice(index, 1); // remove the activity from unknown
+    }
+});*/
+
 // finalize the result, sort events within duration group by date
 for (var _pid in activities) {
     var index = 1;
-    if (activities.hasOwnProperty(_pid) && _pid !== "unknown") { // can not query based on pid = `unknown`
+    if (activities.hasOwnProperty(_pid) && _pid !== "unknown") {
         duration_points[_pid].sort(sortByDate);
         duration_points[_pid].forEach(function(record) {
             if (activities[_pid].length === 1) {

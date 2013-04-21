@@ -271,7 +271,7 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
         .attr("dy", ".35em")
         .style("text-anchor", "start")
         .text(function(d) { return d; });
-        
+
     // draw time brush on control panel (should move this function to stacked graph)
     $('#time-brush').children().remove(); // remove old brush if any
     // init the time brush on extra control pane
@@ -292,7 +292,7 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
         .orient("bottom");
 
     brush_axis.tickFormat(function(date) {
-        var formatter = d3.time.format.utc("%m-%d %H:%M:%S");
+        var formatter = d3.time.format.utc("%H:%M:%S");
         return formatter(date);
     });
 

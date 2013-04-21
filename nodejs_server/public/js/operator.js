@@ -545,6 +545,7 @@ function traceApplication() {
                 dataset_extend = [];
                 var path_index = 0;
                 var application_trace = JSON.parse(data.content);
+                console.log(application_trace);
                 for (var process in application_trace) {
                     path_group = [];
                     if (application_trace.hasOwnProperty(process)) { // pid or unknown
@@ -673,16 +674,7 @@ function fileActivity() {
     });
 }
 
-//TODO remove search button, instead, showing Events timeline onLoad
-/*search_btn.click(function() {
-    dataset = []; // clear dataset for new data
-    current_dataset = [];
-    timeline_main.clearData(true, true);
-    drawMainTimeline();
-    referenceQuery("temporal_info", "temporal", null);
-    referenceQuery("package_info", "packages", null);
-});*/
-
+// button actions
 file_activity_search_btn.click(function() {
     timeline_extend.clearData(true, true);
     fileActivity();
