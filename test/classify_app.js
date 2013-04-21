@@ -6,7 +6,7 @@ var app_category = {name: application_name};
 var activity_groups = [];
 var date_range = [9999999999, 0];
 var total_events_number = 0;
-var ids = [];
+//var ids = [];
 
 function sortByWeight(x, y) {
     return x.weight > y.weight ? -1 : 1;
@@ -30,8 +30,9 @@ function getEventsNumberAndTokens(object, activity_group) {
             updateDateRange(activity_group[pid]);
             activity_group[pid].forEach(function(record) {
                 var tokenizer_return = tokenize(object, record.msg);
-                tokens = _.union(tokens, tokenizer_return[0]);
-                ids = _.union(ids, tokenizer_return[1]);
+                //tokens = _.union(tokens, tokenizer_return[0]);
+                //ids = _.union(ids, tokenizer_return[1]);
+                tokens = _.union(tokens, tokenizer_return);
             });
         }
     }
@@ -63,9 +64,10 @@ app_category.category = {};
 activity_groups.forEach(function(activity_group) {
     app_category.category[activity_group.name] = activity_group;
 });
-app_category.ids = ids;
+//app_category.ids = ids;
 
 var collection = db.getCollection(application_name);
 collection.drop();
 collection.save(app_category);
+printjson(collection.findOne());
 
