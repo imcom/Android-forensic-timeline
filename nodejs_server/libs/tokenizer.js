@@ -83,6 +83,10 @@ function tokenize(object, target) {
         target = target.substr(1, target.length - 2); // remove heading and tailing []
         var query = target.split(',');
         var query_target = "target=" + query[0];
+        if (query_target.indexOf('?') !== -1) {
+            var query_statements = query_target.split('?')[1];
+            query_target = query_target.split('?')[0];
+        }
         if (query[1] === '') query[1] = "null";
         var query_fields = "fields=" + query[1].replace(/\//g, ' ');
         query.splice(0, 2); // remove target and fields from query array
@@ -99,6 +103,12 @@ function tokenize(object, target) {
                 query_selection += ' ';
             }
         });
+        if (query_statements !== undefined) {
+            query_statements.split('&').forEach(function(statement) {
+                query_selection += statement;
+                query_selection += ' ';
+            });
+        }
         if (query_selection === 'selection=') query_selection += "null";
         tokens.push(query_target);
         tokens.push(query_fields);

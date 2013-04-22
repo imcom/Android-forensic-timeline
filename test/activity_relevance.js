@@ -44,22 +44,21 @@ var map = function() {
                 }
             }
         } else {
-            var reference_buf = tokenize(object, msg);
-            var reference_id_tokens = reference_buf[1];
-            var reference_tokens = reference_buf[0];
+            var reference_tokens = tokenize(object, msg); //FIXME format changed
             object_reference = reference_tokens.indexOf(this.object) === -1 ? 0 : 1;
-            pid_reference = reference_id_tokens.indexOf(this.pid) === -1 ? 0 : 1;
+            pid_reference = reference_tokens.indexOf("pid=" + this.pid) === -1 ? 0 : 1;
         }
         var tokens_common = 0;
         var tokens_unique = 0;
-        target_tokens[0].forEach(function(token) {
+        //FIXME format changed
+        target_tokens.forEach(function(token) {
             if (reference_tokens.indexOf(token) !== -1) {
                 tokens_common += 1;
             } else {
                 tokens_unique += 1;
             }
         });
-        target_tokens[1].forEach(function(id_token) {
+        target_tokens.forEach(function(id_token) { //FIXME no ids property anymore
             if (reference_data.ids.indexOf(id_token) !== -1) {
                 tokens_common += 1;
             } else {
@@ -121,22 +120,21 @@ var reduce = function(key, values) {
                 }
             }
         } else {
-            var reference_buf = tokenize(object, msg);
-            var reference_id_tokens = reference_buf[1];
-            var reference_tokens = reference_buf[0];
+            var reference_tokens = tokenize(object, msg); //FIXME format changed
             object_reference = reference_tokens.indexOf(value.object[0]) === -1 ? 0 : 1;
-            pid_reference = reference_id_tokens.indexOf(value.pid[0]) === -1 ? 0 : 1;
+            pid_reference = reference_tokens.indexOf("pid=" + value.pid[0]) === -1 ? 0 : 1;
         }
         var tokens_common = 0;
         var tokens_unique = 0;
-        target_tokens[0].forEach(function(token) {
+        target_tokens.forEach(function(token) { //FIXME format changed
             if (reference_tokens.indexOf(token) !== -1) {
                 tokens_common += 1;
             } else {
                 tokens_unique += 1;
             }
         });
-        target_tokens[1].forEach(function(id_token) {
+        target_tokens.forEach(function(id_token) {
+            //FIXME no ids property anymore
             if (reference_data.ids.indexOf(id_token) !== -1) {
                 tokens_common += 1;
             } else {
@@ -171,13 +169,13 @@ function doRelevanceQuery() {
     relevance_model = db.system.mapReduce(
         map,
         reduce,
-        map_reduce_options 
+        map_reduce_options
     );
 
     relevance_model = db.main.mapReduce(
         map,
         reduce,
-        map_reduce_options 
+        map_reduce_options
     );
 }
 
