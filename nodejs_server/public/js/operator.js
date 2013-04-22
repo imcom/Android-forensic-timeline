@@ -499,18 +499,20 @@ function aggregateDmesg() {
     });
 }
 
+//TODO may deprecate this function later or use this as response on record click events
 function drawDeltaTimeline() {
     $.ajax({
         type: "POST",
         url: "delta_timeline",
         data: {
-            selection: "am_",
+            selection: "am_", //TODO temp implementation
             type: "exec"
         },
         dataType: 'json',
         success: function(data) {
             if (data.content !== "" && data.error === 0) {
                 var stack_dataset = JSON.parse(data.content);
+                //console.log(stack_dataset.dataset);
                 new StackedGraph("#aggregation-arena", stack_dataset.dataset, stack_dataset.anchor_time);
             } else {
                 showAlert("error occurred or no records");
@@ -520,6 +522,104 @@ function drawDeltaTimeline() {
             showAlert("delta query error!");
         }
     });
+}
+
+function generateDeltaTimeGraph(dataset) {
+    $('#aggregation-arena').children().remove(); // remove old graph
+    /*
+     * {
+     *      <delta_t>:  {
+     *                      delta_time: <delta_t>
+     *                      signature: [[<Object A>, <Object B>], ...]
+     *                      content: [[[obj_a, msg_a, pid_a], [obj_b, msg_b, pid_b]], ...]
+     *                      count: [<#>, ...]
+     *                  }
+     *      <delta_t>:
+     * }
+     *  index of signature goes into content and count fields
+     */
+
+    var delta_dataset = {};
+    for (var app_process in dataset) {
+        if (app_process === undefined || app_process === "suspects") continue; //TODO deal with suspects later
+        var length = dataset[app_process].length;
+        // iterate through each app_process, calculate delta time between every two events
+        if (length === 1) continue; // only one event recorded, ignore...
+        var index = 0, round = 0;
+        for ( ; index + 1 < length; index++) {
+            var delta_t = dataset[app_process][index + 1].date - dataset[app_process][index].date;
+            var obj_a = dataset[app_process][index].object;
+            var obj_b = dataset[app_process][index + 1].object;
+            var pid_a = dataset[app_process][index].pid;
+            var pid_b = dataset[app_process][index + 1].pid;
+            var msg_a = dataset[app_process][index].msg;
+            var msg_b = dataset[app_process][index + 1].msg;
+            if (delta_dataset[delta_t] === undefined) {
+                delta_dataset[delta_t] = {};
+                delta_dataset[delta_t].delta_time = delta_t;
+                delta_dataset[delta_t].signature = [];
+                delta_dataset[delta_t].content = [];
+                delta_dataset[delta_t].count = [];
+            }
+            var signature = [];
+            //
+            // signaure: [[obj_a, msg_tokens], [obj_b, msg_tokens]]
+            //
+            signature[0] = [obj_a].concat(tokenize(obj_a, msg_a));
+            signature[1] = [obj_b].concat(tokenize(obj_b, msg_b));
+            if (!isIdenticalSignature(delta_dataset[delta_t].signature, signature)) {
+                delta_dataset[delta_t].signature.push(signature);
+                var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
+                content[0] = [obj_a, msg_a, pid_a];
+                content[1] = [obj_b, msg_b, pid_b];
+                delta_dataset[delta_t].content.push([content]);
+                delta_dataset[delta_t].count.push(1);
+            } else {
+                //FIXME
+            }
+            if (index === length - 1) {
+                round += 1;
+                index = round;
+            }
+        } // for-loop index
+    } // for-loop app_process
+
+    /*
+        graph_dataset
+        {
+            key: <delta_t>
+            values: [{signature: <sig>, count: <count>}, ...]
+            content: [[[obj_a, msg_a, pid_a], [obj_b, msg_b, pid_b]], ...]
+        }
+
+    */
+    var graph_dataset_buf = {};
+    for (var delta_t in delta_dataset) {
+        if (delta_t === undefined) continue;
+        delta_dataset[delta_t].signature.forEach(function(sig, index) {
+            if (graph_dataset_buf[delta_t] === undefined) {
+                graph_dataset_buf[delta_t] = {delta_time: delta_t, values: [], content: []};
+            }
+            var value = {};
+            value.signature = sig;
+            value.count = delta_dataset[delta_t].count[index];
+            graph_dataset_buf[delta_t].values.push(value);
+            var content;
+            content = delta_dataset[delta_t].content[index];
+            graph_dataset_buf[delta_t].content.push(content);
+        });
+    }
+
+    var graph_dataset = [];
+    for (var delta_t in graph_dataset_buf) {
+        if (delta_t === undefined) continue;
+        graph_dataset.push(graph_dataset_buf[delta_t]);
+    }
+    new DeltaTimeGraph("#aggregation-arena", graph_dataset);
+}
+
+function isIdenticalSignature(sig_array, sig) {
+    return false;
 }
 
 function traceApplication() {
@@ -545,7 +645,10 @@ function traceApplication() {
                 dataset_extend = [];
                 var path_index = 0;
                 var application_trace = JSON.parse(data.content);
-                console.log(application_trace);
+                //console.log(application_trace);
+                // call a function to generate delta timeline dataset
+                generateDeltaTimeGraph(application_trace);
+                // prepare dataset for application trace graph
                 for (var process in application_trace) {
                     path_group = [];
                     if (application_trace.hasOwnProperty(process)) { // pid or unknown

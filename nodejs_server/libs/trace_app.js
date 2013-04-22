@@ -47,9 +47,9 @@ function sortByDate(x, y) {
 var combined_activities = start_points.concat(end_points).concat(duration_points); // can detect pids from start/end points
 if (combined_activities.length > 0) {
     activities = {};
-    activities.unknown = []; // actually the suspicious records
+    activities.suspects = []; // actually the suspicious records
 }
-var is_unknown = true;
+var is_suspicious = true;
 duration_points = {};
 
 // group events by its relevant process id (application)
@@ -75,43 +75,24 @@ combined_activities.forEach(function(activity) {
         activities[pid].push(activity);
     } else {
         for (var _pid in processes_life) {
-            is_unknown = true;
+            is_suspicious = true;
             if (_pid === undefined) continue;
             if (activity.date >= processes_life[_pid].start && activity.date <= processes_life[_pid].end) {
                 duration_points[_pid].push(activity);
-                is_unknown = false;
+                is_suspicious = false;
                 break;
             }
         }
-        if (is_unknown) {
-            activities.unknown.push(activity);
+        if (is_suspicious) {
+            activities.suspects.push(activity);
         }
     }
 });
 
-/* query for more events in duration (already done in previous query)
-for (var _pid in duration_points) {
-    if (duration_points.hasOwnProperty(_pid)) {
-        cursor = db.events.find({pid: _pid, object: {$not: new RegExp('.*_?gc_?.*', 'i')}}, {_id: 0, level: 0});
-        while (cursor.hasNext()) {
-            duration_points[_pid].push(cursor.next());
-        }
-    }
-}
-
-/* check unknown activities again based on new retrieved log messages
-activities.unknown.forEach(function(unknown_activity, index) {
-    if (detected_pids.indexOf(unknown_activity.pid) !== -1) {
-        if (duration_points[_pid] === undefined) duration_points[_pid] = [];
-        duration_points[_pid].push(unknown_activity);
-        activities.unknown.splice(index, 1); // remove the activity from unknown
-    }
-});*/
-
 // finalize the result, sort events within duration group by date
 for (var _pid in activities) {
     var index = 1;
-    if (activities.hasOwnProperty(_pid) && _pid !== "unknown") {
+    if (activities.hasOwnProperty(_pid) && _pid !== "suspects") {
         duration_points[_pid].sort(sortByDate);
         duration_points[_pid].forEach(function(record) {
             if (activities[_pid].length === 1) {
