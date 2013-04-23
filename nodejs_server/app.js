@@ -87,15 +87,22 @@ app.configure(function(){
     );
     app.use(express.static(path.join(__dirname, 'public')));
     app.locals.globalScripts = [
+        // vendors
         '/js/vendor/jquery-1.9.1.min.js',
         '/js/vendor/d3.js',
         '/js/vendor/zepto.min.js',
         '/js/vendor/bootstrap.min.js',
         '/js/vendor/opentip-jquery.min.js',
+        '/js/vendor/underscore-min.js',
+        // own js
         '/js/timeline.js',
         '/js/aggregation_graph.js',
         '/js/stacked_graph.js',
         '/js/generic_data.js',
+        '/js/tokenizer.js',
+        '/js/delta_time_graph.js',
+        '/js/signature_checker.js',
+        // data models
         '/js/data_models/android_logs.js',
         '/js/data_models/browsersearches.js',
         '/js/data_models/browserhistory.js',
@@ -107,9 +114,7 @@ app.configure(function(){
         '/js/data_models/services.js',
         '/js/data_models/sms.js',
         '/js/data_models/inode_time.js',
-        '/js/data_models/dmesg.js',
-        '/js/tokenizer.js',
-        '/js/delta_time_graph.js'
+        '/js/data_models/dmesg.js'
     ]
 });
 

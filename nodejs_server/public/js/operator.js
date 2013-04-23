@@ -531,7 +531,7 @@ function generateDeltaTimeGraph(dataset) {
      *      <delta_t>:  {
      *                      delta_time: <delta_t>
      *                      signature: [[<Object A>, <Object B>], ...]
-     *                      content: [[[obj_a, msg_a, pid_a], [obj_b, msg_b, pid_b]], ...]
+     *                      content: [[[obj_a, msg_a, pid_a], [obj_b, msg_b, pid_b], ...], ...]
      *                      count: [<#>, ...]
      *                  }
      *      <delta_t>:
@@ -541,19 +541,20 @@ function generateDeltaTimeGraph(dataset) {
 
     var delta_dataset = {};
     for (var app_process in dataset) {
-        if (app_process === undefined || app_process === "suspects") continue; //TODO deal with suspects later
+        //TODO deal with suspects later
+        if (app_process === undefined || app_process === "suspects") continue;
         var length = dataset[app_process].length;
         // iterate through each app_process, calculate delta time between every two events
         if (length === 1) continue; // only one event recorded, ignore...
         var index = 0, round = 0;
-        for ( ; index + 1 < length; index++) {
-            var delta_t = dataset[app_process][index + 1].date - dataset[app_process][index].date;
-            var obj_a = dataset[app_process][index].object;
-            var obj_b = dataset[app_process][index + 1].object;
-            var pid_a = dataset[app_process][index].pid;
-            var pid_b = dataset[app_process][index + 1].pid;
-            var msg_a = dataset[app_process][index].msg;
-            var msg_b = dataset[app_process][index + 1].msg;
+        for (index = round + 1; index < length; index++) {
+            var delta_t = dataset[app_process][index].date - dataset[app_process][round].date;
+            var obj_a = dataset[app_process][round].object;
+            var obj_b = dataset[app_process][index].object;
+            var pid_a = dataset[app_process][round].pid;
+            var pid_b = dataset[app_process][index].pid;
+            var msg_a = dataset[app_process][round].msg;
+            var msg_b = dataset[app_process][index].msg;
             if (delta_dataset[delta_t] === undefined) {
                 delta_dataset[delta_t] = {};
                 delta_dataset[delta_t].delta_time = delta_t;
@@ -565,21 +566,25 @@ function generateDeltaTimeGraph(dataset) {
             //
             // signaure: [[obj_a, msg_tokens], [obj_b, msg_tokens]]
             //
-            signature[0] = [obj_a].concat(tokenize(obj_a, msg_a));
-            signature[1] = [obj_b].concat(tokenize(obj_b, msg_b));
-            if (!isIdenticalSignature(delta_dataset[delta_t].signature, signature)) {
+            signature.push([obj_a].concat(tokenize(obj_a, msg_a)));
+            signature.push([obj_b].concat(tokenize(obj_b, msg_b)));
+            var target_signature = [].concat(signature);
+            var cmp_signatures = [].concat(delta_dataset[delta_t].signature);
+            var sig_index = isSignatureKnown(cmp_signatures, target_signature);
+            var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
+            content[0] = [obj_a, msg_a, pid_a];
+            content[1] = [obj_b, msg_b, pid_b];
+            if (sig_index === -1) {
                 delta_dataset[delta_t].signature.push(signature);
-                var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
-                content[0] = [obj_a, msg_a, pid_a];
-                content[1] = [obj_b, msg_b, pid_b];
-                delta_dataset[delta_t].content.push([content]);
+                delta_dataset[delta_t].content.push(content);
                 delta_dataset[delta_t].count.push(1);
             } else {
-                //FIXME
+                delta_dataset[delta_t].content[sig_index] = delta_dataset[delta_t].content[sig_index].concat(content);
+                delta_dataset[delta_t].count[sig_index] += 1;
             }
-            if (index === length - 1) {
+            if (index === length - 1) { // when reach the end, start next round
                 round += 1;
-                index = round;
+                index = round + 1;
             }
         } // for-loop index
     } // for-loop app_process
@@ -618,13 +623,9 @@ function generateDeltaTimeGraph(dataset) {
     new DeltaTimeGraph("#aggregation-arena", graph_dataset);
 }
 
-function isIdenticalSignature(sig_array, sig) {
-    return false;
-}
-
 function traceApplication() {
     var app_name;
-    if (app_trace_selection.val() != '') {
+    if (app_trace_selection.val() !== '') {
         app_name = app_trace_selection.val();
     } else {
         showAlert("No application specified");
@@ -1083,10 +1084,12 @@ window.onLoad = function() {
     dataset = []; // clear dataset for new data
     current_dataset = [];
     timeline_main.clearData(true, true);
-    drawMainTimeline(true);
+    //drawMainTimeline(true);
     referenceQuery("temporal_info", "temporal", null);
     //referenceQuery("package_info", "packages", null); // this collection is used for filesystem activity query
-    drawDeltaTimeline();
+    //drawDeltaTimeline();
+    app_trace_selection.val("com.android.mms");
+    traceApplication();
 }();
 
 

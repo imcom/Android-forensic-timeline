@@ -226,11 +226,11 @@ function DeltaTimeGraph(name, dataset) {
 
     function formatMessages(content) {
         var message = "";
-        content[0].forEach(function(data) {
-            message += data[0];
+        content.forEach(function(_content) {
+            message += _content[0];
             message += ":{</br>";
-            message += "&nbsp&nbsp" + data[1]; // msg
-            message += "&nbsp[" + data[2] + "]"; // pid
+            message += "&nbsp&nbsp" + _content[1]; // msg
+            message += "&nbsp[" + _content[2] + "]"; // pid
             message += "</br>}</br>";
         });
         return message;
@@ -312,7 +312,7 @@ function DeltaTimeGraph(name, dataset) {
             x_scale.domain(brush.extent());
             stacked_graph.select(".stack-axis").call(x_axis);
             stacked_graph.selectAll(".stack-layer")
-                .attr("transform", function(d) { return "translate(" + (x_scale(d.date) - 15) + ",0)"; });
+                .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
         }
     }
 
