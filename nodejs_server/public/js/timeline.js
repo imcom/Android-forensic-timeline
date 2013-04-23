@@ -14,7 +14,7 @@ function Timeline(name) {
     // static constant values
     this.name = name;
     this.y_range_padding = 20; // this number can be a constant, padding from the window top
-    this.x_range = [120, 760];
+    this.x_range = [120, 720];
     this.x_range_padding = 160;
     this.timeline_height = 800;
     this.display_step = 20; // default 20 seconds display interval
@@ -34,9 +34,9 @@ function Timeline(name) {
     this.x_domain_array = [];
     this.y_domain_min = 0;
     this.y_domain_max = 0;
-    this.service_launch_date;
+    /*this.service_launch_date;
     this.service_last_activity_date;
-    this.service_process_id;
+    this.service_process_id;*/
     var self = this;
     this.path_data = []; // coordinates for paths
     this.time_path = d3.svg.line()
@@ -185,54 +185,51 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects) 
     this.path_dataset = path_dataset;
     var normal_dataset = {};
     var suspicious_dataset = {};
-    console.log(dataset);
-    console.log(path_dataset);
+
     // check and mark abnormal chronologically placed records and store them separately
     // group data by 1st timestamp, 2nd record id, 3rd record object
     var current_date = dataset[0].date; // theoretically the first record should have the minimum date value
     dataset.forEach(function(data) {
-        //if (check_suspects) {
-            //var suspect_data = {};
             var is_suspicious = false;
             if (data.date < current_date && check_suspects) { // mark abnormal events
                 is_suspicious = true;
             } else {
                 current_date = data.date; // only update current_date when 1) the date is valid, or 2) do NOT check suspects
             }
-                // these properties has nothing to do with date
-                var _id = data._id;
-                var object = data.object;
-                var message = data.msg + "[" + data.level + "]";
-                // distinguish normal and suspicious events here, using different dataset, so the date_group is independent for following operations
-                if (!is_suspicious) { // is_suspicious can only be true when check_suspects is enabled
-                    if (!normal_dataset.hasOwnProperty(current_date)) {
-                        normal_dataset[current_date] = {};
-                    }
-                    var date_group = normal_dataset[current_date];
-                } else {
-                    if (!suspicious_dataset.hasOwnProperty(data.date)) {
-                        suspicious_dataset[data.date] = {};
-                    }
-                    var date_group = suspicious_dataset[data.date];
+            // these properties has nothing to do with date
+            var _id = data._id;
+            var object = data.object;
+            var message = data.msg + "[" + data.level + "]";
+            // distinguish normal and suspicious events here, using different dataset, so the date_group is independent for following operations
+            if (!is_suspicious) { // is_suspicious can only be true when check_suspects is enabled
+                if (!normal_dataset.hasOwnProperty(current_date)) {
+                    normal_dataset[current_date] = {};
                 }
-                // below has nothing to do with date
-                if (!date_group.hasOwnProperty(_id)) {
-                    date_group[_id] = {};
-                    date_group[_id].display = data.display;
-                    //date_group[_id].level = data.level;
-                    date_group[_id].content = {};
+                var date_group = normal_dataset[current_date];
+            } else {
+                if (!suspicious_dataset.hasOwnProperty(data.date)) {
+                    suspicious_dataset[data.date] = {};
                 }
-                var id_group = date_group[_id];
-                if (!id_group.content.hasOwnProperty(object)) {
-                    id_group.content[object] = [];
-                }
-                id_group.content[object].push(message);
+                var date_group = suspicious_dataset[data.date];
+            }
+            // below has nothing to do with date
+            if (!date_group.hasOwnProperty(_id)) {
+                date_group[_id] = {};
+                date_group[_id].display = data.display;
+                //date_group[_id].level = data.level;
+                date_group[_id].content = {};
+            }
+            var id_group = date_group[_id];
+            if (!id_group.content.hasOwnProperty(object)) {
+                id_group.content[object] = [];
+            }
+            id_group.content[object].push(message);
     }); // prepare dataset
 
     // output data sample:
     // data {
     //      date: <timestamp>,
-    //      event_id: <id>,
+    //      _id: <id>,
     //      display: <display_name>,
     //      content: {<object> : [messages,...], <object> : [messages,...], ...}
     // }
@@ -264,7 +261,6 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects) 
                     if (record_id != 'undefined') {
                         this.updateXDomain(record_id); // form an ID array for X-axis domain
                         var display_name = suspicious_dataset[timestamp][record_id].display;
-                        //var level = suspicious_dataset[timestamp][record_id].level;
                         this.dataset.push({
                             date: Number(timestamp),
                             _id: record_id,
@@ -277,6 +273,11 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects) 
             }
         }
     }
+    // sort all events by date
+    this.dataset.sort(function(x, y) {
+        if (x.date <= y.date) return -1;
+        if (x.date > y.date) return 1;
+    });
     // init first sub-array for display
     this.getEndIndex();
     // on dataset is set, draw timeline
@@ -329,12 +330,14 @@ Timeline.prototype.getStartIndex = function() {
 Timeline.prototype.fillPathData = function(x_scale, y_scale, path_group) {
     var self = this;
     this.path_data = []; // clear the old data every time
+
     var path_buf = this.dataset.filter(function(data) {
         var belongs_to_group = 0;
         for (var object in data.content) {
             if (data.content.hasOwnProperty(object)) {
-                data.content[object].forEach(function(msg) {
-                    if (msg.indexOf(path_group) !== -1)
+                data.content[object].forEach(function(message) {
+                    var tag = message.substring(message.lastIndexOf('[') + 1, message.length - 1);
+                    if (tag === path_group)
                         belongs_to_group += 1;
                 });
             }
@@ -362,7 +365,8 @@ Timeline.prototype.drawPath = function() {
         .attr("fill", "none");
 }
 
-Timeline.prototype.drawReferenceIndicator = function(y_scale) {
+//FIXME this function is deprecated
+/*Timeline.prototype.drawReferenceIndicator = function(y_scale) {
     var self = this;
     $('.reference-time-indicator').remove();
     $('.reference-time-label').remove();
@@ -397,8 +401,9 @@ Timeline.prototype.drawReferenceIndicator = function(y_scale) {
             var formatter = d3.time.format.utc("%H:%M:%S [" + self.service_process_id + "] Last Activity Date");
             return formatter(self.service_last_activity_date);
         });
-}
+}*/
 
+//FIXME this function needs to be rewritten
 Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
     var self = this;
     $.ajax({
@@ -412,10 +417,11 @@ Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
         success: function(data) {
             if (data.content !== "") {
                 var result = JSON.parse(data.content);
-                self.service_launch_date = new Date(result['launch_date'] * 1000);
-                self.service_last_activity_date = new Date(result['last_activity_date'] * 1000);
-                self.service_process_id = result.pid;
-                self.drawReferenceIndicator(y_scale);
+                //FIXME this is broken
+                var service_launch_date = new Date(result['launch_date'] * 1000);
+                var service_last_activity_date = new Date(result['last_activity_date'] * 1000);
+                var service_process_id = result.pid;
+                //self.drawReferenceIndicator(y_scale);
             } else {
                 showAlert("no service info available", true);
             }
@@ -521,7 +527,7 @@ Timeline.prototype.onDataReady = function() {
                     ])
                 .range(this.y_range);
 
-    var radius_range = [10, 30];
+    var radius_range = [10, 20];
     var radius_scale = d3.scale.pow()
         .exponent(2)
         .domain(this.initRadiusDomain())
@@ -601,18 +607,23 @@ Timeline.prototype.onDataReady = function() {
             .attr("y2", function(d) { return y_scale(d.date); });
         self.timeline.selectAll("#suspect-time-label")
             .attr("y", function(d) { return y_scale(d.date) - 5; });
-        if (self.name === '#timeline_extend') {
-            if (self.service_launch_date !== undefined &&
+        if (self.name === '#timeline_main') {
+            /*if (self.service_launch_date !== undefined &&
                 self.service_last_activity_date !== undefined)
             {
                 console.log(self.service_launch_date);
                 self.drawReferenceIndicator(y_scale);
-            }
+            }*/
+            // draw chronological sequence path on timeline for application trace only
             if (self.path_dataset !== null) {
-                self.path_dataset.content.forEach(function(path_group) {
-                    self.fillPathData(x_scale, y_scale, path_group);
-                    self.drawPath();
-                });
+                for (var app in path_dataset) {
+                    if (app === undefined) continue;
+                    //this.getServiceInfo(app, y_scale); //FIXME this function should NOT be used here
+                    path_dataset[app].forEach(function(path_group) {
+                        self.fillPathData(x_scale, y_scale, path_group);
+                        self.drawPath();
+                    });
+                }
             }
         }
         adjustDateLabel();
@@ -645,8 +656,7 @@ Timeline.prototype.onDataReady = function() {
     }
 
     function color(d) {
-        var time_offset = d.date.getTime() / 10 ^ 6;
-        return Number(d._id) + time_offset;
+        return d._id;
     }
 
     function radius(d) {
@@ -663,7 +673,7 @@ Timeline.prototype.onDataReady = function() {
         .append("circle")
         .attr("class", "timeline-event")
         .attr("id", function(data, index){
-            return self.name.substr(1) + "-dataset" + "-" + data._id + "-" + index;
+            return self.name.substr(1) + "-dataset-" + index;
         })
         .attr("cx", function(data) {
             return x_scale(x(data));
@@ -689,7 +699,7 @@ Timeline.prototype.onDataReady = function() {
         .enter()
         .append("rect")
         .attr("id", function(data, index){
-            return self.name.substr(1) + "-suspects" + "-" + data._id + "-" + index;
+            return self.name.substr(1) + "-suspects-" + index;
         })
         .attr("class", "suspects")
         .attr("x", function() {
@@ -706,11 +716,14 @@ Timeline.prototype.onDataReady = function() {
 
     // draw chronological sequence path on timeline for application trace only
     if (this.path_dataset !== null) {
-        this.getServiceInfo(this.path_dataset.name, y_scale);
-        this.path_dataset.content.forEach(function(path_group) {
-            self.fillPathData(x_scale, y_scale, path_group);
-            self.drawPath();
-        });
+        for (var app in path_dataset) {
+            if (app === undefined) continue;
+            //this.getServiceInfo(app, y_scale);
+            path_dataset[app].forEach(function(path_group) {
+                self.fillPathData(x_scale, y_scale, path_group);
+                self.drawPath();
+            });
+        }
     }
 
     // append display name on normal events
@@ -769,7 +782,7 @@ Timeline.prototype.onDataReady = function() {
         });
     // add mouseover animation on suspect events
     $.each(suspect_display_dataset, function(index) {
-        var rect = jQuery("rect[id=" + self.name.substr(1) + "-suspects" + "-" + suspect_display_dataset[index]._id + "-" + index + "]");
+        var rect = jQuery("rect[id=" + self.name.substr(1) + "-suspects-" + index + "]");
         rect.opentip(self.formatMessage(suspect_display_dataset[index]), {style: "tooltip_style"});
         rect.mouseover(function(event) {
             this.setAttribute("cursor", "pointer");
@@ -779,8 +792,8 @@ Timeline.prototype.onDataReady = function() {
         });
         rect.on("click", function(event) {
             var target = event.target;
-            //console.log(target.id.split("-")); // [timeline, suspects, pid, index=(start_index + index)]
-            var data_index = Number(target.id.split("-")[3]) + this.start_index;
+            //console.log(target.id.split("-")); // [timeline, suspects, index=(start_index + index)]
+            var data_index = Number(target.id.split("-")[2]) + this.start_index;
             var data = self.suspects[data_index];
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
             window.popup_pane_collapsed = 0;
@@ -797,11 +810,11 @@ Timeline.prototype.onDataReady = function() {
     $.each(display_dataset, function(index) {
         text_fields[index].setAttribute("x", x_scale(display_dataset[index]._id) + 5);
         text_fields[index].setAttribute("y", y_scale(display_dataset[index].date));
-        text_fields[index].setAttribute("id", self.name.substr(1) + "-dataset" + "-" + display_dataset[index]._id + "-" + index);
+        text_fields[index].setAttribute("id", self.name.substr(1) + "-dataset-" + index);
 
         var time_indicator;
         var time_label;
-        var circle = jQuery("circle[id=" + self.name.substr(1) + "-dataset" + "-" + display_dataset[index]._id + "-" + index + "]");
+        var circle = jQuery("circle[id=" + self.name.substr(1) + "-dataset-" + index + "]");
         circle.opentip(self.formatMessage(display_dataset[index]), {style: "tooltip_style"});
         circle.mouseover(function(event) {
             var event_self = this;
@@ -830,8 +843,8 @@ Timeline.prototype.onDataReady = function() {
         });
         circle.on("click", function(event) {
             var target = event.target;
-            //console.log(target.id.split("-")); // [timeline, dataset, pid, index=(start_index + index)]
-            var data_index = Number(target.id.split("-")[3]) + self.start_index;
+            //console.log(target.id.split("-")); // [timeline, dataset, index=(start_index + index)]
+            var data_index = Number(target.id.split("-")[2]) + self.start_index;
             var data = self.dataset[data_index];
             window.popup_pane_collapsed = 0;
             $('.popup-ctrl').css("-webkit-transform", "rotate(180deg)");

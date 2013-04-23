@@ -43,6 +43,7 @@ var aggregate_btn = $('#aggregate-btn');
 var dataset = [];
 var dataset_extend = [];
 var current_dataset = [];
+var path_dataset = {};
 var time_range = [];
 var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
@@ -173,14 +174,14 @@ function onExtendIdSelection() {
 }
 
 function fillExtendResponsivePane(path_groups) {
-    var ids = [];
-    path_groups.forEach(function(path_group) {
-        responsive_id_pane_extend.append(
-            "<label type='checkbox inline'><input class='extend-checkbox' id='id-checkbox' type='checkbox' onChange='onExtendIdSelection()' value='" + path_group + "'>" + path_group + "</label>"
+    for (var app in path_groups) {
+        if (app === undefined) continue;
+        responsive_id_pane_extend.append (
+            "<label type='checkbox inline'><input class='extend-checkbox' id='id-checkbox' type='checkbox' onChange='onExtendIdSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
         );
-    });
+    }
     var checkboxes = $('.extend-checkbox');
-    checkboxes.forEach(function(box){
+    checkboxes.forEach(function(box) {
         box.checked = true;
     });
 }
@@ -637,45 +638,51 @@ function drawApplicationTraces() {
         dataType: 'json',
         success: function(data) {
             if (data.content !== "") {
+                path_dataset = {}; // app_name: [path data]
+                dataset = [];
                 var app_traces = JSON.parse(data.content);
-                var path_groups = [];
-                dataset_extend = [];
-                var path_index = 0;
-                var application_trace = app_traces[1].content;
-                // call a function to generate delta timeline dataset
+
+                //FIXME move me away.
+                //call a function to generate delta timeline dataset
                 //generateDeltaTimeGraph(application_trace);
-                // prepare dataset for application trace graph
-                for (var process in application_trace) {
-                    //path_group = [];
-                    if (application_trace.hasOwnProperty(process)) { // pid or suspects
-                        application_trace[process].forEach(function(record) {
-                            record.level = process;
-                            dataset_extend.push(record);
-                            /*path_group.push(
-                                {
-                                    process: process,
-                                    _id: record.pid,
-                                    date: new Date(record.date * 1000) // convert to date
+
+                for (var _index in app_traces) {
+                    if (_index === undefined) continue;
+                    // prepare dataset for application trace graph
+                    var application_trace = app_traces[_index].content;
+                    var path_groups = [];
+
+                    for (var process in application_trace) {
+                        if (application_trace.hasOwnProperty(process)) { // pid or suspects
+                            application_trace[process].forEach(function(record) {
+                                var _object = record.object + "[" + record.pid + "]";
+                                record.pid = app_traces[_index].name;
+                                record.object = _object;
+                                if (process === "suspects") {
+                                    record.level = process + "-" + app_traces[_index].name;
+                                } else {
+                                    record.level = process;
                                 }
-                            );*/
-                        });
-                        //path_groups[path_index] = path_group;
-                        if (application_trace[process].length > 0)
-                            path_groups.push(process);
-                        //path_index += 1;
+                                dataset.push(record);
+                            });
+                            if (application_trace[process].length > 0) {
+                                if (process === "suspects") {
+                                    path_groups.push(process + "-" + app_traces[_index].name);
+                                } else {
+                                    path_groups.push(process);
+                                }
+                            }
+                        }
                     }
+                    path_dataset[app_traces[_index].name] = path_groups;
                 }
-                var generic_data = new GenericData(data.type, dataset_extend);
-                dataset_extend = generic_data.unifyDataset();
-                $('#timeline_extend').children().remove();
-                timeline_extend.clearData(true, true);
-                timeline_extend.initTimeline();
-                var check_suspects = false;
-                var path_dataset = {};
-                path_dataset.name = app_traces[1].name;
-                path_dataset.content = path_groups;
-                fillExtendResponsivePane(path_groups);
-                timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
+                var generic_data = new GenericData(data.type, dataset);
+                dataset = generic_data.unifyDataset();
+                $('#timeline_main').children().remove();
+                timeline_main.clearData(true, true);
+                timeline_main.initTimeline();
+                timeline_main.setDataset(dataset, path_dataset, false, false);
+                fillExtendResponsivePane(path_dataset);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
                 $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
             } else {

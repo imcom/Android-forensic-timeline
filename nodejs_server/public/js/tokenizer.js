@@ -15,7 +15,7 @@ function tokenize(object, target) {
 
     // tokenize am_proc_start
     if (object === "am_proc_start") {
-        target = target.substr(1, target.length - 2);
+        target = target.substring(1, target.length - 1);
         var tokens_buf = target.split(',');
         var pid = "pid=" + tokens_buf[0];
         var uid = "uid=" + tokens_buf[1];
@@ -32,7 +32,7 @@ function tokenize(object, target) {
 
     // tokenize am_proc_dies, am_proc_bound
     if (object === "am_proc_died" || object === "am_proc_bound") {
-        target = target.substr(1, target.length - 2);
+        target = target.substring(1, target.length - 1);
         var tokens_buf = target.split(',');
         var pid = "pid=" + tokens_buf[0];
         var app = tokens_buf[1];
@@ -48,7 +48,7 @@ function tokenize(object, target) {
         var gid_re = new RegExp(/(?:gids=\{\d+,\s\d+\})/);
         var bracket_re = new RegExp(/\{.*\}|\(.*\)/ig);
         //TODO deal with the case "Starting activity:..."
-        if (target.substr(0, 7) === "Starting") return;
+        if (target.substr(0, 8) === "Starting") return;
         target = target.replace(/\.$/, '');
         var pid = pid_re.exec(target);
         if (pid !== null) {
@@ -80,7 +80,7 @@ function tokenize(object, target) {
     if (object === "content_query_sample") {
         var numeric_re = new RegExp(/^\d+$/);
         var like_re = new RegExp(/.*like.*/i);
-        target = target.substr(1, target.length - 2); // remove heading and tailing []
+        target = target.substring(1, target.length - 1); // remove heading and tailing []
         var query = target.split(',');
         var query_target = "target=" + query[0];
         if (query_target.indexOf('?') !== -1) {

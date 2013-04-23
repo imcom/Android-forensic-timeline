@@ -104,9 +104,9 @@ exports.application_trace = function(req, res) {
         { maxBuffer: 1000*1024 },
         function(error, stdout, stderr) {
             if (error === null) {
-                res.json({"error": 0, "type": "android_logs", "content": stdout});
+                res.json({"error": 0, "type": "application_trace", "content": stdout});
             } else {
-                res.json({"error": 1, "type": "android_logs", "content": error});
+                res.json({"error": 1, "type": "application_trace", "content": error});
             }
         });
 }

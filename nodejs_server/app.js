@@ -114,7 +114,8 @@ app.configure(function(){
         '/js/data_models/services.js',
         '/js/data_models/sms.js',
         '/js/data_models/inode_time.js',
-        '/js/data_models/dmesg.js'
+        '/js/data_models/dmesg.js',
+        '/js/data_models/application_trace.js'
     ]
 });
 

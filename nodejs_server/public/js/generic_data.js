@@ -6,6 +6,10 @@ function GenericData(type, dataset) {
         this.data_handler = new AndroidLogs(dataset);
     }
 
+    if (type === 'application_trace') {
+        this.data_handler = new ApplicationTrace(dataset);
+    }
+
     if (type === 'dmesg_schema') {
         this.data_handler = new Dmesg(dataset);
     }
