@@ -433,8 +433,12 @@ function showProgressBar() {
     $('#progress-indicator').animate({"width": "100%"}, 1000, "ease", hideProgressBar);
 }
 
-function showAlert(message) {
+function showAlert(message, auto_remove) {
     $('body').append("<div class='alert'><button type='button' data-dismiss='alert' class='close' >&times;</button>" + message + "</div>");
+    if (auto_remove)
+        $('.alert').animate({opacity: 0.8}, 3000, "ease", function() {
+            $('.alert').remove();
+        });
 }
 
 function aggregateDmesg() {
@@ -621,6 +625,67 @@ function generateDeltaTimeGraph(dataset) {
         graph_dataset.push(graph_dataset_buf[delta_t]);
     }
     new DeltaTimeGraph("#aggregation-arena", graph_dataset);
+}
+
+function drawApplicationTraces() {
+    $.ajax({
+        type: "POST",
+        url: "application_trace",
+        data: {
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== "") {
+                var app_traces = JSON.parse(data.content);
+                var path_groups = [];
+                dataset_extend = [];
+                var path_index = 0;
+                var application_trace = app_traces[1].content;
+                // call a function to generate delta timeline dataset
+                //generateDeltaTimeGraph(application_trace);
+                // prepare dataset for application trace graph
+                for (var process in application_trace) {
+                    //path_group = [];
+                    if (application_trace.hasOwnProperty(process)) { // pid or suspects
+                        application_trace[process].forEach(function(record) {
+                            record.level = process;
+                            dataset_extend.push(record);
+                            /*path_group.push(
+                                {
+                                    process: process,
+                                    _id: record.pid,
+                                    date: new Date(record.date * 1000) // convert to date
+                                }
+                            );*/
+                        });
+                        //path_groups[path_index] = path_group;
+                        if (application_trace[process].length > 0)
+                            path_groups.push(process);
+                        //path_index += 1;
+                    }
+                }
+                var generic_data = new GenericData(data.type, dataset_extend);
+                dataset_extend = generic_data.unifyDataset();
+                $('#timeline_extend').children().remove();
+                timeline_extend.clearData(true, true);
+                timeline_extend.initTimeline();
+                var check_suspects = false;
+                var path_dataset = {};
+                path_dataset.name = app_traces[1].name;
+                path_dataset.content = path_groups;
+                fillExtendResponsivePane(path_groups);
+                timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+                $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("trace query error!");
+        }
+    });
 }
 
 function traceApplication() {
@@ -1086,10 +1151,9 @@ window.onLoad = function() {
     timeline_main.clearData(true, true);
     //drawMainTimeline(true);
     referenceQuery("temporal_info", "temporal", null);
-    //referenceQuery("package_info", "packages", null); // this collection is used for filesystem activity query
     //drawDeltaTimeline();
-    app_trace_selection.val("com.android.mms");
-    traceApplication();
+    //traceApplication(); this function may deprecate
+    drawApplicationTraces();
 }();
 
 

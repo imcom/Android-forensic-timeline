@@ -98,6 +98,21 @@ exports.file_activity = function(req, res) {
 
 exports.application_trace = function(req, res) {
     console.log("trace application:" + req.body.selection);
+    var command = "mongo localhost:27017/imcom --quiet ./libs/app_traces.js";
+    var child_process = exec(
+        command,
+        { maxBuffer: 1000*1024 },
+        function(error, stdout, stderr) {
+            if (error === null) {
+                res.json({"error": 0, "type": "android_logs", "content": stdout});
+            } else {
+                res.json({"error": 1, "type": "android_logs", "content": error});
+            }
+        });
+}
+/*
+exports.application_trace = function(req, res) {
+    console.log("trace application:" + req.body.selection);
     var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/trace_app.js ";
     var child_process = exec(
         command,
@@ -109,7 +124,7 @@ exports.application_trace = function(req, res) {
             }
         });
 }
-
+*/
 exports.dmesg_aggregation = function(req, res) {
     console.log("mapreduce on[dmesg]:" + req.body.selection);
     mongo.aggregateDmesg(req, res);

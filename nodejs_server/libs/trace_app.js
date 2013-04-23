@@ -109,9 +109,12 @@ for (var _pid in activities) {
 }
 
 // output json string to shell which is then piped to Node.js
-if (activities !== null)
-    printjson(activities);
-
+//if (activities !== null)
+//    printjson(activities);
+var result = {};
+result.name = application_name;
+result.content = activities;
+db.application_trace.save(result);
 
 
 

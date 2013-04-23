@@ -179,12 +179,14 @@ Timeline.prototype.removeTimeline = function() {
     $(this.getName()).children().remove();
 }
 
-Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, enable_time_brush) {
+Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects) {
     // only check for suspects for android logs
     var self = this;
     this.path_dataset = path_dataset;
     var normal_dataset = {};
     var suspicious_dataset = {};
+    console.log(dataset);
+    console.log(path_dataset);
     // check and mark abnormal chronologically placed records and store them separately
     // group data by 1st timestamp, 2nd record id, 3rd record object
     var current_date = dataset[0].date; // theoretically the first record should have the minimum date value
@@ -195,14 +197,6 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
             if (data.date < current_date && check_suspects) { // mark abnormal events
                 is_suspicious = true;
             } else {
-                /*suspect_data.date = data.date;
-                suspect_data._id = data._id;
-                suspect_data.display = data.display;
-                var detail = {};
-                detail[data.object] = [data.msg + "[" + data.level + "]"];
-                suspect_data.content = detail;
-                self.suspects.push(suspect_data);*/
-            //} else {
                 current_date = data.date; // only update current_date when 1) the date is valid, or 2) do NOT check suspects
             }
                 // these properties has nothing to do with date
@@ -233,28 +227,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
                     id_group.content[object] = [];
                 }
                 id_group.content[object].push(message);
-            //}
-        /*} else {
-            current_date = data.date;
-            var _id = data._id;
-            var object = data.object;
-            var message = data.msg + "[" + data.level + "]";
-            if (!normal_dataset.hasOwnProperty(current_date)) {
-                normal_dataset[current_date] = {};
-            }
-            var date_group = normal_dataset[current_date];
-            if (!date_group.hasOwnProperty(_id)) {
-                date_group[_id] = {};
-                date_group[_id].display = data.display;
-                date_group[_id].content = {};
-            }
-            var id_group = date_group[_id];
-            if (!id_group.content.hasOwnProperty(object)) {
-                id_group.content[object] = [];
-            }
-            id_group.content[object].push(message);
-        }*/
-    });
+    }); // prepare dataset
 
     // output data sample:
     // data {
@@ -307,7 +280,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects, 
     // init first sub-array for display
     this.getEndIndex();
     // on dataset is set, draw timeline
-    this.onDataReady(enable_time_brush);
+    this.onDataReady();
 }
 
 Timeline.prototype.increaseDisplayStep = function() {
@@ -437,18 +410,18 @@ Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
         },
         dataType: 'json',
         success: function(data) {
-            if (data.content !== null) {
+            if (data.content !== "") {
                 var result = JSON.parse(data.content);
                 self.service_launch_date = new Date(result['launch_date'] * 1000);
                 self.service_last_activity_date = new Date(result['last_activity_date'] * 1000);
                 self.service_process_id = result.pid;
                 self.drawReferenceIndicator(y_scale);
             } else {
-                showAlert("no records found!");
+                showAlert("no service info available", true);
             }
         },
         error: function(xhr, type) {
-            showAlert("trace query error!");
+            showAlert("service info query error!");
         }
     });
 }
@@ -492,7 +465,7 @@ Timeline.prototype.previousWindow = function() {
     this.onDataReady(draw_brush);
 }
 
-Timeline.prototype.onDataReady = function(enable_time_brush) { //FIXME parameter is no longer in use
+Timeline.prototype.onDataReady = function() {
     var self = this;
     if (this.end_index !== this.dataset.length) {
         $('#next-' + this.name.split('_')[1]).css('opacity', 1).css('z-index', 50);
