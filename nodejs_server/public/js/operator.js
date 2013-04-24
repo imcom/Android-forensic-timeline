@@ -12,19 +12,19 @@ var relevance_selection = $('#relevance-selection-input');
 var app_trace_selection = $('#app-trace-selection-input');
 var object_pane = $('#objects');
 var id_pane = $('#ids');
-var responsive_id_pane = $('#responsive-ids');
-var responsive_object_pane = $('#responsive-objects');
-var responsive_id_pane_extend = $('#responsive-ids-extend');
+//var responsive_id_pane = $('#responsive-ids');
+//var responsive_object_pane = $('#responsive-objects');
+var responsive_app_pane = $('#responsive-apps');
 var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
 
-window.onscroll = function(event) {
+/*window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
         $('.back-to-top').css('opacity', 0.8).css('z-index', 100);
     } else {
         $('.back-to-top').css('opacity', 0).css('z-index', -1);
     }
-};
+};*/
 
 // control buttons
 //var search_btn = $('#search');
@@ -42,8 +42,6 @@ var slide_left_btn = $('.slide-left-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
 
 var dataset = [];
-var dataset_extend = [];
-var current_dataset = [];
 var path_dataset = {};
 var time_range = [];
 var dropdown_pane_collapsed = 1;
@@ -56,7 +54,6 @@ var selected_object;
 var selected_id;
 
 var timeline_main = new Timeline("#timeline_main");
-var timeline_extend = new Timeline("#timeline_extend");
 
 function initTimeRange(target_set) {
     target_set.forEach(function(record) {
@@ -108,7 +105,7 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
         }
     });
 }
-
+/*
 function onIdSelection() {
     if (current_dataset.length === 0) current_dataset = dataset;
     var id_checkboxs = $('input[id="id-checkbox"]');
@@ -156,38 +153,41 @@ function onObjectSelection() {
     timeline_main.initTimeline();
     timeline_main.setDataset(display_dataset, null, false, true);
 }
-
-function onExtendIdSelection() {
-    var id_checkboxs = $('.extend-checkbox');
+*/
+function onAppSelection() {
+    var app_checkboxs = $('.app-checkbox');
     var display_dataset;
-    var display_ids = [];
-    id_checkboxs.forEach(function(checkbox) {
+    var display_apps = [];
+    var display_path_set = {};
+    app_checkboxs.forEach(function(checkbox) {
         if (checkbox.checked) {
-            display_ids.push(checkbox.value);
+            // save the selected apps for drawing path
+            display_path_set[checkbox.value] = path_dataset[checkbox.value];
+            display_apps.push(checkbox.value);
         }
     });
-    display_dataset = dataset_extend.filter(function(record) {
-        return $.inArray(record.level, display_ids) != -1;
+    display_dataset = dataset.filter(function(record) {
+        return $.inArray(record._id, display_apps) !== -1;
     });
-    timeline_extend.removeTimeline();
-    timeline_extend.clearData(true, true);
-    timeline_extend.initTimeline();
-    timeline_extend.setDataset(display_dataset, null, false, false);
+    timeline_main.removeTimeline();
+    timeline_main.clearData();
+    timeline_main.initTimeline();
+    timeline_main.setDataset(display_dataset, display_path_set);
 }
 
-function fillExtendResponsivePane(path_groups) {
+function fillAppResponsivePane(path_groups) {
     for (var app in path_groups) {
         if (app === undefined) continue;
-        responsive_id_pane_extend.append (
-            "<label type='checkbox inline'><input class='extend-checkbox' id='id-checkbox' type='checkbox' onChange='onExtendIdSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
+        responsive_app_pane.append (
+            "<label type='checkbox inline'><input class='app-checkbox' id='app-checkbox' type='checkbox' onChange='onAppSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
         );
     }
-    var checkboxes = $('.extend-checkbox');
+    var checkboxes = $('.app-checkbox');
     checkboxes.forEach(function(box) {
         box.checked = true;
     });
 }
-
+/*
 function fillResponsivePane(target_set) {
     var ids = [];
     var objects = [];
@@ -210,7 +210,7 @@ function fillResponsivePane(target_set) {
         box.checked = true;
     });
 }
-
+*/
 function fillPanes(src) {
     var objects = [];
     var ids = [];
@@ -364,8 +364,8 @@ function referenceQuery(url, target, selection) {
                     $('#temporal-info').text(formatter(new Date(data.content[0].btime * 1000)));
                     $('#timezone-info').text(data.content[0].timezone.replace(/_/g, ' '));
                     $('#running-time').text(
-                        Math.round(data.content[0].uptime / 3600) + 'h ' +
-                        Math.round(data.content[0].uptime % 3600 / 60) + 'm ' +
+                        Math.round(data.content[0].uptime / 3600) + 'h : ' +
+                        Math.round(data.content[0].uptime % 3600 / 60) + 'm : ' +
                         data.content[0].uptime % 3600 % 60 + 's'
                     );
                 }
@@ -684,7 +684,7 @@ function drawApplicationTraces() {
                 timeline_main.clearData(true, true);
                 timeline_main.initTimeline();
                 timeline_main.setDataset(dataset, path_dataset, false, false);
-                fillExtendResponsivePane(path_dataset);
+                fillAppResponsivePane(path_dataset);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
                 //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
             } else {
@@ -1110,7 +1110,7 @@ aggregate_btn.click(function() {
     });
 });
 
-$('#undo').click(function() {
+/*$('#undo').click(function() {
     current_dataset = dataset;
     // reset display in all panes except for aggregation graph & extend timeline
     clearPanes(true, false, false, true);
@@ -1126,13 +1126,7 @@ $('#undo').click(function() {
     $('#undo').css('opacity', 0).css('z-index', -1);
 });
 
-$('#trash').click(function() {
-    timeline_extend.clearData(true, true);
-    $('#timeline_extend').children().remove();
-    $('#trash').css('opacity', 0).css('z-index', -1);
-});
-
-/*$('#next-main').click(function() {
+$('#next-main').click(function() {
     $('#timeline_main').children().remove();
     timeline_main.initTimeline();
     timeline_main.nextWindow();
@@ -1154,6 +1148,12 @@ $('#previous-extend').click(function() {
     $('#timeline_extend').children().remove();
     timeline_extend.initTimeline();
     timeline_extend.previousWindow();
+});*/
+
+/*$('#trash').click(function() {
+    timeline_extend.clearData(true, true);
+    $('#timeline_extend').children().remove();
+    $('#trash').css('opacity', 0).css('z-index', -1);
 });*/
 
 $('#zoom-out').click(function() {

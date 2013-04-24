@@ -32,10 +32,6 @@ li.nav-header.cozy-list-header
     margin-bottom: 0px
     z-index: 110
 
-// display control on pids selection pane
-label
-    display: inline-block
-
 #content
     position: absolute
     margin-left: 25px
@@ -44,9 +40,6 @@ label
 .timeline
     -webkit-user-select: none;
     -moz-user-select: none;
-
-.responsive-div
-    margin-left: 50px
 
 .slide-right-div
     position: fixed
@@ -65,7 +58,6 @@ label
     left: 0px
     cursor: pointer
     z-index: 50
-
     .slide-right-ctrl
         position: absolute
         width: 16px
@@ -98,7 +90,6 @@ label
     right: 0px
     cursor: pointer
     z-index: 50
-
    .slide-left-ctrl
         position: absolute
         width: 16px
@@ -121,28 +112,25 @@ label
     padding-right: 7px
     padding-left: 7px
 
-#responsive-ids, #responsive-ids-extend
+#responsive-app-pane
+    margin-top: 20px
+    p
+        margin-left: 35px
+
+#responsive-apps
     label
-        margin-right: 5px
+        margin-right: 10px
         font-family: Consolas
     overflow-x: hidden
     overflow-y: auto
-    height: 220px
+    height: 660px
     margin-top: -10px
+    margin-left: 30px
 
-#responsive-objects
-    label
-        display: block
-        font-family: Consolas
-    overflow-x: hidden
-    overflow-y: auto
-    height: 500px
-    margin-top: -5px
+label
+    display: inline-block
 
-#object-checkbox
-    margin-right: 5px
-
-#id-checkbox
+#app-checkbox
     margin-left: 5px
     margin-right: 5px
 
@@ -171,7 +159,6 @@ label
     height: 240px
     width: 99%
     margin-left: 7px
-
     p
         margin-left: 25px
 
@@ -180,14 +167,13 @@ label
 
 #running-time, #timezone-info, #temporal-info
     font-family: Consolas
-    margin-left: 5px
+    margin-left: 50px
+    margin-top: -10px
 
 #event-display-pane
     margin-top: 15px
-
     p.nav-header.text-center
         margin-right: 22px
-
     .container-fluid
         margin-top: -15px
 
@@ -207,10 +193,6 @@ label
     margin-left: 5px
     font-weight: bold
 
-#object-tbody
-    td
-        font-family: Consolas
-
 .dropdown-ctrl-bar
     position: absolute
     width: 100%
@@ -218,7 +200,6 @@ label
     bottom: 0px
     cursor: pointer
     z-index: 50
-
     .dropdown-ctrl
         position: absolute
         width: 85px
@@ -241,7 +222,6 @@ label
     top: 0px
     cursor: pointer
     z-index: 50
-
     .popup-ctrl
         position: absolute
         width: 85px
@@ -275,7 +255,6 @@ label
     fill: none
     stroke: #000
     shape-rendering: crispEdges
-
     text
         font-family: Consolas
         font-size: 11px
@@ -315,73 +294,13 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     font-size: 100%
     fill: grey
 
-.back-to-top
-    position: fixed
-    right: 40px
-    bottom: 20px
-    z-index: -1
-    opacity: 0
-    background: url("/images/back-to-top.png")
-    width: 64px
-    height: 64px
-
-#undo
-    position: fixed
-    cursor: pointer
-    right: 255px
-    bottom: 10px
-    z-index: -1
-    opacity: 0
-    background: url("/images/undo_icon.png")
-    width: 64px
-    height: 64px
-
-#trash
-    position: fixed
-    cursor: pointer
-    right: 180px
-    bottom: 20px
-    z-index: -1
-    opacity: 0
-    background: url("/images/trash_icon.png")
-    width: 64px
-    height: 64px
-
-#next-main, #next-extend
-    position: fixed
-    cursor: pointer
-    left: 360px
-    bottom: 20px
-    z-index: -1
-    opacity: 0
-    background: url("/images/next.png")
-    width: 64px
-    height: 64px
-
-#next-extend
-    left: 1090px
-
-#previous-main, #previous-extend
-    position: fixed
-    cursor: pointer
-    left: 430px
-    bottom: 20px
-    z-index: -1
-    opacity: 0
-    background: url("/images/previous.png")
-    width: 64px
-    height: 64px
-
-#previous-extend
-    left: 1160px
-
 #zoom-out
     position: fixed
     cursor: pointer
-    left: 1230px
-    bottom: 20px
+    left: 25px
+    bottom: 5px
     z-index: -1
-    opacity: 0
+    opacity: 1
     background: url("/images/zoom-out.png")
     width: 64px
     height: 64px
@@ -389,22 +308,33 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
 #zoom-in
     position: fixed
     cursor: pointer
-    left: 1300px
-    bottom: 20px
+    left: 95px
+    bottom: 5px
     z-index: -1
-    opacity: 0
+    opacity: 1
     background: url("/images/zoom-in.png")
     width: 64px
     height: 64px
 
-.reset-scale
+#reset-scale
     position: fixed
     cursor: pointer
-    right: 110px
-    bottom: 20px
+    left: 165px
+    bottom: 5px
     z-index: -1
-    opacity: 0
+    opacity: 1
     background: url("/images/reset-timeline.png")
+    width: 64px
+    height: 64px
+
+#trash
+    position: fixed
+    cursor: pointer
+    left: 235px
+    bottom: 5px
+    z-index: -1
+    opacity: 1
+    background: url("/images/trash_icon.png")
     width: 64px
     height: 64px
 

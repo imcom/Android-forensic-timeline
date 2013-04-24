@@ -7,7 +7,8 @@
  */
 
 /*
- * name: div to draw
+ * Parameter:
+ *      name -- specify the div to bear SVG element
  *
  */
 function Timeline(name) {
@@ -17,7 +18,7 @@ function Timeline(name) {
     this.width = 1850;
     this.color_scale = d3.scale.category20();
     this.y_range_padding = 150;
-    this.x_range_padding = 50;
+    this.x_range_padding = 100;
     this.y_range = [this.timeline_height - this.y_range_padding, 0];
     var self = this;
 
@@ -33,10 +34,8 @@ function Timeline(name) {
     this.path_dataset = []; // for path groups and application name
     this.path_data = []; // coordinates for paths
     this.y_domain; // will be initialised in setDataset function
-    this.x_range; //TODO to be defined
+    this.x_range;
     this.tick_padding = 5;
-    this.tick_unit; //TODO
-    this.tick_step; //TODO
 
     /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();
@@ -99,6 +98,7 @@ function Timeline(name) {
     */
 } // constructor of Timeline
 
+// init timeline SVG and properties
 Timeline.prototype.initTimeline = function() {
 
     this.timeline = d3.select(this.name)
@@ -116,20 +116,14 @@ Timeline.prototype.initTimeline = function() {
         .attr("y", 0)
         .attr("width", this.width)
         .attr("height", this.timeline_height);
-} // init timeline SVG and properties
-
-// return this timeline div name
-Timeline.prototype.getName = function() {
-    return this.name;
 }
 
 // remove this timeline
 Timeline.prototype.removeTimeline = function() {
-    $(this.getName()).children().remove();
+    $(this.name).children().remove();
 }
 
-//TODO suspects can be removed or expressed in some other ways
-Timeline.prototype.setDataset = function(dataset, path_dataset, check_suspects) {
+Timeline.prototype.setDataset = function(dataset, path_dataset) {
     // only check for suspects for android logs
     var self = this;
     this.path_dataset = path_dataset;
@@ -289,14 +283,20 @@ Timeline.prototype.updateYDomain = function(y) {
     }
 }
 
+// init X range for proper display
+Timeline.prototype.initXRange = function() {
+    var start_date = this.dataset[0].date;
+    var end_date = this.dataset[this.dataset.length - 1].date;
+    var upper_range = end_date - start_date <= 5000 ? 5000 : end_date - start_date >= 20000 ? end_date - start_date : 10000;
+    return [this.x_range_padding, upper_range];
+}
+
 //TODO correct the references in operator
 // clear dataset of this timeline
-Timeline.prototype.clearData = function(clear_dataset) {
-    if (clear_dataset) {
-        this.dataset = [];
-        this.path_dataset = [];
-        this.path_data = [];
-    }
+Timeline.prototype.clearData = function() {
+    this.dataset = [];
+    this.path_dataset = [];
+    this.path_data = [];
     this.y_domain = [];
     this.x_range = [];
 }
@@ -351,7 +351,7 @@ Timeline.prototype.onDataReady = function() {
         .rangePoints(this.y_range, 1.0);
 
     // define X axis scale
-    this.x_range = [this.x_range_padding, 50000];
+    this.x_range = this.initXRange();
     var x_scale = d3.time.scale.utc()
         .domain([start_date, end_date])
         .range(this.x_range);
@@ -396,14 +396,14 @@ Timeline.prototype.onDataReady = function() {
         .attr("y2", 800);
 
     // init zoom handler
-    var scale_extent = [-5, 5]; // used for zoom function
+    var scale_extent = [-5, 15]; // used for zoom function
     var zoom_handler = d3.behavior.zoom()
                 .x(x_scale)
                 .scaleExtent(scale_extent)
                 .on("zoom", zoom);
 
     // reset timeline scale function
-    $('.reset-scale').click(function() {
+    $('#reset-scale').click(function() {
         zoom_handler.scale(1);
         zoom_handler.translate([0, 0]);
         zoom();
@@ -411,7 +411,7 @@ Timeline.prototype.onDataReady = function() {
     // define timeline zoom behaviour
     function zoom() {
         // show/hide reset scale button
-        if (zoom_handler.scale() >= 3 || Math.abs(zoom_handler.translate()[1]) >= 1000) {
+        if (Math.abs(zoom_handler.scale()) >= 3 || Math.abs(zoom_handler.translate()[1]) >= 1000) {
             $('.reset-scale').css('opacity', 0.8).css('z-index', 50);
         } else {
             $('.reset-scale').css('opacity', 0).css('z-index', -1);
@@ -440,22 +440,12 @@ Timeline.prototype.onDataReady = function() {
                 });
             }
         }
-        /*self.timeline.selectAll(".suspects")
-            .attr("y", function(d) { return y_scale(d.date); });
-        self.timeline.selectAll("#suspect-description")
-            .attr("y", function(d) { return y_scale(d.date); });
-        self.timeline.selectAll("#suspect-time-indicator")
-            .attr("y1", function(d) { return y_scale(d.date); })
-            .attr("y2", function(d) { return y_scale(d.date); });
-        self.timeline.selectAll("#suspect-time-label")
-            .attr("y", function(d) { return y_scale(d.date) - 5; });
-        adjustDateLabel();*/
     }
     // append clipping control on timeline
     this.timeline.append("svg:rect")
         .attr("class", "timeline-ctrl-pane")
         .attr("width", this.width)
-        .attr("height", 100)
+        .attr("height", 80)
         .call(zoom_handler);
 
     // append events on timeline

@@ -380,7 +380,7 @@ AggregatedGraph.prototype.initDataset = function(dataset) {
 AggregatedGraph.prototype.initXRange = function() {
     var start_date = this.getOldestDate();
     var end_date = this.getLatestDate();
-    var upper_range = end_date - start_date <= 3600 ? 3000 : end_date - start_date >= 18000 ? 15000 : 8000;
+    var upper_range = end_date - start_date <= 5000 ? 5000 : end_date - start_date >= 20000 ? end_date - start_date : 10000;
     return [100, upper_range];
 }
 
