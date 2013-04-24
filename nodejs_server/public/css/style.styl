@@ -9,12 +9,6 @@ body
     width: 200px
     left: 42%
 
-input
-    width: 100%
-
-select
-    width: 100%
-
 .ctrl-panel
     position: fixed
     margin-left: 25px
@@ -177,6 +171,9 @@ label
     .container-fluid
         margin-top: -15px
 
+#event-app
+    width: 500px
+
 #message-display
     width: 450px
     resize: none
@@ -187,11 +184,17 @@ label
     width: 220px
     overflow-x: hidden
     overflow-y: auto
+    margin-left: 0px
 
-#date-display, #pid-display
+.table-list-header
+    margin-top: 0px
+    margin-left: -10px
+
+#date-display, #pid-display, #epoch-display
     font-family: Consolas
-    margin-left: 5px
+    margin-left: 15px
     font-weight: bold
+    margin-top: -5px
 
 .dropdown-ctrl-bar
     position: absolute
@@ -338,16 +341,23 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     width: 64px
     height: 64px
 
-#time-brush rect.background
-    visibility: visible !important
+#time-brush-main-pane
+    p
+        margin-left: 50px
 
-.time-brush rect.background
-	fill: rgba(0,0,0,.1)
+#time-brush-main, #time-brush.extend
+    rect.background
+        visibility: visible !important
 
-.time-brush .extent
-    stroke: #f09f8c
-    fill-opacity: 0.125
-    shape-rendering: crispEdges
+.time-brush
+    rect.background
+	    fill: rgba(0,0,0,.1)
+
+.time-brush
+    .extent
+        stroke: #f09f8c
+        fill-opacity: 0.125
+        shape-rendering: crispEdges
 
 .time-brush-axis line, .time-brush-axis path
     fill: none
@@ -359,7 +369,6 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     stroke: rgba(0,0,0,.1)
 
 .time-brush-axis text
-    font-family: Consolas
     font-size: 12px
 
 

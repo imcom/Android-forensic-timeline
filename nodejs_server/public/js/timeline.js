@@ -427,9 +427,6 @@ Timeline.prototype.onDataReady = function() {
         // re-draw events (circles)
         self.timeline.selectAll(".timeline-event")
             .attr("cx", function(d) { return x_scale(d.date); });
-        // adjust event description position
-        self.timeline.selectAll(".description")
-            .attr("x", function(d) { return x_scale(d.date); });
         // re-draw chronological sequence path on timeline for application traces
         if (self.path_dataset !== null) {
             for (var app in path_dataset) {
@@ -556,7 +553,8 @@ Timeline.prototype.onDataReady = function() {
             var date = data.date * 1000; // convert to milliseconds
             var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S");
             var disp_date = formatter(new Date(date));
-            $('#date-display').text(disp_date + "\r\nEpoch: " + data.date);
+            $('#date-display').text(disp_date);
+            $('#epoch-display').text(data.date);
             $('#pid-display').text(data._id);
             var table_prefix = "<tr><td>";
             var table_suffix = "</tr></td>";
@@ -575,6 +573,71 @@ Timeline.prototype.onDataReady = function() {
     //console.log(start_date);
     //console.log(end_date);
     /* -------------- */
+
+    // append time brush on popup control panel
+    $('#time-brush-main').children().remove(); // remove old brush if any
+    // init the time brush on extra control pane
+    var time_brush = d3.select("#time-brush-main").append("svg")
+        .attr("width", 1322)
+        .attr("height", 60);
+
+    var brush_scale = d3.time.scale.utc()
+        .range([22, 1300])
+        .domain(x_scale.domain());
+
+    var brush_axis = d3.svg.axis()
+        .scale(brush_scale)
+        .tickSize(30)
+        .tickPadding(0)
+        .ticks(d3.time.minutes.utc, 30)
+        .orient("bottom");
+
+    brush_axis.tickFormat(function(date) {
+        var formatter = d3.time.format.utc("%H:%M");
+        return formatter(date);
+    });
+
+    var brush = d3.svg.brush()
+        .x(brush_scale)
+        .on("brush", onBrush);
+
+    time_brush.append("g")
+        .attr("class", "time-brush-axis")
+        .call(brush_axis);
+
+    time_brush.append("g")
+        .attr("class", "time-brush")
+        .call(brush)
+        .selectAll("rect")
+        .attr("y", 0)
+        .attr("height", 30);
+
+    function onBrush() {
+        if (!brush.empty()) {
+            x_scale.domain(brush.extent());
+            // adjust X axis
+            self.timeline.select(".time-axis").call(x_axis);
+            // re-draw grid lines
+            self.timeline.selectAll(".grid-line-main")
+                .attr("x1", x_scale)
+                .attr("x2", x_scale);
+            // relocate timeline events (circles)
+            self.timeline.selectAll(".timeline-event")
+                .attr("cx", function(d) { return x_scale(x(d)); });
+            // clear old chronological path
+            self.clearPath();
+            // re-draw chronological sequence path on timeline for application traces
+            if (self.path_dataset !== null) {
+                for (var app in path_dataset) {
+                    if (app === undefined) continue;
+                    path_dataset[app].forEach(function(path_group) {
+                        self.fillPathData(x_scale, y_scale, path_group);
+                        self.drawPath();
+                    });
+                }
+            }
+        }
+    }
 
 } // function onDataReady()
 

@@ -15,46 +15,48 @@ html
             div.bar#progress-indicator
         div#event-detail-pane.popup-div
             div#event-display-pane
-                p.nav-header.text-center Event Details
+                div#time-brush-main-pane
+                    p.nav-header Timeline Brush
+                    #time-brush-main
                 div.container-fluid
                     div#event-metadata.span4
                         ul.nav.nav-pills.nav-stacked
-                            li.nav-header Date
+                            li.nav-header Date [UTC]
                             li
                                 div#date-display
-                            li.nav-header.cozy-list-header Process ID
+                            li.nav-header.cozy-list-header Epoch Value
+                            li
+                                div#epoch-display
+                            li.nav-header.cozy-list-header Application Name
                             li
                                 div#pid-display
-                            li.nav-header.cozy-list-header System Objects
+                            li.nav-header.table-list-header System Objects
                             li
                                 div#object-display
                                     table#object-table.table.table-condensed.table-hover
                                         tbody#object-tbody
                     div#event-message.span5
                         p.nav-header Messages
-                        textarea(rows = "11", readonly)#message-display
-                    div.span3
-                        ul.nav.nav-pills.nav-stacked
-                            li.nav-header Relevance Query
-                            li
-                                div.input-append
-                                    input(type = "text", placeholder = "application name").span3#relevance-selection-input
-                                    button(type = "button").btn.btn-warning#relevance-search Feel lucky
-                            li.nav-header.cozy-list-header App Trace Query
-                            li
-                                div.input-append
-                                    input(type = "text", placeholder = "application name").span3#app-trace-selection-input
-                                    button(type = "button").btn.btn-success#app-trace-search Trace
-                            li.nav-header.cozy-list-header App File Activity
-                            li
-                                div.input-append
-                                    input(type = "text", placeholder = "application name").span3#file-activity-selection-input
-                                    button(type = "button").btn.btn-info#file-activity-search Search
-                            li.nav-header.cozy-list-header Dmesg Query
-                            li
-                                div.input-append
-                                    input(type = "text", placeholder = "keywords ...").span3#dmesg-selection-input
-                                    button(type = "button").btn#dmesg-search Query
+                        textarea(rows = "12", readonly)#message-display
+                    div#event-app.span3
+                        div.row-fluid
+                            div.span6
+                                ul.nav.nav-pills.nav-stacked
+                                    li.nav-header Relevant System Objects
+                                    li
+                                        select(multiple="multiple")#objects.selection-field
+                                    li.nav-header.cozy-list-header Relevant Process IDs
+                                    li
+                                        select(multiple="multiple")#ids.selection-field
+                                    li
+                                        div.btn-group
+                                            button#aggregate-btn.btn.btn-info.btn-small Aggregate
+                                            button#file-activity-search.btn.btn-warning.btn-small Filesystem Activity
+                            div.span6
+                                    p.nav-header App Installation Date
+                                    p.nav-header App Last Update Date
+                                    p.nav-header App Launch Date
+                                    p.nav-header App Last Activity Date
             div.popup-ctrl-bar
                 div(title="Expand event pane").popup-ctrl
         div#aggregation-pane.dropdown-div
@@ -64,7 +66,7 @@ html
         div#dropdown-ctrl-pane.popup-div
             div#extra-ctrl-pane
                 p.nav-header Timeline Brush
-                #time-brush
+                #time-brush-extend
         div#responsive-pane.slide-right-div
             div.slide-right-ctrl-bar
                 div(title="Expand responsive pane").slide-right-ctrl
@@ -113,12 +115,6 @@ html
                             option from...
                         select#time-window-end.selection-field
                             option to...
-                    li.nav-header.cozy-list-header Objects Selection
-                    li
-                        select(multiple="multiple")#objects.selection-field
-                    li.nav-header.cozy-list-header IDs Selection
-                    li
-                        select(multiple="multiple")#ids.selection-field
                     li.nav-header.cozy-list-header Aggregation Type
                     li
                         select#map-reduce-type.selection-field

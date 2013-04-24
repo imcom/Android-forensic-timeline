@@ -1,7 +1,5 @@
 body{font-family:Consolas}
 .alert{position:absolute;top:25px;width:200px;left:42%}
-input{width:100%}
-select{width:100%}
 .ctrl-panel{position:fixed;margin-left:25px}
 ul{width:205px}
 li.nav-header.cozy-list-header{margin-top:-5px}
@@ -32,9 +30,11 @@ label{display:inline-block}
 #event-display-pane{margin-top:15px;}
 #event-display-pane p.nav-header.text-center{margin-right:22px}
 #event-display-pane .container-fluid{margin-top:-15px}
+#event-app{width:500px}
 #message-display{width:450px;resize:none;margin-top:-10px}
-#event-metadata{max-height:380px;width:220px;overflow-x:hidden;overflow-y:auto}
-#date-display,#pid-display{font-family:Consolas;margin-left:5px;font-weight:bold}
+#event-metadata{max-height:380px;width:220px;overflow-x:hidden;overflow-y:auto;margin-left:0}
+.table-list-header{margin-top:0;margin-left:-10px}
+#date-display,#pid-display,#epoch-display{font-family:Consolas;margin-left:15px;font-weight:bold;margin-top:-5px}
 .dropdown-ctrl-bar{position:absolute;width:100%;height:20px;bottom:0;cursor:pointer;z-index:50;}
 .dropdown-ctrl-bar .dropdown-ctrl{position:absolute;width:85px;height:16px;bottom:0;z-index:0;left:47%;background:url("/images/dropdown_bar_icon.png") top right;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg)}
 .dropdown-ctrl-bar:hover .dropdown-ctrl{background:url("/images/dropdown_bar_icon.png") top left}
@@ -57,9 +57,10 @@ rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 #zoom-in{position:fixed;cursor:pointer;left:95px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/zoom-in.png");width:64px;height:64px}
 #reset-scale{position:fixed;cursor:pointer;left:165px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/reset-timeline.png");width:64px;height:64px}
 #trash{position:fixed;cursor:pointer;left:235px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/trash_icon.png");width:64px;height:64px}
-#time-brush rect.background{visibility:visible !important}
+#time-brush-main-pane p{margin-left:50px}
+#time-brush-main rect.background,#time-brush.extend rect.background{visibility:visible !important}
 .time-brush rect.background{fill:rgba(0,0,0,0.1)}
 .time-brush .extent{stroke:#f09f8c;fill-opacity:.125;shape-rendering:crispEdges}
 .time-brush-axis line,.time-brush-axis path{fill:none;stroke:#aaa;fill-opacity:.1;shape-rendering:crispEdges}
 .time-brush-axis path{stroke:rgba(0,0,0,0.1)}
-.time-brush-axis text{font-family:Consolas;font-size:12px}
+.time-brush-axis text{font-size:12px}
