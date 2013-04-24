@@ -17,7 +17,7 @@ html
             div#event-display-pane
                 p.nav-header.text-center Event Details
                 div.container-fluid
-                    div#event-metadata.span2
+                    div#event-metadata.span4
                         ul.nav.nav-pills.nav-stacked
                             li.nav-header Date
                             li
@@ -62,7 +62,7 @@ html
             div.dropdown-ctrl-bar
                 div(title="Expand aggregation pane").dropdown-ctrl
         div#dropdown-ctrl-pane.popup-div
-            div#extra-ctrl-pane.text-center
+            div#extra-ctrl-pane
                 p.nav-header Timeline Brush
                 #time-brush
         div#responsive-pane.slide-right-div
@@ -75,89 +75,77 @@ html
                     li
                         a(href = "#extend-tab", data-toggle = "tab") Extend
                 div.tab-content
-                    div(id = "main-tab").tab-pane.active
+                    div#main-tab.tab-pane.active
                         p.nav-header Responsive IDs
                         div#responsive-ids
                         p.nav-header Responsive Objects
                         div#responsive-objects
-                    div(id = "extend-tab").tab-pane
+                    div#extend-tab.tab-pane
                         p.nav-header Responsive IDs
                         div#responsive-ids-extend
-        div.container-fluid
-            div.span3
-                div.ctrl-panel
-                    ul.nav.nav-pills.nav-stacked
-                        li.nav-header Extent Query Target
-                        li
-                            select#collection-input
-                                option(value='android_logs:main') main
-                                option(value='android_logs:system') system
-                                //option(value='android_logs:events') events
-                                option(value='android_logs:radio') radio
-                                //option(value='dmesg:dmesg') dmesg
-                                //option(value='fs_time:fs_time') filesystem MAC
-                                //option(value='inode_time:inode_time') inode MAC
-                                //option(value='content_provider_browserhistory:BrowserHistory') browser history
-                                //option(value='content_provider_browsersearches:BrowserSearches') browser searches
-                                //option(value='content_provider_applications:Applications') applications
-                                //option(value='content_provider_calllogs:CallLog') call logs
-                                //option(value='content_provider_services:ServiceInfo') services
-                                //option(value='content_provider_contacts:Contacts') contacts
-                                //option(value='content_provider_mms:MMS') MMS
-                                //option(value='content_provider_sms:SMS') SMS
-                        li.nav-header.cozy-list-header Content Specification
-                        li
-                            input(type="text", placeholder="keywords ...")#selection-input
-                        li.nav-header.cozy-list-header Timeline Window
-                        li
-                            select#time-window-start.selection-field
-                                option from...
-                            select#time-window-end.selection-field
-                                option to...
-                        li.nav-header.cozy-list-header Objects Selection
-                        li
-                            select(multiple="multiple")#objects.selection-field
-                        li.nav-header.cozy-list-header IDs Selection
-                        li
-                            select(multiple="multiple")#ids.selection-field
-                        li.nav-header.cozy-list-header Aggregation Type
-                        li
-                            select#map-reduce-type.selection-field
-                                option aggregate by ...
-                            //button#aggregate-btn.btn.btn-success.btn-small Aggregate
-                        li
-                            div.btn-group
-                                //button#search.btn.btn-success.btn-small Search
-                                button#aggregate-btn.btn.btn-success.btn-small Aggr.
-                                button#expand.btn.btn-warning.btn-small Expand
-                                button#filter.btn.btn-info.btn-small Filter
-                                button#clear.btn.btn-danger.btn-small Clear
-                        //li.nav-header Time Brush [Seconds]
-                        //li
-                        //    #time-brush
-                        li.nav-header Device Booted [UTC]
-                        li
-                            #temporal-info
-                        li.nav-header Timezone Setting
-                        li
-                            #timezone-info
-                        li.nav-header Running Time Til Invest.
-                        li
-                            #running-time
-            div.span10#content
-                p.nav-header.text-center Timeline Pane
-                fieldset#col_left
-                    #timeline_main.timeline
-                fieldset#col_right
-                    #timeline_extend.timeline
+        div#main-ctrl-pane.slide-left-div
+            div.slide-left-ctrl-bar
+                div(title="Expand control pane").slide-left-ctrl
+            div.ctrl-panel
+                ul.nav.nav-pills.nav-stacked
+                    li.nav-header Extent Query Target
+                    li
+                        select#collection-input
+                            option(value='android_logs:main') main
+                            option(value='android_logs:system') system
+                            option(value='android_logs:events') events
+                            option(value='android_logs:radio') radio
+                    li.nav-header.cozy-list-header Content Specification
+                    li
+                        input(type="text", placeholder="keywords ...")#selection-input
+                    li.nav-header.cozy-list-header Timeline Window
+                    li
+                        select#time-window-start.selection-field
+                            option from...
+                        select#time-window-end.selection-field
+                            option to...
+                    li.nav-header.cozy-list-header Objects Selection
+                    li
+                        select(multiple="multiple")#objects.selection-field
+                    li.nav-header.cozy-list-header IDs Selection
+                    li
+                        select(multiple="multiple")#ids.selection-field
+                    li.nav-header.cozy-list-header Aggregation Type
+                    li
+                        select#map-reduce-type.selection-field
+                            option aggregate by ...
+                        //button#aggregate-btn.btn.btn-success.btn-small Aggregate
+                    li
+                        div.btn-group
+                            //button#search.btn.btn-success.btn-small Search
+                            button#aggregate-btn.btn.btn-success.btn-small Aggr.
+                            button#expand.btn.btn-warning.btn-small Expand
+                            button#filter.btn.btn-info.btn-small Filter
+                            button#clear.btn.btn-danger.btn-small Clear
+                    //li.nav-header Time Brush [Seconds]
+                    //li
+                    //    #time-brush
+                    li.nav-header Device Booted [UTC]
+                    li
+                        #temporal-info
+                    li.nav-header Timezone Setting
+                    li
+                        #timezone-info
+                    li.nav-header Running Time
+                    li
+                        #running-time
+        div#content
+            p.nav-header Android Timeline Analysis
+            #timeline_main.timeline
+
         a(href="#", class="back-to-top")
         a.reset-scale
-        a#undo
+        //a#undo
         a#trash
-        a#next-main
-        a#previous-main
-        a#next-extend
-        a#previous-extend
+        //a#next-main
+        //a#previous-main
+        //a#next-extend
+        //a#previous-extend
         a#zoom-out
         a#zoom-in
         script(type = 'text/javascript', src = '/js/operator.js')

@@ -47,11 +47,10 @@ function DeltaTimeGraph(name, dataset) {
     });
 
     function initDeltaDomain() {
-        var offset = 1; // for better display
         self.dataset.forEach(function(data) {
             data.delta_time = Number(data.delta_time);
         });
-        return [self.dataset[0].delta_time - offset, self.dataset[self.dataset.length - 1].delta_time + offset];
+        return [self.dataset[0].delta_time, self.dataset[self.dataset.length - 1].delta_time];
     }
 
     //var time_domain = initDateDomain();
@@ -70,54 +69,14 @@ function DeltaTimeGraph(name, dataset) {
 
     var color_scale = d3.scale.category10();
 
-    // define x axis
-    //var tick_unit;
-    //var tick_step;
-
-    // tick_index: {null} use calculated tick step; [{0, 1, 2, 3}, {0, 1, 2}] specify an unit and step
-    /*function initTickInterval(tick_index) {
-        var start_date = self.dataset[0].date;
-        var end_date = self.dataset[self.dataset.length - 1].date;
-
-        var unit_options = [
-            d3.time.seconds.utc,
-            d3.time.minutes.utc,
-            d3.time.hours.utc,
-            d3.time.days.uts
-        ];
-        var step_options = [
-            5,
-            15,
-            30
-        ];
-
-        if (tick_index === null) {
-            var unit_index = end_date - start_date <= 1000 ? 0 : 1;
-            var step_index = end_date - start_date <= 3600 ? 0 : 0;
-        } else {
-            var unit_index = tick_index[0];
-            var step_index = tick_index[1];
-        }
-
-        tick_unit = unit_options[unit_index];
-        tick_step = step_options[step_index];
-    }*/
-
-    //initTickInterval(null); // do NOT set tick_step here
-
     var x_axis = d3.svg.axis()
         .orient("top")
         .scale(x_scale)
-        //.ticks(tick_unit, tick_step) // make it a variable
         .tickPadding(tick_padding)
         .tickSize(0);
 
     /*x_axis.tickFormat(function(date) {
-        var seconds = Number(date) / 1000 - anchor_time;
-        var delta_time = Math.round(seconds / 3600) + 'h ' +
-                        Math.round(seconds % 3600 / 60) + 'm ' +
-                        seconds % 3600 % 60 + 's';
-        return delta_time;
+
     });*/
 
     // create svg for aggregated graph

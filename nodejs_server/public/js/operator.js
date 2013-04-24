@@ -38,6 +38,7 @@ var clear_btn = $('#clear');
 var dropdown_btn = $('.dropdown-ctrl-bar');
 var popup_btn = $('.popup-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
+var slide_left_btn = $('.slide-left-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
 
 var dataset = [];
@@ -48,6 +49,7 @@ var time_range = [];
 var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
+var slide_left_pane_collapsed = 1;
 var object_selected = false;
 var id_selected = false;
 var selected_object;
@@ -684,7 +686,7 @@ function drawApplicationTraces() {
                 timeline_main.setDataset(dataset, path_dataset, false, false);
                 fillExtendResponsivePane(path_dataset);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-                $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+                //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
             } else {
                 showAlert("no records found!");
             }
@@ -754,7 +756,7 @@ function traceApplication() {
                 fillExtendResponsivePane(path_groups);
                 timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-                $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+                //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
             } else {
                 showAlert("no records found!");
             }
@@ -986,7 +988,7 @@ dropdown_btn.click(function() {
         dropdown_ctrl.css("-moz-transform", "rotate(180deg)");
         dropdown_ctrl[0].setAttribute("title", "Expand aggregation pane");
         aggregation_pane.animate({"top": -680}, 500, "ease");
-        dropdown_ctrl_pane.animate({"bottom": -260}, 500, "ease");
+        dropdown_ctrl_pane.animate({"bottom": -240}, 500, "ease");
     }
 });
 
@@ -1004,7 +1006,7 @@ popup_btn.click(function() {
         popup_ctrl.css("-webkit-transform", "rotate(0deg)");
         popup_ctrl.css("-moz-transform", "rotate(0deg)");
         popup_ctrl[0].setAttribute("title", "Expand event pane");
-        event_pane.animate({"bottom": -300}, 500, "ease");
+        event_pane.animate({"bottom": -400}, 500, "ease");
     }
 });
 
@@ -1023,6 +1025,24 @@ slide_right_btn.click(function() {
         slide_right_ctrl.css("-moz-transform", "rotate(0deg)");
         slide_right_ctrl[0].setAttribute("title", "Expand responsive pane");
         responsive_pane.animate({"right": -280}, 500, "ease");
+    }
+});
+
+slide_left_btn.click(function() {
+    var main_ctrl_pane = $('#main-ctrl-pane');
+    var slide_left_ctrl = $('.slide-left-ctrl');
+    if (slide_left_pane_collapsed == 1) { // show the pane
+        slide_left_pane_collapsed = 0;
+        slide_left_ctrl.css("-webkit-transform", "rotate(0deg)");
+        slide_left_ctrl.css("-moz-transform", "rotate(0deg)");
+        slide_left_ctrl[0].setAttribute("title", "Collapse control pane");
+        main_ctrl_pane.animate({"left": 0}, 500, "ease");
+    } else { // hide the pane
+        slide_left_pane_collapsed = 1;
+        slide_left_ctrl.css("-webkit-transform", "rotate(180deg)");
+        slide_left_ctrl.css("-moz-transform", "rotate(180deg)");
+        slide_left_ctrl[0].setAttribute("title", "Expand control pane");
+        main_ctrl_pane.animate({"left": -280}, 500, "ease");
     }
 });
 
@@ -1112,7 +1132,7 @@ $('#trash').click(function() {
     $('#trash').css('opacity', 0).css('z-index', -1);
 });
 
-$('#next-main').click(function() {
+/*$('#next-main').click(function() {
     $('#timeline_main').children().remove();
     timeline_main.initTimeline();
     timeline_main.nextWindow();
@@ -1134,7 +1154,7 @@ $('#previous-extend').click(function() {
     $('#timeline_extend').children().remove();
     timeline_extend.initTimeline();
     timeline_extend.previousWindow();
-});
+});*/
 
 $('#zoom-out').click(function() {
     timeline_extend.increaseDisplayStep();
