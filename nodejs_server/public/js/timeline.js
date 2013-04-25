@@ -36,6 +36,9 @@ function Timeline(name) {
     this.y_domain; // will be initialised in setDataset function
     this.x_range;
     this.tick_padding = 5;
+    //FIXME two variables are to be defined
+    this.tick_unit;
+    this.tick_step;
 
     /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();
@@ -360,8 +363,8 @@ Timeline.prototype.onDataReady = function() {
     var x_axis = d3.svg.axis()
         .scale(x_scale)
         .orient("bottom")
-        //FIXME.ticks(this.tick_unit, this.tick_step)
-        .ticks(d3.time.minutes.utc, 5)
+        //.ticks(this.tick_unit, this.tick_step) //FIXME the interval is to be defined
+        .ticks(d3.time.minutes.utc, 5) // above 5 hours period, using this config
         .tickPadding(this.tick_padding)
         .tickSize(0);
 
@@ -380,7 +383,7 @@ Timeline.prototype.onDataReady = function() {
 
     // append gird on the timeline
     var grid = this.timeline.selectAll("line.grid-main")
-        //FIXME.data(y_scale.ticks(this.tick_unit, this.tick_step))
+        //.data(y_scale.ticks(this.tick_unit, this.tick_step)) //FIXME same with X axis
         .data(x_scale.ticks(d3.time.minutes.utc, 5))
         .enter()
         .append("g")
@@ -542,11 +545,13 @@ Timeline.prototype.onDataReady = function() {
             // target id splited = [dataset, index]
             var data_index = Number(target.id.split("-")[1]);
             var data = self.dataset[data_index];
+            // open popup pane
             window.popup_pane_collapsed = 0;
             $('.popup-ctrl').css("-webkit-transform", "rotate(180deg)");
             $('.popup-ctrl').css("-moz-transform", "rotate(180deg)");
             $('.popup-ctrl')[0].setAttribute("title", "Collapse event pane");
             $('#event-detail-pane').animate({"bottom": 0}, 500, "ease");
+            // hide OpenTip window
             jQuery(target.nodeName + "#" + target.id).data("opentips")[0].hide();
 
             // init data for popup pane display
@@ -555,7 +560,7 @@ Timeline.prototype.onDataReady = function() {
             var disp_date = formatter(new Date(date));
             $('#date-display').text(disp_date);
             $('#epoch-display').text(data.date);
-            $('#pid-display').text(data._id);
+            $('#app-name-display').text(data._id);
             var table_prefix = "<tr><td>";
             var table_suffix = "</tr></td>";
             var messages = "";
@@ -566,6 +571,13 @@ Timeline.prototype.onDataReady = function() {
                 }
             }
             $('#message-display').text(messages);
+
+            // fetch service info associated with this app
+            self.getServiceInfo(data._id);
+            // fetch application install date & update date
+            self.getApplicationInfo(data._id);
+            // generate application delta timeline
+            self.getAppDeltaTimeline(data._id);
         });
     }); // text position & circles events handler
 
@@ -589,7 +601,7 @@ Timeline.prototype.onDataReady = function() {
         .scale(brush_scale)
         .tickSize(30)
         .tickPadding(0)
-        .ticks(d3.time.minutes.utc, 30)
+        .ticks(d3.time.minutes.utc, 30) // show 5 hours at most each time, using 30 mins interval. less is to be defined
         .orient("bottom");
 
     brush_axis.tickFormat(function(date) {
@@ -641,8 +653,61 @@ Timeline.prototype.onDataReady = function() {
 
 } // function onDataReady()
 
-//FIXME to be rewritten
-Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
+Timeline.prototype.getAppDeltaTimeline = function(app_name) {
+    var self = this;
+    $.ajax({
+        type: "POST",
+        url: "delta_timeline",
+        data: {
+            selection: app_name,
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== '') {
+                var application_trace = JSON.parse(data.content);
+                //generate delta timeline dataset
+                generateDeltaTimeGraph(application_trace.content);
+            } else {
+                showAlert("no application info available", true);
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("application info query error!");
+        }
+    });
+}
+
+Timeline.prototype.getApplicationInfo = function(app_name) {
+    var self = this;
+    $.ajax({
+        type: "POST",
+        url: "content_provider_applications",
+        data: {
+            collection: "Applications",
+            selection: JSON.stringify({name: app_name}),
+            type: "query"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content.length > 0) {
+                var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+                var install_date = new Date(data.content[0].first_install_date * 1000);
+                var update_date = new Date(data.content[0].last_update_date * 1000);
+                $('#install-date').text(formatter(install_date));
+                $('#update-date').text(formatter(update_date));
+            } else {
+                showAlert("no application info available", true);
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("application info query error!");
+        }
+    });
+}
+
+//TODO show file system activity in message area
+Timeline.prototype.getServiceInfo = function(app_name) {
     var self = this;
     $.ajax({
         type: "POST",
@@ -655,11 +720,16 @@ Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
         success: function(data) {
             if (data.content !== "") {
                 var result = JSON.parse(data.content);
-                //FIXME this is broken
-                var service_launch_date = new Date(result['launch_date'] * 1000);
-                var service_last_activity_date = new Date(result['last_activity_date'] * 1000);
-                var service_process_id = result.pid;
-                //self.drawReferenceIndicator(y_scale);
+                var display_pane = $('#launch-activity-date');
+                result.forEach(function(record) {
+                    var service_process_id = record['pid'];
+                    var service_launch_date = new Date(record['launch_date'] * 1000);
+                    var service_last_activity_date = new Date(record['last_activity_date'] * 1000);
+                    var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+                    display_pane.append("<li class='nav-header service-pid'>" + service_process_id + "</li>");
+                    display_pane.append("<li class='service-time'><p>" + formatter(service_launch_date) + "</p></li>");
+                    display_pane.append("<li class='service-time'><p>" + formatter(service_last_activity_date) + "</p></li>");
+                });
             } else {
                 showAlert("no service info available", true);
             }
@@ -669,7 +739,6 @@ Timeline.prototype.getServiceInfo = function(app_name, y_scale) {
         }
     });
 }
-// ------------------- to be rewritten ------------------
 
 //FIXME to be defined
 Timeline.prototype.increaseDisplayStep = function() {

@@ -12,11 +12,11 @@ var relevance_selection = $('#relevance-selection-input');
 var app_trace_selection = $('#app-trace-selection-input');
 var object_pane = $('#objects');
 var id_pane = $('#ids');
-//var responsive_id_pane = $('#responsive-ids');
-//var responsive_object_pane = $('#responsive-objects');
 var responsive_app_pane = $('#responsive-apps');
 var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
+//var responsive_id_pane = $('#responsive-ids');
+//var responsive_object_pane = $('#responsive-objects');
 
 /*window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
@@ -27,20 +27,21 @@ var aggregation_arena = $('#aggregation-arena');
 };*/
 
 // control buttons
-//var search_btn = $('#search');
-var dmesg_search_btn = $('#dmesg-search');
 var file_activity_search_btn = $('#file-activity-search');
-var relevance_search_btn = $('#relevance-search');
-var app_trace_search_btn = $('#app-trace-search');
-var expand_btn = $('#expand');
-var filter_btn = $('#filter');
-var clear_btn = $('#clear');
 var dropdown_btn = $('.dropdown-ctrl-bar');
 var popup_btn = $('.popup-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
 var slide_left_btn = $('.slide-left-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
+//var relevance_search_btn = $('#relevance-search');
+//var app_trace_search_btn = $('#app-trace-search');
+//var expand_btn = $('#expand');
+//var filter_btn = $('#filter');
+//var clear_btn = $('#clear');
+//var search_btn = $('#search');
+//var dmesg_search_btn = $('#dmesg-search');
 
+// global variables
 var dataset = [];
 var path_dataset = {};
 var time_range = [];
@@ -53,41 +54,79 @@ var id_selected = false;
 var selected_object;
 var selected_id;
 
+// timeline SVG
 var timeline_main = new Timeline("#timeline_main");
 
-function initTimeRange(target_set) {
-    target_set.forEach(function(record) {
-        var timestamp = record.date;
-        if ($.inArray(timestamp, time_range) == -1) {
-            time_range.push(timestamp);
+// not in use currently
+/*
+function traceApplication() {
+    var app_name;
+    if (app_trace_selection.val() !== '') {
+        app_name = app_trace_selection.val();
+    } else {
+        showAlert("No application specified");
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "application_trace",
+        data: {
+            selection: app_name,
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== "") {
+                var path_groups = [];
+                dataset_extend = [];
+                var path_index = 0;
+                var application_trace = JSON.parse(data.content);
+                //console.log(application_trace);
+                // call a function to generate delta timeline dataset
+                generateDeltaTimeGraph(application_trace);
+                // prepare dataset for application trace graph
+                for (var process in application_trace) {
+                    path_group = [];
+                    if (application_trace.hasOwnProperty(process)) { // pid or unknown
+                        application_trace[process].forEach(function(record) {
+                            record.level = process;
+                            dataset_extend.push(record);
+                            path_group.push(
+                                {
+                                    process: process,
+                                    _id: record.pid,
+                                    date: new Date(record.date * 1000) // convert to date
+                                }
+                            );
+                        });
+                        //path_groups[path_index] = path_group;
+                        if (application_trace[process].length > 0)
+                            path_groups.push(process);
+                        //path_index += 1;
+                    }
+                }
+                var generic_data = new GenericData(data.type, dataset_extend);
+                dataset_extend = generic_data.unifyDataset();
+                $('#timeline_extend').children().remove();
+                timeline_extend.clearData(true, true);
+                timeline_extend.initTimeline();
+                var check_suspects = false;
+                var path_dataset = {};
+                path_dataset.name = app_name;
+                path_dataset.content = path_groups;
+                fillExtendResponsivePane(path_groups);
+                timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
+                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+                //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+            } else {
+                showAlert("no records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("trace query error!");
         }
     });
-    fillTimeWindow();
-}
-
-function resetTimeRange() {
-    time_range = [];
-    var window_start = $('#time-window-start');
-    var window_end = $('#time-window-end');
-    window_start.children().remove();
-    window_end.children().remove();
-    window_start.append("<option>from...</option>");
-    window_end.append("<option>to...</option>");
-}
-
-function fillTimeWindow() {
-    var window_start = $('#time-window-start');
-    var window_end = $('#time-window-end');
-    window_start.children().remove();
-    window_end.children().remove();
-    time_range.forEach(function(timestamp) {
-        var date = timestamp * 1000; // convert to milliseconds
-        var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
-        var disp_date = formatter(new Date(date));
-        window_start.append("<option value=" + timestamp + ">" + disp_date + "</option>");
-        window_end.append("<option value=" + timestamp + ">" + disp_date + "</option>");
-    });
-    window_end.val("" + time_range[time_range.length - 1]);
 }
 
 function updateResponsivePane(target_checkboxes, display_dataset, key) {
@@ -105,7 +144,7 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
         }
     });
 }
-/*
+
 function onIdSelection() {
     if (current_dataset.length === 0) current_dataset = dataset;
     var id_checkboxs = $('input[id="id-checkbox"]');
@@ -153,41 +192,7 @@ function onObjectSelection() {
     timeline_main.initTimeline();
     timeline_main.setDataset(display_dataset, null, false, true);
 }
-*/
-function onAppSelection() {
-    var app_checkboxs = $('.app-checkbox');
-    var display_dataset;
-    var display_apps = [];
-    var display_path_set = {};
-    app_checkboxs.forEach(function(checkbox) {
-        if (checkbox.checked) {
-            // save the selected apps for drawing path
-            display_path_set[checkbox.value] = path_dataset[checkbox.value];
-            display_apps.push(checkbox.value);
-        }
-    });
-    display_dataset = dataset.filter(function(record) {
-        return $.inArray(record._id, display_apps) !== -1;
-    });
-    timeline_main.removeTimeline();
-    timeline_main.clearData();
-    timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, display_path_set);
-}
 
-function fillAppResponsivePane(path_groups) {
-    for (var app in path_groups) {
-        if (app === undefined) continue;
-        responsive_app_pane.append (
-            "<label type='checkbox inline'><input class='app-checkbox' id='app-checkbox' type='checkbox' onChange='onAppSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
-        );
-    }
-    var checkboxes = $('.app-checkbox');
-    checkboxes.forEach(function(box) {
-        box.checked = true;
-    });
-}
-/*
 function fillResponsivePane(target_set) {
     var ids = [];
     var objects = [];
@@ -210,7 +215,32 @@ function fillResponsivePane(target_set) {
         box.checked = true;
     });
 }
-*/
+
+function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline, clear_time_window) {
+    object_pane.children().remove();
+    id_pane.children().remove();
+    selection.val("");
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    if (clear_time_window) {
+        window_start.children().remove();
+        window_end.children().remove();
+    }
+    $('#timeline_main').children().remove();
+    if (clear_extend_timeline) {
+        $('#timeline_extend').children().remove();
+    }
+    if (clear_responsive) {
+        responsive_id_pane.children().remove();
+        responsive_object_pane.children().remove();
+        responsive_id_pane_extend.children().remove();
+    }
+    if (clear_aggregation) {
+        aggregation_options.children().remove();
+        aggregation_options.append("<option>aggregate by ...</option>");
+    }
+}
+
 function fillPanes(src) {
     var objects = [];
     var ids = [];
@@ -258,31 +288,6 @@ function fillPanes(src) {
             selected_id = id_pane.val();
         }
     });
-}
-
-function clearPanes(clear_responsive, clear_aggregation, clear_extend_timeline, clear_time_window) {
-    object_pane.children().remove();
-    id_pane.children().remove();
-    selection.val("");
-    var window_start = $('#time-window-start');
-    var window_end = $('#time-window-end');
-    if (clear_time_window) {
-        window_start.children().remove();
-        window_end.children().remove();
-    }
-    $('#timeline_main').children().remove();
-    if (clear_extend_timeline) {
-        $('#timeline_extend').children().remove();
-    }
-    if (clear_responsive) {
-        responsive_id_pane.children().remove();
-        responsive_object_pane.children().remove();
-        responsive_id_pane_extend.children().remove();
-    }
-    if (clear_aggregation) {
-        aggregation_options.children().remove();
-        aggregation_options.append("<option>aggregate by ...</option>");
-    }
 }
 
 function formSelection() {
@@ -346,6 +351,41 @@ function drawMainTimeline(on_startup) {
         }
     });
 }
+*/
+
+function onAppSelection() {
+    var app_checkboxs = $('.app-checkbox');
+    var display_dataset;
+    var display_apps = [];
+    var display_path_set = {};
+    app_checkboxs.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            // save the selected apps for drawing path
+            display_path_set[checkbox.value] = path_dataset[checkbox.value];
+            display_apps.push(checkbox.value);
+        }
+    });
+    display_dataset = dataset.filter(function(record) {
+        return $.inArray(record._id, display_apps) !== -1;
+    });
+    timeline_main.removeTimeline();
+    timeline_main.clearData();
+    timeline_main.initTimeline();
+    timeline_main.setDataset(display_dataset, display_path_set);
+}
+
+function fillAppResponsivePane(path_groups) {
+    for (var app in path_groups) {
+        if (app === undefined) continue;
+        responsive_app_pane.append (
+            "<label type='checkbox inline'><input class='app-checkbox' id='app-checkbox' type='checkbox' onChange='onAppSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
+        );
+    }
+    var checkboxes = $('.app-checkbox');
+    checkboxes.forEach(function(box) {
+        box.checked = true;
+    });
+}
 
 function referenceQuery(url, target, selection) {
     $.ajax({
@@ -379,51 +419,6 @@ function referenceQuery(url, target, selection) {
     });
 }
 
-function drawExtendTimeline() {
-    var extend_selection = JSON.parse(formSelection());
-    if (extend_selection == null) extend_selection = {};
-    // set the time window
-    var start_time = Number($('#time-window-start').val());
-    var end_time = Number($('#time-window-end').val());
-    if (start_time > end_time) {
-        showAlert("Invalid time window");
-        return;
-    } else {
-        extend_selection.date = {'$gte': start_time, '$lte': end_time};
-    }
-    extend_selection = JSON.stringify(extend_selection);
-
-    var target = collection.val().split(':'); // target = [url(type), collection]
-    $.ajax({
-        type: "POST",
-        url: target[0],
-        data: {
-            collection: target[1],
-            selection: extend_selection,
-            type: "query"
-        },
-        dataType: 'json',
-        success: function(data) {
-            if (data.content.length > 0) {
-                var generic_data = new GenericData(data.type, data.content);
-                dataset_extend = generic_data.unifyDataset();
-                $('#timeline_extend').children().remove();
-                timeline_extend.initTimeline();
-                var check_suspects = false;
-                if (data.type === 'android_logs') check_suspects = true;
-                timeline_extend.setDataset(dataset_extend, null, check_suspects, false);
-                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-            } else {
-                showAlert("no records found!");
-            }
-        },
-        error: function(xhr, type) {
-            showAlert("search query error!");
-        }
-    });
-    $('#trash').css('opacity', 0.8).css('z-index', 50);
-}
-
 function resetProgressBar() {
     $('#progress-indicator').css("width", 0);
 }
@@ -444,6 +439,7 @@ function showAlert(message, auto_remove) {
         });
 }
 
+//FIXME ------ to be defined -----------
 function aggregateDmesg() {
     var dmesg_query = {};
     if (dmesg_selection.val() != '') {
@@ -506,13 +502,50 @@ function aggregateDmesg() {
     });
 }
 
-//TODO may deprecate this function later or use this as response on record click events
-function drawDeltaTimeline() {
+function initTimeRange(target_set) {
+    target_set.forEach(function(record) {
+        var timestamp = record.date;
+        if ($.inArray(timestamp, time_range) == -1) {
+            time_range.push(timestamp);
+        }
+    });
+    fillTimeWindow();
+}
+
+function resetTimeRange() {
+    time_range = [];
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    window_start.children().remove();
+    window_end.children().remove();
+    window_start.append("<option>from...</option>");
+    window_end.append("<option>to...</option>");
+}
+
+function fillTimeWindow() {
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    window_start.children().remove();
+    window_end.children().remove();
+    time_range.forEach(function(timestamp) {
+        var date = timestamp * 1000; // convert to milliseconds
+        var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
+        var disp_date = formatter(new Date(date));
+        window_start.append("<option value=" + timestamp + ">" + disp_date + "</option>");
+        window_end.append("<option value=" + timestamp + ">" + disp_date + "</option>");
+    });
+    window_end.val("" + time_range[time_range.length - 1]);
+}
+
+// -------------------------------------
+
+//TODO yet another expression of an application's trace
+function generateApplicationTimeline() {
     $.ajax({
         type: "POST",
-        url: "delta_timeline",
+        url: "app_timeline",
         data: {
-            selection: "am_", //TODO temp implementation
+            selection: "am_", //FIXME temp implementation
             type: "exec"
         },
         dataType: 'json',
@@ -644,10 +677,6 @@ function drawApplicationTraces() {
                 dataset = [];
                 var app_traces = JSON.parse(data.content);
 
-                //FIXME move me away.
-                //call a function to generate delta timeline dataset
-                //generateDeltaTimeGraph(application_trace);
-
                 for (var _index in app_traces) {
                     if (_index === undefined) continue;
                     // prepare dataset for application trace graph
@@ -697,76 +726,6 @@ function drawApplicationTraces() {
     });
 }
 
-function traceApplication() {
-    var app_name;
-    if (app_trace_selection.val() !== '') {
-        app_name = app_trace_selection.val();
-    } else {
-        showAlert("No application specified");
-        return;
-    }
-
-    $.ajax({
-        type: "POST",
-        url: "application_trace",
-        data: {
-            selection: app_name,
-            type: "exec"
-        },
-        dataType: 'json',
-        success: function(data) {
-            if (data.content !== "") {
-                var path_groups = [];
-                dataset_extend = [];
-                var path_index = 0;
-                var application_trace = JSON.parse(data.content);
-                //console.log(application_trace);
-                // call a function to generate delta timeline dataset
-                generateDeltaTimeGraph(application_trace);
-                // prepare dataset for application trace graph
-                for (var process in application_trace) {
-                    path_group = [];
-                    if (application_trace.hasOwnProperty(process)) { // pid or unknown
-                        application_trace[process].forEach(function(record) {
-                            record.level = process;
-                            dataset_extend.push(record);
-                            path_group.push(
-                                {
-                                    process: process,
-                                    _id: record.pid,
-                                    date: new Date(record.date * 1000) // convert to date
-                                }
-                            );
-                        });
-                        //path_groups[path_index] = path_group;
-                        if (application_trace[process].length > 0)
-                            path_groups.push(process);
-                        //path_index += 1;
-                    }
-                }
-                var generic_data = new GenericData(data.type, dataset_extend);
-                dataset_extend = generic_data.unifyDataset();
-                $('#timeline_extend').children().remove();
-                timeline_extend.clearData(true, true);
-                timeline_extend.initTimeline();
-                var check_suspects = false;
-                var path_dataset = {};
-                path_dataset.name = app_name;
-                path_dataset.content = path_groups;
-                fillExtendResponsivePane(path_groups);
-                timeline_extend.setDataset(dataset_extend, path_dataset, check_suspects, false);
-                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-                //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
-            } else {
-                showAlert("no records found!");
-            }
-        },
-        error: function(xhr, type) {
-            showAlert("trace query error!");
-        }
-    });
-}
-
 function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data, 2 - file content
     inode_activity = event.inode_activity;
     file_activity = {};
@@ -791,15 +750,7 @@ function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data
     return file_activity;
 }
 
-function fileActivity() {
-    var app_name;
-    if (file_activity_selection.val() != '') {
-        app_name = file_activity_selection.val();
-    } else {
-        showAlert("No application specified");
-        return;
-    }
-
+function getFileActivity(app_name) {
     $.ajax({
         type: "POST",
         url: "file_activity",
@@ -811,7 +762,7 @@ function fileActivity() {
         success: function(data) {
             if (data.content !== "") {
                 var result = JSON.parse(data.content);
-                dataset_extend = [];
+                var file_dataset = [];
                 for (var timestamp in result.detail) {
                     if (result.detail.hasOwnProperty(timestamp) && timestamp !== 'id') {
                         result.detail[timestamp].forEach(function(event) {
@@ -823,27 +774,21 @@ function fileActivity() {
                             file_activity.msg = event.file_activity;
                             file_activity.level = event.inode_activity.inode;
                             file_activity.display = result.detail.id;
-                            dataset_extend.push(file_activity);
+                            file_dataset.push(file_activity);
                             // inode record
                             for (var type = 0; type <= 2; ++type) { // 0: access, 1: change, 2: modify
-                                dataset_extend.push(generateInodeActivity(event, type));
+                                file_dataset.push(generateInodeActivity(event, type));
                             }
                         });
                     }
                 }
-                dataset_extend.sort(function(x, y) {
+                file_dataset.sort(function(x, y) {
                     if (x.date <= y.date) return -1;
                     if (x.date > y.date) return 1;
                 });
-                $('#timeline_extend').children().remove();
-                timeline_extend.clearData(true, true);
-                timeline_extend.initTimeline();
-                var check_suspects = false;
-                timeline_extend.setDataset(dataset_extend, null, check_suspects, false);
-                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-                $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
+                console.log(file_dataset);
             } else {
-                showAlert("no records found!");
+                showAlert("no file activity records found!");
             }
         },
         error: function(xhr, type) {
@@ -853,11 +798,9 @@ function fileActivity() {
 }
 
 // button actions
-file_activity_search_btn.click(function() {
-    timeline_extend.clearData(true, true);
-    fileActivity();
-});
 
+// not in use
+/*
 app_trace_search_btn.click(function() {
     timeline_extend.clearData(true, true);
     traceApplication();
@@ -970,6 +913,12 @@ clear_btn.click(function() {
     timeline_main.clearData(true, true);
     drawMainTimeline(true);
 });
+*/
+
+file_activity_search_btn.click(function() {
+    var app_name = $('#app-name-display').text();
+    getFileActivity(app_name);
+});
 
 dropdown_btn.click(function() {
     var aggregation_pane = $('#aggregation-pane');
@@ -1050,34 +999,27 @@ aggregate_btn.click(function() {
     $('#aggregation-arena').children().remove(); // clear previous graph
     var obj_filter = object_pane.val();
     var id_filter = id_pane.val();
+    var aggregation_opt;
     var aggr_selection = {};
-    //var aggr_collection = collection.val().split(':')[1];
     var aggr_collection = "events";
 
-    if (aggregation_options.val() === 'aggregate by ...') {
-        showAlert("No aggregation available");
+    if (obj_filter === '' && id_filter === '') {
+        showAlert("No aggregation target selected");
         return;
     }
 
-    //var generic_data = new GenericData(collection.val().split(':')[0], null); // no need for dataset
     var generic_data = new GenericData("android_logs", null); // no need for dataset
     //TODO time period selection & other condition selections
-    if (aggregation_options.val() === 'object') {
-        if (obj_filter === '') {
-            showAlert("No object selected");
-            return;
-        } else {
-            var obj_field = generic_data.getObjectField();
-            aggr_selection[obj_field] = obj_filter;
-        }
-    } else if (aggregation_options.val() === 'id') {
-        if (id_filter === '') {
-            showAlert("No id selected");
-            return;
-        } else {
-            var id_field = generic_data.getIdField();
-            aggr_selection[id_field] = id_filter;
-        }
+    if (obj_filter !== '') {
+        aggregation_opt = 'object';
+        var obj_field = generic_data.getObjectField();
+        aggr_selection[obj_field] = obj_filter;
+    }
+
+    if (id_filter !== '') {
+        aggregation_opt = 'id';
+        var id_field = generic_data.getIdField();
+        aggr_selection[id_field] = id_filter;
     }
 
     //TODO implement sophisticated selections
@@ -1088,19 +1030,18 @@ aggregate_btn.click(function() {
             type: "mapreduce",
             collection: aggr_collection,
             selection: JSON.stringify(aggr_selection),
-            aggregation: aggregation_options.val()
+            aggregation: aggregation_opt
         },
         dataType: 'json',
         success: function(data) {
             var result = {};
-            result.type = aggregation_options.val();
+            result.type = aggregation_opt;
             if (result.type === 'object') {
                 result.object = obj_filter;
             } else {
-                result._id = id_filter; // id_filter and corresponding input field should be revised
+                result._id = id_filter;
             }
             result.content = data.content;
-            //TODO visualize the aggregation results
             var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
             $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
         },
@@ -1110,78 +1051,30 @@ aggregate_btn.click(function() {
     });
 });
 
-/*$('#undo').click(function() {
-    current_dataset = dataset;
-    // reset display in all panes except for aggregation graph & extend timeline
-    clearPanes(true, false, false, true);
-    fillPanes(current_dataset);
-    fillResponsivePane(current_dataset);
-    // adjust display of time window
-    resetTimeRange();
-    initTimeRange(current_dataset);
-    // re-draw timeline graph
-    timeline_main.clearData(true, false);
-    timeline_main.initTimeline();
-    timeline_main.setDataset(current_dataset, null, false, true);
-    $('#undo').css('opacity', 0).css('z-index', -1);
+// ----- need to be re-written -------
+/*
+$('#backward').click(function() {
+
 });
 
-$('#next-main').click(function() {
-    $('#timeline_main').children().remove();
-    timeline_main.initTimeline();
-    timeline_main.nextWindow();
+$('#forward').click(function() {
+
 });
+*/
 
-$('#previous-main').click(function() {
-    $('#timeline_main').children().remove();
-    timeline_main.initTimeline();
-    timeline_main.previousWindow();
-});
-
-$('#next-extend').click(function() {
-    $('#timeline_extend').children().remove();
-    timeline_extend.initTimeline();
-    timeline_extend.nextWindow();
-});
-
-$('#previous-extend').click(function() {
-    $('#timeline_extend').children().remove();
-    timeline_extend.initTimeline();
-    timeline_extend.previousWindow();
-});*/
-
-/*$('#trash').click(function() {
-    timeline_extend.clearData(true, true);
-    $('#timeline_extend').children().remove();
-    $('#trash').css('opacity', 0).css('z-index', -1);
-});*/
-
-$('#zoom-out').click(function() {
-    timeline_extend.increaseDisplayStep();
-    if (timeline_extend.display_step >= 7200) {
-        $('#zoom-out').css('opacity', 0).css('z-index', -1);
-    }
-    $('#zoom-in').css('opacity', 0.8).css('z-index', 50);
-});
-
-$('#zoom-in').click(function() {
-    timeline_extend.decreaseDisplayStep();
-    if (timeline_extend.display_step === 20) {
-        $('#zoom-in').css('opacity', 0).css('z-index', -1);
-        $('#zoom-out').css('opacity', 0.8).css('z-index', 50);
-    }
-});
-
+// bootstrap function, init the basic application trace timeline
 window.onLoad = function() {
-    dataset = []; // clear dataset for new data
+    // clear dataset for new data
+    dataset = [];
     current_dataset = [];
     timeline_main.clearData(true, true);
-    //drawMainTimeline(true);
+    // fetch temporal info of the device
     referenceQuery("temporal_info", "temporal", null);
-    //drawDeltaTimeline();
-    //traceApplication(); this function may deprecate
     drawApplicationTraces();
 }();
+
+
+
 
 
 

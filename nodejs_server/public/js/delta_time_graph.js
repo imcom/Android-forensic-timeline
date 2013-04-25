@@ -224,14 +224,14 @@ function DeltaTimeGraph(name, dataset) {
         });
 
     // draw time brush on control panel (should move this function to stacked graph)
-    $('#time-brush').children().remove(); // remove old brush if any
+    $('#time-brush-extend').children().remove(); // remove old brush if any
     // init the time brush on extra control pane
-    var time_brush = d3.select("#time-brush").append("svg")
+    var time_brush = d3.select("#time-brush-extend").append("svg")
         .attr("width", width)
-        .attr("height", 60);
+        .attr("height", 60); // FIXME height is to be defined
 
     var brush_scale = d3.scale.linear()
-        .range([0, width])
+        .range([60, width]) //FIXME padding is to be defined
         .domain(x_scale.domain());
 
     var brush_axis = d3.svg.axis()

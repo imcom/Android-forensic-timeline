@@ -7,5 +7,6 @@ while(cursor.hasNext()) {
     result.push(cursor.next());
 }
 
-printjson(result);
+if (result.length > 0)
+    printjson(result);
 

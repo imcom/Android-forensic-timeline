@@ -29,7 +29,7 @@ html
                                 div#epoch-display
                             li.nav-header.cozy-list-header Application Name
                             li
-                                div#pid-display
+                                div#app-name-display
                             li.nav-header.table-list-header System Objects
                             li
                                 div#object-display
@@ -52,15 +52,13 @@ html
                                         div.btn-group
                                             button#aggregate-btn.btn.btn-info.btn-small Aggregate
                                             button#file-activity-search.btn.btn-warning.btn-small Filesystem Activity
-                            div.span6
-                                    p.nav-header App Installation Date
+                            div#app-temporal-info.span6
+                                    p.nav-header App Installation Date [UTC]
                                     #install-date
-                                    p.nav-header App Last Update Date
+                                    p.nav-header App Last Update Date [UTC]
                                     #update-date
-                                    p.nav-header App Launch Date
-                                    #launch-date
-                                    p.nav-header App Last Activity Date
-                                    #activity-date
+                                    p.nav-header Launch & Last Activity Date [UTC]
+                                    ul#launch-activity-date.nav.nav-pills.nav-stacked
             div.popup-ctrl-bar
                 div(title="Expand event pane").popup-ctrl
         div#aggregation-pane.dropdown-div
@@ -126,21 +124,16 @@ html
                         //button#aggregate-btn.btn.btn-success.btn-small Aggregate
                     li
                         div.btn-group
-                            //button#search.btn.btn-success.btn-small Search
                             button#aggregate-btn.btn.btn-success.btn-small Aggr.
                             button#expand.btn.btn-warning.btn-small Expand
                             button#filter.btn.btn-info.btn-small Filter
                             button#clear.btn.btn-danger.btn-small Clear
-                    //li.nav-header Time Brush [Seconds]
-                    //li
-                    //    #time-brush
         div#content
             p.nav-header Android Timeline Analysis
             #timeline_main.timeline
-        a#zoom-out
-        a#zoom-in
+        a#backward
+        a#forward
         a#reset-scale
-        a#trash
         script(type = 'text/javascript', src = '/js/operator.js')
 
 

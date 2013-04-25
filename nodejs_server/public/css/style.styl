@@ -190,10 +190,29 @@ label
     margin-top: 0px
     margin-left: -10px
 
-#date-display, #pid-display, #epoch-display
+#date-display, #app-name-display, #epoch-display
     font-family: Consolas
     margin-left: 15px
     font-weight: bold
+    margin-top: -5px
+
+#install-date, #update-date
+    margin-top: -10px
+    margin-left: 15px
+
+#app-temporal-info
+    max-height: 310px
+    overflow-x: hidden
+    overflow-y: auto
+
+.service-pid
+    color: blue
+    margin-left: 10px
+    margin-top: -10px !important
+
+.service-time
+    font-size: 90%
+    margin-left: 40px
     margin-top: -5px
 
 .dropdown-ctrl-bar
@@ -297,47 +316,36 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     font-size: 100%
     fill: grey
 
-#zoom-out
+#backward
     position: fixed
     cursor: pointer
     left: 25px
     bottom: 5px
     z-index: -1
     opacity: 1
-    background: url("/images/zoom-out.png")
+    background: url("/images/backward.png")
     width: 64px
     height: 64px
 
-#zoom-in
-    position: fixed
-    cursor: pointer
-    left: 95px
-    bottom: 5px
-    z-index: -1
-    opacity: 1
-    background: url("/images/zoom-in.png")
-    width: 64px
-    height: 64px
-
-#reset-scale
+#forward
     position: fixed
     cursor: pointer
     left: 165px
     bottom: 5px
     z-index: -1
     opacity: 1
-    background: url("/images/reset-timeline.png")
+    background: url("/images/forward.png")
     width: 64px
     height: 64px
 
-#trash
+#reset-scale
     position: fixed
     cursor: pointer
-    left: 235px
+    left: 95px
     bottom: 5px
     z-index: -1
     opacity: 1
-    background: url("/images/trash_icon.png")
+    background: url("/images/reset.png")
     width: 64px
     height: 64px
 
@@ -345,7 +353,7 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     p
         margin-left: 50px
 
-#time-brush-main, #time-brush.extend
+#time-brush-main, #time-brush-extend
     rect.background
         visibility: visible !important
 

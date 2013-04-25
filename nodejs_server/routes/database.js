@@ -27,7 +27,8 @@ function do_query(req, res, type) {
     var selection = JSON.parse(req.body.selection);
 
     if (selection !== null) {
-        selection['object'] = {$not: new RegExp(selection['object'], 'i')};
+        if (selection['object'] !== undefined)
+            selection['object'] = {$not: new RegExp(selection['object'], 'i')};
         if (selection['$or'] !== undefined) {
             selection['$or'][0].object = new RegExp(selection['$or'][0].object, 'i');
             selection['$or'][1].msg = new RegExp(selection['$or'][1].msg, 'i');
@@ -41,7 +42,7 @@ function do_query(req, res, type) {
         req.body.options, // no options needed...
         function(result) { // on success
             if (!result) {
-                res.json({"error": 0, "type": type.name, "content": "result is empty"});
+                res.json({"error": 0, "type": type.name, "content": ""});
             } else {
                 res.json({"error": 0, "type": type.name, "content": result});
             }
@@ -53,8 +54,8 @@ function do_query(req, res, type) {
 }
 
 exports.delta_timeline = function(req, res) {
-    console.log("query delta time timeline for events like:" + req.body.selection);
-    var command = "mongo localhost:27017/imcom --quiet --eval 'var keywords = \"" + req.body.selection + "\"'" + " ./libs/delta_timeline.js ";
+    console.log("generate timeline for application:" + req.body.selection);
+    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/delta_timeline.js ";
     var child_process = exec(
         command,
         { maxBuffer: 1000*1024 },
@@ -110,10 +111,12 @@ exports.application_trace = function(req, res) {
             }
         });
 }
+
+//FIXME to be re-written
 /*
-exports.application_trace = function(req, res) {
+exports.app_timeline = function(req, res) {
     console.log("trace application:" + req.body.selection);
-    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/trace_app.js ";
+    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/app_timeline.js ";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
@@ -125,6 +128,7 @@ exports.application_trace = function(req, res) {
         });
 }
 */
+
 exports.dmesg_aggregation = function(req, res) {
     console.log("mapreduce on[dmesg]:" + req.body.selection);
     mongo.aggregateDmesg(req, res);
