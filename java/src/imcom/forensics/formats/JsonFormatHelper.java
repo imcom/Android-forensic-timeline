@@ -5,7 +5,7 @@ import imcom.forensics.FormatHelper;
 
 public class JsonFormatHelper extends FormatHelper {
 
-	private static final String LOG_TAG = "timeline_forensic";
+	private static final String LOG_TAG = "IMCOM-Format-Helper";
 	
 	public JsonFormatHelper(String helper_name, char separator) {
 		super(helper_name, separator);

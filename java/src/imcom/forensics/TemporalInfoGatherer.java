@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class TemporalInfoGatherer {
 	
-	private static final String LOG_TAG = "TemporalInfo";
+	private static final String LOG_TAG = "IMCOM-TemporalInfo";
 	private static final int MILLIS_TO_HOURS = 60 * 60 * 1000;
 	private String SYSTEM_INFO_FILENAME;
 	private static final String CONFIG_SEPARATOR = ":";

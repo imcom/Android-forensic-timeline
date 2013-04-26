@@ -6,5 +6,6 @@
     <string name="external_storage_is_unavailable">External storage is unavailable</string>
     <string name="unable_to_create_directories">Unable to create directories</string>
     <string name="failed_to_get_storage_directory">Failed to get storage directory</string>
+    <string name="imcom_forensics">IMCOM-FORENSICS</string>
 
 </resources>

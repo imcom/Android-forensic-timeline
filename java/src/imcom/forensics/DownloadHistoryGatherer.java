@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class DownloadHistoryGatherer {
 
-	private static final String LOG_TAG = "DownloadHistory";
+	private static final String LOG_TAG = "IMCOM-DownloadHistory";
 	private String DOWNLOAD_HISTORY_FILENAME;
 	private static final String GATHERER_NAME = "DownloadHistory";
 	protected FormatHelper helper;

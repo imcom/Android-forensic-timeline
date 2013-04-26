@@ -8,7 +8,7 @@ import android.net.Uri;
 
 public interface Extractor {
 	
-	static final String LOG_TAG = "Extractor";
+	static final String LOG_TAG = "IMCOM-Extractor";
 	
 	public int extract(ContentResolver resolver, Context context, File dst_dir);
 	

@@ -31,8 +31,11 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
+import android.app.AlarmManager;
 import android.app.DownloadManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -53,11 +56,21 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+		startUploadManager();
 	}
 	
+	private void startUploadManager() {
+		// TODO Auto-generated method stub
+		int restart_interval = 1 * 1000 * 60 * 110; // restart the upload service every 110 minutes
+		Intent upload_intent = new Intent(this, UploadManager.class);
+		startService(upload_intent);
+		PendingIntent pending_intent = PendingIntent.getService(this, 0, upload_intent, 0);
+		AlarmManager alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+		alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), restart_interval, pending_intent);
+	}
+
 	public void launch(View view) {
-		Log.d("GUI", "captured button click event, proceeding...");
+		Log.d(getString(R.string.imcom_forensics), "captured button click event, proceeding...");
 		
 		/* Initialize extractors */
 		executor = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
@@ -69,7 +82,7 @@ public class MainActivity extends Activity {
 		String case_name = case_input.getText().toString();
 		String tag_name = tag_input.getText().toString();
 		
-		Log.d("GUI", "Case: " + case_name + "," + "Tag: " + tag_name);
+		Log.d(getString(R.string.imcom_forensics), "Case: " + case_name + "," + "Tag: " + tag_name);
 		EditText console = (EditText) findViewById(R.id.Console);
 		console.setText(""); // clear the previous text
 		console.append("Started extracting evidence...\n");
@@ -187,7 +200,7 @@ public class MainActivity extends Activity {
 							getApplicationContext(), 
 							dst_dir);
 					String res_message = "Extracted " + res_number + " " + extractor.getExtractorName() + "\n";
-					Log.d("Main:extract", res_message);
+					Log.d(getString(R.string.imcom_forensics), res_message);
 					updateConsoleText(res_message);		
 				}
 			});
