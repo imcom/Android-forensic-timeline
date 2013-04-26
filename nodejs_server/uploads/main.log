@@ -1,0 +1,753 @@
+04-26 18:31:55.418 D/su      (17740): 10077 imcom.forensics:uploader executing 0 /system/bin/sh using shell /system/bin/sh : sh
+04-26 18:31:55.578 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x576e08 2 0x544de0
+04-26 18:31:56.109 D/dalvikvm(17731): GC_CONCURRENT freed 332K, 48% free 2963K/5639K, external 0K/0K, paused 3ms+2ms
+04-26 18:31:56.139 D/dalvikvm(17731): GC_FOR_MALLOC freed 144K, 47% free 3005K/5639K, external 0K/0K, paused 17ms
+04-26 18:31:56.139 E/SIZE    (17731): 72221
+04-26 18:31:56.199 D/dalvikvm(17731): GC_CONCURRENT freed 457K, 48% free 3059K/5831K, external 0K/0K, paused 3ms+2ms
+04-26 18:31:56.229 D/dalvikvm(17731): GC_FOR_MALLOC freed 256K, 47% free 3123K/5831K, external 0K/0K, paused 18ms
+04-26 18:31:56.239 I/dalvikvm-heap(17731): Grow heap (frag case) to 5.451MB for 163342-byte allocation
+04-26 18:31:56.269 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 46% free 3283K/6023K, external 0K/0K, paused 17ms
+04-26 18:31:56.299 D/dalvikvm(17731): GC_FOR_MALLOC freed 173K, 48% free 3176K/6023K, external 0K/0K, paused 18ms
+04-26 18:31:56.299 E/SIZE    (17731): 83329
+04-26 18:31:56.319 D/dalvikvm(17731): GC_FOR_MALLOC freed 164K, 46% free 3256K/6023K, external 0K/0K, paused 21ms
+04-26 18:31:56.379 D/dalvikvm(17731): GC_CONCURRENT freed 419K, 46% free 3278K/6023K, external 0K/0K, paused 2ms+2ms
+04-26 18:31:56.419 D/dalvikvm(17731): GC_FOR_MALLOC freed 284K, 46% free 3312K/6023K, external 0K/0K, paused 18ms
+04-26 18:31:56.419 I/dalvikvm-heap(17731): Grow heap (frag case) to 5.674MB for 204550-byte allocation
+04-26 18:31:56.459 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 45% free 3512K/6279K, external 0K/0K, paused 17ms
+04-26 18:31:56.509 D/dalvikvm(17731): GC_FOR_MALLOC freed 218K, 47% free 3379K/6279K, external 0K/0K, paused 30ms
+04-26 18:31:56.509 I/dalvikvm-heap(17731): Grow heap (frag case) to 5.837MB for 306820-byte allocation
+04-26 18:31:56.549 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 45% free 3679K/6599K, external 0K/0K, paused 25ms
+04-26 18:31:56.589 D/dalvikvm(17731): GC_FOR_MALLOC freed 327K, 48% free 3479K/6599K, external 0K/0K, paused 18ms
+04-26 18:31:56.589 I/dalvikvm-heap(17731): Grow heap (frag case) to 6.082MB for 460226-byte allocation
+04-26 18:31:56.619 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 45% free 3928K/7111K, external 0K/0K, paused 17ms
+04-26 18:31:56.709 D/dalvikvm(17731): GC_CONCURRENT freed 450K, 49% free 3670K/7111K, external 0K/0K, paused 2ms+2ms
+04-26 18:31:56.729 D/dalvikvm(17731): GC_FOR_MALLOC freed 41K, 49% free 3629K/7111K, external 0K/0K, paused 20ms
+04-26 18:31:56.739 I/dalvikvm-heap(17731): Grow heap (frag case) to 6.447MB for 690334-byte allocation
+04-26 18:31:56.769 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 45% free 4303K/7815K, external 0K/0K, paused 18ms
+04-26 18:31:56.860 D/dalvikvm(17731): GC_CONCURRENT freed 592K, 50% free 3926K/7815K, external 0K/0K, paused 3ms+2ms
+04-26 18:31:56.890 D/dalvikvm(17731): GC_FOR_MALLOC freed 143K, 51% free 3854K/7815K, external 0K/0K, paused 18ms
+04-26 18:31:56.900 I/dalvikvm-heap(17731): Grow heap (frag case) to 6.996MB for 1035496-byte allocation
+04-26 18:31:56.930 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 45% free 4865K/8839K, external 0K/0K, paused 18ms
+04-26 18:31:56.960 E/SIZE    (17731): 361223
+04-26 18:31:56.990 D/dalvikvm(17731): GC_CONCURRENT freed 714K, 53% free 4191K/8839K, external 0K/0K, paused 2ms+3ms
+04-26 18:31:57.010 D/dalvikvm(17731): GC_FOR_MALLOC freed <1K, 53% free 4190K/8839K, external 0K/0K, paused 20ms
+04-26 18:31:57.010 I/dalvikvm-heap(17731): Grow heap (frag case) to 7.026MB for 722462-byte allocation
+04-26 18:31:57.040 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 45% free 4896K/8839K, external 0K/0K, paused 18ms
+04-26 18:31:57.130 D/dalvikvm(17731): GC_CONCURRENT freed 1492K, 55% free 4063K/8839K, external 0K/0K, paused 3ms+3ms
+04-26 18:31:57.130 E/SIZE    (17731): 72305
+04-26 18:31:57.130 D/IMCOM-FORENSICS(17731): Started uploading logs
+04-26 18:31:57.290 D/dalvikvm(17731): GC_CONCURRENT freed 343K, 54% free 4144K/8839K, external 0K/0K, paused 2ms+2ms
+04-26 18:31:57.500 D/dalvikvm(17731): GC_CONCURRENT freed 359K, 53% free 4214K/8839K, external 0K/0K, paused 2ms+2ms
+04-26 18:31:57.540 D/dalvikvm(17731): GC_FOR_MALLOC freed 399K, 53% free 4174K/8839K, external 0K/0K, paused 18ms
+04-26 18:31:57.590 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x576e08 2
+04-26 18:31:57.590 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x544de0 4
+04-26 18:31:57.600 D/SurfaceFlinger( 1485): [DISP] detachLayer 0x576e08 0x544de0
+04-26 18:31:57.600 D/SurfaceFlinger( 1485): [DISP] remove 0x544de0 3
+04-26 18:31:57.600 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x544de0
+04-26 18:31:57.800 D/dalvikvm(17731): GC_CONCURRENT freed 288K, 51% free 4371K/8839K, external 0K/0K, paused 2ms+2ms
+04-26 18:31:57.891 D/dalvikvm(17731): GC_CONCURRENT freed 354K, 51% free 4418K/8839K, external 0K/0K, paused 3ms+2ms
+04-26 18:31:57.921 D/dalvikvm(17731): GC_FOR_MALLOC freed 415K, 50% free 4461K/8839K, external 0K/0K, paused 22ms
+04-26 18:31:57.941 D/dalvikvm(17731): GC_FOR_MALLOC freed 459K, 51% free 4388K/8839K, external 0K/0K, paused 22ms
+04-26 18:31:57.941 I/dalvikvm-heap(17731): Grow heap (frag case) to 7.218MB for 722494-byte allocation
+04-26 18:31:57.981 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 43% free 5093K/8839K, external 0K/0K, paused 26ms
+04-26 18:31:58.071 D/dalvikvm(17731): GC_CONCURRENT freed 93K, 43% free 5105K/8839K, external 0K/0K, paused 2ms+2ms
+04-26 18:31:58.351 D/dalvikvm(17731): GC_CONCURRENT freed 725K, 42% free 5130K/8839K, external 0K/0K, paused 2ms+3ms
+04-26 18:31:58.641 D/dalvikvm(17731): GC_CONCURRENT freed 742K, 43% free 5121K/8839K, external 0K/0K, paused 2ms+3ms
+04-26 18:31:58.661 D/dalvikvm(17731): GC_FOR_MALLOC freed 27K, 43% free 5093K/8839K, external 0K/0K, paused 21ms
+04-26 18:31:58.671 I/dalvikvm-heap(17731): Grow heap (frag case) to 8.252MB for 1083736-byte allocation
+04-26 18:31:58.701 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 39% free 6152K/9927K, external 0K/0K, paused 18ms
+04-26 18:31:58.791 D/dalvikvm(17731): GC_CONCURRENT freed 784K, 45% free 5485K/9927K, external 0K/0K, paused 2ms+3ms
+04-26 18:31:58.891 D/dalvikvm(17731): GC_FOR_MALLOC freed 306K, 46% free 5446K/9927K, external 0K/0K, paused 20ms
+04-26 18:31:58.901 I/dalvikvm-heap(17731): Grow heap (frag case) to 8.421MB for 899350-byte allocation
+04-26 18:31:58.932 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 42% free 6324K/10823K, external 0K/0K, paused 17ms
+04-26 18:31:58.982 D/dalvikvm(17731): GC_CONCURRENT freed 1058K, 52% free 5266K/10823K, external 0K/0K, paused 3ms+2ms
+04-26 18:31:59.002 D/dalvikvm(17731): GC_FOR_MALLOC freed <1K, 52% free 5266K/10823K, external 0K/0K, paused 24ms
+04-26 18:31:59.012 I/dalvikvm-heap(17731): Grow heap (frag case) to 8.610MB for 1281624-byte allocation
+04-26 18:31:59.042 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 47% free 6518K/12103K, external 0K/0K, paused 18ms
+04-26 18:31:59.142 D/dalvikvm(17731): GC_CONCURRENT freed 1359K, 56% free 5438K/12103K, external 0K/0K, paused 3ms+3ms
+04-26 18:31:59.322 D/dalvikvm(17731): GC_CONCURRENT freed 561K, 54% free 5655K/12103K, external 0K/0K, paused 2ms+3ms
+04-26 18:31:59.352 D/dalvikvm(17731): GC_FOR_MALLOC freed 211K, 56% free 5443K/12103K, external 0K/0K, paused 21ms
+04-26 18:31:59.352 I/dalvikvm-heap(17731): Grow heap (frag case) to 9.393MB for 1922432-byte allocation
+04-26 18:31:59.382 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 40% free 7320K/12103K, external 0K/0K, paused 17ms
+04-26 18:31:59.422 D/dalvikvm(17731): GC_CONCURRENT freed 1440K, 52% free 5880K/12103K, external 0K/0K, paused 2ms+3ms
+04-26 18:31:59.442 D/dalvikvm(17731): GC_FOR_MALLOC freed <1K, 52% free 5880K/12103K, external 0K/0K, paused 20ms
+04-26 18:31:59.452 I/dalvikvm-heap(17731): Grow heap (frag case) to 9.393MB for 1474844-byte allocation
+04-26 18:31:59.492 D/dalvikvm(17731): GC_FOR_MALLOC freed 0K, 40% free 7320K/12103K, external 0K/0K, paused 31ms
+04-26 18:31:59.592 D/dalvikvm(17731): GC_CONCURRENT freed 1886K, 49% free 6206K/12103K, external 0K/0K, paused 2ms+8ms
+04-26 18:32:00.683 D/skia    (17483): purging 74K from font cache [6 entries]
+04-26 18:32:00.743 D/dalvikvm(17483): GC_EXPLICIT freed 74K, 42% free 4112K/6983K, external 17268K/19316K, paused 60ms
+04-26 18:32:00.943 D/IMCOM-FORENSICS(17731): uploading succeeded
+04-26 18:32:09.842 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:32:09.842 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:32:09.862 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:32:09.872 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:32:09.882 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:32:09.882 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:32:09.902 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:32:09.902 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:32:12.014 D/dalvikvm( 1601): GC_EXPLICIT freed 669K, 51% free 3943K/7943K, external 4645K/5801K, paused 78ms
+04-26 18:32:14.787 I/Process ( 1485): Sending signal. PID: 17731 SIG: 3
+04-26 18:32:14.787 I/dalvikvm(17731): threadid=4: reacting to signal 3
+04-26 18:32:14.797 I/dalvikvm(17731): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:14.797 I/Process ( 1485): Sending signal. PID: 1485 SIG: 3
+04-26 18:32:14.807 I/dalvikvm( 1485): threadid=4: reacting to signal 3
+04-26 18:32:14.827 I/dalvikvm( 1485): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:14.827 I/Process ( 1485): Sending signal. PID: 1603 SIG: 3
+04-26 18:32:14.827 I/dalvikvm( 1603): threadid=4: reacting to signal 3
+04-26 18:32:14.837 I/dalvikvm( 1603): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:14.837 I/Process ( 1485): Sending signal. PID: 1601 SIG: 3
+04-26 18:32:14.847 I/dalvikvm( 1601): threadid=4: reacting to signal 3
+04-26 18:32:14.857 I/dalvikvm( 1601): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:14.857 I/Process ( 1485): Sending signal. PID: 1570 SIG: 3
+04-26 18:32:14.857 I/dalvikvm( 1570): threadid=4: reacting to signal 3
+04-26 18:32:14.867 I/dalvikvm( 1570): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:15.017 D/dalvikvm( 1485): GC_CONCURRENT freed 2346K, 52% free 8059K/16519K, external 4073K/4557K, paused 3ms+7ms
+04-26 18:32:15.277 D/dalvikvm( 1485): GC_EXPLICIT freed 685K, 50% free 8263K/16519K, external 3669K/4557K, paused 91ms
+04-26 18:32:15.868 I/Process ( 1485): Sending signal. PID: 17709 SIG: 3
+04-26 18:32:15.868 I/dalvikvm(17709): threadid=4: reacting to signal 3
+04-26 18:32:15.878 I/dalvikvm(17709): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:15.878 I/Process ( 1485): Sending signal. PID: 1640 SIG: 3
+04-26 18:32:15.878 I/dalvikvm( 1640): threadid=4: reacting to signal 3
+04-26 18:32:15.888 I/dalvikvm( 1640): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:32:16.008 D/Process ( 1485): killProcess, pid=17731
+04-26 18:32:16.008 D/Process ( 1485): dalvik.system.VMStack.getThreadStackTrace(Native Method)
+04-26 18:32:16.008 D/Process ( 1485): java.lang.Thread.getStackTrace(Thread.java:745)
+04-26 18:32:16.008 D/Process ( 1485): android.os.Process.killProcess(Process.java:797)
+04-26 18:32:16.018 D/Process ( 1485): com.android.server.am.ActivityManagerService.appNotResponding(ActivityManagerService.java:3576)
+04-26 18:32:16.018 D/Process ( 1485): com.android.server.am.ActivityManagerService.serviceTimeout(ActivityManagerService.java:11371)
+04-26 18:32:16.018 D/Process ( 1485): com.android.server.am.ActivityManagerService$2.handleMessage(ActivityManagerService.java:1224)
+04-26 18:32:16.018 D/Process ( 1485): android.os.Handler.dispatchMessage(Handler.java:99)
+04-26 18:32:16.028 D/Process ( 1485): android.os.Looper.loop(Looper.java:150)
+04-26 18:32:16.028 D/Process ( 1485): com.android.server.am.ActivityManagerService$AThread.run(ActivityManagerService.java:1477)
+04-26 18:32:16.028 I/Process ( 1485): Sending signal. PID: 17731 SIG: 9
+04-26 18:32:17.019 D/dalvikvm( 1603): GC_EXPLICIT freed 301K, 37% free 4662K/7367K, external 0K/0K, paused 66ms
+04-26 18:32:18.871 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:32:22.174 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:32:23.926 D/skia    ( 1485): purging 72K from font cache [8 entries]
+04-26 18:32:24.046 D/dalvikvm( 1485): GC_EXPLICIT freed 2037K, 52% free 7944K/16519K, external 3669K/4557K, paused 122ms
+04-26 18:32:24.847 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:32:24.857 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:32:24.877 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:32:24.877 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:32:24.887 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:32:24.897 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:32:24.907 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:32:24.907 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:32:38.490 D/dalvikvm( 7839): GC_EXPLICIT freed 7K, 43% free 3644K/6343K, external 0K/0K, paused 78ms
+04-26 18:32:39.871 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:32:39.871 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:32:39.891 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:32:39.891 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:32:39.891 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:32:39.891 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:32:39.922 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:32:39.922 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:32:43.495 D/dalvikvm( 2085): GC_EXPLICIT freed 41K, 45% free 3396K/6151K, external 0K/0K, paused 77ms
+04-26 18:32:44.176 D/dalvikvm(17212): GC_CONCURRENT freed 418K, 44% free 3698K/6535K, external 0K/0K, paused 6ms+2ms
+04-26 18:32:48.510 D/dalvikvm( 5797): GC_EXPLICIT freed 260K, 44% free 3598K/6407K, external 0K/0K, paused 79ms
+04-26 18:32:48.870 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:32:52.474 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:32:53.545 D/dalvikvm( 2343): GC_EXPLICIT freed 75K, 37% free 5139K/8071K, external 0K/0K, paused 113ms
+04-26 18:32:54.886 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:32:54.886 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:32:54.906 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:32:54.906 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:32:54.916 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:32:54.916 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:32:54.936 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:32:54.936 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:32:58.520 D/dalvikvm( 2011): GC_EXPLICIT freed <1K, 44% free 3642K/6471K, external 0K/0K, paused 74ms
+04-26 18:32:58.830 D/IMCOM-FORENSICS(17809): Upload manager created
+04-26 18:32:58.840 D/IMCOM-FORENSICS(17809): gathering log: main
+04-26 18:32:58.850 D/IMCOM-FORENSICS(17809): done garhering log: main in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_main
+04-26 18:32:58.850 D/IMCOM-FORENSICS(17809): gathering log: system
+04-26 18:32:58.850 D/IMCOM-FORENSICS(17809): done garhering log: system in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_system
+04-26 18:32:58.860 D/IMCOM-FORENSICS(17809): gathering log: events
+04-26 18:32:58.860 D/IMCOM-FORENSICS(17809): done garhering log: events in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_events
+04-26 18:32:58.860 D/IMCOM-FORENSICS(17809): gathering log: radio
+04-26 18:32:58.870 D/IMCOM-FORENSICS(17809): done garhering log: radio in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_radio
+04-26 18:32:58.870 D/su      (17818): Found file
+04-26 18:32:58.870 D/su      (17818): this is the last character 101 of the string
+04-26 18:32:58.880 D/su      (17818): Comparing s /system/bin/sh, 14 to /system/bin/sh
+04-26 18:32:59.000 D/AndroidRuntime(17820): 
+04-26 18:32:59.000 D/AndroidRuntime(17820): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+04-26 18:32:59.000 D/AndroidRuntime(17820): CheckJNI is OFF
+04-26 18:32:59.000 D/dalvikvm(17820): creating instr width table
+04-26 18:32:59.220 D/AndroidRuntime(17820): Calling main entry com.android.commands.am.Am
+04-26 18:32:59.250 D/AndroidRuntime(17820): Shutting down VM
+04-26 18:32:59.260 I/AndroidRuntime(17820): NOTE: attach of thread 'Binder Thread #3' failed
+04-26 18:32:59.260 D/dalvikvm(17820): GC_CONCURRENT freed 105K, 65% free 359K/1024K, external 0K/0K, paused 0ms+0ms
+04-26 18:32:59.260 D/jdwp    (17820): Got wake-up signal, bailing out of select
+04-26 18:32:59.270 D/dalvikvm(17820): Debugger has detached; object registry had 1 entries
+04-26 18:32:59.290 D/su      (17818): 10077 imcom.forensics:uploader executing 0 /system/bin/sh using shell /system/bin/sh : sh
+04-26 18:32:59.401 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x576e08 3 0x818738
+04-26 18:32:59.491 D/dalvikvm(17630): GC_CONCURRENT freed 235K, 46% free 3060K/5639K, external 0K/0K, paused 13ms+2ms
+04-26 18:33:00.311 D/dalvikvm(17809): GC_CONCURRENT freed 302K, 47% free 3035K/5639K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:00.331 E/SIZE    (17809): 72449
+04-26 18:33:00.381 D/dalvikvm(17809): GC_CONCURRENT freed 458K, 48% free 3088K/5895K, external 0K/0K, paused 3ms+2ms
+04-26 18:33:00.422 D/dalvikvm(17809): GC_FOR_MALLOC freed 297K, 47% free 3130K/5895K, external 0K/0K, paused 18ms
+04-26 18:33:00.422 I/dalvikvm-heap(17809): Grow heap (frag case) to 5.466MB for 173456-byte allocation
+04-26 18:33:00.452 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 46% free 3299K/6087K, external 0K/0K, paused 18ms
+04-26 18:33:00.472 E/SIZE    (17809): 83816
+04-26 18:33:00.492 D/dalvikvm(17809): GC_FOR_MALLOC freed 177K, 48% free 3186K/6087K, external 0K/0K, paused 22ms
+04-26 18:33:00.492 I/dalvikvm-heap(17809): Grow heap (frag case) to 5.516MB for 167648-byte allocation
+04-26 18:33:00.532 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 47% free 3350K/6279K, external 0K/0K, paused 23ms
+04-26 18:33:00.602 D/dalvikvm(17809): GC_CONCURRENT freed 476K, 47% free 3385K/6279K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:00.632 D/dalvikvm(17809): GC_FOR_MALLOC freed 120K, 48% free 3303K/6279K, external 0K/0K, paused 18ms
+04-26 18:33:00.632 I/dalvikvm-heap(17809): Grow heap (frag case) to 5.650MB for 187810-byte allocation
+04-26 18:33:00.662 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 47% free 3486K/6471K, external 0K/0K, paused 17ms
+04-26 18:33:00.692 D/dalvikvm(17809): GC_FOR_MALLOC freed 201K, 49% free 3364K/6471K, external 0K/0K, paused 18ms
+04-26 18:33:00.702 I/dalvikvm-heap(17809): Grow heap (frag case) to 5.798MB for 281710-byte allocation
+04-26 18:33:00.732 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 47% free 3639K/6791K, external 0K/0K, paused 18ms
+04-26 18:33:00.772 D/dalvikvm(17809): GC_FOR_MALLOC freed 301K, 50% free 3456K/6791K, external 0K/0K, paused 19ms
+04-26 18:33:00.772 I/dalvikvm-heap(17809): Grow heap (frag case) to 6.023MB for 422560-byte allocation
+04-26 18:33:00.802 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 47% free 3869K/7239K, external 0K/0K, paused 18ms
+04-26 18:33:00.882 D/dalvikvm(17809): GC_CONCURRENT freed 448K, 51% free 3596K/7239K, external 0K/0K, paused 3ms+2ms
+04-26 18:33:00.912 D/dalvikvm(17809): GC_FOR_MALLOC freed 2K, 51% free 3593K/7239K, external 0K/0K, paused 21ms
+04-26 18:33:00.912 I/dalvikvm-heap(17809): Grow heap (frag case) to 6.359MB for 633836-byte allocation
+04-26 18:33:00.942 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 47% free 4212K/7879K, external 0K/0K, paused 18ms
+04-26 18:33:01.032 D/dalvikvm(17809): GC_CONCURRENT freed 592K, 52% free 3800K/7879K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:01.072 D/dalvikvm(17809): GC_FOR_MALLOC freed 83K, 52% free 3800K/7879K, external 0K/0K, paused 19ms
+04-26 18:33:01.072 I/dalvikvm-heap(17809): Grow heap (frag case) to 6.862MB for 950750-byte allocation
+04-26 18:33:01.102 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 40% free 4728K/7879K, external 0K/0K, paused 18ms
+04-26 18:33:01.152 E/SIZE    (17809): 363461
+04-26 18:33:01.172 D/dalvikvm(17809): GC_CONCURRENT freed 735K, 48% free 4109K/7879K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:01.192 D/dalvikvm(17809): GC_FOR_MALLOC freed <1K, 48% free 4109K/7879K, external 0K/0K, paused 20ms
+04-26 18:33:01.192 I/dalvikvm-heap(17809): Grow heap (frag case) to 6.951MB for 726938-byte allocation
+04-26 18:33:01.222 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 39% free 4819K/7879K, external 0K/0K, paused 17ms
+04-26 18:33:01.302 D/dalvikvm(17809): GC_CONCURRENT freed 1288K, 50% free 4003K/7879K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:01.312 E/SIZE    (17809): 71847
+04-26 18:33:01.312 D/IMCOM-FORENSICS(17809): Started uploading logs
+04-26 18:33:01.382 D/dalvikvm(17809): GC_CONCURRENT freed 365K, 48% free 4149K/7879K, external 0K/0K, paused 3ms+2ms
+04-26 18:33:01.422 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x576e08 3
+04-26 18:33:01.422 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x818738 4
+04-26 18:33:01.422 D/SurfaceFlinger( 1485): [DISP] detachLayer 0x576e08 0x818738
+04-26 18:33:01.422 D/SurfaceFlinger( 1485): [DISP] remove 0x818738 3
+04-26 18:33:01.433 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x818738
+04-26 18:33:01.683 D/dalvikvm(17809): GC_CONCURRENT freed 299K, 45% free 4361K/7879K, external 0K/0K, paused 2ms+2ms
+04-26 18:33:01.763 D/dalvikvm(17809): GC_CONCURRENT freed 406K, 45% free 4354K/7879K, external 0K/0K, paused 2ms+2ms
+04-26 18:33:01.953 D/dalvikvm(17809): GC_CONCURRENT freed 473K, 45% free 4368K/7879K, external 0K/0K, paused 2ms+2ms
+04-26 18:33:02.053 D/dalvikvm(17809): GC_CONCURRENT freed 350K, 44% free 4426K/7879K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:02.083 D/dalvikvm(17809): GC_FOR_MALLOC freed 245K, 45% free 4384K/7879K, external 0K/0K, paused 21ms
+04-26 18:33:02.083 I/dalvikvm-heap(17809): Grow heap (frag case) to 6.780MB for 266192-byte allocation
+04-26 18:33:02.113 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 44% free 4644K/8199K, external 0K/0K, paused 17ms
+04-26 18:33:02.143 D/dalvikvm(17809): GC_FOR_MALLOC freed 173K, 46% free 4471K/8199K, external 0K/0K, paused 18ms
+04-26 18:33:02.143 I/dalvikvm-heap(17809): Grow heap (frag case) to 6.992MB for 399284-byte allocation
+04-26 18:33:02.173 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 44% free 4861K/8647K, external 0K/0K, paused 18ms
+04-26 18:33:02.203 D/dalvikvm(17809): GC_FOR_MALLOC freed 463K, 50% free 4397K/8647K, external 0K/0K, paused 18ms
+04-26 18:33:02.203 I/dalvikvm-heap(17809): Grow heap (frag case) to 7.232MB for 726970-byte allocation
+04-26 18:33:02.253 D/dalvikvm(17809): GC_CONCURRENT freed <1K, 41% free 5107K/8647K, external 0K/0K, paused 3ms+3ms
+04-26 18:33:02.544 D/dalvikvm(17809): GC_CONCURRENT freed 718K, 41% free 5126K/8647K, external 0K/0K, paused 2ms+3ms
+04-26 18:33:02.824 D/dalvikvm(17809): GC_CONCURRENT freed 755K, 41% free 5140K/8647K, external 0K/0K, paused 2ms+2ms
+04-26 18:33:02.874 D/dalvikvm(17809): GC_FOR_MALLOC freed 124K, 41% free 5107K/8647K, external 0K/0K, paused 19ms
+04-26 18:33:02.874 I/dalvikvm-heap(17809): Grow heap (frag case) to 8.272MB for 1090450-byte allocation
+04-26 18:33:02.904 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 37% free 6172K/9735K, external 0K/0K, paused 17ms
+04-26 18:33:02.994 D/dalvikvm(17809): GC_CONCURRENT freed 810K, 44% free 5462K/9735K, external 0K/0K, paused 3ms+2ms
+04-26 18:33:03.104 D/dalvikvm(17809): GC_FOR_MALLOC freed 288K, 44% free 5462K/9735K, external 0K/0K, paused 21ms
+04-26 18:33:03.104 I/dalvikvm-heap(17809): Grow heap (frag case) to 8.442MB for 904970-byte allocation
+04-26 18:33:03.134 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 41% free 6346K/10631K, external 0K/0K, paused 17ms
+04-26 18:33:03.184 D/dalvikvm(17809): GC_CONCURRENT freed 1064K, 51% free 5281K/10631K, external 0K/0K, paused 3ms+3ms
+04-26 18:33:03.204 D/dalvikvm(17809): GC_FOR_MALLOC freed <1K, 51% free 5281K/10631K, external 0K/0K, paused 21ms
+04-26 18:33:03.214 I/dalvikvm-heap(17809): Grow heap (frag case) to 8.633MB for 1290766-byte allocation
+04-26 18:33:03.244 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 46% free 6542K/11911K, external 0K/0K, paused 17ms
+04-26 18:33:03.334 D/dalvikvm(17809): GC_CONCURRENT freed 1354K, 55% free 5448K/11911K, external 0K/0K, paused 3ms+3ms
+04-26 18:33:03.495 D/dalvikvm(17809): GC_CONCURRENT freed 573K, 53% free 5666K/11911K, external 0K/0K, paused 3ms+3ms
+04-26 18:33:03.525 D/dalvikvm(17809): GC_FOR_MALLOC freed 210K, 55% free 5455K/11911K, external 0K/0K, paused 29ms
+04-26 18:33:03.535 I/dalvikvm-heap(17809): Grow heap (frag case) to 9.418MB for 1936144-byte allocation
+04-26 18:33:03.565 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 39% free 7346K/11911K, external 0K/0K, paused 18ms
+04-26 18:33:03.615 D/dalvikvm(17809): GC_CONCURRENT freed 1448K, 51% free 5898K/11911K, external 0K/0K, paused 3ms+3ms
+04-26 18:33:03.635 D/dalvikvm(17809): GC_FOR_MALLOC freed <1K, 51% free 5898K/11911K, external 0K/0K, paused 20ms
+04-26 18:33:03.635 I/dalvikvm-heap(17809): Grow heap (frag case) to 9.418MB for 1482838-byte allocation
+04-26 18:33:03.665 D/dalvikvm(17809): GC_FOR_MALLOC freed 0K, 39% free 7346K/11911K, external 0K/0K, paused 18ms
+04-26 18:33:03.755 D/dalvikvm(17809): GC_CONCURRENT freed 1903K, 48% free 6219K/11911K, external 0K/0K, paused 3ms+3ms
+04-26 18:33:05.086 D/dalvikvm( 3151): GC_EXPLICIT freed 4K, 44% free 3668K/6535K, external 0K/0K, paused 39ms
+04-26 18:33:09.901 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:33:09.901 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:33:09.921 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:33:09.921 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:33:09.931 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:33:09.941 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:33:09.951 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:33:09.961 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:33:10.201 D/dalvikvm( 1670): GC_EXPLICIT freed 21K, 44% free 3493K/6215K, external 0K/512K, paused 51ms
+04-26 18:33:15.066 D/skia    ( 2268): purging 14K from font cache [2 entries]
+04-26 18:33:15.166 D/dalvikvm( 2268): GC_EXPLICIT freed 161K, 46% free 4554K/8327K, external 45K/512K, paused 99ms
+04-26 18:33:18.870 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:33:18.890 I/Process ( 1485): Sending signal. PID: 17809 SIG: 3
+04-26 18:33:18.890 I/dalvikvm(17809): threadid=4: reacting to signal 3
+04-26 18:33:18.910 I/dalvikvm(17809): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:18.910 I/Process ( 1485): Sending signal. PID: 1485 SIG: 3
+04-26 18:33:18.910 I/dalvikvm( 1485): threadid=4: reacting to signal 3
+04-26 18:33:18.930 I/dalvikvm( 1485): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:18.930 I/Process ( 1485): Sending signal. PID: 1603 SIG: 3
+04-26 18:33:18.930 I/dalvikvm( 1603): threadid=4: reacting to signal 3
+04-26 18:33:18.940 I/dalvikvm( 1603): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:18.940 I/Process ( 1485): Sending signal. PID: 1601 SIG: 3
+04-26 18:33:18.940 I/dalvikvm( 1601): threadid=4: reacting to signal 3
+04-26 18:33:18.960 I/dalvikvm( 1601): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:18.960 I/Process ( 1485): Sending signal. PID: 1570 SIG: 3
+04-26 18:33:18.960 I/dalvikvm( 1570): threadid=4: reacting to signal 3
+04-26 18:33:18.960 I/dalvikvm( 1570): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:19.260 D/dalvikvm( 1485): GC_EXPLICIT freed 863K, 50% free 8284K/16519K, external 3669K/4557K, paused 108ms
+04-26 18:33:19.320 D/dalvikvm(17212): GC_FOR_MALLOC freed 352K, 44% free 3690K/6535K, external 0K/0K, paused 208ms
+04-26 18:33:19.850 I/Process ( 1485): Sending signal. PID: 17212 SIG: 3
+04-26 18:33:19.850 I/dalvikvm(17212): threadid=4: reacting to signal 3
+04-26 18:33:19.881 I/dalvikvm(17212): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:19.881 I/Process ( 1485): Sending signal. PID: 17709 SIG: 3
+04-26 18:33:19.881 I/dalvikvm(17709): threadid=4: reacting to signal 3
+04-26 18:33:19.881 I/dalvikvm(17709): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:33:19.991 D/Process ( 1485): killProcess, pid=17809
+04-26 18:33:19.991 D/Process ( 1485): dalvik.system.VMStack.getThreadStackTrace(Native Method)
+04-26 18:33:19.991 D/Process ( 1485): java.lang.Thread.getStackTrace(Thread.java:745)
+04-26 18:33:20.001 D/Process ( 1485): android.os.Process.killProcess(Process.java:797)
+04-26 18:33:20.001 D/Process ( 1485): com.android.server.am.ActivityManagerService.appNotResponding(ActivityManagerService.java:3576)
+04-26 18:33:20.001 D/Process ( 1485): com.android.server.am.ActivityManagerService.serviceTimeout(ActivityManagerService.java:11371)
+04-26 18:33:20.011 D/Process ( 1485): com.android.server.am.ActivityManagerService$2.handleMessage(ActivityManagerService.java:1224)
+04-26 18:33:20.011 D/Process ( 1485): android.os.Handler.dispatchMessage(Handler.java:99)
+04-26 18:33:20.011 D/Process ( 1485): android.os.Looper.loop(Looper.java:150)
+04-26 18:33:20.011 D/Process ( 1485): com.android.server.am.ActivityManagerService$AThread.run(ActivityManagerService.java:1477)
+04-26 18:33:20.021 I/Process ( 1485): Sending signal. PID: 17809 SIG: 9
+04-26 18:33:20.151 D/GexinSdk(16499): [NOTICE] Low Memory! 
+04-26 18:33:20.191 D/skia    (16499): purging 6K from font cache [1 entries]
+04-26 18:33:20.231 D/dalvikvm(16499): GC_EXPLICIT freed 587K, 48% free 3681K/7047K, external 0K/0K, paused 47ms
+04-26 18:33:22.733 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:33:24.915 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:33:24.915 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:33:24.935 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:33:24.935 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:33:24.945 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:33:24.955 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:33:24.965 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:33:24.965 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:33:25.066 D/skia    (16893): purging 6K from font cache [1 entries]
+04-26 18:33:25.126 D/dalvikvm(16893): GC_EXPLICIT freed 81K, 45% free 2990K/5379K, external 0K/0K, paused 59ms
+04-26 18:33:30.080 D/skia    (16907): purging 6K from font cache [1 entries]
+04-26 18:33:30.181 D/dalvikvm(16907): GC_EXPLICIT freed 384K, 45% free 3524K/6407K, external 0K/0K, paused 103ms
+04-26 18:33:35.075 D/skia    (17075): purging 6K from font cache [1 entries]
+04-26 18:33:35.215 D/dalvikvm(17075): GC_EXPLICIT freed 442K, 33% free 7985K/11783K, external 0K/0K, paused 133ms
+04-26 18:33:39.930 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:33:39.930 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:33:39.950 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:33:39.950 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:33:39.960 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:33:39.970 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:33:39.970 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:33:39.970 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:33:48.879 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:33:50.951 D/skia    (17212): purging 6K from font cache [1 entries]
+04-26 18:33:51.021 D/dalvikvm(17212): GC_EXPLICIT freed 343K, 44% free 3661K/6535K, external 0K/0K, paused 76ms
+04-26 18:33:52.622 D/dalvikvm( 1640): GC_CONCURRENT freed 373K, 53% free 3002K/6279K, external 0K/0K, paused 6ms+2ms
+04-26 18:33:53.013 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:33:54.945 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:33:54.945 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:33:54.965 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:33:54.965 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:33:54.975 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:33:54.985 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:33:54.995 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:33:55.005 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:33:56.036 D/dalvikvm(17483): GC_EXPLICIT freed 1K, 42% free 4111K/6983K, external 17268K/19316K, paused 94ms
+04-26 18:34:05.995 D/dalvikvm(17630): GC_EXPLICIT freed 55K, 47% free 3005K/5639K, external 0K/0K, paused 62ms
+04-26 18:34:09.959 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:34:09.969 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:34:09.979 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:34:09.979 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:34:09.979 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:34:09.999 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:34:10.009 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:34:10.019 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:34:15.014 D/dalvikvm( 7839): GC_EXPLICIT freed 3K, 43% free 3641K/6343K, external 0K/0K, paused 85ms
+04-26 18:34:18.878 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:34:23.292 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:34:24.984 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:34:24.984 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:34:25.004 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:34:25.004 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:34:25.004 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:34:25.014 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:34:25.024 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:34:25.034 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:34:39.999 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:34:39.999 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:34:40.019 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:34:40.019 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:34:40.029 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:34:40.029 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:34:40.049 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:34:40.049 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:34:45.224 D/dalvikvm( 1485): GC_CONCURRENT freed 2236K, 52% free 7968K/16519K, external 3669K/4557K, paused 11ms+6ms
+04-26 18:34:46.205 W/jdwp    (17709): Debugger is telling the VM to exit with code=1
+04-26 18:34:46.205 I/dalvikvm(17709): GC lifetime allocation: 2586 bytes
+04-26 18:34:46.235 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x727778 1
+04-26 18:34:46.245 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x853598 5
+04-26 18:34:46.265 D/SurfaceFlinger( 1485): [DISP] remove 0x853598 2
+04-26 18:34:46.265 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x853598
+04-26 18:34:46.275 D/Zygote  ( 1368): Process 17709 exited cleanly (1)
+04-26 18:34:46.295 I/CarouselTimeLog(17483): onStart() finish: 1366994086307
+04-26 18:34:46.295 D/CarouselDummyActivity(17483): CarouselDummyActivity.onResume: tab_allapps
+04-26 18:34:46.295 D/Background traffic light(17483): traffic light: RED, mBackgroundTrafficLight = true
+04-26 18:34:46.305 D/William (17483): - refreshUsageStatCache -
+04-26 18:34:46.325 D/EASAppSvc( 2268): [ NA ]setPause(com.htc.launcher)
+04-26 18:34:46.335 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x9f6a88 4 0x818738
+04-26 18:34:48.877 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:34:53.302 D/dalvikvm( 3151): GC_EXPLICIT freed 19K, 44% free 3669K/6535K, external 0K/0K, paused 36ms
+04-26 18:34:55.013 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:34:55.013 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:34:55.033 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:34:55.033 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:34:55.043 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:34:55.053 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:34:55.063 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:34:55.073 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:34:56.315 D/Background traffic light(17483): traffic light: GREEN, mBackgroundTrafficLight = false
+04-26 18:34:56.325 D/EASAppSvc( 2268): [ NA ]setResume(com.htc.launcher)
+04-26 18:35:00.058 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:35:00.258 D/dalvikvm(17212): GC_CONCURRENT freed 386K, 44% free 3701K/6535K, external 0K/0K, paused 12ms+2ms
+04-26 18:35:00.989 D/AndroidRuntime(17932): 
+04-26 18:35:00.989 D/AndroidRuntime(17932): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+04-26 18:35:00.999 D/AndroidRuntime(17932): CheckJNI is OFF
+04-26 18:35:00.999 D/dalvikvm(17932): creating instr width table
+04-26 18:35:01.209 D/AndroidRuntime(17932): Calling main entry com.android.commands.pm.Pm
+04-26 18:35:01.219 D/AndroidRuntime(17932): Shutting down VM
+04-26 18:35:01.229 D/dalvikvm(17932): GC_CONCURRENT freed 103K, 69% free 327K/1024K, external 0K/0K, paused 1ms+2ms
+04-26 18:35:01.229 I/AndroidRuntime(17932): NOTE: attach of thread 'Binder Thread #3' failed
+04-26 18:35:01.239 D/dalvikvm(17932): Debugger has detached; object registry had 1 entries
+04-26 18:35:01.390 D/AndroidRuntime(17942): 
+04-26 18:35:01.390 D/AndroidRuntime(17942): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+04-26 18:35:01.390 D/AndroidRuntime(17942): CheckJNI is OFF
+04-26 18:35:01.390 D/dalvikvm(17942): creating instr width table
+04-26 18:35:01.600 D/AndroidRuntime(17942): Calling main entry com.android.commands.am.Am
+04-26 18:35:01.620 V/HtcAppUsageStats( 1485): handleMessage msg=1
+04-26 18:35:01.630 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x534598 63 0x5ecc48
+04-26 18:35:01.660 V/HtcAppUsageStats( 1485): (launch app, package): (Android Timeline Forensic, imcom.forensics)
+04-26 18:35:01.660 D/AndroidRuntime(17942): Shutting down VM
+04-26 18:35:01.670 D/PhoneWindow(17483): couldn't save which view has focus because the focused view com.android.internal.policy.impl.PhoneWindow$DecorView@405b5cf0 has no id.
+04-26 18:35:01.680 I/AndroidRuntime(17942): NOTE: attach of thread 'Binder Thread #3' failed
+04-26 18:35:01.680 D/Background traffic light(17483): traffic light: GREEN, mBackgroundTrafficLight = true
+04-26 18:35:01.700 D/dalvikvm(17942): GC_CONCURRENT freed 104K, 66% free 357K/1024K, external 0K/0K, paused 1ms+0ms
+04-26 18:35:01.710 D/jdwp    (17942): Got wake-up signal, bailing out of select
+04-26 18:35:01.710 D/dalvikvm(17942): Debugger has detached; object registry had 1 entries
+04-26 18:35:01.780 D/dalvikvm(17955): Debugger has detached; object registry had 1 entries
+04-26 18:35:01.820 I/System.out(17955): Sending WAIT chunk
+04-26 18:35:01.860 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x534598 64 0x84f938
+04-26 18:35:01.910 W/dalvikvm(17483): disableGcForExternalAlloc: false
+04-26 18:35:01.920 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x9f6a88 4
+04-26 18:35:01.920 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x818738 4
+04-26 18:35:01.950 D/SurfaceFlinger( 1485): [DISP] detachLayer 0x9f6a88 0x818738
+04-26 18:35:01.950 D/SurfaceFlinger( 1485): [DISP] remove 0x818738 2
+04-26 18:35:01.950 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x818738
+04-26 18:35:02.831 I/dalvikvm(17955): Debugger is active
+04-26 18:35:03.001 D/AndroidRuntime(17964): 
+04-26 18:35:03.001 D/AndroidRuntime(17964): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+04-26 18:35:03.001 D/AndroidRuntime(17964): CheckJNI is OFF
+04-26 18:35:03.001 D/dalvikvm(17964): creating instr width table
+04-26 18:35:03.021 I/System.out(17955): Debugger has connected
+04-26 18:35:03.021 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:03.221 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:03.271 D/AndroidRuntime(17964): Calling main entry com.android.commands.am.Am
+04-26 18:35:03.281 D/AndroidRuntime(17964): Shutting down VM
+04-26 18:35:03.291 D/dalvikvm(17964): GC_CONCURRENT freed 102K, 69% free 322K/1024K, external 0K/0K, paused 0ms+6ms
+04-26 18:35:03.291 I/AndroidRuntime(17964): NOTE: attach of thread 'Binder Thread #3' failed
+04-26 18:35:03.301 D/dalvikvm(17964): Debugger has detached; object registry had 1 entries
+04-26 18:35:03.422 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:03.632 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:03.722 D/Database( 5797): dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, flag = 6, file size = 9216
+04-26 18:35:03.742 D/Database( 5797): dbopen(): path = /data/data/com.tencent.mobileqq/databases/eup_db, mode: wal, disk free size: 711 M, handle: 0x353678
+04-26 18:35:03.832 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:03.902 D/Database( 5797): dbclose(): path = /data/data/com.tencent.mobileqq/databases/eup_db, handle = 0x353678
+04-26 18:35:04.032 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:04.232 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:04.443 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:04.643 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:04.843 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:05.043 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:05.253 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:05.454 I/System.out(17955): waiting for debugger to settle...
+04-26 18:35:05.654 I/System.out(17955): debugger has settled (1352)
+04-26 18:35:05.704 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x534598 64
+04-26 18:35:05.704 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x84f938 4
+04-26 18:35:05.724 D/SurfaceFlinger( 1485): [DISP] detachLayer 0x534598 0x84f938
+04-26 18:35:05.724 D/SurfaceFlinger( 1485): [DISP] remove 0x84f938 2
+04-26 18:35:05.724 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x84f938
+04-26 18:35:05.884 D/ATRecorder(17955): com.htc.autotest.dlib.RecordEngine in loader dalvik.system.DexClassLoader@4052b180
+04-26 18:35:05.944 D/IMCOM-FORENSICS(17973): Upload manager created
+04-26 18:35:05.974 D/IMCOM-FORENSICS(17973): gathering log: main
+04-26 18:35:05.974 D/IMCOM-FORENSICS(17973): done garhering log: main in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_main
+04-26 18:35:05.974 D/IMCOM-FORENSICS(17973): gathering log: system
+04-26 18:35:05.974 D/IMCOM-FORENSICS(17973): done garhering log: system in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_system
+04-26 18:35:05.984 D/IMCOM-FORENSICS(17973): gathering log: events
+04-26 18:35:05.984 D/IMCOM-FORENSICS(17973): done garhering log: events in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_events
+04-26 18:35:05.984 D/su      (17982): Found file
+04-26 18:35:05.994 D/IMCOM-FORENSICS(17973): gathering log: radio
+04-26 18:35:05.994 D/IMCOM-FORENSICS(17973): done garhering log: radio in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_radio
+04-26 18:35:05.994 D/su      (17982): this is the last character 101 of the string
+04-26 18:35:06.014 D/su      (17982): Comparing s /system/bin/sh, 14 to /system/bin/sh
+04-26 18:35:06.044 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x5b4bb8 1 0x818738
+04-26 18:35:06.274 D/AndroidRuntime(17984): 
+04-26 18:35:06.274 D/AndroidRuntime(17984): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+04-26 18:35:06.284 D/AndroidRuntime(17984): CheckJNI is OFF
+04-26 18:35:06.284 D/dalvikvm(17984): creating instr width table
+04-26 18:35:06.344 I/ActivityManager( 1485): Displayed imcom.forensics/.MainActivity: +4s605ms
+04-26 18:35:06.364 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x534598 63
+04-26 18:35:06.364 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x5ecc48 4
+04-26 18:35:06.364 D/SurfaceFlinger( 1485): [DISP] detachLayer 0x534598 0x5ecc48
+04-26 18:35:06.374 D/SurfaceFlinger( 1485): [DISP] remove 0x5ecc48 3
+04-26 18:35:06.374 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x5ecc48
+04-26 18:35:06.565 D/AndroidRuntime(17984): Calling main entry com.android.commands.am.Am
+04-26 18:35:06.595 D/AndroidRuntime(17984): Shutting down VM
+04-26 18:35:06.605 I/AndroidRuntime(17984): NOTE: attach of thread 'Binder Thread #3' failed
+04-26 18:35:06.605 D/dalvikvm(17984): GC_CONCURRENT freed 105K, 65% free 359K/1024K, external 0K/0K, paused 1ms+0ms
+04-26 18:35:06.615 D/jdwp    (17984): Got wake-up signal, bailing out of select
+04-26 18:35:06.615 D/dalvikvm(17984): Debugger has detached; object registry had 1 entries
+04-26 18:35:06.635 D/su      (17982): 10077 imcom.forensics:uploader executing 0 /system/bin/sh using shell /system/bin/sh : sh
+04-26 18:35:06.765 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x576e08 4 0x84f938
+04-26 18:35:07.255 D/dalvikvm(17973): GC_FOR_MALLOC freed 267K, 48% free 2951K/5575K, external 0K/0K, paused 19ms
+04-26 18:35:07.275 E/SIZE    (17973): 72528
+04-26 18:35:07.295 D/dalvikvm(17973): GC_FOR_MALLOC freed 263K, 48% free 3034K/5767K, external 0K/0K, paused 20ms
+04-26 18:35:07.355 D/dalvikvm(17973): GC_CONCURRENT freed 481K, 48% free 3123K/5895K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:07.395 D/dalvikvm(17973): GC_FOR_MALLOC freed 214K, 47% free 3175K/5895K, external 0K/0K, paused 18ms
+04-26 18:35:07.395 I/dalvikvm-heap(17973): Grow heap (frag case) to 5.575MB for 241454-byte allocation
+04-26 18:35:07.425 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 45% free 3411K/6151K, external 0K/0K, paused 17ms
+04-26 18:35:07.435 E/SIZE    (17973): 84101
+04-26 18:35:07.495 D/dalvikvm(17973): GC_CONCURRENT freed 632K, 48% free 3245K/6215K, external 0K/0K, paused 2ms+3ms
+04-26 18:35:07.536 D/dalvikvm(17973): GC_FOR_MALLOC freed 258K, 47% free 3322K/6215K, external 0K/0K, paused 18ms
+04-26 18:35:07.576 D/dalvikvm(17973): GC_FOR_MALLOC freed 231K, 46% free 3392K/6215K, external 0K/0K, paused 17ms
+04-26 18:35:07.576 I/dalvikvm-heap(17973): Grow heap (frag case) to 5.867MB for 323830-byte allocation
+04-26 18:35:07.606 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 44% free 3709K/6535K, external 0K/0K, paused 17ms
+04-26 18:35:07.656 D/dalvikvm(17973): GC_FOR_MALLOC freed 345K, 47% free 3498K/6535K, external 0K/0K, paused 20ms
+04-26 18:35:07.656 I/dalvikvm-heap(17973): Grow heap (frag case) to 6.124MB for 485740-byte allocation
+04-26 18:35:07.686 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 44% free 3972K/7047K, external 0K/0K, paused 17ms
+04-26 18:35:07.776 D/dalvikvm(17973): GC_CONCURRENT freed 482K, 48% free 3667K/7047K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:07.796 D/dalvikvm(17973): GC_FOR_MALLOC freed 36K, 49% free 3656K/7047K, external 0K/0K, paused 21ms
+04-26 18:35:07.806 I/dalvikvm-heap(17973): Grow heap (frag case) to 6.510MB for 728606-byte allocation
+04-26 18:35:07.836 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 45% free 4367K/7815K, external 0K/0K, paused 18ms
+04-26 18:35:07.926 D/dalvikvm(17973): GC_CONCURRENT freed 621K, 50% free 3965K/7815K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:07.956 D/dalvikvm(17973): GC_FOR_MALLOC freed 156K, 51% free 3893K/7815K, external 0K/0K, paused 18ms
+04-26 18:35:07.966 I/dalvikvm-heap(17973): Grow heap (frag case) to 7.088MB for 1092904-byte allocation
+04-26 18:35:07.996 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 45% free 4960K/8903K, external 0K/0K, paused 17ms
+04-26 18:35:08.006 E/SIZE    (17973): 365296
+04-26 18:35:08.036 D/dalvikvm(17973): GC_CONCURRENT freed 714K, 53% free 4249K/8903K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:08.066 D/dalvikvm(17973): GC_FOR_MALLOC freed <1K, 53% free 4249K/8903K, external 0K/0K, paused 21ms
+04-26 18:35:08.066 I/dalvikvm-heap(17973): Grow heap (frag case) to 7.090MB for 730608-byte allocation
+04-26 18:35:08.096 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 45% free 4962K/8903K, external 0K/0K, paused 18ms
+04-26 18:35:08.186 D/dalvikvm(17973): GC_CONCURRENT freed 1504K, 55% free 4042K/8903K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:08.186 E/SIZE    (17973): 71837
+04-26 18:35:08.196 D/IMCOM-FORENSICS(17973): Started uploading logs
+04-26 18:35:08.246 D/dalvikvm(17973): GC_CONCURRENT freed 400K, 54% free 4154K/8903K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:08.486 D/dalvikvm(17973): GC_FOR_MALLOC freed 302K, 54% free 4153K/8903K, external 0K/0K, paused 21ms
+04-26 18:35:08.577 D/dalvikvm(17973): GC_CONCURRENT freed 213K, 51% free 4399K/8903K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:08.717 D/dalvikvm(17973): GC_CONCURRENT freed 483K, 51% free 4370K/8903K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:08.787 D/SurfaceFlinger( 1485): [DISP] getLayerUser 0x576e08 4
+04-26 18:35:08.787 D/SurfaceFlinger( 1485): [DISP] purgatorizeLayer_l 0x84f938 4
+04-26 18:35:08.797 D/SurfaceFlinger( 1485): [DISP] detachLayer 0x576e08 0x84f938
+04-26 18:35:08.797 D/SurfaceFlinger( 1485): [DISP] remove 0x84f938 3
+04-26 18:35:08.797 D/SurfaceFlinger( 1485): [DISP]~LayerBaseClient 0x84f938
+04-26 18:35:08.967 D/dalvikvm(17973): GC_FOR_MALLOC freed 293K, 52% free 4351K/8903K, external 0K/0K, paused 21ms
+04-26 18:35:09.017 D/dalvikvm(17973): GC_FOR_MALLOC freed 262K, 51% free 4433K/8903K, external 0K/0K, paused 18ms
+04-26 18:35:09.067 D/dalvikvm(17973): GC_CONCURRENT freed 246K, 48% free 4652K/8903K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:09.087 D/dalvikvm(17973): GC_FOR_MALLOC freed 640K, 51% free 4404K/8903K, external 0K/0K, paused 21ms
+04-26 18:35:09.087 I/dalvikvm-heap(17973): Grow heap (frag case) to 7.243MB for 730640-byte allocation
+04-26 18:35:09.117 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 43% free 5118K/8903K, external 0K/0K, paused 18ms
+04-26 18:35:09.227 D/dalvikvm(17973): GC_CONCURRENT freed 95K, 43% free 5134K/8903K, external 0K/0K, paused 2ms+3ms
+04-26 18:35:09.568 D/dalvikvm(17973): GC_CONCURRENT freed 752K, 43% free 5134K/8903K, external 0K/0K, paused 2ms+3ms
+04-26 18:35:09.858 D/dalvikvm(17973): GC_CONCURRENT freed 724K, 43% free 5153K/8903K, external 0K/0K, paused 2ms+3ms
+04-26 18:35:09.878 D/dalvikvm(17973): GC_FOR_MALLOC freed 34K, 43% free 5118K/8903K, external 0K/0K, paused 21ms
+04-26 18:35:09.888 I/dalvikvm-heap(17973): Grow heap (frag case) to 8.288MB for 1095956-byte allocation
+04-26 18:35:09.918 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 39% free 6188K/9991K, external 0K/0K, paused 17ms
+04-26 18:35:09.988 D/dalvikvm(17973): GC_CONCURRENT freed 819K, 46% free 5475K/9991K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:10.018 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:35:10.018 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:35:10.028 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:35:10.028 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:35:10.028 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:35:10.028 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:35:10.058 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:35:10.058 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:35:10.128 D/dalvikvm(17973): GC_FOR_MALLOC freed 284K, 46% free 5475K/9991K, external 0K/0K, paused 20ms
+04-26 18:35:10.128 I/dalvikvm-heap(17973): Grow heap (frag case) to 8.458MB for 909508-byte allocation
+04-26 18:35:10.168 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 42% free 6363K/10887K, external 0K/0K, paused 21ms
+04-26 18:35:10.208 D/dalvikvm(17973): GC_CONCURRENT freed 1070K, 52% free 5293K/10887K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:10.228 D/dalvikvm(17973): GC_FOR_MALLOC freed <1K, 52% free 5293K/10887K, external 0K/0K, paused 20ms
+04-26 18:35:10.228 I/dalvikvm-heap(17973): Grow heap (frag case) to 8.651MB for 1297304-byte allocation
+04-26 18:35:10.258 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 40% free 6560K/10887K, external 0K/0K, paused 18ms
+04-26 18:35:10.358 D/dalvikvm(17973): GC_CONCURRENT freed 1375K, 51% free 5431K/10887K, external 0K/0K, paused 3ms+3ms
+04-26 18:35:10.548 D/dalvikvm(17973): GC_CONCURRENT freed 548K, 48% free 5675K/10887K, external 0K/0K, paused 2ms+2ms
+04-26 18:35:10.568 D/dalvikvm(17973): GC_FOR_MALLOC freed 210K, 50% free 5465K/10887K, external 0K/0K, paused 20ms
+04-26 18:35:10.568 I/dalvikvm-heap(17973): Grow heap (frag case) to 9.437MB for 1945952-byte allocation
+04-26 18:35:10.599 D/dalvikvm(17973): GC_FOR_MALLOC freed 0K, 43% free 7365K/12807K, external 0K/0K, paused 17ms
+04-26 18:35:10.669 D/dalvikvm(17973): GC_CONCURRENT freed 1453K, 43% free 7365K/12807K, external 0K/0K, paused 2ms+7ms
+04-26 18:35:11.329 D/IMCOM-FORENSICS(17973): uploading succeeded
+04-26 18:35:11.479 D/cy      (16499):  AwaitNano Finished 3
+04-26 18:35:11.489 I/cy      (16499): cg@40562580
+04-26 18:35:11.499 D/cy      (16499):  Take-> cg@40562580 has delay: 239989
+04-26 18:35:11.499 D/dg      (16499): CurTask : cg@40562580
+04-26 18:35:11.509 I/TaskService(16499): Processor InitTask: cg@1079387520
+04-26 18:35:11.509 D/cg      (16499): Task Run->cg@1079387520 Thread Opreator: taskService-processor
+04-26 18:35:11.509 D/GexinSdk(16499): heart beat send : 1366994111522
+04-26 18:35:11.519 I/dw      (16499): CPU ON + AlarmReceiver:-> cTime; Apr 26, 2013 6:35:11 PM
+04-26 18:35:11.529 I/dw      (16499): WakeLock Time:->1366994111537
+04-26 18:35:11.529 D/dg      (16499): processorDo interrupt
+04-26 18:35:11.539 D/ct      (16499): SetDelay->ct@1080151880 Thread Opreator: taskService-processor The holder: null
+04-26 18:35:11.539 D/ct      (16499): ct@1080151880 doTime-> 0 toDelay: 0
+04-26 18:35:11.539 D/cy      (16499): Offer Lock! ct@1080151880
+04-26 18:35:11.549 W/cy      (16499): Offer Complete: first; true-
+04-26 18:35:11.549 D/cg      (16499): SetDelay->cg@1079387520 Thread Opreator: taskService-processor The holder: Thread[taskService-processor,5,main]
+04-26 18:35:11.559 D/cg      (16499): cg@1079387520 doTime-> 1366994351563 toDelay: 240
+04-26 18:35:11.559 D/cy      (16499): Offer Lock! cg@1079387520
+04-26 18:35:11.559 W/cy      (16499): Offer Complete: first; false -- 1
+04-26 18:35:11.569 D/dg      (16499): Take task interrupted!
+04-26 18:35:11.569 D/cy      (16499): Take Lock
+04-26 18:35:11.579 I/cy      (16499): ct@4061cf48
+04-26 18:35:11.579 D/cy      (16499):  Take-> ct@4061cf48 has delay: 0
+04-26 18:35:11.589 D/dg      (16499): CurTask : ct@4061cf48
+04-26 18:35:11.589 I/ct      (16499): toInit->ct@4061cf48
+04-26 18:35:11.589 I/TaskService(16499): Processor InitTask: ct@1080151880
+04-26 18:35:11.589 D/ct      (16499): toWriteel@4057e028
+04-26 18:35:11.599 D/ct      (16499): Task Run->ct@1080151880 Thread Opreator: taskService-processor
+04-26 18:35:11.599 D/cr      (16499): Selector WakeUp
+04-26 18:35:11.599 I/cr      (16499): Select Result[0]/ Duration-> 240108
+04-26 18:35:11.610 D/cr      (16499): timeTasks iterate
+04-26 18:35:11.610 I/cr      (16499): receive data->true | isTimeOut->false
+04-26 18:35:11.610 D/cr      (16499): TimeTasks to remove->SocketTask@1079427200
+04-26 18:35:11.610 D/cr      (16499): isTimeOut:->false
+04-26 18:35:11.620 D/cr      (16499): Task Run->cr@1079395712 Thread Opreator: TaskService-pool-2@cr#-2047@cr#-2047
+04-26 18:35:11.620 D/cq      (16499): toWrite Key -> SelectionKey.OP_WRITE||SelectionKey.OP_READ|
+04-26 18:35:11.620 I/cr      (16499): Select(0)
+04-26 18:35:11.630 I/cr      (16499): Selector before [select(arg)]-> :1079529344
+04-26 18:35:11.630 I/cr      (16499): Select Result[1]/ Duration-> 3
+04-26 18:35:11.630 I/cr      (16499): Socket ??????
+04-26 18:35:11.640 I/cr      (16499): ???????--el@4057e028
+04-26 18:35:11.640 D/cr      (16499): toHasWriteKey-> true
+04-26 18:35:11.640 D/cy      (16499): Take Lock
+04-26 18:35:11.650 D/cy      (16499): cg@1079387520 AwaitSeconds-> 239
+04-26 18:35:11.650 D/cq      (16499): toWrite Key -> |SelectionKey.OP_READ|
+04-26 18:35:11.660 D/cr      (16499): Task Run->cr@1079395712 Thread Opreator: TaskService-pool-2@cr#-2047@cr#-2047
+04-26 18:35:11.660 I/cr      (16499): Select(15000)
+04-26 18:35:11.670 I/cr      (16499): Selector before [select(arg)]-> :1079529344
+04-26 18:35:11.670 I/dw      (16499): WakeLock Time:->1366994111679
+04-26 18:35:11.670 D/dw      (16499): setAlarmTime:-> 1366994351563 Calendar:Apr 26, 2013 6:39:11 PM sender:PendingIntent{4055bf30: android.os.BinderProxy@4055bee8}
+04-26 18:35:11.680 I/dw      (16499): WakeLock Keep Time:->8
+04-26 18:35:11.790 D/skia    (17483): purging 74K from font cache [6 entries]
+04-26 18:35:11.890 D/dalvikvm(17483): GC_EXPLICIT freed 61K, 42% free 4110K/6983K, external 17268K/19316K, paused 96ms
+04-26 18:35:12.250 I/dw      (16499): WakeLock Keep Time:->582
+04-26 18:35:12.260 I/cr      (16499): Select Result[1]/ Duration-> 588
+04-26 18:35:12.270 D/cr      (16499): Read;
+04-26 18:35:12.270 I/dg      (16499): el@1079059976
+04-26 18:35:12.290 D/dg      (16499): processorDo interrupt
+04-26 18:35:12.290 D/dg      (16499): Take task interrupted!
+04-26 18:35:12.300 D/GexinSdk(16499): {XXX} receive class : class el
+04-26 18:35:12.310 D/cg      (16499): SetDelay->cg@1079387520 Thread Opreator: taskService-processor The holder: Thread[taskService-processor,5,main]
+04-26 18:35:12.310 D/cy      (16499): SetDelay->cg@1079387520 toDelay: 240
+04-26 18:35:12.310 D/cy      (16499): Offer Lock! cg@1079387520
+04-26 18:35:12.310 W/cy      (16499): Offer Complete: first; true-
+04-26 18:35:12.320 D/cg      (16499): cg@1079387520 doTime-> 1366994352318 toDelay: 240
+04-26 18:35:12.320 D/GexinSdk(16499): received heartbeat.
+04-26 18:35:12.330 D/cr      (16499): Read 0 / ??????~
+04-26 18:35:12.330 D/cr      (16499): Task Run->cr@1079395712 Thread Opreator: TaskService-pool-2@cr#-2047@cr#-2047
+04-26 18:35:12.330 I/System.out(16499): ioHandle has been processed by defaultNotifyAction!
+04-26 18:35:12.340 I/cr      (16499): Select(0)
+04-26 18:35:12.340 D/GexinSdk(16499): actionList.size : 0
+04-26 18:35:12.340 D/cy      (16499): Take Lock
+04-26 18:35:12.340 I/cr      (16499): Selector before [select(arg)]-> :1079529344
+04-26 18:35:12.350 D/cy      (16499): cg@1079387520 AwaitSeconds-> 239
+04-26 18:35:12.350 D/dw      (16499): setAlarmTime:-> 1366994352318 Calendar:Apr 26, 2013 6:39:12 PM sender:PendingIntent{4055bf30: android.os.BinderProxy@4055bee8}
+04-26 18:35:12.360 I/dw      (16499): WakeLock Keep Time:->688
+04-26 18:35:12.871 D/dalvikvm( 1624): GC_CONCURRENT freed 385K, 76% free 3478K/14023K, external 0K/0K, paused 12ms+3ms
+04-26 18:35:16.604 D/dalvikvm(16499): GC_EXPLICIT freed 224K, 51% free 3497K/7047K, external 0K/0K, paused 34ms
+04-26 18:35:18.887 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:35:21.669 D/dalvikvm(17483): GC_EXPLICIT freed <1K, 42% free 4109K/6983K, external 17268K/19316K, paused 89ms
+04-26 18:35:25.043 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:35:25.043 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:35:25.063 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:35:25.063 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:35:25.073 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:35:25.083 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:35:25.093 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:35:25.103 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:35:26.034 I/Process ( 1485): Sending signal. PID: 17973 SIG: 3
+04-26 18:35:26.034 I/dalvikvm(17973): threadid=4: reacting to signal 3
+04-26 18:35:26.044 I/dalvikvm(17973): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:26.044 I/Process ( 1485): Sending signal. PID: 1485 SIG: 3
+04-26 18:35:26.044 I/dalvikvm( 1485): threadid=4: reacting to signal 3
+04-26 18:35:26.064 I/dalvikvm( 1485): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:26.064 I/Process ( 1485): Sending signal. PID: 1603 SIG: 3
+04-26 18:35:26.064 I/dalvikvm( 1603): threadid=4: reacting to signal 3
+04-26 18:35:26.074 I/dalvikvm( 1603): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:26.084 I/Process ( 1485): Sending signal. PID: 1601 SIG: 3
+04-26 18:35:26.084 I/dalvikvm( 1601): threadid=4: reacting to signal 3
+04-26 18:35:26.084 I/dalvikvm( 1601): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:26.094 I/Process ( 1485): Sending signal. PID: 1570 SIG: 3
+04-26 18:35:26.094 I/dalvikvm( 1570): threadid=4: reacting to signal 3
+04-26 18:35:26.094 I/dalvikvm( 1570): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:26.384 D/dalvikvm( 1485): GC_EXPLICIT freed 975K, 50% free 8292K/16519K, external 4073K/4557K, paused 103ms
+04-26 18:35:26.995 I/Process ( 1485): Sending signal. PID: 17483 SIG: 3
+04-26 18:35:27.005 I/dalvikvm(17483): threadid=4: reacting to signal 3
+04-26 18:35:27.025 I/dalvikvm(17483): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:27.025 I/Process ( 1485): Sending signal. PID: 17955 SIG: 3
+04-26 18:35:27.025 I/dalvikvm(17955): threadid=4: reacting to signal 3
+04-26 18:35:27.025 I/dalvikvm(17955): Wrote stack traces to '/data/anr/traces.txt'
+04-26 18:35:27.125 D/Process ( 1485): killProcess, pid=17973
+04-26 18:35:27.135 D/Process ( 1485): dalvik.system.VMStack.getThreadStackTrace(Native Method)
+04-26 18:35:27.135 D/Process ( 1485): java.lang.Thread.getStackTrace(Thread.java:745)
+04-26 18:35:27.135 D/Process ( 1485): android.os.Process.killProcess(Process.java:797)
+04-26 18:35:27.135 D/Process ( 1485): com.android.server.am.ActivityManagerService.appNotResponding(ActivityManagerService.java:3576)
+04-26 18:35:27.145 D/Process ( 1485): com.android.server.am.ActivityManagerService.serviceTimeout(ActivityManagerService.java:11371)
+04-26 18:35:27.145 D/Process ( 1485): com.android.server.am.ActivityManagerService$2.handleMessage(ActivityManagerService.java:1224)
+04-26 18:35:27.155 D/Process ( 1485): android.os.Handler.dispatchMessage(Handler.java:99)
+04-26 18:35:27.155 D/Process ( 1485): android.os.Looper.loop(Looper.java:150)
+04-26 18:35:27.155 D/Process ( 1485): com.android.server.am.ActivityManagerService$AThread.run(ActivityManagerService.java:1477)
+04-26 18:35:27.155 I/Process ( 1485): Sending signal. PID: 17973 SIG: 9
+04-26 18:35:27.205 D/dalvikvm(17630): GC_EXPLICIT freed 51K, 47% free 3006K/5639K, external 0K/0K, paused 30ms
+04-26 18:35:30.328 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:35:40.067 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:35:40.067 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:35:40.077 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:35:40.077 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:35:40.087 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:35:40.097 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:35:40.117 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:35:40.117 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:35:44.201 D/dalvikvm(17212): GC_CONCURRENT freed 457K, 44% free 3699K/6535K, external 0K/0K, paused 6ms+3ms
+04-26 18:35:48.886 D/SurfaceFlinger( 1485): iFBthreadLoopChkPoint = 1
+04-26 18:35:55.082 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:35:55.082 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:35:55.102 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:35:55.102 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:35:55.112 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:35:55.112 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:35:55.132 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:35:55.142 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:36:00.607 D/SurfaceFlinger( 1485): [DISP] removeAbnormalLayer
+04-26 18:36:09.746 D/dalvikvm(18051): Debugger has detached; object registry had 1 entries
+04-26 18:36:09.766 D/IMCOM-FORENSICS(18051): Upload manager created
+04-26 18:36:09.776 D/IMCOM-FORENSICS(18051): gathering log: main
+04-26 18:36:09.776 D/IMCOM-FORENSICS(18051): done garhering log: main in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_main
+04-26 18:36:09.776 D/IMCOM-FORENSICS(18051): gathering log: system
+04-26 18:36:09.786 D/IMCOM-FORENSICS(18051): done garhering log: system in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_system
+04-26 18:36:09.786 D/IMCOM-FORENSICS(18051): gathering log: events
+04-26 18:36:09.786 D/IMCOM-FORENSICS(18051): done garhering log: events in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_events
+04-26 18:36:09.796 D/su      (18061): Found file
+04-26 18:36:09.796 D/IMCOM-FORENSICS(18051): gathering log: radio
+04-26 18:36:09.796 D/IMCOM-FORENSICS(18051): done garhering log: radio in file: /mnt/sdcard/Android/data/imcom.forensics/files/upload_buffer_radio
+04-26 18:36:09.806 D/su      (18061): this is the last character 101 of the string
+04-26 18:36:09.806 D/su      (18061): Comparing s /system/bin/sh, 14 to /system/bin/sh
+04-26 18:36:09.936 D/AndroidRuntime(18063): 
+04-26 18:36:09.936 D/AndroidRuntime(18063): >>>>>> AndroidRuntime START com.android.internal.os.RuntimeInit <<<<<<
+04-26 18:36:09.936 D/AndroidRuntime(18063): CheckJNI is OFF
+04-26 18:36:09.936 D/dalvikvm(18063): creating instr width table
+04-26 18:36:10.087 D/NetworkProviderService( 1640): Get data from Mapbar - onLocationChanged location:Location[mProvider=network,mTime=1366993628639,mLatitude=55.76163,mLongitude=12.52755,mHasAltitude=false,mAltitude=0.0,mHasSpeed=false,mSpeed=0.0,mHasBearing=false,mBearing=0.0,mHasAccuracy=true,mAccuracy=84.0,mExtras=Bundle[{address=, city=}]]
+04-26 18:36:10.087 D/NetworkProviderService( 1640): 2-reportLocation() to location manager-1
+04-26 18:36:10.087 D/GpsLocationProvider( 1485): [handleMessage] message :7
+04-26 18:36:10.087 D/GpsLocationProvider( 1485): [handleMessage] UPDATE_LOCATION
+04-26 18:36:10.087 D/GpsLocationProvider( 1485): handleUpdateLocation
+04-26 18:36:10.087 D/lib_locapi( 1485): loc_eng_inject_location, accuracy = 84.0
+04-26 18:36:10.117 D/NetworkProviderService( 1640): in getStatusUpdateTime()
+04-26 18:36:10.117 D/NetworkProviderService( 1640): in getStatus():2
+04-26 18:36:10.167 D/AndroidRuntime(18063): Calling main entry com.android.commands.am.Am
+04-26 18:36:10.197 D/AndroidRuntime(18063): Shutting down VM
+04-26 18:36:10.207 I/AndroidRuntime(18063): NOTE: attach of thread 'Binder Thread #3' failed
+04-26 18:36:10.217 D/dalvikvm(18063): GC_CONCURRENT freed 103K, 66% free 358K/1024K, external 0K/0K, paused 1ms+6ms
+04-26 18:36:10.217 D/jdwp    (18063): adbd disconnected
+04-26 18:36:10.227 D/su      (18061): 10077 imcom.forensics:uploader executing 0 /system/bin/sh using shell /system/bin/sh : sh
+04-26 18:36:10.357 D/SurfaceFlinger( 1485): [DISP] attachLayer 0x576e08 5 0x853598
+04-26 18:36:10.847 D/dalvikvm(18051): GC_FOR_MALLOC freed 292K, 47% free 2960K/5575K, external 0K/0K, paused 19ms

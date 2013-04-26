@@ -1,0 +1,786 @@
+04-26 18:17:44.578 I/ActivityManager( 1485): Start proc com.htc.cs for broadcast com.htc.cs/.plugin.PluginRegisterReceiver: pid=10661 uid=10002 gids={3003, 1015, 2001}
+04-26 18:17:44.828 I/ActivityManager( 1485): Start proc com.htc.opensense for broadcast com.htc.opensense/.pluginmanager.RegisterReceiver: pid=10668 uid=10002 gids={3003, 1015, 2001}
+04-26 18:17:45.139 I/ActivityManager( 1485): Start proc com.htc.RosieUtility for broadcast com.htc.AddProgramWidget/.HtcWidgetScanner: pid=10676 uid=10021 gids={3003, 2001, 1015}
+04-26 18:17:45.329 I/ActivityManager( 1485): Process com.noshufou.android.su (pid 10586) has died.
+04-26 18:17:45.389 I/ActivityManager( 1485): Force stopping package imcom.forensics uid=10077
+04-26 18:17:45.389 I/ActivityManager( 1485): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=imcom.forensics/.MainActivity } from pid 10655
+04-26 18:17:45.949 W/ActivityManager( 1485): Activity pause timeout for HistoryRecord{409091f0 com.htc.launcher/.Launcher}
+04-26 18:17:45.979 I/ActivityManager( 1485): Start proc imcom.forensics for activity imcom.forensics/.MainActivity: pid=10692 uid=10077 gids={1015, 1007, 3003}
+04-26 18:17:46.089 I/ActivityManager( 1485): Start proc com.noshufou.android.su for broadcast com.noshufou.android.su/.UninstallReceiver: pid=10700 uid=10075 gids={3003, 1015}
+04-26 18:17:46.170 W/ActivityThread(10692): Application imcom.forensics is waiting for the debugger on port 8100...
+04-26 18:17:46.420 I/ActivityManager( 1485): Process com.android.defcontainer (pid 10623) has died.
+04-26 18:17:46.420 I/ActivityManager( 1485): Process com.htcmarket (pid 10635) has died.
+04-26 18:17:46.480 I/ActivityManager( 1485): Process com.htc.cs (pid 10661) has died.
+04-26 18:17:46.540 I/ActivityManager( 1485): Process com.htc.opensense (pid 10668) has died.
+04-26 18:17:46.600 I/ActivityManager( 1485): Start proc com.baidu.BaiduMap:pushservice_v1 for broadcast com.baidu.BaiduMap/com.baidu.android.pushservice.RegistratonReceiver: pid=10710 uid=10013 gids={3003, 1006, 1015}
+04-26 18:17:46.650 I/ActivityManager( 1485): Process com.htc.RosieUtility (pid 10676) has died.
+04-26 18:17:47.251 I/ActivityManager( 1485): Process com.htc.launcher (pid 10428) has died.
+04-26 18:17:47.251 I/WindowManager( 1485): WIN DEATH: Window{40ae0548 com.htc.launcher/com.htc.launcher.Launcher paused=false}
+04-26 18:17:47.991 I/ActivityManager( 1485): Start proc com.baidu.appsearch for broadcast com.baidu.appsearch/.youhua.common.PackageChangeReceiver: pid=10722 uid=10067 gids={3003, 1015, 1007}
+04-26 18:17:48.192 I/ActivityManager( 1485): Process com.baidu.BaiduMap:pushservice_v1 (pid 10710) has died.
+04-26 18:17:48.342 I/ActivityManager( 1485): debugger status changed, pid: 10692, uid:10077, attach:true
+04-26 18:17:49.813 D/Socket_Alarm(10722): registerHTCSocketMonitorCallBack
+04-26 18:17:49.813 D/Socket_Alarm(10722): set mSocketMonitor
+04-26 18:17:49.813 D/Socket_Alarm(10722): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:17:49.863 I/ActivityManager( 1485): Start proc com.htcmarket for broadcast com.htcmarket/.receiver.PackageReceiver: pid=10738 uid=10066 gids={3003, 1015}
+04-26 18:17:50.254 I/ActivityManager( 1485): Start proc com.htc.cs for broadcast com.htc.cs/.plugin.PluginRegisterReceiver: pid=10751 uid=10002 gids={3003, 1015, 2001}
+04-26 18:17:50.794 I/ActivityManager( 1485): Start proc com.htc.opensense for broadcast com.htc.opensense/.pluginmanager.RegisterReceiver: pid=10761 uid=10002 gids={3003, 1015, 2001}
+04-26 18:17:50.964 I/ActivityManager( 1485): Start proc com.htc.RosieUtility for broadcast com.htc.AddProgramWidget/.HtcWidgetScanner: pid=10771 uid=10021 gids={3003, 2001, 1015}
+04-26 18:17:51.495 I/ActivityManager( 1485): Start proc com.immomo.momo for broadcast com.immomo.momo/.android.broadcast.PacketInstallReceiver: pid=10780 uid=10036 gids={3002, 3003, 1015, 1007}
+04-26 18:17:51.635 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=10787 uid=10077 gids={1015, 1007, 3003}
+04-26 18:17:51.665 D/Socket_Alarm(10692): registerHTCSocketMonitorCallBack
+04-26 18:17:51.665 D/Socket_Alarm(10692): set mSocketMonitor
+04-26 18:17:51.675 D/Socket_Alarm(10692): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:17:52.456 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:17:52.616 D/InputManagerService( 1485): Got RemoteException sending setActive(false) notification to pid 10428 uid 9999
+04-26 18:17:52.616 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:17:55.839 I/ActivityManager( 1485): Process com.htc.cs (pid 10751) has died.
+04-26 18:17:57.130 I/ActivityManager( 1485): Process com.htc.RosieUtility (pid 10771) has died.
+04-26 18:17:57.801 I/ActivityManager( 1485): Process com.immomo.momo (pid 10780) has died.
+04-26 18:18:02.425 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:18:04.397 V/DeviceStorageMonitorService( 1485): freeMemory=683958272
+04-26 18:18:04.397 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:18:04.397 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:18:09.833 V/NotificationService( 1485): Battery Full, Charging
+04-26 18:18:09.913 D/NotificationService( 1485): cancelNotification, ACTION_NOTIFICATION_REMOVE,pkg=com.lbe.security,id=6
+04-26 18:18:11.724 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{408fe358 imcom.forensics/.UploadManager}
+04-26 18:18:12.435 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:18:12.906 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=3458123
+04-26 18:18:12.906 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:18:12.906 E/ActivityManager( 1485): Load: 6.93 / 6.81 / 7.25
+04-26 18:18:12.906 E/ActivityManager( 1485): CPU usage from 9836ms to 0ms ago:
+04-26 18:18:12.906 E/ActivityManager( 1485):   6.8% 10787/imcom.forensics:uploader: 4.9% user + 0.6% kernel + 1.3% iowait / faults: 1572 minor 4 major
+04-26 18:18:12.906 E/ActivityManager( 1485):   3.2% 10692/imcom.forensics: 3.2% user + 0% kernel / faults: 75 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   8.4% 1198/sd-qd: 0% user + 2.2% kernel + 6.1% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.6% 1666/dhd_dpc: 0% user + 0.6% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   1.3% 1485/system_server: 0.5% user + 0.8% kernel / faults: 136 minor 2 major
+04-26 18:18:12.906 E/ActivityManager( 1485):   1.4% 1624/com.lbe.security:service: 1.1% user + 0.2% kernel + 0.1% iowait / faults: 117 minor 1 major
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.7% 2085/com.baidu.appsearch:bdservice_v1: 0.6% user + 0% kernel + 0% iowait / faults: 210 minor 2 major
+04-26 18:18:12.906 E/ActivityManager( 1485):   2.8% 856/emmc-qd: 0% user + 0.5% kernel + 2.3% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   12% 539/kswapd0: 0% user + 0.2% kernel + 12% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.2% 1382/adbd: 0% user + 0.2% kernel / faults: 53 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.2% 1570/com.android.systemui: 0.1% user + 0.1% kernel / faults: 91 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0% 5/events/0: 0% user + 0% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   0% 278/kondemand/0: 0% user + 0% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 1459/logcat2: 0.1% user + 0% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   0% 1640/android.htc.china.location.service:location_service: 0% user + 0% kernel / faults: 82 minor 1 major
+04-26 18:18:12.906 E/ActivityManager( 1485):   0% 1695/wpa_supplicant: 0% user + 0% kernel / faults: 2 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 2100/flush-179:64: 0% user + 0.1% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 3344/logcat: 0% user + 0.1% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 3607/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 3663/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 3838/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 3984/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 4008/logcat: 0% user + 0.1% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 4163/logcat: 0% user + 0.1% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 4602/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 4926/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 5004/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 5797/com.tencent.mobileqq:MSF: 0.1% user + 0% kernel / faults: 37 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 6991/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 7888/logcat: 0.1% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.3% 1358/kjournald: 0% user + 0% kernel + 0.3% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   1.7% 1362/kjournald: 0% user + 0% kernel + 1.7% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   0.1% 9516/com.android.htccontacts: 0% user + 0% kernel + 0.1% iowait / faults: 139 minor 6 major
+04-26 18:18:12.906 E/ActivityManager( 1485): 30% TOTAL: 12% user + 5.8% kernel + 12% iowait + 0.4% softirq
+04-26 18:18:12.906 E/ActivityManager( 1485): CPU usage from 596ms to 1136ms later:
+04-26 18:18:12.906 E/ActivityManager( 1485):   33% 1198/sd-qd: 0% user + 13% kernel + 19% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   9.4% 1485/system_server: 3.7% user + 5.6% kernel / faults: 10 minor 4 major
+04-26 18:18:12.906 E/ActivityManager( 1485):     9.4% 1486/HeapWorker: 5.6% user + 0% kernel + 3.7% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):     5.6% 1518/ActivityManager: 0% user + 5.6% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):     1.8% 2205/Binder Thread #: 1.8% user + 0% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   7.4% 856/emmc-qd: 0% user + 1.8% kernel + 5.5% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485):   1.2% 1640/android.htc.china.location.service:location_service: 0% user + 1.2% kernel / faults: 6 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):   1.9% 10692/imcom.forensics: 1.9% user + 0% kernel / faults: 1 minor
+04-26 18:18:12.906 E/ActivityManager( 1485):     1.9% 10692/imcom.forensics: 1.9% user + 0% kernel
+04-26 18:18:12.906 E/ActivityManager( 1485):   5% 1695/wpa_supplicant: 0% user + 0% kernel + 5% iowait
+04-26 18:18:12.906 E/ActivityManager( 1485): 71% TOTAL: 9.4% user + 30% kernel + 32% iowait
+04-26 18:18:13.136 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=3458123
+04-26 18:18:13.176 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 10787) has died.
+04-26 18:18:13.186 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 42938ms
+04-26 18:18:22.435 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:18:31.954 W/ProcessStats( 1485): Skipping unknown process pid 10954
+04-26 18:18:31.954 W/ProcessStats( 1485): Skipping unknown process pid 10955
+04-26 18:18:32.435 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:18:39.792 D/StatusBarPolicy( 1570): C+W Rssi: 3
+04-26 18:18:42.444 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:18:42.805 D/StatusBarPolicy( 1570): C+W Rssi: 4
+04-26 18:18:46.969 W/ProcessStats( 1485): Skipping unknown process pid 11156
+04-26 18:18:52.434 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:18:56.148 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=11252 uid=10077 gids={1015, 1007, 3003}
+04-26 18:19:02.424 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:19:04.406 V/DeviceStorageMonitorService( 1485): freeMemory=683872256
+04-26 18:19:04.406 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:19:04.406 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:19:12.444 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:19:16.247 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{408fe358 imcom.forensics/.UploadManager}
+04-26 18:19:17.719 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=3522652
+04-26 18:19:17.719 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:19:17.719 E/ActivityManager( 1485): Load: 6.11 / 6.57 / 7.13
+04-26 18:19:17.719 E/ActivityManager( 1485): CPU usage from 14339ms to 0ms ago:
+04-26 18:19:17.719 E/ActivityManager( 1485):   3.4% 10692/imcom.forensics: 3.1% user + 0.2% kernel / faults: 1 major
+04-26 18:19:17.719 E/ActivityManager( 1485):   2.5% 11252/imcom.forensics:uploader: 2% user + 0.4% kernel / faults: 702 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.8% 539/kswapd0: 0% user + 1.8% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.6% 6400/com.renren.mobile.android: 1.4% user + 0.1% kernel / faults: 335 minor 13 major
+04-26 18:19:17.719 E/ActivityManager( 1485):   9.5% 1198/sd-qd: 0% user + 1.2% kernel + 8.3% iowait
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.2% 1382/adbd: 0% user + 1.2% kernel / faults: 541 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.1% 1666/dhd_dpc: 0% user + 1.1% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   1% 1485/system_server: 0.6% user + 0.4% kernel / faults: 14 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0.1% 3609/com.sina.VDisk:push: 0.1% user + 0% kernel + 0% iowait / faults: 284 minor 3 major
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.1% 856/emmc-qd: 0% user + 0.2% kernel + 0.8% iowait
+04-26 18:19:17.719 E/ActivityManager( 1485):   0.2% 1640/android.htc.china.location.service:location_service: 0.2% user + 0% kernel / faults: 30 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0.1% 278/kondemand/0: 0% user + 0.1% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 5/events/0: 0% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 693/file-storage: 0% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   0.1% 1362/kjournald: 0% user + 0% kernel + 0% iowait
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1389/htc_ebdlogd: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1459/logcat2: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1601/com.android.phone: 0% user + 0% kernel / faults: 2 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1624/com.lbe.security:service: 0% user + 0% kernel / faults: 6 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1665/dhd_watchdog: 0% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1695/wpa_supplicant: 0% user + 0% kernel + 0% iowait / faults: 1 major
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 3344/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 3984/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   3.4% 4163/logcat: 0% user + 0% kernel + 3.4% iowait / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 4217/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 4760/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 5797/com.tencent.mobileqq:MSF: 0% user + 0% kernel / faults: 28 minor 2 major
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 6991/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 7602/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 7888/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):  +0% 11413/adbd: 0% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   0% 1358/kjournald: 0% user + 0% kernel + 0% iowait
+04-26 18:19:17.719 E/ActivityManager( 1485):   0.2% 2100/flush-179:64: 0% user + 0% kernel + 0.2% iowait
+04-26 18:19:17.719 E/ActivityManager( 1485): 33% TOTAL: 10% user + 11% kernel + 11% iowait + 0.2% softirq
+04-26 18:19:17.719 E/ActivityManager( 1485): CPU usage from 802ms to 1351ms later:
+04-26 18:19:17.719 E/ActivityManager( 1485):   9.2% 1198/sd-qd: 0% user + 7.4% kernel + 1.8% iowait
+04-26 18:19:17.719 E/ActivityManager( 1485):   5.5% 539/kswapd0: 0% user + 5.5% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   5.5% 1485/system_server: 0% user + 5.5% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):     5.5% 1518/ActivityManager: 0% user + 5.5% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   2% 1382/adbd: 0% user + 2% kernel / faults: 66 minor
+04-26 18:19:17.719 E/ActivityManager( 1485):     1% 1382/adbd: 1% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):     1% 1388/adbd: 0% user + 1% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   0.9% 3/ksoftirqd/0: 0.9% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   1% 5/events/0: 0% user + 1% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.1% 5797/com.tencent.mobileqq:MSF: 1.1% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):   1.2% 10692/imcom.forensics: 0% user + 1.2% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485):     1.2% 10692/imcom.forensics: 1.2% user + 0% kernel
+04-26 18:19:17.719 E/ActivityManager( 1485): 90% TOTAL: 5.4% user + 40% kernel + 45% iowait
+04-26 18:19:17.999 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=3522652
+04-26 18:19:18.049 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 11252) has died.
+04-26 18:19:18.049 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 171752ms
+04-26 18:19:22.443 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:19:32.443 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:19:42.443 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:19:47.037 W/ProcessStats( 1485): Skipping unknown process pid 11815
+04-26 18:19:52.443 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:20:02.453 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:20:04.414 V/DeviceStorageMonitorService( 1485): freeMemory=683778048
+04-26 18:20:04.414 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:20:04.414 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:20:12.442 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:20:17.037 W/ProcessStats( 1485): Skipping unknown process pid 12176
+04-26 18:20:17.047 W/ProcessStats( 1485): Skipping unknown process pid 12177
+04-26 18:20:22.442 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:20:32.442 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:20:42.442 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:20:52.441 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:21:02.441 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:21:04.433 V/DeviceStorageMonitorService( 1485): freeMemory=683778048
+04-26 18:21:04.433 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:21:04.433 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:21:12.451 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:21:22.441 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:21:32.440 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:21:42.450 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:21:52.450 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:22:02.450 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:22:04.432 V/DeviceStorageMonitorService( 1485): freeMemory=683778048
+04-26 18:22:04.432 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:22:04.432 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:22:09.817 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=13721 uid=10077 gids={1015, 1007, 3003}
+04-26 18:22:12.439 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:22:18.225 I/ActivityManager( 1485): Process com.htcmarket (pid 10738) has died.
+04-26 18:22:22.449 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:22:29.906 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{408fe358 imcom.forensics/.UploadManager}
+04-26 18:22:31.198 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=3716316
+04-26 18:22:31.198 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:22:31.198 E/ActivityManager( 1485): Load: 6.35 / 6.43 / 6.97
+04-26 18:22:31.198 E/ActivityManager( 1485): CPU usage from 15807ms to 796ms ago:
+04-26 18:22:31.198 E/ActivityManager( 1485):   9.9% 13721/imcom.forensics:uploader: 9.6% user + 0.3% kernel / faults: 2137 minor 4 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   10% 1198/sd-qd: 0% user + 4% kernel + 5.9% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485):   2.9% 10692/imcom.forensics: 2.9% user + 0% kernel / faults: 1 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.6% 1382/adbd: 0% user + 1.5% kernel / faults: 663 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.9% 1485/system_server: 0.7% user + 0.1% kernel / faults: 24 minor 7 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.5% 539/kswapd0: 0% user + 0.5% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 6400/com.renren.mobile.android: 0.1% user + 0% kernel / faults: 161 minor 12 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1389/htc_ebdlogd: 0% user + 0% kernel / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.9% 856/emmc-qd: 0% user + 0.3% kernel + 1.6% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.3% 10700/com.noshufou.android.su: 0.3% user + 0% kernel + 0% iowait / faults: 92 minor 4 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 5/events/0: 0% user + 0.1% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 1640/android.htc.china.location.service:location_service: 0.1% user + 0% kernel / faults: 5 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 278/kondemand/0: 0% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 693/file-storage: 0% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1367/rild: 0% user + 0% kernel / faults: 1 minor 3 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1459/logcat2: 0% user + 0% kernel / faults: 2 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1570/com.android.systemui: 0% user + 0% kernel + 0% iowait / faults: 18 minor 1 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1601/com.android.phone: 0% user + 0% kernel / faults: 16 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.4% 1624/com.lbe.security:service: 0% user + 0% kernel + 0.3% iowait / faults: 18 minor 10 major
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1666/dhd_dpc: 0% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.4% 1695/wpa_supplicant: 0% user + 0% kernel + 0.3% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.7% 2100/flush-179:64: 0% user + 0% kernel + 0.7% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 3344/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 3607/logcat: 0% user + 0% kernel + 0% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   2% 3663/logcat: 0% user + 0% kernel + 1.9% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 3838/logcat: 0% user + 0% kernel + 0% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 3872/logcat: 0% user + 0% kernel + 0% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 3984/logcat: 0% user + 0% kernel + 0.1% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   2% 4008/logcat: 0% user + 0% kernel + 1.9% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 4163/logcat: 0% user + 0% kernel + 0% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.9% 4217/logcat: 0% user + 0% kernel + 1.8% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   3.1% 4419/logcat: 0% user + 0% kernel + 3% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 4602/logcat: 0% user + 0% kernel + 0% iowait / faults: 2 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   2% 4760/logcat: 0% user + 0% kernel + 1.9% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.2% 4926/logcat: 0% user + 0% kernel + 0.1% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 5004/logcat: 0% user + 0% kernel + 0.1% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 5797/com.tencent.mobileqq:MSF: 0% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 6991/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 7602/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 7680/logcat: 0% user + 0% kernel / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 7888/logcat: 0% user + 0% kernel + 0% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 8025/logcat: 0% user + 0% kernel + 0.1% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   0% 1358/kjournald: 0% user + 0% kernel + 0% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485):   0.1% 1362/kjournald: 0% user + 0% kernel + 0.1% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.9% 5833/logcat: 0% user + 0% kernel + 1.9% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.9% 7444/logcat: 0% user + 0% kernel + 1.9% iowait / faults: 1 minor
+04-26 18:22:31.198 E/ActivityManager( 1485): 45% TOTAL: 17% user + 16% kernel + 10% iowait
+04-26 18:22:31.198 E/ActivityManager( 1485): CPU usage from 585ms to 1111ms later:
+04-26 18:22:31.198 E/ActivityManager( 1485):   8.9% 1485/system_server: 0% user + 8.9% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):     7.1% 1518/ActivityManager: 1.7% user + 5.3% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):     1.7% 1493/SurfaceFlinger: 0% user + 1.7% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   4.5% 1382/adbd: 0% user + 4.5% kernel / faults: 115 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):     2.2% 1382/adbd: 0% user + 2.2% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):     1.1% 1387/adbd: 0% user + 1.1% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   2.5% 10692/imcom.forensics: 2.5% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):     2.5% 10692/imcom.forensics: 2.5% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.1% 278/kondemand/0: 0% user + 1.1% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.6% 6400/com.renren.mobile.android: 0% user + 1.6% kernel / faults: 9 minor
+04-26 18:22:31.198 E/ActivityManager( 1485):     1.6% 6465/Thread-21: 0% user + 1.6% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485):   1.2% 10700/com.noshufou.android.su: 1.2% user + 0% kernel
+04-26 18:22:31.198 E/ActivityManager( 1485): 53% TOTAL: 13% user + 38% kernel + 1.9% softirq
+04-26 18:22:31.368 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=3716316
+04-26 18:22:31.408 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 13721) has died.
+04-26 18:22:31.408 W/ActivityManager( 1485): Canceling start item Intent { flg=0x4 cmp=imcom.forensics/.UploadManager (has extras) } in service ComponentInfo{imcom.forensics/imcom.forensics.UploadManager}
+04-26 18:22:31.408 W/ActivityManager( 1485): Canceling start item Intent { cmp=imcom.forensics/.UploadManager } in service ComponentInfo{imcom.forensics/imcom.forensics.UploadManager}
+04-26 18:22:31.408 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 687008ms
+04-26 18:22:32.449 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:22:42.449 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:22:52.448 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:23:02.448 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:23:04.440 V/DeviceStorageMonitorService( 1485): freeMemory=683683840
+04-26 18:23:04.440 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:23:04.440 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:23:12.448 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:23:22.448 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:23:32.447 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:23:42.447 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:23:52.447 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:24:02.447 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:24:04.449 V/DeviceStorageMonitorService( 1485): freeMemory=683683840
+04-26 18:24:04.449 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:24:04.449 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:24:12.446 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:24:22.446 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:24:32.446 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:24:42.446 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:24:51.344 W/ProcessStats( 1485): Skipping unknown process pid 15297
+04-26 18:24:52.455 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:25:02.455 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:25:04.447 V/DeviceStorageMonitorService( 1485): freeMemory=683683840
+04-26 18:25:04.447 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:25:04.447 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:25:12.455 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:25:22.455 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:25:32.454 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:25:42.454 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:25:52.454 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:26:02.464 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:26:04.456 V/DeviceStorageMonitorService( 1485): freeMemory=683683840
+04-26 18:26:04.456 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:26:04.456 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:26:12.464 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:26:22.463 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:26:22.784 I/ActivityManager( 1485): Start proc com.tencent.mobileqq for broadcast com.tencent.mobileqq/mqq.app.QQBroadcastReceiver: pid=16317 uid=10073 gids={3003, 1006, 1015}
+04-26 18:26:25.046 V/NotificationService( 1485): Battery Full, Charging
+04-26 18:26:32.303 I/ActivityManager( 1485): Process com.sina.VDisk:push (pid 3609) has died.
+04-26 18:26:32.303 W/ActivityManager( 1485): Scheduling restart of crashed service com.sina.VDisk/com.igexin.sdk.aidl.GexinMsgService in 5000ms
+04-26 18:26:32.303 W/ActivityManager( 1485): Scheduling restart of crashed service com.sina.VDisk/com.igexin.sdk.GexinMainService in 15000ms
+04-26 18:26:32.303 W/ActivityManager( 1485): Scheduling restart of crashed service com.sina.VDisk/com.sina.weipan.push.PushService in 24999ms
+04-26 18:26:32.463 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:26:32.964 D/Socket_Alarm(16317): registerHTCSocketMonitorCallBack
+04-26 18:26:32.964 D/Socket_Alarm(16317): set mSocketMonitor
+04-26 18:26:32.974 D/Socket_Alarm(16317): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:26:37.318 I/ActivityManager( 1485): Start proc com.sina.VDisk:push for service com.sina.VDisk/com.igexin.sdk.aidl.GexinMsgService: pid=16499 uid=10057 gids={1006, 1007, 1015, 3003}
+04-26 18:26:42.463 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:26:47.388 D/Socket_Alarm(16499): registerHTCSocketMonitorCallBack
+04-26 18:26:47.388 D/Socket_Alarm(16499): set mSocketMonitor
+04-26 18:26:47.388 D/Socket_Alarm(16499): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:26:52.463 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:02.472 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:04.464 V/DeviceStorageMonitorService( 1485): freeMemory=683642880
+04-26 18:27:04.464 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:27:04.464 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:27:11.421 I/ActivityManager( 1485): Process com.baidu.appsearch (pid 10722) has died.
+04-26 18:27:11.771 I/ActivityManager( 1485): Process com.htc.opensense (pid 10761) has died.
+04-26 18:27:12.422 I/ActivityManager( 1485): Start proc com.htc.bg for content provider com.htc.opensense/.syncprovider.SyncProvider: pid=16842 uid=10002 gids={3003, 1015, 2001}
+04-26 18:27:12.472 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:13.053 I/ActivityManager( 1485): Process com.noshufou.android.su (pid 10700) has died.
+04-26 18:27:13.163 D/WifiService( 1485): acquireWifiLockLocked: WifiLock{MAIL_WIFI_LOCK type=1 binder=android.os.BinderProxy@40aca710} Mode: 1
+04-26 18:27:13.173 D/WifiService( 1485): enable and start wifi due to updateWifiState
+04-26 18:27:13.974 I/ActivityManager( 1485): Process com.android.settings:remote (pid 5433) has died.
+04-26 18:27:13.974 W/ActivityManager( 1485): Scheduling restart of crashed service com.android.settings/.framework.activity.powersaver.SmartSynService in 5000ms
+04-26 18:27:14.164 I/ActivityManager( 1485): Process com.servo.search (pid 5618) has died.
+04-26 18:27:14.194 W/ActivityManager( 1485): Scheduling restart of crashed service com.servo.search/com.servo.core.android.ServoIndexerService in 14780ms
+04-26 18:27:14.474 I/ActivityManager( 1485): Process com.facebook.katana (pid 5854) has died.
+04-26 18:27:14.484 W/ActivityManager( 1485): Scheduling restart of crashed service com.facebook.katana/.service.MediaUploadService in 24483ms
+04-26 18:27:18.978 I/ActivityManager( 1485): Start proc com.android.settings:remote for service com.android.settings/.framework.activity.powersaver.SmartSynService: pid=16893 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}
+04-26 18:27:19.229 D/Socket_Alarm(16893): registerHTCSocketMonitorCallBack
+04-26 18:27:19.229 D/Socket_Alarm(16893): set mSocketMonitor
+04-26 18:27:19.229 D/Socket_Alarm(16893): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:27:19.239 I/ActivityManager( 1485): Start proc com.android.settings for broadcast com.android.settings/.framework.activity.powersaver.SmartSyncScreenOnOffTimeReceiver: pid=16900 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}
+04-26 18:27:19.699 I/ActivityManager( 1485): Start proc com.servo.search for broadcast com.servo.search/com.servo.core.android.ServoSearchReceiver: pid=16907 uid=10028 gids={3003, 1015}
+04-26 18:27:20.029 W/ActivityManager( 1485): Unable to resolve content provider from PackageManager
+04-26 18:27:20.029 E/ActivityThread(16907): Failed to find provider info for com.kaixin001.provider
+04-26 18:27:21.311 D/WifiService( 1485): releaseWifiLockLocked: WifiLock{MAIL_WIFI_LOCK type=1 binder=android.os.BinderProxy@40aca710} Mode: 1
+04-26 18:27:21.321 D/WifiService( 1485): enable and start wifi due to updateWifiState
+04-26 18:27:21.421 V/NotificationService( 1485): Battery Full, Charging
+04-26 18:27:21.691 I/ActivityManager( 1485): Start proc com.htc.launcher for content provider com.htc.launcher/.LauncherProvider: pid=16935 uid=9999 gids={3003, 1015, 3002, 3001, 2001}
+04-26 18:27:22.462 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:32.462 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:38.978 I/ActivityManager( 1485): Start proc com.facebook.katana for service com.facebook.katana/.service.MediaUploadService: pid=17075 uid=10035 gids={3003, 1006, 1015}
+04-26 18:27:42.471 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:45.825 D/Socket_Alarm(17075): registerHTCSocketMonitorCallBack
+04-26 18:27:45.825 D/Socket_Alarm(17075): set mSocketMonitor
+04-26 18:27:45.835 D/Socket_Alarm(17075): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:27:52.371 I/ActivityManager( 1485): Process com.tencent.mobileqq (pid 16317) has died.
+04-26 18:27:52.511 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:27:52.871 I/ActivityManager( 1485): Start proc com.facebook.katana:providers for content provider com.facebook.katana/.provider.GraphQLNotificationsContentProvider: pid=17114 uid=10035 gids={3003, 1006, 1015}
+04-26 18:27:53.312 W/ActivityManager( 1485): Unable to start service Intent { act=com.google.android.c2dm.intent.REGISTER (has extras) }: not found
+04-26 18:27:56.825 D/Socket_Alarm(17114): registerHTCSocketMonitorCallBack
+04-26 18:27:56.825 D/Socket_Alarm(17114): set mSocketMonitor
+04-26 18:27:56.825 D/Socket_Alarm(17114): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:27:59.628 W/ProcessStats( 1485): Skipping unknown process pid 17158
+04-26 18:28:02.461 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:28:02.611 I/ActivityManager( 1485): Process com.renren.mobile.android (pid 6400) has died.
+04-26 18:28:02.611 W/ActivityManager( 1485): Scheduling restart of crashed service com.renren.mobile.android/.news.NewsPushService in 5000ms
+04-26 18:28:04.473 V/DeviceStorageMonitorService( 1485): freeMemory=683671552
+04-26 18:28:04.473 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:28:04.473 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:28:08.146 I/ActivityManager( 1485): Start proc com.renren.mobile.android for service com.renren.mobile.android/.news.NewsPushService: pid=17212 uid=10016 gids={1007, 3003, 1006, 1015}
+04-26 18:28:12.471 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:28:16.785 W/ActivityManager( 1485): Unable to start service Intent { flg=0x4 cmp=com.facebook.katana/com.facebook.orca.sms.MmsSmsLogExternalMessagesLogic$MmsSmsLogExternalMessagesService (has extras) }: not found
+04-26 18:28:22.470 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:28:32.470 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:28:42.470 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:28:52.470 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:28:59.927 I/ActivityManager( 1485): Process com.android.settings (pid 16900) has died.
+04-26 18:29:00.017 I/ActivityManager( 1485): Process com.htc.bg (pid 16842) has died.
+04-26 18:29:02.469 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:29:04.481 V/DeviceStorageMonitorService( 1485): freeMemory=683675648
+04-26 18:29:04.481 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:29:04.481 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:29:12.469 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:29:22.469 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:29:32.469 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:29:41.477 I/ActivityManager( 1485): Process imcom.forensics (pid 10692) has died.
+04-26 18:29:41.477 I/WindowManager( 1485): WIN DEATH: Window{40ab3a20 imcom.forensics/imcom.forensics.MainActivity paused=false}
+04-26 18:29:42.468 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:29:46.773 I/ActivityManager( 1485): Start proc android.process.media for content provider com.android.providers.media/.MediaProvider: pid=17345 uid=10008 gids={1015, 2001, 3003}
+04-26 18:29:48.925 D/Socket_Alarm(16935): registerHTCSocketMonitorCallBack
+04-26 18:29:48.935 D/Socket_Alarm(16935): set mSocketMonitor
+04-26 18:29:48.935 D/Socket_Alarm(16935): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:29:50.036 I/ActivityManager( 1485): Process com.facebook.katana:providers (pid 17114) has died.
+04-26 18:29:51.297 I/ActivityManager( 1485): Start proc com.htc.skinpicker for broadcast com.htc.skinpicker/.SkinPickerReceiver: pid=17368 uid=10047 gids={1015, 3003, 2001}
+04-26 18:29:51.617 D/InputManagerService( 1485): Got RemoteException sending setActive(false) notification to pid 10692 uid 10077
+04-26 18:29:51.617 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:29:51.677 I/ActivityManager( 1485): Process android.process.media (pid 17345) has died.
+04-26 18:29:51.757 I/ActivityManager( 1485): Process com.android.mms (pid 10461) has died.
+04-26 18:29:52.128 I/ActivityManager( 1485): Start proc com.android.settings for broadcast com.android.settings/.framework.activity.powersaver.SleepModeTimeOrTimeZoneChangedReceiver: pid=17380 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}
+04-26 18:29:52.548 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:29:55.341 I/ActivityManager( 1485): Process com.htc.skinpicker (pid 17368) has died.
+04-26 18:29:55.521 I/ActivityManager( 1485): Process com.android.settings (pid 17380) has died.
+04-26 18:29:57.083 I/ActivityManager( 1485): Force stopping package imcom.forensics uid=10077
+04-26 18:29:57.083 I/ActivityManager( 1485): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=imcom.forensics/.MainActivity } from pid 17398
+04-26 18:29:57.283 I/ActivityManager( 1485): Start proc imcom.forensics for activity imcom.forensics/.MainActivity: pid=17407 uid=10077 gids={1015, 1007, 3003}
+04-26 18:29:57.393 W/ActivityThread(17407): Application imcom.forensics is waiting for the debugger on port 8100...
+04-26 18:29:57.974 I/ActivityManager( 1485): debugger status changed, pid: 17407, uid:10077, attach:true
+04-26 18:30:01.417 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=17429 uid=10077 gids={1015, 1007, 3003}
+04-26 18:30:01.427 D/Socket_Alarm(17407): registerHTCSocketMonitorCallBack
+04-26 18:30:01.427 D/Socket_Alarm(17407): set mSocketMonitor
+04-26 18:30:01.427 D/Socket_Alarm(17407): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:30:01.997 W/InputManagerService( 1485): [unbindCurrentClientLocked] Disable input method client.
+04-26 18:30:01.997 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:30:02.238 D/InputManagerService( 1485): Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@407d4580 (uid=9999 pid=16935)
+04-26 18:30:02.498 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:30:02.708 I/ActivityManager( 1485): Start proc com.noshufou.android.su for broadcast com.noshufou.android.su/.SuResultReceiver: pid=17448 uid=10075 gids={3003, 1015}
+04-26 18:30:04.480 V/DeviceStorageMonitorService( 1485): freeMemory=683700224
+04-26 18:30:04.490 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:30:04.490 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:30:06.412 I/ActivityManager( 1485): Process com.htc.launcher (pid 16935) has died.
+04-26 18:30:06.412 I/WindowManager( 1485): WIN DEATH: Window{40937298 com.htc.launcher/com.htc.launcher.Launcher paused=false}
+04-26 18:30:12.488 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:30:21.486 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{40972b00 imcom.forensics/.UploadManager}
+04-26 18:30:22.487 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:30:22.698 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=4187886
+04-26 18:30:22.698 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:30:22.698 E/ActivityManager( 1485): Load: 8.63 / 7.33 / 7.1
+04-26 18:30:22.698 E/ActivityManager( 1485): CPU usage from 10392ms to 0ms ago:
+04-26 18:30:22.698 E/ActivityManager( 1485):   3.4% 17407/imcom.forensics: 3.2% user + 0.1% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   3.9% 1198/sd-qd: 0% user + 2.2% kernel + 1.7% iowait
+04-26 18:30:22.698 E/ActivityManager( 1485):   1.3% 1485/system_server: 0.7% user + 0.5% kernel / faults: 37 minor 2 major
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.7% 2268/com.htc.android.mail: 0.5% user + 0% kernel + 0.1% iowait / faults: 257 minor 5 major
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.5% 1670/com.htc.bgp: 0.3% user + 0% kernel + 0.2% iowait / faults: 327 minor 14 major
+04-26 18:30:22.698 E/ActivityManager( 1485):   3.2% 856/emmc-qd: 0% user + 0.5% kernel + 2.6% iowait
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.2% 1382/adbd: 0% user + 0.2% kernel / faults: 78 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 3151/com.tencent.mm:push: 0% user + 0% kernel + 0% iowait / faults: 410 minor 25 major
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.1% 1640/android.htc.china.location.service:location_service: 0.1% user + 0% kernel / faults: 15 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.1% 17212/com.renren.mobile.android: 0% user + 0% kernel / faults: 199 minor 3 major
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.1% 17429/imcom.forensics:uploader: 0% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 5/events/0: 0% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 278/kondemand/0: 0% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.8% 1624/com.lbe.security:service: 0% user + 0% kernel + 0.7% iowait / faults: 217 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 1666/dhd_dpc: 0% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 1695/wpa_supplicant: 0% user + 0% kernel / faults: 19 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 3663/logcat: 0% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 4008/logcat: 0% user + 0% kernel / faults: 19 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 5797/com.tencent.mobileqq:MSF: 0% user + 0% kernel / faults: 9 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 6991/logcat: 0% user + 0% kernel / faults: 19 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0% 7888/logcat: 0% user + 0% kernel / faults: 19 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):   0.2% 1358/kjournald: 0% user + 0% kernel + 0.2% iowait
+04-26 18:30:22.698 E/ActivityManager( 1485): 15% TOTAL: 6.9% user + 4.2% kernel + 4.5% iowait
+04-26 18:30:22.698 E/ActivityManager( 1485): CPU usage from 521ms to 1045ms later:
+04-26 18:30:22.698 E/ActivityManager( 1485):   9.2% 1485/system_server: 3.7% user + 5.5% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):     9.2% 1518/ActivityManager: 3.7% user + 5.5% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):     1.8% 1493/SurfaceFlinger: 1.8% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   2.6% 2268/com.htc.android.mail: 2.6% user + 0% kernel / faults: 1 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):     2.6% 2269/HeapWorker: 2.6% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   2.8% 17407/imcom.forensics: 2.8% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):     2.8% 17407/imcom.forensics: 2.8% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   1.2% 1459/logcat2: 1.2% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   1.2% 1624/com.lbe.security:service: 1.2% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):     1.2% 1624/ecurity:service: 1.2% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485):   1.2% 1640/android.htc.china.location.service:location_service: 1.2% user + 0% kernel / faults: 3 minor
+04-26 18:30:22.698 E/ActivityManager( 1485):     1.2% 1903/LocationService: 1.2% user + 0% kernel
+04-26 18:30:22.698 E/ActivityManager( 1485): 18% TOTAL: 15% user + 3.7% kernel
+04-26 18:30:23.058 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=4187886
+04-26 18:30:23.098 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 17429) has died.
+04-26 18:30:23.098 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 43248ms
+04-26 18:30:26.702 I/ActivityManager( 1485): Process imcom.forensics (pid 17407) has died.
+04-26 18:30:26.702 I/WindowManager( 1485): WIN DEATH: Window{40a78cd8 imcom.forensics/imcom.forensics.MainActivity paused=false}
+04-26 18:30:26.762 I/ActivityManager( 1485): Start proc com.htc.launcher for activity com.htc.launcher/.Launcher: pid=17483 uid=9999 gids={3003, 1015, 3002, 3001, 2001}
+04-26 18:30:31.756 I/ActivityManager( 1485): Start proc android.process.media for content provider com.android.providers.media/.MediaProvider: pid=17503 uid=10008 gids={1015, 2001, 3003}
+04-26 18:30:31.937 D/Socket_Alarm(17483): registerHTCSocketMonitorCallBack
+04-26 18:30:31.937 D/Socket_Alarm(17483): set mSocketMonitor
+04-26 18:30:31.937 D/Socket_Alarm(17483): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:30:31.987 I/ActivityManager( 1485): Start proc com.android.mms for broadcast com.android.mms/.ui.MessagingShortcutReceiver: pid=17512 uid=10049 gids={3003, 1015}
+04-26 18:30:32.487 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:30:35.410 I/ActivityManager( 1485): Start proc com.htc.skinpicker for broadcast com.htc.skinpicker/.SkinPickerReceiver: pid=17536 uid=10047 gids={1015, 3003, 2001}
+04-26 18:30:35.590 D/InputManagerService( 1485): Got RemoteException sending setActive(false) notification to pid 17407 uid 10077
+04-26 18:30:35.590 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:30:35.770 I/ActivityManager( 1485): Start proc com.android.settings for broadcast com.android.settings/.framework.activity.powersaver.SleepModeTimeOrTimeZoneChangedReceiver: pid=17545 uid=1000 gids={3002, 3001, 3003, 1015, 2001, 1007}
+04-26 18:30:35.991 I/ActivityManager( 1485): Process com.noshufou.android.su (pid 17448) has died.
+04-26 18:30:36.301 I/ActivityManager( 1485): Process android.process.media (pid 17503) has died.
+04-26 18:30:36.962 I/ActivityManager( 1485): Process com.htc.skinpicker (pid 17536) has died.
+04-26 18:30:37.332 I/ActivityManager( 1485): Process com.android.settings (pid 17545) has died.
+04-26 18:30:37.902 I/ActivityManager( 1485): Process com.android.mms (pid 17512) has died.
+04-26 18:30:39.084 I/ActivityManager( 1485): Process com.android.htccontacts (pid 9516) has died.
+04-26 18:30:39.094 I/ActivityManager( 1485): Low Memory: No more background processes.
+04-26 18:30:42.487 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:30:46.371 I/ActivityManager( 1485): Force stopping package imcom.forensics uid=10077
+04-26 18:30:46.371 I/ActivityManager( 1485):   Force stopping service ServiceRecord{40972b00 imcom.forensics/.UploadManager}
+04-26 18:30:46.371 I/ActivityManager( 1485): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=imcom.forensics/.MainActivity } from pid 17575
+04-26 18:30:46.621 I/ActivityManager( 1485): Start proc imcom.forensics for activity imcom.forensics/.MainActivity: pid=17588 uid=10077 gids={1015, 1007, 3003}
+04-26 18:30:46.681 W/ActivityThread(17588): Application imcom.forensics is waiting for the debugger on port 8100...
+04-26 18:30:48.132 I/ActivityManager( 1485): debugger status changed, pid: 17588, uid:10077, attach:true
+04-26 18:30:50.775 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=17607 uid=10077 gids={1015, 1007, 3003}
+04-26 18:30:50.775 D/Socket_Alarm(17588): registerHTCSocketMonitorCallBack
+04-26 18:30:50.775 D/Socket_Alarm(17588): set mSocketMonitor
+04-26 18:30:50.775 D/Socket_Alarm(17588): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:30:51.085 W/InputManagerService( 1485): [unbindCurrentClientLocked] Disable input method client.
+04-26 18:30:51.085 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:30:51.145 D/InputManagerService( 1485): Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40f936c8 (uid=9999 pid=17483)
+04-26 18:30:51.616 I/ActivityManager( 1485): Start proc com.noshufou.android.su for broadcast com.noshufou.android.su/.SuResultReceiver: pid=17630 uid=10075 gids={3003, 1015}
+04-26 18:30:52.487 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:02.496 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:04.498 V/DeviceStorageMonitorService( 1485): freeMemory=683565056
+04-26 18:31:04.498 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:31:04.498 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:31:10.845 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{40fd5298 imcom.forensics/.UploadManager}
+04-26 18:31:12.036 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=4237260
+04-26 18:31:12.036 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:31:12.036 E/ActivityManager( 1485): Load: 7.63 / 7.28 / 7.1
+04-26 18:31:12.036 E/ActivityManager( 1485): CPU usage from 5858ms to 0ms ago with 99% awake:
+04-26 18:31:12.036 E/ActivityManager( 1485):   3.6% 17588/imcom.forensics: 3.4% user + 0.1% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   2.2% 1624/com.lbe.security:service: 1.5% user + 0.5% kernel + 0.1% iowait / faults: 325 minor 3 major
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.8% 1485/system_server: 1% user + 0.8% kernel / faults: 26 minor
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.1% 1198/sd-qd: 0% user + 1% kernel + 0.1% iowait
+04-26 18:31:12.036 E/ActivityManager( 1485):   0.5% 1382/adbd: 0.1% user + 0.3% kernel / faults: 27 minor
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 16499/com.sina.VDisk:push: 0% user + 0% kernel / faults: 333 minor 20 major
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 5/events/0: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0.1% 278/kondemand/0: 0% user + 0.1% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.1% 856/emmc-qd: 0% user + 0.1% kernel + 1% iowait
+04-26 18:31:12.036 E/ActivityManager( 1485):   0.3% 1459/logcat2: 0.1% user + 0% kernel + 0.1% iowait
+04-26 18:31:12.036 E/ActivityManager( 1485):   0.1% 1640/android.htc.china.location.service:location_service: 0% user + 0.1% kernel / faults: 9 minor
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 3344/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 3607/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 3663/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 3838/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 3872/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 3984/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 4008/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 4217/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 4419/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 4576/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 4602/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 4760/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 5004/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0.1% 5797/com.tencent.mobileqq:MSF: 0.1% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 5833/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 6991/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 7361/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 7602/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 7888/logcat: 0% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   0% 1362/kjournald: 0% user + 0% kernel + 0% iowait
+04-26 18:31:12.036 E/ActivityManager( 1485): 15% TOTAL: 8.3% user + 5.8% kernel + 1.1% iowait
+04-26 18:31:12.036 E/ActivityManager( 1485): CPU usage from 554ms to 1094ms later:
+04-26 18:31:12.036 E/ActivityManager( 1485):   9% 1485/system_server: 0% user + 9% kernel / faults: 12 minor
+04-26 18:31:12.036 E/ActivityManager( 1485):     7.2% 1518/ActivityManager: 0% user + 7.2% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):     1.8% 1486/HeapWorker: 1.8% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):     1.8% 1493/SurfaceFlinger: 1.8% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):     1.8% 1634/LocationManager: 0% user + 1.8% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   2.5% 4926/logcat: 2.5% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   2.5% 17588/imcom.forensics: 2.5% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):     2.5% 17588/imcom.forensics: 2.5% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.2% 4163/logcat: 1.2% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.2% 7361/logcat: 1.2% user + 0% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.2% 7444/logcat: 0% user + 1.2% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.2% 7602/logcat: 0% user + 1.2% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485):   1.2% 7888/logcat: 0% user + 1.2% kernel
+04-26 18:31:12.036 E/ActivityManager( 1485): 25% TOTAL: 11% user + 12% kernel + 1.8% iowait
+04-26 18:31:12.126 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=4237260
+04-26 18:31:12.166 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 17607) has died.
+04-26 18:31:12.166 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 42640ms
+04-26 18:31:12.496 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:22.496 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:32.496 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:42.495 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:47.130 I/ActivityManager( 1485): Process imcom.forensics (pid 17588) has died.
+04-26 18:31:47.130 I/WindowManager( 1485): WIN DEATH: Window{40ab5158 imcom.forensics/imcom.forensics.MainActivity paused=false}
+04-26 18:31:47.450 D/InputManagerService( 1485): Got RemoteException sending setActive(false) notification to pid 17588 uid 10077
+04-26 18:31:47.450 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:31:50.503 I/ActivityManager( 1485): Force stopping package imcom.forensics uid=10077
+04-26 18:31:50.503 I/ActivityManager( 1485):   Force stopping service ServiceRecord{40fd5298 imcom.forensics/.UploadManager}
+04-26 18:31:50.503 I/ActivityManager( 1485): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=imcom.forensics/.MainActivity } from pid 17700
+04-26 18:31:50.613 I/ActivityManager( 1485): Start proc imcom.forensics for activity imcom.forensics/.MainActivity: pid=17709 uid=10077 gids={1015, 1007, 3003}
+04-26 18:31:50.714 W/ActivityThread(17709): Application imcom.forensics is waiting for the debugger on port 8100...
+04-26 18:31:51.234 I/ActivityManager( 1485): debugger status changed, pid: 17709, uid:10077, attach:true
+04-26 18:31:52.495 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:31:54.647 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=17731 uid=10077 gids={1015, 1007, 3003}
+04-26 18:31:54.647 D/Socket_Alarm(17709): registerHTCSocketMonitorCallBack
+04-26 18:31:54.647 D/Socket_Alarm(17709): set mSocketMonitor
+04-26 18:31:54.647 D/Socket_Alarm(17709): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:31:54.968 W/InputManagerService( 1485): [unbindCurrentClientLocked] Disable input method client.
+04-26 18:31:54.968 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:31:54.998 D/InputManagerService( 1485): Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40f936c8 (uid=9999 pid=17483)
+04-26 18:32:02.495 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:32:04.507 V/DeviceStorageMonitorService( 1485): freeMemory=683503616
+04-26 18:32:04.507 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:32:04.507 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:32:12.495 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:32:14.707 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{40780258 imcom.forensics/.UploadManager}
+04-26 18:32:15.898 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=4301112
+04-26 18:32:15.898 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:32:15.898 E/ActivityManager( 1485): Load: 6.39 / 6.99 / 7.01
+04-26 18:32:15.898 E/ActivityManager( 1485): CPU usage from 14122ms to 0ms ago:
+04-26 18:32:15.898 E/ActivityManager( 1485):   3.8% 17709/imcom.forensics: 3.6% user + 0.2% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   2.4% 1198/sd-qd: 0% user + 2.2% kernel + 0.2% iowait
+04-26 18:32:15.898 E/ActivityManager( 1485):   1.1% 1485/system_server: 0.4% user + 0.6% kernel / faults: 32 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.5% 1601/com.android.phone: 0.2% user + 0.1% kernel + 0.1% iowait / faults: 238 minor 6 major
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.3% 17483/com.htc.launcher: 0.3% user + 0% kernel / faults: 97 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.2% 3/ksoftirqd/0: 0.2% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.2% 1624/com.lbe.security:service: 0% user + 0.1% kernel / faults: 90 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.2% 1640/android.htc.china.location.service:location_service: 0.2% user + 0% kernel / faults: 9 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.2% 1666/dhd_dpc: 0% user + 0.2% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.2% 1382/adbd: 0% user + 0.2% kernel / faults: 78 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.2% 17731/imcom.forensics:uploader: 0% user + 0.1% kernel / faults: 26 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.1% 278/kondemand/0: 0% user + 0.1% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.4% 856/emmc-qd: 0% user + 0.1% kernel + 0.2% iowait
+04-26 18:32:15.898 E/ActivityManager( 1485):   0.1% 3344/logcat: 0.1% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 17212/com.renren.mobile.android: 0% user + 0% kernel / faults: 77 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 5/events/0: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 693/file-storage: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 1363/servicemanager: 0% user + 0% kernel / faults: 8 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 1380/zchgd: 0% user + 0% kernel / faults: 20 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 1459/logcat2: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 1695/wpa_supplicant: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 2100/flush-179:64: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 3838/logcat: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 5004/logcat: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 5797/com.tencent.mobileqq:MSF: 0% user + 0% kernel / faults: 1 minor
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 7444/logcat: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 7602/logcat: 0% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   0% 1362/kjournald: 0% user + 0% kernel + 0% iowait
+04-26 18:32:15.898 E/ActivityManager( 1485): 12% TOTAL: 6.3% user + 5.1% kernel + 0.6% iowait + 0% softirq
+04-26 18:32:15.898 E/ActivityManager( 1485): CPU usage from 577ms to 1102ms later:
+04-26 18:32:15.898 E/ActivityManager( 1485):   7.4% 1485/system_server: 0% user + 7.4% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):     5.5% 1518/ActivityManager: 0% user + 5.5% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):     1.8% 1493/SurfaceFlinger: 1.8% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   2.9% 17709/imcom.forensics: 2.9% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):     2.9% 17709/imcom.forensics: 2.9% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   3.7% 856/emmc-qd: 0% user + 1.2% kernel + 2.5% iowait
+04-26 18:32:15.898 E/ActivityManager( 1485):   1.3% 1640/android.htc.china.location.service:location_service: 1.3% user + 0% kernel
+04-26 18:32:15.898 E/ActivityManager( 1485):   2.5% 1362/kjournald: 0% user + 0% kernel + 2.5% iowait
+04-26 18:32:15.898 E/ActivityManager( 1485): 11% TOTAL: 5.6% user + 3.7% kernel + 1.8% iowait
+04-26 18:32:16.008 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=4301112
+04-26 18:32:16.038 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 17731) has died.
+04-26 18:32:16.048 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 42680ms
+04-26 18:32:22.495 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:32:32.504 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:32:42.494 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:32:52.514 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:32:58.740 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=17809 uid=10077 gids={1015, 1007, 3003}
+04-26 18:33:02.504 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:33:04.506 V/DeviceStorageMonitorService( 1485): freeMemory=683421696
+04-26 18:33:04.506 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:33:04.506 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:33:12.513 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:33:18.819 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{40780258 imcom.forensics/.UploadManager}
+04-26 18:33:19.891 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=4365227
+04-26 18:33:19.891 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:33:19.891 E/ActivityManager( 1485): Load: 6.28 / 6.89 / 6.98
+04-26 18:33:19.891 E/ActivityManager( 1485): CPU usage from 13827ms to 3897ms ago with 99% awake:
+04-26 18:33:19.891 E/ActivityManager( 1485):   3.7% 17709/imcom.forensics: 3.2% user + 0.5% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   2.3% 1198/sd-qd: 0% user + 2.2% kernel + 0.1% iowait
+04-26 18:33:19.891 E/ActivityManager( 1485):   1.1% 1485/system_server: 0.6% user + 0.5% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 1670/com.htc.bgp: 0% user + 0% kernel + 0% iowait / faults: 353 minor 12 major
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 3151/com.tencent.mm:push: 0.1% user + 0% kernel / faults: 202 minor
+04-26 18:33:19.891 E/ActivityManager( 1485):   1.2% 856/emmc-qd: 0% user + 0.3% kernel + 0.9% iowait
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.3% 1382/adbd: 0% user + 0.3% kernel / faults: 52 minor
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 1624/com.lbe.security:service: 0.1% user + 0% kernel / faults: 3 minor
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.3% 17809/imcom.forensics:uploader: 0.3% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.2% 1640/android.htc.china.location.service:location_service: 0.2% user + 0% kernel / faults: 3 minor
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.2% 17075/com.facebook.katana: 0.1% user + 0.1% kernel / faults: 159 minor 9 major
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 5/events/0: 0% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 278/kondemand/0: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 1666/dhd_dpc: 0% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 3344/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 3607/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 3663/logcat: 0% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 3838/logcat: 0% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 4163/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 4217/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 4760/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 4926/logcat: 0% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 5004/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0% 5797/com.tencent.mobileqq:MSF: 0% user + 0% kernel / faults: 1 minor
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 6991/logcat: 0% user + 0.1% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   0.1% 7680/logcat: 0.1% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485): 11% TOTAL: 5.6% user + 4.6% kernel + 1.4% iowait
+04-26 18:33:19.891 E/ActivityManager( 1485): CPU usage from 437ms to 962ms later:
+04-26 18:33:19.891 E/ActivityManager( 1485):   16% 1198/sd-qd: 0% user + 13% kernel + 2.5% iowait
+04-26 18:33:19.891 E/ActivityManager( 1485):   7.4% 1485/system_server: 0% user + 7.4% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):     7.4% 1518/ActivityManager: 0% user + 7.4% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):     1.8% 1501/SurfaceFlinger: 0% user + 1.8% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   5.6% 17212/com.renren.mobile.android: 5.6% user + 0% kernel / faults: 22 minor
+04-26 18:33:19.891 E/ActivityManager( 1485):     4.2% 17244/Thread-21: 4.2% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   3.5% 17709/imcom.forensics: 3.5% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):     3.5% 17709/imcom.forensics: 3.5% user + 0% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   1.2% 1666/dhd_dpc: 0% user + 1.2% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485):   1.3% 2100/flush-179:64: 0% user + 1.3% kernel
+04-26 18:33:19.891 E/ActivityManager( 1485): 38% TOTAL: 13% user + 21% kernel + 3.8% iowait
+04-26 18:33:19.991 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=4365227
+04-26 18:33:20.031 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 17809) has died.
+04-26 18:33:20.031 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 170720ms
+04-26 18:33:22.513 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:33:32.513 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:33:42.513 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:33:52.512 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:34:02.512 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:34:04.514 V/DeviceStorageMonitorService( 1485): freeMemory=683331584
+04-26 18:34:04.514 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:34:04.514 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:34:12.512 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:34:22.512 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:34:32.511 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:34:42.511 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:34:46.235 I/ActivityManager( 1485): Process imcom.forensics (pid 17709) has died.
+04-26 18:34:46.235 I/WindowManager( 1485): WIN DEATH: Window{4072ea20 imcom.forensics/imcom.forensics.MainActivity paused=false}
+04-26 18:34:46.375 D/InputManagerService( 1485): Got RemoteException sending setActive(false) notification to pid 17709 uid 10077
+04-26 18:34:46.375 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:34:52.511 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:35:01.610 I/ActivityManager( 1485): Force stopping package imcom.forensics uid=10077
+04-26 18:35:01.620 I/ActivityManager( 1485):   Force stopping service ServiceRecord{40780258 imcom.forensics/.UploadManager}
+04-26 18:35:01.620 I/ActivityManager( 1485): Starting activity: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=imcom.forensics/.MainActivity } from pid 17942
+04-26 18:35:01.750 I/ActivityManager( 1485): Start proc imcom.forensics for activity imcom.forensics/.MainActivity: pid=17955 uid=10077 gids={1015, 1007, 3003}
+04-26 18:35:01.800 W/ActivityThread(17955): Application imcom.forensics is waiting for the debugger on port 8100...
+04-26 18:35:02.521 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:35:03.281 I/ActivityManager( 1485): debugger status changed, pid: 17955, uid:10077, attach:true
+04-26 18:35:04.523 V/DeviceStorageMonitorService( 1485): freeMemory=683331584
+04-26 18:35:04.523 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:35:04.523 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:35:05.864 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=17973 uid=10077 gids={1015, 1007, 3003}
+04-26 18:35:05.864 D/Socket_Alarm(17955): registerHTCSocketMonitorCallBack
+04-26 18:35:05.874 D/Socket_Alarm(17955): set mSocketMonitor
+04-26 18:35:05.874 D/Socket_Alarm(17955): HTCSocketMonitorImpl::HTCSocketMonitorImpl
+04-26 18:35:06.154 W/InputManagerService( 1485): [unbindCurrentClientLocked] Disable input method client.
+04-26 18:35:06.154 W/InputManagerService( 1485): [startInputLocked] Enable input method client.
+04-26 18:35:06.194 D/InputManagerService( 1485): Starting input on non-focused client com.android.internal.view.IInputMethodClient$Stub$Proxy@40f936c8 (uid=9999 pid=17483)
+04-26 18:35:12.520 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:35:22.520 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:35:25.943 W/ActivityManager( 1485): Timeout executing service: ServiceRecord{40f94820 imcom.forensics/.UploadManager}
+04-26 18:35:26.414 W/ProcessStats( 1485): Skipping unknown process pid 18014
+04-26 18:35:27.035 E/ActivityManager( 1485): ANR in imcom.forensics:uploader time=4492343
+04-26 18:35:27.035 E/ActivityManager( 1485): Reason: Executing service imcom.forensics/.UploadManager
+04-26 18:35:27.035 E/ActivityManager( 1485): Load: 5.75 / 6.42 / 6.78
+04-26 18:35:27.035 E/ActivityManager( 1485): CPU usage from 9417ms to 0ms ago:
+04-26 18:35:27.035 E/ActivityManager( 1485):   3.7% 17955/imcom.forensics: 3.6% user + 0.1% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   1.2% 1485/system_server: 0.8% user + 0.4% kernel / faults: 3 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):   1.4% 1198/sd-qd: 0% user + 1.1% kernel + 0.3% iowait
+04-26 18:35:27.035 E/ActivityManager( 1485):   1% 17483/com.htc.launcher: 1% user + 0% kernel / faults: 67 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.5% 16499/com.sina.VDisk:push: 0.4% user + 0.1% kernel / faults: 81 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.3% 1624/com.lbe.security:service: 0.3% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.3% 856/emmc-qd: 0% user + 0.2% kernel + 0.1% iowait
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.2% 1640/android.htc.china.location.service:location_service: 0.2% user + 0% kernel / faults: 6 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):   0% 278/kondemand/0: 0% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 1382/adbd: 0% user + 0.1% kernel / faults: 27 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 1459/logcat2: 0.1% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0% 1695/wpa_supplicant: 0% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0% 2100/flush-179:64: 0% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 3344/logcat: 0% user + 0.1% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 3872/logcat: 0% user + 0.1% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 7361/logcat: 0.1% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0% 7444/logcat: 0% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 7602/logcat: 0.1% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   0% 17212/com.renren.mobile.android: 0% user + 0% kernel / faults: 49 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):   0.1% 1362/kjournald: 0% user + 0% kernel + 0.1% iowait
+04-26 18:35:27.035 E/ActivityManager( 1485): 10% TOTAL: 6.5% user + 3% kernel + 0.8% iowait
+04-26 18:35:27.035 E/ActivityManager( 1485): CPU usage from 444ms to 993ms later:
+04-26 18:35:27.035 E/ActivityManager( 1485):   10% 1485/system_server: 1.7% user + 8.9% kernel / faults: 1 minor
+04-26 18:35:27.035 E/ActivityManager( 1485):     7.1% 1518/ActivityManager: 1.7% user + 5.3% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):     1.7% 1493/SurfaceFlinger: 0% user + 1.7% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   2.7% 17483/com.htc.launcher: 2.7% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):     2.7% 17484/HeapWorker: 2.7% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):   2.7% 17955/imcom.forensics: 2.7% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485):     2.7% 17955/imcom.forensics: 2.7% user + 0% kernel
+04-26 18:35:27.035 E/ActivityManager( 1485): 14% TOTAL: 7.4% user + 7.4% kernel
+04-26 18:35:27.125 I/ActivityManager( 1485): Skipping background ANR: imcom.forensics:uploader time=4492343
+04-26 18:35:27.175 I/ActivityManager( 1485): Process imcom.forensics:uploader (pid 17973) has died.
+04-26 18:35:27.175 W/ActivityManager( 1485): Scheduling restart of crashed service imcom.forensics/.UploadManager in 42488ms
+04-26 18:35:32.520 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:35:42.520 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:35:52.529 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:36:02.519 W/WifiService( 1485): misformatted scan result for: 20:aa:4b:67:df:80	2462	-87	[WPA2-PSK-TKIP+CCMP]	
+04-26 18:36:04.531 V/DeviceStorageMonitorService( 1485): freeMemory=683249664
+04-26 18:36:04.531 D/DeviceStorageMonitorService( 1485): OoO SMS Memory available. SMS_AVAILABLE_THRESHOLD == 524288
+04-26 18:36:04.531 I/DeviceStorageMonitorService( 1485): Posting Message again
+04-26 18:36:09.696 I/ActivityManager( 1485): Start proc imcom.forensics:uploader for service imcom.forensics/.UploadManager: pid=18051 uid=10077 gids={1015, 1007, 3003}

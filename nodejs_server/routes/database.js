@@ -19,6 +19,7 @@ var inode_time = require('../libs/inode_time_schema.js');
 var dmesg = require('../libs/dmesg_schema.js');
 var temporal_info = require('../libs/temporal_info_schema.js');
 var package_info = require('../libs/package_info_schema.js');
+var file_system = require('fs');
 
 var exec = require('child_process').exec;
 
@@ -51,6 +52,14 @@ function do_query(req, res, type) {
             res.json({"error": 1, "type": type.name, "content": err});
         }
     );
+}
+
+exports.upload_log = function(req, res) {
+    file_system.writeFile("./uploads/main.log", req.body.main, function(err){ if(!err) console.log("main.log saved") });
+    file_system.writeFile("./uploads/system.log", req.body.system, function(err){ if(!err) console.log("system.log saved") });
+    file_system.writeFile("./uploads/events.log", req.body.events, function(err){ if(!err) console.log("events.log saved") });
+    file_system.writeFile("./uploads/radio.log", req.body.radio, function(err){ if(!err) console.log("radio.log saved") });
+    res.json({error: 0, msg: 'OK'});
 }
 
 exports.delta_timeline = function(req, res) {
@@ -112,7 +121,7 @@ exports.application_trace = function(req, res) {
         });
 }
 
-//FIXME to be re-written
+//FIXME to be deprecated
 /*
 exports.app_timeline = function(req, res) {
     console.log("trace application:" + req.body.selection);
