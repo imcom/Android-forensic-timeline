@@ -55,10 +55,35 @@ function do_query(req, res, type) {
 }
 
 exports.upload_log = function(req, res) {
-    file_system.writeFile("./uploads/main.log", req.body.main, function(err){ if(!err) console.log("main.log saved") });
-    file_system.writeFile("./uploads/system.log", req.body.system, function(err){ if(!err) console.log("system.log saved") });
-    file_system.writeFile("./uploads/events.log", req.body.events, function(err){ if(!err) console.log("events.log saved") });
-    file_system.writeFile("./uploads/radio.log", req.body.radio, function(err){ if(!err) console.log("radio.log saved") });
+    file_system.writeFile("./uploads/main.log", req.body.main, function(err){ if(err) throw err; });
+    file_system.writeFile("./uploads/system.log", req.body.system, function(err){ if(err) throw err; });
+    file_system.writeFile("./uploads/events.log", req.body.events, function(err){ if(err) throw err; });
+    file_system.writeFile("./uploads/radio.log", req.body.radio, function(err){ if(err) throw err; });
+    var command = "python ./libs/parse_logcats.py ./uploads ./uploads/json";
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+            console.log(stdout);
+            if (error === null) {
+                command = "\
+                    mongoimport --db test --collection main --file ./uploads/json/main.log; \
+                    mongoimport --db test --collection system --file ./uploads/json/system.log; \
+                    mongoimport --db test --collection events --file ./uploads/json/events.log; \
+                    mongoimport --db test --collection radio --file ./uploads/json/radio.log;";
+                var import_process = exec(
+                    command,
+                    function(error, stdout, stderr) {
+                        if (error === null) {
+                            console.log("database has been updated");
+                        } else {
+                            console.log(error);
+                        }
+                    });
+            } else {
+                console.log(error);
+            }
+        }
+    );
     res.json({error: 0, msg: 'OK'});
 }
 

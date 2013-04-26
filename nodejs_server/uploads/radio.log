@@ -1,641 +1,668 @@
-04-26 18:25:18.020 D/HTC_RIL ( 1367): RX::> +CREG: 1,"005E","00434DA3"\r\n
-04-26 18:25:18.020 D/HTC_RIL ( 1367): check_phone_mode_change():last_scan_network_type:0
-04-26 18:25:18.020 D/HTC_RIL ( 1367): check_phone_mode_change():last_register_network:0
-04-26 18:25:18.020 D/HTC_RIL ( 1367): check_phone_mode_change():init network_mode:0
-04-26 18:25:18.040 D/HTC_RIL ( 1367): check_phone_mode_change():set the modem type to UMTS
-04-26 18:25:18.050 D/HTC_RIL ( 1367): (t=1366993518)%% +CREG: 1,"005E","00434DA3"\r\n
-04-26 18:25:18.050 D/RILC    ( 1367): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED 
-04-26 18:25:18.050 D/RILJ    ( 1601): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED
-04-26 18:25:18.050 D/RILJ    ( 1601): [0711]> OPERATOR
-04-26 18:25:18.050 D/RILC    ( 1367): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
-04-26 18:25:18.050 D/RILJ    ( 1601): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
-04-26 18:25:18.050 D/RILC    ( 1367): [0711]> OPERATOR 
-04-26 18:25:18.050 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
-04-26 18:25:18.050 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.050 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.050 D/RILJ    ( 1601): [0712]> REGISTRATION_STATE
-04-26 18:25:18.050 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.050 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.050 D/RILC    ( 1367): [0712]> REGISTRATION_STATE 
-04-26 18:25:18.050 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
-04-26 18:25:18.050 D/RILJ    ( 1601): [0713]> GPRS_REGISTRATION_STATE
-04-26 18:25:18.060 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
-04-26 18:25:18.060 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
-04-26 18:25:18.060 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
-04-26 18:25:18.060 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
-04-26 18:25:18.060 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
-04-26 18:25:18.060 D/RILC    ( 1367): [0711]< OPERATOR {Telenor DK,(N/A),23802,5}
-04-26 18:25:18.060 D/RILJ    ( 1601): [0711]< OPERATOR {Telenor DK, (N/A), 23802, 5}
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)>> AT+CREG?\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
-04-26 18:25:18.060 D/RILC    ( 1367): [0713]> GPRS_REGISTRATION_STATE 
-04-26 18:25:18.060 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
-04-26 18:25:18.060 D/RILJ    ( 1601): [0714]> QUERY_NETWORK_SELECTION_MODE
-04-26 18:25:18.060 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)<< +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:25:18.060 D/RILC    ( 1367): [0714]> QUERY_NETWORK_SELECTION_MODE 
-04-26 18:25:18.060 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
-04-26 18:25:18.060 D/GSM     ( 1601): rilCregState: 1
-04-26 18:25:18.060 D/GSM     ( 1601): rilCgregState: 1
-04-26 18:25:18.060 D/GSM     ( 1601): oldRilCREGState: 0  newRilCREGState: 0
-04-26 18:25:18.060 D/GSM     ( 1601): oldRilCGREGState: 0  newRilCGREGState: 0
-04-26 18:25:18.060 D/GSM     ( 1601): mCregChange: false  mCgregChange: false
-04-26 18:25:18.060 D/RILJ    ( 1601): [0715]> OPERATOR
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)>> AT+CGREG?\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)<< +CGREG: 1,1\r\n0\r
-04-26 18:25:18.060 D/RILC    ( 1367): [0715]> OPERATOR 
-04-26 18:25:18.060 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
-04-26 18:25:18.060 D/RILJ    ( 1601): [0716]> REGISTRATION_STATE
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.060 D/RILC    ( 1367): [0716]> REGISTRATION_STATE 
-04-26 18:25:18.060 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
-04-26 18:25:18.060 D/RILJ    ( 1601): [0717]> GPRS_REGISTRATION_STATE
-04-26 18:25:18.060 D/RILC    ( 1367): [0714]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:25:18.060 D/RILJ    ( 1601): [0714]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:25:18.060 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.060 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.060 D/RILC    ( 1367): [0717]> GPRS_REGISTRATION_STATE 
-04-26 18:25:18.060 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
-04-26 18:25:18.060 D/RILJ    ( 1601): [0718]> QUERY_NETWORK_SELECTION_MODE
-04-26 18:25:18.070 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.070 D/RILC    ( 1367): [0718]> QUERY_NETWORK_SELECTION_MODE 
-04-26 18:25:18.070 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
-04-26 18:25:18.070 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
-04-26 18:25:18.070 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
-04-26 18:25:18.070 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
-04-26 18:25:18.070 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
-04-26 18:25:18.070 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)>> AT+CREG?\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
-04-26 18:25:18.070 D/RILC    ( 1367): [0715]< OPERATOR {Telenor DK,(N/A),23802,5}
-04-26 18:25:18.070 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)<< +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:25:18.070 D/RILJ    ( 1601): [0715]< OPERATOR {Telenor DK, (N/A), 23802, 5}
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)>> AT+CGREG?\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)<< +CGREG: 1,1\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.070 D/RILC    ( 1367): [0718]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:25:18.070 D/RILJ    ( 1601): [0718]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:25:18.070 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.070 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.080 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.080 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.080 D/RILC    ( 1367): [0712]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
-04-26 18:25:18.080 D/RILJ    ( 1601): [0712]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}
-04-26 18:25:18.080 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.080 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.080 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.080 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.080 D/RILC    ( 1367): [0713]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
-04-26 18:25:18.080 D/RILJ    ( 1601): [0713]< GPRS_REGISTRATION_STATE {1, null, null, 3}
-04-26 18:25:18.080 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.080 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.090 D/HTC_RIL ( 1367): (t=1366993518)>> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.090 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:25:18.090 D/RILC    ( 1367): [0716]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
-04-26 18:25:18.090 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.090 D/HTC_RIL ( 1367): (t=1366993518)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:25:18.090 D/RILJ    ( 1601): [0716]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}
-04-26 18:25:18.090 D/RILC    ( 1367): [0717]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
-04-26 18:25:18.090 D/RILJ    ( 1601): [0717]< GPRS_REGISTRATION_STATE {1, null, null, 3}
-04-26 18:25:18.090 D/GSM     ( 1601): Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS
-04-26 18:25:18.090 D/GSM     ( 1601): reset the mCregChange =false
-04-26 18:25:18.090 D/GSM     ( 1601): reset the mCgregChange =false
-04-26 18:25:18.100 D/RILJ    ( 1601): [0719]> GET_NEIGHBORING_CELL_IDS
-04-26 18:25:18.100 D/RILC    ( 1367): [0719]> GET_NEIGHBORING_CELL_IDS 
-04-26 18:25:18.100 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
-04-26 18:25:18.100 D/HTC_RIL ( 1367): (t=1366993518)>> AT+Q3GNCELL\r
-04-26 18:25:18.100 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
-04-26 18:25:18.100 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00434DA3",31,0\r\n0\r
-04-26 18:25:18.100 D/HTC_RIL ( 1367): (t=1366993518)<< +Q3GNCELL: "00434DA3",31,0\r\n0\r
-04-26 18:25:18.110 D/RILC    ( 1367): [0719]< GET_NEIGHBORING_CELL_IDS }
-04-26 18:25:18.110 D/RILJ    ( 1601): [0719]< GET_NEIGHBORING_CELL_IDS  
-04-26 18:25:18.861 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:25:18.861 D/HTC_RIL ( 1367): (t=1366993518)%% +HTCUCSQ: 15\r\n
-04-26 18:25:18.861 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:25:18.861 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:25:27.860 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:25:27.860 D/HTC_RIL ( 1367): (t=1366993527)%% +HTCUCSQ: 14\r\n
-04-26 18:25:27.860 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:25:27.860 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:25:42.865 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:25:42.865 D/HTC_RIL ( 1367): (t=1366993542)%% +HTCUCSQ: 15\r\n
-04-26 18:25:42.865 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:25:42.865 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:25:51.863 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:25:51.863 D/HTC_RIL ( 1367): (t=1366993551)%% +HTCUCSQ: 14\r\n
-04-26 18:25:51.863 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:25:51.873 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:09.871 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:26:09.871 D/HTC_RIL ( 1367): (t=1366993569)%% +HTCUCSQ: 13\r\n
-04-26 18:26:09.871 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:09.871 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:14.986 D/HTC_RIL ( 1367): RX::> +CREG: 1,"005E","00433691"\r\n
-04-26 18:26:14.986 D/HTC_RIL ( 1367): check_phone_mode_change():last_scan_network_type:0
-04-26 18:26:14.986 D/HTC_RIL ( 1367): check_phone_mode_change():last_register_network:0
-04-26 18:26:14.986 D/HTC_RIL ( 1367): check_phone_mode_change():init network_mode:0
-04-26 18:26:14.996 D/HTC_RIL ( 1367): check_phone_mode_change():set the modem type to UMTS
-04-26 18:26:15.006 D/RILC    ( 1367): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED 
-04-26 18:26:15.006 D/RILJ    ( 1601): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED
-04-26 18:26:15.006 D/RILJ    ( 1601): [0720]> OPERATOR
-04-26 18:26:15.006 D/HTC_RIL ( 1367): (t=1366993575)%% +CREG: 1,"005E","00433691"\r\n
-04-26 18:26:15.006 D/RILC    ( 1367): [0720]> OPERATOR 
-04-26 18:26:15.006 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
-04-26 18:26:15.006 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.006 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.006 D/RILJ    ( 1601): [0721]> REGISTRATION_STATE
-04-26 18:26:15.006 D/RILC    ( 1367): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
-04-26 18:26:15.016 D/RILJ    ( 1601): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
-04-26 18:26:15.016 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.016 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.016 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
-04-26 18:26:15.016 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
-04-26 18:26:15.016 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
-04-26 18:26:15.016 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
-04-26 18:26:15.016 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
-04-26 18:26:15.016 D/RILC    ( 1367): [0721]> REGISTRATION_STATE 
-04-26 18:26:15.016 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
-04-26 18:26:15.016 D/RILC    ( 1367): [0720]< OPERATOR {Telenor DK,(N/A),23802,5}
-04-26 18:26:15.016 D/HTC_RIL ( 1367): (t=1366993575)>> AT+CREG?\r
-04-26 18:26:15.016 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
-04-26 18:26:15.016 D/RILJ    ( 1601): [0720]< OPERATOR {Telenor DK, (N/A), 23802, 5}
-04-26 18:26:15.016 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00433691"\r\n0\r
-04-26 18:26:15.016 D/RILJ    ( 1601): [0722]> GPRS_REGISTRATION_STATE
-04-26 18:26:15.016 D/HTC_RIL ( 1367): (t=1366993575)<< +CREG: 2,1,"005E","00433691"\r\n0\r
-04-26 18:26:15.026 D/RILC    ( 1367): [0722]> GPRS_REGISTRATION_STATE 
-04-26 18:26:15.026 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
-04-26 18:26:15.026 D/HTC_RIL ( 1367): (t=1366993575)>> AT+CGREG?\r
-04-26 18:26:15.026 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
-04-26 18:26:15.026 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
-04-26 18:26:15.026 D/HTC_RIL ( 1367): (t=1366993575)<< +CGREG: 1,1\r\n0\r
-04-26 18:26:15.026 D/RILJ    ( 1601): [0723]> QUERY_NETWORK_SELECTION_MODE
-04-26 18:26:15.026 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.026 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.026 D/RILC    ( 1367): [0723]> QUERY_NETWORK_SELECTION_MODE 
-04-26 18:26:15.026 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
-04-26 18:26:15.026 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.026 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.026 D/GSM     ( 1601): rilCregState: 1
-04-26 18:26:15.026 D/GSM     ( 1601): rilCgregState: 1
-04-26 18:26:15.026 D/GSM     ( 1601): oldRilCREGState: 0  newRilCREGState: 0
-04-26 18:26:15.026 D/GSM     ( 1601): oldRilCGREGState: 0  newRilCGREGState: 0
-04-26 18:26:15.026 D/GSM     ( 1601): mCregChange: false  mCgregChange: false
-04-26 18:26:15.026 D/RILC    ( 1367): [0721]< REGISTRATION_STATE {1,005E,00433691,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
-04-26 18:26:15.026 D/RILJ    ( 1601): [0721]< REGISTRATION_STATE {1, 005E, 00433691, 3, null, null, null, null, null, null, null, null, null, null}
-04-26 18:26:15.026 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.026 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.026 D/RILJ    ( 1601): [0724]> OPERATOR
-04-26 18:26:15.036 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.036 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.036 D/RILC    ( 1367): [0723]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:26:15.036 D/RILJ    ( 1601): [0723]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:26:15.036 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.036 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.036 D/RILC    ( 1367): [0724]> OPERATOR 
-04-26 18:26:15.036 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
-04-26 18:26:15.036 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.036 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.036 D/RILJ    ( 1601): [0725]> REGISTRATION_STATE
-04-26 18:26:15.036 D/RILC    ( 1367): [0722]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
-04-26 18:26:15.036 D/RILJ    ( 1601): [0722]< GPRS_REGISTRATION_STATE {1, null, null, 3}
-04-26 18:26:15.036 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.036 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.036 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.036 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.046 D/RILC    ( 1367): [0725]> REGISTRATION_STATE 
-04-26 18:26:15.046 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
-04-26 18:26:15.046 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
-04-26 18:26:15.046 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
-04-26 18:26:15.046 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
-04-26 18:26:15.046 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
-04-26 18:26:15.046 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
-04-26 18:26:15.046 D/RILC    ( 1367): [0724]< OPERATOR {Telenor DK,(N/A),23802,5}
-04-26 18:26:15.046 D/RILJ    ( 1601): [0724]< OPERATOR {Telenor DK, (N/A), 23802, 5}
-04-26 18:26:15.046 D/HTC_RIL ( 1367): (t=1366993575)>> AT+CREG?\r
-04-26 18:26:15.046 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
-04-26 18:26:15.046 D/RILJ    ( 1601): [0726]> GPRS_REGISTRATION_STATE
-04-26 18:26:15.046 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00433691"\r\n0\r
-04-26 18:26:15.046 D/HTC_RIL ( 1367): (t=1366993575)<< +CREG: 2,1,"005E","00433691"\r\n0\r
-04-26 18:26:15.046 D/RILC    ( 1367): [0726]> GPRS_REGISTRATION_STATE 
-04-26 18:26:15.046 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
-04-26 18:26:15.046 D/HTC_RIL ( 1367): (t=1366993575)>> AT+CGREG?\r
-04-26 18:26:15.046 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
-04-26 18:26:15.046 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
-04-26 18:26:15.046 D/HTC_RIL ( 1367): (t=1366993575)<< +CGREG: 1,1\r\n0\r
-04-26 18:26:15.046 D/RILJ    ( 1601): [0727]> QUERY_NETWORK_SELECTION_MODE
-04-26 18:26:15.056 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.056 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.056 D/RILC    ( 1367): [0727]> QUERY_NETWORK_SELECTION_MODE 
-04-26 18:26:15.056 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
-04-26 18:26:15.056 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.056 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.056 D/RILC    ( 1367): [0725]< REGISTRATION_STATE {1,005E,00433691,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
-04-26 18:26:15.056 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.056 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.056 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.056 D/RILJ    ( 1601): [0725]< REGISTRATION_STATE {1, 005E, 00433691, 3, null, null, null, null, null, null, null, null, null, null}
-04-26 18:26:15.056 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.056 D/RILC    ( 1367): [0727]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:26:15.056 D/HTC_RIL ( 1367): (t=1366993575)>> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.056 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:26:15.056 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.066 D/HTC_RIL ( 1367): (t=1366993575)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:26:15.066 D/RILJ    ( 1601): [0727]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:26:15.066 D/RILC    ( 1367): [0726]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
-04-26 18:26:15.066 D/RILJ    ( 1601): [0726]< GPRS_REGISTRATION_STATE {1, null, null, 3}
-04-26 18:26:15.066 D/GSM     ( 1601): Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS
-04-26 18:26:15.066 D/GSM     ( 1601): reset the mCregChange =false
-04-26 18:26:15.066 D/GSM     ( 1601): reset the mCgregChange =false
-04-26 18:26:15.076 D/RILJ    ( 1601): [0728]> GET_NEIGHBORING_CELL_IDS
-04-26 18:26:15.076 D/RILC    ( 1367): [0728]> GET_NEIGHBORING_CELL_IDS 
-04-26 18:26:15.076 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
-04-26 18:26:15.076 D/HTC_RIL ( 1367): (t=1366993575)>> AT+Q3GNCELL\r
-04-26 18:26:15.076 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
-04-26 18:26:15.076 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00433691",20,0\r\n0\r
-04-26 18:26:15.076 D/HTC_RIL ( 1367): (t=1366993575)<< +Q3GNCELL: "00433691",20,0\r\n0\r
-04-26 18:26:15.086 D/RILC    ( 1367): [0728]< GET_NEIGHBORING_CELL_IDS }
-04-26 18:26:15.086 D/RILJ    ( 1601): [0728]< GET_NEIGHBORING_CELL_IDS  
-04-26 18:26:15.867 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:26:15.867 D/HTC_RIL ( 1367): (t=1366993575)%% +HTCUCSQ: 12\r\n
-04-26 18:26:15.867 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:15.867 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:18.870 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:26:18.870 D/HTC_RIL ( 1367): (t=1366993578)%% +HTCUCSQ: 14\r\n
-04-26 18:26:18.870 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:18.870 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:21.873 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 16\r\n
-04-26 18:26:21.873 D/HTC_RIL ( 1367): (t=1366993581)%% +HTCUCSQ: 16\r\n
-04-26 18:26:21.873 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:21.873 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:24.866 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:26:24.866 D/HTC_RIL ( 1367): (t=1366993584)%% +HTCUCSQ: 15\r\n
-04-26 18:26:24.866 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:24.866 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:27.869 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 16\r\n
-04-26 18:26:27.869 D/HTC_RIL ( 1367): (t=1366993587)%% +HTCUCSQ: 16\r\n
-04-26 18:26:27.869 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:27.869 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:30.871 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:26:30.871 D/HTC_RIL ( 1367): (t=1366993590)%% +HTCUCSQ: 14\r\n
-04-26 18:26:30.871 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:30.871 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:48.869 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:26:48.869 D/HTC_RIL ( 1367): (t=1366993608)%% +HTCUCSQ: 15\r\n
-04-26 18:26:48.869 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:48.869 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:26:57.868 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:26:57.868 D/HTC_RIL ( 1367): (t=1366993617)%% +HTCUCSQ: 14\r\n
-04-26 18:26:57.868 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:26:57.868 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:00.871 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:27:00.871 D/HTC_RIL ( 1367): (t=1366993620)%% +HTCUCSQ: 13\r\n
-04-26 18:27:00.871 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:00.871 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:03.603 D/HTC_RIL ( 1367): RX::> +CREG: 1,"005E","00434DA3"\r\n
-04-26 18:27:03.603 D/HTC_RIL ( 1367): check_phone_mode_change():last_scan_network_type:0
-04-26 18:27:03.603 D/HTC_RIL ( 1367): check_phone_mode_change():last_register_network:0
-04-26 18:27:03.603 D/HTC_RIL ( 1367): check_phone_mode_change():init network_mode:0
-04-26 18:27:03.613 D/HTC_RIL ( 1367): check_phone_mode_change():set the modem type to UMTS
-04-26 18:27:03.623 D/RILC    ( 1367): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED 
-04-26 18:27:03.623 D/RILJ    ( 1601): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED
-04-26 18:27:03.633 D/RILJ    ( 1601): [0729]> OPERATOR
-04-26 18:27:03.633 D/HTC_RIL ( 1367): (t=1366993623)%% +CREG: 1,"005E","00434DA3"\r\n
-04-26 18:27:03.633 D/RILC    ( 1367): [0729]> OPERATOR 
-04-26 18:27:03.633 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
-04-26 18:27:03.633 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.633 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.633 D/RILC    ( 1367): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
-04-26 18:27:03.633 D/RILJ    ( 1601): [0730]> REGISTRATION_STATE
-04-26 18:27:03.633 D/RILJ    ( 1601): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
-04-26 18:27:03.633 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.633 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.633 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
-04-26 18:27:03.633 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
-04-26 18:27:03.633 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
-04-26 18:27:03.633 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
-04-26 18:27:03.633 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
-04-26 18:27:03.643 D/RILC    ( 1367): [0730]> REGISTRATION_STATE 
-04-26 18:27:03.643 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
-04-26 18:27:03.643 D/RILC    ( 1367): [0729]< OPERATOR {Telenor DK,(N/A),23802,5}
-04-26 18:27:03.643 D/HTC_RIL ( 1367): (t=1366993623)>> AT+CREG?\r
-04-26 18:27:03.643 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
-04-26 18:27:03.643 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:27:03.643 D/RILJ    ( 1601): [0729]< OPERATOR {Telenor DK, (N/A), 23802, 5}
-04-26 18:27:03.643 D/HTC_RIL ( 1367): (t=1366993623)<< +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:27:03.643 D/RILJ    ( 1601): [0731]> GPRS_REGISTRATION_STATE
-04-26 18:27:03.643 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.643 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.643 D/RILC    ( 1367): [0731]> GPRS_REGISTRATION_STATE 
-04-26 18:27:03.643 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
-04-26 18:27:03.643 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.643 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.643 D/RILJ    ( 1601): [0732]> QUERY_NETWORK_SELECTION_MODE
-04-26 18:27:03.643 D/RILC    ( 1367): [0730]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
-04-26 18:27:03.653 D/HTC_RIL ( 1367): (t=1366993623)>> AT+CGREG?\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): (t=1366993623)<< +CGREG: 1,1\r\n0\r
-04-26 18:27:03.653 D/RILJ    ( 1601): [0730]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}
-04-26 18:27:03.653 D/RILC    ( 1367): [0732]> QUERY_NETWORK_SELECTION_MODE 
-04-26 18:27:03.653 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
-04-26 18:27:03.653 D/GSM     ( 1601): rilCregState: 1
-04-26 18:27:03.653 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.653 D/GSM     ( 1601): rilCgregState: 1
-04-26 18:27:03.653 D/GSM     ( 1601): oldRilCREGState: 0  newRilCREGState: 0
-04-26 18:27:03.653 D/GSM     ( 1601): oldRilCGREGState: 0  newRilCGREGState: 0
-04-26 18:27:03.653 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.653 D/GSM     ( 1601): mCregChange: false  mCgregChange: false
-04-26 18:27:03.653 D/RILJ    ( 1601): [0733]> OPERATOR
-04-26 18:27:03.653 D/RILC    ( 1367): [0732]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:27:03.653 D/RILJ    ( 1601): [0732]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:27:03.653 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.653 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.653 D/RILC    ( 1367): [0733]> OPERATOR 
-04-26 18:27:03.663 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
-04-26 18:27:03.663 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.663 D/RILJ    ( 1601): [0734]> REGISTRATION_STATE
-04-26 18:27:03.663 D/RILC    ( 1367): [0731]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
-04-26 18:27:03.663 D/RILJ    ( 1601): [0731]< GPRS_REGISTRATION_STATE {1, null, null, 3}
-04-26 18:27:03.663 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.663 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.663 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.663 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.663 D/RILC    ( 1367): [0734]> REGISTRATION_STATE 
-04-26 18:27:03.663 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
-04-26 18:27:03.663 D/RILJ    ( 1601): [0735]> GPRS_REGISTRATION_STATE
-04-26 18:27:03.663 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
-04-26 18:27:03.663 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
-04-26 18:27:03.663 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
-04-26 18:27:03.663 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
-04-26 18:27:03.663 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
-04-26 18:27:03.663 D/RILC    ( 1367): [0733]< OPERATOR {Telenor DK,(N/A),23802,5}
-04-26 18:27:03.663 D/RILJ    ( 1601): [0733]< OPERATOR {Telenor DK, (N/A), 23802, 5}
-04-26 18:27:03.663 D/HTC_RIL ( 1367): (t=1366993623)>> AT+CREG?\r
-04-26 18:27:03.663 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): (t=1366993623)<< +CREG: 2,1,"005E","00434DA3"\r\n0\r
-04-26 18:27:03.673 D/RILC    ( 1367): [0735]> GPRS_REGISTRATION_STATE 
-04-26 18:27:03.673 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
-04-26 18:27:03.673 D/RILJ    ( 1601): [0736]> QUERY_NETWORK_SELECTION_MODE
-04-26 18:27:03.673 D/HTC_RIL ( 1367): (t=1366993623)>> AT+CGREG?\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): (t=1366993623)<< +CGREG: 1,1\r\n0\r
-04-26 18:27:03.673 D/RILC    ( 1367): [0736]> QUERY_NETWORK_SELECTION_MODE 
-04-26 18:27:03.673 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
-04-26 18:27:03.673 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.673 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.683 D/RILC    ( 1367): [0736]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:27:03.683 D/RILJ    ( 1601): [0736]< QUERY_NETWORK_SELECTION_MODE {0}
-04-26 18:27:03.683 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.683 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.683 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.683 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.683 D/RILC    ( 1367): [0734]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
-04-26 18:27:03.683 D/RILJ    ( 1601): [0734]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}
-04-26 18:27:03.683 D/HTC_RIL ( 1367): (t=1366993623)>> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.683 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
-04-26 18:27:03.683 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.683 D/HTC_RIL ( 1367): (t=1366993623)<< +COPS: 0,2,"23802",2\r\n0\r
-04-26 18:27:03.683 D/RILC    ( 1367): [0735]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
-04-26 18:27:03.683 D/RILJ    ( 1601): [0735]< GPRS_REGISTRATION_STATE {1, null, null, 3}
-04-26 18:27:03.714 D/GSM     ( 1601): Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS
-04-26 18:27:03.714 D/GSM     ( 1601): reset the mCregChange =false
-04-26 18:27:03.714 D/GSM     ( 1601): reset the mCgregChange =false
-04-26 18:27:03.714 D/RILJ    ( 1601): [0737]> GET_NEIGHBORING_CELL_IDS
-04-26 18:27:03.714 D/RILC    ( 1367): [0737]> GET_NEIGHBORING_CELL_IDS 
-04-26 18:27:03.714 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
-04-26 18:27:03.724 D/HTC_RIL ( 1367): (t=1366993623)>> AT+Q3GNCELL\r
-04-26 18:27:03.724 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
-04-26 18:27:03.724 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00434DA3",28,0\r\n0\r
-04-26 18:27:03.724 D/HTC_RIL ( 1367): (t=1366993623)<< +Q3GNCELL: "00434DA3",28,0\r\n0\r
-04-26 18:27:03.724 D/RILC    ( 1367): [0737]< GET_NEIGHBORING_CELL_IDS }
-04-26 18:27:03.724 D/RILJ    ( 1601): [0737]< GET_NEIGHBORING_CELL_IDS  
-04-26 18:27:06.867 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:27:06.867 D/HTC_RIL ( 1367): (t=1366993626)%% +HTCUCSQ: 15\r\n
-04-26 18:27:06.867 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:06.867 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:15.865 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:27:15.875 D/HTC_RIL ( 1367): (t=1366993635)%% +HTCUCSQ: 14\r\n
-04-26 18:27:15.885 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:15.885 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:18.868 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:27:18.868 D/HTC_RIL ( 1367): (t=1366993638)%% +HTCUCSQ: 15\r\n
-04-26 18:27:18.868 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:18.868 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:21.871 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:27:21.871 D/HTC_RIL ( 1367): (t=1366993641)%% +HTCUCSQ: 14\r\n
-04-26 18:27:21.871 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:21.871 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:39.869 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:27:39.869 D/HTC_RIL ( 1367): (t=1366993659)%% +HTCUCSQ: 12\r\n
-04-26 18:27:39.869 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:39.879 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:42.872 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:27:42.882 D/HTC_RIL ( 1367): (t=1366993662)%% +HTCUCSQ: 13\r\n
-04-26 18:27:42.882 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:42.882 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:27:45.875 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:27:45.875 D/HTC_RIL ( 1367): (t=1366993665)%% +HTCUCSQ: 14\r\n
-04-26 18:27:45.875 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:27:45.875 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:03.882 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:28:03.882 D/HTC_RIL ( 1367): (t=1366993683)%% +HTCUCSQ: 13\r\n
-04-26 18:28:03.892 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:03.892 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:12.881 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:28:12.881 D/HTC_RIL ( 1367): (t=1366993692)%% +HTCUCSQ: 14\r\n
-04-26 18:28:12.881 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:12.881 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:24.883 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:28:24.883 D/HTC_RIL ( 1367): (t=1366993704)%% +HTCUCSQ: 13\r\n
-04-26 18:28:24.883 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:24.883 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:27.876 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:28:27.876 D/HTC_RIL ( 1367): (t=1366993707)%% +HTCUCSQ: 14\r\n
-04-26 18:28:27.876 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:27.876 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:33.881 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:28:33.881 D/HTC_RIL ( 1367): (t=1366993713)%% +HTCUCSQ: 13\r\n
-04-26 18:28:33.881 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:33.881 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:39.877 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:28:39.877 D/HTC_RIL ( 1367): (t=1366993719)%% +HTCUCSQ: 14\r\n
-04-26 18:28:39.877 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:39.877 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:28:51.879 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:28:51.879 D/HTC_RIL ( 1367): (t=1366993731)%% +HTCUCSQ: 15\r\n
-04-26 18:28:51.879 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:28:51.879 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:29:12.890 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:29:12.890 D/HTC_RIL ( 1367): (t=1366993752)%% +HTCUCSQ: 14\r\n
-04-26 18:29:12.890 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:29:12.890 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:29:21.888 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:29:21.888 D/HTC_RIL ( 1367): (t=1366993761)%% +HTCUCSQ: 12\r\n
-04-26 18:29:21.888 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:29:21.888 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:29:27.884 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:29:27.884 D/HTC_RIL ( 1367): (t=1366993767)%% +HTCUCSQ: 14\r\n
-04-26 18:29:27.884 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:29:27.884 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:29:57.893 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:29:57.903 D/HTC_RIL ( 1367): (t=1366993797)%% +HTCUCSQ: 15\r\n
-04-26 18:29:57.913 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:29:57.923 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:30:06.892 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:30:06.912 D/HTC_RIL ( 1367): (t=1366993806)%% +HTCUCSQ: 14\r\n
-04-26 18:30:06.932 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:30:06.932 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:30:36.891 D/PHONE   ( 1601): VM: PhoneSubInfo.getVoiceMailNUmber: 
-04-26 18:30:37.222 D/PHONE   ( 1601): VM: PhoneSubInfo.getVoiceMailNUmber: 
-04-26 18:30:39.884 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:30:39.904 D/HTC_RIL ( 1367): (t=1366993839)%% +HTCUCSQ: 13\r\n
-04-26 18:30:39.924 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:30:39.924 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:30:42.897 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:30:42.897 D/HTC_RIL ( 1367): (t=1366993842)%% +HTCUCSQ: 12\r\n
-04-26 18:30:42.897 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:30:42.897 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:30:48.893 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:30:48.893 D/HTC_RIL ( 1367): (t=1366993848)%% +HTCUCSQ: 14\r\n
-04-26 18:30:48.893 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:30:48.893 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:30:54.889 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:30:54.889 D/HTC_RIL ( 1367): (t=1366993854)%% +HTCUCSQ: 15\r\n
-04-26 18:30:54.889 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:30:54.889 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:30:57.892 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:30:57.892 D/HTC_RIL ( 1367): (t=1366993857)%% +HTCUCSQ: 14\r\n
-04-26 18:30:57.892 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:30:57.902 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:06.901 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:31:06.901 D/HTC_RIL ( 1367): (t=1366993866)%% +HTCUCSQ: 13\r\n
-04-26 18:31:06.901 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:06.901 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:18.902 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:31:18.902 D/HTC_RIL ( 1367): (t=1366993878)%% +HTCUCSQ: 14\r\n
-04-26 18:31:18.902 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:18.902 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:33.907 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:31:33.907 D/HTC_RIL ( 1367): (t=1366993893)%% +HTCUCSQ: 13\r\n
-04-26 18:31:33.907 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:33.907 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:42.906 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:31:42.906 D/HTC_RIL ( 1367): (t=1366993902)%% +HTCUCSQ: 12\r\n
-04-26 18:31:42.906 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:42.906 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:45.909 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:31:45.909 D/HTC_RIL ( 1367): (t=1366993905)%% +HTCUCSQ: 13\r\n
-04-26 18:31:45.909 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:45.909 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:48.902 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:31:48.902 D/HTC_RIL ( 1367): (t=1366993908)%% +HTCUCSQ: 14\r\n
-04-26 18:31:48.902 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:48.902 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:31:51.905 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:31:51.905 D/HTC_RIL ( 1367): (t=1366993911)%% +HTCUCSQ: 13\r\n
-04-26 18:31:51.905 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:31:51.905 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:32:03.906 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:32:03.906 D/HTC_RIL ( 1367): (t=1366993923)%% +HTCUCSQ: 14\r\n
-04-26 18:32:03.906 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:32:03.906 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:32:06.899 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:32:06.909 D/HTC_RIL ( 1367): (t=1366993926)%% +HTCUCSQ: 13\r\n
-04-26 18:32:06.909 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:32:06.909 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:32:18.911 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:32:18.911 D/HTC_RIL ( 1367): (t=1366993938)%% +HTCUCSQ: 14\r\n
-04-26 18:32:18.911 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:32:18.911 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:32:27.910 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:32:27.910 D/HTC_RIL ( 1367): (t=1366993947)%% +HTCUCSQ: 13\r\n
-04-26 18:32:27.910 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:32:27.910 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:33:39.910 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:33:39.910 D/HTC_RIL ( 1367): (t=1366994019)%% +HTCUCSQ: 12\r\n
-04-26 18:33:39.910 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:33:39.910 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:33:42.913 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 11\r\n
-04-26 18:33:42.913 D/HTC_RIL ( 1367): (t=1366994022)%% +HTCUCSQ: 11\r\n
-04-26 18:33:42.913 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=11,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:33:42.913 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {11, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:33:45.916 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:33:45.916 D/HTC_RIL ( 1367): (t=1366994025)%% +HTCUCSQ: 12\r\n
-04-26 18:33:45.916 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:33:45.916 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:00.921 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:34:00.921 D/HTC_RIL ( 1367): (t=1366994040)%% +HTCUCSQ: 13\r\n
-04-26 18:34:00.921 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:00.921 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:09.919 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:34:09.919 D/HTC_RIL ( 1367): (t=1366994049)%% +HTCUCSQ: 12\r\n
-04-26 18:34:09.919 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:09.919 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:24.924 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:34:24.924 D/HTC_RIL ( 1367): (t=1366994064)%% +HTCUCSQ: 13\r\n
-04-26 18:34:24.924 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:24.924 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:30.920 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
-04-26 18:34:30.920 D/HTC_RIL ( 1367): (t=1366994070)%% +HTCUCSQ: 12\r\n
-04-26 18:34:30.920 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:30.920 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:42.922 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 11\r\n
-04-26 18:34:42.922 D/HTC_RIL ( 1367): (t=1366994082)%% +HTCUCSQ: 11\r\n
-04-26 18:34:42.922 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=11,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:42.922 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {11, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:45.924 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:34:45.924 D/HTC_RIL ( 1367): (t=1366994085)%% +HTCUCSQ: 13\r\n
-04-26 18:34:45.924 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:45.924 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:54.923 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
-04-26 18:34:54.923 D/HTC_RIL ( 1367): (t=1366994094)%% +HTCUCSQ: 15\r\n
-04-26 18:34:54.923 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:54.923 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:34:57.926 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:34:57.926 D/HTC_RIL ( 1367): (t=1366994097)%% +HTCUCSQ: 14\r\n
-04-26 18:34:57.926 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:34:57.926 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:35:54.932 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:35:54.932 D/HTC_RIL ( 1367): (t=1366994154)%% +HTCUCSQ: 13\r\n
-04-26 18:35:54.932 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:35:54.932 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:35:57.935 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:35:57.935 D/HTC_RIL ( 1367): (t=1366994157)%% +HTCUCSQ: 14\r\n
-04-26 18:35:57.935 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:35:57.935 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:36:00.928 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
-04-26 18:36:00.928 D/HTC_RIL ( 1367): (t=1366994160)%% +HTCUCSQ: 13\r\n
-04-26 18:36:00.928 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:36:00.928 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:36:03.931 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
-04-26 18:36:03.931 D/HTC_RIL ( 1367): (t=1366994163)%% +HTCUCSQ: 14\r\n
-04-26 18:36:03.931 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:36:03.931 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:36:06.933 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 11\r\n
-04-26 18:36:06.933 D/HTC_RIL ( 1367): (t=1366994166)%% +HTCUCSQ: 11\r\n
-04-26 18:36:06.933 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=11,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:36:06.933 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {11, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
-04-26 18:36:09.926 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 10\r\n
-04-26 18:36:09.926 D/HTC_RIL ( 1367): (t=1366994169)%% +HTCUCSQ: 10\r\n
-04-26 18:36:09.926 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=10,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
-04-26 18:36:09.926 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {10, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:51:43.998 D/GSM     ( 1601): reset the mCregChange =false
+04-26 18:51:43.998 D/GSM     ( 1601): reset the mCgregChange =false
+04-26 18:51:43.998 D/RILJ    ( 1601): [0845]> GET_NEIGHBORING_CELL_IDS
+04-26 18:51:43.998 D/RILC    ( 1367): [0845]> GET_NEIGHBORING_CELL_IDS 
+04-26 18:51:43.998 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
+04-26 18:51:43.998 D/HTC_RIL ( 1367): (t=1366995104)>> AT+Q3GNCELL\r
+04-26 18:51:43.998 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
+04-26 18:51:44.008 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00434DA3",27,0\r\n0\r
+04-26 18:51:44.008 D/HTC_RIL ( 1367): (t=1366995104)<< +Q3GNCELL: "00434DA3",27,0\r\n0\r
+04-26 18:51:44.008 D/RILC    ( 1367): [0845]< GET_NEIGHBORING_CELL_IDS }
+04-26 18:51:44.008 D/RILJ    ( 1601): [0845]< GET_NEIGHBORING_CELL_IDS  
+04-26 18:51:49.023 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:51:49.023 D/HTC_RIL ( 1367): (t=1366995109)%% +HTCUCSQ: 15\r\n
+04-26 18:51:49.033 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:51:49.033 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:04.027 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:52:04.027 D/HTC_RIL ( 1367): (t=1366995124)%% +HTCUCSQ: 14\r\n
+04-26 18:52:04.027 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:04.027 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:22.025 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:52:22.025 D/HTC_RIL ( 1367): (t=1366995142)%% +HTCUCSQ: 15\r\n
+04-26 18:52:22.025 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:22.025 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:28.031 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:52:28.031 D/HTC_RIL ( 1367): (t=1366995148)%% +HTCUCSQ: 14\r\n
+04-26 18:52:28.031 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:28.031 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:34.037 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:52:34.037 D/HTC_RIL ( 1367): (t=1366995154)%% +HTCUCSQ: 15\r\n
+04-26 18:52:34.037 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:34.037 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:40.032 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:52:40.032 D/HTC_RIL ( 1367): (t=1366995160)%% +HTCUCSQ: 14\r\n
+04-26 18:52:40.032 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:40.032 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:46.038 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:52:46.038 D/HTC_RIL ( 1367): (t=1366995166)%% +HTCUCSQ: 15\r\n
+04-26 18:52:46.038 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:46.038 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:49.031 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:52:49.031 D/HTC_RIL ( 1367): (t=1366995169)%% +HTCUCSQ: 14\r\n
+04-26 18:52:49.031 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:49.031 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:52.034 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:52:52.034 D/HTC_RIL ( 1367): (t=1366995172)%% +HTCUCSQ: 15\r\n
+04-26 18:52:52.034 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:52.034 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:52:55.037 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:52:55.037 D/HTC_RIL ( 1367): (t=1366995175)%% +HTCUCSQ: 14\r\n
+04-26 18:52:55.037 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:52:55.037 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:53:01.033 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:53:01.033 D/HTC_RIL ( 1367): (t=1366995181)%% +HTCUCSQ: 15\r\n
+04-26 18:53:01.033 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:53:01.033 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:53:13.025 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:53:13.025 D/HTC_RIL ( 1367): (t=1366995193)%% +HTCUCSQ: 13\r\n
+04-26 18:53:13.025 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:53:13.025 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:19.039 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:54:19.039 D/HTC_RIL ( 1367): (t=1366995259)%% +HTCUCSQ: 12\r\n
+04-26 18:54:19.039 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:19.039 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:22.042 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:54:22.042 D/HTC_RIL ( 1367): (t=1366995262)%% +HTCUCSQ: 13\r\n
+04-26 18:54:22.042 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:22.042 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:25.045 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:54:25.045 D/HTC_RIL ( 1367): (t=1366995265)%% +HTCUCSQ: 12\r\n
+04-26 18:54:25.045 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:25.045 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:28.048 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:54:28.048 D/HTC_RIL ( 1367): (t=1366995268)%% +HTCUCSQ: 13\r\n
+04-26 18:54:28.048 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:28.048 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:37.047 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:54:37.047 D/HTC_RIL ( 1367): (t=1366995277)%% +HTCUCSQ: 12\r\n
+04-26 18:54:37.047 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:37.047 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:40.049 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:54:40.049 D/HTC_RIL ( 1367): (t=1366995280)%% +HTCUCSQ: 13\r\n
+04-26 18:54:40.049 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:40.049 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:52.041 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:54:52.041 D/HTC_RIL ( 1367): (t=1366995292)%% +HTCUCSQ: 12\r\n
+04-26 18:54:52.041 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:52.041 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:54:55.044 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:54:55.044 D/HTC_RIL ( 1367): (t=1366995295)%% +HTCUCSQ: 13\r\n
+04-26 18:54:55.044 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:54:55.044 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:07.036 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:55:07.036 D/HTC_RIL ( 1367): (t=1366995307)%% +HTCUCSQ: 14\r\n
+04-26 18:55:07.036 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:07.036 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:10.049 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:55:10.049 D/HTC_RIL ( 1367): (t=1366995310)%% +HTCUCSQ: 13\r\n
+04-26 18:55:10.049 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:10.049 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:22.050 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:55:22.050 D/HTC_RIL ( 1367): (t=1366995322)%% +HTCUCSQ: 14\r\n
+04-26 18:55:22.050 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:22.050 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:25.053 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:55:25.053 D/HTC_RIL ( 1367): (t=1366995325)%% +HTCUCSQ: 13\r\n
+04-26 18:55:25.053 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:25.053 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:37.055 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:55:37.055 D/HTC_RIL ( 1367): (t=1366995337)%% +HTCUCSQ: 14\r\n
+04-26 18:55:37.055 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:37.055 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:52.050 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:55:52.050 D/HTC_RIL ( 1367): (t=1366995352)%% +HTCUCSQ: 13\r\n
+04-26 18:55:52.050 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:52.050 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:55:54.182 D/HTC_RIL ( 1367): RX::> +CREG: 1,"005E","00433691"\r\n
+04-26 18:55:54.182 D/HTC_RIL ( 1367): check_phone_mode_change():last_scan_network_type:0
+04-26 18:55:54.182 D/HTC_RIL ( 1367): check_phone_mode_change():last_register_network:0
+04-26 18:55:54.182 D/HTC_RIL ( 1367): check_phone_mode_change():init network_mode:0
+04-26 18:55:54.192 D/HTC_RIL ( 1367): check_phone_mode_change():set the modem type to UMTS
+04-26 18:55:54.202 D/RILC    ( 1367): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED 
+04-26 18:55:54.202 D/RILJ    ( 1601): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED
+04-26 18:55:54.202 D/RILJ    ( 1601): [0846]> OPERATOR
+04-26 18:55:54.212 D/RILC    ( 1367): [0846]> OPERATOR 
+04-26 18:55:54.212 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
+04-26 18:55:54.212 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.212 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.212 D/RILJ    ( 1601): [0847]> REGISTRATION_STATE
+04-26 18:55:54.212 D/HTC_RIL ( 1367): (t=1366995354)%% +CREG: 1,"005E","00433691"\r\n
+04-26 18:55:54.212 D/RILC    ( 1367): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
+04-26 18:55:54.212 D/RILJ    ( 1601): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
+04-26 18:55:54.212 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.212 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.212 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
+04-26 18:55:54.212 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
+04-26 18:55:54.212 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
+04-26 18:55:54.212 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
+04-26 18:55:54.212 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
+04-26 18:55:54.212 D/RILC    ( 1367): [0847]> REGISTRATION_STATE 
+04-26 18:55:54.212 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
+04-26 18:55:54.212 D/RILC    ( 1367): [0846]< OPERATOR {Telenor DK,(N/A),23802,5}
+04-26 18:55:54.212 D/HTC_RIL ( 1367): (t=1366995354)>> AT+CREG?\r
+04-26 18:55:54.212 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
+04-26 18:55:54.212 D/RILJ    ( 1601): [0846]< OPERATOR {Telenor DK, (N/A), 23802, 5}
+04-26 18:55:54.212 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00433691"\r\n0\r
+04-26 18:55:54.212 D/RILJ    ( 1601): [0848]> GPRS_REGISTRATION_STATE
+04-26 18:55:54.222 D/HTC_RIL ( 1367): (t=1366995354)<< +CREG: 2,1,"005E","00433691"\r\n0\r
+04-26 18:55:54.222 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.222 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.222 D/RILC    ( 1367): [0848]> GPRS_REGISTRATION_STATE 
+04-26 18:55:54.222 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
+04-26 18:55:54.222 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.222 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.222 D/RILJ    ( 1601): [0849]> QUERY_NETWORK_SELECTION_MODE
+04-26 18:55:54.222 D/RILC    ( 1367): [0847]< REGISTRATION_STATE {1,005E,00433691,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
+04-26 18:55:54.222 D/RILJ    ( 1601): [0847]< REGISTRATION_STATE {1, 005E, 00433691, 3, null, null, null, null, null, null, null, null, null, null}
+04-26 18:55:54.222 D/HTC_RIL ( 1367): (t=1366995354)>> AT+CGREG?\r
+04-26 18:55:54.222 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): (t=1366995354)<< +CGREG: 1,1\r\n0\r
+04-26 18:55:54.232 D/RILC    ( 1367): [0849]> QUERY_NETWORK_SELECTION_MODE 
+04-26 18:55:54.232 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
+04-26 18:55:54.232 D/GSM     ( 1601): rilCregState: 1
+04-26 18:55:54.232 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.232 D/GSM     ( 1601): rilCgregState: 1
+04-26 18:55:54.232 D/GSM     ( 1601): oldRilCREGState: 0  newRilCREGState: 0
+04-26 18:55:54.232 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.232 D/GSM     ( 1601): oldRilCGREGState: 0  newRilCGREGState: 0
+04-26 18:55:54.232 D/GSM     ( 1601): mCregChange: false  mCgregChange: false
+04-26 18:55:54.232 D/RILJ    ( 1601): [0850]> OPERATOR
+04-26 18:55:54.232 D/RILC    ( 1367): [0849]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:55:54.232 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.232 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.232 D/RILJ    ( 1601): [0849]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:55:54.232 D/RILC    ( 1367): [0850]> OPERATOR 
+04-26 18:55:54.232 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
+04-26 18:55:54.242 D/RILC    ( 1367): [0848]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
+04-26 18:55:54.242 D/RILJ    ( 1601): [0848]< GPRS_REGISTRATION_STATE {1, null, null, 3}
+04-26 18:55:54.242 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.242 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.242 D/RILJ    ( 1601): [0851]> REGISTRATION_STATE
+04-26 18:55:54.242 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.242 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.242 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
+04-26 18:55:54.242 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
+04-26 18:55:54.242 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
+04-26 18:55:54.242 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
+04-26 18:55:54.242 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
+04-26 18:55:54.242 D/RILC    ( 1367): [0851]> REGISTRATION_STATE 
+04-26 18:55:54.242 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
+04-26 18:55:54.242 D/RILC    ( 1367): [0850]< OPERATOR {Telenor DK,(N/A),23802,5}
+04-26 18:55:54.242 D/RILJ    ( 1601): [0850]< OPERATOR {Telenor DK, (N/A), 23802, 5}
+04-26 18:55:54.242 D/HTC_RIL ( 1367): (t=1366995354)>> AT+CREG?\r
+04-26 18:55:54.242 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
+04-26 18:55:54.242 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00433691"\r\n0\r
+04-26 18:55:54.242 D/HTC_RIL ( 1367): (t=1366995354)<< +CREG: 2,1,"005E","00433691"\r\n0\r
+04-26 18:55:54.242 D/RILJ    ( 1601): [0852]> GPRS_REGISTRATION_STATE
+04-26 18:55:54.252 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.252 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.252 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.252 D/RILC    ( 1367): [0852]> GPRS_REGISTRATION_STATE 
+04-26 18:55:54.252 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
+04-26 18:55:54.252 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.252 D/RILJ    ( 1601): [0853]> QUERY_NETWORK_SELECTION_MODE
+04-26 18:55:54.252 D/HTC_RIL ( 1367): (t=1366995354)>> AT+CGREG?\r
+04-26 18:55:54.252 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
+04-26 18:55:54.252 D/RILC    ( 1367): [0851]< REGISTRATION_STATE {1,005E,00433691,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
+04-26 18:55:54.252 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
+04-26 18:55:54.252 D/HTC_RIL ( 1367): (t=1366995354)<< +CGREG: 1,1\r\n0\r
+04-26 18:55:54.252 D/RILJ    ( 1601): [0851]< REGISTRATION_STATE {1, 005E, 00433691, 3, null, null, null, null, null, null, null, null, null, null}
+04-26 18:55:54.252 D/RILC    ( 1367): [0853]> QUERY_NETWORK_SELECTION_MODE 
+04-26 18:55:54.252 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
+04-26 18:55:54.252 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.252 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.252 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.262 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.262 D/HTC_RIL ( 1367): (t=1366995354)>> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.262 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:55:54.262 D/RILC    ( 1367): [0853]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:55:54.262 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.262 D/RILJ    ( 1601): [0853]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:55:54.262 D/HTC_RIL ( 1367): (t=1366995354)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:55:54.262 D/RILC    ( 1367): [0852]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
+04-26 18:55:54.262 D/RILJ    ( 1601): [0852]< GPRS_REGISTRATION_STATE {1, null, null, 3}
+04-26 18:55:54.262 D/GSM     ( 1601): Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS
+04-26 18:55:54.262 D/GSM     ( 1601): reset the mCregChange =false
+04-26 18:55:54.262 D/GSM     ( 1601): reset the mCgregChange =false
+04-26 18:55:54.272 D/RILJ    ( 1601): [0854]> GET_NEIGHBORING_CELL_IDS
+04-26 18:55:54.282 D/RILC    ( 1367): [0854]> GET_NEIGHBORING_CELL_IDS 
+04-26 18:55:54.282 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
+04-26 18:55:54.282 D/HTC_RIL ( 1367): (t=1366995354)>> AT+Q3GNCELL\r
+04-26 18:55:54.282 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
+04-26 18:55:54.282 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00433691",27,0\r\n0\r
+04-26 18:55:54.282 D/HTC_RIL ( 1367): (t=1366995354)<< +Q3GNCELL: "00433691",27,0\r\n0\r
+04-26 18:55:54.282 D/RILC    ( 1367): [0854]< GET_NEIGHBORING_CELL_IDS }
+04-26 18:55:54.282 D/RILJ    ( 1601): [0854]< GET_NEIGHBORING_CELL_IDS  
+04-26 18:55:55.053 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:55:55.053 D/HTC_RIL ( 1367): (t=1366995355)%% +HTCUCSQ: 14\r\n
+04-26 18:55:55.053 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:55:55.053 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:56:01.058 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:56:01.058 D/HTC_RIL ( 1367): (t=1366995361)%% +HTCUCSQ: 12\r\n
+04-26 18:56:01.058 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:56:01.058 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:56:04.061 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:56:04.061 D/HTC_RIL ( 1367): (t=1366995364)%% +HTCUCSQ: 13\r\n
+04-26 18:56:04.061 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:56:04.061 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:56:25.062 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:56:25.062 D/HTC_RIL ( 1367): (t=1366995385)%% +HTCUCSQ: 14\r\n
+04-26 18:56:25.062 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:56:25.062 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:56:28.055 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:56:28.055 D/HTC_RIL ( 1367): (t=1366995388)%% +HTCUCSQ: 13\r\n
+04-26 18:56:28.055 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:56:28.055 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:56:46.062 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:56:46.062 D/HTC_RIL ( 1367): (t=1366995406)%% +HTCUCSQ: 14\r\n
+04-26 18:56:46.062 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:56:46.062 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:04.060 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:57:04.060 D/HTC_RIL ( 1367): (t=1366995424)%% +HTCUCSQ: 13\r\n
+04-26 18:57:04.060 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:04.060 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:19.055 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:57:19.055 D/HTC_RIL ( 1367): (t=1366995439)%% +HTCUCSQ: 12\r\n
+04-26 18:57:19.055 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:19.055 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:25.060 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:57:25.060 D/HTC_RIL ( 1367): (t=1366995445)%% +HTCUCSQ: 14\r\n
+04-26 18:57:25.060 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:25.060 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:31.056 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:57:31.056 D/HTC_RIL ( 1367): (t=1366995451)%% +HTCUCSQ: 13\r\n
+04-26 18:57:31.056 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:31.056 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:34.059 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:57:34.059 D/HTC_RIL ( 1367): (t=1366995454)%% +HTCUCSQ: 14\r\n
+04-26 18:57:34.059 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:34.059 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:37.062 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:57:37.062 D/HTC_RIL ( 1367): (t=1366995457)%% +HTCUCSQ: 13\r\n
+04-26 18:57:37.062 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:37.062 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:57:46.061 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:57:46.061 D/HTC_RIL ( 1367): (t=1366995466)%% +HTCUCSQ: 14\r\n
+04-26 18:57:46.321 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:57:46.321 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:13.067 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:58:13.067 D/HTC_RIL ( 1367): (t=1366995493)%% +HTCUCSQ: 13\r\n
+04-26 18:58:13.067 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:13.067 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:16.070 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:58:16.070 D/HTC_RIL ( 1367): (t=1366995496)%% +HTCUCSQ: 14\r\n
+04-26 18:58:16.070 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:16.070 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:28.062 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:58:28.062 D/HTC_RIL ( 1367): (t=1366995508)%% +HTCUCSQ: 13\r\n
+04-26 18:58:28.062 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:28.062 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:31.065 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:58:31.065 D/HTC_RIL ( 1367): (t=1366995511)%% +HTCUCSQ: 14\r\n
+04-26 18:58:31.065 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:31.065 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:34.068 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:58:34.068 D/HTC_RIL ( 1367): (t=1366995514)%% +HTCUCSQ: 13\r\n
+04-26 18:58:34.068 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:34.068 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:37.071 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:58:37.071 D/HTC_RIL ( 1367): (t=1366995517)%% +HTCUCSQ: 14\r\n
+04-26 18:58:37.071 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:37.071 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:58:52.065 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:58:52.065 D/HTC_RIL ( 1367): (t=1366995532)%% +HTCUCSQ: 13\r\n
+04-26 18:58:52.065 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:58:52.065 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:01.074 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:59:01.074 D/HTC_RIL ( 1367): (t=1366995541)%% +HTCUCSQ: 14\r\n
+04-26 18:59:01.074 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:01.074 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:04.067 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:59:04.067 D/HTC_RIL ( 1367): (t=1366995544)%% +HTCUCSQ: 13\r\n
+04-26 18:59:04.067 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:04.067 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:07.070 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 18:59:07.070 D/HTC_RIL ( 1367): (t=1366995547)%% +HTCUCSQ: 12\r\n
+04-26 18:59:07.090 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:07.090 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:08.772 D/PHONE   ( 1601): VM: PhoneSubInfo.getVoiceMailNUmber: 
+04-26 18:59:08.902 D/PHONE   ( 1601): VM: PhoneSubInfo.getVoiceMailNUmber: 
+04-26 18:59:09.993 D/HTC_RIL ( 1367): RX::> +CREG: 1,"005E","00430778"\r\n
+04-26 18:59:10.033 D/HTC_RIL ( 1367): check_phone_mode_change():last_scan_network_type:0
+04-26 18:59:10.033 D/HTC_RIL ( 1367): check_phone_mode_change():last_register_network:0
+04-26 18:59:10.033 D/HTC_RIL ( 1367): check_phone_mode_change():init network_mode:0
+04-26 18:59:10.043 D/HTC_RIL ( 1367): check_phone_mode_change():set the modem type to UMTS
+04-26 18:59:10.053 D/HTC_RIL ( 1367): (t=1366995550)%% +CREG: 1,"005E","00430778"\r\n
+04-26 18:59:10.063 D/RILC    ( 1367): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED 
+04-26 18:59:10.063 D/RILJ    ( 1601): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED
+04-26 18:59:10.063 D/RILC    ( 1367): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
+04-26 18:59:10.063 D/RILJ    ( 1601): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
+04-26 18:59:10.063 D/RILJ    ( 1601): [0855]> OPERATOR
+04-26 18:59:10.063 D/RILC    ( 1367): [0855]> OPERATOR 
+04-26 18:59:10.063 D/RILJ    ( 1601): [0856]> REGISTRATION_STATE
+04-26 18:59:10.073 D/RILJ    ( 1601): [0857]> GPRS_REGISTRATION_STATE
+04-26 18:59:10.073 D/RILJ    ( 1601): [0858]> QUERY_NETWORK_SELECTION_MODE
+04-26 18:59:10.073 D/GSM     ( 1601): rilCregState: 1
+04-26 18:59:10.073 D/GSM     ( 1601): rilCgregState: 1
+04-26 18:59:10.073 D/GSM     ( 1601): oldRilCREGState: 0  newRilCREGState: 0
+04-26 18:59:10.073 D/GSM     ( 1601): oldRilCGREGState: 0  newRilCGREGState: 0
+04-26 18:59:10.073 D/GSM     ( 1601): mCregChange: false  mCgregChange: false
+04-26 18:59:10.073 D/RILJ    ( 1601): [0859]> OPERATOR
+04-26 18:59:10.073 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:59:10.073 D/HTC_RIL ( 1367): (t=1366995550)%% +HTCUCSQ: 13\r\n
+04-26 18:59:10.073 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:10.073 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:10.073 D/RILJ    ( 1601): [0860]> REGISTRATION_STATE
+04-26 18:59:10.073 D/RILJ    ( 1601): [0861]> GPRS_REGISTRATION_STATE
+04-26 18:59:10.073 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
+04-26 18:59:10.073 D/RILC    ( 1367): [0856]> REGISTRATION_STATE 
+04-26 18:59:10.073 D/RILJ    ( 1601): [0862]> QUERY_NETWORK_SELECTION_MODE
+04-26 18:59:10.083 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.083 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.083 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.083 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
+04-26 18:59:10.083 D/RILC    ( 1367): [0857]> GPRS_REGISTRATION_STATE 
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
+04-26 18:59:10.083 D/RILC    ( 1367): [0858]> QUERY_NETWORK_SELECTION_MODE 
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
+04-26 18:59:10.083 D/RILC    ( 1367): [0859]> OPERATOR 
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
+04-26 18:59:10.083 D/RILC    ( 1367): [0860]> REGISTRATION_STATE 
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
+04-26 18:59:10.083 D/RILC    ( 1367): [0861]> GPRS_REGISTRATION_STATE 
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
+04-26 18:59:10.083 D/RILC    ( 1367): [0862]> QUERY_NETWORK_SELECTION_MODE 
+04-26 18:59:10.083 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
+04-26 18:59:10.093 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
+04-26 18:59:10.093 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
+04-26 18:59:10.093 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
+04-26 18:59:10.093 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
+04-26 18:59:10.093 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)>> AT+CREG?\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
+04-26 18:59:10.093 D/RILC    ( 1367): [0855]< OPERATOR {Telenor DK,(N/A),23802,5}
+04-26 18:59:10.093 D/RILJ    ( 1601): [0855]< OPERATOR {Telenor DK, (N/A), 23802, 5}
+04-26 18:59:10.093 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00430778"\r\n0\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)<< +CREG: 2,1,"005E","00430778"\r\n0\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)>> AT+CGREG?\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)<< +CGREG: 1,1\r\n0\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.093 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.093 D/RILC    ( 1367): [0858]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:10.093 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.093 D/RILJ    ( 1601): [0858]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
+04-26 18:59:10.103 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
+04-26 18:59:10.103 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
+04-26 18:59:10.103 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
+04-26 18:59:10.103 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)>> AT+CREG?\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
+04-26 18:59:10.103 D/RILC    ( 1367): [0859]< OPERATOR {Telenor DK,(N/A),23802,5}
+04-26 18:59:10.103 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00430778"\r\n0\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)<< +CREG: 2,1,"005E","00430778"\r\n0\r
+04-26 18:59:10.103 D/RILJ    ( 1601): [0859]< OPERATOR {Telenor DK, (N/A), 23802, 5}
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)>> AT+CGREG?\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)<< +CGREG: 1,1\r\n0\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.103 D/RILC    ( 1367): [0862]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:10.103 D/RILJ    ( 1601): [0862]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:10.103 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.103 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/RILC    ( 1367): [0856]< REGISTRATION_STATE {1,005E,00430778,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
+04-26 18:59:10.113 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/RILJ    ( 1601): [0856]< REGISTRATION_STATE {1, 005E, 00430778, 3, null, null, null, null, null, null, null, null, null, null}
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/RILC    ( 1367): [0857]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
+04-26 18:59:10.113 D/RILJ    ( 1601): [0857]< GPRS_REGISTRATION_STATE {1, null, null, 3}
+04-26 18:59:10.113 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:10.113 D/RILC    ( 1367): [0860]< REGISTRATION_STATE {1,005E,00430778,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
+04-26 18:59:10.113 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/HTC_RIL ( 1367): (t=1366995550)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:10.113 D/RILJ    ( 1601): [0860]< REGISTRATION_STATE {1, 005E, 00430778, 3, null, null, null, null, null, null, null, null, null, null}
+04-26 18:59:10.123 D/RILC    ( 1367): [0861]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
+04-26 18:59:10.123 D/RILJ    ( 1601): [0861]< GPRS_REGISTRATION_STATE {1, null, null, 3}
+04-26 18:59:10.123 D/GSM     ( 1601): Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS
+04-26 18:59:10.123 D/GSM     ( 1601): reset the mCregChange =false
+04-26 18:59:10.123 D/GSM     ( 1601): reset the mCgregChange =false
+04-26 18:59:10.133 D/RILJ    ( 1601): [0863]> GET_NEIGHBORING_CELL_IDS
+04-26 18:59:10.133 D/RILC    ( 1367): [0863]> GET_NEIGHBORING_CELL_IDS 
+04-26 18:59:10.133 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
+04-26 18:59:10.133 D/HTC_RIL ( 1367): (t=1366995550)>> AT+Q3GNCELL\r
+04-26 18:59:10.133 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
+04-26 18:59:10.143 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00430778",27,0\r\n0\r
+04-26 18:59:10.143 D/HTC_RIL ( 1367): (t=1366995550)<< +Q3GNCELL: "00430778",27,0\r\n0\r
+04-26 18:59:10.143 D/RILC    ( 1367): [0863]< GET_NEIGHBORING_CELL_IDS }
+04-26 18:59:10.143 D/RILJ    ( 1601): [0863]< GET_NEIGHBORING_CELL_IDS  
+04-26 18:59:13.066 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:59:13.066 D/HTC_RIL ( 1367): (t=1366995553)%% +HTCUCSQ: 14\r\n
+04-26 18:59:13.066 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:13.066 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:13.837 D/HTC_RIL ( 1367): RX::> +CREG: 1,"005E","00434DA3"\r\n
+04-26 18:59:13.837 D/HTC_RIL ( 1367): check_phone_mode_change():last_scan_network_type:0
+04-26 18:59:13.837 D/HTC_RIL ( 1367): check_phone_mode_change():last_register_network:0
+04-26 18:59:13.837 D/HTC_RIL ( 1367): check_phone_mode_change():init network_mode:0
+04-26 18:59:13.847 D/HTC_RIL ( 1367): check_phone_mode_change():set the modem type to UMTS
+04-26 18:59:13.857 D/HTC_RIL ( 1367): (t=1366995553)%% +CREG: 1,"005E","00434DA3"\r\n
+04-26 18:59:13.857 D/RILC    ( 1367): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED 
+04-26 18:59:13.857 D/RILJ    ( 1601): [UNSL]< UNSOL_DATA_NETWORK_STATE_CHANGED
+04-26 18:59:13.857 D/RILJ    ( 1601): [0864]> OPERATOR
+04-26 18:59:13.857 D/RILC    ( 1367): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED 
+04-26 18:59:13.857 D/RILJ    ( 1601): [UNSL]< UNSOL_RESPONSE_NETWORK_STATE_CHANGED
+04-26 18:59:13.857 D/RILC    ( 1367): [0864]> OPERATOR 
+04-26 18:59:13.857 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
+04-26 18:59:13.857 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.857 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.857 D/RILJ    ( 1601): [0865]> REGISTRATION_STATE
+04-26 18:59:13.867 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.867 D/RILC    ( 1367): [0865]> REGISTRATION_STATE 
+04-26 18:59:13.867 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
+04-26 18:59:13.867 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
+04-26 18:59:13.867 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
+04-26 18:59:13.867 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
+04-26 18:59:13.867 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
+04-26 18:59:13.867 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
+04-26 18:59:13.867 D/RILJ    ( 1601): [0866]> GPRS_REGISTRATION_STATE
+04-26 18:59:13.867 D/RILC    ( 1367): [0864]< OPERATOR {Telenor DK,(N/A),23802,5}
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)>> AT+CREG?\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
+04-26 18:59:13.867 D/RILJ    ( 1601): [0864]< OPERATOR {Telenor DK, (N/A), 23802, 5}
+04-26 18:59:13.867 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00434DA3"\r\n0\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)<< +CREG: 2,1,"005E","00434DA3"\r\n0\r
+04-26 18:59:13.867 D/RILC    ( 1367): [0866]> GPRS_REGISTRATION_STATE 
+04-26 18:59:13.867 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
+04-26 18:59:13.867 D/RILJ    ( 1601): [0867]> QUERY_NETWORK_SELECTION_MODE
+04-26 18:59:13.867 D/RILC    ( 1367): [0867]> QUERY_NETWORK_SELECTION_MODE 
+04-26 18:59:13.867 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)>> AT+CGREG?\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
+04-26 18:59:13.867 D/GSM     ( 1601): rilCregState: 1
+04-26 18:59:13.867 D/GSM     ( 1601): rilCgregState: 1
+04-26 18:59:13.867 D/GSM     ( 1601): oldRilCREGState: 0  newRilCREGState: 0
+04-26 18:59:13.867 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)<< +CGREG: 1,1\r\n0\r
+04-26 18:59:13.867 D/GSM     ( 1601): oldRilCGREGState: 0  newRilCGREGState: 0
+04-26 18:59:13.867 D/GSM     ( 1601): mCregChange: false  mCgregChange: false
+04-26 18:59:13.867 D/RILJ    ( 1601): [0868]> OPERATOR
+04-26 18:59:13.867 D/RILC    ( 1367): [0868]> OPERATOR 
+04-26 18:59:13.867 D/HTC_RIL ( 1367): ril_func_get_curr_operator_name():called
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.867 D/RILJ    ( 1601): [0869]> REGISTRATION_STATE
+04-26 18:59:13.867 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.867 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.867 D/RILC    ( 1367): [0869]> REGISTRATION_STATE 
+04-26 18:59:13.867 D/HTC_RIL ( 1367): ril_func_get_gsm_cdma_reg_state():called
+04-26 18:59:13.867 D/RILJ    ( 1601): [0870]> GPRS_REGISTRATION_STATE
+04-26 18:59:13.877 D/RILC    ( 1367): [0867]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:13.877 D/RILJ    ( 1601): [0867]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.877 D/RILC    ( 1367): [0870]> GPRS_REGISTRATION_STATE 
+04-26 18:59:13.877 D/HTC_RIL ( 1367): ril_func_get_gprs_reg_state():called
+04-26 18:59:13.877 D/RILJ    ( 1601): [0871]> QUERY_NETWORK_SELECTION_MODE
+04-26 18:59:13.877 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]rule: 5
+04-26 18:59:13.877 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]long_alpha: Telenor DK
+04-26 18:59:13.877 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]short_alpha: (N/A)
+04-26 18:59:13.877 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]numeric: 23802
+04-26 18:59:13.877 D/HTC_RIL ( 1367): operator_name_get_by_plmn_num():[ccl]priority: 5
+04-26 18:59:13.877 D/RILC    ( 1367): [0868]< OPERATOR {Telenor DK,(N/A),23802,5}
+04-26 18:59:13.877 D/RILJ    ( 1601): [0868]< OPERATOR {Telenor DK, (N/A), 23802, 5}
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)>> AT+CREG?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): TX::> AT+CREG?\r
+04-26 18:59:13.877 D/RILC    ( 1367): [0871]> QUERY_NETWORK_SELECTION_MODE 
+04-26 18:59:13.877 D/HTC_RIL ( 1367): ril_func_get_network_select_mode():called
+04-26 18:59:13.877 D/HTC_RIL ( 1367): RX::> +CREG: 2,1,"005E","00434DA3"\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)<< +CREG: 2,1,"005E","00434DA3"\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)>> AT+CGREG?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): TX::> AT+CGREG?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): RX::> +CGREG: 1,1\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)<< +CGREG: 1,1\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.877 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.877 D/RILC    ( 1367): [0871]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:13.887 D/RILJ    ( 1601): [0871]< QUERY_NETWORK_SELECTION_MODE {0}
+04-26 18:59:13.887 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.887 D/RILC    ( 1367): [0865]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
+04-26 18:59:13.887 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/RILJ    ( 1601): [0865]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.887 D/RILC    ( 1367): [0866]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
+04-26 18:59:13.887 D/RILJ    ( 1601): [0866]< GPRS_REGISTRATION_STATE {1, null, null, 3}
+04-26 18:59:13.887 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)>> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): TX::> AT+COPS=3,2;+COPS?\r
+04-26 18:59:13.887 D/RILC    ( 1367): [0869]< REGISTRATION_STATE {1,005E,00434DA3,3,(null),(null),(null),(null),(null),(null),(null),(null),(null),(null)}
+04-26 18:59:13.887 D/HTC_RIL ( 1367): RX::> +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/HTC_RIL ( 1367): (t=1366995553)<< +COPS: 0,2,"23802",2\r\n0\r
+04-26 18:59:13.887 D/RILJ    ( 1601): [0869]< REGISTRATION_STATE {1, 005E, 00434DA3, 3, null, null, null, null, null, null, null, null, null, null}
+04-26 18:59:13.887 D/RILC    ( 1367): [0870]< GPRS_REGISTRATION_STATE {1,(null),(null),3}
+04-26 18:59:13.887 D/RILJ    ( 1601): [0870]< GPRS_REGISTRATION_STATE {1, null, null, 3}
+04-26 18:59:13.897 D/GSM     ( 1601): Poll ServiceState done:  oldSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] newSS=[0 home Telenor DK (N/A) 23802  0 UMTS CSS not supported -1 -1RoamInd: -1DefRoamInd: -1EriInd: -1EriMode: -1RadioPowerSv: falseEmergOnly: false] oldGprs=0 newGprs=0 oldType=UMTS newType=UMTS
+04-26 18:59:13.897 D/GSM     ( 1601): reset the mCregChange =false
+04-26 18:59:13.897 D/GSM     ( 1601): reset the mCgregChange =false
+04-26 18:59:13.897 D/RILJ    ( 1601): [0872]> GET_NEIGHBORING_CELL_IDS
+04-26 18:59:13.897 D/RILC    ( 1367): [0872]> GET_NEIGHBORING_CELL_IDS 
+04-26 18:59:13.897 D/HTC_RIL ( 1367): ril_func_get_neighbor_cell():called
+04-26 18:59:13.897 D/HTC_RIL ( 1367): (t=1366995553)>> AT+Q3GNCELL\r
+04-26 18:59:13.897 D/HTC_RIL ( 1367): TX::> AT+Q3GNCELL\r
+04-26 18:59:13.897 D/HTC_RIL ( 1367): RX::> +Q3GNCELL: "00434DA3",30,0\r\n0\r
+04-26 18:59:13.897 D/HTC_RIL ( 1367): (t=1366995553)<< +Q3GNCELL: "00434DA3",30,0\r\n0\r
+04-26 18:59:13.897 D/RILC    ( 1367): [0872]< GET_NEIGHBORING_CELL_IDS }
+04-26 18:59:13.897 D/RILJ    ( 1601): [0872]< GET_NEIGHBORING_CELL_IDS  
+04-26 18:59:14.387 D/RILJ    ( 1601): [0873]> OEM_HOOK_STRINGS
+04-26 18:59:14.397 D/RILC    ( 1367): [0873]> OEM_HOOK_STRINGS (UNIAT,at@settimezone=1,7200
+)
+04-26 18:59:14.407 D/HTC_RIL ( 1367): ril_func_oem_hook_strings():called
+04-26 18:59:14.407 D/HTC_RIL ( 1367): oem_hook_strings_handler_send_uniat():called
+04-26 18:59:14.417 D/HTC_RIL ( 1367): (t=1366995554)>> at@settimezone=1,7200\r
+04-26 18:59:14.417 D/HTC_RIL ( 1367): TX::> at@settimezone=1,7200\r
+04-26 18:59:14.417 D/HTC_RIL ( 1367): RX::> 0\r
+04-26 18:59:14.417 D/HTC_RIL ( 1367): (t=1366995554)<< 0\r
+04-26 18:59:14.437 D/RILC    ( 1367): [0873]< OEM_HOOK_STRINGS {UNIAT,0
+}
+04-26 18:59:14.437 D/RILJ    ( 1601): [0873]< OEM_HOOK_STRINGS {UNIAT, 0
+}
+04-26 18:59:16.069 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:59:16.069 D/HTC_RIL ( 1367): (t=1366995556)%% +HTCUCSQ: 15\r\n
+04-26 18:59:16.069 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:16.069 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:19.072 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 16\r\n
+04-26 18:59:19.072 D/HTC_RIL ( 1367): (t=1366995559)%% +HTCUCSQ: 16\r\n
+04-26 18:59:19.072 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=16,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:19.072 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {16, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:22.065 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 15\r\n
+04-26 18:59:22.065 D/HTC_RIL ( 1367): (t=1366995562)%% +HTCUCSQ: 15\r\n
+04-26 18:59:22.065 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=15,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:22.065 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {15, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:28.070 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:59:28.070 D/HTC_RIL ( 1367): (t=1366995568)%% +HTCUCSQ: 14\r\n
+04-26 18:59:28.070 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:28.070 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:31.073 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:59:31.073 D/HTC_RIL ( 1367): (t=1366995571)%% +HTCUCSQ: 13\r\n
+04-26 18:59:31.073 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:31.073 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:37.069 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 18:59:37.069 D/HTC_RIL ( 1367): (t=1366995577)%% +HTCUCSQ: 14\r\n
+04-26 18:59:37.069 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:37.069 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 18:59:43.065 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 18:59:43.065 D/HTC_RIL ( 1367): (t=1366995583)%% +HTCUCSQ: 13\r\n
+04-26 18:59:43.065 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 18:59:43.065 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 19:00:00.012 D/HTC_RIL ( 1367): RX::> +HTCCTZV: "13/04/26,17:00:00+08,1"\r\n
+04-26 19:00:00.062 D/HTC_RIL ( 1367): (t=1366995600)%% +HTCCTZV: "13/04/26,17:00:00+08,1"\r\n
+04-26 19:00:00.062 D/RILC    ( 1367): [UNSL]< UNSOL_NITZ_TIME_RECEIVED {13/04/26,17:00:00+08,1}
+04-26 19:00:00.072 D/RILJ    ( 1601): [UNSL]< UNSOL_NITZ_TIME_RECEIVED 13/04/26,17:00:00+08,1
+04-26 19:00:00.072 I/GSM     ( 1601): NITZ: 13/04/26,17:00:00+08,1,6576340 start=6576356 delay=16
+04-26 19:00:00.072 D/GSM     ( 1601): get ISO: dk mGotCountryCode: true mOPERATOR_ISO_COUNTRY: dk
+04-26 19:00:00.142 D/GSM     ( 1601): [checkTestIcc] mTestIcc = false
+04-26 19:00:00.142 D/GSM     ( 1601): setTimeFromNITZString AUTO_TIME update time zone: Europe/Copenhagen
+04-26 19:00:00.232 D/RILJ    ( 1601): [0874]> OEM_HOOK_STRINGS
+04-26 19:00:00.242 D/RILC    ( 1367): [0874]> OEM_HOOK_STRINGS (UNIAT,at@settimezone=1,7200
+)
+04-26 19:00:00.252 D/HTC_RIL ( 1367): ril_func_oem_hook_strings():called
+04-26 19:00:00.252 D/HTC_RIL ( 1367): oem_hook_strings_handler_send_uniat():called
+04-26 19:00:00.262 D/HTC_RIL ( 1367): (t=1366995600)>> at@settimezone=1,7200\r
+04-26 19:00:00.262 D/HTC_RIL ( 1367): TX::> at@settimezone=1,7200\r
+04-26 19:00:00.262 D/HTC_RIL ( 1367): RX::> 0\r
+04-26 19:00:00.262 D/HTC_RIL ( 1367): (t=1366995600)<< 0\r
+04-26 19:00:00.262 D/RILC    ( 1367): [0874]< OEM_HOOK_STRINGS {UNIAT,0
+}
+04-26 19:00:00.262 D/RILJ    ( 1601): [0874]< OEM_HOOK_STRINGS {UNIAT, 0
+}
+04-26 19:00:00.207 I/GSM     ( 1601): NITZ: after Setting time of day
+04-26 19:00:00.272 I/GSM     ( 1601): NITZ: Setting time of day to Fri Apr 26 19:00:00 GMT+02:00 2013 NITZ receive delay(ms): 207 gained(ms): -67 from 13/04/26,17:00:00+08,1
+04-26 19:00:00.997 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 12\r\n
+04-26 19:00:00.997 D/HTC_RIL ( 1367): (t=1366995601)%% +HTCUCSQ: 12\r\n
+04-26 19:00:00.997 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=12,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 19:00:00.997 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {12, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 19:00:06.993 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 13\r\n
+04-26 19:00:06.993 D/HTC_RIL ( 1367): (t=1366995607)%% +HTCUCSQ: 13\r\n
+04-26 19:00:06.993 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=13,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 19:00:06.993 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {13, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
+04-26 19:00:09.995 D/HTC_RIL ( 1367): RX::> +HTCUCSQ: 14\r\n
+04-26 19:00:09.995 D/HTC_RIL ( 1367): (t=1366995610)%% +HTCUCSQ: 14\r\n
+04-26 19:00:09.995 D/RILC    ( 1367): [UNSL]< UNSOL_SIGNAL_STRENGTH {[signalStrength=14,bitErrorRate=99,                CDMA_SignalStrength.dbm=-1,CDMA_SignalStrength.ecio=-1,                EVDO_SignalStrength.dbm =-1,EVDO_SignalStrength.ecio=-1,                EVDO_SignalStrength.signalNoiseRatio=0,                ATT_SignalStrength.dbm =-1,ATT_SignalStrength.ecno=-1]}
+04-26 19:00:10.005 D/RILJ    ( 1601): [UNSL]< UNSOL_SIGNAL_STRENGTH {14, 99, -1, -1, -1, -1, 0, -1, -1, 0, 0, 0, 0, 0}
