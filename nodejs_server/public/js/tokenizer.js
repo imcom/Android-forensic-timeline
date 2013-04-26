@@ -5,14 +5,6 @@ function tokenize(object, target) {
     var black_list = ["proc", "Process", "for", ":", "has", ""];
     var tokens = [];
 
-    //TODO remove following vars
-    var re = new RegExp(/\{.*\}|\(.*\)/ig); // unified expression within brackets
-
-    var filter_list = ["proc", "Process", "for", ":", "has", ""];
-    var unified_msg = target;
-    var matches = re.exec(target);
-    var detected_ids = [];
-
     // tokenize am_proc_start
     if (object === "am_proc_start") {
         target = target.substring(1, target.length - 1);
