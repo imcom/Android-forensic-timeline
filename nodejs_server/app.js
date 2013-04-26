@@ -144,12 +144,7 @@ app.post('/temporal_info', db_handler.temporal_info);
 app.post('/package_info', db_handler.package_info);
 
 app.listen(app.get('port'));
-console.log("server started on port 2222...");
-
-
-
-
-
+console.log("server started on [localhost:2222]");
 
 
 

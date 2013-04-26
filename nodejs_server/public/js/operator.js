@@ -761,7 +761,7 @@ function getFileActivity(app_name) {
         dataType: 'json',
         success: function(data) {
             if (data.content !== "") {
-                var result = JSON.parse(data.content);
+                var result = JSON.parse(data.content)[0];
                 var file_dataset = [];
                 for (var timestamp in result.detail) {
                     if (result.detail.hasOwnProperty(timestamp) && timestamp !== 'id') {

@@ -1,6 +1,6 @@
 
 var cursor;
-cursor = db.app_related_system_calls.find({app: app_name});
+cursor = db.app_related_system_calls.find({app: application_name});
 
 var related_tokens = [];
 var activities = {};

@@ -132,16 +132,17 @@ exports.file_activity = function(req, res) {
 }
 
 exports.application_trace = function(req, res) {
-    console.log("trace application:" + req.body.selection);
+    console.log("query for application traces");
     var command = "mongo localhost:27017/imcom --quiet ./libs/app_traces.js";
     var child_process = exec(
         command,
-        { maxBuffer: 1000*1024 },
+        { maxBuffer: 5000*1024 },
         function(error, stdout, stderr) {
             if (error === null) {
                 res.json({"error": 0, "type": "application_trace", "content": stdout});
             } else {
-                res.json({"error": 1, "type": "application_trace", "content": error});
+                console.log(error);
+                res.json({"error": 1, "type": "application_trace", "content": stderr});
             }
         });
 }
