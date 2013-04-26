@@ -17,12 +17,18 @@ then
 fi
 
 cd $INPUT_DIR
-input_files=`ls`
+INPUT_FILES=`ls`
 
-for file in $input_files
+LOGCATS="main system events radio"
+
+for file in $INPUT_FILES
 do
     collection=`echo $file | awk -F . '{print $1}'`
-    mongoimport --db $DATABASE --collection $collection --file $file
+    if [[ $LOGCATS == *$collection* ]]; then # remove the duplicate lines of a same event in logcat logs
+        mongoimport --db $DATABASE --collection $collection --file $file --upsert --upsertFields date,msg,object,pid
+    else
+        mongoimport --db $DATABASE --collection $collection --file $file
+    fi
 done
 
 cd $CUR_DIR
