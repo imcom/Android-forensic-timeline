@@ -10,23 +10,24 @@ li.nav-header.cozy-list-header{margin-top:-5px}
 .slide-right-ctrl-bar{position:absolute;width:20px;height:100%;left:0;cursor:pointer;z-index:50;}
 .slide-right-ctrl-bar .slide-right-ctrl{position:absolute;width:16px;height:85px;left:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(0);-moz-transform:rotate(0)}
 .slide-right-ctrl-bar:hover .slide-right-ctrl{background:url("/images/sidebar_icon.png") bottom right}
-.slide-left-div{position:fixed;left:-280px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:300px;height:90%;margin-top:50px}
+.slide-left-div{position:fixed;left:-280px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:300px;height:60%;margin-top:50px}
 .slide-left-ctrl-bar{position:absolute;width:20px;height:100%;right:0;cursor:pointer;z-index:50}
 .slide-left-ctrl{position:absolute;width:16px;height:85px;right:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg)}
 .slide-left-ctrl-bar:hover .slide-left-ctrl{background:url("/images/sidebar_icon.png") bottom right}
 .btn{font-family:Consolas;font-size:13px;word-spacing:-3px;padding-right:7px;padding-left:7px}
-#responsive-app-pane{margin-top:20px;}
-#responsive-app-pane p{margin-left:35px}
+#responsive-nav{margin-left:30px;margin-bottom:0}
+#responsive-app-pane,#extend-tab{margin-top:10px;}
+#responsive-app-pane p,#extend-tab p{margin-left:35px}
 #responsive-apps{overflow-x:hidden;overflow-y:auto;height:660px;margin-top:-10px;margin-left:30px}
 #responsive-apps label{margin-right:10px;font-family:Consolas}
 label{display:inline-block}
 #app-checkbox{margin-left:5px;margin-right:5px}
-.dropdown-div{position:fixed;top:-680px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:99%;height:700px;margin-left:7px}
+#responsive-pids,#responsive-objects,.dropdown-div{position:fixed;top:-680px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:99%;height:700px;margin-left:7px}
 .popup-div{position:fixed;bottom:-400px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:69%;height:420px;margin-left:300px}
 #dropdown-ctrl-pane{bottom:-240px;height:240px;width:99%;margin-left:7px;}
 #dropdown-ctrl-pane p{margin-left:25px}
 #extra-ctrl-pane{min-height:235px}
-#running-time,#timezone-info,#temporal-info{font-family:Consolas;margin-left:50px;margin-top:-10px}
+#running-time,#timezone-info,#temporal-info{margin-left:5px;margin-top:-5px;margin-bottom:2px}
 #event-display-pane{margin-top:15px;}
 #event-display-pane p.nav-header.text-center{margin-right:22px}
 #event-display-pane .container-fluid{margin-top:-15px}
@@ -57,9 +58,9 @@ label{display:inline-block}
 rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 .graph-title,.stack-graph-title{font-family:Consolas;font-size:200%;z-index:100;font-style:oblique;font-variant:small-caps}
 .stack-graph-title{font-style:normal;font-size:100%;fill:#808080}
-#backward{position:fixed;cursor:pointer;left:25px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/backward.png");width:64px;height:64px}
-#forward{position:fixed;cursor:pointer;left:165px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/forward.png");width:64px;height:64px}
-#reset-scale{position:fixed;cursor:pointer;left:95px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/reset.png");width:64px;height:64px}
+#backward{position:fixed;cursor:pointer;left:45px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/backward.png");width:64px;height:64px}
+#reset-scale{position:fixed;cursor:pointer;left:115px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/reset.png");width:64px;height:64px}
+#forward{position:fixed;cursor:pointer;left:185px;bottom:5px;z-index:-1;opacity:1;-ms-filter:none;filter:none;background:url("/images/forward.png");width:64px;height:64px}
 #time-brush-main-pane p{margin-left:50px}
 #time-brush-main rect.background,#time-brush-extend rect.background{visibility:visible !important}
 .time-brush rect.background{fill:rgba(0,0,0,0.1)}

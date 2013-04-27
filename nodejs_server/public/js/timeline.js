@@ -36,6 +36,9 @@ function Timeline(name) {
     this.y_domain; // will be initialised in setDataset function
     this.x_range;
     this.tick_padding = 5;
+    this.time_window_interval; // interval for displaying timeline
+    this.start_index = 0;
+    this.end_index = 0;
     //FIXME two variables are to be defined
     this.tick_unit;
     this.tick_step;
@@ -126,6 +129,7 @@ Timeline.prototype.removeTimeline = function() {
     $(this.name).children().remove();
 }
 
+// prepare raw dataset for display
 Timeline.prototype.setDataset = function(dataset, path_dataset) {
     // only check for suspects for android logs
     var self = this;
@@ -185,6 +189,9 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
         if (x.date <= y.date) return -1;
         if (x.date > y.date) return 1;
     });
+    // fill the time window in left control pane. (defined in operator.js)
+    this.time_window_interval = fillTimeWindow(Number(this.dataset[0].date), Number(this.dataset[this.dataset.length - 1].date));
+    this.getDisplayIndices(0, 0); // set start & end to 0 for initialisation
     // on dataset is set, draw timeline
     this.onDataReady();
 
@@ -302,6 +309,30 @@ Timeline.prototype.clearData = function() {
     this.path_data = [];
     this.y_domain = [];
     this.x_range = [];
+    this.start_index = 0;
+    this.end_index = 0;
+    this.time_window_interval = 0;
+}
+
+// init indices for timeline display set
+Timeline.prototype.getDisplayIndices = function(start, end) {
+    if (start !== -1) { // init time window or get next time window
+        this.start_index = start;
+        this.end_index = end;
+        var time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+        while (this.end_index < this.dataset.length - 1 && time_diff <= this.time_window_interval) {
+            this.end_index += 1;
+            time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+        }
+    } else { // get previous time window
+        this.start_index = end;
+        this.end_index = end;
+        var time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+        while (this.start_index > 0 && time_diff <= this.time_window_interval) {
+            this.start_index -= 1;
+            time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
+        }
+    }
 }
 
 // draw timeline on SVG
@@ -336,9 +367,9 @@ Timeline.prototype.onDataReady = function() {
         display_data.display = data.display;
         display_dataset.push(display_data);
     });
-    // calculate the entire time period
-    var start_date = new Date(Number(this.dataset[0].date) * 1000);
-    var end_date = new Date(Number(this.dataset[this.dataset.length - 1].date) * 1000);
+    // get the entire time period
+    var start_date = display_dataset[0].date;
+    var end_date = display_dataset[display_dataset.length - 1].date;
 
     // define circle radius scale
     var radius_range = [10, 20];
@@ -655,6 +686,7 @@ Timeline.prototype.onDataReady = function() {
 
 } // function onDataReady()
 
+// fetch related system objects & pids of the selected application
 Timeline.prototype.getAppSystemCalls = function(app_name) {
     var system_objects = [];
     var system_pids = [];
@@ -673,6 +705,7 @@ Timeline.prototype.getAppSystemCalls = function(app_name) {
     this.fillSystemCallsPane(_.uniq(system_objects), _.uniq(system_pids));
 }
 
+// fill system objects & pids into selection pane
 Timeline.prototype.fillSystemCallsPane = function(objects, pids) {
     // remove old data in the pane
     $('#objects').children().remove();
@@ -727,6 +760,7 @@ Timeline.prototype.fillSystemCallsPane = function(objects, pids) {
     });
 }
 
+// get delta time based timeline of selected application
 Timeline.prototype.getAppDeltaTimeline = function(app_name) {
     var self = this;
     $.ajax({
@@ -740,7 +774,7 @@ Timeline.prototype.getAppDeltaTimeline = function(app_name) {
         success: function(data) {
             if (data.content !== '') {
                 var application_trace = JSON.parse(data.content);
-                //generate delta timeline dataset
+                //generate delta timeline dataset (defined in operator.js)
                 generateDeltaTimeGraph(application_trace.content);
             } else {
                 showAlert("no application info available", true);
@@ -752,6 +786,7 @@ Timeline.prototype.getAppDeltaTimeline = function(app_name) {
     });
 }
 
+// get application install data and etc.
 Timeline.prototype.getApplicationInfo = function(app_name) {
     var self = this;
     $.ajax({
@@ -780,7 +815,7 @@ Timeline.prototype.getApplicationInfo = function(app_name) {
     });
 }
 
-//TODO show file system activity in message area
+// get application launch date and last activity date
 Timeline.prototype.getServiceInfo = function(app_name) {
     var self = this;
     $.ajax({
@@ -814,27 +849,36 @@ Timeline.prototype.getServiceInfo = function(app_name) {
     });
 }
 
+Timeline.prototype.nextDisplayWindow = function() {
+    this.getDisplayIndices(this.end_index, this.end_index);
+    this.removeTimeline();
+    this.initTimeline();
+    // defined in operator.js
+    if (this.end_index !== this.dataset.length - 1) {
+        updateTimeWindow(this.dataset[this.start_index].date, this.time_window_interval);
+    } else {
+        var window_start = this.dataset[0].date;
+        while(true) {
+            if ( window_start + this.time_window_interval < this.dataset[this.dataset.length - 1].date)
+                window_start += this.time_window_interval;
+            else
+                break;
+        }
+        updateTimeWindow(window_start, this.dataset[this.end_index].date - window_start);
+    }
+    this.onDataReady();
+}
+
+Timeline.prototype.previousDisplayWindow = function() {
+    this.getDisplayIndices(-1, this.start_index - 1);
+    this.removeTimeline();
+    this.initTimeline();
+    // defined in operator.js
+    updateTimeWindow(this.dataset[this.start_index].date, this.time_window_interval);
+    this.onDataReady();
+}
+
 //FIXME to be defined
-Timeline.prototype.increaseDisplayStep = function() {
-    this.display_step += 1800; // unit: seconds
-    this.removeTimeline();
-    this.initTimeline();
-    this.start_index = 0;
-    this.end_index = 0;
-    this.getEndIndex();
-    this.onDataReady(false);
-}
-
-Timeline.prototype.decreaseDisplayStep = function() {
-    this.display_step -= 1800; // unit: seconds
-    this.removeTimeline();
-    this.initTimeline();
-    this.start_index = 0;
-    this.end_index = 0;
-    this.getEndIndex();
-    this.onDataReady(false);
-}
-
 Timeline.prototype.initTickInterval = function() {
     var unit_options = [
         d3.time.seconds.utc,
@@ -846,8 +890,8 @@ Timeline.prototype.initTickInterval = function() {
         5,
     ];
 
-    var unit_index = this.display_step >= 3600 ? 2 : this.display_step >= 1800 ? 1 : 0;
-    var step_index = this.display_step >= 3600 ? 0 : this.display_step >= 1800 ? 1 : 1;
+    var unit_index = 1;
+    var step_index = 1;
 
     this.tick_unit = unit_options[unit_index];
     this.tick_step = step_options[step_index];

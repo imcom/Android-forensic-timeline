@@ -7,8 +7,8 @@ $ = Zepto;
 var responsive_app_pane = $('#responsive-apps');
 var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
-//var responsive_id_pane = $('#responsive-ids');
-//var responsive_object_pane = $('#responsive-objects');
+var responsive_pid_pane = $('#responsive-pids');
+var responsive_object_pane = $('#responsive-objects');
 //var collection = $('#collection-input');
 //var selection = $('#selection-input');
 //var dmesg_selection = $('#dmesg-selection-input');
@@ -42,7 +42,6 @@ var aggregate_btn = $('#aggregate-btn');
 // global variables
 var dataset = [];
 var path_dataset = {};
-var time_range = [];
 var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
@@ -51,6 +50,7 @@ var object_selected = false;
 var pid_selected = false;
 var selected_object;
 var selected_pid;
+//var time_range = [];
 
 // timeline SVG
 var timeline_main = new Timeline("#timeline_main");
@@ -499,43 +499,45 @@ function aggregateDmesg() {
         }
     });
 }
-
-function initTimeRange(target_set) {
-    target_set.forEach(function(record) {
-        var timestamp = record.date;
-        if ($.inArray(timestamp, time_range) == -1) {
-            time_range.push(timestamp);
-        }
-    });
-    fillTimeWindow();
-}
-
-function resetTimeRange() {
-    time_range = [];
-    var window_start = $('#time-window-start');
-    var window_end = $('#time-window-end');
-    window_start.children().remove();
-    window_end.children().remove();
-    window_start.append("<option>from...</option>");
-    window_end.append("<option>to...</option>");
-}
-
-function fillTimeWindow() {
-    var window_start = $('#time-window-start');
-    var window_end = $('#time-window-end');
-    window_start.children().remove();
-    window_end.children().remove();
-    time_range.forEach(function(timestamp) {
-        var date = timestamp * 1000; // convert to milliseconds
-        var formatter = d3.time.format.utc("%Y%m%d %H:%M:%S");
-        var disp_date = formatter(new Date(date));
-        window_start.append("<option value=" + timestamp + ">" + disp_date + "</option>");
-        window_end.append("<option value=" + timestamp + ">" + disp_date + "</option>");
-    });
-    window_end.val("" + time_range[time_range.length - 1]);
-}
-
 // -------------------------------------
+
+function initTimeRange(start_ts, end_ts) {
+    var ts_range = [];
+    // time diff less/equal than 5 hours --> 1 hour interval for display
+    // time diff less/equal than 10 hours --> 3 hours interval for display
+    // time diff greater than 10 hours --> 5 hours interval for display
+    var time_diff = end_ts - start_ts; // convert to seconds
+    var interval = time_diff <= 60 * 60 * 5 ? 60 * 60 : time_diff <= 60 * 60 * 10 ? 60 * 60 * 3 : 60 * 60 * 5;
+    var point = start_ts;
+    for ( ; point < end_ts; point += interval) {
+        ts_range.push(point);
+    }
+    ts_range.push(end_ts);
+    return [ts_range, interval]; // return time range array for display and interval
+}
+
+function fillTimeWindow(start_date, end_date) {
+    var window_start = $('#time-window-start');
+    var window_end = $('#time-window-end');
+    window_start.children().remove();
+    window_end.children().remove();
+    var time_range = initTimeRange(start_date, end_date);
+    time_range[0].forEach(function(timestamp, index) {
+        var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S");
+        var disp_date = formatter(new Date(timestamp * 1000));
+        if (index !== time_range[0].length - 1)
+            window_start.append("<option value=" + timestamp + ">" + disp_date + "</option>");
+        if (index !== 0)
+            window_end.append("<option value=" + timestamp + ">" + disp_date + "</option>");
+    });
+    window_end.val(time_range[0][1]); // show the current window
+    return time_range[1]; // return the display interval to Timeline instance
+}
+
+function updateTimeWindow(anchor_start, step) {
+    $('#time-window-start').val(anchor_start);
+    $('#time-window-end').val(anchor_start + step);
+}
 
 //TODO yet another expression of an application's trace
 function generateApplicationTimeline() {
@@ -1063,15 +1065,17 @@ function aggregationOnCompletion(type, target, content) {
     $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
 }
 
-// ----- need to be re-written -------
-/*
 $('#backward').click(function() {
-
+    timeline_main.previousDisplayWindow();
 });
 
 $('#forward').click(function() {
-
+    timeline_main.nextDisplayWindow();
 });
+
+// ----- need to be re-written -------
+/*
+
 */
 
 // bootstrap function, init the basic application trace timeline
