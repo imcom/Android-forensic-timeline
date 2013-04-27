@@ -578,6 +578,8 @@ Timeline.prototype.onDataReady = function() {
             self.getApplicationInfo(data._id);
             // generate application delta timeline
             self.getAppDeltaTimeline(data._id);
+            // fetch application related system calls and corresponding pids
+            self.getAppSystemCalls(data._id);
         });
     }); // text position & circles events handler
 
@@ -652,6 +654,78 @@ Timeline.prototype.onDataReady = function() {
     }
 
 } // function onDataReady()
+
+Timeline.prototype.getAppSystemCalls = function(app_name) {
+    var system_objects = [];
+    var system_pids = [];
+    var app_related_system_calls = this.dataset.filter(function(data) {
+        return data._id === app_name;
+    });
+    app_related_system_calls.forEach(function(data) {
+        for (var record in data.content) {
+            if (record === undefined) continue;
+            var object = record.substring(0, record.indexOf('['));
+            var pid = record.substring(record.indexOf('[') + 1, record.length - 1);
+            system_objects.push(object);
+            system_pids.push(pid);
+        }
+    });
+    this.fillSystemCallsPane(_.uniq(system_objects), _.uniq(system_pids));
+}
+
+Timeline.prototype.fillSystemCallsPane = function(objects, pids) {
+    // remove old data in the pane
+    $('#objects').children().remove();
+    $('#pids').children().remove();
+    // two global vars defined in operator.js
+    pid_selected = false;
+    object_selected = false;
+
+    // fill in new data
+    objects.forEach(function(object) {
+        $('#objects').append("<option>" + object + "</option>");
+    });
+
+    pids.forEach(function(pid) {
+        $('#pids').append("<option>" + pid + "</option>");
+    });
+
+    // defined behaviour of selection
+    $("#objects option").click(function() {
+        $('#pids').val(null);
+        pid_selected = false;
+        if (object_selected) {
+            if (selected_object != $(this).val()) {
+                $('#objects').val($(this).val());
+                selected_object = $('#objects').val();
+            } else {
+                $('#objects').val(null);
+                object_selected = false;
+                selected_object = null;
+            }
+        } else {
+            object_selected = true;
+            selected_object = $('#objects').val();
+        }
+    });
+    $("#pids option").click(function() {
+        $('#objects').val(null);
+        object_selected = false;
+        if (pid_selected) {
+            if (selected_pid != $(this).val()) {
+                $('#pids').val($(this).val());
+                selected_pid = $('#pids').val();
+            } else {
+                $('#pids').val(null);
+                pid_selected = false;
+                selected_pid = null;
+            }
+        } else {
+            pid_selected = true;
+            selected_pid = $('#pids').val();
+        }
+    });
+}
 
 Timeline.prototype.getAppDeltaTimeline = function(app_name) {
     var self = this;

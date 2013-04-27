@@ -53,20 +53,18 @@ exports.read = function(collection, selection, fields, options, onCompletion, on
 
 exports.mapreduce = function(req, res) {
     var model = mongoose.model(req.body.collection);
-    var obj;
-    if (
-        req.body.collection === 'main' ||
-        req.body.collection === 'system' ||
-        req.body.collection === 'events' ||
-        req.body.collection === 'radio'
-    ) {
-        if (req.body.aggregation === 'object') {
-            obj = android_logs.aggregateByObject;
-        } else if (req.body.aggregation === 'id') {
-            obj = android_logs.aggregateByPid;
-        }
+    var obj; // map-reduce query object
+    var selection;
+
+    selection = JSON.parse(req.body.selection);
+    if (req.body.aggregation === 'object') {
+        obj = android_logs.aggregateByObject;
+    } else if (req.body.aggregation === 'pid') {
+        obj = android_logs.aggregateByPid;
+        selection.object = {$not: new RegExp(/.*_?gc_?.*/i)};
     }
-    obj.query = JSON.parse(req.body.selection);
+    obj.query = selection;
+    obj.out = {'replace': req.body.collection + "_aggregation"};
     model.mapReduce(obj, function(err, rtn_model, stats) {
         if (err == null) {
             rtn_model.find().exec(function(err, rtn) {

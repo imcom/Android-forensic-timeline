@@ -4,19 +4,17 @@ jQuery.noConflict();
 $ = Zepto;
 
 // query or display area
-var collection = $('#collection-input');
-var selection = $('#selection-input');
-var dmesg_selection = $('#dmesg-selection-input');
-var file_activity_selection = $('#file-activity-selection-input');
-var relevance_selection = $('#relevance-selection-input');
-var app_trace_selection = $('#app-trace-selection-input');
-var object_pane = $('#objects');
-var id_pane = $('#ids');
 var responsive_app_pane = $('#responsive-apps');
 var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
 //var responsive_id_pane = $('#responsive-ids');
 //var responsive_object_pane = $('#responsive-objects');
+//var collection = $('#collection-input');
+//var selection = $('#selection-input');
+//var dmesg_selection = $('#dmesg-selection-input');
+//var file_activity_selection = $('#file-activity-selection-input');
+//var relevance_selection = $('#relevance-selection-input');
+//var app_trace_selection = $('#app-trace-selection-input');
 
 /*window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
@@ -50,9 +48,9 @@ var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
 var slide_left_pane_collapsed = 1;
 var object_selected = false;
-var id_selected = false;
+var pid_selected = false;
 var selected_object;
-var selected_id;
+var selected_pid;
 
 // timeline SVG
 var timeline_main = new Timeline("#timeline_main");
@@ -797,9 +795,7 @@ function getFileActivity(app_name) {
     });
 }
 
-// button actions
-
-// not in use
+// buttons not in use
 /*
 app_trace_search_btn.click(function() {
     timeline_extend.clearData(true, true);
@@ -915,6 +911,7 @@ clear_btn.click(function() {
 });
 */
 
+// button actions
 file_activity_search_btn.click(function() {
     var app_name = $('#app-name-display').text();
     getFileActivity(app_name);
@@ -997,59 +994,74 @@ slide_left_btn.click(function() {
 
 aggregate_btn.click(function() {
     $('#aggregation-arena').children().remove(); // clear previous graph
-    var obj_filter = object_pane.val();
-    var id_filter = id_pane.val();
+    var obj_filter = $('#objects').val();
+    var pid_filter = $('#pids').val();
     var aggregation_opt;
     var aggr_selection = {};
-    var aggr_collection = "events";
+    var aggr_collections = ["events", "main", "system"];
+    var counter = aggr_collections.length;
+    var aggr_content = [];
 
-    if (obj_filter === '' && id_filter === '') {
+    if (obj_filter === '' && pid_filter === '') {
         showAlert("No aggregation target selected");
         return;
     }
 
-    var generic_data = new GenericData("android_logs", null); // no need for dataset
-    //TODO time period selection & other condition selections
+    // set aggregation type and selection criteria
     if (obj_filter !== '') {
         aggregation_opt = 'object';
-        var obj_field = generic_data.getObjectField();
-        aggr_selection[obj_field] = obj_filter;
+        aggr_selection['object'] = obj_filter;
+    }
+    if (pid_filter !== '') {
+        aggregation_opt = 'pid';
+        aggr_selection['pid'] = pid_filter;
     }
 
-    if (id_filter !== '') {
-        aggregation_opt = 'id';
-        var id_field = generic_data.getIdField();
-        aggr_selection[id_field] = id_filter;
-    }
-
-    //TODO implement sophisticated selections
-    $.ajax({
-        type: "POST",
-        url: "/mapreduce",
-        data: {
-            type: "mapreduce",
-            collection: aggr_collection,
-            selection: JSON.stringify(aggr_selection),
-            aggregation: aggregation_opt
-        },
-        dataType: 'json',
-        success: function(data) {
-            var result = {};
-            result.type = aggregation_opt;
-            if (result.type === 'object') {
-                result.object = obj_filter;
-            } else {
-                result._id = id_filter;
+    for (var collection_index in aggr_collections) {
+        if (collection_index === undefined) continue;
+        $.ajax({
+            type: "POST",
+            url: "/mapreduce",
+            data: {
+                type: "mapreduce",
+                collection: aggr_collections[collection_index],
+                selection: JSON.stringify(aggr_selection),
+                aggregation: aggregation_opt
+            },
+            dataType: 'json',
+            success: function(data) {
+                aggr_content = _.union(aggr_content, data.content);
+                counter -= 1;
+                if (counter === 0) {
+                    var aggr_target;
+                    if (aggregation_opt === 'object') {
+                        aggr_target = obj_filter;
+                    } else {
+                        aggr_target = pid_filter;
+                    }
+                    aggregationOnCompletion(aggregation_opt, aggr_target, aggr_content);
+                }
+            },
+            error: function(xhr, type) {
+                showAlert("aggregation query error!");
+                counter -= 1;
             }
-            result.content = data.content;
-            var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
-            $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-        },
-        error: function(xhr, type) {
-            showAlert("aggregation query error!");
-        }
-    });
+        });
+    }
 });
+
+function aggregationOnCompletion(type, target, content) {
+    var result = {};
+    result.type = type;
+    if (type === 'object') {
+        result.object = target;
+    } else {
+        result._id = target;
+    }
+    result.content = content;
+    var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
+    $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+}
 
 // ----- need to be re-written -------
 /*

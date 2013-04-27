@@ -14,7 +14,7 @@ exports.name = "android_logs";
 exports.fields = ["date", "pid", "object", "msg", "level"];
 
 var dateReduceFunction = function(key, values) {
-    var content = {dates: [], msgs: [], count: 1};
+    var content = {dates: [], msgs: [], count: 0};
     values.forEach(function(value) {
         content.dates = value.dates.concat(content.dates);
         content.msgs = value.msgs.concat(content.msgs);
@@ -60,7 +60,6 @@ aggregateByObject.map = function() {
     emit(key, value);
 }
 aggregateByObject.reduce = dateReduceFunction;
-aggregateByObject.out = {'replace': 'LogsMapReduceResults'};
 exports.aggregateByObject = aggregateByObject;
 
 var aggregateByPid = {};
@@ -73,8 +72,7 @@ aggregateByPid.map = function() {
     };
     emit(key, value);
 }
-aggregateByPid.reduce = dateReduceFunction
-aggregateByPid.out = {'replace': 'LogsMapReduceResults'};
+aggregateByPid.reduce = dateReduceFunction;
 exports.aggregateByPid = aggregateByPid;
 
 

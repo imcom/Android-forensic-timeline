@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # drop the previous trace result
-mongo localhost:27017/imcom --eval "db.application_trace.drop()"
+mongo localhost:27017/imcom --eval "db.application_trace.drop()" 1>/dev/null 2>&1
 
 CWD=`pwd`/libs
 

@@ -121,7 +121,7 @@ app.configure(function(){
 
 // default index route
 app.get('/', index_handler.imcom);
-app.post('/mapreduce', db_handler.mapreduce); //FIXME add some filters
+app.post('/mapreduce', db_handler.mapreduce); //FIXME to be refined
 app.post('/upload_log', db_handler.upload_log);
 app.post('/delta_timeline', db_handler.delta_timeline);
 app.post('/service_info', db_handler.service_info);
