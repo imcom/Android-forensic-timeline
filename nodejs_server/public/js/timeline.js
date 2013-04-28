@@ -39,7 +39,6 @@ function Timeline(name) {
     this.time_window_interval; // interval for displaying timeline
     this.start_index = 0;
     this.end_index = 0;
-    //FIXME two variables are to be defined
     this.tick_unit;
     this.tick_step;
 
@@ -194,7 +193,8 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
     this.getDisplayIndices(0, 0); // set start & end to 0 for initialisation
     // on dataset is set, draw timeline
     this.onDataReady();
-
+    if (this.end_index !== this.dataset.length - 1)
+        $('#forward').css('opacity', 0.8).css('z-index', 50);;
 }
 
 // prepare dataset for chronological path
@@ -295,9 +295,9 @@ Timeline.prototype.updateYDomain = function(y) {
 
 // init X range for proper display
 Timeline.prototype.initXRange = function() {
-    var start_date = this.dataset[0].date;
-    var end_date = this.dataset[this.dataset.length - 1].date;
-    var upper_range = end_date - start_date <= 5000 ? 5000 : end_date - start_date >= 20000 ? end_date - start_date : 10000;
+    // time_window_interval is in { 1 hour, 3 hours, 5 hours }
+    // 1 hour --> 5000px, 3 hours --> 15000px, 5 hours --> 25000
+    var upper_range = this.time_window_interval === 60 * 60 ? 5000 : this.time_window_interval === 60 * 60 * 3 ? 15000 : 25000;
     return [this.x_range_padding, upper_range];
 }
 
@@ -390,12 +390,14 @@ Timeline.prototype.onDataReady = function() {
         .domain([start_date, end_date])
         .range(this.x_range);
 
+    // init tick interval on X axis
+    this.initTickInterval();
     // define X axis
     var x_axis = d3.svg.axis()
         .scale(x_scale)
         .orient("bottom")
-        //.ticks(this.tick_unit, this.tick_step) //FIXME the interval is to be defined
-        .ticks(d3.time.minutes.utc, 5) // above 5 hours period, using this config
+        .ticks(this.tick_unit, this.tick_step)
+        //.ticks(d3.time.minutes.utc, 5) // static test config
         .tickPadding(this.tick_padding)
         .tickSize(0);
 
@@ -414,8 +416,8 @@ Timeline.prototype.onDataReady = function() {
 
     // append gird on the timeline
     var grid = this.timeline.selectAll("line.grid-main")
-        //.data(y_scale.ticks(this.tick_unit, this.tick_step)) //FIXME same with X axis
-        .data(x_scale.ticks(d3.time.minutes.utc, 5))
+        .data(x_scale.ticks(this.tick_unit, this.tick_step))
+        //.data(x_scale.ticks(d3.time.minutes.utc, 5)) // static test config
         .enter()
         .append("g")
         .attr("clip-path", "url(#timeline-clip)")
@@ -441,14 +443,15 @@ Timeline.prototype.onDataReady = function() {
         zoom_handler.scale(1);
         zoom_handler.translate([0, 0]);
         zoom();
+        $('#reset-scale').css('opacity', 0).css('z-index', -1);
     });
     // define timeline zoom behaviour
     function zoom() {
         // show/hide reset scale button
         if (Math.abs(zoom_handler.scale()) >= 3 || Math.abs(zoom_handler.translate()[1]) >= 1000) {
-            $('.reset-scale').css('opacity', 0.8).css('z-index', 50);
+            $('#reset-scale').css('opacity', 0.8).css('z-index', 100);
         } else {
-            $('.reset-scale').css('opacity', 0).css('z-index', -1);
+            $('#reset-scale').css('opacity', 0).css('z-index', -1);
         }
         // clear old chronological path
         self.clearPath();
@@ -630,15 +633,17 @@ Timeline.prototype.onDataReady = function() {
         .range([22, 1300])
         .domain(x_scale.domain());
 
+    // define time brush step based on time window size
+    var brush_step = this.time_window_interval === 60 * 60 ? 5 : this.time_window_interval === 60 * 60 * 3 ? 15 : 30;
     var brush_axis = d3.svg.axis()
         .scale(brush_scale)
         .tickSize(30)
         .tickPadding(0)
-        .ticks(d3.time.minutes.utc, 30) // show 5 hours at most each time, using 30 mins interval. less is to be defined
+        .ticks(d3.time.minutes.utc, brush_step)
         .orient("bottom");
 
     brush_axis.tickFormat(function(date) {
-        var formatter = d3.time.format.utc("%H:%M");
+        var formatter = d3.time.format.utc("%m-%d %H:%M");
         return formatter(date);
     });
 
@@ -878,25 +883,23 @@ Timeline.prototype.previousDisplayWindow = function() {
     this.onDataReady();
 }
 
-//FIXME to be defined
+// init X axis tick interval based on time period length
 Timeline.prototype.initTickInterval = function() {
     var unit_options = [
-        d3.time.seconds.utc,
-        d3.time.minutes.utc,
-        d3.time.hours.utc
+        d3.time.minutes.utc
     ];
     var step_options = [
-        1,
-        5,
+        5
     ];
 
-    var unit_index = 1;
-    var step_index = 1;
+    // currently no need to use other interval config
+    var unit_index = 0;
+    var step_index = 0;
 
     this.tick_unit = unit_options[unit_index];
     this.tick_step = step_options[step_index];
 }
-// ------------ to be defined --------------------
+
 
 
 

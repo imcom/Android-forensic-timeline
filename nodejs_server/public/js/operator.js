@@ -921,22 +921,39 @@ file_activity_search_btn.click(function() {
 
 dropdown_btn.click(function() {
     var aggregation_pane = $('#aggregation-pane');
-    var dropdown_ctrl_pane = $('#dropdown-ctrl-pane');
     var dropdown_ctrl = $('.dropdown-ctrl');
-    if (dropdown_pane_collapsed == 1) { // show the pane
+    if (dropdown_pane_collapsed === 1) { // show the pane
         dropdown_pane_collapsed = 0;
+        aggregation_pane.animate({"top": 0}, 300, "ease");
         dropdown_ctrl.css("-webkit-transform", "rotate(0deg)");
         dropdown_ctrl.css("-moz-transform", "rotate(0deg)");
         dropdown_ctrl[0].setAttribute("title", "Collapse aggregation pane");
-        aggregation_pane.animate({"top": 0}, 500, "ease");
-        dropdown_ctrl_pane.animate({"bottom": 0}, 500, "ease");
+        // switch the active tab in responsive pane
+        $('#responsive-app-pane').removeClass('active');
+        $('#extend-tab').addClass('active');
+        $('#app-nav').removeClass('active');
+        $('#extend-nav').addClass('active');
+        // hide side control bars
+        $('#responsive-pane').animate({"right": -300}, 500, "ease");
+        $('#main-ctrl-pane').animate({"left": -300}, 500, "ease");
+        // show right control button
+        $('#open-right-ctrl').css('opacity', 0.8).css('z-index', 50);
     } else { // hide the pane
         dropdown_pane_collapsed = 1;
+        aggregation_pane.animate({"top": -865}, 300, "ease");
         dropdown_ctrl.css("-webkit-transform", "rotate(180deg)");
         dropdown_ctrl.css("-moz-transform", "rotate(180deg)");
         dropdown_ctrl[0].setAttribute("title", "Expand aggregation pane");
-        aggregation_pane.animate({"top": -680}, 500, "ease");
-        dropdown_ctrl_pane.animate({"bottom": -240}, 500, "ease");
+        // switch the active tab in responsive pane
+        $('#extend-tab').removeClass('active');
+        $('#responsive-app-pane').addClass('active');
+        $('#extend-nav').removeClass('active');
+        $('#app-nav').addClass('active');
+        // show side control bars
+        $('#responsive-pane').animate({"right": -280}, 500, "ease");
+        $('#main-ctrl-pane').animate({"left": -280}, 500, "ease");
+        // hide right control button
+        $('#open-right-ctrl').css('opacity', 0).css('z-index', -1);
     }
 });
 
@@ -972,7 +989,10 @@ slide_right_btn.click(function() {
         slide_right_ctrl.css("-webkit-transform", "rotate(0deg)");
         slide_right_ctrl.css("-moz-transform", "rotate(0deg)");
         slide_right_ctrl[0].setAttribute("title", "Expand responsive pane");
-        responsive_pane.animate({"right": -280}, 500, "ease");
+        if (dropdown_pane_collapsed === 1)
+            responsive_pane.animate({"right": -280}, 500, "ease");
+        else
+            responsive_pane.animate({"right": -300}, 500, "ease");
     }
 });
 
@@ -1065,18 +1085,37 @@ function aggregationOnCompletion(type, target, content) {
     $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
 }
 
+// click to go to the previous time window
 $('#backward').click(function() {
-    timeline_main.previousDisplayWindow();
+    if (timeline_main.start_index !== 0) {
+        timeline_main.previousDisplayWindow();
+        if (timeline_main.start_index === 0)
+            $('#backward').css('opacity', 0).css('z-index', -1);
+        $('#forward').css('opacity', 0.8).css('z-index', 50);
+    }
 });
 
+// click to go to next time window
 $('#forward').click(function() {
-    timeline_main.nextDisplayWindow();
+    // if have more windows to show
+    if (timeline_main.end_index !== timeline_main.dataset.length - 1) {
+        timeline_main.nextDisplayWindow(); // show next time window
+        if (timeline_main.end_index === timeline_main.dataset.length - 1) // if no more windows to show
+            $('#forward').css('opacity', 0).css('z-index', -1); // hide this button
+        $('#backward').css('opacity', 0.8).css('z-index', 50); // show previous window button
+    }
 });
 
-// ----- need to be re-written -------
-/*
-
-*/
+// click to show right control pane when aggregation pane is opened
+$('#open-right-ctrl').click(function() {
+    var responsive_pane = $('#responsive-pane');
+    var slide_right_ctrl = $('.slide-right-ctrl');
+    slide_right_pane_collapsed = 0;
+    slide_right_ctrl.css("-webkit-transform", "rotate(180deg)");
+    slide_right_ctrl.css("-moz-transform", "rotate(180deg)");
+    slide_right_ctrl[0].setAttribute("title", "Collapse responsive pane");
+    responsive_pane.animate({"right": 0}, 500, "ease");
+});
 
 // bootstrap function, init the basic application trace timeline
 window.onLoad = function() {

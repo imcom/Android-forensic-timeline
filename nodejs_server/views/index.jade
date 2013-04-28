@@ -65,10 +65,10 @@ html
             div#aggregation-arena
             div.dropdown-ctrl-bar
                 div(title="Expand aggregation pane").dropdown-ctrl
-        div#dropdown-ctrl-pane.popup-div
-            div#extra-ctrl-pane
-                p.nav-header Timeline Brush
-                #time-brush-extend
+        //div#dropdown-ctrl-pane.popup-div
+        //    div#extra-ctrl-pane
+        //        p.nav-header Timeline Brush
+        //        #time-brush-extend
         div#responsive-pane.slide-right-div
             div.slide-right-ctrl-bar
                 div(title="Expand responsive pane").slide-right-ctrl
@@ -77,9 +77,9 @@ html
             //    #responsive-apps
             div.responsive-div.tabbable
                 ul.nav.nav-tabs#responsive-nav
-                    li.active
+                    li#app-nav.active
                         a(href = "#responsive-app-pane", data-toggle = "tab") Applications
-                    li
+                    li#extend-nav
                         a(href = "#extend-tab", data-toggle = "tab") Extend
                 div.tab-content
                     div#responsive-app-pane.tab-pane.active
@@ -134,6 +134,7 @@ html
         a#backward
         a#forward
         a#reset-scale
+        a#open-right-ctrl
         script(type = 'text/javascript', src = '/js/operator.js')
 
 

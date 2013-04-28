@@ -166,7 +166,6 @@ function AggregatedGraph(name, dataset) {
 
     // draw events on the graph
     this.drawAggregatedGraph();
-
 } // class construction function
 
 AggregatedGraph.prototype.formatMessages = function(messages) {
