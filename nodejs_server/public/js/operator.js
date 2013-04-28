@@ -9,9 +9,9 @@ var aggregation_options = $('#map-reduce-type');
 var aggregation_arena = $('#aggregation-arena');
 var responsive_pid_pane = $('#responsive-pids');
 var responsive_object_pane = $('#responsive-objects');
+var dmesg_selection = $('#dmesg-selection-input');
 //var collection = $('#collection-input');
 //var selection = $('#selection-input');
-//var dmesg_selection = $('#dmesg-selection-input');
 //var file_activity_selection = $('#file-activity-selection-input');
 //var relevance_selection = $('#relevance-selection-input');
 //var app_trace_selection = $('#app-trace-selection-input');
@@ -31,13 +31,13 @@ var popup_btn = $('.popup-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
 var slide_left_btn = $('.slide-left-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
+var dmesg_search_btn = $('#dmesg-search');
 //var relevance_search_btn = $('#relevance-search');
 //var app_trace_search_btn = $('#app-trace-search');
 //var expand_btn = $('#expand');
 //var filter_btn = $('#filter');
 //var clear_btn = $('#clear');
 //var search_btn = $('#search');
-//var dmesg_search_btn = $('#dmesg-search');
 
 // global variables
 var dataset = [];
@@ -438,7 +438,7 @@ function showAlert(message, auto_remove) {
 }
 
 //FIXME ------ to be defined -----------
-function aggregateDmesg() {
+function queryKernelLog() {
     var dmesg_query = {};
     if (dmesg_selection.val() != '') {
         var keywords = dmesg_selection.val().split(' ');
@@ -454,7 +454,7 @@ function aggregateDmesg() {
         showAlert("Invalid time window");
         return;
     } else {
-        dmesg_query.date = {'$gte': start_time, '$lte': end_time};
+        //dmesg_query.date = {'$gte': start_time, '$lte': end_time};
     }
     dmesg_query = JSON.stringify(dmesg_query);
 
@@ -468,7 +468,7 @@ function aggregateDmesg() {
         dataType: 'json',
         success: function(data) {
             if (data.content.length > 0) {
-                dataset_extend = [];
+                var dmesg_result = [];
                 data.content.forEach(function(record, index) {
                     for (var timestamp in record.value) {
                         if (record.value.hasOwnProperty(timestamp)) {
@@ -480,22 +480,65 @@ function aggregateDmesg() {
                                 unified_record.display = index;
                                 unified_record.level = "";
                                 unified_record.msg = message;
-                                dataset_extend.push(unified_record);
+                                dmesg_result.push(unified_record);
                             });
                         }
                     }
                 });
-                $('#timeline_extend').children().remove();
-                timeline_extend.initTimeline();
-                var check_suspects = false;
-                timeline_extend.setDataset(dataset_extend, null, check_suspects, false);
-                $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+                console.log(dmesg_result);
             } else {
                 showAlert("no records found!");
             }
         },
         error: function(xhr, type) {
             showAlert("search query error!");
+        }
+    });
+}
+
+function getFileActivity(app_name) {
+    $.ajax({
+        type: "POST",
+        url: "file_activity",
+        data: {
+            selection: app_name,
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== "") {
+                var result = JSON.parse(data.content)[0];
+                var file_dataset = [];
+                for (var timestamp in result.detail) {
+                    if (result.detail.hasOwnProperty(timestamp) && timestamp !== 'id') {
+                        result.detail[timestamp].forEach(function(event) {
+                            var file_activity = {};
+                            // filesystem record
+                            file_activity._id = result.detail.id;
+                            file_activity.object = event.name;
+                            file_activity.date = Number(timestamp);
+                            file_activity.msg = event.file_activity;
+                            file_activity.level = event.inode_activity.inode;
+                            file_activity.display = result.detail.id;
+                            file_dataset.push(file_activity);
+                            // inode record
+                            for (var type = 0; type <= 2; ++type) { // 0: access, 1: change, 2: modify
+                                file_dataset.push(generateInodeActivity(event, type));
+                            }
+                        });
+                    }
+                }
+                file_dataset.sort(function(x, y) {
+                    if (x.date <= y.date) return -1;
+                    if (x.date > y.date) return 1;
+                });
+                console.log(file_dataset);
+            } else {
+                showAlert("no file activity records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("file activity query error!");
         }
     });
 }
@@ -539,7 +582,7 @@ function updateTimeWindow(anchor_start, step) {
     $('#time-window-end').val(anchor_start + step);
 }
 
-//TODO yet another expression of an application's trace
+//FIXME ------------- to be deprecated ---------------
 function generateApplicationTimeline() {
     $.ajax({
         type: "POST",
@@ -563,6 +606,7 @@ function generateApplicationTimeline() {
         }
     });
 }
+// --------------------------------------
 
 function generateDeltaTimeGraph(dataset) {
     $('#aggregation-arena').children().remove(); // remove old graph
@@ -585,7 +629,7 @@ function generateDeltaTimeGraph(dataset) {
         if (app_process === undefined || app_process === "suspects") continue;
         var length = dataset[app_process].length;
         // iterate through each app_process, calculate delta time between every two events
-        if (length === 1) continue; // only one event recorded, ignore...
+        if (length === 1) continue; // only one event recorded, ignore ...
         var index = 0, round = 0;
         for (index = round + 1; index < length; index++) {
             var delta_t = dataset[app_process][index].date - dataset[app_process][round].date;
@@ -623,8 +667,9 @@ function generateDeltaTimeGraph(dataset) {
                 delta_dataset[delta_t].count[sig_index] += 1;
             }
             if (index === length - 1) { // when reach the end, start next round
+                break;//FIXME debugging
                 round += 1;
-                index = round + 1;
+                //index = round + 1;
             }
         } // for-loop index
     } // for-loop app_process
@@ -750,63 +795,11 @@ function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data
     return file_activity;
 }
 
-function getFileActivity(app_name) {
-    $.ajax({
-        type: "POST",
-        url: "file_activity",
-        data: {
-            selection: app_name,
-            type: "exec"
-        },
-        dataType: 'json',
-        success: function(data) {
-            if (data.content !== "") {
-                var result = JSON.parse(data.content)[0];
-                var file_dataset = [];
-                for (var timestamp in result.detail) {
-                    if (result.detail.hasOwnProperty(timestamp) && timestamp !== 'id') {
-                        result.detail[timestamp].forEach(function(event) {
-                            var file_activity = {};
-                            // filesystem record
-                            file_activity._id = result.detail.id;
-                            file_activity.object = event.name;
-                            file_activity.date = Number(timestamp);
-                            file_activity.msg = event.file_activity;
-                            file_activity.level = event.inode_activity.inode;
-                            file_activity.display = result.detail.id;
-                            file_dataset.push(file_activity);
-                            // inode record
-                            for (var type = 0; type <= 2; ++type) { // 0: access, 1: change, 2: modify
-                                file_dataset.push(generateInodeActivity(event, type));
-                            }
-                        });
-                    }
-                }
-                file_dataset.sort(function(x, y) {
-                    if (x.date <= y.date) return -1;
-                    if (x.date > y.date) return 1;
-                });
-                console.log(file_dataset);
-            } else {
-                showAlert("no file activity records found!");
-            }
-        },
-        error: function(xhr, type) {
-            showAlert("file activity query error!");
-        }
-    });
-}
-
 // buttons not in use
 /*
 app_trace_search_btn.click(function() {
     timeline_extend.clearData(true, true);
     traceApplication();
-});
-
-dmesg_search_btn.click(function() {
-    timeline_extend.clearData(true, true);
-    aggregateDmesg();
 });
 
 expand_btn.click(function() {
@@ -914,6 +907,10 @@ clear_btn.click(function() {
 */
 
 // button actions
+dmesg_search_btn.click(function() {
+    queryKernelLog();
+});
+
 file_activity_search_btn.click(function() {
     var app_name = $('#app-name-display').text();
     getFileActivity(app_name);
@@ -1022,6 +1019,7 @@ aggregate_btn.click(function() {
     var aggr_selection = {};
     var aggr_collections = ["events", "main", "system"];
     var counter = aggr_collections.length;
+    //FIXME this var should be global in order to enable responsive filtering
     var aggr_content = [];
 
     if (obj_filter === '' && pid_filter === '') {

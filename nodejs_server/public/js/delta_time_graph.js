@@ -23,9 +23,9 @@ function DeltaTimeGraph(name, dataset) {
 
     // dimensions
     var width = 1800;
-    var height = 620;
+    var height = 820;
     var y_padding = 100;
-    var tick_padding = -20;
+    var tick_padding = -15;
 
     // init dataset for stack graph
     this.dataset.forEach(function(bar) {
@@ -53,19 +53,16 @@ function DeltaTimeGraph(name, dataset) {
         return [self.dataset[0].delta_time, self.dataset[self.dataset.length - 1].delta_time];
     }
 
-    //var time_domain = initDateDomain();
+    // init X axis scale
     var delta_domain = initDeltaDomain();
-    //var time_diff = (Number(this.dataset[this.dataset.length - 1].date) - Number(this.dataset[0].date)) / 1000;
-    var time_diff = (this.dataset[this.dataset.length - 1].delta_time - this.dataset[0].delta_time);
-    var max_range = time_diff <= 1000 ? width : time_diff >= 20000 ? time_diff * 2 : time_diff;
-    //var x_scale = d3.time.scale.utc().domain(time_domain).range([0, max_range]);
     var x_scale = d3.scale.linear()
         .domain(delta_domain)
-        .range([80, width - 80]);
+        .range([50, width - 50]); //TODO this may break when the delta time is large
 
+    // init Y axis scale
     var y_scale = d3.scale.linear()
         .domain([0, y_domain_max])
-        .range([height - 50, y_padding]); // range should depend on y_domain_max
+        .range([height - y_padding / 2, y_padding]); // range starts from X axis
 
     var color_scale = d3.scale.category10();
 
@@ -75,9 +72,9 @@ function DeltaTimeGraph(name, dataset) {
         .tickPadding(tick_padding)
         .tickSize(0);
 
-    /*x_axis.tickFormat(function(date) {
-
-    });*/
+    x_axis.tickFormat(function(date) {
+        return date + "s";
+    });
 
     // create svg for aggregated graph
     var stacked_graph = d3.select(this.name)
@@ -123,13 +120,6 @@ function DeltaTimeGraph(name, dataset) {
         );
 
     function zoom() {
-        /*if (d3.event.scale > 6) {
-            initTickInterval([0, 0]);
-            x_axis.ticks(tick_unit, tick_step);
-        } else {
-            initTickInterval(null);
-            x_axis.ticks(tick_unit, tick_step);
-        }*/
         stacked_graph.select(".stack-axis").call(x_axis);
         stacked_graph.selectAll(".stack-layer")
             .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
@@ -222,58 +212,6 @@ function DeltaTimeGraph(name, dataset) {
             });
             return title.substr(0, title.length - 1); // remove tailing `-`
         });
-
-    // draw time brush on control panel (should move this function to stacked graph)
-    $('#time-brush-extend').children().remove(); // remove old brush if any
-    // init the time brush on extra control pane
-    var time_brush = d3.select("#time-brush-extend").append("svg")
-        .attr("width", width)
-        .attr("height", 60); // FIXME height is to be defined
-
-    var brush_scale = d3.scale.linear()
-        .range([60, width]) //FIXME padding is to be defined
-        .domain(x_scale.domain());
-
-    var brush_axis = d3.svg.axis()
-        .scale(brush_scale)
-        .tickSize(30)
-        .tickPadding(0)
-        //.ticks(d3.time.minutes.utc, 15)
-        //.ticks(tick_unit, tick_step)
-        .ticks(20)
-        .orient("bottom");
-
-    /*brush_axis.tickFormat(function(date) {
-        var seconds = Number(date) / 1000 - anchor_time;
-        var delta_time = Math.round(seconds / 3600) + 'h ' +
-                        Math.round(seconds % 3600 / 60) + 'm ' +
-                        seconds % 3600 % 60 + 's';
-        return delta_time;
-    });*/
-
-    var brush = d3.svg.brush()
-        .x(brush_scale)
-        .on("brush", onBrush);
-
-    time_brush.append("g")
-        .attr("class", "time-brush-axis")
-        .call(brush_axis);
-
-    time_brush.append("g")
-        .attr("class", "time-brush")
-        .call(brush)
-        .selectAll("rect")
-        .attr("y", 0)
-        .attr("height", 30);
-
-    function onBrush() {
-        if (!brush.empty()) {
-            x_scale.domain(brush.extent());
-            stacked_graph.select(".stack-axis").call(x_axis);
-            stacked_graph.selectAll(".stack-layer")
-                .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
-        }
-    }
 
 }
 

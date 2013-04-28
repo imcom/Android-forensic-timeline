@@ -1,6 +1,6 @@
 
 
-// name selects the div for bearing svg
+//FIXME to be deprecated
 function StackedGraph(name, dataset, anchor_time) {
     /*Disable global name $ from jQuery and reload it into Zepto*/
     jQuery.noConflict();

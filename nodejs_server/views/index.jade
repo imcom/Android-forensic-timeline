@@ -94,10 +94,12 @@ html
                     //        option(value='android_logs:system') system
                     //        option(value='android_logs:events') events
                     //        option(value='android_logs:radio') radio
-                    //li.nav-header.cozy-list-header Content Specification
-                    //li
-                    //    input(type="text", placeholder="keywords ...")#selection-input
-                    li.nav-header Timeline Window
+                    li.nav-header Kernel Message Search
+                    li
+                        div.input-append
+                            input(type="text", placeholder="keywords ...").span2#dmesg-selection-input
+                            button(type="button").btn#dmesg-search Search
+                    li.nav-header.cozy-list-header Timeline Window
                     li
                         select#time-window-start.selection-field
                         select#time-window-end.selection-field

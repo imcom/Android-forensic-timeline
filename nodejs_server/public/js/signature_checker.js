@@ -6,9 +6,10 @@ var relevant_system_calls = [
     ];
 // check a given sig is known or not, return index if known, return -1 otherwise
 function isSignatureKnown(base, target) {
-    var confidence = []; // [confidence on A, confidence on B]
-
-    if (base.length === 0) return -1; // no signature recorded yet
+    // [confidence of A (number), confidence of B (number)]
+    var confidence = [];
+    // no signature recorded yet
+    if (base.length === 0) return -1;
     for (var index = 0; index < base.length; index ++) {
         confidence[0] = compareSignatures(base[index][0], target[0]);
         confidence[1] = compareSignatures(base[index][1], target[1]);
@@ -52,7 +53,7 @@ function compareSignatureTokens(cmp_sig, target_sig) {
         if (cmp_object === "am_proc_start" ||
             cmp_object === "am_proc_died" ||
             cmp_object === "ActivityManager"
-        ) {
+        ) { // same system call with different process id is a big difference
             if (diffs[_diff_index].indexOf("pid") !== -1) {
                 return -Math.max(cmp_sig.length, target_sig.length);
             }

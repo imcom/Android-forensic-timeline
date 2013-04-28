@@ -19,4 +19,3 @@ echo 'starting server now ...'
 # params: <server app> <db name>
 node app.js imcom
 
-

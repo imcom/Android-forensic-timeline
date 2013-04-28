@@ -1,7 +1,7 @@
 {
     "name": "timeline-forensic",
 
-    "version": "0.0.1",
+    "version": "0.2.2",
 
     "author": "Yu Jin <jinyu.bjut@gmail.com>",
 
@@ -18,3 +18,4 @@
         "node": ">=0.8"
     }
 }
+
