@@ -60,9 +60,9 @@ rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 #forward{position:fixed;cursor:pointer;left:185px;bottom:5px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/forward.png");width:64px;height:64px}
 #open-right-ctrl{position:fixed;cursor:pointer;right:185px;bottom:5px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/right-ctrl.png");width:64px;height:64px}
 #time-brush-main-pane p{margin-left:50px}
-#time-brush-main rect.background,#time-brush-extend rect.background{visibility:visible !important}
-.time-brush rect.background{fill:rgba(0,0,0,0.1)}
-.time-brush .extent{stroke:#f09f8c;fill-opacity:.125;shape-rendering:crispEdges}
+.time-brush{fill:rgba(0,0,0,0.1)}
+.time-brush rect.background{visibility:visible !important}
+.extent{stroke:#f09f8c;fill-opacity:.125;shape-rendering:crispEdges}
 .time-brush-axis line,.time-brush-axis path{fill:none;stroke:#aaa;fill-opacity:.1;shape-rendering:crispEdges}
 .time-brush-axis path{stroke:rgba(0,0,0,0.1)}
 .time-brush-axis text{font-size:12px}

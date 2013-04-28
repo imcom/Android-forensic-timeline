@@ -9,7 +9,6 @@ html
         link(rel='stylesheet', href='/css/opentip.css')
         -each script in globalScripts
             script(type = 'text/javascript', src = script)
-
     body
         div.progress.progress-striped.active#progress-bar
             div.bar#progress-indicator
@@ -65,16 +64,9 @@ html
             div#aggregation-arena
             div.dropdown-ctrl-bar
                 div(title="Expand aggregation pane").dropdown-ctrl
-        //div#dropdown-ctrl-pane.popup-div
-        //    div#extra-ctrl-pane
-        //        p.nav-header Timeline Brush
-        //        #time-brush-extend
         div#responsive-pane.slide-right-div
             div.slide-right-ctrl-bar
                 div(title="Expand responsive pane").slide-right-ctrl
-            //div#responsive-app-pane
-            //    p.nav-header Detected Applications
-            //    #responsive-apps
             div.responsive-div.tabbable
                 ul.nav.nav-tabs#responsive-nav
                     li#app-nav.active

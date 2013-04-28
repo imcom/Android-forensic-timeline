@@ -638,7 +638,7 @@ Timeline.prototype.onDataReady = function() {
     var brush_axis = d3.svg.axis()
         .scale(brush_scale)
         .tickSize(30)
-        .tickPadding(0)
+        .tickPadding(5)
         .ticks(d3.time.minutes.utc, brush_step)
         .orient("bottom");
 
