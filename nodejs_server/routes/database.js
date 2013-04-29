@@ -66,10 +66,10 @@ exports.upload_log = function(req, res) {
             console.log(stdout);
             if (error === null) {
                 command = "\
-                    mongoimport --db test --collection main --file ./uploads/json/main.log; \
-                    mongoimport --db test --collection system --file ./uploads/json/system.log; \
-                    mongoimport --db test --collection events --file ./uploads/json/events.log; \
-                    mongoimport --db test --collection radio --file ./uploads/json/radio.log;";
+                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection main --file ./uploads/json/main.log; \
+                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection system --file ./uploads/json/system.log; \
+                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection events --file ./uploads/json/events.log; \
+                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection radio --file ./uploads/json/radio.log;";
                 var import_process = exec(
                     command,
                     function(error, stdout, stderr) {
