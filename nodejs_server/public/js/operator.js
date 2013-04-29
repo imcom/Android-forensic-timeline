@@ -622,54 +622,80 @@ function generateDeltaTimeGraph(dataset) {
      * }
      *  index of signature goes into content and count fields
      */
+    function isInterested(target) {
+        for (var index in pairs_of_interest) {
+            if (index === undefined) continue;
+            if (pairs_of_interest[index][0] === target[0] &&
+                pairs_of_interest[index][1] === target[1]
+            ) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    //FIXME to be refined
+    var pairs_of_interest = [
+        ["am_proc_start", "am_proc_died"],
+        //["ActivityManager", "ActivityManager"],
+        //["notification_enqueue", "notification_cancel"],
+        //["NotificationService", "notification_cancel"],
+        //["am_create_activity", "am_finish_activity"],
+        //["am_pause_activity", "am_resume_activity"],
+        //["am_pause_activity", "am_restart_activity"],
+        ["db_sample", "db_sample"],
+        ["content_query_sample", "content_query_sample"]
+    ];
     var delta_dataset = {};
     for (var app_process in dataset) {
         //TODO deal with suspects later
         if (app_process === undefined || app_process === "suspects") continue;
         var length = dataset[app_process].length;
-        // iterate through each app_process, calculate delta time between every two events
+        // iterate through each app_process, calculate delta time between two events of interest
         if (length === 1) continue; // only one event recorded, ignore ...
         var index = 0, round = 0;
         for (index = round + 1; index < length; index++) {
-            var delta_t = dataset[app_process][index].date - dataset[app_process][round].date;
-            var obj_a = dataset[app_process][round].object;
-            var obj_b = dataset[app_process][index].object;
-            var pid_a = dataset[app_process][round].pid;
-            var pid_b = dataset[app_process][index].pid;
-            var msg_a = dataset[app_process][round].msg;
-            var msg_b = dataset[app_process][index].msg;
-            if (delta_dataset[delta_t] === undefined) {
-                delta_dataset[delta_t] = {};
-                delta_dataset[delta_t].delta_time = delta_t;
-                delta_dataset[delta_t].signature = [];
-                delta_dataset[delta_t].content = [];
-                delta_dataset[delta_t].count = [];
-            }
-            var signature = [];
-            //
-            // signaure: [[obj_a, msg_tokens], [obj_b, msg_tokens]]
-            //
-            signature.push([obj_a].concat(tokenize(obj_a, msg_a)));
-            signature.push([obj_b].concat(tokenize(obj_b, msg_b)));
-            var target_signature = [].concat(signature);
-            var cmp_signatures = [].concat(delta_dataset[delta_t].signature);
-            var sig_index = isSignatureKnown(cmp_signatures, target_signature);
-            var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
-            content[0] = [obj_a, msg_a, pid_a];
-            content[1] = [obj_b, msg_b, pid_b];
-            if (sig_index === -1) {
-                delta_dataset[delta_t].signature.push(signature);
-                delta_dataset[delta_t].content.push(content);
-                delta_dataset[delta_t].count.push(1);
-            } else {
-                delta_dataset[delta_t].content[sig_index] = delta_dataset[delta_t].content[sig_index].concat(content);
-                delta_dataset[delta_t].count[sig_index] += 1;
+            var current_pair = [dataset[app_process][round].object, dataset[app_process][index].object];
+            //FIXME define a set of interesting system call pairs, only do delta time analysis on the defined set
+            if (isInterested(current_pair)) {
+                var delta_t = dataset[app_process][index].date - dataset[app_process][round].date;
+                var obj_a = dataset[app_process][round].object;
+                var obj_b = dataset[app_process][index].object;
+                var pid_a = dataset[app_process][round].pid;
+                var pid_b = dataset[app_process][index].pid;
+                var msg_a = dataset[app_process][round].msg;
+                var msg_b = dataset[app_process][index].msg;
+                if (delta_dataset[delta_t] === undefined) {
+                    delta_dataset[delta_t] = {};
+                    delta_dataset[delta_t].delta_time = delta_t;
+                    delta_dataset[delta_t].signature = [];
+                    delta_dataset[delta_t].content = [];
+                    delta_dataset[delta_t].count = [];
+                }
+                var signature = [];
+                //
+                // signaure: [[obj_a, msg_tokens], [obj_b, msg_tokens]]
+                //
+                signature.push([obj_a].concat(tokenize(obj_a, msg_a)));
+                signature.push([obj_b].concat(tokenize(obj_b, msg_b)));
+                var target_signature = [].concat(signature);
+                var cmp_signatures = [].concat(delta_dataset[delta_t].signature);
+                var sig_index = isSignatureKnown(cmp_signatures, target_signature);
+                var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
+                content[0] = [obj_a, msg_a, pid_a];
+                content[1] = [obj_b, msg_b, pid_b];
+                if (sig_index === -1) {
+                    delta_dataset[delta_t].signature.push(signature);
+                    delta_dataset[delta_t].content.push(content);
+                    delta_dataset[delta_t].count.push(1);
+                } else {
+                    delta_dataset[delta_t].content[sig_index] = delta_dataset[delta_t].content[sig_index].concat(content);
+                    delta_dataset[delta_t].count[sig_index] += 1;
+                }
             }
             if (index === length - 1) { // when reach the end, start next round
-                break;//FIXME debugging
                 round += 1;
-                //index = round + 1;
+                index = round + 1;
             }
         } // for-loop index
     } // for-loop app_process

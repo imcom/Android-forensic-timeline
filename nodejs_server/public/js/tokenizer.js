@@ -2,7 +2,7 @@
 
 
 function tokenize(object, target) {
-    var black_list = ["proc", "Process", "for", ":", "has", "", "info", "to"];
+    var black_list = ["proc", "Process", "for", ":", "has", "", "info", "to", "OR", "INTO"];
     var tokens = [];
 
     // tokenize am_destroy_service
@@ -45,20 +45,68 @@ function tokenize(object, target) {
     // tokenize db_sample
     if (object === "db_sample") {
         //TODO emitted where clause and other unknown fields
-        var select_re = new RegExp(/(?:select\s[a-zA-Z0-9,_\*]*)\s/);
-        var from_re = new RegExp(/(?:from\s[a-zA-Z0-9,_\*]*)\s/);
+        var read_re = new RegExp(/(?:select)|(?:count)/i);
+        var write_re = new RegExp(/(?:insert)|(?:update)|(?:replace)|(?:delete)|(?:create)/i);
+        var select_re = new RegExp(/(?:from\s[\s\.,_\?='a-zA-Z0-9]*)$/i);
+        var replace_re = new RegExp(/(?:into\s[a-zA-Z0-9_]*)/i);
+        var update_re = new RegExp(/(?:update\s[a-zA-Z_\.0-9,]*\sset)/i);
+        var create_re = new RegExp(/(?:create[a-zA-Z0-9_\s]*,)/i);
+
         target = target.substring(1, target.length - 1);
         var tokens_buf = target.split(',');
         var database = tokens_buf[0]; //TODO contains random string
-        var select = select_re.exec(target)[0].trim();
-        select = select.replace(' ', '='); // replace the ` ` after select to `=`
-        select = select.replace(/,/g, ' '); // replace or `,` to ` `
-        var from = from_re.exec(target)[0].trim();
-        from = from.replace(' ', '='); // replace the ` ` after from to `=`
-        from = from.replace(/,/g, ' '); // replace or `,` to ` `
         tokens.push(database);
-        tokens.push(select);
-        tokens.push(from);
+        var operation;
+        var table = "table=unknown";
+        if (read_re.exec(target) !== null) {
+            operation = "operation=read";
+        } else if (write_re.exec(target) !== null) {
+            operation = "operation=write";
+        } else {
+            operation = "operation=unknown";
+        }
+        tokens.push(operation);
+        // try to extract table from create query
+        var create = create_re.exec(target);
+        if (create !== null) {
+            create = create[0].substr(0, create[0].length - 1); // remove last char
+            create = create.split(' ');
+            table = create[create.length - 1];
+            tokens.push(table);
+            return tokens;
+        }
+        // try to extract table from update query
+        var update = update_re.exec(target);
+        if (update !== null) {
+            update = update[0].split(' ');
+            // remove syntax text from head and tail of the query
+            update.splice(0, 1);
+            update.splice(update.length - 1, 1);
+            table = "table=" + update.join(' ');
+            tokens.push(table);
+            return tokens;
+        }
+        // try to extract table from log on select query
+        var select = select_re.exec(target);
+        if (select !== null) {
+            select = select[0].split(',');
+            select.splice(-3, 3); // emit unknown fields
+            select = select.join(',');
+            table = select.split(' ')[1];
+            table = "table=" + table.replace(',', ' ');
+            tokens.push(table);
+            return tokens;
+        }
+        // try to extract table from log on replace/insert query
+        var replace = replace_re.exec(target);
+        if (replace !== null) {
+            replace = replace[0];
+            tokens_buf = replace.split(' ');
+            table = "table=" + tokens_buf[1];
+            tokens.push(table);
+            return tokens;
+        }
+        tokens.push(table);
         return tokens;
     }
 
@@ -74,7 +122,7 @@ function tokenize(object, target) {
         return tokens;
     }
 
-    //FIXME to be removed
+    // not in use
     if (object === "sqlite_mem_released") return ["sqlite_mem_released"];
 
     // tokenize am_finish_activity
@@ -198,24 +246,41 @@ function tokenize(object, target) {
 
     // tokenize activity manager
     if (object === "ActivityManager") {
-        var pid_re = new RegExp(/(?:pid=\d+)|(?:pid:\d+)|(?:pid\s\d+)/);
+        var pid_re = new RegExp(/(?:pid=\d+)|(?:pid:\d+)|(?:pid\s-?\d+)/);
         var uid_re = new RegExp(/(?:uid=\d+)/);
         var gid_re = new RegExp(/(?:gids=\{\d+,\s\d+\})/);
         var bracket_re = new RegExp(/\{.*\}|\(.*\)/ig);
+        var intent_re = new RegExp(/(?:cmp=[a-zA-Z\._\/]*)/);
 
         if (target.substr(0, "Starting".length) === "Starting") {
-            console.log(target);
-            return [];
+            var pid = pid_re.exec(target)[0];
+            pid = pid.replace(' ', '=');
+            var intent = intent_re.exec(target)[0];
+            tokens.push(pid);
+            tokens.push(intent);
+            return tokens;
         }
 
         if (target.substr(0, "startActivity".length) === "startActivity") {
-            console.log(target);
-            return [];
+            var context_re = new RegExp(/(?:non-Activity)/);
+            var object_re = new RegExp(/(?:forcing\s[a-zA-Z\._]*)/);
+            var context = "context=" + context_re.exec(target)[0];
+            var object = "object=" + object_re.exec(target)[0].split(' ')[1]; // emit forcing or other verbs
+            var intent = intent_re.exec(target)[0];
+            tokens.push(context);
+            tokens.push(object);
+            tokens.push(intent);
+            return tokens;
         }
 
         if (target.substr(0, "Duplicate".length) === "Duplicate") {
-            console.log(target);
-            return [];
+            target = target.split(' ');
+            var operation = "operation=" + target[1];
+            var intent = "intent=" + target[target.length - 1];
+            intent = intent.substr(0, intent.length - 1);
+            tokens.push(operation);
+            tokens.push(intent);
+            return tokens;
         }
 
         target = target.replace(/\.$/, '');

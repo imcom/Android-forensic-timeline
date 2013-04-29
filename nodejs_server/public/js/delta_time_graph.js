@@ -165,6 +165,8 @@ function DeltaTimeGraph(name, dataset) {
                 {style: "tooltip_style"}
             );
             $(_layer.childNodes[e_index]).mouseover(function(mouse_event) {
+                //FIXME show delta time label on mouseover
+                console.log("delta time: " + self.dataset[l_index].delta_time);
                 this.setAttribute("cursor", "pointer");
             })
             .mouseout(function(mouse_event) {
@@ -190,37 +192,31 @@ function DeltaTimeGraph(name, dataset) {
         .data(color_scale.domain().slice().reverse())
         .enter().append("g")
         .attr("class", "legend")
-        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+        .attr("transform", function(d, i) { return "translate(0," + i * 14 + ")"; });
 
     legend.append("rect")
         .attr("x", 10)
-        .attr("width", 18)
-        .attr("height", 18)
+        .attr("width", 12)
+        .attr("height", 12)
         .style("fill", color_scale);
 
     legend.append("text")
         .attr("x", 30)
-        .attr("y", 10)
+        .attr("y", 5)
         .attr("dy", ".35em")
         .style("text-anchor", "start")
         .text(function(d) {
             var sig = JSON.parse(d);
             var title = "";
+            // only use system call name
             sig.sig.forEach(function(_sig) {
-                title += _sig[0]; // only use system call name
+                title += _sig[0];
                 title += "-";
             });
-            return title.substr(0, title.length - 1); // remove tailing `-`
+            title = title.substr(0, title.length - 1); // trim the tailing `-`
+            return title;
         });
-
 }
-
-
-
-
-
-
-
 
 
 
