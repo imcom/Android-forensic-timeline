@@ -583,6 +583,7 @@ function updateTimeWindow(anchor_start, step) {
 }
 
 //FIXME ------------- to be deprecated ---------------
+/*
 function generateApplicationTimeline() {
     $.ajax({
         type: "POST",
@@ -606,7 +607,7 @@ function generateApplicationTimeline() {
         }
     });
 }
-// --------------------------------------
+*/
 
 function generateDeltaTimeGraph(dataset) {
     $('#aggregation-arena').children().remove(); // remove old graph
