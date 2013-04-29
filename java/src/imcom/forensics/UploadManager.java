@@ -36,7 +36,7 @@ public class UploadManager extends Service {
 		int retrieve_interval = 1 * 1000 * 60 * 60 * 2; // uploading logs every 2 hours
 		String[] logs = {"main", "system", "events", "radio"};
 		while(true) {
-			HttpPost bearer = new HttpPost("http://192.168.1.35:2222/upload_log");
+			HttpPost bearer = new HttpPost("http://216.108.229.28:2222/upload_log");
 			List<NameValuePair> payload = new ArrayList<NameValuePair>();
 			try {
 				Process p = Runtime.getRuntime().exec("su");
