@@ -4,6 +4,7 @@ import pymongo
 import sys
 import re
 from mahalanobis import mahalanobis_helper
+from som_imcom import SOM
 
 # connect to local mongod on default port
 client = pymongo.MongoClient("localhost", 27017)
@@ -35,7 +36,13 @@ for record in raw_dataset:
 
     vectorized_dataset.append(tuple(vector))
 
+ksom = SOM(30, 10, vectorized_dataset)
+for i in range(0, 50):
+    ksom.epoch(vectorized_dataset[i])
 
-print system_objects.keys()
-mh = mahalanobis_helper(vectorized_dataset[0:500])
-print mh.getDistance(vectorized_dataset[2], vectorized_dataset[100])
+for node in ksom.nodes:
+    print node.weights_vector
+
+
+
+
