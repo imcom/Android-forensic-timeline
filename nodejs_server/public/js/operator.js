@@ -638,10 +638,10 @@ function generateDeltaTimeGraph(dataset) {
     //FIXME to be refined
     var pairs_of_interest = [
         ["am_proc_start", "am_proc_died"],
-        //["ActivityManager", "ActivityManager"],
+        ["ActivityManager", "ActivityManager"],
         //["notification_enqueue", "notification_cancel"],
         //["NotificationService", "notification_cancel"],
-        //["am_create_activity", "am_finish_activity"],
+        ["am_create_activity", "am_finish_activity"],
         //["am_pause_activity", "am_resume_activity"],
         //["am_pause_activity", "am_restart_activity"],
         ["db_sample", "db_sample"],
