@@ -38,7 +38,7 @@ class SOM:
     def __init__(self, width, height, dataset, iteration_num = 50):
         self.radius = max(width, height) / 2.0
         self.time_constant = iteration_num / math.log10(self.radius)
-        self.learning_rate = 1.0
+        self.learning_rate = 2.0
         self.current_learning_rate = 0.0
         self.iteration_num = iteration_num
         self.current_iteration = 1

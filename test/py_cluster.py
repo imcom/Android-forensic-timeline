@@ -36,9 +36,9 @@ for record in raw_dataset:
     vector.append(object_vector.index(record['object']))
     vectorized_dataset.append(tuple(vector))
 
-ksom = SOM(20, 10, vectorized_dataset)
+ksom = SOM(10, 10, vectorized_dataset)
 for i in range(0, 50):
-    print vectorized_dataset[i]
+    #print vectorized_dataset[i]
     ksom.epoch(vectorized_dataset[i])
 
 line_width = 10 
