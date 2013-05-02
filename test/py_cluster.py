@@ -13,36 +13,38 @@ db = client.test #NOTE for developing only
 
 collection = db.events #TODO using events log only at present
 
-OBJECTS_BLACK_LIST = ['free_storate_left', 'battery_status', 'sqlite_mem_released', 'battery_discharge', 'force_gc', 'dvm_gc_madvise_info', 'free_storage_changed', 'dvm_gc_info']
-pids = dict()
-system_objects = dict()
+OBJECTS_BLACK_LIST = ['free_storage_left', 'battery_status', 'sqlite_mem_released', 'battery_discharge', 'force_gc', 'dvm_gc_madvise_info', 'free_storage_changed', 'dvm_gc_info']
+pids = list()
+system_objects = list()
 vectorized_dataset = list()
 
-raw_dataset = collection.find({'object': {'$nin': OBJECTS_BLACK_LIST}}, {'_id': 0})
+raw_dataset = list(record for record in collection.find({'object': {'$nin': OBJECTS_BLACK_LIST}}, {'_id': 0}))
+
+# get two vectors one for pids and the other for sys objects
+for record in raw_dataset:
+    pid = int(record['pid'])
+    pids.append(pid)
+    system_objects.append(record['object'])
+
+# sort two vectors above by pid in ASC so the covariance would make sense
+pid_vector, object_vector = zip(*sorted(zip(pids, system_objects))) # unpacking arguments by using `*`
 
 for record in raw_dataset:
+    pid = int(record['pid'])
     vector = list()
-    if not pids.has_key(record['pid']):
-        pids.setdefault(record['pid'], 1)
-    else:
-        pids[record['pid']] += 1
-    vector.append(pids.keys().index(record['pid']))
-
-    if not system_objects.has_key(record['object']):
-        system_objects.setdefault(record['object'], 1)
-    else:
-        system_objects[record['object']] += 1
-    vector.append(system_objects.keys().index(record['object']))
-
+    vector.append(pid_vector.index(pid))
+    vector.append(object_vector.index(record['object']))
     vectorized_dataset.append(tuple(vector))
 
-ksom = SOM(30, 10, vectorized_dataset)
+ksom = SOM(20, 10, vectorized_dataset)
 for i in range(0, 50):
+    print vectorized_dataset[i]
     ksom.epoch(vectorized_dataset[i])
 
-for node in ksom.nodes:
-    print node.weights_vector
-
-
+line_width = 10 
+for index, node in enumerate(ksom.nodes):
+    print ("(%d,%d):%d " % (node.x, node.y, node.bmu_count)),
+    if (index + 1) % line_width is 0:
+        print ''
 
 
