@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import math
+import random
+import sys
 from scipy.spatial.distance import euclidean
 from mahalanobis import mahalanobis_helper
 
@@ -38,7 +40,7 @@ class SOM:
     def __init__(self, width, height, dataset, iteration_num = 50):
         self.radius = max(width, height) / 2.0
         self.time_constant = iteration_num / math.log10(self.radius)
-        self.learning_rate = 2.0
+        self.learning_rate = 2.0 #TODO to determine the init learning rate
         self.current_learning_rate = 0.0
         self.iteration_num = iteration_num
         self.current_iteration = 1
@@ -48,15 +50,28 @@ class SOM:
         self.height = height
         self.nodes = []
         self.bmu = None
-        self.mh = mahalanobis_helper(dataset)
+        self.mh = mahalanobis_helper(dataset) # using given samples to calculate covariance matrix
 
+        self.init_map_node(dataset)
         for x in range(self.width):
             for y in range(self.height):
-                self.nodes.append(Node(self, x, y, [x, y])) # dummy data
+                wv = [] # init weights vector for map node
+                wv.append(random.randint(*self.obj_range))
+                wv.append(random.randint(*self.pid_range))
+                wv.append(random.randint(*self.date_range))
+                self.nodes.append(Node(self, x, y, wv))
                 
         # init the first round parameters
         self.update_neighbour_radius()
         self.update_learning_rate()
+
+    def init_map_node(self, dataset):
+        range_vectors = [list(vector) for vector in zip(*dataset)]
+        for vector in range_vectors:
+            vector.sort()
+        self.obj_range = [range_vectors[0][0], range_vectors[0][-1]]
+        self.pid_range = [range_vectors[1][0], range_vectors[1][-1]]
+        self.date_range = [range_vectors[2][0], range_vectors[2][-1]]
 
     def update_neighbour_radius(self):
         self.neighbour_radius = self.radius * math.exp(-float(self.current_iteration) / self.time_constant)
@@ -66,7 +81,8 @@ class SOM:
 
     def epoch(self, iv):
         if self.current_iteration > self.iteration_num:
-            raise Exception, 'too many iterations'
+            print "iteration rounds exceeded, quitting ..."
+            sys.exit(self.current_iteration)
 
         # finding the best match unit
         self.bmu = None
