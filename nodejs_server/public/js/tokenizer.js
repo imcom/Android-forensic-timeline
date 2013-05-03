@@ -352,8 +352,11 @@ function tokenize(object, target) {
     }
 
     // debugging info
-    console.log(object);
-    console.log(target);
+    //console.log(object);
+    //console.log(target);
+    print(object);
+    print(target);
+    return ["undefined"];
 }
 
 

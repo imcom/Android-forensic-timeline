@@ -542,6 +542,8 @@ function getFileActivity(app_name) {
         }
     });
 }
+
+function getRadioActivity() {}
 // -------------------------------------
 
 function initTimeRange(start_ts, end_ts) {
@@ -779,6 +781,7 @@ function drawApplicationTraces() {
                     }
                     path_dataset[app_traces[_index].name] = path_groups;
                 }
+
                 var generic_data = new GenericData(data.type, dataset);
                 dataset = generic_data.unifyDataset();
                 $('#timeline_main').children().remove();

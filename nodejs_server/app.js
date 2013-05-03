@@ -97,7 +97,7 @@ app.configure(function(){
         // own js
         '/js/timeline.js',
         '/js/aggregation_graph.js',
-        '/js/stacked_graph.js',
+        //'/js/stacked_graph.js', deprecated
         '/js/generic_data.js',
         '/js/tokenizer.js',
         '/js/delta_time_graph.js',

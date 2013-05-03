@@ -13,7 +13,7 @@ client = pymongo.MongoClient("localhost", 27017)
 #db = client.test #NOTE for developing only
 db = client.imcom #NOTE for developing only
 
-collection = db.events #TODO using events log only at present
+collection = db.events #FIXME using another or a group of collections instead
 
 OBJECTS_BLACK_LIST = ['free_storage_left', 'battery_status', 'sqlite_mem_released', 'battery_discharge', 'force_gc', 'dvm_gc_madvise_info', 'free_storage_changed', 'dvm_gc_info']
 system_objects = dict()
@@ -51,9 +51,12 @@ for record in raw_dataset:
     pid = record['pid']
     date = record['date']
     obj = record['object']
-    vector.append(objects.index(obj))
-    vector.append(pids.index(pid))
-    vector.append(dates.index(date))
+    vector.append(objects.index(obj))   # object index
+    vector.append(pids.index(pid))      # event pid index
+    vector.append(dates.index(date))    # date index
+    vector.append(system_objects[obj])  # number of system obj occurrence
+    vector.append(process_ids[pid])     # number of pid occurrence
+
     vectorized_dataset.append(tuple(vector))
 
 ksom = SOM(10, 10, vectorized_dataset, 100)
