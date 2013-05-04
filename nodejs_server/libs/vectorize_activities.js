@@ -23,22 +23,24 @@ while(cursor.hasNext()) {
     var activity = cursor.next();
     for (var process in activity.content) {
         if (process === undefined || activity.content[process].length === 0) continue;
-        var vector = []; // [app_index, duration, num_events, num_sys_objs, sequence_code]
+        var vector = []; // [app_index, start_date, duration, num_events, num_sys_objs, sequence_code, db_opr_num, cp_opr_num, network_opr_num]
         var uniq_objs = [];
         var sys_obj_sequence = [];
+        var num_events = activity.content[process].length;
+        var app_index = app_name_index[activity.name];
+        var start_date = activity.content[process][0].date;
+
         for (var index in activity.content[process]) {
             if (index === undefined) continue;
             var object = activity.content[process][index].object;
-            var app_index = app_name_index[activity.name];
             var duration = 0;
-            var num_events = activity.content[process].length;
             if (num_events > 1) {
                 duration = activity.content[process][num_events - 1].date - activity.content[process][0].date;
             }
             var obj_index = sys_object_index[object];
             if (uniq_objs.indexOf(obj_index) === -1) uniq_objs.push(obj_index);
             var tokens = tokenize(object, activity.content[process][index].msg);
-            seq_event = {name: obj_index, value: tokens};
+            seq_event = {obj_index: tokens};
             sys_obj_sequence.push(seq_event);
         }
         //TODO add DB oprs, ContentProvider oprs, Network oprs to vector
