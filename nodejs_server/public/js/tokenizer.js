@@ -351,11 +351,93 @@ function tokenize(object, target) {
         return tokens;
     }
 
+    if (object === "Socket_Alarm") {
+        tokens.push(target);
+        return tokens;
+    }
+
+    if (object === "am_create_service") {
+        target = target.substring(1, target.length - 1); // remove heading and tailing []
+        var tokens_buf = target.split(',');
+        var timestamp = "timestamp=" + tokens_buf[0];
+        var service = "service=" + tokens_buf[1];
+        var action = "action=none";
+        if (tokens_buf[2] !== '') action = "action=" + tokens_buf[2];
+        var pid = "pid=" + tokens_buf[3];
+        tokens.push(timestamp);
+        tokens.push(service);
+        tokens.push(action);
+        tokens.push(pid);
+        return tokens;
+    }
+
+    if (object === "am_schedule_service_restart") {
+        target = target.substring(1, target.length - 1); // remove heading and tailing []
+        var tokens_buf = target.split(',');
+        var subject = tokens_buf[0].split('/');
+        var app = "app=" + subject[0];
+        var service = "service=" + subject[1];
+        var interval = "interval=" + tokens_buf[1];
+        tokens.push(app);
+        tokens.push(service);
+        tokens.push(interval);
+        return tokens;
+    }
+
+    if (object === "am_failed_to_pause") {
+        //FIXME unknown fields exist
+        target = target.substring(1, target.length - 1); // remove heading and tailing []
+        var tokens_buf = target.split(',');
+        var timestamp = "timestamp=" + tokens_buf[0];
+        var subject = tokens_buf[1].split('/');
+        var app = "app=" + subject[0];
+        var intent = "intent=" + subject[1];
+        tokens.push(timestamp);
+        tokens.push(app);
+        tokens.push(intent);
+        return tokens;
+    }
+
+    if (object === "Database") {
+        var operation_re = new RegExp(/(?:^db[^\(]+)/);
+        var database_re = new RegExp(/(?:path[^,]+)/);
+        var operation = operation_re.exec(target)[0];
+        var database = database_re.exec(target)[0];
+        database = database.replace('\s', '');
+        tokens.push(operation);
+        tokens.push(database);
+        return tokens;
+    }
+
+    if (object === "notification_cancel_all") {
+        target = target.substring(1, target.length - 1); // remove heading and tailing []
+        var tokens_buf = target.split(',');
+        var intent = "intent=" + tokens_buf[0];
+        tokens.push(intent);
+        return tokens;
+    }
+
+    if (object === "WindowManager") {
+        var content_re = new RegExp(/\{.*\}/);
+        var event_re = new RegExp(/[^:]+/);
+        var event = event_re.exec(target)[0];
+        var content = content_re.exec(target)[0].split('\s'); //FIXME unknown fields exist
+        var app = content[1].split('/')[0];
+        var intent = content[1].split('/')[1];
+        tokens.push(app);
+        tokens.push(intent);
+        tokens.push(event);
+        return tokens;
+    }
+
     // debugging info
-    //console.log(object);
-    //console.log(target);
-    print(object);
-    print(target);
+    if (console !== undefined) {
+        console.log(object);
+        console.log(target);
+    } else {
+        print(object);
+        print(target);
+    }
     return ["undefined"];
 }
 

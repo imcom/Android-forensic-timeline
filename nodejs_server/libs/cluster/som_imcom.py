@@ -61,7 +61,10 @@ class SOM:
                 wv.append(random.randint(*self.duration_range))
                 wv.append(random.randint(*self.num_events_range))
                 wv.append(random.randint(*self.num_sys_objs_range))
-                #wv.append(random.uniform(*self.seq_code_range))
+                wv.append(random.randint(*self.token_index_range))
+                wv.append(random.randint(*self.num_db_range))
+                wv.append(random.randint(*self.num_cp_range))
+                #wv.append(random.randint(*self.num_network_range))
                 self.nodes.append(Node(self, x, y, wv))
 
         # init the first round parameters
@@ -77,7 +80,10 @@ class SOM:
         self.duration_range = [range_vectors[2][0], range_vectors[2][-1]] # duration
         self.num_events_range = [range_vectors[3][0], range_vectors[3][-1]] # num of events
         self.num_sys_objs_range = [range_vectors[4][0], range_vectors[4][-1]] # duration
-        #self.seq_code_range = [range_vectors[4][0], range_vectors[4][-1]] # sequence code range
+        self.token_index_range = [range_vectors[5][0], range_vectors[5][-1]] # token index range
+        self.num_db_range = [range_vectors[6][0], range_vectors[6][-1]] # num of db opr
+        self.num_cp_range = [range_vectors[7][0], range_vectors[7][-1]] # num of cp opr
+        #self.num_network_range = [range_vectors[8][0], range_vectors[8][-1]] # num of network opr
 
     def update_neighbour_radius(self):
         self.neighbour_radius = self.radius * math.exp(-float(self.current_iteration) / self.time_constant)

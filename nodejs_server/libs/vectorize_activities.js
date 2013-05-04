@@ -35,10 +35,16 @@ while(cursor.hasNext()) {
         var num_events = activity.content[process].length; // num of events in this activity
         var app_index = app_name_index[activity.name]; // application owns this activity
         var start_date = activity.content[process][0].date; // activity start date (may not accurate)
+        var db_opr_num = 0;
+        var cp_opr_num = 0; // content provider
+        var network_opr_num = 0; //FIXME related objects are to be defined
 
         for (var index in activity.content[process]) {
             if (index === undefined) continue;
             var object = activity.content[process][index].object;
+            if (object === "Database" || object === "db_sample") db_opr_num += 1;
+            if (object === "content_query_sample") cp_opr_num += 1;
+            //if (object === "to be defined") network_opr_num += 1; // may also refer to content of msg
             var duration = 0;
             if (num_events > 1) { // duration of this activity
                 duration = activity.content[process][num_events - 1].date - activity.content[process][0].date;
@@ -55,7 +61,7 @@ while(cursor.hasNext()) {
                 value: activity_tokens
             }
         );
-        //TODO add DB oprs, ContentProvider oprs, Network oprs to vector
+        // add all features to vector
         var num_sys_objs = uniq_objs.length;
         vector.push(app_index);
         vector.push(start_date);
@@ -63,6 +69,10 @@ while(cursor.hasNext()) {
         vector.push(num_events);
         vector.push(num_sys_objs);
         vector.push(token_hash); // later translate to token_index
+        vector.push(db_opr_num);
+        vector.push(cp_opr_num);
+        vector.push(network_opr_num);
+        // add vector to input vector array
         input_vectors.push(vector);
     }
 }
@@ -77,8 +87,6 @@ indexTokens();
 
 // translate token hash in IV to sorted token index
 input_vectors = convertTokenHash(input_vectors);
-
-printjson(input_vectors);
 
 // put generated vectors into database
 db.activity_vectors.save(input_vectors);

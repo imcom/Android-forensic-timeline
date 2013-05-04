@@ -22,24 +22,33 @@ raw_dataset = list(vector for vector in collection.find(None, {'_id': 0}))
 # convert dict/json format to vector list
 dataset = list()
 for vector_dict in raw_dataset:
-    vector = [vector_dict['0'], vector_dict['1'], vector_dict['2'], vector_dict['3'], vector_dict['4']]
+    vector = [
+        vector_dict['0'], # application index
+        vector_dict['1'], # start date of activity
+        vector_dict['2'], # duration of activity
+        vector_dict['3'], # number of events in activity
+        vector_dict['4'], # number of system objects (distinguished)
+        vector_dict['5'], # token index of activity
+        vector_dict['6'], # number of database operations
+        vector_dict['7'], # number of content provider queries
+        #FIXME to be defined
+        #vector_dict['8'], # number of network operations
+    ]
     dataset.append(vector)
 
 # init the self-organising map
-ksom = SOM(5, 5, dataset)
+ksom = SOM(9, 9, dataset)
 
 # debugging
-#for index, node in enumerate(ksom.nodes):
-#    print node.weights_vector
+for node in ksom.nodes:
+    print node.weights_vector
 
 # start training
 for iv in random.sample(dataset, 50):
-    #print iv
-    #print objects[iv[0]], pids[iv[1]], dates[iv[2]]
     ksom.epoch(iv)
     pass
 
-line_width = 5
+line_width = 9
 for index, node in enumerate(ksom.nodes):
     print ("(%d,%d):%d " % (node.x, node.y, node.bmu_count)),
     if (index + 1) % line_width is 0:
