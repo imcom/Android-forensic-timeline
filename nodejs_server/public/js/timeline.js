@@ -598,6 +598,9 @@ Timeline.prototype.onDataReady = function() {
             var table_prefix = "<tr><td>";
             var table_suffix = "</tr></td>";
             var messages = "";
+            // remove old object list
+            $('#object-tbody').children().remove();
+            // append current objects
             for (var object in data.content) {
                 if (data.content.hasOwnProperty(object)) {
                     $('#object-tbody').append(table_prefix + object + table_suffix);

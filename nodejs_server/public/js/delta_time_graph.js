@@ -30,9 +30,10 @@ function DeltaTimeGraph(name, dataset) {
     // init dataset for stack graph
     this.dataset.forEach(function(bar) {
         var y0 = 0; // baseline is zero
+        // for each value in bar --> objects : [obj_coords, ...]
         bar.objects = d3.range(bar.values.length).map(function(index) {
             var object_coords = {};
-            object_coords.name = JSON.stringify({sig: bar.values[index].signature});
+            object_coords.name = JSON.stringify(bar.values[index].signature);
             object_coords.y0 = y0;
             object_coords.y = (y0 += bar.values[index].count);
             return object_coords;
@@ -64,7 +65,7 @@ function DeltaTimeGraph(name, dataset) {
         .domain([0, y_domain_max])
         .range([height - y_padding / 2, y_padding]); // range starts from X axis
 
-    var color_scale = d3.scale.category10();
+    var color_scale = d3.scale.category20();
 
     var x_axis = d3.svg.axis()
         .orient("top")
@@ -157,6 +158,7 @@ function DeltaTimeGraph(name, dataset) {
             return color_scale(d.name);
         });
 
+    var delta_time_label;
     var layers = $('.stack-layer');
     layers.forEach(function(_layer, l_index) {
         $.each(_layer.childNodes, function(e_index) {
@@ -167,10 +169,23 @@ function DeltaTimeGraph(name, dataset) {
             $(_layer.childNodes[e_index]).mouseover(function(mouse_event) {
                 //FIXME show delta time label on mouseover
                 console.log("delta time: " + self.dataset[l_index].delta_time);
+                delta_time_label = stacked_graph.append("text")
+                    .attr("class", "time-label")
+                    .attr("x", x_scale(self.dataset[l_index].delta_time) - 30)
+                    .attr("y", height - 20)
+                    .text(function() {
+                        var delta = self.dataset[l_index].delta_time;
+                        var hours = Math.round(delta / (60 * 60));
+                        delta = delta % (60 * 60);
+                        var minutes = Math.round(delta / 60);
+                        var seconds = delta % 60;
+                        return hours + "h " + minutes + "m " + seconds + "s";
+                    });
                 this.setAttribute("cursor", "pointer");
             })
             .mouseout(function(mouse_event) {
                 this.setAttribute("cursor", "pointer");
+                delta_time_label.remove();
             });
         });
     });
@@ -187,8 +202,8 @@ function DeltaTimeGraph(name, dataset) {
         return message;
     }
 
-    // append legend to the graph
-    var legend = stacked_graph.selectAll(".legend")
+    // append legend to the graph (too many to show properly)
+    /*var legend = stacked_graph.selectAll(".legend")
         .data(color_scale.domain().slice().reverse())
         .enter().append("g")
         .attr("class", "legend")
@@ -215,7 +230,7 @@ function DeltaTimeGraph(name, dataset) {
             });
             title = title.substr(0, title.length - 1); // trim the tailing `-`
             return title;
-        });
+        });*/
 }
 
 
