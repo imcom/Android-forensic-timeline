@@ -42,6 +42,7 @@ var dmesg_search_btn = $('#dmesg-search');
 // global variables
 var dataset = [];
 var path_dataset = {};
+var delta_dataset = [];
 var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
