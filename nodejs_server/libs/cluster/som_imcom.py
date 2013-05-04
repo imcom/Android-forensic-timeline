@@ -57,10 +57,11 @@ class SOM:
             for y in range(self.height):
                 wv = [] # init weights vector for map node
                 wv.append(random.randint(*self.app_index_range))
+                wv.append(random.randint(*self.start_date_range))
                 wv.append(random.randint(*self.duration_range))
                 wv.append(random.randint(*self.num_events_range))
                 wv.append(random.randint(*self.num_sys_objs_range))
-                wv.append(random.uniform(*self.seq_code_range))
+                #wv.append(random.uniform(*self.seq_code_range))
                 self.nodes.append(Node(self, x, y, wv))
 
         # init the first round parameters
@@ -72,10 +73,11 @@ class SOM:
         for vector in range_vectors:
             vector.sort()
         self.app_index_range = [range_vectors[0][0], range_vectors[0][-1]] # application
-        self.duration_range = [range_vectors[1][0], range_vectors[1][-1]] # duration
-        self.num_events_range = [range_vectors[2][0], range_vectors[2][-1]] # num of events
-        self.num_sys_objs_range = [range_vectors[3][0], range_vectors[3][-1]] # duration
-        self.seq_code_range = [range_vectors[4][0], range_vectors[4][-1]] # sequence code range
+        self.start_date_range = [range_vectors[1][0], range_vectors[1][-1]] # duration
+        self.duration_range = [range_vectors[2][0], range_vectors[2][-1]] # duration
+        self.num_events_range = [range_vectors[3][0], range_vectors[3][-1]] # num of events
+        self.num_sys_objs_range = [range_vectors[4][0], range_vectors[4][-1]] # duration
+        #self.seq_code_range = [range_vectors[4][0], range_vectors[4][-1]] # sequence code range
 
     def update_neighbour_radius(self):
         self.neighbour_radius = self.radius * math.exp(-float(self.current_iteration) / self.time_constant)
