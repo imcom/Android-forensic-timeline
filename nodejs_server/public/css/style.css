@@ -15,6 +15,7 @@ li.nav-header.cozy-list-header{margin-top:-5px}
 .slide-left-ctrl{position:absolute;width:16px;height:85px;right:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg)}
 .slide-left-ctrl-bar:hover .slide-left-ctrl{background:url("/images/sidebar_icon.png") bottom right}
 #dmesg-selection-input{font-family:serif;width:150px}
+#radio-on,#radio-off{width:70px}
 .btn{font-family:Consolas;font-size:13px;word-spacing:-3px;padding-right:7px;padding-left:7px}
 #responsive-nav{margin-left:30px;margin-bottom:0}
 #responsive-app-pane,#extend-tab{margin-top:10px;}

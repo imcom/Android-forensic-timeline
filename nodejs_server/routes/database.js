@@ -21,6 +21,7 @@ var temporal_info = require('../libs/temporal_info_schema.js');
 var package_info = require('../libs/package_info_schema.js');
 var file_system = require('fs');
 
+var database = "localhost:27017/imcom";
 var exec = require('child_process').exec;
 
 function do_query(req, res, type) {
@@ -99,6 +100,20 @@ exports.delta_timeline = function(req, res) {
             } else {
                 console.log(error);
                 res.json({"error": 1, "type": "delta time distribution", "content": error});
+            }
+        });
+}
+
+exports.radio_activity = function(req, res) {
+    console.log("fetch radio activities");
+    var command = "mongo " + database + " --quiet ./libs/radio_activity.js";
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+            if (error === null) {
+                res.json({"error": 0, "type": "radio activity", "content": stdout});
+            } else {
+                res.json({"error": 1, "type": "radio activity", "content": error});
             }
         });
 }

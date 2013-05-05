@@ -32,6 +32,8 @@ var slide_right_btn = $('.slide-right-ctrl-bar');
 var slide_left_btn = $('.slide-left-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
 var dmesg_search_btn = $('#dmesg-search');
+var show_radio_btn = $('#radio-on');
+var hide_radio_btn = $('#radio-off');
 //var relevance_search_btn = $('#relevance-search');
 //var app_trace_search_btn = $('#app-trace-search');
 //var expand_btn = $('#expand');
@@ -492,6 +494,29 @@ function queryKernelLog() {
     });
 }
 
+function getRadioActivity() {
+    $.ajax({
+        type: "POST",
+        url: "radio_activity",
+        data: {
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content !== "") {
+                var result = JSON.parse(data.content);
+                console.log(result);
+            } else {
+                showAlert("no radio activity records found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("radio activity query error!");
+        }
+    });
+}
+// -------------------------------------
+
 function getFileActivity(app_name) {
     $.ajax({
         type: "POST",
@@ -503,7 +528,7 @@ function getFileActivity(app_name) {
         dataType: 'json',
         success: function(data) {
             if (data.content !== "") {
-                var result = JSON.parse(data.content)[0];
+                var result = JSON.parse(data.content)[0]; // will be only one database entry for each app
                 var file_dataset = [];
                 for (var timestamp in result.detail) {
                     if (result.detail.hasOwnProperty(timestamp) && timestamp !== 'id') {
@@ -518,7 +543,7 @@ function getFileActivity(app_name) {
                             file_activity.display = result.detail.id;
                             file_dataset.push(file_activity);
                             // inode record
-                            for (var type = 0; type <= 2; ++type) { // 0: access, 1: change, 2: modify
+                            for (var type = 0; type <= 2; ++type) { // 0: access, 1: change, 2: modified
                                 file_dataset.push(generateInodeActivity(event, type));
                             }
                         });
@@ -529,6 +554,7 @@ function getFileActivity(app_name) {
                     if (x.date > y.date) return 1;
                 });
                 console.log(file_dataset);
+                timeline_main.appendFileActivity(file_dataset);
             } else {
                 showAlert("no file activity records found!");
             }
@@ -538,9 +564,6 @@ function getFileActivity(app_name) {
         }
     });
 }
-
-function getRadioActivity() {}
-// -------------------------------------
 
 function initTimeRange(start_ts, end_ts) {
     var ts_range = [];
@@ -826,7 +849,7 @@ function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data
             file_activity.msg = "m...";
             break;
         case 2:
-            file_activity.date = inode_activity.modify;
+            file_activity.date = inode_activity.modified;
             file_activity.msg = "..c.";
             break;
     }
@@ -1153,6 +1176,14 @@ $('#open-right-ctrl').click(function() {
     slide_right_ctrl.css("-moz-transform", "rotate(180deg)");
     slide_right_ctrl[0].setAttribute("title", "Collapse responsive pane");
     responsive_pane.animate({"right": 0}, 500, "ease");
+});
+
+show_radio_btn.click(function() {
+    getRadioActivity();
+});
+
+hide_radio_btn.click(function() {
+    console.log("remove radio activities from timeline");
 });
 
 // bootstrap function, init the basic application trace timeline

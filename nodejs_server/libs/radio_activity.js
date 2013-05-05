@@ -1,6 +1,7 @@
 
+
 var cursor;
-cursor = db.app_related_filesystem_activity.find({app:application_name});
+cursor = db.radio.find({msg: {$in: [new RegExp(/^SMS send complete.*/), new RegExp(/^New SMS.*/)]}}, {_id: 0});
 var result = [];
 while(cursor.hasNext()) {
     result.push(cursor.next());
@@ -8,7 +9,6 @@ while(cursor.hasNext()) {
 
 if (result.length > 0)
     printjson(result);
-
 
 
 

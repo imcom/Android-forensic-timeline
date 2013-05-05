@@ -33,6 +33,8 @@ function Timeline(name) {
     this.dataset = [];
     this.path_dataset = []; // for path groups and application name
     this.path_data = []; // coordinates for paths
+    this.extra_dataset = []; // for radio / file dataset
+    this.extra_arena; // arena for displaying radio / file activities
     this.y_domain; // will be initialised in setDataset function
     this.x_range;
     this.tick_padding = 5;
@@ -198,7 +200,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
 }
 
 // prepare dataset for chronological path
-Timeline.prototype.fillPathData = function(x_scale, y_scale, path_group) {
+Timeline.prototype.fillPathData = function(path_group) {
     var self = this;
     this.path_data = []; // clear the old data every time
 
@@ -217,8 +219,8 @@ Timeline.prototype.fillPathData = function(x_scale, y_scale, path_group) {
     });
     path_buf.forEach(function(record) {
         var path_coords = {};
-        path_coords['x'] = x_scale(new Date(record.date * 1000));
-        path_coords['y'] = y_scale(record._id);
+        path_coords['x'] = self.x_scale(new Date(record.date * 1000));
+        path_coords['y'] = self.y_scale(record._id);
         self.path_data.push(path_coords);
     });
 }
@@ -380,13 +382,13 @@ Timeline.prototype.onDataReady = function() {
         .clamp(true);
 
     // define Y axis scale
-    var y_scale = d3.scale.ordinal()
+    this.y_scale = d3.scale.ordinal()
         .domain(this.y_domain)
         .rangePoints(this.y_range, 1.0);
 
     // define X axis scale
     this.x_range = this.initXRange();
-    var x_scale = d3.time.scale.utc()
+    this.x_scale = d3.time.scale.utc()
         .domain([start_date, end_date])
         .range(this.x_range);
 
@@ -394,7 +396,7 @@ Timeline.prototype.onDataReady = function() {
     this.initTickInterval();
     // define X axis
     var x_axis = d3.svg.axis()
-        .scale(x_scale)
+        .scale(this.x_scale)
         .orient("bottom")
         .ticks(this.tick_unit, this.tick_step)
         //.ticks(d3.time.minutes.utc, 5) // static test config
@@ -416,8 +418,7 @@ Timeline.prototype.onDataReady = function() {
 
     // append gird on the timeline
     var grid = this.timeline.selectAll("line.grid-main")
-        .data(x_scale.ticks(this.tick_unit, this.tick_step))
-        //.data(x_scale.ticks(d3.time.minutes.utc, 5)) // static test config
+        .data(this.x_scale.ticks(this.tick_unit, this.tick_step))
         .enter()
         .append("g")
         .attr("clip-path", "url(#timeline-clip)")
@@ -426,15 +427,15 @@ Timeline.prototype.onDataReady = function() {
     // append lines on the grid
     grid.append("line")
         .attr("class", "grid-line-main")
-        .attr("x1", x_scale)
-        .attr("x2", x_scale)
+        .attr("x1", this.x_scale)
+        .attr("x2", this.x_scale)
         .attr("y1", 0)
         .attr("y2", 800);
 
     // init zoom handler
     var scale_extent = [-5, 15]; // used for zoom function
     var zoom_handler = d3.behavior.zoom()
-                .x(x_scale)
+                .x(this.x_scale)
                 .scaleExtent(scale_extent)
                 .on("zoom", zoom);
 
@@ -459,17 +460,20 @@ Timeline.prototype.onDataReady = function() {
         self.timeline.select(".time-axis").call(x_axis);
         // re-draw grid lines
         self.timeline.selectAll(".grid-line-main")
-            .attr("x1", x_scale)
-            .attr("x2", x_scale);
+            .attr("x1", self.x_scale)
+            .attr("x2", self.x_scale);
         // re-draw events (circles)
         self.timeline.selectAll(".timeline-event")
-            .attr("cx", function(d) { return x_scale(d.date); });
+            .attr("cx", function(d) { return self.x_scale(d.date); });
+        // re-draw extra events (rect)
+        self.timeline.selectAll(".extra-event")
+            .attr("x", function(d) { return self.x_scale(new Date(d.date * 1000)); })
         // re-draw chronological sequence path on timeline for application traces
         if (self.path_dataset !== null) {
             for (var app in path_dataset) {
                 if (app === undefined) continue;
                 path_dataset[app].forEach(function(path_group) {
-                    self.fillPathData(x_scale, y_scale, path_group);
+                    self.fillPathData(path_group);
                     self.drawPath();
                 });
             }
@@ -481,6 +485,11 @@ Timeline.prototype.onDataReady = function() {
         .attr("width", this.width)
         .attr("height", 80)
         .call(zoom_handler);
+
+    // append a layer for File / Radio activities
+    this.extra_arena = this.timeline.append('g')
+        .attr("id", "extra-arena")
+        .attr("clip-path", "url(#timeline-clip)");
 
     // append events on timeline
     this.timeline.append('g')
@@ -495,10 +504,10 @@ Timeline.prototype.onDataReady = function() {
             return "dataset" + "-" + index;
         })
         .attr("cx", function(data) {
-            return x_scale(x(data));
+            return self.x_scale(x(data));
         })
         .attr("cy", function(data) {
-            return y_scale(y(data));
+            return self.y_scale(y(data));
         })
         .attr("r", function(data) {
             return radius_scale(radius(data));
@@ -513,7 +522,7 @@ Timeline.prototype.onDataReady = function() {
         for (var app in path_dataset) {
             if (app === undefined) continue;
             path_dataset[app].forEach(function(path_group) {
-                self.fillPathData(x_scale, y_scale, path_group);
+                self.fillPathData(path_group);
                 self.drawPath();
             });
         }
@@ -522,7 +531,7 @@ Timeline.prototype.onDataReady = function() {
     // append graph legend (application names)
     var text_padding = 30;
     var legend = this.timeline.selectAll(".legend")
-        .data(y_scale.domain().reverse())
+        .data(this.y_scale.domain().reverse())
         .enter().append("g")
         .attr("class", "legend")
         .attr("transform", function(d, i) { return "translate(0," + i * 14 + ")"; });
@@ -563,7 +572,7 @@ Timeline.prototype.onDataReady = function() {
                 .attr("y", 5)
                 .attr("x", Number(this.getAttribute("cx")) + 5)
                 .text(function() {
-                    var local_date = x_scale.invert(event_self.getAttribute("cx"));
+                    var local_date = self.x_scale.invert(event_self.getAttribute("cx"));
                     var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
                     return formatter(local_date);
                 });
@@ -634,7 +643,7 @@ Timeline.prototype.onDataReady = function() {
 
     var brush_scale = d3.time.scale.utc()
         .range([22, 1300])
-        .domain(x_scale.domain());
+        .domain(this.x_scale.domain());
 
     // define time brush step based on time window size
     var brush_step = this.time_window_interval === 60 * 60 ? 5 : this.time_window_interval === 60 * 60 * 3 ? 15 : 30;
@@ -667,16 +676,16 @@ Timeline.prototype.onDataReady = function() {
 
     function onBrush() {
         if (!brush.empty()) {
-            x_scale.domain(brush.extent());
+            self.x_scale.domain(brush.extent());
             // adjust X axis
             self.timeline.select(".time-axis").call(x_axis);
             // re-draw grid lines
             self.timeline.selectAll(".grid-line-main")
-                .attr("x1", x_scale)
-                .attr("x2", x_scale);
+                .attr("x1", self.x_scale)
+                .attr("x2", self.x_scale);
             // relocate timeline events (circles)
             self.timeline.selectAll(".timeline-event")
-                .attr("cx", function(d) { return x_scale(x(d)); });
+                .attr("cx", function(d) { return self.x_scale(x(d)); });
             // clear old chronological path
             self.clearPath();
             // re-draw chronological sequence path on timeline for application traces
@@ -684,7 +693,7 @@ Timeline.prototype.onDataReady = function() {
                 for (var app in path_dataset) {
                     if (app === undefined) continue;
                     path_dataset[app].forEach(function(path_group) {
-                        self.fillPathData(x_scale, y_scale, path_group);
+                        self.fillPathData(path_group);
                         self.drawPath();
                     });
                 }
@@ -693,6 +702,72 @@ Timeline.prototype.onDataReady = function() {
     }
 
 } // function onDataReady()
+
+Timeline.prototype.appendRadioActivity = function(dataset) { return; }
+
+Timeline.prototype.appendFileActivity = function(dataset) {
+    var self = this;
+    var grouped_dataset = {};
+    this.extra_dataset = []; // clear old data
+
+    // group data by its date
+    dataset.forEach(function(data) {
+        var date = data.date;
+        if (grouped_dataset[date] === undefined) {
+            grouped_dataset[date] = {};
+            grouped_dataset[date]._id = data._id;
+            grouped_dataset[date].date = date;
+            grouped_dataset[date].display = data._display;
+            grouped_dataset[date].msg = [data.msg];
+            grouped_dataset[date].object = [data.object];
+        } else {
+            grouped_dataset[date].msg.push(data.msg);
+            grouped_dataset[date].object.push(data.object);
+        }
+    });
+
+    // convert dict dataset to array dataset and store for later use
+    for (var date in grouped_dataset) {
+        if (date === undefined) continue;
+        this.extra_dataset.push(grouped_dataset[date]);
+    }
+
+    function x(d) {
+        var date = d.date * 1000;
+        return new Date(date);
+    }
+
+    function dimension(d) {
+        return d.msg.length * 10;
+    }
+
+    this.extra_arena
+        .selectAll("rect")
+        .data(this.extra_dataset)
+        .enter()
+        .append("rect")
+        .attr("class", "extra-event")
+        .attr("id", function(data, index){
+            return "extra" + "-" + index;
+        })
+        .attr("x", function(data) {
+            return self.x_scale(x(data));
+        })
+        .attr("y", function(data) {
+            var y_range = self.y_scale.range();
+            return y_range[y_range.length - 1] + 25; // always put these events on top of the timeline
+        })
+        .attr("width", function(data) {
+            return dimension(data);
+        })
+        .attr("height", function(data) {
+            return dimension(data);
+        })
+        .attr("rx", 2)
+        .attr("ry", 2)
+        .attr("fill", "black")
+
+}
 
 // fetch related system objects & pids of the selected application
 Timeline.prototype.getAppSystemCalls = function(app_name) {
