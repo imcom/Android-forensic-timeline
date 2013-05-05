@@ -24,11 +24,9 @@ function AggregatedGraph(name, dataset) {
         this._id = dataset._id; // aggregated by this id
     }
     this.dataset = this.initDataset(dataset);
-    this.y_domain_map = {};
+    //this.y_domain_map = {};
     this.x_domain_min;
     this.x_domain_max;
-    //this.y_domain_min;
-    //this.y_domain_max;
     this.y_domain_array = [];
     this.initXDomain();
     this.initYDomain();
@@ -58,11 +56,8 @@ function AggregatedGraph(name, dataset) {
     // graph scales
     this.x_scale = d3.time.scale.utc().domain([start_date, end_date]).range(this.x_range);
     this.y_scale = d3.scale.ordinal()
-        //.domain([this.y_domain_min, this.y_domain_max])
         .domain(this.y_domain_array)
-        //.range(this.y_range);
         .rangePoints(this.y_range, 1.5);
-        //.clamp(true);
 
     this.radius_scale = d3.scale.pow()
         .exponent(2)
@@ -73,8 +68,8 @@ function AggregatedGraph(name, dataset) {
     // init color scale
     this.color_scale = d3.scale.category20();
 
-    //FIXME this is to be refined
-    this.initTickInterval(); // init tick unit (seconds, minutes, etc.) and step (5, 15, 30 ...)
+    //FIXME this is to be refined (fixed return at present)
+    this.initTickInterval();
 
     // convert epoch timestamp to date for d3 time scale
     this.dataset.forEach(function(record) {
@@ -185,13 +180,16 @@ AggregatedGraph.prototype.formatMessages = function(messages) {
 
 AggregatedGraph.prototype.drawAggregatedGraph = function() {
     var self = this;
+    // Y axis generator
     var y = function(d) {
         if (self.aggregation_type === 'object') {
             return d._id;
         } else {
-            return self.y_domain_map[d.object];
+            //return self.y_domain_map[d.object];
+            return d.object;
         }
     }
+    // Color generator
     var color = function(d) {
         if (self.aggregation_type === 'object') {
             return d._id;
@@ -199,6 +197,8 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
             return d.object;
         }
     }
+
+    // used for mouseover display
     var time_indicator;
     var time_label;
 
@@ -408,7 +408,8 @@ AggregatedGraph.prototype.initXDomain = function() {
 
 AggregatedGraph.prototype.initYDomain = function() {
     var self = this;
-    var id_array = [];
+    //var id_array = [];
+    this.y_domain_array = []; // clear old data if any
     if (this.aggregation_type === 'object') {
         //var y_max = this.dataset[0]._id, y_min = this.dataset[0]._id;
         //var id_array = [], median = 0;
@@ -419,26 +420,27 @@ AggregatedGraph.prototype.initYDomain = function() {
             } else if (data._id <= y_min) {
                 y_min = data._id;
             }*/
-            id_array.push(data._id);
+            self.y_domain_array.push(data._id);
         });
         //median = d3.median(id_array);
         //this.y_domain_min = y_min;
         //this.y_domain_max = y_max > median * 2 ? median + y_min : y_max;
     } else { // aggregation type is pid
-        var domain_index = 1;
-        var domain_increment = 5;
+        //var domain_index = 1;
+        //var domain_increment = 5;
         this.dataset.forEach(function(data) {
-            if (!self.y_domain_map.hasOwnProperty(data.object)) {
-                self.y_domain_map[data.object] = domain_index;
-                if ($.inArray(domain_index, id_array) === -1)
-                    id_array.push(domain_index);
-                domain_index += domain_increment;
-            }
+            //if (!self.y_domain_map.hasOwnProperty(data.object)) {
+            //    self.y_domain_map[data.object] = domain_index;
+            //    if ($.inArray(domain_index, id_array) === -1)
+            //        id_array.push(domain_index);
+            //    domain_index += domain_increment;
+            //}
+            self.y_domain_array.push(data.object);
         });
         //this.y_domain_min = 1; // initial value
         //this.y_domain_max = domain_index - domain_increment; // last domain index
     }
-    this.y_domain_array = id_array;
+    //this.y_domain_array = id_array;
 }
 
 AggregatedGraph.prototype.initRadiusDomain = function() {

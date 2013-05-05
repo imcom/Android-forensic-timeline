@@ -8,6 +8,7 @@ body
     top: 25px
     width: 200px
     left: 42%
+    z-index: 100
 
 .ctrl-panel
     position: fixed
@@ -119,42 +120,23 @@ li.nav-header.cozy-list-header
     p
         margin-left: 35px
 
-#responsive-apps
+#responsive-apps, #responsive-pids, #responsive-objects
     label
         margin-right: 10px
         font-family: Consolas
     overflow-x: hidden
     overflow-y: auto
-    height: 660px
+    max-height: 660px
     margin-top: -10px
     margin-left: 30px
 
 label
     display: inline-block
 
-#app-checkbox
+#app-checkbox, #pid-checkbox, #object-checkbox
     margin-left: 5px
     margin-right: 5px
-
-#responsive-pids
-    label
-        margin-right: 10px
-        font-family: Consolas
-    overflow-x: hidden
-    overflow-y: auto
-    height: 260px
-    margin-top: -10px
-    margin-left: 30px
-
-#responsive-objects
-    label
-        margin-right: 10px
-        font-family: Consolas
-    overflow-x: hidden
-    overflow-y: auto
-    height: 360px
-    margin-top: -10px
-    margin-left: 30px
+    margin-top: 0px
 
 .dropdown-div
     position: fixed

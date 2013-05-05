@@ -783,7 +783,7 @@ Timeline.prototype.getAppDeltaTimeline = function(app_name) {
             if (data.content !== '') {
                 var application_trace = JSON.parse(data.content);
                 //generate delta timeline dataset (defined in operator.js)
-                generateDeltaTimeGraph(application_trace.content);
+                generateDeltaTimeGraph(application_trace.content, null);
             } else {
                 showAlert("no application info available", true);
             }

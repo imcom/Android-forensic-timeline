@@ -43,6 +43,7 @@ var dmesg_search_btn = $('#dmesg-search');
 var dataset = [];
 var path_dataset = {};
 var delta_dataset = [];
+var aggr_dataset = {};
 var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
@@ -141,77 +142,6 @@ function updateResponsivePane(target_checkboxes, display_dataset, key) {
                 checkbox.checked = true;
             }
         }
-    });
-}
-
-function onIdSelection() {
-    if (current_dataset.length === 0) current_dataset = dataset;
-    var id_checkboxs = $('input[id="id-checkbox"]');
-    var object_checkboxs = $('input[id="object-checkbox"]');
-    var display_dataset;
-    var display_ids = [];
-    id_checkboxs.forEach(function(checkbox) {
-        if (checkbox.checked) {
-            display_ids.push(checkbox.value);
-        }
-    });
-    display_dataset = current_dataset.filter(function(record) {
-        return $.inArray(record._id, display_ids) != -1;
-    });
-    clearPanes(false, false, false, true);
-    fillPanes(display_dataset);
-    resetTimeRange();
-    initTimeRange(display_dataset);
-    updateResponsivePane(object_checkboxs, display_dataset, "object");
-    timeline_main.clearData(true, false);
-    timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, null, false, true);
-}
-
-function onObjectSelection() {
-    if (current_dataset.length === 0) current_dataset = dataset;
-    var object_checkboxs = $('input[id="object-checkbox"]');
-    var id_checkboxs = $('input[id="id-checkbox"]');
-    var display_dataset;
-    var display_objects = [];
-    object_checkboxs.forEach(function(checkbox) {
-        if (checkbox.checked) {
-            display_objects.push(checkbox.value);
-        }
-    });
-    display_dataset = current_dataset.filter(function(record) {
-        return $.inArray(record.object, display_objects) != -1;
-    });
-    clearPanes(false, false, false, true);
-    fillPanes(display_dataset);
-    resetTimeRange();
-    initTimeRange(display_dataset);
-    updateResponsivePane(id_checkboxs, display_dataset, "_id");
-    timeline_main.clearData(true, false);
-    timeline_main.initTimeline();
-    timeline_main.setDataset(display_dataset, null, false, true);
-}
-
-function fillResponsivePane(target_set) {
-    var ids = [];
-    var objects = [];
-    target_set.forEach(function(record) {
-        if ($.inArray(record._id, ids) == -1) {
-            responsive_id_pane.append(
-                "<label type='checkbox inline'><input class='main-checkbox' id='id-checkbox' type='checkbox' onChange='onIdSelection()' value='" + record._id + "'>" + record._id + "</label>"
-            );
-            ids.push(record._id);
-        }
-        if ($.inArray(record.object, objects) == -1) {
-            responsive_object_pane.append(
-                "<label type='checkbox inline'><input class='main-checkbox' id='object-checkbox' type='checkbox' onChange='onObjectSelection()' value='" + record.object + "'>" + record.object + "</label>"
-            );
-            objects.push(record.object);
-        }
-    });
-    var checkboxes = $('.main-checkbox');
-    checkboxes.forEach(function(box){
-        box.checked = true;
     });
 }
 
@@ -351,6 +281,71 @@ function drawMainTimeline(on_startup) {
     });
 }
 */
+
+function onAggrSelection() {
+    var display_dataset = {};
+    display_dataset.type = aggr_dataset.type;
+    display_dataset.object = aggr_dataset.object;
+
+    var pid_checkboxes = $('input[id=pid-checkbox]');
+    var object_checkboxes = $('input[id=object-checkbox]');
+
+    var display_set = [];
+    if (aggr_dataset.type === "object") {
+        pid_checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                display_set.push(checkbox.value);
+            }
+        });
+    } else {
+        object_checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                display_set.push(checkbox.value);
+            }
+        });
+    }
+    display_dataset.content = aggr_dataset.content.filter(function(record) {
+        return $.inArray(record._id, display_set) !== -1;
+    });
+    if (display_dataset.content.length === 0) { // if last pid / object is unselected then reset all
+        showAlert("Empty set! Reset to origin", true);
+        $("#aggregation-arena").children().remove();
+        new AggregatedGraph("#aggregation-arena", aggr_dataset);
+        var checkboxes = $('.aggr-checkbox');
+        checkboxes.forEach(function(box){
+            box.checked = true;
+        });
+    } else {
+        $("#aggregation-arena").children().remove();
+        new AggregatedGraph("#aggregation-arena", display_dataset);
+    }
+}
+
+function fillResponsivePane(target_set, type) {
+    var display_set = [];
+    // clear old data
+    responsive_pid_pane.children().remove();
+    responsive_object_pane.children().remove();
+    // append new data
+    target_set.forEach(function(record) {
+        if ($.inArray(record, display_set) === -1) {
+            if (type === 'object') {
+                responsive_pid_pane.append(
+                    "<label type='checkbox inline'><input class='aggr-checkbox' id='pid-checkbox' type='checkbox' onChange='onAggrSelection()' value='" + record + "'>" + record + "</label>"
+                );
+            } else {
+                responsive_object_pane.append(
+                    "<label type='checkbox inline'><input class='aggr-checkbox' id='object-checkbox' type='checkbox' onChange='onAggrSelection()' value='" + record + "'>" + record + "</label>"
+                );
+            }
+            display_set.push(record);
+        }
+    });
+    var checkboxes = $('.aggr-checkbox');
+    checkboxes.forEach(function(box){
+        box.checked = true;
+    });
+}
 
 function onAppSelection() {
     var app_checkboxs = $('.app-checkbox');
@@ -612,7 +607,27 @@ function generateApplicationTimeline() {
 }
 */
 
-function generateDeltaTimeGraph(dataset) {
+function generateDeltaTimeGraph(dataset, custom_pairs) {
+
+    var pairs_of_interest = [
+        //["am_proc_start", "am_proc_died"],
+        //["ActivityManager", "ActivityManager"],
+        //["notification_enqueue", "notification_cancel"],
+        //["NotificationService", "notification_cancel"],
+        //["am_create_activity", "am_finish_activity"],
+        //["am_pause_activity", "am_resume_activity"],
+        //["am_pause_activity", "am_restart_activity"],
+        ["db_sample", "db_sample"],
+        ["content_query_sample", "content_query_sample"]
+    ];
+
+    // allow user to add custom pairs from GUI
+    if (custom_pairs !== null) {
+        custom_pairs.forEach(function(pair) {
+            pairs_of_interest.push(pair);
+        });
+    }
+
     $('#aggregation-arena').children().remove(); // remove old graph
     /*
      * {
@@ -638,18 +653,6 @@ function generateDeltaTimeGraph(dataset) {
         return false;
     }
 
-    //FIXME to be refined
-    var pairs_of_interest = [
-        //["am_proc_start", "am_proc_died"],
-        //["ActivityManager", "ActivityManager"],
-        //["notification_enqueue", "notification_cancel"],
-        //["NotificationService", "notification_cancel"],
-        //["am_create_activity", "am_finish_activity"],
-        //["am_pause_activity", "am_resume_activity"],
-        //["am_pause_activity", "am_restart_activity"],
-        ["db_sample", "db_sample"],
-        ["content_query_sample", "content_query_sample"]
-    ];
     var delta_dataset = {};
     for (var app_process in dataset) {
         //FIXME suspects are the ones missing start and ending. abandoned currently...
@@ -1054,7 +1057,6 @@ aggregate_btn.click(function() {
     var aggr_selection = {};
     var aggr_collections = ["events", "main", "system"];
     var counter = aggr_collections.length;
-    //FIXME this var should be global in order to enable responsive filtering
     var aggr_content = [];
 
     if (obj_filter === '' && pid_filter === '') {
@@ -1106,15 +1108,18 @@ aggregate_btn.click(function() {
 });
 
 function aggregationOnCompletion(type, target, content) {
-    var result = {};
-    result.type = type;
+    aggr_dataset = {}; // clear old data
+    //var result = {};
+    aggr_dataset.type = type;
     if (type === 'object') {
-        result.object = target;
+        aggr_dataset.object = target;
     } else {
-        result._id = target;
+        aggr_dataset._id = target;
     }
-    result.content = content;
-    var aggregated_graph = new AggregatedGraph("#aggregation-arena", result);
+    aggr_dataset.content = content;
+    var aggregated_graph = new AggregatedGraph("#aggregation-arena", aggr_dataset);
+    // append showed objects / pids on responsive pane
+    fillResponsivePane(aggregated_graph.y_domain_array, type);
     $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
 }
 
