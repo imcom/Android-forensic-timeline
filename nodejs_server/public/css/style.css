@@ -18,12 +18,16 @@ li.nav-header.cozy-list-header{margin-top:-5px}
 #radio-on,#radio-off{width:70px}
 .btn{font-family:Consolas;font-size:13px;word-spacing:-3px;padding-right:7px;padding-left:7px}
 #responsive-nav{margin-left:30px;margin-bottom:0}
-#responsive-app-pane,#extend-tab{margin-top:10px;}
-#responsive-app-pane p,#extend-tab p{margin-left:35px}
+#responsive-app-pane,#extend-tab,#delta-tab{margin-top:10px;}
+#responsive-app-pane p,#extend-tab p,#delta-tab p{margin-left:35px}
 #responsive-apps,#responsive-pids,#responsive-objects{overflow-x:hidden;overflow-y:auto;max-height:660px;margin-top:-10px;margin-left:30px}
 #responsive-apps label,#responsive-pids label,#responsive-objects label{margin-right:10px;font-family:Consolas}
+#init-events,#end-events,#event-pairs-display{height:120px;margin-left:30px}
+#delta-ctrl-group{margin-left:30px}
+#add-event-pair{width:60px}
+#remove-event-pair{width:75px}
 label{display:inline-block}
-#app-checkbox,#pid-checkbox,#object-checkbox{margin-left:5px;margin-right:5px;margin-top:0}
+#app-checkbox,#pid-checkbox,#object-checkbox,#delta-checkbox-init,#delta-checkbox-end{margin-left:5px;margin-right:5px;margin-top:0}
 .dropdown-div{position:fixed;top:-865px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:99%;height:885px;margin-left:7px}
 .popup-div{position:fixed;bottom:-400px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:69%;height:420px;margin-left:300px}
 #running-time,#timezone-info,#temporal-info{margin-left:5px;margin-top:-5px;margin-bottom:2px}

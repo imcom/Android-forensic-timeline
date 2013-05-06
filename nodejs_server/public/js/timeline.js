@@ -853,6 +853,9 @@ Timeline.prototype.fillSystemCallsPane = function(objects, pids) {
         $('#pids').append("<option>" + pid + "</option>");
     });
 
+    // fill in the delta pairs selection pane
+    fillDeltaSelectionPane(objects);
+
     // defined behaviour of selection
     $("#objects option").click(function() {
         $('#pids').val(null);
@@ -904,8 +907,10 @@ Timeline.prototype.getAppDeltaTimeline = function(app_name) {
         success: function(data) {
             if (data.content !== '') {
                 var application_trace = JSON.parse(data.content);
-                //generate delta timeline dataset (defined in operator.js)
-                generateDeltaTimeGraph(application_trace.content, null);
+                //generate delta timeline dataset (defined in operator)
+                delta_dataset = []; // remove old data
+                delta_dataset = application_trace.content; // var is defined in operator
+                generateDeltaTimeGraph(application_trace.content);
             } else {
                 showAlert("no application info available", true);
             }

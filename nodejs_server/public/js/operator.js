@@ -10,6 +10,9 @@ var aggregation_arena = $('#aggregation-arena');
 var responsive_pid_pane = $('#responsive-pids');
 var responsive_object_pane = $('#responsive-objects');
 var dmesg_selection = $('#dmesg-selection-input');
+var init_events_pane = $('#init-events');
+var end_events_pane = $('#end-events');
+var event_pairs_display_pane = $('#event-pairs-display');
 //var collection = $('#collection-input');
 //var selection = $('#selection-input');
 //var file_activity_selection = $('#file-activity-selection-input');
@@ -34,6 +37,7 @@ var aggregate_btn = $('#aggregate-btn');
 var dmesg_search_btn = $('#dmesg-search');
 var show_radio_btn = $('#radio-on');
 var hide_radio_btn = $('#radio-off');
+var delta_events_btn = $('#update-event-pairs');
 //var relevance_search_btn = $('#relevance-search');
 //var app_trace_search_btn = $('#app-trace-search');
 //var expand_btn = $('#expand');
@@ -56,6 +60,18 @@ var selected_object;
 var selected_pid;
 var current_start_time;
 var current_end_time;
+
+var pairs_of_interest = [ //TODO experimental
+        ["am_proc_start", "am_proc_died"],
+        //["ActivityManager", "ActivityManager"],
+        //["notification_enqueue", "notification_cancel"],
+        //["NotificationService", "notification_cancel"],
+        //["am_create_activity", "am_finish_activity"],
+        //["am_pause_activity", "am_resume_activity"],
+        //["am_pause_activity", "am_restart_activity"],
+        ["db_sample", "db_sample"],
+        ["content_query_sample", "content_query_sample"]
+];
 //var time_range = [];
 
 // timeline SVG
@@ -423,7 +439,7 @@ function onTimeChosen(selected_time, type) {
 function fillAppResponsivePane(path_groups) {
     for (var app in path_groups) {
         if (app === undefined) continue;
-        responsive_app_pane.append (
+        responsive_app_pane.append(
             "<label type='checkbox inline'><input class='app-checkbox' id='app-checkbox' type='checkbox' onChange='onAppSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
         );
     }
@@ -431,6 +447,24 @@ function fillAppResponsivePane(path_groups) {
     checkboxes.forEach(function(box) {
         box.checked = true;
     });
+}
+
+function fillDeltaSelectionPane(objects) {
+    // remove old data
+    event_pairs_display_pane.children().remove();
+    init_events_pane.children().remove();
+    end_events_pane.children().remove();
+    // fill in the selection pane
+    for (var index in objects) {
+        if (index === undefined) continue;
+        init_events_pane.append("<option>" + objects[index] + "</option>");
+        end_events_pane.append("<option>" + objects[index] + "</option>");
+    }
+    // using default setup to fill display pane
+    for (var index in pairs_of_interest) {
+        if (index === undefined) continue;
+        event_pairs_display_pane.append("<option>" + pairs_of_interest[index].join('-') + "</option>");
+    }
 }
 
 function referenceQuery(url, target, selection) {
@@ -683,28 +717,25 @@ function generateApplicationTimeline() {
 }
 */
 
-function generateDeltaTimeGraph(dataset, custom_pairs) {
+function getInterestedPairs() {
+    var pairs_buf = [];
+    // get all the options in select field
+    var current_pairs = event_pairs_display_pane.children();
+    current_pairs.forEach(function(opt) {
+        if (opt !== undefined) {
+            pairs_buf.push(opt.value.split('-'));
+        }
+    });
+    return pairs_buf;
+}
 
-    var pairs_of_interest = [
-        //["am_proc_start", "am_proc_died"],
-        //["ActivityManager", "ActivityManager"],
-        //["notification_enqueue", "notification_cancel"],
-        //["NotificationService", "notification_cancel"],
-        //["am_create_activity", "am_finish_activity"],
-        //["am_pause_activity", "am_resume_activity"],
-        //["am_pause_activity", "am_restart_activity"],
-        ["db_sample", "db_sample"],
-        ["content_query_sample", "content_query_sample"]
-    ];
+function generateDeltaTimeGraph(dataset) {
+    // get pairs of events of which delta timeline will be generated upon
+    var interested_pairs = getInterestedPairs();
+    // remove old graph
+    $('#aggregation-arena').children().remove();
 
-    // allow user to add custom pairs from GUI
-    if (custom_pairs !== null) {
-        custom_pairs.forEach(function(pair) {
-            pairs_of_interest.push(pair);
-        });
-    }
-
-    $('#aggregation-arena').children().remove(); // remove old graph
+    console.log(interested_pairs);
     /*
      * {
      *      <delta_t>:  {
@@ -718,10 +749,10 @@ function generateDeltaTimeGraph(dataset, custom_pairs) {
      *  index of signature goes into content and count fields
      */
     function isInterested(target) {
-        for (var index in pairs_of_interest) {
+        for (var index in interested_pairs) {
             if (index === undefined) continue;
-            if (pairs_of_interest[index][0] === target[0] &&
-                pairs_of_interest[index][1] === target[1]
+            if (interested_pairs[index][0] === target[0] &&
+                interested_pairs[index][1] === target[1]
             ) {
                 return true;
             }
@@ -816,6 +847,13 @@ function generateDeltaTimeGraph(dataset, custom_pairs) {
     }
     if (graph_dataset.length > 0) {
         new DeltaTimeGraph("#aggregation-arena", graph_dataset);
+        // switch responsive ctrl pane to delta timeline
+        $('#extend-tab').removeClass('active');
+        $('#extend-nav').removeClass('active');
+        $('#responsive-app-pane').removeClass('active');
+        $('#app-nav').removeClass('active');
+        $('#delta-tab').addClass('active');
+        $('#delta-nav').addClass('active');
     } else {
         showAlert("no delta time data available", true);
     }
@@ -1043,11 +1081,7 @@ dropdown_btn.click(function() {
         dropdown_ctrl.css("-webkit-transform", "rotate(0deg)");
         dropdown_ctrl.css("-moz-transform", "rotate(0deg)");
         dropdown_ctrl[0].setAttribute("title", "Collapse aggregation pane");
-        // switch the active tab in responsive pane
-        $('#responsive-app-pane').removeClass('active');
-        $('#extend-tab').addClass('active');
-        $('#app-nav').removeClass('active');
-        $('#extend-nav').addClass('active');
+
         // hide side control bars
         $('#responsive-pane').animate({"right": -300}, 500, "ease");
         $('#main-ctrl-pane').animate({"left": -300}, 500, "ease");
@@ -1069,6 +1103,13 @@ dropdown_btn.click(function() {
         $('#main-ctrl-pane').animate({"left": -280}, 500, "ease");
         // hide right control button
         $('#open-right-ctrl').css('opacity', 0).css('z-index', -1);
+        // switch responsive ctrl pane to app
+        $('#extend-tab').removeClass('active');
+        $('#extend-nav').removeClass('active');
+        $('#delta-tab').removeClass('active');
+        $('#delta-nav').removeClass('active');
+        $('#responsive-app-pane').addClass('active');
+        $('#app-nav').addClass('active');
     }
 });
 
@@ -1201,6 +1242,13 @@ function aggregationOnCompletion(type, target, content) {
     // append showed objects / pids on responsive pane
     fillResponsivePane(aggregated_graph.y_domain_array, type);
     $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+    // switch the active tab in responsive pane
+    $('#responsive-app-pane').removeClass('active');
+    $('#app-nav').removeClass('active');
+    $('#delta-tab').removeClass('active');
+    $('#delta-nav').removeClass('active');
+    $('#extend-tab').addClass('active');
+    $('#extend-nav').addClass('active');
 }
 
 // click to go to the previous time window
@@ -1233,6 +1281,10 @@ $('#open-right-ctrl').click(function() {
     slide_right_ctrl.css("-moz-transform", "rotate(180deg)");
     slide_right_ctrl[0].setAttribute("title", "Collapse responsive pane");
     responsive_pane.animate({"right": 0}, 500, "ease");
+});
+
+delta_events_btn.click(function() {
+    generateDeltaTimeGraph(delta_dataset);
 });
 
 show_radio_btn.click(function() {

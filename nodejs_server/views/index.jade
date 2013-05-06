@@ -36,7 +36,7 @@ html
                                         tbody#object-tbody
                     div#event-message.span5
                         p.nav-header Messages
-                        textarea(rows = "12", readonly)#message-display
+                        textarea(rows="12", readonly)#message-display
                     div#event-app.span3
                         div.row-fluid
                             div.span6
@@ -84,6 +84,17 @@ html
                         div#responsive-pids
                         p.nav-header Responsive Objects
                         div#responsive-objects
+                    div#delta-tab.tab-pane
+                        p.nav-header Initiating Events
+                        select(multiple="multiple")#init-events.selection-field
+                        p.nav-header Ending Events
+                        select(multiple="multiple")#end-events.selection-field
+                        p.nav-header Current Event Pairs
+                        select(multiple="multiple")#event-pairs-display
+                        div.btn-group#delta-ctrl-group
+                            button#add-event-pair.btn.btn-small Add
+                            button#remove-event-pair.btn.btn-small Remove
+                            button#update-event-pairs.btn.btn-success.btn-small Feel Lucky
         div#main-ctrl-pane.slide-left-div
             div.slide-left-ctrl-bar
                 div(title="Expand control pane").slide-left-ctrl
