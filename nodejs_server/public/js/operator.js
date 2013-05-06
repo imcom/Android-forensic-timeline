@@ -493,6 +493,7 @@ function queryKernelLog() {
         }
     });
 }
+// -------------------------------------
 
 function getRadioActivity() {
     $.ajax({
@@ -505,7 +506,7 @@ function getRadioActivity() {
         success: function(data) {
             if (data.content !== "") {
                 var result = JSON.parse(data.content);
-                console.log(result);
+                timeline_main.appendExtraActivity(result);
             } else {
                 showAlert("no radio activity records found!");
             }
@@ -515,7 +516,6 @@ function getRadioActivity() {
         }
     });
 }
-// -------------------------------------
 
 function getFileActivity(app_name) {
     $.ajax({
@@ -553,8 +553,7 @@ function getFileActivity(app_name) {
                     if (x.date <= y.date) return -1;
                     if (x.date > y.date) return 1;
                 });
-                console.log(file_dataset);
-                timeline_main.appendFileActivity(file_dataset);
+                timeline_main.appendExtraActivity(file_dataset);
             } else {
                 showAlert("no file activity records found!");
             }
@@ -1183,7 +1182,7 @@ show_radio_btn.click(function() {
 });
 
 hide_radio_btn.click(function() {
-    console.log("remove radio activities from timeline");
+    timeline_main.extra_arena.selectAll('rect').remove();
 });
 
 // bootstrap function, init the basic application trace timeline

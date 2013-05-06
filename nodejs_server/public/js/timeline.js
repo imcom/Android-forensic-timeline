@@ -166,9 +166,9 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
     //      display: <display_name>,
     //      content: {<object> : [messages,...], <object> : [messages,...], ...}
     // }
-    for (timestamp in _dataset) {
+    for (var timestamp in _dataset) {
         if (timestamp != 'undefined') {
-            for (record_id in _dataset[timestamp]) {
+            for (var record_id in _dataset[timestamp]) {
                 if (record_id != 'undefined') {
                     this.updateYDomain(record_id); // form an ID array for X-axis domain
                     var display_name = _dataset[timestamp][record_id].display;
@@ -703,12 +703,11 @@ Timeline.prototype.onDataReady = function() {
 
 } // function onDataReady()
 
-Timeline.prototype.appendRadioActivity = function(dataset) { return; }
-
-Timeline.prototype.appendFileActivity = function(dataset) {
+Timeline.prototype.appendExtraActivity = function(dataset) {
     var self = this;
     var grouped_dataset = {};
     this.extra_dataset = []; // clear old data
+    this.extra_arena.selectAll('rect').remove();
 
     // group data by its date
     dataset.forEach(function(data) {
@@ -766,6 +765,54 @@ Timeline.prototype.appendFileActivity = function(dataset) {
         .attr("rx", 2)
         .attr("ry", 2)
         .attr("fill", "black")
+        .attr("transform", function(data) { return "translate(" + -dimension(data) / 2 + ", 0)"; });
+
+    for (var index in this.extra_dataset) {
+        if (index === undefined) continue;
+        var rect = jQuery("#extra-" + index);
+        rect.opentip(
+            function(data) {
+                var message = "";
+                data.object.forEach(function(obj, index) {
+                    message += obj;
+                    message += "[";
+                    message += data.msg[index];
+                    message += "]</br>";
+                });
+                return message;
+            }(this.extra_dataset[index]),
+            {style: "tooltip_style"}
+        );
+        // init time indicator and label on hover animation
+        var time_indicator;
+        var time_label;
+        rect.mouseover(function(event) {
+            var event_self = this;
+            this.setAttribute("cursor", "pointer");
+            time_indicator = self.timeline.append("line")
+                .attr("class", "time-indicator")
+                .attr("x1", this.getAttribute("x"))
+                .attr("x2", this.getAttribute("x"))
+                .attr("y1", 0)
+                .attr("y2", 800);
+
+            time_label = self.timeline.append("text")
+                .attr("class", "time-label")
+                .attr("y", 5)
+                .attr("x", Number(this.getAttribute("x")) + 5)
+                .text(function() {
+                    var local_date = self.x_scale.invert(event_self.getAttribute("x"));
+                    var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
+                    return formatter(local_date);
+                });
+        })
+        .mouseout(function(event) {
+            // remove indicator and label
+            this.setAttribute("cursor", null);
+            time_indicator.remove();
+            time_label.remove();
+        });
+    }
 
 }
 

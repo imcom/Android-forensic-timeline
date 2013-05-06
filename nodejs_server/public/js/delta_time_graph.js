@@ -167,8 +167,6 @@ function DeltaTimeGraph(name, dataset) {
                 {style: "tooltip_style"}
             );
             $(_layer.childNodes[e_index]).mouseover(function(mouse_event) {
-                //FIXME show delta time label on mouseover
-                console.log("delta time: " + self.dataset[l_index].delta_time);
                 delta_time_label = stacked_graph.append("text")
                     .attr("class", "time-label")
                     .attr("x", x_scale(self.dataset[l_index].delta_time) - 30)
