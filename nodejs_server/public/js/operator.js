@@ -54,6 +54,8 @@ var object_selected = false;
 var pid_selected = false;
 var selected_object;
 var selected_pid;
+var current_start_time;
+var current_end_time;
 //var time_range = [];
 
 // timeline SVG
@@ -370,6 +372,54 @@ function onAppSelection() {
     timeline_main.setDataset(display_dataset, display_path_set);
 }
 
+function onAppChosen(app_name) {
+    var display_path_set = {};
+    var display_dataset;
+    if (app_name !== 'default') {
+        display_path_set[app_name] = path_dataset[app_name];
+        display_dataset = dataset.filter(function(record) {
+            return record._id === app_name;
+        });
+        timeline_main.removeTimeline();
+        timeline_main.clearData();
+        timeline_main.initTimeline();
+        timeline_main.setDataset(display_dataset, display_path_set);
+        responsive_app_pane.children().remove();
+    } else {
+        timeline_main.removeTimeline();
+        timeline_main.clearData();
+        timeline_main.initTimeline();
+        timeline_main.setDataset(dataset, path_dataset);
+        fillAppResponsivePane(path_dataset);
+    }
+}
+
+function onTimeChosen(selected_time, type) {
+    var interval = timeline_main.time_window_interval;
+    if (type === 'start') {
+        var num_of_steps = (selected_time - current_start_time) / interval;
+    } else {
+        var num_of_steps = (selected_time - current_end_time) / interval;
+    }
+    if (num_of_steps < 0) { // go previous
+        while (num_of_steps < 0) {
+            timeline_main.previousDisplayWindow();
+            num_of_steps += 1;
+        }
+        $('#forward').css('opacity', 0.8).css('z-index', 50);
+    } else { // go next
+        while (num_of_steps > 0) {
+            timeline_main.nextDisplayWindow();
+            num_of_steps -= 1;
+        }
+        $('#backward').css('opacity', 0.8).css('z-index', 50); // show previous window button
+    }
+    if (timeline_main.end_index === timeline_main.dataset.length - 1) // if no more windows to show
+            $('#forward').css('opacity', 0).css('z-index', -1); // hide this button
+    if (timeline_main.start_index === 0)
+            $('#backward').css('opacity', 0).css('z-index', -1);
+}
+
 function fillAppResponsivePane(path_groups) {
     for (var app in path_groups) {
         if (app === undefined) continue;
@@ -594,12 +644,16 @@ function fillTimeWindow(start_date, end_date) {
             window_end.append("<option value=" + timestamp + ">" + disp_date + "</option>");
     });
     window_end.val(time_range[0][1]); // show the current window
+    current_start_time = $('#time-window-start').val();
+    current_end_time = $('#time-window-end').val();
     return time_range[1]; // return the display interval to Timeline instance
 }
 
 function updateTimeWindow(anchor_start, step) {
     $('#time-window-start').val(anchor_start);
     $('#time-window-end').val(anchor_start + step);
+    current_start_time = $('#time-window-start').val();
+    current_end_time = $('#time-window-end').val();
 }
 
 //FIXME ------------- to be deprecated ---------------
@@ -787,6 +841,10 @@ function drawApplicationTraces() {
                     var application_trace = app_traces[_index].content;
                     var path_groups = [];
 
+                    // fill in the selection list on left ctrl pane
+                    var app_selector = $('#app-selections');
+                    app_selector.append("<option value=" + app_traces[_index].name + ">" + app_traces[_index].name + "</option>");
+
                     for (var process in application_trace) {
                         if (application_trace.hasOwnProperty(process)) { // pid or suspects
                             application_trace[process].forEach(function(record) {
@@ -814,10 +872,10 @@ function drawApplicationTraces() {
 
                 var generic_data = new GenericData(data.type, dataset);
                 dataset = generic_data.unifyDataset();
-                $('#timeline_main').children().remove();
-                timeline_main.clearData(true, true);
+                timeline_main.removeTimeline();
+                timeline_main.clearData();
                 timeline_main.initTimeline();
-                timeline_main.setDataset(dataset, path_dataset, false, false);
+                timeline_main.setDataset(dataset, path_dataset);
                 fillAppResponsivePane(path_dataset);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
                 //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
@@ -1190,10 +1248,20 @@ window.onLoad = function() {
     // clear dataset for new data
     dataset = [];
     current_dataset = [];
-    timeline_main.clearData(true, true);
+    timeline_main.clearData();
     // fetch temporal info of the device
     referenceQuery("temporal_info", "temporal", null);
     drawApplicationTraces();
+    // define the app selector behaviour
+    $('#app-selections').on("change", function() {
+        onAppChosen($(this).val());
+    });
+    $('#time-window-start').on("change", function() {
+        onTimeChosen($(this).val(), 'start');
+    });
+    $('#time-window-end').on("change", function() {
+        onTimeChosen($(this).val(), 'end');
+    });
 }();
 
 

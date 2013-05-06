@@ -96,7 +96,11 @@ html
                     //        option(value='android_logs:system') system
                     //        option(value='android_logs:events') events
                     //        option(value='android_logs:radio') radio
-                    li.nav-header Kernel Message Search
+                    li.nav-header App Selection
+                    li
+                        select#app-selections
+                            option(value='default') All
+                    li.nav-header.cozy-list-header Kernel Message Search
                     li
                         div.input-append
                             input(type="text", placeholder="keywords ...").span2#dmesg-selection-input

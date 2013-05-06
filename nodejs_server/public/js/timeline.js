@@ -449,7 +449,7 @@ Timeline.prototype.onDataReady = function() {
     // define timeline zoom behaviour
     function zoom() {
         // show/hide reset scale button
-        if (Math.abs(zoom_handler.scale()) >= 3 || Math.abs(zoom_handler.translate()[1]) >= 1000) {
+        if (Math.abs(zoom_handler.scale()) >= 2 || Math.abs(zoom_handler.translate()[0]) >= 800) {
             $('#reset-scale').css('opacity', 0.8).css('z-index', 100);
         } else {
             $('#reset-scale').css('opacity', 0).css('z-index', -1);
