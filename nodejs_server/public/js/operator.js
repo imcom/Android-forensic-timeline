@@ -37,7 +37,9 @@ var aggregate_btn = $('#aggregate-btn');
 var dmesg_search_btn = $('#dmesg-search');
 var show_radio_btn = $('#radio-on');
 var hide_radio_btn = $('#radio-off');
-var delta_events_btn = $('#update-event-pairs');
+var update_delta_events_btn = $('#update-event-pairs');
+var add_event_pair_btn = $('#add-event-pair');
+var remove_event_pair_btn = $('#remove-event-pair');
 //var relevance_search_btn = $('#relevance-search');
 //var app_trace_search_btn = $('#app-trace-search');
 //var expand_btn = $('#expand');
@@ -735,7 +737,6 @@ function generateDeltaTimeGraph(dataset) {
     // remove old graph
     $('#aggregation-arena').children().remove();
 
-    console.log(interested_pairs);
     /*
      * {
      *      <delta_t>:  {
@@ -1228,6 +1229,33 @@ aggregate_btn.click(function() {
     }
 });
 
+add_event_pair_btn.click(function() {
+    var init = init_events_pane.val();
+    var end = end_events_pane.val();
+    if (init === "" || end === "") {
+        showAlert("not enough events selected", true);
+        return;
+    }
+    event_pairs_display_pane.append("<option>" + init + '-' + end + "</option>");
+});
+
+remove_event_pair_btn.click(function() {
+    var pair = event_pairs_display_pane.val();
+    if (pair === "") {
+        showAlert("no events pair selected", true);
+        return;
+    }
+    $('#event-pairs-display option').forEach(function(opt) {
+        if (opt !== undefined) {
+            if (opt.value === pair) opt.remove();
+        }
+    });
+});
+
+update_delta_events_btn.click(function() {
+    generateDeltaTimeGraph(delta_dataset);
+});
+
 function aggregationOnCompletion(type, target, content) {
     aggr_dataset = {}; // clear old data
     //var result = {};
@@ -1281,10 +1309,6 @@ $('#open-right-ctrl').click(function() {
     slide_right_ctrl.css("-moz-transform", "rotate(180deg)");
     slide_right_ctrl[0].setAttribute("title", "Collapse responsive pane");
     responsive_pane.animate({"right": 0}, 500, "ease");
-});
-
-delta_events_btn.click(function() {
-    generateDeltaTimeGraph(delta_dataset);
 });
 
 show_radio_btn.click(function() {

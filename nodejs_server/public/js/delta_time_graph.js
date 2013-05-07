@@ -33,6 +33,7 @@ function DeltaTimeGraph(name, dataset) {
         // for each value in bar --> objects : [obj_coords, ...]
         bar.objects = d3.range(bar.values.length).map(function(index) {
             var object_coords = {};
+            // use signature JSON string to select color
             object_coords.name = JSON.stringify(bar.values[index].signature);
             object_coords.y0 = y0;
             object_coords.y = (y0 += bar.values[index].count);
@@ -137,6 +138,7 @@ function DeltaTimeGraph(name, dataset) {
         })
         .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
 
+    // draw rects on each layer
     var rect = layer.selectAll("rect.rect-layer")
         .data(function(d) {
             return d.objects;
