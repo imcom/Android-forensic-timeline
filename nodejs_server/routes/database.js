@@ -72,7 +72,7 @@ exports.upload_log = function(req, res) {
                     mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection system --file ./uploads/json/system.log; \
                     mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection events --file ./uploads/json/events.log; \
                     mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection radio --file ./uploads/json/radio.log; \
-                    mongoimport --db test --collection packages --file ./uploads/json/packages.list";
+                    mongoimport --db test --upsert --upsertFields name --collection packages --file ./uploads/json/packages.list;";
                 var import_process = exec(
                     command,
                     function(error, stdout, stderr) {

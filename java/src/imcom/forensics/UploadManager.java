@@ -36,7 +36,8 @@ public class UploadManager extends Service {
 		int retrieve_interval = 1 * 1000 * 60 * 60 * 2; // uploading logs every 2 hours
 		String[] logs = {"main", "system", "events", "radio"};
 		while(true) {
-			HttpPost bearer = new HttpPost("http://216.108.229.28:2222/upload_log");
+			//HttpPost bearer = new HttpPost("http://216.108.229.28:2222/upload_log");
+			HttpPost bearer = new HttpPost("http://192.168.1.44:2222/upload_log");
 			List<NameValuePair> payload = new ArrayList<NameValuePair>();
 			try {
 				Process p = Runtime.getRuntime().exec("su");
@@ -57,7 +58,7 @@ public class UploadManager extends Service {
 				commander.close();
 				p.waitFor();
 				p.destroy();
-				// inflate payloads of POST request
+				// inflate payload of POST request
 				for (String log : logs ) {
 					File file = new File(getExternalFilesDir(null), log_file_prefix + log);
 					BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
@@ -67,9 +68,22 @@ public class UploadManager extends Service {
 						log_buffer.append(line);
 						log_buffer.append('\n');
 					}
-					payload.add(new BasicNameValuePair(log,log_buffer.toString()));
+					payload.add(new BasicNameValuePair(log, log_buffer.toString()));
 					reader.close();
 				}
+				// get packages list content and add it to payload
+				Log.d(getString(R.string.imcom_forensics), "gathering packages info from: " + "/data/system/packages.list");
+				File file = new File("/data/system/packages.list"); //TODO compatibility is unknown
+				BufferedReader reader = new BufferedReader(new FileReader(file));
+				StringBuilder packages_buffer = new StringBuilder();
+				String line = null;
+				while((line = reader.readLine()) != null) {
+					packages_buffer.append(line);
+					packages_buffer.append('\n');
+				}
+				payload.add(new BasicNameValuePair("packages", packages_buffer.toString()));
+				reader.close();
+				
 				Log.d(getString(R.string.imcom_forensics), "Started uploading logs");
 				bearer.setEntity(new UrlEncodedFormEntity(payload));
 				HttpResponse res = uploader.execute(bearer);
