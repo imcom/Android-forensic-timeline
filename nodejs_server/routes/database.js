@@ -60,7 +60,8 @@ exports.upload_log = function(req, res) {
     file_system.writeFile("./uploads/system.log", req.body.system, function(err){ if(err) throw err; });
     file_system.writeFile("./uploads/events.log", req.body.events, function(err){ if(err) throw err; });
     file_system.writeFile("./uploads/radio.log", req.body.radio, function(err){ if(err) throw err; });
-    var command = "python ./libs/parse_logcats.py ./uploads ./uploads/json";
+    file_system.writeFile("./uploads/packages.list", req.body.packages, function(err){ if(err) throw err; });
+    var command = "./libs/parse_uploads.sh ./uploads ./uploads/json";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
@@ -70,7 +71,8 @@ exports.upload_log = function(req, res) {
                     mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection main --file ./uploads/json/main.log; \
                     mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection system --file ./uploads/json/system.log; \
                     mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection events --file ./uploads/json/events.log; \
-                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection radio --file ./uploads/json/radio.log;";
+                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection radio --file ./uploads/json/radio.log; \
+                    mongoimport --db test --collection packages --file ./uploads/json/packages.list";
                 var import_process = exec(
                     command,
                     function(error, stdout, stderr) {
