@@ -3,12 +3,12 @@
 db.activity_vectors.drop()
 
 var cursor;
-var app_name_index = {};
+/*var app_name_index = {};
 cursor = db.app_name_index.find();
 while (cursor.hasNext()) {
     var record = cursor.next();
     app_name_index[record.name] = record._id;
-}
+}*/
 
 var sys_object_index = {};
 cursor = db.system_object_index.find();
@@ -28,23 +28,26 @@ while(cursor.hasNext()) {
     var activity = cursor.next();
     for (var process in activity.content) {
         if (process === undefined || activity.content[process].length === 0) continue;
-        // [app_index, start_date, duration, num_events, num_sys_objs, token_index, db_opr_num, cp_opr_num, network_opr_num]
+        var activity_vector = {};
+        // [duration, num_events, num_sys_objs, token_index, db_opr_num, cp_opr_num, network_opr_num]
         var vector = [];
         var uniq_objs = [];
         var activity_tokens = [];
         var num_events = activity.content[process].length; // num of events in this activity
-        var app_index = app_name_index[activity.name]; // application owns this activity
-        var start_date = activity.content[process][0].date; // activity start date (may not accurate)
         var db_opr_num = 0;
         var cp_opr_num = 0; // content provider
         var network_opr_num = 0; //FIXME related objects are to be defined
+
+        // extra data appended to map node
+        activity_vector.name = activity.name; // application owns this activity
+        activity_vector.start_date = activity.content[process][0].date; //TODO it is likely that date is not accurate
 
         for (var index in activity.content[process]) {
             if (index === undefined) continue;
             var object = activity.content[process][index].object;
             if (object === "Database" || object === "db_sample") db_opr_num += 1;
             if (object === "content_query_sample") cp_opr_num += 1;
-            //if (object === "to be defined") network_opr_num += 1; // may also refer to content of msg
+            if (object === "") network_opr_num += 1; //FIXME determine the object / msg content related to network
             var duration = 0;
             if (num_events > 1) { // duration of this activity
                 duration = activity.content[process][num_events - 1].date - activity.content[process][0].date;
@@ -63,8 +66,6 @@ while(cursor.hasNext()) {
         );
         // add all features to vector
         var num_sys_objs = uniq_objs.length;
-        vector.push(app_index);
-        vector.push(start_date);
         vector.push(duration);
         vector.push(num_events);
         vector.push(num_sys_objs);
@@ -72,10 +73,11 @@ while(cursor.hasNext()) {
         vector.push(db_opr_num);
         vector.push(cp_opr_num);
         vector.push(network_opr_num);
-        // add vector to input vector array
-        input_vectors.push(vector);
-    }
-}
+        activity_vector.vector = vector;
+        // add activity vector to input vector array
+        input_vectors.push(activity_vector);
+    } // for loop for processes
+} // while loop
 
 // sorting token indices and replace token_hash by the index
 // start from the first token group, this can be randomly chosen
@@ -94,11 +96,11 @@ db.activity_vectors.save(input_vectors);
 function convertTokenHash(iv) {
     for (var index in iv) {
         if (index === undefined) continue;
-        var hash = iv[index][5]; // token_hash is the 6th element in array
+        var hash = iv[index].vector[3]; // token_hash is the 4th element in array
         for (var _index in sorted_token_hash) {
             if (_index === undefined) continue;
             if (sorted_token_hash[_index].hash === hash) {
-                iv[index][5] = Number(_index);
+                iv[index].vector[3] = Number(_index);
                 break; // break inner loop
             }
         }

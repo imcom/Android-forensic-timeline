@@ -1,6 +1,7 @@
 
 db.system_object_index.drop()
-var cursor = db.app_name_index.find();
+//var cursor = db.app_name_index.find();
+var cursor = db.packages.find();
 var system_objects = [];
 
 var app_names = [];
