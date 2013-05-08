@@ -38,7 +38,7 @@ class Node:
 
 class SOM:
 
-    def __init__(self, width, height, dataset, iteration_num = 50):
+    def __init__(self, width, height, dataset, iteration_num = 1000):
         self.radius = max(width, height) / 2.0
         self.time_constant = iteration_num / math.log10(self.radius)
         self.learning_rate = 0.9 #TODO to determine the init learning rate
@@ -74,8 +74,8 @@ class SOM:
 
     def init_map_node(self, dataset):
         for index, vector in enumerate(random.sample(dataset, self.width * self.height)):
-            x = index / self.width
-            y = index % self.width
+            x = index % self.width
+            y = index / self.width
             self.nodes.append(Node(self, x, y, vector))
         '''range_vectors = [list(vector) for vector in zip(*dataset)]
         for vector in range_vectors:

@@ -1,11 +1,11 @@
 
 // init system object index
-var sys_object_index = {};
+/*var sys_object_index = {};
 var cursor = db.system_object_index.find();
 while (cursor.hasNext()) {
     var record = cursor.next();
     sys_object_index[record.name] = record._id;
-}
+}*/
 
 function vectorize(target) {
 
@@ -20,10 +20,6 @@ function vectorize(target) {
     var cp_opr_num = 0; // content provider
     var network_opr_num = 0; //FIXME related objects are to be defined
 
-    // extra data appended to map node
-    //activity_vector.name = activity.name; // application owns this activity
-    //activity_vector.start_date = activity.content[process][0].date; //TODO it is likely that date is not accurate
-
     for (var index in target) {
         if (index === undefined) continue;
         var object = target[index].object;
@@ -34,8 +30,9 @@ function vectorize(target) {
         if (num_events > 1) { // duration of this activity
             duration = target[num_events - 1].date - target[0].date;
         }
-        var obj_index = sys_object_index[object];
-        if (uniq_objs.indexOf(obj_index) === -1) uniq_objs.push(obj_index);
+        //var obj_index = sys_object_index[object];
+        //if (uniq_objs.indexOf(obj_index) === -1) uniq_objs.push(obj_index);
+        if (uniq_objs.indexOf(object) === -1) uniq_objs.push(object);
         var tokens = tokenize(object, target[index].msg);
         activity_tokens = _.union(activity_tokens, tokens); // find the union of all tokens in this activity
     }

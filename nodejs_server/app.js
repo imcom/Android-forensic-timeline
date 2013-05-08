@@ -97,11 +97,12 @@ app.configure(function(){
         // own js
         '/js/timeline.js',
         '/js/aggregation_graph.js',
-        //'/js/stacked_graph.js', deprecated
+        '/js/som_graph.js',
         '/js/generic_data.js',
         '/js/tokenizer.js',
         '/js/delta_time_graph.js',
         '/js/signature_checker.js',
+        '/js/vectorizer.js',
         // data models
         '/js/data_models/android_logs.js',
         '/js/data_models/browsersearches.js',
@@ -119,10 +120,11 @@ app.configure(function(){
     ]
 });
 
-// default index route
+// routes of the web server (some are deprecated)
 app.get('/', index_handler.imcom);
-app.post('/mapreduce', db_handler.mapreduce);
+app.post('/som', db_handler.som);
 app.post('/upload_log', db_handler.upload_log);
+app.post('/mapreduce', db_handler.mapreduce);
 app.post('/radio_activity', db_handler.radio_activity);
 app.post('/delta_timeline', db_handler.delta_timeline);
 app.post('/service_info', db_handler.service_info);

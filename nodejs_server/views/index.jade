@@ -100,13 +100,6 @@ html
                 div(title="Expand control pane").slide-left-ctrl
             div.ctrl-panel
                 ul.nav.nav-pills.nav-stacked
-                    //li.nav-header Extent Query Target
-                    //li
-                    //   select#collection-input
-                    //        option(value='android_logs:main') main
-                    //        option(value='android_logs:system') system
-                    //        option(value='android_logs:events') events
-                    //        option(value='android_logs:radio') radio
                     li.nav-header App Selection
                     li
                         select#app-selections
@@ -120,17 +113,15 @@ html
                     li
                         select#time-window-start.selection-field
                         select#time-window-end.selection-field
-                    //li.nav-header.cozy-list-header Aggregation Type
-                    //li
-                    //    select#map-reduce-type.selection-field
-                    //        option aggregate by ...
-                    //li
-                    //    div.btn-group
-                    //        button#aggregate-btn.btn.btn-success.btn-small Aggr.
-                    //        button#expand.btn.btn-warning.btn-small Expand
-                    //        button#filter.btn.btn-info.btn-small Filter
-                    //        button#clear.btn.btn-danger.btn-small Clear
-                    li.nav-header.cozy-list-header Device Booted [UTC]
+                    li.nav-header.cozy-list-header Radio Activity Toggle
+                    li
+                        div.btn-group
+                            button#radio-on.btn.btn-success.btn-small ON
+                            button#radio-off.btn.btn-warning.btn-small OFF
+                    li.nav-header SOM Control Pane
+                    li
+                        button#show-som.btn.btn-danger.btn-small Generate SOM
+                    li.nav-header Device Booted [UTC]
                     li
                         #temporal-info
                     li.nav-header.cozy-list-header Timezone Setting
@@ -139,11 +130,6 @@ html
                     li.nav-header.cozy-list-header Running Time
                     li
                         #running-time
-                    li.nav-header.cozy-list-header Radio Activity Toggle
-                    li
-                        div.btn-group
-                            button#radio-on.btn.btn-success.btn-small ON
-                            button#radio-off.btn.btn-warning.btn-small OFF
         div#content
             p.nav-header Android Timeline Analysis
             #timeline_main.timeline

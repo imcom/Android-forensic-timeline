@@ -16,6 +16,7 @@ li.nav-header.cozy-list-header{margin-top:-5px}
 .slide-left-ctrl-bar:hover .slide-left-ctrl{background:url("/images/sidebar_icon.png") bottom right}
 #dmesg-selection-input{font-family:serif;width:150px}
 #radio-on,#radio-off{width:70px}
+#show-som{width:135px}
 .btn{font-family:Consolas;font-size:13px;word-spacing:-3px;padding-right:7px;padding-left:7px}
 #responsive-nav{margin-left:30px;margin-bottom:0}
 #responsive-app-pane,#extend-tab,#delta-tab{margin-top:10px;}
@@ -55,7 +56,7 @@ label{display:inline-block}
 .cluster,timeline-event{stroke:#000}
 .aggregation-axis,.time-axis,.stack-axis{fill:none;stroke:#000;shape-rendering:crispEdges;}
 .aggregation-axis text,.time-axis text,.stack-axis text{font-family:Consolas;font-size:11px}
-.grid-main line,.grid-extend line,.grid-aggr line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none;stroke-dasharray:5,5}
+.grid-main line,.grid-extend line,.grid-aggr line,.grid-som line{opacity:.3;filter:alpha(opacity=30);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";stroke:#000;pointer-events:none;stroke-dasharray:5,5}
 .time-label{font-family:Consolas;font-size:13px;fill:#00f}
 .time-indicator{opacity:.7;filter:alpha(opacity=70);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";stroke:#ffa500;stroke-dasharray:8,8;pointer-events:none}
 rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}

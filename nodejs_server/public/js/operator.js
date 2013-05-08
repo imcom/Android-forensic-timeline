@@ -40,6 +40,7 @@ var hide_radio_btn = $('#radio-off');
 var update_delta_events_btn = $('#update-event-pairs');
 var add_event_pair_btn = $('#add-event-pair');
 var remove_event_pair_btn = $('#remove-event-pair');
+var som_btn = $('#show-som');
 //var relevance_search_btn = $('#relevance-search');
 //var app_trace_search_btn = $('#app-trace-search');
 //var expand_btn = $('#expand');
@@ -52,6 +53,7 @@ var dataset = [];
 var path_dataset = {};
 var delta_dataset = [];
 var aggr_dataset = {};
+var app_traces = {};
 var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
@@ -538,7 +540,7 @@ function queryKernelLog() {
         showAlert("Invalid time window");
         return;
     } else {
-        //dmesg_query.date = {'$gte': start_time, '$lte': end_time};
+        dmesg_query.date = {'$gte': start_time, '$lte': end_time};
     }
     dmesg_query = JSON.stringify(dmesg_query);
 
@@ -692,33 +694,6 @@ function updateTimeWindow(anchor_start, step) {
     current_end_time = $('#time-window-end').val();
 }
 
-//FIXME ------------- to be deprecated ---------------
-/*
-function generateApplicationTimeline() {
-    $.ajax({
-        type: "POST",
-        url: "app_timeline",
-        data: {
-            selection: "am_", //FIXME temp implementation
-            type: "exec"
-        },
-        dataType: 'json',
-        success: function(data) {
-            if (data.content !== "" && data.error === 0) {
-                var stack_dataset = JSON.parse(data.content);
-                //console.log(stack_dataset.dataset);
-                new StackedGraph("#aggregation-arena", stack_dataset.dataset, stack_dataset.anchor_time);
-            } else {
-                showAlert("error occurred or no records");
-            }
-        },
-        error: function(xhr, type) {
-            showAlert("delta query error!");
-        }
-    });
-}
-*/
-
 function getInterestedPairs() {
     var pairs_buf = [];
     // get all the options in select field
@@ -870,9 +845,13 @@ function drawApplicationTraces() {
         dataType: 'json',
         success: function(data) {
             if (data.content !== "") {
-                path_dataset = {}; // app_name: [path data]
+                // clear old data if any
+                path_dataset = {}; // {app_name: [path data], ... }
                 dataset = [];
-                var app_traces = JSON.parse(data.content);
+                current_dataset = [];
+                app_traces = {};
+                // save raw application traces for SOM
+                app_traces = JSON.parse(data.content);
 
                 for (var _index in app_traces) {
                     if (_index === undefined) continue;
@@ -952,116 +931,11 @@ function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data
     return file_activity;
 }
 
-// buttons not in use
-/*
-app_trace_search_btn.click(function() {
-    timeline_extend.clearData(true, true);
-    traceApplication();
-});
-
-expand_btn.click(function() {
-    dataset_extend = []; // clear old dataset
-    timeline_extend.clearData(true, true);
-    drawExtendTimeline();
-});
-
-filter_btn.click(function() {
-    var filtered_dataset;
-    if (current_dataset.length === 0) current_dataset = dataset;
-
-    // time window filter
-    var start_time = Number($('#time-window-start').val());
-    var end_time = Number($('#time-window-end').val());
-    if (start_time > end_time) {
-        showAlert("Invalid time window");
-        return;
-    } else {
-        filtered_dataset = dataset.filter(function(record) {
-            return (record.date >= start_time && record.date <= end_time);
-        });
-    }
-
-    var filtered_dataset_backup = filtered_dataset;
-    // selection filter, picking up specified records from the original dataset
-    if (selection.val() != '') {
-        var filter_conditions = selection.val().split(' ');
-        filtered_dataset = filtered_dataset.filter(function(record) {
-            var matched = 0;
-            filter_conditions.forEach(function(condition) {
-                matched ^= (record.object.indexOf(condition) != -1 || record.msg.indexOf(condition) != -1);
-            });
-            if (matched === 1) return record;
-        });
-    }
-    if (filtered_dataset.length == 0) {
-        showAlert("Keywords do not exist!");
-        filtered_dataset = filtered_dataset_backup;
-    }
-
-    filtered_dataset_backup = filtered_dataset; // backup filtered dataset after time and keywords
-    // object or id specification filter, ticking out on particular object or id
-    var obj_filter = object_pane.val();
-    var id_filter = id_pane.val();
-    if (obj_filter != '' && id_filter == '') {
-        filtered_dataset = filtered_dataset.filter(function(record) {
-            return (record.object == obj_filter);
-        });
-    } else if (id_filter != '' && obj_filter == '') {
-        filtered_dataset = filtered_dataset.filter(function(record) {
-            return (record._id == id_filter);
-        });
-    } else if (id_filter != '' && obj_filter != '') {
-        showAlert('Invalid filter condition');
-    }
-
-    if (filtered_dataset.length == 0) {
-        showAlert("Object/Id filtering returned empty!");
-        filtered_dataset = filtered_dataset_backup;
-    }
-    // reset display in all panes except for aggregation graph & extend timeline
-    clearPanes(true, false, false, false);
-    fillPanes(filtered_dataset);
-    object_pane.val(obj_filter);
-    id_pane.val(id_filter);
-    fillResponsivePane(filtered_dataset);
-    // adjust display of time window
-    //resetTimeRange();
-    //initTimeRange(filtered_dataset);
-    $('#time-window-start').val(start_time);
-    $('#time-window-end').val(end_time);
-    // re-draw timeline graph
-    $('#next-main').css('opacity', 0).css('z-index', -1);
-    $('#previous-main').css('opacity', 0).css('z-index', -1);
-    // remove time brush on filter applied
-    $('#time-brush').children().remove();
-    timeline_main.clearData(true, false);
-    timeline_main.initTimeline();
-    timeline_main.setDataset(filtered_dataset, null, false, false);
-    // make changes to the current dataset (for responsive panes), keep initial dataset unchanged
-    current_dataset = filtered_dataset;
-    $('#undo').css('opacity', 0.8).css('z-index', 100);
-});
-
-clear_btn.click(function() {
-    $('#arena').children().text("Show results here...");
+function generateSOM(nodes) {
+    // remove old graph
     $('#aggregation-arena').children().remove();
-    $('#time-brush').children().remove();
-    clearPanes(true, true, true, true);
-    resetTimeRange();
-    timeline_main.clearData(true, true);
-    timeline_extend.clearData(true, true);
-    $('#undo').css('opacity', 0).css('z-index', -1);
-    $('#trash').css('opacity', 0).css('z-index', -1);
-    $('#next-main').css('opacity', 0).css('z-index', -1);
-    $('#previous-main').css('opacity', 0).css('z-index', -1);
-    $('#next-extend').css('opacity', 0).css('z-index', -1);
-    $('#previous-extend').css('opacity', 0).css('z-index', -1);
-    dataset = [];
-    current_dataset = [];
-    timeline_main.clearData(true, true);
-    drawMainTimeline(true);
-});
-*/
+    new SOMGraph("#aggregation-arena", nodes, app_traces);
+}
 
 // button actions
 dmesg_search_btn.click(function() {
@@ -1229,6 +1103,29 @@ aggregate_btn.click(function() {
     }
 });
 
+som_btn.click(function() {
+    $.ajax({
+        type: "POST",
+        url: "som",
+        data: {
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content.length > 0) {
+                var nodes = JSON.parse(data.content);
+                console.log(nodes);
+                generateSOM(nodes);
+            } else {
+                showAlert("no SOM data found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("SOM query error!");
+        }
+    });
+});
+
 add_event_pair_btn.click(function() {
     var init = init_events_pane.val();
     var end = end_events_pane.val();
@@ -1322,9 +1219,10 @@ hide_radio_btn.click(function() {
 // bootstrap function, init the basic application trace timeline
 window.onLoad = function() {
     // clear dataset for new data
-    dataset = [];
+    /*dataset = [];
     current_dataset = [];
-    timeline_main.clearData();
+    app_traces = {};
+    timeline_main.clearData();*/
     // fetch temporal info of the device
     referenceQuery("temporal_info", "temporal", null);
     drawApplicationTraces();
