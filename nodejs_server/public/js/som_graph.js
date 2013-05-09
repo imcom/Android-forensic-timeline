@@ -109,16 +109,6 @@ function SOMGraph(name, nodes, app_traces) {
         .range(radius_range)
         .clamp(true);
 
-    /*var x_axis = d3.svg.axis()
-        .orient("top")
-        .scale(x_scale)
-        .tickPadding(tick_padding)
-        .tickSize(0);
-
-    x_axis.tickFormat(function(date) {
-        return date + "s";
-    });*/
-
     // create svg for aggregated graph
     var som_graph = d3.select(this.name)
         .append("svg")
@@ -157,7 +147,8 @@ function SOMGraph(name, nodes, app_traces) {
         .enter().append("circle")
         .attr("class", "node")
         .attr("id", function(d, index) { return "node-" + index })
-        .style("fill", 'none')
+        .style("fill", 'gray')
+        .style("opacity", "0.1")
         .style('stroke', 'black')
         .attr("cx", function(d) { return x_scale(x(d)); })
         .attr("cy", function(d) { return y_scale(y(d)); })
@@ -209,119 +200,68 @@ function SOMGraph(name, nodes, app_traces) {
         });
 
     // graph title, explaination of the graph
-    /*stacked_graph.append("text")
+    som_graph.append("text")
         .attr("class", "stack-graph-title")
-        .attr("x", (width / 2) - 250)
+        .attr("x", (width / 2))
         .attr("y", 0)
-        .text("The Length of Rect Is Proportional To The Number Of Events");*/
+        .text("Self-Organizing Map of Device Activities");
 
-    // append an overflow clip path
-    /*stacked_graph.append("svg:clipPath")
-        .attr("id", "clip")
-        .append("svg:rect")
-        .attr("x", 0)
-        .attr("y", 0)
-        .attr("width", width)
-        .attr("height", height);
+    // cluster path generator
+    var cluster_path = d3.svg.line()
+        .x(function(d) { return d.x; })
+        .y(function(d) { return d.y; })
+        .interpolate("linear");
 
-    // X axis
-    stacked_graph.append('g')
-        .attr("class", "stack-axis")
-        .attr("transform", "translate(0, " + (height - y_padding / 2) + ")")
-        .call(x_axis);
+    // cluster path color generator
+    var path_color_scale = d3.scale.category20();
 
-    // append clipping components
-    var scale_extent = [-5, 5];
-    stacked_graph.append("svg:rect")
-        .attr("class", "ctrl-pane")
-        .attr("width", width)
-        .attr("height", y_padding)
-        .call(d3.behavior.zoom()
-                .x(x_scale)
-                .scaleExtent(scale_extent)
-                .on("zoom", zoom)
-        );
-
-    function zoom() {
-        stacked_graph.select(".stack-axis").call(x_axis);
-        stacked_graph.selectAll(".stack-layer")
-            .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
-    }*/
-
-    // draw layers and rects on svg
-    /*var layer = stacked_graph.selectAll(".stack-layer")
-        .data(this.dataset)
-        .enter()
-        .append('g')
-        .attr('class', 'stack-layer')
-        .attr('id', function(d, index) {
-            return "stack-" + index;
-        })
-        .attr("transform", function(d) { return "translate(" + (x_scale(d.delta_time) - 15) + ",0)"; });
-
-    // draw rects on each layer
-    var rect = layer.selectAll("rect.rect-layer")
-        .data(function(d) {
-            return d.objects;
-        })
-        .enter()
-        .append("rect")
-        .attr("class", "rect-layer")
-        .attr("id", function(d, index) {
-            return "event-" + index;
-        })
-        .attr("y", function(d) {
-            return y_scale(d.y);
-        })
-        .attr("width", 30)
-        .attr("height", function(d) {
-            return y_scale(d.y0) - y_scale(d.y);
-        })
-        .style("fill", function(d) {
-            return color_scale(d.name);
-        });
-
-    var delta_time_label;
-    var layers = $('.stack-layer');
-    layers.forEach(function(_layer, l_index) {
-        $.each(_layer.childNodes, function(e_index) {
-            jQuery(_layer.childNodes[e_index]).opentip(
-                formatMessages(self.dataset[l_index].content[e_index]),
-                {style: "tooltip_style"}
-            );
-            $(_layer.childNodes[e_index]).mouseover(function(mouse_event) {
-                delta_time_label = stacked_graph.append("text")
-                    .attr("class", "time-label")
-                    .attr("x", x_scale(self.dataset[l_index].delta_time) - 30)
-                    .attr("y", height - 20)
-                    .text(function() {
-                        var delta = self.dataset[l_index].delta_time;
-                        var hours = Math.round(delta / (60 * 60));
-                        delta = delta % (60 * 60);
-                        var minutes = Math.round(delta / 60);
-                        var seconds = delta % 60;
-                        return hours + "h " + minutes + "m " + seconds + "s";
-                    });
-                this.setAttribute("cursor", "pointer");
-            })
-            .mouseout(function(mouse_event) {
-                this.setAttribute("cursor", "pointer");
-                delta_time_label.remove();
-            });
-        });
-    });
-
-    function formatMessages(content) {
+    // cluster features description generator
+    var formatMessage = function(features) {
         var message = "";
-        content.forEach(function(_content) {
-            message += _content[0];
-            message += ":{</br>";
-            message += "&nbsp&nbsp" + _content[1]; // msg
-            message += "&nbsp[" + _content[2] + "]"; // pid
-            message += "</br>}</br>";
-        });
+        message += "Duration: " + features[0] + "[seconds]";
+        message += "</br>";
+        message += "Events #: " + features[1];
+        message += "</br>";
+        message += "System Calls #: " + features[2];
+        message += "</br>";
+        message += "Database Opr #: " + features[4];
+        message += "</br>";
+        message += "ContentProvider Opr #: " + features[5];
+        message += "</br>";
+        message += "Network Opr #: " + features[6];
+        message += "</br>";
         return message;
-    }*/
+    }
+
+    for (var index in nodes) {
+        if (index === undefined) continue;
+        var cluster = $('#node-' + index);
+        var center = {x: Number(cluster.attr('cx')), y: Number(cluster.attr('cy'))};
+        var cluster_apps = $('.node-app-' + index);
+        cluster_apps.forEach(function(app) {
+            var site = {
+                x: Number($(app).attr('cx')),
+                y: Number($(app).attr('cy'))
+            };
+            var path_data = [center, site];
+            som_graph.append('svg:path')
+                .attr("d", cluster_path(path_data))
+                .attr("stroke", path_color_scale(index)) // index of map nodes
+                .attr("stroke-width", 0.8)
+                .attr("fill", "none");
+        }, this); // specify the scope in callback
+        // set opentip content for map node
+        jQuery("#node-" + index).opentip(formatMessage(nodes[index].features), {style: "tooltip_style"});
+        // add mouse event animation
+        cluster.mouseover(function(event) {
+            var event_self = this;
+            this.setAttribute("cursor", "pointer");
+        })
+        .mouseout(function(event) {
+            this.setAttribute("cursor", null);
+        });
+
+    } // for loop over map nodes
 
 }
 

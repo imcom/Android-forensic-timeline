@@ -38,7 +38,7 @@ for vector in vector_dataset:
     ]'''
     dataset.append(vector)
 
-# dimension of the map
+# dimension of the map (from config file)
 width = 5
 height = 3
 

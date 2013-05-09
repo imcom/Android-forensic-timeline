@@ -1005,7 +1005,7 @@ Timeline.prototype.nextDisplayWindow = function() {
 }
 
 Timeline.prototype.previousDisplayWindow = function() {
-    this.getDisplayIndices(-1, this.start_index - 1);
+    this.getDisplayIndices(-1, this.start_index);
     this.removeTimeline();
     this.initTimeline();
     // defined in operator.js
