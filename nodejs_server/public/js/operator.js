@@ -1114,7 +1114,6 @@ som_btn.click(function() {
         success: function(data) {
             if (data.content.length > 0) {
                 var nodes = JSON.parse(data.content);
-                console.log(nodes);
                 generateSOM(nodes);
             } else {
                 showAlert("no SOM data found!");

@@ -119,21 +119,26 @@ function SOMGraph(name, nodes, app_traces) {
         .attr("transform", "translate(0, 20)");
 
     /* draw grid lines on the graph */
-    var grid = som_graph.selectAll("line.grid-line")
+    // vertical lines
+    var grid_y = som_graph.selectAll("line.grid-line-y")
         .data(x_domain)
         .enter()
         .append("g")
-        .attr("class", "grid-som");
-    // vertical lines
-    grid.append("line")
-        .attr("class", "grid-line")
+        .attr("class", "grid-som-y");
+    grid_y.append("line")
+        .attr("class", "grid-line-y")
         .attr("y1", 0)
         .attr("y2", height)
         .attr("x1", x_scale)
         .attr("x2", x_scale);
     // horizontal lines
-    grid.append("line")
-        .attr("class", "grid-line")
+    var grid_x = som_graph.selectAll("line.grid-line-x")
+        .data(y_domain)
+        .enter()
+        .append("g")
+        .attr("class", "grid-som-x");
+    grid_x.append("line")
+        .attr("class", "grid-line-x")
         .attr("y1", y_scale)
         .attr("y2", y_scale)
         .attr("x1", 0)
@@ -210,7 +215,7 @@ function SOMGraph(name, nodes, app_traces) {
     var cluster_path = d3.svg.line()
         .x(function(d) { return d.x; })
         .y(function(d) { return d.y; })
-        .interpolate("linear");
+        .interpolate("basis");
 
     // cluster path color generator
     var path_color_scale = d3.scale.category20();
@@ -233,6 +238,16 @@ function SOMGraph(name, nodes, app_traces) {
         return message;
     }
 
+    // generate time reference for each cluster
+    for (var index in nodes) {
+        if (index === undefined) continue;
+        nodes[index].extra_data.time_ref = [];
+        nodes[index].extra_data.time_ref.push(d3.min(nodes[index].extra_data.start_date)); // min date
+        nodes[index].extra_data.time_ref.push(d3.median(nodes[index].extra_data.start_date)); // median date
+        nodes[index].extra_data.time_ref.push(d3.max(nodes[index].extra_data.start_date)); // max date
+    }
+
+    // draw path for cluster apps and cluster time relations
     for (var index in nodes) {
         if (index === undefined) continue;
         var cluster = $('#node-' + index);
@@ -261,9 +276,52 @@ function SOMGraph(name, nodes, app_traces) {
             this.setAttribute("cursor", null);
         });
 
+        // calculate time distance of clusters
+        var dist_list = [];
+        for (var _index in nodes) {
+            if (_index === undefined || _index === index) continue;
+            var dist = euclidean_distance(nodes[index].extra_data.time_ref, nodes[_index].extra_data.time_ref);
+            dist_list[_index] = dist;
+        }
+        // threshold of temporal distance
+        var dist_threshold = 5;
+        // connect temporally close clusters
+        for (var _index in dist_list) {
+            if (_index === undefined) continue;
+            if (dist_list[_index] <= dist_threshold) {
+                var close_cluster = $('#node-' + _index);
+                var close_site = {x: Number(close_cluster.attr('cx')), y: Number(close_cluster.attr('cy'))};
+                var random_offset = _.random(-20, 20);
+                var assist_site = {x: (center.x + close_site.x) / 2, y: (center.y + close_site.y) / 2 + random_offset};
+                var time_path = [center, assist_site, close_site];
+                som_graph.append('svg:path')
+                    .attr("d", cluster_path(time_path))
+                    .attr("stroke", path_color_scale(index))
+                    .attr("stroke-width", 0.8)
+                    .attr("stroke-dasharray", "10,10,5")
+                    .attr("fill", "none");
+            }
+        }
+
     } // for loop over map nodes
 
+    // calculate euclidean distance of two time references
+    function euclidean_distance(x, y) {
+        var sum = 0.0;
+        for (var index in x) {
+            sum += Math.pow(x[0] - y[0], 2);
+        }
+        return Math.sqrt(sum, 2);
+    }
+
 }
+
+
+
+
+
+
+
 
 
 
