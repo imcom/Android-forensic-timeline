@@ -7,8 +7,6 @@ function SOMGraph(name, nodes, app_traces) {
     $ = Zepto;
     var self = this;
 
-    console.log(app_traces);
-
     //OpenTip config
     Opentip.styles.tooltip_style = {
         stem: true,
@@ -23,6 +21,7 @@ function SOMGraph(name, nodes, app_traces) {
     this.name = name;
     this.nodes = nodes;
     this.dataset = app_traces;
+    this.token_index;
 
     // dimensions
     var width = 1800;
@@ -33,41 +32,41 @@ function SOMGraph(name, nodes, app_traces) {
 
     var som_width = 5; //FIXME read from config file
     var som_height = 3; //FIXME read from config file
-    var extent = 20;
+    this.extent = 20;
 
     // define SOM axes domain
     var x_domain = [];
     for (var i = 0; i < som_width; ++i) {
-        x_domain.push(i * extent);
+        x_domain.push(i * this.extent);
     }
     var y_domain = [];
     for (var i = 0; i < som_height; ++i) {
-        y_domain.push(i * extent);
+        y_domain.push(i * this.extent);
     }
 
     // init X axis scale
-    var x_scale = d3.scale.ordinal()
+    this.x_scale = d3.scale.ordinal()
         .domain(x_domain)
         .rangePoints([150, width], 1.5);
         //.range([x_padding * 3, width - x_padding]);
 
     // init Y axis scale
-    var y_scale = d3.scale.ordinal()
+    this.y_scale = d3.scale.ordinal()
         .domain(y_domain)
         .rangePoints([height, 0], 1.5);
         //.range([height - y_padding * 3, y_padding]);
 
     // color scale for different apps
-    var color_scale = d3.scale.category20();
+    this.color_scale = d3.scale.category20();
 
     // define radius function
     var radius = function(d) { return d.count; }
 
     // define X axis function
-    var x = function(d) { return d.x * extent; }
+    var x = function(d) { return d.x * self.extent; }
 
     // define Y axis function
-    var y = function(d) { return d.y * extent; }
+    var y = function(d) { return d.y * self.extent; }
 
     var max_count = 0;
     for (var index in nodes) {
@@ -75,10 +74,10 @@ function SOMGraph(name, nodes, app_traces) {
         if (nodes[index].count > max_count) max_count = nodes[index].count;
     }
     // define radius range
-    var radius_range = [5, Math.round(height / som_width)];
+    this.radius_range = [5, Math.round(height / som_width)];
     var radius_scale = d3.scale.sqrt()
         .domain([1, max_count])
-        .range(radius_range)
+        .range(this.radius_range)
         .clamp(true);
 
     // create svg for aggregated graph
@@ -101,8 +100,8 @@ function SOMGraph(name, nodes, app_traces) {
         .attr("class", "grid-line-y")
         .attr("y1", 0)
         .attr("y2", height)
-        .attr("x1", x_scale)
-        .attr("x2", x_scale);
+        .attr("x1", this.x_scale)
+        .attr("x2", this.x_scale);
     // horizontal lines
     var grid_x = som_graph.selectAll("line.grid-line-x")
         .data(y_domain)
@@ -111,8 +110,8 @@ function SOMGraph(name, nodes, app_traces) {
         .attr("class", "grid-som-x");
     grid_x.append("line")
         .attr("class", "grid-line-x")
-        .attr("y1", y_scale)
-        .attr("y2", y_scale)
+        .attr("y1", this.y_scale)
+        .attr("y2", this.y_scale)
         .attr("x1", 0)
         .attr("x2", width);
 
@@ -127,13 +126,13 @@ function SOMGraph(name, nodes, app_traces) {
         .style("fill", 'gray')
         .style("opacity", "0.1")
         .style('stroke', 'black')
-        .attr("cx", function(d) { return x_scale(x(d)); })
-        .attr("cy", function(d) { return y_scale(y(d)); })
+        .attr("cx", function(d) { return self.x_scale(x(d)); })
+        .attr("cy", function(d) { return self.y_scale(y(d)); })
         .attr("r", function(d) { return radius_scale(radius(d)); })
         .sort(function(x, y) {return radius(y) - radius(x)});
 
     // draw apps in each node on graph
-    var offset_range = _.range(-radius_range[1] + extent, radius_range[1] - extent, 8);
+    var offset_range = _.range(-this.radius_range[1] + this.extent, this.radius_range[1] - this.extent, 8);
     for (var index in nodes) {
         offset_range = _.shuffle(offset_range); // shuffle the offset range every time
         som_graph.append("g")
@@ -142,21 +141,21 @@ function SOMGraph(name, nodes, app_traces) {
             .enter().append("circle")
             .attr("class", "node-app-" + index)
             .style("fill", function(d) {
-                return color_scale(d);
+                return self.color_scale(d);
             })
             .attr("cx", function(d, i) {
-                return x_scale(nodes[index].x * extent) + offset_range[i];
+                return self.x_scale(nodes[index].x * self.extent) + offset_range[i];
             })
             .attr("cy", function(d, i) {
                 var y_offset = (i * i) % offset_range.length;
-                return y_scale(nodes[index].y * extent) + offset_range[y_offset];
+                return self.y_scale(nodes[index].y * self.extent) + offset_range[y_offset];
             })
             .attr("r", 5);
     }
 
-    // append legend to the graph (too many to show properly)
+    // append legend to the graph
     var legend = som_graph.selectAll(".legend")
-        .data(color_scale.domain().slice().reverse())
+        .data(this.color_scale.domain().slice().reverse())
         .enter().append("g")
         .attr("class", "legend")
         .attr("transform", function(d, i) { return "translate(0," + i * 14 + ")"; });
@@ -165,7 +164,7 @@ function SOMGraph(name, nodes, app_traces) {
         .attr("x", 0)
         .attr("width", 8)
         .attr("height", 8)
-        .style("fill", color_scale);
+        .style("fill", this.color_scale);
 
     legend.append("text")
         .attr("x", 10)
@@ -275,10 +274,163 @@ function SOMGraph(name, nodes, app_traces) {
             }
         }
     } // for loop over map nodes
+    // pre-fetch token hashes from DB
+    this.prepareTokenIndex();
+    // remove pid from object string in dataset
+    this.pureObjects();
+}
+
+SOMGraph.prototype.pureObjects = function() {
+    this.dataset.forEach(function(data) {
+        for (var process in data.content) {
+            if (process === undefined) continue;
+            for (var _index in data.content[process]) {
+                if (_index === undefined) continue;
+                data.content[process][_index].object = data.content[process][_index].object.substring(0, data.content[process][_index].object.indexOf('['));
+            }
+        }
+    });
+}
+
+SOMGraph.prototype.prepareTokenIndex = function() {
+    var self = this;
+    $.ajax({
+        type: "POST",
+        url: "token_index",
+        data: {
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content.length > 0) {
+                self.token_index = JSON.parse(data.content);
+            } else {
+                showAlert("no token index found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("token index query error!");
+        }
+    });
 }
 
 SOMGraph.prototype.appendApps = function(app_list) {
-    console.log(app_list);
+    var self = this;
+    var apps = this.dataset.filter(function(data) {
+        return app_list.indexOf(data.name) !== -1;
+    });
+    // remove old rects (apps)
+    d3.selectAll("#selected-app").remove();
+
+    var input_vectors = [];
+    for (var index in apps) {
+        if (index === undefined) continue;
+        for (var process in apps[index].content) {
+            if (process === undefined || apps[index].content[process].length === 0) continue;
+            var activity_vector = {};
+            activity_vector.name = apps[index].name; // application owns this activity
+            activity_vector.start_date = apps[index].content[process][0].date; //TODO it is likely that date is not accurate
+            var result = vectorize(apps[index].content[process]);
+            activity_vector.vector = result.vector;
+            // replace token hash by tokens
+            activity_vector.vector[3] = result.token_index.value;
+            // add activity vector to input vector array
+            input_vectors.push(activity_vector);
+        } // for loop for processes
+    }
+
+    // finding most likely index for activity tokens and then replace it in the vector
+    for (var index in input_vectors) {
+        if (index === undefined) continue;
+        var tokens = input_vectors[index].vector[3];
+        input_vectors[index].tokens = tokens; // adding an attribute to IV for display later
+        var min_dist = 1000000000;
+        var bm_index = -1; // best matching index in token index list
+        // calculate distance between vector tokens and token index
+        for (var _index in this.token_index) {
+            if (_index === undefined) continue;
+            var dist = getTokenDistance(tokens, this.token_index[_index]);
+            if (dist < min_dist && dist < tokens.length) { //TODO need some experiments to refine threshold
+                min_dist = dist;
+                bm_index = _index;
+            }
+        }
+        input_vectors[index].vector[3] = Number(bm_index);
+    }
+
+    // finalize IV and set coordinates to each vector
+    for (var index in input_vectors) {
+        if (index === undefined) continue;
+        var vector = input_vectors[index].vector;
+        var min_dist = 1000000000;
+        var bm_coords = []; // best matching coordinates
+        for (var _index in this.nodes) {
+            var dist = euclidean_distance(vector, this.nodes[_index].features);
+            if (dist < min_dist) {
+                min_dist = dist;
+                bm_coords = [this.nodes[_index].x, this.nodes[_index].y];
+            }
+        }
+        // set input vector coords
+        input_vectors[index].x = bm_coords[0];
+        input_vectors[index].y = bm_coords[1];
+    }
+    // put the input vector in SOM
+    var offset_range = _.range(-this.radius_range[1] / 2 + this.extent, this.radius_range[1] / 2 - this.extent, 8);
+    d3.select('.som-graph').append("g")
+        .selectAll("#selected-app")
+        .data(input_vectors)
+        .enter().append("rect")
+        .attr("id", "selected-app")
+        .attr("class", function(d, index){ return "selected-app-" + index; })
+        .style("fill", function(d) {
+            return self.color_scale(d.name);
+        })
+        .attr("x", function(d, i) {
+            return self.x_scale(d.x * self.extent) + offset_range[i];
+        })
+        .attr("y", function(d, i) {
+            var y_offset = (i * i) % offset_range.length;
+            return self.y_scale(d.y * self.extent) + offset_range[y_offset];
+        })
+        .attr("width", 15)
+        .attr("height", 15)
+        .attr("rx", 3)
+        .attr("ry", 3);
+
+    for (var index in input_vectors) {
+        if (index === undefined) continue;
+        var app = jQuery(".selected-app-" + index);
+        app.opentip(
+            function(d) { //TODO could also show tokens
+                var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
+                var date = new Date(d.start_date * 1000);
+                var message = "";
+                message += "app: ";
+                message += d.name;
+                message += "</br>";
+                message += "start date: ";
+                message += formatter(date);
+                message += "</br>";
+                return message;
+            }(input_vectors[index]),
+            {style: "tooltip_style"}
+        );
+        app.mouseover(function(event) {
+            this.setAttribute("cursor", "pointer");
+        })
+        .mouseout(function(event) {
+            this.setAttribute("cursor", null);
+        });
+    }
+
+}
+
+function getTokenDistance(x, y) {
+    var common = _.intersection(x, y);
+    var diff = _.difference(x, y);
+    if (common.length === 0) return diff.length;
+    return diff.length / common.length;
 }
 
 SOMGraph.prototype.onThresholdChange = function(threshold) {
@@ -319,7 +471,7 @@ SOMGraph.prototype.onThresholdChange = function(threshold) {
     }
 }
 
-// calculate euclidean distance of two time references
+// calculate euclidean distance
 function euclidean_distance(x, y) {
     var sum = 0.0;
     for (var index in x) {

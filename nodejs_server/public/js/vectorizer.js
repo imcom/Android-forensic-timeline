@@ -60,7 +60,7 @@ function vectorize(target) {
 }
 
 function hashTokens(tokens) { // DJB2 variance hash function
-    // generate string hash for the system objects sequence
+    // generate string hash for activity tokens
     var hash, ch;
     for (var i in tokens) {
         if (i === undefined) continue;

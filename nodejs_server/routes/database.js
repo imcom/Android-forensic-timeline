@@ -90,6 +90,21 @@ exports.upload_log = function(req, res) {
     res.json({error: 0, msg: 'OK'});
 }
 
+exports.token_index = function(req, res) {
+    var command = "mongo localhost:27017/imcom --quiet ./libs/fetch_token_index.js";
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+            if (error === null) {
+                res.json({"error": 0, "type": "token index", "content": stdout});
+            } else {
+                console.log(error);
+                res.json({"error": 1, "type": "token index", "content": error});
+            }
+        }
+    );
+}
+
 exports.som = function(req, res) {
     var command = "mongo localhost:27017/imcom --quiet ./libs/fetch_som.js";
     var child_process = exec(
