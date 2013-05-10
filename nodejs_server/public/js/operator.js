@@ -13,6 +13,8 @@ var dmesg_selection = $('#dmesg-selection-input');
 var init_events_pane = $('#init-events');
 var end_events_pane = $('#end-events');
 var event_pairs_display_pane = $('#event-pairs-display');
+var responsive_som_pane = $('#responsive-som-apps');
+var threshold_input = $('#threshold-input');
 //var collection = $('#collection-input');
 //var selection = $('#selection-input');
 //var file_activity_selection = $('#file-activity-selection-input');
@@ -33,6 +35,7 @@ var dropdown_btn = $('.dropdown-ctrl-bar');
 var popup_btn = $('.popup-ctrl-bar');
 var slide_right_btn = $('.slide-right-ctrl-bar');
 var slide_left_btn = $('.slide-left-ctrl-bar');
+var slide_left_som_btn = $('.slide-left-som-ctrl-bar');
 var aggregate_btn = $('#aggregate-btn');
 var dmesg_search_btn = $('#dmesg-search');
 var show_radio_btn = $('#radio-on');
@@ -41,6 +44,7 @@ var update_delta_events_btn = $('#update-event-pairs');
 var add_event_pair_btn = $('#add-event-pair');
 var remove_event_pair_btn = $('#remove-event-pair');
 var som_btn = $('#show-som');
+var threshold_apply_btn = $('#threshold-apply');
 //var relevance_search_btn = $('#relevance-search');
 //var app_trace_search_btn = $('#app-trace-search');
 //var expand_btn = $('#expand');
@@ -58,12 +62,15 @@ var dropdown_pane_collapsed = 1;
 var popup_pane_collapsed = 1;
 var slide_right_pane_collapsed = 1;
 var slide_left_pane_collapsed = 1;
+var slide_left_som_pane_collapsed = 1;
+var on_som_generation = 0;
 var object_selected = false;
 var pid_selected = false;
 var selected_object;
 var selected_pid;
 var current_start_time;
 var current_end_time;
+var som_instance = null;
 
 var pairs_of_interest = [ //TODO experimental
         ["am_proc_start", "am_proc_died"],
@@ -372,11 +379,11 @@ function fillResponsivePane(target_set, type) {
 }
 
 function onAppSelection() {
-    var app_checkboxs = $('.app-checkbox');
+    var app_checkboxes = $('.app-checkbox');
     var display_dataset;
     var display_apps = [];
     var display_path_set = {};
-    app_checkboxs.forEach(function(checkbox) {
+    app_checkboxes.forEach(function(checkbox) {
         if (checkbox.checked) {
             // save the selected apps for drawing path
             display_path_set[checkbox.value] = path_dataset[checkbox.value];
@@ -440,11 +447,25 @@ function onTimeChosen(selected_time, type) {
             $('#backward').css('opacity', 0).css('z-index', -1);
 }
 
+function onSOMAppSelection() {
+    var som_app_checkboxes = $('.som-app-checkbox');
+    var selected_apps = [];
+    som_app_checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            selected_apps.push(checkbox.value);
+        }
+    });
+    som_instance.appendApps(selected_apps);
+}
+
 function fillAppResponsivePane(path_groups) {
     for (var app in path_groups) {
         if (app === undefined) continue;
         responsive_app_pane.append(
             "<label type='checkbox inline'><input class='app-checkbox' id='app-checkbox' type='checkbox' onChange='onAppSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
+        );
+        responsive_som_pane.append(
+            "<label type='checkbox inline'><input class='som-app-checkbox' id='som-app-checkbox' type='checkbox' onChange='onSOMAppSelection()' value='" + app + "'>" + app.substring(4) + "</label>"
         );
     }
     var checkboxes = $('.app-checkbox');
@@ -934,7 +955,7 @@ function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data
 function generateSOM(nodes) {
     // remove old graph
     $('#aggregation-arena').children().remove();
-    new SOMGraph("#aggregation-arena", nodes, app_traces);
+    som_instance = new SOMGraph("#aggregation-arena", nodes, app_traces);
 }
 
 // button actions
@@ -960,6 +981,9 @@ dropdown_btn.click(function() {
         // hide side control bars
         $('#responsive-pane').animate({"right": -300}, 500, "ease");
         $('#main-ctrl-pane').animate({"left": -300}, 500, "ease");
+        // show SOM control if it is on SOM generation
+        if (on_som_generation === 1)
+            $('#som-ctrl-pane').animate({"left": -280}, 500, "ease");
         // show right control button
         $('#open-right-ctrl').css('opacity', 0.8).css('z-index', 50);
     } else { // hide the pane
@@ -976,6 +1000,8 @@ dropdown_btn.click(function() {
         // show side control bars
         $('#responsive-pane').animate({"right": -280}, 500, "ease");
         $('#main-ctrl-pane').animate({"left": -280}, 500, "ease");
+        // hide SOM control
+        $('#som-ctrl-pane').animate({"left": -300}, 500, "ease");
         // hide right control button
         $('#open-right-ctrl').css('opacity', 0).css('z-index', -1);
         // switch responsive ctrl pane to app
@@ -1042,6 +1068,24 @@ slide_left_btn.click(function() {
         slide_left_ctrl.css("-moz-transform", "rotate(180deg)");
         slide_left_ctrl[0].setAttribute("title", "Expand control pane");
         main_ctrl_pane.animate({"left": -280}, 500, "ease");
+    }
+});
+
+slide_left_som_btn.click(function() {
+    var som_ctrl_pane = $('#som-ctrl-pane');
+    var slide_left_ctrl = $('.slide-left-ctrl');
+    if (slide_left_som_pane_collapsed == 1) { // show the pane
+        slide_left_som_pane_collapsed = 0;
+        slide_left_ctrl.css("-webkit-transform", "rotate(0deg)");
+        slide_left_ctrl.css("-moz-transform", "rotate(0deg)");
+        slide_left_ctrl[0].setAttribute("title", "Collapse control pane");
+        som_ctrl_pane.animate({"left": 0}, 500, "ease");
+    } else { // hide the pane
+        slide_left_som_pane_collapsed = 1;
+        slide_left_ctrl.css("-webkit-transform", "rotate(180deg)");
+        slide_left_ctrl.css("-moz-transform", "rotate(180deg)");
+        slide_left_ctrl[0].setAttribute("title", "Expand control pane");
+        som_ctrl_pane.animate({"left": -280}, 500, "ease");
     }
 });
 
@@ -1115,6 +1159,7 @@ som_btn.click(function() {
             if (data.content.length > 0) {
                 var nodes = JSON.parse(data.content);
                 generateSOM(nodes);
+                on_som_generation = 1;
             } else {
                 showAlert("no SOM data found!");
             }
@@ -1152,6 +1197,11 @@ update_delta_events_btn.click(function() {
     generateDeltaTimeGraph(delta_dataset);
 });
 
+threshold_apply_btn.click(function() {
+    var threshold = threshold_input.val();
+    som_instance.onThresholdChange(threshold);
+});
+
 function aggregationOnCompletion(type, target, content) {
     aggr_dataset = {}; // clear old data
     //var result = {};
@@ -1173,6 +1223,8 @@ function aggregationOnCompletion(type, target, content) {
     $('#delta-nav').removeClass('active');
     $('#extend-tab').addClass('active');
     $('#extend-nav').addClass('active');
+    // hide SOM control pane
+    on_som_generation = 0;
 }
 
 // click to go to the previous time window
@@ -1217,11 +1269,8 @@ hide_radio_btn.click(function() {
 
 // bootstrap function, init the basic application trace timeline
 window.onLoad = function() {
-    // clear dataset for new data
-    /*dataset = [];
-    current_dataset = [];
-    app_traces = {};
-    timeline_main.clearData();*/
+    // hide SOM ctrl pane to the right on app start
+    $('#som-ctrl-pane').animate({"left": -300}, 100, "ease");
     // fetch temporal info of the device
     referenceQuery("temporal_info", "temporal", null);
     drawApplicationTraces();

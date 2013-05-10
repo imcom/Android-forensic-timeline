@@ -64,6 +64,17 @@ html
             div#aggregation-arena
             div.dropdown-ctrl-bar
                 div(title="Expand aggregation pane").dropdown-ctrl
+        div#som-ctrl-pane.slide-left-div
+            div.slide-left-som-ctrl-bar
+                div(title="Expand control pane").slide-left-ctrl
+            div.som-ctrl
+                div#responsive-som-app-pane
+                    p.nav-header Detected Applications
+                    #responsive-som-apps
+                    p.nav-header Temporal Threshold [Millisconds]
+                    div.input-append#threshold-input-pane
+                            input(type="text", placeholder="threshold ...").span2#threshold-input
+                            button(type="button").btn#threshold-apply Apply
         div#responsive-pane.slide-right-div
             div.slide-right-ctrl-bar
                 div(title="Expand responsive pane").slide-right-ctrl

@@ -78,7 +78,7 @@ li.nav-header.cozy-list-header
     height: 60%
     margin-top: 50px
 
-.slide-left-ctrl-bar
+.slide-left-ctrl-bar, .slide-left-som-ctrl-bar
     position: absolute
     width: 20px
     height: 100%
@@ -96,11 +96,11 @@ li.nav-header.cozy-list-header
         -webkit-transform: rotate(180deg)
         -moz-transform: rotate(180deg)
 
-.slide-left-ctrl-bar:hover
+.slide-left-ctrl-bar:hover, .slide-left-som-ctrl-bar:hover
     .slide-left-ctrl
         background: url('/images/sidebar_icon.png') bottom right
 
-#dmesg-selection-input
+#dmesg-selection-input, #threshold-input
     font-family: serif
     width: 150px
 
@@ -126,6 +126,13 @@ li.nav-header.cozy-list-header
     p
         margin-left: 35px
 
+#responsive-som-app-pane
+    margin-top: 10px
+
+#threshold-input-pane
+    margin-top: -12px
+    margin-left: 12px
+
 #responsive-apps, #responsive-pids, #responsive-objects
     label
         margin-right: 10px
@@ -135,6 +142,16 @@ li.nav-header.cozy-list-header
     max-height: 660px
     margin-top: -10px
     margin-left: 30px
+
+#responsive-som-apps
+    label
+        margin-right: 10px
+        font-family: Consolas
+    overflow-x: hidden
+    overflow-y: auto
+    max-height: 475px
+    margin-top: -10px
+    margin-left: 15px
 
 #init-events, #end-events, #event-pairs-display
     height: 120px
@@ -152,7 +169,7 @@ li.nav-header.cozy-list-header
 label
     display: inline-block
 
-#app-checkbox, #pid-checkbox, #object-checkbox, #delta-checkbox-init, #delta-checkbox-end
+#app-checkbox, #pid-checkbox, #object-checkbox, #delta-checkbox-init, #delta-checkbox-end, #som-app-checkbox
     margin-left: 5px
     margin-right: 5px
     margin-top: 0px
@@ -275,7 +292,7 @@ label
     .popup-ctrl
         background: url('/images/dropdown_bar_icon.png') top left
 
-#aggregation-pane, #responsive-pane, #event-detail-pane, #extra-ctrl-pane, #main-ctrl-pane
+#aggregation-pane, #responsive-pane, #event-detail-pane, #extra-ctrl-pane, #main-ctrl-pane, #som-ctrl-pane
     border: 2px solid
     -webkit-border-radius: 8px
     -moz-border-radius: 8px

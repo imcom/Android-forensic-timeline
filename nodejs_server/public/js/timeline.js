@@ -624,6 +624,8 @@ Timeline.prototype.onDataReady = function() {
             self.getApplicationInfo(data._id);
             // generate application delta timeline
             self.getAppDeltaTimeline(data._id);
+            // hide SOM control pane
+            on_som_generation = 0;
             // fetch application related system calls and corresponding pids
             self.getAppSystemCalls(data._id);
         });
@@ -911,6 +913,13 @@ Timeline.prototype.getAppDeltaTimeline = function(app_name) {
                 delta_dataset = []; // remove old data
                 delta_dataset = application_trace.content; // var is defined in operator
                 generateDeltaTimeGraph(application_trace.content);
+                // switch responsive ctrl pane to delta
+                $('#extend-tab').removeClass('active');
+                $('#extend-nav').removeClass('active');
+                $('#responsive-app-pane').removeClass('active');
+                $('#app-nav').removeClass('active');
+                $('#delta-tab').addClass('active');
+                $('#delta-nav').addClass('active');
             } else {
                 showAlert("no application info available", true);
             }

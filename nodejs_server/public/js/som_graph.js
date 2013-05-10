@@ -22,42 +22,14 @@ function SOMGraph(name, nodes, app_traces) {
     // class variable
     this.name = name;
     this.nodes = nodes;
-    this.dataset = dataset;
+    this.dataset = app_traces;
 
     // dimensions
     var width = 1800;
     var height = 820;
 
-    // init dataset for stack graph
-    /*this.dataset.forEach(function(bar) {
-        var y0 = 0; // baseline is zero
-        // for each value in bar --> objects : [obj_coords, ...]
-        bar.objects = d3.range(bar.values.length).map(function(index) {
-            var object_coords = {};
-            // use signature JSON string to select color
-            object_coords.name = JSON.stringify(bar.values[index].signature);
-            object_coords.y0 = y0;
-            object_coords.y = (y0 += bar.values[index].count);
-            return object_coords;
-        });
-        bar.max_number = bar.objects[bar.objects.length - 1].y;
-    });
-
-    // stack graph config
-    var stack = d3.layout.stack();
-    var y_domain_max = d3.max(this.dataset, function(data) {
-        return data.max_number;
-    });
-
-    function initDeltaDomain() {
-        self.dataset.forEach(function(data) {
-            data.delta_time = Number(data.delta_time);
-        });
-        return [self.dataset[0].delta_time, self.dataset[self.dataset.length - 1].delta_time];
-    }
-
-    // init X axis scale
-    //var delta_domain = initDeltaDomain();*/
+    // threshold of temporal distance [default to 5]
+    var dist_threshold = 5;
 
     var som_width = 5; //FIXME read from config file
     var som_height = 3; //FIXME read from config file
@@ -212,13 +184,13 @@ function SOMGraph(name, nodes, app_traces) {
         .text("Self-Organizing Map of Device Activities");
 
     // cluster path generator
-    var cluster_path = d3.svg.line()
+    this.cluster_path = d3.svg.line()
         .x(function(d) { return d.x; })
         .y(function(d) { return d.y; })
         .interpolate("basis");
 
     // cluster path color generator
-    var path_color_scale = d3.scale.category20();
+    this.path_color_scale = d3.scale.category20();
 
     // cluster features description generator
     var formatMessage = function(features) {
@@ -260,8 +232,8 @@ function SOMGraph(name, nodes, app_traces) {
             };
             var path_data = [center, site];
             som_graph.append('svg:path')
-                .attr("d", cluster_path(path_data))
-                .attr("stroke", path_color_scale(index)) // index of map nodes
+                .attr("d", self.cluster_path(path_data))
+                .attr("stroke", self.path_color_scale(index)) // index of map nodes
                 .attr("stroke-width", 0.8)
                 .attr("fill", "none");
         }, this); // specify the scope in callback
@@ -283,8 +255,7 @@ function SOMGraph(name, nodes, app_traces) {
             var dist = euclidean_distance(nodes[index].extra_data.time_ref, nodes[_index].extra_data.time_ref);
             dist_list[_index] = dist;
         }
-        // threshold of temporal distance
-        var dist_threshold = 5;
+
         // connect temporally close clusters
         for (var _index in dist_list) {
             if (_index === undefined) continue;
@@ -295,32 +266,67 @@ function SOMGraph(name, nodes, app_traces) {
                 var assist_site = {x: (center.x + close_site.x) / 2, y: (center.y + close_site.y) / 2 + random_offset};
                 var time_path = [center, assist_site, close_site];
                 som_graph.append('svg:path')
-                    .attr("d", cluster_path(time_path))
-                    .attr("stroke", path_color_scale(index))
+                    .attr("id", "temporal-conn")
+                    .attr("d", this.cluster_path(time_path))
+                    .attr("stroke", this.path_color_scale(index))
                     .attr("stroke-width", 0.8)
                     .attr("stroke-dasharray", "10,10,5")
                     .attr("fill", "none");
             }
         }
-
     } // for loop over map nodes
-
-    // calculate euclidean distance of two time references
-    function euclidean_distance(x, y) {
-        var sum = 0.0;
-        for (var index in x) {
-            sum += Math.pow(x[0] - y[0], 2);
-        }
-        return Math.sqrt(sum, 2);
-    }
-
 }
 
+SOMGraph.prototype.appendApps = function(app_list) {
+    console.log(app_list);
+}
 
+SOMGraph.prototype.onThresholdChange = function(threshold) {
+    // clear old temporal connections
+    d3.selectAll("#temporal-conn").remove();
+    // calculate new temporal connections
+    for (var index in this.nodes) {
+        if (index === undefined) continue;
+        var cluster = $('#node-' + index);
+        var center = {x: Number(cluster.attr('cx')), y: Number(cluster.attr('cy'))};
 
+        // calculate time distance of clusters
+        var dist_list = [];
+        for (var _index in this.nodes) {
+            if (_index === undefined || _index === index) continue;
+            var dist = euclidean_distance(this.nodes[index].extra_data.time_ref, this.nodes[_index].extra_data.time_ref);
+            dist_list[_index] = dist;
+        }
 
+        // connect temporally close clusters
+        for (var _index in dist_list) {
+            if (_index === undefined) continue;
+            if (dist_list[_index] <= threshold) {
+                var close_cluster = $('#node-' + _index);
+                var close_site = {x: Number(close_cluster.attr('cx')), y: Number(close_cluster.attr('cy'))};
+                var random_offset = _.random(-20, 20);
+                var assist_site = {x: (center.x + close_site.x) / 2, y: (center.y + close_site.y) / 2 + random_offset};
+                var time_path = [center, assist_site, close_site];
+                d3.select('.som-graph g').append('svg:path')
+                    .attr("id", "temporal-conn")
+                    .attr("d", this.cluster_path(time_path))
+                    .attr("stroke", this.path_color_scale(index))
+                    .attr("stroke-width", 0.8)
+                    .attr("stroke-dasharray", "10,10,5")
+                    .attr("fill", "none");
+            }
+        }
+    }
+}
 
-
+// calculate euclidean distance of two time references
+function euclidean_distance(x, y) {
+    var sum = 0.0;
+    for (var index in x) {
+        sum += Math.pow(x[0] - y[0], 2);
+    }
+    return Math.sqrt(sum, 2);
+}
 
 
 
