@@ -61,12 +61,12 @@ public class MainActivity extends Activity {
 	
 	private void startUploadManager() {
 		// TODO Auto-generated method stub
-		int restart_interval = 1 * 1000 * 60 * 110; // restart the upload service every 110 minutes
+		int repeat_interval = 1 * 1000 * 60 * 60 * 2; // uploading logs every 2 hours
 		Intent upload_intent = new Intent(this, UploadManager.class);
 		startService(upload_intent);
 		PendingIntent pending_intent = PendingIntent.getService(this, 0, upload_intent, 0);
 		AlarmManager alarm_manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-		alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), restart_interval, pending_intent);
+		alarm_manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), repeat_interval, pending_intent);
 	}
 
 	public void launch(View view) {
