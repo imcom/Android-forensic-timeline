@@ -262,7 +262,7 @@ function tokenize(object, target) {
                 tokens.push(intent);
                 return tokens;
             } catch (e) {
-                logException();
+                logException(object, target);
             }
         }
 
@@ -278,7 +278,7 @@ function tokenize(object, target) {
                 tokens.push(intent);
                 return tokens;
             } catch (e) {
-                logException();
+                logException(object, target);
             }
         }
 
@@ -418,7 +418,7 @@ function tokenize(object, target) {
             tokens.push(database);
             return tokens;
         } catch (e) {
-            logException();
+            logException(object, target);
         }
     }
 
@@ -443,15 +443,15 @@ function tokenize(object, target) {
             tokens.push(event);
             return tokens;
         } catch (e) {
-            logException();
+            logException(object, target);
         }
     }
 
     // debug info for unknown system calls
-    logException();
+    logException(object, target);
 }
 
-function logException() {
+function logException(object, target) {
     if (_console !== undefined) {
         _console.log(object + " : " + target);
     } else {
@@ -459,4 +459,6 @@ function logException() {
     }
     return ["undefined"];
 }
+
+
 
