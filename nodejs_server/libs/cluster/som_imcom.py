@@ -73,10 +73,17 @@ class SOM:
         self.update_learning_rate()
 
     def init_map_node(self, dataset):
-        for index, vector in enumerate(random.sample(dataset, self.width * self.height)):
-            x = index % self.width
-            y = index / self.width
-            self.nodes.append(Node(self, x, y, vector))
+        if len(dataset) >= self.width * self.height:
+            for index, vector in enumerate(random.sample(dataset, self.width * self.height)):
+                x = index % self.width
+                y = index / self.width
+                self.nodes.append(Node(self, x, y, vector))
+        else:
+            dummy_set = range(0, 15)
+            for index in dummy_set:
+                x = index % self.width
+                y = index / self.width
+                self.nodes.append(Node(self, x, y, [index] * 7))
         '''range_vectors = [list(vector) for vector in zip(*dataset)]
         for vector in range_vectors:
             vector.sort()

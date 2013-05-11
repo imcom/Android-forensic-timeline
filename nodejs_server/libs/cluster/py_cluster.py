@@ -49,7 +49,7 @@ height = int(config_values[1])
 ksom = SOM(width, height, vector_dataset)
 
 # start training
-for activity_vector in random.sample(activity_dataset, 50):
+for activity_vector in random.sample(activity_dataset, len(activity_dataset)):
     ksom.epoch(activity_vector['vector'], activity_vector['name'], activity_vector['start_date'])
     pass
 
