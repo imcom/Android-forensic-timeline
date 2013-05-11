@@ -1,7 +1,8 @@
 
 
+var _console = this.console;
+
 function tokenize(object, target) {
-    var _console = this.console;
     var black_list = ["proc", "Process", "for", ":", "has", "", "info", "to", "OR", "INTO"];
     var tokens = [];
 
