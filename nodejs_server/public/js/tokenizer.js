@@ -1,7 +1,7 @@
 
 
-
 function tokenize(object, target) {
+    var _console = this.console;
     var black_list = ["proc", "Process", "for", ":", "has", "", "info", "to", "OR", "INTO"];
     var tokens = [];
 
@@ -253,24 +253,32 @@ function tokenize(object, target) {
         var intent_re = new RegExp(/(?:cmp=[a-zA-Z\._\/]*)/);
 
         if (target.substr(0, "Starting".length) === "Starting") {
-            var pid = pid_re.exec(target)[0];
-            pid = pid.replace(' ', '=');
-            var intent = intent_re.exec(target)[0];
-            tokens.push(pid);
-            tokens.push(intent);
-            return tokens;
+            try {
+                var pid = pid_re.exec(target)[0];
+                pid = pid.replace(' ', '=');
+                var intent = intent_re.exec(target)[0];
+                tokens.push(pid);
+                tokens.push(intent);
+                return tokens;
+            } catch (e) {
+                logException();
+            }
         }
 
         if (target.substr(0, "startActivity".length) === "startActivity") {
             var context_re = new RegExp(/(?:non-Activity)/);
             var object_re = new RegExp(/(?:forcing\s[a-zA-Z\._]*)/);
-            var context = "context=" + context_re.exec(target)[0];
-            var object = "object=" + object_re.exec(target)[0].split(' ')[1]; // emit forcing or other verbs
-            var intent = intent_re.exec(target)[0];
-            tokens.push(context);
-            tokens.push(object);
-            tokens.push(intent);
-            return tokens;
+            try {
+                var context = "context=" + context_re.exec(target)[0];
+                var object = "object=" + object_re.exec(target)[0].split(' ')[1]; // emit forcing or other verbs
+                var intent = intent_re.exec(target)[0];
+                tokens.push(context);
+                tokens.push(object);
+                tokens.push(intent);
+                return tokens;
+            } catch (e) {
+                logException();
+            }
         }
 
         if (target.substr(0, "Duplicate".length) === "Duplicate") {
@@ -401,12 +409,16 @@ function tokenize(object, target) {
     if (object === "Database") {
         var operation_re = new RegExp(/(?:^db[^\(]+)/);
         var database_re = new RegExp(/(?:path[^,]+)/);
-        var operation = operation_re.exec(target)[0];
-        var database = database_re.exec(target)[0];
-        database = database.replace('\s', '');
-        tokens.push(operation);
-        tokens.push(database);
-        return tokens;
+        try {
+            var operation = operation_re.exec(target)[0];
+            var database = database_re.exec(target)[0];
+            database = database.replace('\s', '');
+            tokens.push(operation);
+            tokens.push(database);
+            return tokens;
+        } catch (e) {
+            logException();
+        }
     }
 
     if (object === "notification_cancel_all") {
@@ -420,26 +432,30 @@ function tokenize(object, target) {
     if (object === "WindowManager") {
         var content_re = new RegExp(/\{.*\}/);
         var event_re = new RegExp(/[^:]+/);
-        var event = event_re.exec(target)[0];
-        var content = content_re.exec(target)[0].split('\s'); //FIXME unknown fields exist
-        var app = content[1].split('/')[0];
-        var intent = content[1].split('/')[1];
-        tokens.push(app);
-        tokens.push(intent);
-        tokens.push(event);
-        return tokens;
+        try {
+            var event = event_re.exec(target)[0];
+            var content = content_re.exec(target)[0].split('\s'); //FIXME unknown fields exist
+            var app = content[1].split('/')[0];
+            var intent = content[1].split('/')[1];
+            tokens.push(app);
+            tokens.push(intent);
+            tokens.push(event);
+            return tokens;
+        } catch (e) {
+            logException();
+        }
     }
 
-    // debugging info
-    var _console = this.console;
+    // debug info for unknown system calls
+    logException();
+}
+
+function logException() {
     if (_console !== undefined) {
-        _console.log(object);
-        _console.log(target);
+        _console.log(object + " : " + target);
     } else {
-        print(object);
-        print(target);
+        print(object + " : " + target);
     }
     return ["undefined"];
 }
-
 
