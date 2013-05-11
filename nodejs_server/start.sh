@@ -1,21 +1,16 @@
 #!/bin/bash
 
-if [ ! -f db.lockfile ]
+if [ $# -lt 2 ]
 then
-    # init application activity collection
-    echo -ne 'initialising application activities summary ...\t'
-    mongo --quiet localhost:27017/imcom ./libs/app_activity.js
-    echo 'ok!'
-
-    # init application trace collection
-    echo -ne 'initialising application traces '
-    ./libs/init_app_trace.sh imcom
-    echo ' ok!'
-
-    touch db.lockfile
+    echo "Usage: "$0" <server app> <database>"
+    exit -1
 fi
 
 echo 'starting server now ...'
-# params: <server app> <db name>
-node app.js imcom
+node $1 $2
+
+
+
+
+
 
