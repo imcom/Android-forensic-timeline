@@ -37,7 +37,7 @@ for log_file in log_files:
                 buf = {
                     'date':int(timestamp),
                     'level':details['level'],
-                    'object':details['object'].strip(),
+                    'object':details['object'].strip().replace('.', '_'), # Mongo does NOT allow `.` in fields name
                     'pid':details['pid'].strip(),
                     'msg':details['msg'].strip(),
                 }
