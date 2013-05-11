@@ -103,6 +103,7 @@ app.configure(function(){
         '/js/delta_time_graph.js',
         '/js/signature_checker.js',
         '/js/vectorizer.js',
+        '/js/som_config.js',
         // data models
         '/js/data_models/android_logs.js',
         '/js/data_models/browsersearches.js',

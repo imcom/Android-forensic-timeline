@@ -4,19 +4,6 @@ db.activity_vectors.drop()
 db.token_hash.drop()
 
 var cursor;
-/*var app_name_index = {};
-cursor = db.app_name_index.find();
-while (cursor.hasNext()) {
-    var record = cursor.next();
-    app_name_index[record.name] = record._id;
-}*/
-
-/*var sys_object_index = {};
-cursor = db.system_object_index.find();
-while (cursor.hasNext()) {
-    var record = cursor.next();
-    sys_object_index[record.name] = record._id;
-}*/
 
 var token_index = []; // [ {`hash`: token_hash, `value`: tokens}, ... ]
 var sorted_token_hash = []; // same structure as above

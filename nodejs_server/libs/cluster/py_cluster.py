@@ -11,7 +11,7 @@ from som_imcom import SOM
 client = pymongo.MongoClient("localhost", 27017)
 
 # connect to database
-db = client.imcom
+db = client.imcom_som
 
 # remove old SOM collection
 db.som_nodes.drop()
@@ -39,8 +39,11 @@ for vector in vector_dataset:
     dataset.append(vector)
 
 # dimension of the map (from config file)
-width = 5
-height = 3
+config_file = open('./som_config.js')
+configs = dict(map(lambda x:x[0:-1].split('='), config_file.read().strip().split('\n')))
+config_values = configs.values()
+width = int(config_values[0])
+height = int(config_values[1])
 
 # init the self-organising map
 ksom = SOM(width, height, vector_dataset)

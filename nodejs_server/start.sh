@@ -9,7 +9,7 @@ then
 
     # init application trace collection
     echo -ne 'initialising application traces '
-    ./libs/init_app_trace.sh
+    ./libs/init_app_trace.sh imcom
     echo ' ok!'
 
     touch db.lockfile

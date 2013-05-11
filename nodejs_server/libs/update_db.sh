@@ -1,14 +1,15 @@
 #!/bin/bash
 
-INPUT_DIR='../uploads/json'
-DATABASE='imcom'
+DATABASE='imcom_som'
 
-cd $INPUT_DIR
-INPUT_FILES=`ls`
+# init application traces
+mongo --quiet localhost:27017/$DATABASE ./libs/app_activity.js
+./libs/init_app_trace.sh $DATABASE
 
-for file in $INPUT_FILES
-do
-    collection=`echo $file | awk -F . '{print $1}'`
-    mongoimport --db $DATABASE --collection $collection --upsert --upsertFields date,msg,object,pid --file $file
-done
+# init input vectors and generate SOM nodes
+./libs/init_vectors.sh
+python ./libs/cluster/py_cluster.py
+
+
+
 

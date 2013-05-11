@@ -1,11 +1,13 @@
 #!/bin/bash
 
+export DATABASE=$1
+
 # drop the previous trace result
-mongo localhost:27017/imcom --eval "db.application_trace.drop()" 1>/dev/null 2>&1
+mongo localhost:27017/$DATABASE --eval "db.application_trace.drop()" 1>/dev/null 2>&1
 
 CWD=`pwd`/libs
 
-APP_NAMES=`mongo --quiet localhost:27017/imcom $CWD/get_app_names.js`
+APP_NAMES=`mongo --quiet localhost:27017/$DATABASE $CWD/get_app_names.js`
 
 for application_name in $APP_NAMES
 do

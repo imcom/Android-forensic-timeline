@@ -30,9 +30,10 @@ function SOMGraph(name, nodes, app_traces) {
     // threshold of temporal distance [default to 5]
     var dist_threshold = 5;
 
-    var som_width = 5; //FIXME read from config file
-    var som_height = 3; //FIXME read from config file
-    this.extent = 20;
+    // configs are global vars in som_config.js which is a symbolic link
+    var som_width = _width; // defaults to 5
+    var som_height = _height; // defaults to 3
+    this.extent = _extent; // defaults to 20
 
     // define SOM axes domain
     var x_domain = [];

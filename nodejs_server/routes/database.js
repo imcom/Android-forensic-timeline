@@ -68,11 +68,12 @@ exports.upload_log = function(req, res) {
             console.log(stdout);
             if (error === null) {
                 command = "\
-                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection main --file ./uploads/json/main.log; \
-                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection system --file ./uploads/json/system.log; \
-                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection events --file ./uploads/json/events.log; \
-                    mongoimport --db test --upsert --upsertFields date,object,msg,pid --collection radio --file ./uploads/json/radio.log; \
-                    mongoimport --db test --upsert --upsertFields name --collection packages --file ./uploads/json/packages.list;";
+                    mongoimport --db imcom_som --upsert --upsertFields date,object,msg,pid --collection main --file ./uploads/json/main.log; \
+                    mongoimport --db imcom_som --upsert --upsertFields date,object,msg,pid --collection system --file ./uploads/json/system.log; \
+                    mongoimport --db imcom_som --upsert --upsertFields date,object,msg,pid --collection events --file ./uploads/json/events.log; \
+                    mongoimport --db imcom_som --upsert --upsertFields date,object,msg,pid --collection radio --file ./uploads/json/radio.log; \
+                    mongoimport --db imcom_som --upsert --upsertFields name --collection packages --file ./uploads/json/packages.list; \
+                    ./libs/update_db.sh;";
                 var import_process = exec(
                     command,
                     function(error, stdout, stderr) {
@@ -91,7 +92,7 @@ exports.upload_log = function(req, res) {
 }
 
 exports.token_index = function(req, res) {
-    var command = "mongo localhost:27017/imcom --quiet ./libs/fetch_token_index.js";
+    var command = "mongo localhost:27017/imcom_som --quiet ./libs/fetch_token_index.js";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
@@ -106,7 +107,7 @@ exports.token_index = function(req, res) {
 }
 
 exports.som = function(req, res) {
-    var command = "mongo localhost:27017/imcom --quiet ./libs/fetch_som.js";
+    var command = "mongo localhost:27017/imcom_som --quiet ./libs/fetch_som.js";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
@@ -193,23 +194,6 @@ exports.application_trace = function(req, res) {
             }
         });
 }
-
-//FIXME to be deprecated
-/*
-exports.app_timeline = function(req, res) {
-    console.log("trace application:" + req.body.selection);
-    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/app_timeline.js ";
-    var child_process = exec(
-        command,
-        function(error, stdout, stderr) {
-            if (error === null) {
-                res.json({"error": 0, "type": "android_logs", "content": stdout});
-            } else {
-                res.json({"error": 1, "type": "android_logs", "content": error});
-            }
-        });
-}
-*/
 
 exports.dmesg_aggregation = function(req, res) {
     console.log("mapreduce on[dmesg]:" + req.body.selection);
