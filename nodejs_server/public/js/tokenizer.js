@@ -431,9 +431,10 @@ function tokenize(object, target) {
     }
 
     // debugging info
-    if (console !== undefined) {
-        console.log(object);
-        console.log(target);
+    var _console = this.console;
+    if (_console !== undefined) {
+        _console.log(object);
+        _console.log(target);
     } else {
         print(object);
         print(target);
