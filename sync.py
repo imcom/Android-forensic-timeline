@@ -15,7 +15,7 @@ def syncFile(src, dst):
             shutil.copy(f, dst)
         return len(f4sync)
     except e:
-#TODO print error info
+        #TODO save error info to log
         return -1
 
 programs = ["android_logs",
@@ -46,7 +46,7 @@ else:
 
 def sync_source_code():
     print "Start syncing source code to Git repository... [%s]" % (git_dir)
-    
+
     for program in programs:
         src = dev_dir + path.sep + program + path.sep
         dst = git_dir + program + path.sep
@@ -58,7 +58,7 @@ def sync_source_code():
             print "ok"
         else:
             print "Failed to sync %s" % program
-    
+
 def sync_adt():
     print "Start syncing [%s] project... " % eclipse_workspace,
     src = eclipse_workspace + path.sep
