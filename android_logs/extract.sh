@@ -2,7 +2,7 @@
 
 if [ $# -lt 2 ]
 then
-    echo 'Usage: '$0' evidence_path output_path'
+    echo 'Usage: '$0' <evidence_path> <output_path>'
     exit -1
 fi
 
@@ -64,5 +64,5 @@ echo "ok"
 echo 'start parsing packages list ...'
 ./packages_list.py $EVI_PATH $OUTPUT_PATH
 
-echo 'Done!'
+echo 'done!'
 

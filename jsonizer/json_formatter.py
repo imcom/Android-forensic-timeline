@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+'''
+    python script for parsing content provider query results to json format
+
+    Author: Yu Jin (imcom)
+'''
+
 import codecs
 import json
 import sys
@@ -32,9 +38,11 @@ if lines is not None:
                         json_data[key] = int(json_data[key])
         except ValueError as ve:
             #TODO out put to log file
-            print ve.message
+            #print ve.message
+            pass
         except TypeError as te:
-            print te.message
+            #print te.message
+            pass
         json.dump(json_data, ofile)
         ofile.write("\n")
 

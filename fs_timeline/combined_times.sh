@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## shell script for parsing body file and inode activities
+
 if [ $# -lt 4 ]
 then
     echo 'Usage: '$0' body_file disk_image output_dir start_time(yyyy-mm-dd)'
@@ -67,12 +69,12 @@ do
         else
             line=`echo $inode_time | sed 's/Not Allocated/Allocated: 0/'`
         fi
-        echo $line | 
-            awk '{$6 = ":"$8",";$8 = "";$9 = ""; print $0}' | 
-            sed 's/Allocated/,allocated/' | 
-            sed 's/uid/,uid/' | 
-            sed 's/mode/,mode/' | 
-            sed 's/size/,size/' | 
+        echo $line |
+            awk '{$6 = ":"$8",";$8 = "";$9 = ""; print $0}' |
+            sed 's/Allocated/,allocated/' |
+            sed 's/uid/,uid/' |
+            sed 's/mode/,mode/' |
+            sed 's/size/,size/' |
             sed 's/Accessed/,accessed/' |
             sed 's/File Modified/,file_modified/' |
             sed 's/Inode Modified/,inode_modified/' |

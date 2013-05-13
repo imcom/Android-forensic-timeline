@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+'''
+    python script for parsing logcat log files
+
+    Author: Yu Jin (imcom)
+'''
+
 import re
 from datetime import datetime
 import time
@@ -10,6 +16,7 @@ import os
 read_from = sys.argv[1]
 save_to = sys.argv[2]
 
+# log message only contains month and days
 cur_year = datetime.utcnow().year
 log_files = ['main.log', 'system.log', 'events.log', 'radio.log']
 time_data_mask = re.compile("^(?P<etime>\d+-\d+\s[\d+:]+\d+)(.\d+)\s(?P<event>.*)$")
@@ -44,7 +51,7 @@ for log_file in log_files:
                 json.dump(buf, new_log_file)
                 new_log_file.write('\n')
             else:
-                #TODO move this output to log file 
+                #TODO move this output to log file
                 #print 'invalid log entry found', line
                 pass
 

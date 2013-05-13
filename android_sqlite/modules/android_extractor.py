@@ -1,5 +1,12 @@
 #!/usr/bin/python
 
+'''
+    generic SQLite3 database file extractor.
+    connect to datase file and execute queries.
+
+    Author: Yu Jin (imcom)
+'''
+
 import os
 import sys
 import json
@@ -14,7 +21,7 @@ class Extractor:
 
     def extract(self, queries):
         print "connecting to database... " + self.database
-        
+
         try:
             conn = sqlite3.connect(self.database)
         except:
@@ -23,12 +30,12 @@ class Extractor:
         cursor = conn.cursor()
 
         fp = codecs.open(self.result_file, "w", encoding = "utf-8")
-        
+
         for query in queries:
             result = cursor.execute(query)
             #TODO deal with file system exceptions, e.g. permission not sufficient
             print "writting result to file... " + self.result_file
-            
+
             if (result is not None):
                 col_names = map(lambda x: x[0], result.description)
                 result_json = dict()
@@ -36,15 +43,12 @@ class Extractor:
                 for record in result:
                     line = ''
                     for index, name in enumerate(col_names):
-                        #line += "%s:%s" % (name, record[index])
-                        #line += ' '
                         result_json[name] = record[index]
-                    #fp.write(line)
                     json.dump(result_json, fp)
                     fp.write('\n')
-        
-        print "finished extraction, closing..."
-        
+
+        print "extraction finished, closing..."
+
         result.close()
         cursor.close()
         conn.close()

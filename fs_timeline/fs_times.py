@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+'''
+    python script for parsing body file generated via TSK fls tool
+
+    Author: Yu Jin (imcom)
+'''
+
 import sys
 import json
 import codecs

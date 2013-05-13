@@ -1,5 +1,14 @@
 #!/usr/bin/python
 
+'''
+    main control script written in python for dealing with various SQLite database files
+    used by different apps in Android system
+
+    Usage: write a module to extract information from particular SQLite files, put the module in `modules` and import the module here and then execute the module.
+
+    Author: Yu Jin (imcom)
+'''
+
 import os
 import sys
 import modules.android_downloads as downloads
@@ -9,9 +18,9 @@ import modules.facebook_threads as fb_threads
 import modules.facebook_analytics as fb_analytics
 
 if len(sys.argv) < 3:
-    print "Usage: python " + sys.argv[0] + " path_to_data_dir path_to_result_dir"
+    print "Usage: python " + sys.argv[0] + " <path_to_data_dir> <path_to_result_dir>"
     sys.exit(-1)
-    
+
 path_to_data = sys.argv[1]
 path_to_result = sys.argv[2]
 

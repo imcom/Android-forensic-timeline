@@ -1,5 +1,13 @@
 #!/usr/bin/python
 
+'''
+    python script for converting timestamp in kernel message
+    this script is compatible with Android 4.*
+    timestamps in kernel message are the nanoseconds elapsed since system booted
+
+    Author: Yu Jin (imcom)
+'''
+
 import sys
 import re
 import os
@@ -25,7 +33,7 @@ with open(log_file) as dmesg:
         #FIXME on android 4.0+ log entry starts with '<#>'
         if not line.startswith('[') and not line.startswith('<'):
             continue
-        match = time_data_mask.match(line) 
+        match = time_data_mask.match(line)
         if match is not None:
             seconds = int(match.groupdict().get('etime').split('.')[0])
             nseconds = int(match.groupdict().get('etime').split('.')[1])
@@ -36,8 +44,9 @@ with open(log_file) as dmesg:
             json.dump(buf, new_log_file)
             new_log_file.write('\n')
         else:
-            #TODO error message
-            print 'invalid log entry found', line
+            #TODO error message to error log
+            #print 'invalid log entry found', line
+            pass
 
 new_log_file.close()
 print 'ok'

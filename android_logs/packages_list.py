@@ -1,5 +1,12 @@
 #!/usr/bin/python
 
+'''
+    python script for parsing packages.list file from Android system
+    The file contains all installed applications with their uid, pid and path
+
+    Author: Yu Jin (imcom)
+'''
+
 import sys
 import os
 import json
@@ -19,7 +26,7 @@ for package in packages:
             'gid': package[2],
             'path': package[3]
     }
-    json.dump(json_buf, packages_json)
+    json.dump(json_buf, packages_json) # dump dict as json to file
     packages_json.write('\n')
 
 packages_list.close()

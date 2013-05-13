@@ -4,7 +4,7 @@ MASK="pjson"
 
 if [ $# -lt 2 ]
 then
-    echo 'Usage: '$0' input_path output_path'
+    echo 'Usage: '$0' <input_path> <output_path>'
     exit -1
 fi
 
