@@ -917,7 +917,6 @@ function drawApplicationTraces() {
                 timeline_main.setDataset(dataset, path_dataset);
                 fillAppResponsivePane(path_dataset);
                 $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
-                //$('#zoom-out').css('opacity', 0.8).css('z-index', 50);
             } else {
                 showAlert("no records found!");
             }

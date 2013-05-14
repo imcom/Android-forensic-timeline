@@ -162,7 +162,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
     // output data sample:
     // data {
     //      date: <timestamp>,
-    //      _id: <id>,
+    //      _id: <app name>,
     //      display: <display_name>,
     //      content: {<object> : [messages,...], <object> : [messages,...], ...}
     // }
@@ -170,7 +170,7 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
         if (timestamp != 'undefined') {
             for (var record_id in _dataset[timestamp]) {
                 if (record_id != 'undefined') {
-                    this.updateYDomain(record_id); // form an ID array for X-axis domain
+                    this.updateYDomain(record_id); // form an app name array for Y-axis domain
                     var display_name = _dataset[timestamp][record_id].display;
                     //var level = normal_dataset[timestamp][record_id].level;
                     this.dataset.push({
