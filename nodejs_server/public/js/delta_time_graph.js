@@ -201,35 +201,6 @@ function DeltaTimeGraph(name, dataset) {
         return message;
     }
 
-    // append legend to the graph (too many to show properly)
-    /*var legend = stacked_graph.selectAll(".legend")
-        .data(color_scale.domain().slice().reverse())
-        .enter().append("g")
-        .attr("class", "legend")
-        .attr("transform", function(d, i) { return "translate(0," + i * 14 + ")"; });
-
-    legend.append("rect")
-        .attr("x", 10)
-        .attr("width", 12)
-        .attr("height", 12)
-        .style("fill", color_scale);
-
-    legend.append("text")
-        .attr("x", 30)
-        .attr("y", 5)
-        .attr("dy", ".35em")
-        .style("text-anchor", "start")
-        .text(function(d) {
-            var sig = JSON.parse(d);
-            var title = "";
-            // only use system call name
-            sig.sig.forEach(function(_sig) {
-                title += _sig[0];
-                title += "-";
-            });
-            title = title.substr(0, title.length - 1); // trim the tailing `-`
-            return title;
-        });*/
 }
 
 

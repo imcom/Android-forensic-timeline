@@ -757,7 +757,7 @@ function generateDeltaTimeGraph(dataset) {
         return false;
     }
 
-    var delta_dataset = {};
+    var interested_dataset = {};
     for (var app_process in dataset) {
         //FIXME suspects are the ones missing start and ending. abandoned currently...
         if (app_process === undefined || app_process === "suspects") continue;
@@ -776,12 +776,12 @@ function generateDeltaTimeGraph(dataset) {
                 var pid_b = dataset[app_process][index].pid;
                 var msg_a = dataset[app_process][round].msg;
                 var msg_b = dataset[app_process][index].msg;
-                if (delta_dataset[delta_t] === undefined) {
-                    delta_dataset[delta_t] = {};
-                    delta_dataset[delta_t].delta_time = delta_t;
-                    delta_dataset[delta_t].signature = [];
-                    delta_dataset[delta_t].content = [];
-                    delta_dataset[delta_t].count = [];
+                if (interested_dataset[delta_t] === undefined) {
+                    interested_dataset[delta_t] = {};
+                    interested_dataset[delta_t].delta_time = delta_t;
+                    interested_dataset[delta_t].signature = [];
+                    interested_dataset[delta_t].content = [];
+                    interested_dataset[delta_t].count = [];
                 }
                 var signature = [];
                 //
@@ -790,18 +790,18 @@ function generateDeltaTimeGraph(dataset) {
                 signature.push([obj_a].concat(tokenize(obj_a, msg_a)));
                 signature.push([obj_b].concat(tokenize(obj_b, msg_b)));
                 var target_signature = [].concat(signature);
-                var cmp_signatures = [].concat(delta_dataset[delta_t].signature);
+                var cmp_signatures = [].concat(interested_dataset[delta_t].signature);
                 var sig_index = isSignatureKnown(cmp_signatures, target_signature);
                 var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
                 content[0] = [obj_a, msg_a, pid_a];
                 content[1] = [obj_b, msg_b, pid_b];
                 if (sig_index === -1) {
-                    delta_dataset[delta_t].signature.push(signature);
-                    delta_dataset[delta_t].content.push(content);
-                    delta_dataset[delta_t].count.push(1);
+                    interested_dataset[delta_t].signature.push(signature);
+                    interested_dataset[delta_t].content.push(content);
+                    interested_dataset[delta_t].count.push(1);
                 } else {
-                    delta_dataset[delta_t].content[sig_index] = delta_dataset[delta_t].content[sig_index].concat(content);
-                    delta_dataset[delta_t].count[sig_index] += 1;
+                    interested_dataset[delta_t].content[sig_index] = interested_dataset[delta_t].content[sig_index].concat(content);
+                    interested_dataset[delta_t].count[sig_index] += 1;
                 }
             }
             if (index === length - 1) { // when reach the end, start next round
@@ -821,18 +821,18 @@ function generateDeltaTimeGraph(dataset) {
 
     */
     var graph_dataset_buf = {};
-    for (var delta_t in delta_dataset) {
+    for (var delta_t in interested_dataset) {
         if (delta_t === undefined) continue;
-        delta_dataset[delta_t].signature.forEach(function(sig, index) {
+        interested_dataset[delta_t].signature.forEach(function(sig, index) {
             if (graph_dataset_buf[delta_t] === undefined) {
                 graph_dataset_buf[delta_t] = {delta_time: delta_t, values: [], content: []};
             }
             var value = {};
             value.signature = sig;
-            value.count = delta_dataset[delta_t].count[index];
+            value.count = interested_dataset[delta_t].count[index];
             graph_dataset_buf[delta_t].values.push(value);
             var content;
-            content = delta_dataset[delta_t].content[index];
+            content = interested_dataset[delta_t].content[index];
             graph_dataset_buf[delta_t].content.push(content);
         });
     }
@@ -999,6 +999,12 @@ dropdown_btn.click(function() {
         // show side control bars
         $('#responsive-pane').animate({"right": -280}, 500, "ease");
         $('#main-ctrl-pane').animate({"left": -280}, 500, "ease");
+        // adjust slide right ctrl icon
+        $('.slide-right-ctrl').css("-webkit-transform", "rotate(0deg)");
+        $('.slide-right-ctrl').css("-moz-transform", "rotate(0deg)");
+        // adjust slide left ctrl icon
+        $('.slide-left-ctrl').css("-webkit-transform", "rotate(180deg)");
+        $('.slide-left-ctrl').css("-moz-transform", "rotate(180deg)");
         // hide SOM control
         $('#som-ctrl-pane').animate({"left": -300}, 500, "ease");
         // hide right control button
