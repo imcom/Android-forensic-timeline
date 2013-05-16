@@ -106,6 +106,40 @@ exports.token_index = function(req, res) {
     );
 }
 
+exports.coords = function(req, res) {
+    var command = "python ./libs/get_coords.py " + req.body.iv;
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+            if (error === null) {
+                //FIXME dummy implementation here...
+                // sending back the received index for pointing the correct elements in IV array
+                stdout = JSON.stringify({coords:[1,1], index: req.body.index});
+                res.json({"error": 0, "type": "coords", "content": stdout});
+            } else {
+                console.log(stdout);
+                console.log(error);
+                res.json({"error": 1, "type": "coords", "content": error});
+            }
+        }
+    );
+}
+
+exports.matrix = function(req, res) {
+    var command = "mongo localhost:27017/imcom_som --quiet ./libs/fetch_covar_matrix.js";
+    var child_process = exec(
+        command,
+        function(error, stdout, stderr) {
+            if (error === null) {
+                res.json({"error": 0, "type": "covariance matrix", "content": stdout});
+            } else {
+                console.log(error);
+                res.json({"error": 1, "type": "covariance matrix", "content": error});
+            }
+        }
+    );
+}
+
 exports.som = function(req, res) {
     var command = "mongo localhost:27017/imcom_som --quiet ./libs/fetch_som.js";
     var child_process = exec(

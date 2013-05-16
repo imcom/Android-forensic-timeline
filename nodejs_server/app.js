@@ -124,6 +124,8 @@ app.configure(function(){
 // routes of the web server (some are deprecated)
 app.get('/', index_handler.imcom);
 app.post('/som', db_handler.som);
+app.post('/coords', db_handler.coords);
+app.post('/matrix', db_handler.matrix);
 app.post('/token_index', db_handler.token_index);
 app.post('/upload_log', db_handler.upload_log);
 app.post('/mapreduce', db_handler.mapreduce);

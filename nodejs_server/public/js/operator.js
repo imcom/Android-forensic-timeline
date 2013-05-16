@@ -952,9 +952,32 @@ function generateInodeActivity(event, type) { // type: 0 - access, 1 - meta data
 }
 
 function generateSOM(nodes) {
+    on_som_generation = 1;
     // remove old graph
     $('#aggregation-arena').children().remove();
     som_instance = new SOMGraph("#aggregation-arena", nodes, app_traces);
+    /*$.ajax({
+        type: "POST",
+        url: "matrix",
+        data: {
+            type: "exec"
+        },
+        dataType: 'json',
+        success: function(data) {
+            if (data.content.length > 0) {
+                var covar_inv = JSON.parse(data.content)[0]; // return an array -- [covar_matrix]
+                on_som_generation = 1;
+                // remove old graph
+                $('#aggregation-arena').children().remove();
+                som_instance = new SOMGraph("#aggregation-arena", nodes, app_traces, covar_inv.matrix);
+            } else {
+                showAlert("no covariance matrix found!");
+            }
+        },
+        error: function(xhr, type) {
+            showAlert("matrix query error!");
+        }
+    });*/
 }
 
 // button actions
@@ -1164,7 +1187,6 @@ som_btn.click(function() {
             if (data.content.length > 0) {
                 var nodes = JSON.parse(data.content);
                 generateSOM(nodes);
-                on_som_generation = 1;
             } else {
                 showAlert("no SOM data found!");
             }

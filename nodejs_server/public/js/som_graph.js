@@ -350,7 +350,7 @@ SOMGraph.prototype.appendApps = function(app_list) {
         // calculate distance between vector tokens and token index
         for (var _index in this.token_index) {
             if (_index === undefined) continue;
-            var dist = getTokenDistance(tokens, this.token_index[_index]);
+            var dist = getTokenDistance(tokens, this.token_index[_index].value);
             if (dist < min_dist && dist < tokens.length) { //TODO need some experiments to refine threshold
                 min_dist = dist;
                 bm_index = _index;
@@ -359,72 +359,116 @@ SOMGraph.prototype.appendApps = function(app_list) {
         input_vectors[index].vector[3] = Number(bm_index);
     }
 
+    //FIXME re-write the following parts
     // finalize IV and set coordinates to each vector
+    var iv_size = input_vectors.length;
     for (var index in input_vectors) {
         if (index === undefined) continue;
         var vector = input_vectors[index].vector;
-        var min_dist = 1000000000;
+        //var min_dist = 1000000000;
         var bm_coords = []; // best matching coordinates
-        for (var _index in this.nodes) {
+        //var dist_dataset = {};
+        //dist_dataset.iv = vector;
+        //dist_dataset.nodes = this.nodes;
+        //dist_dataset.covar_inv = this.covar_matrix;
+        $.ajax({
+            type: "POST",
+            url: "coords",
+            data: {
+                iv: JSON.stringify(vector),
+                index: index, // reserving index in transmission since AJAX is made async, so the index will be over-written before the previous call finishes
+                type: "exec"
+            },
+            dataType: 'json',
+            success: function(data) {
+                if (data.content.length > 0) {
+                    result = JSON.parse(data.content);
+                    bm_coords = result.coords;
+                    // set input vector coords
+                    input_vectors[Number(result.index)].x = Number(bm_coords[0]);
+                    input_vectors[Number(result.index)].y = Number(bm_coords[1]);
+                    iv_size -= 1;
+                    if (iv_size === 0) onInputVectorFinalised();
+                } else {
+                    showAlert("coordinates query returned null");
+                }
+            },
+            error: function(xhr, type) {
+                showAlert("coordinates query error!");
+            }
+        });
+        /*for (var _index in this.nodes) {
             var dist = euclidean_distance(vector, this.nodes[_index].features);
             if (dist < min_dist) {
                 min_dist = dist;
                 bm_coords = [this.nodes[_index].x, this.nodes[_index].y];
             }
+        }*/
+    } // for-loop on input_vectors
+
+    // callback function on matching calculation complete
+    function onInputVectorFinalised() {
+        // put the input vector in SOM
+        var offset_range = _.range(-self.radius_range[1] / 2 + self.extent, self.radius_range[1] / 2 - self.extent, 8);
+        d3.select('.som-graph').append("g")
+            .selectAll("#selected-app")
+            .data(input_vectors)
+            .enter().append("rect")
+            .attr("id", "selected-app")
+            .attr("class", function(d, index){ return "selected-app-" + index; })
+            .style("fill", function(d) {
+                return self.color_scale(d.name);
+            })
+            .attr("x", function(d, i) {
+                return self.x_scale(d.x * self.extent) + offset_range[i];
+            })
+            .attr("y", function(d, i) {
+                var y_offset = (i * i) % offset_range.length;
+                return self.y_scale(d.y * self.extent) + offset_range[y_offset];
+            })
+            .attr("width", 15)
+            .attr("height", 15)
+            .attr("rx", 3)
+            .attr("ry", 3);
+
+        for (var index in input_vectors) {
+            if (index === undefined) continue;
+            var app = jQuery(".selected-app-" + index);
+            app.opentip(
+                function(d) { //FIXME also show feature vector in message
+                    var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
+                    var date = new Date(d.start_date * 1000);
+                    var message = "";
+                    message += "app: ";
+                    message += d.name;
+                    message += "</br>";
+                    message += "start date: ";
+                    message += formatter(date);
+                    message += "</br>";
+                    message += "Duration: " + d.vector[0] + "[seconds]";
+                    message += "</br>";
+                    message += "Events #: " + d.vector[1];
+                    message += "</br>";
+                    message += "System Calls #: " + d.vector[2];
+                    message += "</br>";
+                    message += "Database Opr #: " + d.vector[4];
+                    message += "</br>";
+                    message += "ContentProvider Opr #: " + d.vector[5];
+                    message += "</br>";
+                    message += "Network Opr #: " + d.vector[6];
+                    message += "</br>";
+                    return message;
+                }(input_vectors[index]),
+                {style: "tooltip_style"}
+            );
+            app.mouseover(function(event) {
+                this.setAttribute("cursor", "pointer");
+            })
+            .mouseout(function(event) {
+                this.setAttribute("cursor", null);
+            });
         }
-        // set input vector coords
-        input_vectors[index].x = bm_coords[0];
-        input_vectors[index].y = bm_coords[1];
     }
-    // put the input vector in SOM
-    var offset_range = _.range(-this.radius_range[1] / 2 + this.extent, this.radius_range[1] / 2 - this.extent, 8);
-    d3.select('.som-graph').append("g")
-        .selectAll("#selected-app")
-        .data(input_vectors)
-        .enter().append("rect")
-        .attr("id", "selected-app")
-        .attr("class", function(d, index){ return "selected-app-" + index; })
-        .style("fill", function(d) {
-            return self.color_scale(d.name);
-        })
-        .attr("x", function(d, i) {
-            return self.x_scale(d.x * self.extent) + offset_range[i];
-        })
-        .attr("y", function(d, i) {
-            var y_offset = (i * i) % offset_range.length;
-            return self.y_scale(d.y * self.extent) + offset_range[y_offset];
-        })
-        .attr("width", 15)
-        .attr("height", 15)
-        .attr("rx", 3)
-        .attr("ry", 3);
-
-    for (var index in input_vectors) {
-        if (index === undefined) continue;
-        var app = jQuery(".selected-app-" + index);
-        app.opentip(
-            function(d) { //TODO could also show tokens
-                var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
-                var date = new Date(d.start_date * 1000);
-                var message = "";
-                message += "app: ";
-                message += d.name;
-                message += "</br>";
-                message += "start date: ";
-                message += formatter(date);
-                message += "</br>";
-                return message;
-            }(input_vectors[index]),
-            {style: "tooltip_style"}
-        );
-        app.mouseover(function(event) {
-            this.setAttribute("cursor", "pointer");
-        })
-        .mouseout(function(event) {
-            this.setAttribute("cursor", null);
-        });
-    }
-
 }
 
 function getTokenDistance(x, y) {
@@ -480,6 +524,9 @@ function euclidean_distance(x, y) {
     }
     return Math.sqrt(sum, 2);
 }
+
+
+
 
 
 
