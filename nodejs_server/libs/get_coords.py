@@ -16,8 +16,16 @@ iv = map(lambda x:float(x.strip()), sys.argv[1][1:-1].split(','))
 # convert binary form matrix to numpy matrix
 covar_inv = numpy.loads(covar_inv[0]['matrix'])
 
+min_dist = 1000000000
+bmu_coords = [-1, -1]
 for node in nodes:
     wv = node['features']
     distance = mahalanobis(iv, wv, covar_inv)
-    print distance
+    if distance < min_dist:
+        min_dist = distance
+        bmu_coords[0] = node['x']
+        bmu_coords[1] = node['y']
+
+print ','.join(str(x) for x in bmu_coords)
+
 

@@ -217,6 +217,7 @@ function SOMGraph(name, nodes, app_traces) {
         nodes[index].extra_data.time_ref.push(d3.min(nodes[index].extra_data.start_date)); // min date
         nodes[index].extra_data.time_ref.push(d3.median(nodes[index].extra_data.start_date)); // median date
         nodes[index].extra_data.time_ref.push(d3.max(nodes[index].extra_data.start_date)); // max date
+        nodes[index].extra_data.time_ref.push(standard_deviation(nodes[index].extra_data.start_date)); // standard deviation of date sample
     }
 
     // draw path for cluster apps and cluster time relations
@@ -252,7 +253,7 @@ function SOMGraph(name, nodes, app_traces) {
         var dist_list = [];
         for (var _index in nodes) {
             if (_index === undefined || _index === index) continue;
-            var dist = euclidean_distance(nodes[index].extra_data.time_ref, nodes[_index].extra_data.time_ref);
+            var dist = temporal_distance(nodes[index].extra_data.time_ref, nodes[_index].extra_data.time_ref);
             dist_list[_index] = dist;
         }
 
@@ -383,7 +384,7 @@ SOMGraph.prototype.appendApps = function(app_list) {
             success: function(data) {
                 if (data.content.length > 0) {
                     result = JSON.parse(data.content);
-                    bm_coords = result.coords;
+                    bm_coords = result.coords.split(',');
                     // set input vector coords
                     input_vectors[Number(result.index)].x = Number(bm_coords[0]);
                     input_vectors[Number(result.index)].y = Number(bm_coords[1]);
@@ -397,13 +398,6 @@ SOMGraph.prototype.appendApps = function(app_list) {
                 showAlert("coordinates query error!");
             }
         });
-        /*for (var _index in this.nodes) {
-            var dist = euclidean_distance(vector, this.nodes[_index].features);
-            if (dist < min_dist) {
-                min_dist = dist;
-                bm_coords = [this.nodes[_index].x, this.nodes[_index].y];
-            }
-        }*/
     } // for-loop on input_vectors
 
     // callback function on matching calculation complete
@@ -491,7 +485,7 @@ SOMGraph.prototype.onThresholdChange = function(threshold) {
         var dist_list = [];
         for (var _index in this.nodes) {
             if (_index === undefined || _index === index) continue;
-            var dist = euclidean_distance(this.nodes[index].extra_data.time_ref, this.nodes[_index].extra_data.time_ref);
+            var dist = temporal_distance(this.nodes[index].extra_data.time_ref, this.nodes[_index].extra_data.time_ref);
             dist_list[_index] = dist;
         }
 
@@ -516,15 +510,26 @@ SOMGraph.prototype.onThresholdChange = function(threshold) {
     }
 }
 
-// calculate euclidean distance
-function euclidean_distance(x, y) {
+// calculate temporal distance using euclidean distance
+function temporal_distance(x, y) {
     var sum = 0.0;
-    for (var index in x) {
+    for (var index in x.slice(0, -1)) {
         sum += Math.pow(x[0] - y[0], 2);
     }
-    return Math.sqrt(sum, 2);
+    var euclidean_dist = Math.sqrt(sum, 2);
+    var deviations = [x[x.length - 1], y[y.length - 1]];
+    return euclidean_dist * (d3.max(deviations) / d3.min(deviations));
 }
 
+function standard_deviation(x) {
+    var mean = d3.mean(x);
+    var size = x.length;
+    var sum = 0.0;
+    x.forEach(function(v) {
+        sum += Math.pow(v - mean, 2);
+    });
+    return Math.sqrt(sum / size, 2);
+}
 
 
 

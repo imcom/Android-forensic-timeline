@@ -112,10 +112,9 @@ exports.coords = function(req, res) {
         command,
         function(error, stdout, stderr) {
             if (error === null) {
-                //FIXME dummy implementation here...
                 // sending back the received index for pointing the correct elements in IV array
-                stdout = JSON.stringify({coords:[1,1], index: req.body.index});
-                res.json({"error": 0, "type": "coords", "content": stdout});
+                rtn = JSON.stringify({coords:stdout, index: req.body.index});
+                res.json({"error": 0, "type": "coords", "content": rtn});
             } else {
                 console.log(stdout);
                 console.log(error);
