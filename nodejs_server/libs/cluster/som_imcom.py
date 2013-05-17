@@ -17,6 +17,7 @@ class Node:
         self.weights_vector = weights_vector
         self.extra_data = {'apps': [], 'start_date': []}
         self.bmu_count = 0
+        self.offset_distribution = []
 
     def getPosition(self):
         return [self.x, self.y]
@@ -79,7 +80,7 @@ class SOM:
                 y = index / self.width
                 self.nodes.append(Node(self, x, y, vector))
         else:
-            dummy_set = range(0, 15)
+            dummy_set = range(0, self.width * self.height)
             for index in dummy_set:
                 x = index % self.width
                 y = index / self.width
@@ -118,12 +119,22 @@ class SOM:
             print "iteration rounds exceeded, quitting ..."
             sys.exit(self.current_iteration)
 
-        # finding the best match unit
+        # finding the best match unit & the second BMU
         self.bmu = None
+        second_bmu = None
         for node in self.nodes:
             node.get_mahalanobis_distance(iv)
             if self.bmu is None or node.mahalanobis_distance < self.bmu.mahalanobis_distance:
                 self.bmu = node
+            elif second_bmu is None or node.mahalanobis_distance < second_bmu.mahalanobis_distance:
+                second_bmu = node
+
+        # calculate the offset using second BMU and store in bmu's offset distribution
+        dist_diff = second_bmu.mahalanobis_distance - self.bmu.mahalanobis_distance
+        x_diff = abs(self.bmu.x - second_bmu.x)
+        y_diff = abs(self.bmu.y - second_bmu.y)
+        iv_offset = [self.bmu.x + x_diff / dist_diff, self.bmu.y + y_diff / dist_diff]
+        self.bmu.offset_distribution.append(iv_offset)
 
         # counting times of a node becomes the BMU
         self.bmu.bmu_count += 1

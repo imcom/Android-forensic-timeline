@@ -63,6 +63,7 @@ for node in ksom.nodes:
     map_node['features'] = node.weights_vector
     map_node['extra_data'] = node.extra_data
     map_node['count'] = node.bmu_count
+    map_node['offset_distribution'] = node.offset_distribution
     collection.save(map_node)
 
 # debugging output
