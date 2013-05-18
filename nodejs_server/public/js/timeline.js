@@ -190,13 +190,13 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
         if (x.date <= y.date) return -1;
         if (x.date > y.date) return 1;
     });
-    // fill the time window in left control pane. (defined in operator.js)
+    // fill the time window in left control pane.
     //this.time_window_interval = fillTimeWindow(Number(this.dataset[0].date), Number(this.dataset[this.dataset.length - 1].date));
     //this.getDisplayIndices(0, 0); // set start & end to 0 for initialisation
     // on dataset is set, draw timeline
     this.onDataReady();
-    if (this.end_index !== this.dataset.length - 1)
-        $('#forward').css('opacity', 0.8).css('z-index', 50);;
+    //if (this.end_index !== this.dataset.length - 1)
+    //    $('#forward').css('opacity', 0.8).css('z-index', 50);;
 }
 
 // prepare dataset for chronological path
@@ -373,6 +373,7 @@ Timeline.prototype.onDataReady = function() {
     // get the entire time period
     var start_date = display_dataset[0].date;
     var end_date = display_dataset[display_dataset.length - 1].date;
+    var total_period = (Number(end_date) - Number(start_date)) / 1000;
 
     // define circle radius scale
     var radius_range = [10, 20];
@@ -641,20 +642,21 @@ Timeline.prototype.onDataReady = function() {
     $('#time-brush-main').children().remove(); // remove old brush if any
     // init the time brush on extra control pane
     var time_brush = d3.select("#time-brush-main").append("svg")
-        .attr("width", 1322)
+        .attr("width", 1322) //FIXME hard coded size
         .attr("height", 60);
 
     var brush_scale = d3.time.scale.utc()
         .range([22, 1300])
         .domain(this.x_scale.domain());
 
-    // define time brush step based on time window size
-    var brush_step = this.time_window_interval === 60 * 60 ? 5 : this.time_window_interval === 60 * 60 * 3 ? 15 : 30;
+    // define time brush step depending on total time period
+    var brush_step = total_period <= 60 * 60 * 6 ? 30 : total_period <= 60 * 60 * 24 ? 5 : 15;
+    var brush_unit = total_period <= 60 * 60 * 24 ? d3.time.minutes.utc : d3.time.hours.utc;
     var brush_axis = d3.svg.axis()
         .scale(brush_scale)
         .tickSize(30)
         .tickPadding(5)
-        .ticks(d3.time.minutes.utc, brush_step)
+        .ticks(brush_unit, brush_step)
         .orient("bottom");
 
     brush_axis.tickFormat(function(date) {

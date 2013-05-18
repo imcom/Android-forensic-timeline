@@ -280,7 +280,7 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
         .scale(brush_scale)
         .tickSize(30)
         .tickPadding(5)
-        .ticks(d3.time.minutes.utc, 30) // fixed size for time brush
+        .ticks(d3.time.minutes.utc, 30) //FIXME can be implemented in the same way as Timeline
         .orient("bottom");
 
     brush_axis.tickFormat(function(date) {
