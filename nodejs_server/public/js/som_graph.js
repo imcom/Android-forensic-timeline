@@ -477,8 +477,9 @@ SOMGraph.prototype.appendApps = function(app_list) {
                 this.setAttribute("cursor", null);
             });
         }
-    }
-}
+        $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
+    } // on ajax complete callback
+} // function appendApp
 
 function getTokenDistance(x, y) {
     var common = _.intersection(x, y);

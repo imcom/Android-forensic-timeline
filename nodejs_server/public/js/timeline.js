@@ -38,9 +38,9 @@ function Timeline(name) {
     this.y_domain; // will be initialised in setDataset function
     this.x_range;
     this.tick_padding = 5;
-    this.time_window_interval; // interval for displaying timeline
-    this.start_index = 0;
-    this.end_index = 0;
+    //this.time_window_interval; // interval for displaying timeline
+    //this.start_index = 0;
+    //this.end_index = 0;
     this.tick_unit;
     this.tick_step;
 
@@ -191,8 +191,8 @@ Timeline.prototype.setDataset = function(dataset, path_dataset) {
         if (x.date > y.date) return 1;
     });
     // fill the time window in left control pane. (defined in operator.js)
-    this.time_window_interval = fillTimeWindow(Number(this.dataset[0].date), Number(this.dataset[this.dataset.length - 1].date));
-    this.getDisplayIndices(0, 0); // set start & end to 0 for initialisation
+    //this.time_window_interval = fillTimeWindow(Number(this.dataset[0].date), Number(this.dataset[this.dataset.length - 1].date));
+    //this.getDisplayIndices(0, 0); // set start & end to 0 for initialisation
     // on dataset is set, draw timeline
     this.onDataReady();
     if (this.end_index !== this.dataset.length - 1)
@@ -316,8 +316,8 @@ Timeline.prototype.clearData = function() {
     this.time_window_interval = 0;
 }
 
-// init indices for timeline display set
-Timeline.prototype.getDisplayIndices = function(start, end) {
+// init indices for timeline display set (deprecated)
+/*Timeline.prototype.getDisplayIndices = function(start, end) {
     if (start !== -1) { // init time window or get next time window
         this.start_index = start;
         this.end_index = end;
@@ -335,7 +335,7 @@ Timeline.prototype.getDisplayIndices = function(start, end) {
             time_diff = this.dataset[this.end_index].date - this.dataset[this.start_index].date;
         }
     }
-}
+}*/
 
 // draw timeline on SVG
 Timeline.prototype.onDataReady = function() {
@@ -360,7 +360,8 @@ Timeline.prototype.onDataReady = function() {
 
     // convert epoch timestamp to date for d3 time scale and init display dataset
     var display_dataset = [];
-    this.dataset.slice(this.start_index, this.end_index).forEach(function(data) {
+    this.dataset.forEach(function(data) {
+    //this.dataset.slice(this.start_index, this.end_index).forEach(function(data) {
         var display_data = {};
         var date = new Date(data.date * 1000); // convert to milliseconds
         display_data.date = date;
@@ -678,6 +679,7 @@ Timeline.prototype.onDataReady = function() {
 
     function onBrush() {
         if (!brush.empty()) {
+            $('#reset-scale').css('opacity', 0.8).css('z-index', 100);
             self.x_scale.domain(brush.extent());
             // adjust X axis
             self.timeline.select(".time-axis").call(x_axis);
@@ -993,7 +995,7 @@ Timeline.prototype.getServiceInfo = function(app_name) {
     });
 }
 
-Timeline.prototype.nextDisplayWindow = function() {
+/*Timeline.prototype.nextDisplayWindow = function() {
     this.getDisplayIndices(this.end_index, this.end_index);
     this.removeTimeline();
     this.initTimeline();
@@ -1020,7 +1022,7 @@ Timeline.prototype.previousDisplayWindow = function() {
     // defined in operator.js
     updateTimeWindow(this.dataset[this.start_index].date, this.time_window_interval);
     this.onDataReady();
-}
+}*/
 
 // init X axis tick interval based on time period length
 Timeline.prototype.initTickInterval = function() {

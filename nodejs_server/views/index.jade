@@ -108,7 +108,7 @@ html
                             button#update-event-pairs.btn.btn-success.btn-small Feel Lucky
         div#main-ctrl-pane.slide-left-div
             div.slide-left-ctrl-bar
-                div(title="Expand control pane").slide-left-ctrl
+                div(title="Expand control pane")#left-main-ctrl-btn.slide-left-ctrl
             div.ctrl-panel
                 ul.nav.nav-pills.nav-stacked
                     li.nav-header App Selection
@@ -120,10 +120,10 @@ html
                         div.input-append
                             input(type="text", placeholder="keywords ...").span2#dmesg-selection-input
                             button(type="button").btn#dmesg-search Search
-                    li.nav-header.cozy-list-header Timeline Window
-                    li
-                        select#time-window-start.selection-field
-                        select#time-window-end.selection-field
+                    //li.nav-header.cozy-list-header Timeline Window
+                    //li
+                    //    select#time-window-start.selection-field
+                    //    select#time-window-end.selection-field
                     li.nav-header.cozy-list-header Radio Activity Toggle
                     li
                         div.btn-group
@@ -144,8 +144,8 @@ html
         div#content
             p.nav-header Android Timeline Analysis
             #timeline_main.timeline
-        a#backward
-        a#forward
+        //a#backward
+        //a#forward
         a#reset-scale
         a#open-right-ctrl
         script(type = 'text/javascript', src = '/js/operator.js')

@@ -15,11 +15,6 @@ var end_events_pane = $('#end-events');
 var event_pairs_display_pane = $('#event-pairs-display');
 var responsive_som_pane = $('#responsive-som-apps');
 var threshold_input = $('#threshold-input');
-//var collection = $('#collection-input');
-//var selection = $('#selection-input');
-//var file_activity_selection = $('#file-activity-selection-input');
-//var relevance_selection = $('#relevance-selection-input');
-//var app_trace_selection = $('#app-trace-selection-input');
 
 /*window.onscroll = function(event) {
     if (window.scrollY >= window.innerHeight) {
@@ -68,8 +63,8 @@ var object_selected = false;
 var pid_selected = false;
 var selected_object;
 var selected_pid;
-var current_start_time;
-var current_end_time;
+//var current_start_time;
+//var current_end_time;
 var som_instance = null;
 
 var pairs_of_interest = [ //TODO experimental
@@ -421,7 +416,7 @@ function onAppChosen(app_name) {
     }
 }
 
-function onTimeChosen(selected_time, type) {
+/*function onTimeChosen(selected_time, type) {
     var interval = timeline_main.time_window_interval;
     if (type === 'start') {
         var num_of_steps = (selected_time - current_start_time) / interval;
@@ -445,7 +440,7 @@ function onTimeChosen(selected_time, type) {
             $('#forward').css('opacity', 0).css('z-index', -1); // hide this button
     if (timeline_main.start_index === 0)
             $('#backward').css('opacity', 0).css('z-index', -1);
-}
+}*/
 
 function onSOMAppSelection() {
     var som_app_checkboxes = $('.som-app-checkbox');
@@ -456,7 +451,6 @@ function onSOMAppSelection() {
         }
     });
     som_instance.appendApps(selected_apps);
-    $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
 }
 
 function fillAppResponsivePane(path_groups) {
@@ -674,7 +668,7 @@ function getFileActivity(app_name) {
     });
 }
 
-function initTimeRange(start_ts, end_ts) {
+/*function initTimeRange(start_ts, end_ts) {
     var ts_range = [];
     // time diff less/equal than 5 hours --> 1 hour interval for display
     // time diff less/equal than 10 hours --> 3 hours interval for display
@@ -687,9 +681,9 @@ function initTimeRange(start_ts, end_ts) {
     }
     ts_range.push(end_ts);
     return [ts_range, interval]; // return time range array for display and interval
-}
+}*/
 
-function fillTimeWindow(start_date, end_date) {
+/*function fillTimeWindow(start_date, end_date) {
     var window_start = $('#time-window-start');
     var window_end = $('#time-window-end');
     window_start.children().remove();
@@ -707,14 +701,14 @@ function fillTimeWindow(start_date, end_date) {
     current_start_time = $('#time-window-start').val();
     current_end_time = $('#time-window-end').val();
     return time_range[1]; // return the display interval to Timeline instance
-}
+}*/
 
-function updateTimeWindow(anchor_start, step) {
+/*function updateTimeWindow(anchor_start, step) {
     $('#time-window-start').val(anchor_start);
     $('#time-window-end').val(anchor_start + step);
     current_start_time = $('#time-window-start').val();
     current_end_time = $('#time-window-end').val();
-}
+}*/
 
 function getInterestedPairs() {
     var pairs_buf = [];
@@ -1234,7 +1228,7 @@ function aggregationOnCompletion(type, target, content) {
 }
 
 // click to go to the previous time window
-$('#backward').click(function() {
+/*$('#backward').click(function() {
     if (timeline_main.start_index !== 0) {
         timeline_main.previousDisplayWindow();
         if (timeline_main.start_index === 0)
@@ -1252,7 +1246,7 @@ $('#forward').click(function() {
             $('#forward').css('opacity', 0).css('z-index', -1); // hide this button
         $('#backward').css('opacity', 0.8).css('z-index', 50); // show previous window button
     }
-});
+});*/
 
 // click to show right control pane when aggregation pane is opened
 $('#open-right-ctrl').click(function() {
@@ -1284,12 +1278,12 @@ window.onLoad = function() {
     $('#app-selections').on("change", function() {
         onAppChosen($(this).val());
     });
-    $('#time-window-start').on("change", function() {
+    /*$('#time-window-start').on("change", function() {
         onTimeChosen($(this).val(), 'start');
     });
     $('#time-window-end').on("change", function() {
         onTimeChosen($(this).val(), 'end');
-    });
+    });*/
 }();
 
 

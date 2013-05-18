@@ -75,8 +75,11 @@ li.nav-header.cozy-list-header
     opacity: 0.95
     background: white
     width: 300px
-    height: 60%
+    height: 40%
     margin-top: 50px
+
+#som-ctrl-pane
+    height: 60%
 
 .slide-left-ctrl-bar, .slide-left-som-ctrl-bar
     position: absolute
@@ -99,6 +102,9 @@ li.nav-header.cozy-list-header
 .slide-left-ctrl-bar:hover, .slide-left-som-ctrl-bar:hover
     .slide-left-ctrl
         background: url('/images/sidebar_icon.png') bottom right
+
+#left-main-ctrl-btn
+    top: 38%
 
 #dmesg-selection-input, #threshold-input
     font-family: serif
@@ -358,36 +364,14 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
     font-size: 100%
     fill: grey
 
-#backward
-    position: fixed
-    cursor: pointer
-    left: 45px
-    bottom: 5px
-    z-index: -1
-    opacity: 0
-    background: url("/images/backward.png")
-    width: 64px
-    height: 64px
-
 #reset-scale
-    position: fixed
-    cursor: pointer
-    left: 115px
-    bottom: 5px
-    z-index: -1
-    opacity: 0
-    background: url("/images/reset.png")
-    width: 64px
-    height: 64px
-
-#forward
     position: fixed
     cursor: pointer
     left: 185px
     bottom: 5px
     z-index: -1
     opacity: 0
-    background: url("/images/forward.png")
+    background: url("/images/reset.png")
     width: 64px
     height: 64px
 
