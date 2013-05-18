@@ -456,6 +456,7 @@ function onSOMAppSelection() {
         }
     });
     som_instance.appendApps(selected_apps);
+    $('#progress-bar').animate({"bottom": 0}, 100, "ease", showProgressBar);
 }
 
 function fillAppResponsivePane(path_groups) {
@@ -956,28 +957,6 @@ function generateSOM(nodes) {
     // remove old graph
     $('#aggregation-arena').children().remove();
     som_instance = new SOMGraph("#aggregation-arena", nodes, app_traces);
-    /*$.ajax({
-        type: "POST",
-        url: "matrix",
-        data: {
-            type: "exec"
-        },
-        dataType: 'json',
-        success: function(data) {
-            if (data.content.length > 0) {
-                var covar_inv = JSON.parse(data.content)[0]; // return an array -- [covar_matrix]
-                on_som_generation = 1;
-                // remove old graph
-                $('#aggregation-arena').children().remove();
-                som_instance = new SOMGraph("#aggregation-arena", nodes, app_traces, covar_inv.matrix);
-            } else {
-                showAlert("no covariance matrix found!");
-            }
-        },
-        error: function(xhr, type) {
-            showAlert("matrix query error!");
-        }
-    });*/
 }
 
 // button actions

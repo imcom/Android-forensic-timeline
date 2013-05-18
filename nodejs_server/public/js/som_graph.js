@@ -378,21 +378,24 @@ SOMGraph.prototype.appendApps = function(app_list) {
             data: {
                 iv: JSON.stringify(vector),
                 index: index, // reserving index in transmission since AJAX is made async, so the index will be over-written before the previous call finishes
+                name: input_vectors[index].name,
                 type: "exec"
             },
             dataType: 'json',
             success: function(data) {
-                if (data.content.length > 0) {
-                    result = JSON.parse(data.content);
-                    bm_coords = result.coords.split(',');
+                var result = JSON.parse(data.content);
+                if (result.coords !== '') {
+                    var bm_coords = result.coords.split(',');
                     // set input vector coords
                     input_vectors[Number(result.index)].x = Number(bm_coords[0]);
                     input_vectors[Number(result.index)].y = Number(bm_coords[1]);
-                    iv_size -= 1;
-                    if (iv_size === 0) onInputVectorFinalised();
                 } else {
-                    showAlert("coordinates query returned null");
+                    showAlert("WARN! Unclassified activities found in:</br>" + result.name);
+                    input_vectors[Number(result.index)].x = -1;
+                    input_vectors[Number(result.index)].y = -1;
                 }
+                iv_size -= 1;
+                if (iv_size === 0) onInputVectorFinalised();
             },
             error: function(xhr, type) {
                 showAlert("coordinates query error!");
@@ -411,14 +414,26 @@ SOMGraph.prototype.appendApps = function(app_list) {
             .attr("id", "selected-app")
             .attr("class", function(d, index){ return "selected-app-" + index; })
             .style("fill", function(d) {
-                return self.color_scale(d.name);
+                if (d.x >= 0 && d.y >= 0) {
+                    return self.color_scale(d.name);
+                } else {
+                    return "black";
+                }
             })
             .attr("x", function(d, i) {
-                return self.x_scale(d.x * self.extent) + offset_range[i];
+                if (d.x >= 0) {
+                    return self.x_scale(d.x * self.extent) + offset_range[i];
+                } else {
+                    return d.x + i * 30;
+                }
             })
             .attr("y", function(d, i) {
-                var y_offset = (i * i) % offset_range.length;
-                return self.y_scale(d.y * self.extent) + offset_range[y_offset];
+                if (d.y >= 0) {
+                    var y_offset = (i * i) % offset_range.length;
+                    return self.y_scale(d.y * self.extent) + offset_range[y_offset];
+                } else {
+                    return d.y;
+                }
             })
             .attr("width", 15)
             .attr("height", 15)
@@ -429,7 +444,7 @@ SOMGraph.prototype.appendApps = function(app_list) {
             if (index === undefined) continue;
             var app = jQuery(".selected-app-" + index);
             app.opentip(
-                function(d) { //FIXME also show feature vector in message
+                function(d) {
                     var formatter = d3.time.format.utc("%Y-%m-%d %H:%M:%S (UTC)");
                     var date = new Date(d.start_date * 1000);
                     var message = "";

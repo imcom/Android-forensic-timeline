@@ -113,7 +113,7 @@ exports.coords = function(req, res) {
         function(error, stdout, stderr) {
             if (error === null) {
                 // sending back the received index for pointing the correct elements in IV array
-                rtn = JSON.stringify({coords:stdout, index: req.body.index});
+                rtn = JSON.stringify({coords:stdout, index: req.body.index, name: req.body.name});
                 res.json({"error": 0, "type": "coords", "content": rtn});
             } else {
                 console.log(stdout);
@@ -124,7 +124,7 @@ exports.coords = function(req, res) {
     );
 }
 
-exports.matrix = function(req, res) {
+/*exports.matrix = function(req, res) {
     var command = "mongo localhost:27017/imcom_som --quiet ./libs/fetch_covar_matrix.js";
     var child_process = exec(
         command,
@@ -137,7 +137,7 @@ exports.matrix = function(req, res) {
             }
         }
     );
-}
+}*/
 
 exports.som = function(req, res) {
     var command = "mongo localhost:27017/imcom_som --quiet ./libs/fetch_som.js";
