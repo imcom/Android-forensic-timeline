@@ -66,11 +66,12 @@ exports.mapreduce = function(req, res) {
     obj.query = selection;
     obj.out = {'replace': req.body.collection + "_aggregation"};
     model.mapReduce(obj, function(err, rtn_model, stats) {
-        if (err == null) {
+        if (err === null) {
             rtn_model.find().exec(function(err, rtn) {
                 res.json({"error": 0, "type": req.body.collection, "content": rtn});
             });
         } else {
+            console.log(err.message);
             res.json({"error": 1, "type": req.body.collection, "content": err.message});
         }
     });
