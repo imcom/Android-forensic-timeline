@@ -25,7 +25,7 @@ function vectorize(target) {
         var object = target[index].object;
         if (object === "Database" || object === "db_sample") db_opr_num += 1;
         if (object === "content_query_sample") cp_opr_num += 1;
-        if (object === "network") network_opr_num += 1; //FIXME determine the object / msg content related to network
+        if (object === "SntpClient" || object === "NetworkProvider") network_opr_num += 1; //FIXME determine the object / msg content related to network
         var duration = 0;
         if (num_events > 1) { // duration of this activity
             duration = target[num_events - 1].date - target[0].date;
