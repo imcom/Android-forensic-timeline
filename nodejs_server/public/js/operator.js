@@ -1131,7 +1131,7 @@ aggregate_btn.click(function() {
                 if (data.error === 0) {
                     aggr_content = _.union(aggr_content, data.content);
                 } else {
-                    showAlert("Error! [" + data.type + "]:\n" + data.content, true);
+                    showAlert("Error! [" + data.type + "]:</br>" + data.content, true);
                 }
                 counter -= 1;
                 if (counter === 0) {
