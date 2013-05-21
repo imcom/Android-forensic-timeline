@@ -19,13 +19,18 @@ function vectorize(target) {
     var db_opr_num = 0;
     var cp_opr_num = 0; // content provider
     var network_opr_num = 0; //FIXME related objects are to be defined
+    var http_mask = new RegExp(/^http.*:\/\/[a-z0-9_\.]*/);
+    var sql_mask = new RegExp(/^(select|replace|create).*(table|from|into).*/i);
 
     for (var index in target) {
         if (index === undefined) continue;
         var object = target[index].object;
+        var message = target[index].msg;
         if (object === "Database" || object === "db_sample") db_opr_num += 1;
+        if (sql_mask.test(message)) db_opr_num += 1;
         if (object === "content_query_sample") cp_opr_num += 1;
         if (object === "SntpClient" || object === "NetworkProvider") network_opr_num += 1; //FIXME determine the object / msg content related to network
+        if (http_mask.test(message)) network_opr_num += 1;
         var duration = 0;
         if (num_events > 1) { // duration of this activity
             duration = target[num_events - 1].date - target[0].date;
