@@ -1128,6 +1128,7 @@ aggregate_btn.click(function() {
             },
             dataType: 'json',
             success: function(data) {
+                console.log(data.content);
                 aggr_content = _.union(aggr_content, data.content);
                 counter -= 1;
                 if (counter === 0) {
