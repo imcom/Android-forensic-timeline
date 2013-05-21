@@ -1128,8 +1128,11 @@ aggregate_btn.click(function() {
             },
             dataType: 'json',
             success: function(data) {
-                console.log(data);
-                aggr_content = _.union(aggr_content, data.content);
+                if (data.error === 0) {
+                    aggr_content = _.union(aggr_content, data.content);
+                } else {
+                    showAlert("Error! [" + data.type + "]:<\br>" + data.content);
+                }
                 counter -= 1;
                 if (counter === 0) {
                     var aggr_target;

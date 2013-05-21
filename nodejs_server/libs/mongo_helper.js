@@ -71,7 +71,7 @@ exports.mapreduce = function(req, res) {
                 res.json({"error": 0, "type": req.body.collection, "content": rtn});
             });
         } else {
-            console.log(err.message);
+            console.log("[ERROR]: mapreduce query on [" + req.body.collection + "]: " + err.message);
             res.json({"error": 1, "type": req.body.collection, "content": err.message});
         }
     });
