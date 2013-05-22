@@ -66,6 +66,8 @@ var selected_pid;
 //var current_start_time;
 //var current_end_time;
 var som_instance = null;
+var dropdown_div_height = window.innerHeight - 80;
+var dropdown_div_top = -(window.innerHeight - 100);
 
 var pairs_of_interest = [ //TODO experimental
         ["am_proc_start", "am_proc_died"],
@@ -983,7 +985,8 @@ dropdown_btn.click(function() {
         $('#open-right-ctrl').css('opacity', 0.8).css('z-index', 50);
     } else { // hide the pane
         dropdown_pane_collapsed = 1;
-        aggregation_pane.animate({"top": -865}, 300, "ease");
+        //aggregation_pane.animate({"top": -865}, 300, "ease");
+        aggregation_pane.animate({"top": dropdown_div_top}, 300, "ease");
         dropdown_ctrl.css("-webkit-transform", "rotate(180deg)");
         dropdown_ctrl.css("-moz-transform", "rotate(180deg)");
         dropdown_ctrl[0].setAttribute("title", "Expand aggregation pane");
@@ -1029,7 +1032,7 @@ popup_btn.click(function() {
         popup_ctrl.css("-webkit-transform", "rotate(0deg)");
         popup_ctrl.css("-moz-transform", "rotate(0deg)");
         popup_ctrl[0].setAttribute("title", "Expand event pane");
-        event_pane.animate({"bottom": -400}, 500, "ease");
+        event_pane.animate({"bottom": -260}, 500, "ease");
     }
 });
 
@@ -1282,6 +1285,17 @@ window.onLoad = function() {
     $('#app-selections').on("change", function() {
         onAppChosen($(this).val());
     });
+    $('.dropdown-div').css("height", dropdown_div_height);
+    $('.dropdown-div').css("top", dropdown_div_top);
+    $('#event-metadata').css("width", 200);
+    $('#aggr-selection').css("width", 240);
+    $('#app-temporal-info').css("width", 260).css("margin-left", -5);
+    $('.popup-div').css("margin-left", (window.innerWidth - $('.popup-div').width()) / 2);
+    $('.dropdown-div').css("margin-left", (window.innerWidth - $('.dropdown-div').width()) / 2);
+    $('#responsive-som-apps').css("max-height", $('#som-ctrl-pane').height() - 110);
+    $('#responsive-apps').css("max-height", $('#responsive-pane').height() - 90);
+    $('#responsive-pids').css("max-height", $('#responsive-pane').height() - 90);
+    $('#responsive-objects').css("max-height", $('#responsive-pane').height() - 90);
     /*$('#time-window-start').on("change", function() {
         onTimeChosen($(this).val(), 'start');
     });

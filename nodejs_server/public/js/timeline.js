@@ -14,8 +14,11 @@
 function Timeline(name) {
     // static constant values
     this.name = name;
-    this.timeline_height = 850;
-    this.width = 1850;
+    //this.timeline_height = 850;
+    var height_margin = 100;
+    this.timeline_height = window.innerHeight - height_margin;
+    //this.width = 1850;
+    this.width = window.innerWidth - 50;
     this.color_scale = d3.scale.category20();
     this.y_range_padding = 150;
     this.x_range_padding = 100;
@@ -415,7 +418,7 @@ Timeline.prototype.onDataReady = function() {
     this.timeline.append("g")
         .attr("class", "time-axis")
         .attr("id", "timeline_main")
-        .attr("transform", "translate(0, 800)")
+        .attr("transform", "translate(0, " + (this.timeline_height - 100) + ")")
         .call(x_axis);
 
     // append gird on the timeline
@@ -432,7 +435,7 @@ Timeline.prototype.onDataReady = function() {
         .attr("x1", this.x_scale)
         .attr("x2", this.x_scale)
         .attr("y1", 0)
-        .attr("y2", 800);
+        .attr("y2", this.timeline_height - 100);
 
     // init zoom handler
     var scale_extent = [-5, 15]; // used for zoom function
@@ -440,13 +443,55 @@ Timeline.prototype.onDataReady = function() {
                 .x(this.x_scale)
                 .scaleExtent(scale_extent)
                 .on("zoom", zoom);
-
+    // init timeline animation vars
+    var pause = true;
+    var forward_step = 0;
+    var backward_step = 0;
     // reset timeline scale function
     $('#reset-scale').click(function() {
         zoom_handler.scale(1);
         zoom_handler.translate([0, 0]);
         zoom();
         $('#reset-scale').css('opacity', 0).css('z-index', -1);
+    });
+    // timeline animation functions
+    function forwardTimeline() {
+        if (!pause) {
+            zoom_handler.translate([forward_step, 0]);
+            zoom();
+            forward_step -= 10;
+            window.setTimeout(forwardTimeline, 200);
+        }
+    }
+    function backwardTimeline() {
+        if (!pause) {
+            zoom_handler.translate([backward_step, 0]);
+            zoom();
+            backward_step += 10;
+            window.setTimeout(backwardTimeline, 200);
+        }
+    }
+    // timeline animation control buttons
+    $('#timeline-forward').click(function() {
+        pause = true; // stop previous action if any
+        window.setTimeout(
+            function() {
+                pause = false;
+                forward_step = zoom_handler.translate()[0];
+                forwardTimeline();
+            }, 1000);
+    });
+    $('#timeline-backward').click(function() {
+        pause = true; // stop previous action if any
+        window.setTimeout(
+            function() {
+                pause = false;
+                backward_step = zoom_handler.translate()[0];
+                backwardTimeline();
+            }, 1000);
+    });
+    $('#timeline-stop').click(function() {
+        pause = true;
     });
     // define timeline zoom behaviour
     function zoom() {
@@ -480,7 +525,7 @@ Timeline.prototype.onDataReady = function() {
                 });
             }
         }
-    }
+    } // function zoom()
     // append clipping control on timeline
     this.timeline.append("svg:rect")
         .attr("class", "timeline-ctrl-pane")
@@ -567,7 +612,7 @@ Timeline.prototype.onDataReady = function() {
                 .attr("x1", this.getAttribute("cx"))
                 .attr("x2", this.getAttribute("cx"))
                 .attr("y1", 0)
-                .attr("y2", 800);
+                .attr("y2", self.timeline_height - 100);
 
             time_label = self.timeline.append("text")
                 .attr("class", "time-label")
@@ -608,17 +653,17 @@ Timeline.prototype.onDataReady = function() {
             $('#app-name-display').text(data._id);
             var table_prefix = "<tr><td>";
             var table_suffix = "</tr></td>";
-            var messages = "";
+            //var messages = "";
             // remove old object list
             $('#object-tbody').children().remove();
             // append current objects
             for (var object in data.content) {
                 if (data.content.hasOwnProperty(object)) {
                     $('#object-tbody').append(table_prefix + object + table_suffix);
-                    messages += "<" + object + ">: " + data.content[object] + "\n";
+                    //messages += "<" + object + ">: " + data.content[object] + "\n";
                 }
             }
-            $('#message-display').text(messages);
+            //$('#message-display').text(messages);
 
             // fetch service info associated with this app
             self.getServiceInfo(data._id);
@@ -639,14 +684,14 @@ Timeline.prototype.onDataReady = function() {
     /* -------------- */
 
     // append time brush on popup control panel
-    $('#time-brush-main').children().remove(); // remove old brush if any
+    //$('#time-brush-main').children().remove(); // remove old brush if any
     // init the time brush on extra control pane
-    var time_brush = d3.select("#time-brush-main").append("svg")
-        .attr("width", 1322) //FIXME hard coded size
-        .attr("height", 60);
+    /*var time_brush = d3.select("#time-brush-main").append("svg")
+        .attr("width", window.innerWidth - 200)
+        .attr("height", 60);*/
 
     var brush_scale = d3.time.scale.utc()
-        .range([22, 1300])
+        .range([20, this.width - 50])
         .domain(this.x_scale.domain());
 
     // define time brush step depending on total time period
@@ -668,15 +713,18 @@ Timeline.prototype.onDataReady = function() {
         .x(brush_scale)
         .on("brush", onBrush);
 
-    time_brush.append("g")
+    //time_brush.append("g")
+    this.timeline.append("g")
         .attr("class", "time-brush-axis")
+        .attr("transform", "translate(0, " + (this.timeline_height - 75) + ")")
         .call(brush_axis);
 
-    time_brush.append("g")
+    //time_brush.append("g")
+    this.timeline.append("g")
         .attr("class", "time-brush")
         .call(brush)
         .selectAll("rect")
-        .attr("y", 0)
+        .attr("y", this.timeline_height - 75)
         .attr("height", 30);
 
     function onBrush() {

@@ -75,11 +75,19 @@ li.nav-header.cozy-list-header
     opacity: 0.95
     background: white
     width: 300px
-    height: 40%
+    height: 450px
     margin-top: 50px
 
+#timeline-stop
+    padding-left: 20px
+    padding-right: 20px
+
+#timeline-forward
+    padding-left: 10px
+    padding-right: 10px
+
 #som-ctrl-pane
-    height: 60%
+    height: 70%
 
 .slide-left-ctrl-bar, .slide-left-som-ctrl-bar
     position: absolute
@@ -145,7 +153,7 @@ li.nav-header.cozy-list-header
         font-family: Consolas
     overflow-x: hidden
     overflow-y: auto
-    max-height: 660px
+    //max-height: 660px
     margin-top: -10px
     margin-left: 30px
 
@@ -155,12 +163,12 @@ li.nav-header.cozy-list-header
         font-family: Consolas
     overflow-x: hidden
     overflow-y: auto
-    max-height: 475px
+    //max-height: 475px
     margin-top: -10px
     margin-left: 15px
 
 #init-events, #end-events, #event-pairs-display
-    height: 120px
+    height: 110px
     margin-left: 30px
 
 #delta-ctrl-group
@@ -182,23 +190,23 @@ label
 
 .dropdown-div
     position: fixed
-    top: -865px
+    //top: -865px
     z-index: 100
     opacity: 0.95
     background: white
     width: 99%
-    height: 885px
-    margin-left: 7px
+    //height: 885px
+    //margin-left: 7px
 
 .popup-div
     position: fixed
-    bottom: -400px
+    bottom: -260px
     z-index: 100
     opacity: 0.95
     background: white
-    width: 69%
-    height: 420px
-    margin-left: 300px
+    //width: 900px
+    height: 280px
+    //margin-left: 50px
 
 #running-time, #timezone-info, #temporal-info
     margin-left: 5px
@@ -210,19 +218,28 @@ label
     p.nav-header.text-center
         margin-right: 22px
     .container-fluid
-        margin-top: -15px
+        margin-top: 20px
 
-#event-app
-    width: 500px
+//#event-app
+//    width: 500px
 
-#message-display
-    width: 450px
-    resize: none
-    margin-top: -10px
+//#aggr-selection
+//    width: 280px
+
+//#message-display
+//    width: 450px
+//    resize: none
+//    margin-top: -10px
+
+#app-temporal-info
+    max-height: 310px
+    overflow-x: hidden
+    overflow-y: auto
+    //width: 280px
 
 #event-metadata
     max-height: 380px
-    width: 220px
+    //width: 220px
     overflow-x: hidden
     overflow-y: auto
     margin-left: 0px
@@ -240,11 +257,6 @@ label
 #install-date, #update-date
     margin-top: -10px
     margin-left: 15px
-
-#app-temporal-info
-    max-height: 310px
-    overflow-x: hidden
-    overflow-y: auto
 
 .service-pid
     color: blue
@@ -367,8 +379,8 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
 #reset-scale
     position: fixed
     cursor: pointer
-    left: 185px
-    bottom: 5px
+    left: 15px
+    bottom: 0px
     z-index: -1
     opacity: 0
     background: url("/images/reset.png")
@@ -378,8 +390,8 @@ rect.ctrl-pane, rect.timeline-ctrl-pane
 #open-right-ctrl
     position: fixed
     cursor: pointer
-    right: 185px
-    bottom: 5px
+    right: 15px
+    bottom: 0px
     z-index: -1
     opacity: 0
     background: url("/images/right-ctrl.png")

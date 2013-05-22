@@ -10,8 +10,10 @@ li.nav-header.cozy-list-header{margin-top:-5px}
 .slide-right-ctrl-bar{position:absolute;width:20px;height:100%;left:0;cursor:pointer;z-index:50;}
 .slide-right-ctrl-bar .slide-right-ctrl{position:absolute;width:16px;height:85px;left:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(0);-moz-transform:rotate(0)}
 .slide-right-ctrl-bar:hover .slide-right-ctrl{background:url("/images/sidebar_icon.png") bottom right}
-.slide-left-div{position:fixed;left:-280px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:300px;height:40%;margin-top:50px}
-#som-ctrl-pane{height:60%}
+.slide-left-div{position:fixed;left:-280px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:300px;height:450px;margin-top:50px}
+#timeline-stop{padding-left:20px;padding-right:20px}
+#timeline-forward{padding-left:10px;padding-right:10px}
+#som-ctrl-pane{height:70%}
 .slide-left-ctrl-bar,.slide-left-som-ctrl-bar{position:absolute;width:20px;height:100%;right:0;cursor:pointer;z-index:50}
 .slide-left-ctrl{position:absolute;width:16px;height:85px;right:0;z-index:0;top:45%;background:url("/images/sidebar_icon.png") top right;-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg)}
 .slide-left-ctrl-bar:hover .slide-left-ctrl,.slide-left-som-ctrl-bar:hover .slide-left-ctrl{background:url("/images/sidebar_icon.png") bottom right}
@@ -25,29 +27,27 @@ li.nav-header.cozy-list-header{margin-top:-5px}
 #responsive-app-pane p,#extend-tab p,#delta-tab p{margin-left:35px}
 #responsive-som-app-pane{margin-top:10px}
 #threshold-input-pane{margin-top:-12px;margin-left:12px}
-#responsive-apps,#responsive-pids,#responsive-objects{overflow-x:hidden;overflow-y:auto;max-height:660px;margin-top:-10px;margin-left:30px}
+#responsive-apps,#responsive-pids,#responsive-objects{overflow-x:hidden;overflow-y:auto;margin-top:-10px;margin-left:30px}
 #responsive-apps label,#responsive-pids label,#responsive-objects label{margin-right:10px;font-family:Consolas}
-#responsive-som-apps{overflow-x:hidden;overflow-y:auto;max-height:475px;margin-top:-10px;margin-left:15px}
+#responsive-som-apps{overflow-x:hidden;overflow-y:auto;margin-top:-10px;margin-left:15px}
 #responsive-som-apps label{margin-right:10px;font-family:Consolas}
-#init-events,#end-events,#event-pairs-display{height:120px;margin-left:30px}
+#init-events,#end-events,#event-pairs-display{height:110px;margin-left:30px}
 #delta-ctrl-group{margin-left:30px}
 #add-event-pair{width:60px}
 #remove-event-pair{width:75px}
 label{display:inline-block}
 #app-checkbox,#pid-checkbox,#object-checkbox,#delta-checkbox-init,#delta-checkbox-end,#som-app-checkbox{margin-left:5px;margin-right:5px;margin-top:0}
-.dropdown-div{position:fixed;top:-865px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:99%;height:885px;margin-left:7px}
-.popup-div{position:fixed;bottom:-400px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:69%;height:420px;margin-left:300px}
+.dropdown-div{position:fixed;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;width:99%}
+.popup-div{position:fixed;bottom:-260px;z-index:100;opacity:.95;filter:alpha(opacity=95);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";background:#fff;height:280px}
 #running-time,#timezone-info,#temporal-info{margin-left:5px;margin-top:-5px;margin-bottom:2px}
 #event-display-pane{margin-top:15px;}
 #event-display-pane p.nav-header.text-center{margin-right:22px}
-#event-display-pane .container-fluid{margin-top:-15px}
-#event-app{width:500px}
-#message-display{width:450px;resize:none;margin-top:-10px}
-#event-metadata{max-height:380px;width:220px;overflow-x:hidden;overflow-y:auto;margin-left:0}
+#event-display-pane .container-fluid{margin-top:20px}
+#app-temporal-info{max-height:310px;overflow-x:hidden;overflow-y:auto}
+#event-metadata{max-height:380px;overflow-x:hidden;overflow-y:auto;margin-left:0}
 .table-list-header{margin-top:0;margin-left:-10px}
 #date-display,#app-name-display,#epoch-display{font-family:Consolas;margin-left:15px;font-weight:bold;margin-top:-5px}
 #install-date,#update-date{margin-top:-10px;margin-left:15px}
-#app-temporal-info{max-height:310px;overflow-x:hidden;overflow-y:auto}
 .service-pid{color:#00f;margin-left:10px;margin-top:-10px !important}
 .service-time{font-size:90%;margin-left:40px;margin-top:-5px}
 .dropdown-ctrl-bar{position:absolute;width:100%;height:20px;bottom:0;cursor:pointer;z-index:50;}
@@ -69,8 +69,8 @@ label{display:inline-block}
 rect.ctrl-pane,rect.timeline-ctrl-pane{cursor:move;fill:none;pointer-events:all}
 .graph-title,.stack-graph-title{font-family:Consolas;font-size:200%;z-index:100;font-style:oblique;font-variant:small-caps}
 .stack-graph-title{font-style:normal;font-size:100%;fill:#808080}
-#reset-scale{position:fixed;cursor:pointer;left:185px;bottom:5px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/reset.png");width:64px;height:64px}
-#open-right-ctrl{position:fixed;cursor:pointer;right:185px;bottom:5px;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/right-ctrl.png");width:64px;height:64px}
+#reset-scale{position:fixed;cursor:pointer;left:15px;bottom:0;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/reset.png");width:64px;height:64px}
+#open-right-ctrl{position:fixed;cursor:pointer;right:15px;bottom:0;z-index:-1;opacity:0;filter:alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";background:url("/images/right-ctrl.png");width:64px;height:64px}
 #time-brush-main-pane p{margin-left:50px}
 .time-brush{fill:rgba(0,0,0,0.1)}
 .time-brush rect.background{visibility:visible !important}

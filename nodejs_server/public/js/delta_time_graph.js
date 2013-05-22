@@ -22,8 +22,12 @@ function DeltaTimeGraph(name, dataset) {
     this.dataset = dataset;
 
     // dimensions
-    var width = 1800;
-    var height = 820;
+    var height_margin = 150;
+    var width_margin = 100;
+    //var width = 1800;
+    //var height = 820;
+    var width = window.innerWidth - width_margin;
+    var height = window.innerHeight - height_margin;
     var y_padding = 100;
     var tick_padding = -15;
 

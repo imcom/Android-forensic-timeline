@@ -14,9 +14,9 @@ html
             div.bar#progress-indicator
         div#event-detail-pane.popup-div
             div#event-display-pane
-                div#time-brush-main-pane
-                    p.nav-header Timeline Brush
-                    #time-brush-main
+                //div#time-brush-main-pane
+                //    p.nav-header Timeline Brush
+                //    #time-brush-main
                 div.container-fluid
                     div#event-metadata.span4
                         ul.nav.nav-pills.nav-stacked
@@ -34,30 +34,30 @@ html
                                 div#object-display
                                     table#object-table.table.table-condensed.table-hover
                                         tbody#object-tbody
-                    div#event-message.span5
-                        p.nav-header Messages
-                        textarea(rows="12", readonly)#message-display
-                    div#event-app.span3
-                        div.row-fluid
-                            div.span6
-                                ul.nav.nav-pills.nav-stacked
-                                    li.nav-header Relevant System Objects
-                                    li
-                                        select(multiple="multiple")#objects.selection-field
-                                    li.nav-header.cozy-list-header Relevant Process IDs
-                                    li
-                                        select(multiple="multiple")#pids.selection-field
-                                    li
-                                        div.btn-group
-                                            button#aggregate-btn.btn.btn-info.btn-small Aggregate
-                                            button#file-activity-search.btn.btn-warning.btn-small Filesystem Activity
-                            div#app-temporal-info.span6
-                                    p.nav-header App Installation Date [UTC]
-                                    #install-date
-                                    p.nav-header App Last Update Date [UTC]
-                                    #update-date
-                                    p.nav-header Launch & Last Activity Date [UTC]
-                                    ul#launch-activity-date.nav.nav-pills.nav-stacked
+                    //div#event-message.span5
+                    //    p.nav-header Messages
+                    //    textarea(rows="12", readonly)#message-display
+                    //div#event-app.span8
+                    //    div.row-fluid
+                    div#aggr-selection.span4
+                        ul.nav.nav-pills.nav-stacked
+                            li.nav-header Relevant System Objects
+                            li
+                                select(multiple="multiple")#objects.selection-field
+                            li.nav-header.cozy-list-header Relevant Process IDs
+                            li
+                                select(multiple="multiple")#pids.selection-field
+                            li
+                                div.btn-group
+                                    button#aggregate-btn.btn.btn-info.btn-small Aggregate
+                                    button#file-activity-search.btn.btn-warning.btn-small Filesystem Activity
+                    div#app-temporal-info.span4
+                            p.nav-header App Installation Date [UTC]
+                            #install-date
+                            p.nav-header App Last Update Date [UTC]
+                            #update-date
+                            p.nav-header Launch & Last Activity Date [UTC]
+                            ul#launch-activity-date.nav.nav-pills.nav-stacked
             div.popup-ctrl-bar
                 div(title="Expand event pane").popup-ctrl
         div#aggregation-pane.dropdown-div
@@ -129,6 +129,12 @@ html
                         div.btn-group
                             button#radio-on.btn.btn-success.btn-small ON
                             button#radio-off.btn.btn-warning.btn-small OFF
+                    li.nav-header Auto Sliding Timeline
+                    li
+                        div.btn-group
+                            button#timeline-backward.btn.btn-warning.btn-small Backward
+                            button#timeline-stop.btn.btn-danger.btn-small Stop
+                            button#timeline-forward.btn.btn-success.btn-small Forward
                     li.nav-header SOM Control Pane
                     li
                         button#show-som.btn.btn-danger.btn-small Generate SOM

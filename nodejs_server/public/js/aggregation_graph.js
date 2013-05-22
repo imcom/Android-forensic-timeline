@@ -41,8 +41,12 @@ function AggregatedGraph(name, dataset) {
     var tick_padding = -15;
     var radius_range = [10, 60];
     var scale_extent = [-5, 10]; // used for zoom function
-    this.width = 1800;
-    this.height = 820;
+    var height_margin = 150;
+    var width_margin = 100;
+    //this.width = 1800;
+    //this.height = 820;
+    this.width = window.innerWidth - width_margin;
+    this.height = window.innerHeight - height_margin;
     this.x_range = this.initXRange(); // x range should be dependent on dataset size
     this.y_range = [this.height - 150, y_padding];
     this.tick_unit;
@@ -97,12 +101,12 @@ function AggregatedGraph(name, dataset) {
         .attr("width", this.width)
         .attr("height", this.height)
         .append("g")
-        .attr("transform", "translate(20, 20)");
+        .attr("transform", "translate(0, 20)");
 
     // graph title, which object or pid is aggregated
     this.aggregated_graph.append("text")
         .attr("class", "graph-title")
-        .attr("x", this.width - 500)
+        .attr("x", this.width - Math.round(this.width / 3))
         .attr("y", 0)
         .text(function(){
             if (self.aggregation_type === 'object') {
@@ -273,7 +277,7 @@ AggregatedGraph.prototype.drawAggregatedGraph = function() {
 
     // append a time brush below the graph
     var brush_scale = d3.time.scale()
-        .range([260, this.width - 260])
+        .range([10, this.width - 50])
         .domain(self.x_scale.domain());
 
     var brush_axis = d3.svg.axis()

@@ -24,8 +24,12 @@ function SOMGraph(name, nodes, app_traces) {
     this.token_index;
 
     // dimensions
-    var width = 1800;
-    var height = 820;
+    var height_margin = 150;
+    var width_margin = 100;
+    //var width = 1800;
+    //var height = 820;
+    var width = window.innerWidth - width_margin;
+    var height = window.innerHeight - height_margin;
 
     // threshold of temporal distance [default to 5]
     var dist_threshold = 5;
