@@ -95,14 +95,10 @@ for (var _pid in activities) {
     if (activities.hasOwnProperty(_pid) && _pid !== "suspects") {
         duration_points[_pid].sort(sortByDate);
         duration_points[_pid].forEach(function(record) {
-            if (activities[_pid].length === 1) {
-                if (activities[_pid][0].object === process_end) {
-                    index = 0;
-                    activities[_pid].splice(index, 0, record);
-                }
-            } else {
-                activities[_pid].splice(index, 0, record);
+            if (activities[_pid].length === 1 && activities[_pid][0].object === process_end) { 
+                index = 0; // if only the end process then insert everthing in before
             }
+            activities[_pid].splice(index, 0, record);
             index += 1;
         });
     }
