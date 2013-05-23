@@ -795,7 +795,12 @@ function generateDeltaTimeGraph(dataset) {
                         interested_dataset[delta_t].count[sig_index] += 1;
                     }
                     cur_index = index;
-                } // if interested pair is true
+                // if interested pair is true
+                } else if (current_pair[0] !== interested_pair[0] && current_pair[1] !== interested_pair[0]) { // both not matching the 1st element in pair, speed up
+                    cur_index = ++index;
+                } else if (current_pair[1] === interested_pair[0]) { // 1st does not match but 2nd match the 1st in interested pair
+                    cur_index = index;
+                }
                 /*if (index === length - 1) { // when reach the end, start next round
                     round += 1;
                     index = round + 1;
