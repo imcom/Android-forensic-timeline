@@ -753,6 +753,8 @@ function generateDeltaTimeGraph(dataset) {
         }
         return false;
     }
+    console.log(interested_pairs);
+    console.log(dataset);
 
     var interested_dataset = {};
     for (var app_process in dataset) {
@@ -764,7 +766,7 @@ function generateDeltaTimeGraph(dataset) {
         var index = 0, round = 0;
         for (index = round + 1; index < length; index++) {
             var current_pair = [dataset[app_process][round].object, dataset[app_process][index].object];
-            //FIXME define a set of interesting system call pairs, only do delta time analysis on the defined set
+            console.log(current_pair);
             if (isInterested(current_pair)) {
                 var delta_t = dataset[app_process][index].date - dataset[app_process][round].date;
                 var obj_a = dataset[app_process][round].object;
@@ -807,6 +809,7 @@ function generateDeltaTimeGraph(dataset) {
             }
         } // for-loop index
     } // for-loop app_process
+    console.log(interested_dataset);
 
     /*
         graph_dataset
