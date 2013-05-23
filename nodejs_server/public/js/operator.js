@@ -742,17 +742,6 @@ function generateDeltaTimeGraph(dataset) {
      * }
      *  index of signature goes into content and count fields
      */
-    function isInterested(target) {
-        for (var index in interested_pairs) {
-            if (index === undefined) continue;
-            if (interested_pairs[index][0] === target[0] &&
-                interested_pairs[index][1] === target[1]
-            ) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     var interested_dataset = {};
     for (var app_process in dataset) {
@@ -761,50 +750,58 @@ function generateDeltaTimeGraph(dataset) {
         var length = dataset[app_process].length;
         // iterate through each app_process, calculate delta time between two events of interest
         if (length === 1) continue; // only one event recorded, ignore ...
-        var index = 0, round = 0;
-        for (index = round + 1; index < length; index++) {
-            var current_pair = [dataset[app_process][round].object, dataset[app_process][index].object];
-            if (isInterested(current_pair)) {
-                var delta_t = dataset[app_process][index].date - dataset[app_process][round].date;
-                var obj_a = dataset[app_process][round].object;
-                var obj_b = dataset[app_process][index].object;
-                var pid_a = dataset[app_process][round].pid;
-                var pid_b = dataset[app_process][index].pid;
-                var msg_a = dataset[app_process][round].msg;
-                var msg_b = dataset[app_process][index].msg;
-                if (interested_dataset[delta_t] === undefined) {
-                    interested_dataset[delta_t] = {};
-                    interested_dataset[delta_t].delta_time = delta_t;
-                    interested_dataset[delta_t].signature = [];
-                    interested_dataset[delta_t].content = [];
-                    interested_dataset[delta_t].count = [];
-                }
-                var signature = [];
-                //
-                // signaure: [[obj_a, msg_tokens], [obj_b, msg_tokens]]
-                //
-                signature.push([obj_a].concat(tokenize(obj_a, msg_a)));
-                signature.push([obj_b].concat(tokenize(obj_b, msg_b)));
-                var target_signature = [].concat(signature);
-                var cmp_signatures = [].concat(interested_dataset[delta_t].signature);
-                var sig_index = isSignatureKnown(cmp_signatures, target_signature);
-                var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
-                content[0] = [obj_a, msg_a, pid_a];
-                content[1] = [obj_b, msg_b, pid_b];
-                if (sig_index === -1) {
-                    interested_dataset[delta_t].signature.push(signature);
-                    interested_dataset[delta_t].content.push(content);
-                    interested_dataset[delta_t].count.push(1);
-                } else {
-                    interested_dataset[delta_t].content[sig_index] = interested_dataset[delta_t].content[sig_index].concat(content);
-                    interested_dataset[delta_t].count[sig_index] += 1;
-                }
-            }
-            if (index === length - 1) { // when reach the end, start next round
-                round += 1;
-                index = round + 1;
-            }
-        } // for-loop index
+        var index = 0, cur_index = 0;
+        // iterate through interested pairs, using each pair to filter events
+        interested_pairs.forEach(function(interested_pair) {
+            index = cur_index = 0;
+            for (index = cur_index + 1; index < length; index++) {
+                var current_pair = [dataset[app_process][cur_index].object, dataset[app_process][index].object];
+                if (
+                    current_pair[0] === interested_pair[0] &&
+                    current_pair[1] === interested_pair[1]
+                ) {
+                    var delta_t = dataset[app_process][index].date - dataset[app_process][cur_index].date;
+                    var obj_a = dataset[app_process][cur_index].object;
+                    var obj_b = dataset[app_process][index].object;
+                    var pid_a = dataset[app_process][cur_index].pid;
+                    var pid_b = dataset[app_process][index].pid;
+                    var msg_a = dataset[app_process][cur_index].msg;
+                    var msg_b = dataset[app_process][index].msg;
+                    if (interested_dataset[delta_t] === undefined) {
+                        interested_dataset[delta_t] = {};
+                        interested_dataset[delta_t].delta_time = delta_t;
+                        interested_dataset[delta_t].signature = [];
+                        interested_dataset[delta_t].content = [];
+                        interested_dataset[delta_t].count = [];
+                    }
+                    var signature = [];
+                    //
+                    // signaure: [[obj_a, msg_tokens], [obj_b, msg_tokens]]
+                    //
+                    signature.push([obj_a].concat(tokenize(obj_a, msg_a)));
+                    signature.push([obj_b].concat(tokenize(obj_b, msg_b)));
+                    var target_signature = [].concat(signature);
+                    var cmp_signatures = [].concat(interested_dataset[delta_t].signature);
+                    var sig_index = isSignatureKnown(cmp_signatures, target_signature);
+                    var content = []; // content: [[msg_a, pid_a], [msg_b, pid_b]]
+                    content[0] = [obj_a, msg_a, pid_a];
+                    content[1] = [obj_b, msg_b, pid_b];
+                    if (sig_index === -1) {
+                        interested_dataset[delta_t].signature.push(signature);
+                        interested_dataset[delta_t].content.push(content);
+                        interested_dataset[delta_t].count.push(1);
+                    } else {
+                        interested_dataset[delta_t].content[sig_index] = interested_dataset[delta_t].content[sig_index].concat(content);
+                        interested_dataset[delta_t].count[sig_index] += 1;
+                    }
+                    cur_index = index;
+                } // if interested pair is true
+                /*if (index === length - 1) { // when reach the end, start next round
+                    round += 1;
+                    index = round + 1;
+                }*/
+            } // for-loop index
+        }); // for each interested pair
     } // for-loop app_process
 
     /*
