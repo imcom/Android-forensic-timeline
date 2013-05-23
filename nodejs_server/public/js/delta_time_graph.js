@@ -12,7 +12,7 @@ function DeltaTimeGraph(name, dataset) {
         stem: true,
         hideDelay: 0.2,
         delay: 0.3,
-        tipJoint: "bottom right",
+        tipJoint: "middle right",
         target: true,
         borderWidth: 0
     };
