@@ -452,7 +452,7 @@ function tokenize(object, target) {
 }
 
 function logException(object, target) {
-    if (_console !== undefined) {
+    if (_console !== undefined) { //FIXME for performance issue the output is disabled
         //_console.log(object + " : " + target);
     } else {
         print(object + " : " + target);
