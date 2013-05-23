@@ -964,6 +964,7 @@ Timeline.prototype.getAppDeltaTimeline = function(app_name) {
                 //generate delta timeline dataset (defined in operator)
                 delta_dataset = []; // remove old data
                 delta_dataset = application_trace.content; // var is defined in operator
+                console.log(delta_dataset);
                 generateDeltaTimeGraph(application_trace.content);
                 // switch responsive ctrl pane to delta
                 $('#extend-tab').removeClass('active');
