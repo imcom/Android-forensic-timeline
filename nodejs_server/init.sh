@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATABASE="imcom"
+DATABASE=$1
 SERVER="app.js"
 
 if [ ! -f db.lockfile ]

@@ -21,7 +21,8 @@ var temporal_info = require('../libs/temporal_info_schema.js');
 var package_info = require('../libs/package_info_schema.js');
 var file_system = require('fs');
 
-var database = "localhost:27017/imcom";
+var db_name = process.argv[2];
+var database = "localhost:27017/" + db_name;
 var exec = require('child_process').exec;
 
 function do_query(req, res, type) {
@@ -156,7 +157,7 @@ exports.som = function(req, res) {
 
 exports.delta_timeline = function(req, res) {
     console.log("generate timeline for application:" + req.body.selection);
-    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/delta_timeline.js ";
+    var command = "mongo localhost:27017/" + db_name + " --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/delta_timeline.js ";
     var child_process = exec(
         command,
         { maxBuffer: 1000*1024 },
@@ -186,7 +187,7 @@ exports.radio_activity = function(req, res) {
 
 exports.service_info = function(req, res) {
     console.log("fetch service info of the app:" + req.body.selection);
-    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/service_info.js ";
+    var command = "mongo localhost:27017/" + db_name + " --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/service_info.js ";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
@@ -200,7 +201,7 @@ exports.service_info = function(req, res) {
 
 exports.file_activity = function(req, res) {
     console.log("fetch file activity of the app:" + req.body.selection);
-    var command = "mongo localhost:27017/imcom --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/file_activity.js ";
+    var command = "mongo localhost:27017/" + db_name + " --quiet --eval 'var application_name = \"" + req.body.selection + "\"'" + " ./libs/file_activity.js ";
     var child_process = exec(
         command,
         function(error, stdout, stderr) {
@@ -214,7 +215,7 @@ exports.file_activity = function(req, res) {
 
 exports.application_trace = function(req, res) {
     console.log("query for application traces");
-    var command = "mongo localhost:27017/imcom --quiet ./libs/app_traces.js";
+    var command = "mongo localhost:27017/" + db_name + " --quiet ./libs/app_traces.js";
     var child_process = exec(
         command,
         { maxBuffer: 5000*1024 },
