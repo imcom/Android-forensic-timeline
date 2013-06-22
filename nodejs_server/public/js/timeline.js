@@ -1023,9 +1023,10 @@ Timeline.prototype.getServiceInfo = function(app_name) {
         },
         dataType: 'json',
         success: function(data) {
+            var display_pane = $('#launch-activity-date');
+            display_pane.children().remove(); // clear old data if any
             if (data.content !== "") {
                 var result = JSON.parse(data.content);
-                var display_pane = $('#launch-activity-date');
                 result.forEach(function(record) {
                     var service_process_id = record['pid'];
                     var service_launch_date = new Date(record['launch_date'] * 1000);
