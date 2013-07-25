@@ -28,7 +28,7 @@ programs = ["android_logs",
 git_dir = path.abspath(path.curdir) + path.sep
 home_dir = path.expanduser('~') + path.sep
 
-bak_dir = home_dir + "Desktop/Forensics/source_code"
+bak_dir = home_dir + "af_code"
 dev_dir = home_dir + "Documents/code/lab/forensics/android"
 eclipse_workspace = home_dir + "Documents/code/workspace/Forensics"
 
@@ -37,7 +37,7 @@ if not path.isdir(git_dir):
     sys.exit(-1)
 
 do_sync = False
-do_sync_adt = True
+do_sync_adt = False
 do_backup = path.isdir(bak_dir)
 if not do_backup:
     print "Skipping backup process since backup directory is not found... "
